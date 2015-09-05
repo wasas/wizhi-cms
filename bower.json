@@ -1,0 +1,12 @@
+{
+  "name": "wizhi-cms",
+  "homepage": "https://www.wpzhiku.com/",
+  "authors": [
+    "Amos Lee <iwillhappy1314@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bxslider-4": "4.2.3"
+  }
+}

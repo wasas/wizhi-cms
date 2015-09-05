@@ -1,0 +1,57 @@
+.zui-tab {
+    margin: 0;
+    padding: 0;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        vertical-align: top;
+        position: relative;
+        top: 1px;
+    }
+}
+.zui-tab-items {
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 14px;
+}
+.zui-tab-item {
+    display: inline-block;
+    display: inline\0;
+    *display: inline;
+    *zoom: 1;
+    *margin-right: 4px;
+    a {
+        border-radius: 3px 3px 0 0;
+        background: #f1f1f1;
+        line-height: 32px;
+        height: 32px;
+        padding: 0 10px;
+        border: 1px solid #E5E5E5;
+        border-bottom: none;
+        color: #4D4D4D;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        transition: background-color 0.4s ease-out, color 0.4s ease-out;
+    }
+    a:hover {
+        background: #f6f6f6;
+        text-decoration: none;
+    }
+}
+.zui-tab-item a,.zui-tab-item a:hover,.zui-tab-item a:active {
+    color: #4D4D4D;
+}
+.zui-tab-items .active, .zui-tab-item-current {
+    a {
+        font-weight: bold;
+        background: #fff;
+        height: 33px;
+    }
+    a:hover {
+        background: #fff;
+    }
+}
