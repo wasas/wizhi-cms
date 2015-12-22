@@ -1,0 +1,58 @@
+.piklist-label-container{
+  padding: 1% 1.5%;
+  width: 97%;
+  float: none;
+}
+
+.piklist-field{
+  width: 97%;
+  padding: 1% 1.5%;
+}
+
+.siteorigin-panels-builder .so-rows-container{
+  padding: 20px 15px !important;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container{
+  margin-bottom: 2px !important;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container .so-cells .cell .widgets-container .so-widget{
+  border: 1px solid #E4EFF4 !important;
+  box-shadow: none  !important;
+  background: transparent !important;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container{
+  position: relative;
+}
+
+.so-row-toolbar{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 2;
+  margin-bottom: 0 !important;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container .so-cells .cell .widgets-container .so-widget .so-widget-wrapper{
+  overflow: visible !important;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container .so-cells .cell .widgets-container .so-widget .title .actions{
+  top: -5px !important;
+  right: -5px !important;
+  border-radius: 3px;
+}
+
+.siteorigin-panels-builder .so-rows-container:hover .so-row-toolbar:hover{
+  z-index: 4;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container .so-cells{
+  z-index: 3;
+}
+
+.siteorigin-panels-builder .so-rows-container .so-row-container .so-cells:hover{
+  z-index: 1;
+}

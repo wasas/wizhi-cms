@@ -30,29 +30,29 @@ if (!function_exists('wizhi_pagination')):
 		}
 
 		if (1 != $pages) {
-			echo '<ul class="wizhi-paginator"><li><span class="wizhi-button">页 ' . $paged . ' / ' . $pages . '</span></li>';
+			echo '<ul class="ui-paginator"><li><span class="pure-button">页 ' . $paged . ' / ' . $pages . '</span></li>';
 			if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
-				echo '<li><a class="wizhi-button prev" href="' . get_pagenum_link(1) . '">首页</a></li>';
+				echo '<li><a class="pure-button prev" href="' . get_pagenum_link(1) . '">首页</a></li>';
 			}
 			if ($paged > 1 && $showitems < $pages) {
-				echo '<li><a class="wizhi-button next" href="' . get_pagenum_link($paged - 1) . '"> < </a></li>';
+				echo '<li><a class="pure-button next" href="' . get_pagenum_link($paged - 1) . '"> < </a></li>';
 			}
 
 			for ($i = 1; $i <= $pages; $i++) {
 				if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
 					if ($paged == $i) {
-						echo '<li><span class="wizhi-button wizhi-button-active">' . $i . '</span></li>';
+						echo '<li><span class="pure-button pure-button-active">' . $i . '</span></li>';
 					} else {
-						echo '<li><a class="wizhi-button inactive" href="' . get_pagenum_link($i) . '">' . $i . '</a></li>';
+						echo '<li><a class="pure-button inactive" href="' . get_pagenum_link($i) . '">' . $i . '</a></li>';
 					}
 				}
 			}
 
 			if ($paged < $pages) {
-				echo '<li><a class="wizhi-button next" href="' . get_pagenum_link($paged + 1) . '">></a></li>';
+				echo '<li><a class="pure-button next" href="' . get_pagenum_link($paged + 1) . '">></a></li>';
 			}
 			if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages) {
-				echo '<a class="wizhi-button" href="' . get_pagenum_link($pages) . '">尾页</a>';
+				echo '<a class="pure-button" href="' . get_pagenum_link($pages) . '">尾页</a>';
 			}
 			echo '</ul>';
 		}

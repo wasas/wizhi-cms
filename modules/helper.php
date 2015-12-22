@@ -24,6 +24,21 @@ if (!function_exists('post_is_in_descendant_category')) {
 
 }
 
+/**
+ * 反向转换slug为正常的字符串
+ * 
+ * @return [type] [description]
+ */
+function wizhi_unslug($slug=null) {
+
+	if (!$slug) {
+		$post_data = get_post($post->ID, ARRAY_A);
+    	$slug = $post_data['post_name'];
+	}
+    
+    return ucwords( str_replace("-", " ", $slug) );
+}
+
 
 /**
  * 根据长宽参数，实时缩放图片

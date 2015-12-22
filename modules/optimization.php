@@ -25,7 +25,7 @@ function wizhi_cms_remove_open_sans() {
 
 
 /**
- * 移除前段的dashicons字体
+ * 移除前端的dashicons字体
  */
 add_action('init', 'wizhi_cms_remove_dashicons');
 function wizhi_cms_remove_dashicons() {
