@@ -117,7 +117,11 @@
     add_shortcode('button', 'wizhi_shortcode_button');
 
 
-    /* 获取某个页面的内容 */
+    /* 根据自定义分类显示文章
+     * 输出标题文章列表时实现，默认带标题
+     * 使用方法：[wizhi_loop id="1" count="200" thumbs="thumbnail" more="true"]
+     * todo：可以实现更多的参数控制
+    */
 
     if (!function_exists('wizhi_shortcode_page_cont')) {
         function wizhi_shortcode_page_cont($atts) {
@@ -598,9 +602,9 @@
                         $feat_image_url = wp_get_attachment_url(get_post_thumbnail_id());
                     }
 
-                    $retour .= '<li class="bx-item" style="background-image:url(' . $feat_image_url . ');">';
+                    $retour .= '<li class="bx-item" style="background-size: contain; background-image:url(' . $feat_image_url . ');">';
                     $retour .= '<a target="_blank" class="item-' . $tax . ' " href="' . $cus_links . '" title="' . get_the_title() . '">';
-                    $retour .= '<img src="' . get_template_directory_uri() . '/front/dist/images/holder.png">';
+                    $retour .= '<img src="' . get_template_directory_uri() . '/front/dist/images/holder.png" alt="Slider Holder">';
                     $retour .= '</a>';
                     $retour .= '</li>';
 
@@ -654,7 +658,7 @@
                         $('#bxslider-<?php echo $id ?>').bxSlider({
                             mode: 'fade',
                             captions: true,
-                            auto: <?php echo $options["auto"] ?>,
+                            auto: <?php echo $options["auto"] ?>
                         });
                     });
                 </script>
@@ -670,7 +674,7 @@
                             slideMargin: <?php echo $options["slidemargin"] ?>,
                             infiniteLoop: true,
                             hideControlOnEnd: true,
-                            auto: <?php echo $options["auto"] ?>,
+                            auto: <?php echo $options["auto"] ?>
                         });
                     });
                 </script>

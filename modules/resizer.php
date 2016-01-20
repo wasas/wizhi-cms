@@ -19,7 +19,7 @@
  * @uses  image_resize_dimensions()
  * @uses  wp_get_image_editor()
  *
- * @return str|array
+ * @return string|array
  */
 
 if(!class_exists('Aq_Resize')) {

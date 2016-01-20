@@ -91,6 +91,7 @@ if ( !function_exists ("wizhi_create_taxs") ) {
     		'show_admin_column' => true,
     		'query_var'         => true,
     		'rewrite'           => array( 'slug' => $tax_slug ),
+            'sort'              => true
     	);
 
     	register_taxonomy( $tax_slug, array( $hook_type ), $args_tax );

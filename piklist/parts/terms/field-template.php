@@ -5,7 +5,7 @@ Taxonomy: category
 Order: 0
 */
 
-$template = array_flip(get_page_templates());
+$template = wizhi_get_taxonomy_templates();
 
 piklist(
 	'field',

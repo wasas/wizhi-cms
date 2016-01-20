@@ -13,7 +13,7 @@
 if (!function_exists('wizhi_pagination')):
 
 	// pure分页导航
-	function wizhi_pagination($pages = '', $range = 5) {
+	function wizhi_pagination($query='', $pages = '', $range = 5) {
 		$showitems = ($range * 2) + 1;
 
 		global $paged;
@@ -21,9 +21,15 @@ if (!function_exists('wizhi_pagination')):
 			$paged = 1;
 		}
 
-		if ($pages == '') {
+		if(!$query){
 			global $wp_query;
-			$pages = $wp_query->max_num_pages;
+			$wizhi_query = $wp_query;
+		} else {
+			$wizhi_query = $query;
+		}
+
+		if ($pages == '') {
+			$pages = $wizhi_query->max_num_pages;
 			if (!$pages) {
 				$pages = 1;
 			}
@@ -63,7 +69,7 @@ endif;
 //bootstrap 分页导航
 if (!function_exists('wizhi_bootstrap_pagination')):
 
-	function wizhi_bootstrap_pagination($pages = '', $range = 5) {
+	function wizhi_bootstrap_pagination($query='', $pages = '', $range = 5) {
 		$showitems = ($range * 2) + 1;
 
 		global $paged;
@@ -71,9 +77,15 @@ if (!function_exists('wizhi_bootstrap_pagination')):
 			$paged = 1;
 		}
 
-		if ($pages == '') {
+		if(!$query){
 			global $wp_query;
-			$pages = $wp_query->max_num_pages;
+			$wizhi_query = $wp_query;
+		} else {
+			$wizhi_query = $query;
+		}
+
+		if ($pages == '') {
+			$pages = $wizhi_query->max_num_pages;
 			if (!$pages) {
 				$pages = 1;
 			}
