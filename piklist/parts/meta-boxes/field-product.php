@@ -6,18 +6,16 @@ Order: 0
 Collapse: false
 */
 
-piklist(
-	'field',
-	array(
-		'type'        => 'file',
-		'field'       => 'pro_home',
-		'scope'       => 'post_meta',
-		'description' => __('首页用，大图为470*470px，小图为230*230px', 'piklist'),
-		'options'     => array(
-			'modal_title' => __('添加图片', 'piklist'),
-			'button'      => __('添加', 'piklist')
-		)
-	));
+piklist( 'field', [
+        'type'        => 'file',
+        'field'       => 'pro_home',
+        'scope'       => 'post_meta',
+        'description' => __( '首页用，大图为470*470px，小图为230*230px', 'piklist' ),
+        'options'     => [
+            'modal_title' => __( '添加图片', 'piklist' ),
+            'button'      => __( '添加', 'piklist' ),
+        ],
+    ] );
 
 
 ?>

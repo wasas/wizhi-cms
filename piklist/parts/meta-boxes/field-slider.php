@@ -6,30 +6,25 @@ Order: 0
 Collapse: false
 */
 
-piklist(
-	'field',
-	array(
-		'type'       => 'text',
-		'field'      => 'cus_links',
-		'label'      => '链接地址',
-		'attributes' => array(
-			'class' => 'regular-text'
-		)
-	)
-);
+piklist( 'field', [
+        'type'       => 'text',
+        'field'      => 'cus_links',
+        'label'      => '链接地址',
+        'attributes' => [
+            'class' => 'regular-text',
+        ],
+    ] );
 
-piklist(
-	'field',
-	array(
-		'type'       => 'checkbox',
-		'field'      => 'nofollow',
-		'value'      => '',
-		'attributes' => array(
-			'class' => 'text'
-		),
-		'choices'    => array(
-			'true' => 'Nofollow'
-		)
-	));
+piklist( 'field', [
+        'type'       => 'checkbox',
+        'field'      => 'nofollow',
+        'value'      => '',
+        'attributes' => [
+            'class' => 'text',
+        ],
+        'choices'    => [
+            'true' => 'Nofollow',
+        ],
+    ] );
 
 ?>

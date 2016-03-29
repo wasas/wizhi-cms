@@ -6,16 +6,14 @@ Order: 0
 Collapse: false
 */
 
-piklist(
-	'field',
-	array(
-		'type'    => 'file',
-		'field'   => 'pro_gallery',
-		'scope'   => 'post_meta',
-		'options' => array(
-			'modal_title' => __('添加图片', 'piklist'),
-			'button'      => __('添加', 'piklist')
-		)
-	));
+piklist( 'field', [
+        'type'    => 'file',
+        'field'   => 'pro_gallery',
+        'scope'   => 'post_meta',
+        'options' => [
+            'modal_title' => __( '添加图片', 'piklist' ),
+            'button'      => __( '添加', 'piklist' ),
+        ],
+    ] );
 
 ?>

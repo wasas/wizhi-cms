@@ -10,32 +10,32 @@
  */
 function wizhi_related( $type, $tax, $num, $tmp ) {
 
-	global $post;
-	$tags = wp_get_post_terms( $post->ID, $tax );
+    global $post;
+    $tags = wp_get_post_terms( $post->ID, $tax );
 
-	if ( $tags ) {
-		$tag_ids = array();
+    if( $tags ) {
+        $tag_ids = [ ];
 
-		foreach ( $tags as $tag ) {
-			$tag_ids[] = $tag->term_id;
-		}
+        foreach ( $tags as $tag ) {
+            $tag_ids[] = $tag->term_id;
+        }
 
-		$args = array(
-			'post_type'        => $type,
-			'tag__in'          => $tag_ids,
-			'post__not_in'     => array( $post->ID ),
-			'posts_per_page'   => $num,
-			'caller_get_posts' => 1
-		);
+        $args = [
+            'post_type'        => $type,
+            'tag__in'          => $tag_ids,
+            'post__not_in'     => [ $post->ID ],
+            'posts_per_page'   => $num,
+            'caller_get_posts' => 1,
+        ];
 
-		$related_query = new wp_query( $args );
+        $related_query = new wp_query( $args );
 
-		while ( $related_query->have_posts() ) : $related_query->the_post();
-			get_template_part( 'content', $tmp );
-		endwhile;
+        while ( $related_query->have_posts() ) : $related_query->the_post();
+            get_template_part( 'content', $tmp );
+        endwhile;
 
-	}
-	wp_reset_query();
+    }
+    wp_reset_query();
 }
 
 ?>

@@ -1,123 +1,133 @@
 <?php
 
 /**
- * Function files used by all Shortcode Template
- * These files are reusable and are used by many shortcake modules.
+ * 所有简码模板使用的功能函数, 这些功能是可重用的, 并且被很多简码重用
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if( !defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
- * Commonly-used variables stored here for better management.
+ * 经常的使用的参数保存为函数, 以便更方便管理和使用
  */
-
 function sandwich_functions_display_order() {
-	$output = array();
-	$output['author'] = __( '作者', 'pbsandwich' );
-	$output['date'] = __( '日期', 'pbsandwich' );
-	$output['title'] = __( '标题', 'pbsandwich' );
-	$output['rand'] = __( '随机', 'pbsandwich' );
-	return $output;
+    $output = [ ];
+    $output[ 'author' ] = __( '作者', 'pbsandwich' );
+    $output[ 'date' ] = __( '日期', 'pbsandwich' );
+    $output[ 'title' ] = __( '标题', 'pbsandwich' );
+    $output[ 'rand' ] = __( '随机', 'pbsandwich' );
+
+    return $output;
 }
 
+
+/**
+ * 经常的使用的参数保存为函数, 以便更方便管理和使用
+ */
 function sandwich_functions_display_dir() {
-	$output = array();
-	$output['ASC'] = __( '升序', 'pbsandwich' );
-	$output['DESC'] = __( '降序', 'pbsandwich' );
-	return $output;
+    $output = [ ];
+    $output[ 'ASC' ] = __( '升序', 'pbsandwich' );
+    $output[ 'DESC' ] = __( '降序', 'pbsandwich' );
+
+    return $output;
 }
 
-/**
- * Encodes the list of posts in a given post type into an array variable.
- * Choose between array, comma-separated string or slug.
- * To output the ID of the post beside the title (for coherence purposes, set $id to true in its arguments)
- */
 
+/**
+ * @param string $type 自定义文章类型别名
+ * @param string $id   文章 ID
+ *
+ * @return array 文章列表数组, ID 为键, 标题为值
+ */
 function sandwich_functions_posttype_list( $type = "forum", $id = "false" ) {
-	$args = array(
-		'post_type' => $type,
-		'posts_per_page' => '-1'
-	);
-	$loop = new WP_Query( $args );
-	
-	$output = array(
-		0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) )
-	);
-	
-	if ( $loop->have_posts() ) {
-		while ( $loop->have_posts() ) : $loop->the_post();
-			$fieldout = get_the_title();
-			if ( $id != "false" ) {
-				$fieldout .= " (" . get_the_ID() . ")";
-			}
-			$output[ get_the_ID() ] = $fieldout;
-		endwhile;
-	}
-	wp_reset_postdata();
+    $args = [
+        'post_type'      => $type,
+        'posts_per_page' => '-1',
+    ];
+    $loop = new WP_Query( $args );
 
-	return $output;
+    $output = [
+        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+    ];
+
+    if( $loop->have_posts() ) {
+        while ( $loop->have_posts() ) : $loop->the_post();
+            $fieldout = get_the_title();
+            if( $id != "false" ) {
+                $fieldout .= " (" . get_the_ID() . ")";
+            }
+            $output[ get_the_ID() ] = $fieldout;
+        endwhile;
+    }
+    wp_reset_postdata();
+
+    return $output;
 }
 
+
 /**
- * Retrieves a list of Taxonomies
- * Set type to tag to fetch tags. Any other values are treated as taxonomies.
+ * 获取分类法列表 设置为标签用来获取标签, 其他值被作为分类法对待
  */
-
 function sandwich_functions_taxonomy_list( $type = "taxonomy" ) {
-	$output = array(
-		0 => sprintf( '— %s —', __( 'Select', 'pbsandwich' ) )
-	);
-	foreach ( get_taxonomies() as $taxonomy ) {
-		$tax = get_taxonomy( $taxonomy );
-		if ( ( ! $tax->show_tagcloud || empty( $tax->labels->name ) ) && $type == "tag" ) {
-			continue;
-		}
-		$output[ esc_attr( $taxonomy ) ] = esc_attr( $tax->labels->name );
-	}
-	return $output;
+    $output = [
+        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+    ];
+    foreach ( get_taxonomies() as $taxonomy ) {
+        $tax = get_taxonomy( $taxonomy );
+        if( ( !$tax->show_tagcloud || empty( $tax->labels->name ) ) && $type == "tag" ) {
+            continue;
+        }
+        $output[ esc_attr( $taxonomy ) ] = esc_attr( $tax->labels->name );
+    }
+
+    return $output;
 }
-	
+
 
 /**
- * Encodes the list of terms in a given taxonomy into an array variable.
- * Choose between array, comma-separated string or slug.
+ * 编码指定的分类法中的分类项目为数组
+ *
+ * @param string $taxonomyName 分类法名称
+ *
+ * @return array
  */
 function sandwich_functions_term_list( $taxonomyName = 'post_tag' ) {
-	$terms = get_terms( $taxonomyName, array( 
-		'parent' => 0,
-		'hide_empty' => false,
-	) );
-	
-	$output = array(
-		0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) )
-	);
-	
-	if ( is_wp_error( $terms ) ) {
-		return $output;
-	}
+    $terms = get_terms( $taxonomyName, [
+        'parent'     => 0,
+        'hide_empty' => false,
+    ] );
 
-	foreach( $terms as $term ) {
-		
-		$output[ $term->slug ] = $term->name;
-		$term_children = get_term_children( $term->term_id, $taxonomyName );
-		
-		if ( is_wp_error( $term_children ) ) {
-			continue;
-		}
-		
-		foreach( $term_children as $term_child_id ) {
-			
-			$term_child = get_term_by( 'id', $term_child_id, $taxonomyName );
-			
-			if ( is_wp_error( $term_child ) ) {
-				continue;
-			}
-			
-			$output[ $term_child->slug ] = $term_child->name;
-		}
-		
-	}
-	
-	return $output;
+    $output = [
+        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+    ];
+
+    if( is_wp_error( $terms ) ) {
+        return $output;
+    }
+
+    foreach ( $terms as $term ) {
+
+        $output[ $term->slug ] = $term->name;
+        $term_children = get_term_children( $term->term_id, $taxonomyName );
+
+        if( is_wp_error( $term_children ) ) {
+            continue;
+        }
+
+        foreach ( $term_children as $term_child_id ) {
+
+            $term_child = get_term_by( 'id', $term_child_id, $taxonomyName );
+
+            if( is_wp_error( $term_child ) ) {
+                continue;
+            }
+
+            $output[ $term_child->slug ] = $term_child->name;
+        }
+
+    }
+
+    return $output;
 }

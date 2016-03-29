@@ -1741,7 +1741,7 @@
 }
 
 /**
- * These are our own css
+ * 插件自带的 CSS
  */
 /**
  * Button shortcode
@@ -1773,21 +1773,21 @@
 }
 
 /**
- * Float the columns
+ * 浮动分栏
  */
 .pbsandwich_column > div > div {
     float: left;
 }
 
 /**
- * Clear the columns
+ * 清除分栏
  */
 .pbsandwich_column {
     clear: both;
 }
 
 /**
- * Clear column floats
+ * 清除浮动
  */
 .pbsandwich_column:after {
     content: '';
@@ -1796,14 +1796,14 @@
 }
 
 /**
- * Default margin
+ * 默认外边距
  */
 .pbsandwich_column {
     margin-bottom: 20px;
 }
 
 /**
- * Responsive columns, shrink to a single column
+ * 自适应分栏
  */
 @media (max-width: 768px) {
     .pbsandwich_column > div > div {
@@ -1814,7 +1814,7 @@
 }
 
 /**
- * Column alignment
+ * 分栏对齐
  */
 .pbsandwich_column.pbs-align-left > .row > div, .pbsandwich_column.pbs-align-right > .row > div, .pbsandwich_column.pbs-align-center > .row > div {
     width: auto;
@@ -1876,7 +1876,7 @@
 }
 
 /**
- * Toggle shortcode
+ * Toggle 简码
  */
 .sandwich .toggle [data-toggle="collapse"] {
     display: block;
@@ -1900,7 +1900,7 @@
 }
 
 /**
- * Widget Titles
+ * 小工具标题
  */
 .sandwich.hide_title .widgettitle {
     display: none;
