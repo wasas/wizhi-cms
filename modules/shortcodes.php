@@ -212,7 +212,7 @@ if( !function_exists( 'wizhi_shortcode_loop' ) ) {
         $the_query = new WP_Query( $args );
 
         while ( $the_query->have_posts() ) : $the_query->the_post();
-	        wz_get_template_part( 'template-parts/content', $tp );
+	        wz_get_template_part( 'content', $tp );
         endwhile;
 
         wp_reset_postdata();

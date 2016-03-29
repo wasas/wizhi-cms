@@ -12,11 +12,6 @@ License URI:        http://opensource.org/licenses/MIT
 
 define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 
-// 获取插件路径
-function wizhi_plugin_path() {
-  return untrailingslashit( plugin_dir_path( __FILE__ ) );
-}
-
 // 快速添加文章类型和分类法
 require_once( WIZHI_CMS . 'modules/post_types.php' );
 
