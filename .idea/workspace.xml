@@ -2,160 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/amoslee.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/template-loader.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/images/guide-columns.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/images/guide-drag.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/images/welcome-extensions.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/uninstall.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/album-1-8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/album-1-9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/article-1-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/article-1-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/article-1-3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/customizer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/flexslider.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/jquery.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/main.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/modernizr.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/maps/editor-style.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/maps/main.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/resizer.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/bx_loader.gif" afterPath="$PROJECT_DIR$/assets/images/bx_loader.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/controls.png" afterPath="$PROJECT_DIR$/assets/images/controls.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.eot" afterPath="$PROJECT_DIR$/dist/fonts/iconfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.ttf" afterPath="$PROJECT_DIR$/dist/fonts/iconfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.woff" afterPath="$PROJECT_DIR$/dist/fonts/iconfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/bx_loader.gif" afterPath="$PROJECT_DIR$/dist/images/bx_loader.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/controls.png" afterPath="$PROJECT_DIR$/dist/images/controls.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/images/height.png" afterPath="$PROJECT_DIR$/dist/images/height.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.bowerrc" afterPath="$PROJECT_DIR$/.bowerrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wizhi-cms.iml" afterPath="$PROJECT_DIR$/.idea/wizhi-cms.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/content-photo_list.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/content-slider.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/bbpress.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/button.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/contact-form-7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/embed.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/events-manager.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/html5video-remote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/html5video.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/mailchimp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/ninja-forms.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/progressbar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/template-jetpack.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/template.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/toggle.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-archives.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-calendar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-categories.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-custom-menu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-meta.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-pages.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-comments.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-posts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-rss.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-search.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-tag-cloud.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/shortcodes.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.jscsrc" afterPath="$PROJECT_DIR$/.jscsrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.jshintrc" afterPath="$PROJECT_DIR$/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/manifest.json" afterPath="$PROJECT_DIR$/assets/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/scripts/main.js" afterPath="$PROJECT_DIR$/assets/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/scripts/plugins/jquery.scrollbox.js" afterPath="$PROJECT_DIR$/assets/scripts/plugins/jquery.scrollbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/_variables.less" afterPath="$PROJECT_DIR$/assets/styles/_variables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_box.less" afterPath="$PROJECT_DIR$/assets/styles/components/_box.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_bxslider.less" afterPath="$PROJECT_DIR$/assets/styles/components/_bxslider.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_helper.less" afterPath="$PROJECT_DIR$/assets/styles/components/_helper.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_list.less" afterPath="$PROJECT_DIR$/assets/styles/components/_list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_media.less" afterPath="$PROJECT_DIR$/assets/styles/components/_media.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_mixin.less" afterPath="$PROJECT_DIR$/assets/styles/components/_mixin.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_pure_addon.less" afterPath="$PROJECT_DIR$/assets/styles/components/_pure_addon.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_tab.less" afterPath="$PROJECT_DIR$/assets/styles/components/_tab.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/components/_typo.less" afterPath="$PROJECT_DIR$/assets/styles/components/_typo.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/main.less" afterPath="$PROJECT_DIR$/assets/styles/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/plugins/bxslider.less" afterPath="$PROJECT_DIR$/assets/styles/plugins/bxslider.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/base.less" afterPath="$PROJECT_DIR$/assets/styles/pure/base.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/buttons-core.less" afterPath="$PROJECT_DIR$/assets/styles/pure/buttons-core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/buttons.less" afterPath="$PROJECT_DIR$/assets/styles/pure/buttons.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/forms-responsive.less" afterPath="$PROJECT_DIR$/assets/styles/pure/forms-responsive.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/forms.less" afterPath="$PROJECT_DIR$/assets/styles/pure/forms.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/grid-old.less" afterPath="$PROJECT_DIR$/assets/styles/pure/grid-old.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/grid-responsive.less" afterPath="$PROJECT_DIR$/assets/styles/pure/grid-responsive.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/grid.less" afterPath="$PROJECT_DIR$/assets/styles/pure/grid.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-core.less" afterPath="$PROJECT_DIR$/assets/styles/pure/menus-core.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-dropdown.less" afterPath="$PROJECT_DIR$/assets/styles/pure/menus-dropdown.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-horizontal.less" afterPath="$PROJECT_DIR$/assets/styles/pure/menus-horizontal.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-scrollable.less" afterPath="$PROJECT_DIR$/assets/styles/pure/menus-scrollable.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-skin.less" afterPath="$PROJECT_DIR$/assets/styles/pure/menus-skin.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/reset.less" afterPath="$PROJECT_DIR$/assets/styles/pure/reset.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/styles/pure/tables.less" afterPath="$PROJECT_DIR$/assets/styles/pure/tables.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/builder.php" afterPath="$PROJECT_DIR$/builder/builder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/css/frontend.css" afterPath="$PROJECT_DIR$/builder/css/frontend.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/inc/simple_html_dom.php" afterPath="$PROJECT_DIR$/builder/inc/simple_html_dom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/js/min/admin-min.js" afterPath="$PROJECT_DIR$/builder/js/min/admin-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/js/min/editor-min.js" afterPath="$PROJECT_DIR$/builder/js/min/editor-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/js/min/frontend-min.js" afterPath="$PROJECT_DIR$/builder/js/min/frontend-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/columns.php" afterPath="$PROJECT_DIR$/builder/lib/columns.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/functions.php" afterPath="$PROJECT_DIR$/builder/lib/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/bbpress.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/bbpress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/button.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/button.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/contact-form-7.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/contact-form-7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/embed.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/embed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/events-manager.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/events-manager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/html5video-remote.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/html5video-remote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/html5video.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/html5video.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/mailchimp.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/mailchimp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/ninja-forms.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/ninja-forms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/progressbar.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/progressbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/template-jetpack.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/template-jetpack.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/template.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/toggle.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/toggle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-archives.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-archives.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-calendar.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-calendar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-categories.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-custom-menu.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-custom-menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-meta.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-meta.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-pages.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-comments.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-comments.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-posts.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-recent-posts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-rss.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-rss.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-search.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/shortcode/widget-tag-cloud.php" afterPath="$PROJECT_DIR$/builder/lib/shortcode/widget-tag-cloud.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-change-modal.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-change-modal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-custom-modal-description.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-custom-modal-description.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-row-backgrounds.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-row-backgrounds.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-row-edit-modal.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-row-edit-modal.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/templates/column-toolbar.php" afterPath="$PROJECT_DIR$/builder/lib/templates/column-toolbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/toolbar.php" afterPath="$PROJECT_DIR$/builder/lib/toolbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.svg" afterPath="$PROJECT_DIR$/dist/fonts/iconfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/customizer.js" afterPath="$PROJECT_DIR$/dist/scripts/customizer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/flexslider.js" afterPath="$PROJECT_DIR$/dist/scripts/flexslider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/html5shiv.js" afterPath="$PROJECT_DIR$/dist/scripts/html5shiv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/jquery.js" afterPath="$PROJECT_DIR$/dist/scripts/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/main.js" afterPath="$PROJECT_DIR$/dist/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/maps/html5shiv.js.map" afterPath="$PROJECT_DIR$/dist/scripts/maps/html5shiv.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/maps/snap.js.map" afterPath="$PROJECT_DIR$/dist/scripts/maps/snap.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/modernizr.js" afterPath="$PROJECT_DIR$/dist/scripts/modernizr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/scripts/snap.js" afterPath="$PROJECT_DIR$/dist/scripts/snap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/editor-style.css" afterPath="$PROJECT_DIR$/dist/styles/editor-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/main.css" afterPath="$PROJECT_DIR$/dist/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/maps/old.css.map" afterPath="$PROJECT_DIR$/dist/styles/maps/old.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/styles/old.css" afterPath="$PROJECT_DIR$/dist/styles/old.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/filters.php" afterPath="$PROJECT_DIR$/modules/filters.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/helper.php" afterPath="$PROJECT_DIR$/modules/helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/optimization.php" afterPath="$PROJECT_DIR$/modules/optimization.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/pagination.php" afterPath="$PROJECT_DIR$/modules/pagination.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/post_types.php" afterPath="$PROJECT_DIR$/modules/post_types.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/related.php" afterPath="$PROJECT_DIR$/modules/related.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/shortcodes-ui.php" afterPath="$PROJECT_DIR$/modules/shortcodes-ui.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/shortcodes.php" afterPath="$PROJECT_DIR$/modules/shortcodes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/walker.php" afterPath="$PROJECT_DIR$/modules/walker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/assets/piklist-admin.css" afterPath="$PROJECT_DIR$/piklist/assets/piklist-admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/functions.php" afterPath="$PROJECT_DIR$/piklist/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-excerpt.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-excerpt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-gallery.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-gallery.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-group-more.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-group-more.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-product.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-slider.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-slider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-taxonomy.php" afterPath="$PROJECT_DIR$/piklist/parts/meta-boxes/field-taxonomy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/common.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/footer.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/frontend.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/frontend.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/functions.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/service.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/service.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/sidebar.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/sidebar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/settings/types.php" afterPath="$PROJECT_DIR$/piklist/parts/settings/types.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/piklist/parts/terms/field-template.php" afterPath="$PROJECT_DIR$/piklist/parts/terms/field-template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wizhi-cms.php" afterPath="$PROJECT_DIR$/wizhi-cms.php" />
     </list>
     <ignored path="wizhi-cms.iws" />
@@ -177,54 +56,12 @@
     <favorites_list name="wizhi-cms" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="helper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/helper.php">
+    <leaf>
+      <file leaf-file-name="_variables.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/styles/_variables.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-165.625">
-              <caret line="265" column="5" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shortcodes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/shortcodes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.791666">
-              <caret line="217" column="28" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="28" />
-              <folding>
-                <element signature="e#6#53#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template-loader.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40677965">
-              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wizhi-cms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wizhi-cms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -241,15 +78,22 @@
         <option value="$PROJECT_DIR$/modules/resizer.php" />
         <option value="$PROJECT_DIR$/piklist/parts/terms/field-template.php" />
         <option value="$PROJECT_DIR$/builder/css/frontend.css" />
-        <option value="$PROJECT_DIR$/builder/builder.php" />
         <option value="$PROJECT_DIR$/builder/lib/columns.php" />
         <option value="$PROJECT_DIR$/builder/lib/toolbar.php" />
         <option value="$PROJECT_DIR$/builder/lib/functions.php" />
         <option value="$PROJECT_DIR$/modules/helper.php" />
         <option value="$PROJECT_DIR$/inc/class-gamajo-template-loader.php" />
+        <option value="$PROJECT_DIR$/inc/template-loader.php" />
+        <option value="$PROJECT_DIR$/templates/content-title_list.php" />
+        <option value="$PROJECT_DIR$/templates/content-photo_list.php" />
+        <option value="$PROJECT_DIR$/templates/content-slider.php" />
         <option value="$PROJECT_DIR$/modules/shortcodes.php" />
         <option value="$PROJECT_DIR$/wizhi-cms.php" />
-        <option value="$PROJECT_DIR$/inc/template-loader.php" />
+        <option value="$PROJECT_DIR$/modules/post_types.php" />
+        <option value="$PROJECT_DIR$/modules/shortcodes-ui.php" />
+        <option value="$PROJECT_DIR$/modules/walker.php" />
+        <option value="$PROJECT_DIR$/builder/builder.php" />
+        <option value="$PROJECT_DIR$/builder/lib/templates/column-toolbar.php" />
       </list>
     </option>
   </component>
@@ -317,6 +161,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -337,7 +182,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,10 +192,11 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inc" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/inc" />
     </key>
   </component>
@@ -399,28 +244,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="23" width="1350" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="50" y="23" width="1350" height="1027" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17584097" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18501529" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -436,14 +281,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -455,7 +292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -487,129 +323,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.070866145">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/related.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.062992126">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes-ui.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.094488">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/walker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14173229">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-change-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-custom-modal-description.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-backgrounds.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/embed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.666666">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/toggle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/widget-recent-posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="28.541666">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/widget-rss.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/widget-search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/widget-tag-cloud.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="26.666666">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/widget-recent-comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9133858">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/builder/inc/simple_html_dom.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.07874">
           <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-edit-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.031496">
-          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -634,13 +351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-toolbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39473686">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/builder/js/min/frontend-min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.0500758">
@@ -662,93 +372,219 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/template.php">
+    <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2913387">
-          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.45762712">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/builder.php">
+    <entry file="file://$PROJECT_DIR$/templates/content-title_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-110.625">
-          <caret line="183" column="27" selection-start-line="183" selection-start-column="27" selection-end-line="183" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/columns.php">
+    <entry file="file://$PROJECT_DIR$/templates/content-photo_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6614175">
-          <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/functions.php">
+    <entry file="file://$PROJECT_DIR$/templates/content-slider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.11023622">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/toolbar.php">
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.32283464">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2992126">
-          <caret line="111" column="12" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/shortcode/bbpress.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2440944">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/helper.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-165.625">
-          <caret line="265" column="5" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes.php">
+    <entry file="file://$PROJECT_DIR$/.jscsrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.791666">
-          <caret line="217" column="28" selection-start-line="217" selection-start-column="28" selection-end-line="217" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#53#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5">
+        <state vertical-scroll-proportion="-0.45762712">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wizhi-cms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/optimization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/related.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47457626">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/shortcodes-ui.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2881356">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/post_types.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3220339">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.4745765">
+          <caret line="264" column="5" selection-start-line="264" selection-start-column="5" selection-end-line="264" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/walker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9322034">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06779661">
+          <caret line="111" column="12" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-toolbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40677965">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.37288135">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-edit-modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5084746">
+          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-backgrounds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-change-modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27118644">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-custom-modal-description.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/columns.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7118645">
+          <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3220339">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#7#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/builder/lib/toolbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.050847456">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/styles/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/styles/_variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

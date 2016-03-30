@@ -25,7 +25,8 @@ require_once( WIZHI_CMS . 'builder/builder.php' );
 require_once( WIZHI_CMS . 'modules/pagination.php' );
 
 // 常用简码
-require_once( WIZHI_CMS . 'modules/shortcodes.php' );
+require_once( WIZHI_CMS . 'modules/shortcodes/loop.php' );
+require_once( WIZHI_CMS . 'modules/shortcodes/element.php' );
 require_once( WIZHI_CMS . 'modules/shortcodes-ui.php' );
 
 // 过滤菜单和分类列表HTML
@@ -50,20 +51,20 @@ require_once( WIZHI_CMS . 'settings.php' );
 $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
 
 //加载 CSS 和 JS
-if( $wizhi_use_cms_front ) {
-    add_action( 'wp_enqueue_scripts', 'wizhi_zui_scripts' );
-    add_action( 'wp_enqueue_scripts', 'wizhi_zui_style' );
+if ( $wizhi_use_cms_front ) {
+	add_action( 'wp_enqueue_scripts', 'wizhi_zui_scripts' );
+	add_action( 'wp_enqueue_scripts', 'wizhi_zui_style' );
 }
 
 // 加载CSS
 function wizhi_zui_style() {
-    wp_register_style( 'wizhi-style', plugins_url( 'dist/styles/main.css', __FILE__ ) );
-    wp_enqueue_style( 'wizhi-style' );
+	wp_register_style( 'wizhi-style', plugins_url( 'dist/styles/main.css', __FILE__ ) );
+	wp_enqueue_style( 'wizhi-style' );
 }
 
 // 加载JS
 function wizhi_zui_scripts() {
-    wp_register_script( 'plugin_script', plugins_url( '/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
-    wp_enqueue_script( 'plugin_script' );
+	wp_register_script( 'plugin_script', plugins_url( '/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
+	wp_enqueue_script( 'plugin_script' );
 }
 
