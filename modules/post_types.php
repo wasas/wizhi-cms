@@ -33,9 +33,9 @@ if( !function_exists( "wizhi_create_types" ) ) {
         //注册文章类型需要的参数
         $args_type = [
             'labels'             => $labels_type,
-            'public'             => $is_publish,
-            'publicly_queryable' => $is_publish,
-            'show_ui'            => $is_publish,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
             'show_in_menu'       => $is_publish,
             'query_var'          => true,
             'rewrite'            => [ 'slug' => $slug ],
