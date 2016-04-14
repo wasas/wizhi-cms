@@ -31,7 +31,7 @@ function wizhi_related( $type, $tax, $num, $tmp ) {
         $related_query = new wp_query( $args );
 
         while ( $related_query->have_posts() ) : $related_query->the_post();
-            get_template_part( 'content', $tmp );
+            wz_get_template_part( 'content', $tmp );
         endwhile;
 
     }
