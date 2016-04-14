@@ -23,29 +23,24 @@ if ( ! function_exists( 'wizhi_shortcode_page_cont' ) ) {
 		$page = get_post( $id );
 
 		// 输出
-		$retour = '';
-
-		$retour .= '<a target="_blank" href="' . get_page_link( $id ) . '">';
-		$retour .= get_the_post_thumbnail( $id, $thumbs );
-		$retour .= '</a>';
+		echo '<a target="_blank" href="' . get_page_link( $id ) . '">';
+		echo get_the_post_thumbnail( $id, $thumbs );
+		echo '</a>';
 
 		if ( $cont == 0 ) {
-			$retour .= $page->post_content;
+			echo $page->post_content;
 		} else {
-			$retour .= wp_trim_words( $page->post_content, $cont, "..." );
+			echo wp_trim_words( $page->post_content, $cont, "..." );
 		}
 
 		if ( $more == true ) {
-			$retour .= '<a target="_blank" href="' . get_page_link( $id ) . '">更多>></a>';
+			echo '<a target="_blank" href="' . get_page_link( $id ) . '">更多>></a>';
 		} else {
-			$retour .= '';
+			echo '';
 		}
 
 		wp_reset_postdata();
 		wp_reset_query();
-
-		return $retour;
-
 	}
 }
 add_shortcode( 'page_cont', 'wizhi_shortcode_page_cont' );
@@ -165,36 +160,33 @@ if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 		global $post;
 		$the_query = new WP_Query( $args );
 
-		$retour = '';
 		if ( $heading == false || empty( $tax ) ) {
-			$retour .= '<div class="ui-list-' . $type . $tag . '">';
-			$retour .= '<ul class="ui-list">';
+			echo '<div class="ui-list-' . $type . $tag . '">';
+			echo '<ul class="ui-list">';
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 				wz_get_template_part( 'content', 'title_list' );
 			endwhile;
 
-			$retour .= '</ul>';
-			$retour .= '</div>';
+			echo '</ul>';
+			echo '</div>';
 		} else {
-			$retour .= '<div class="ui-box ' . $type . $tag . '">';
-			$retour .= '<div class="ui-box-head">';
-			$retour .= '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
-			$retour .= '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
-			$retour .= '</div>';
-			$retour .= '<div class="ui-box-container"><ul class="ui-list ui-list-' . $tag . '">';
+			echo '<div class="ui-box ' . $type . $tag . '">';
+			echo '<div class="ui-box-head">';
+			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
+			echo '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
+			echo '</div>';
+			echo '<div class="ui-box-container"><ul class="ui-list ui-list-' . $tag . '">';
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 				wz_get_template_part( 'content', 'title_list' );
 			endwhile;
 
-			$retour .= '</ul></div></div>';
+			echo '</ul></div></div>';
 		}
 
 		wp_reset_postdata();
 		wp_reset_query();
-
-		return $retour;
 
 	}
 }
@@ -254,44 +246,41 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 		// 输出
 		global $post;
 		$wp_query = new WP_Query( $args );
-		$retour   = '';
 
 		if ( $heading == false || empty( $tax ) ) {
-			$retour .= '<div class="medias media-' . $type . $tag . '">';
+			echo '<div class="medias media-' . $type . $tag . '">';
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
 				wz_get_template_part( 'content', 'title_list' );
 
 			endwhile;
-			$retour .= '</div>';
+			echo '</div>';
 
 		} else {
-			$retour .= '<div class="ui-box ' . $type . $tag . '">';
-			$retour .= '<div class="ui-box-head">';
-			$retour .= '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
-			$retour .= '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
-			$retour .= '</div>';
-			$retour .= '<div class="ui-box-container">';
-			$retour .= '<div class="ui-box-content">';
+			echo '<div class="ui-box ' . $type . $tag . '">';
+			echo '<div class="ui-box-head">';
+			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
+			echo '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
+			echo '</div>';
+			echo '<div class="ui-box-container">';
+			echo '<div class="ui-box-content">';
 
-			$retour .= '<div class="medias media-' . $tag . '">';
+			echo '<div class="medias media-' . $tag . '">';
 
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 				wz_get_template_part( 'content', 'title_list' );
 			endwhile;
 
-			$retour .= '</div>';
+			echo '</div>';
 
-			$retour .= '</div>';
-			$retour .= '</div>';
-			$retour .= '</div>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
 
 		}
 
 		wp_reset_postdata();
 		wp_reset_query();
-
-		return $retour;
 
 	}
 }
@@ -368,21 +357,19 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 		global $post;
 		$wp_query = new WP_Query( $args );
 
-		$retour = '<div class="bx-box">';
-		$retour .= '<ul class="bxslider" id="bxslider-' . $id . '">';
+		echo '<div class="bx-box">';
+		echo '<ul class="bxslider" id="bxslider-' . $id . '">';
 
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();
 			wz_get_template_part( 'content', 'slider' );
 		endwhile;
 
-		$retour .= '</ul></div>';
+		echo '</ul></div>';
 
 		wizhi_slider_js( $id, $options );
 
 		wp_reset_postdata();
 		wp_reset_query();
-
-		return $retour;
 
 	}
 }
