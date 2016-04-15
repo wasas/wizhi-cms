@@ -1,34 +1,5 @@
 <?php
 
-
-/**
- * 替换 gravatar服务器为多说的服务器
- */
-add_filter( 'get_avatar', 'wizhi_cms_get_avatar', 10, 3 );
-function wizhi_cms_get_avatar( $avatar ) {
-
-    $avatar = str_replace( [
-        "www.gravatar.com",
-        "0.gravatar.com",
-        "1.gravatar.com",
-        "2.gravatar.com",
-    ], "gravatar.duoshuo.com", $avatar );
-
-    return $avatar;
-}
-
-
-/**
- * 移除Google字体
- */
-add_action( 'init', 'wizhi_cms_remove_open_sans' );
-function wizhi_cms_remove_open_sans() {
-    wp_deregister_style( 'open-sans' );
-    wp_register_style( 'open-sans', false );
-    wp_enqueue_style( 'open-sans', '' );
-}
-
-
 /**
  * 移除前端的dashicons字体
  */
