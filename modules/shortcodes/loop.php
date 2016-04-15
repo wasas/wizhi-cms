@@ -268,7 +268,7 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 			echo '<div class="medias media-' . $tag . '">';
 
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				wz_get_template_part( 'content', 'title_list' );
+				wz_get_template_part( 'content', 'photo_list' );
 			endwhile;
 
 			echo '</div>';
