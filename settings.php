@@ -1,80 +1,305 @@
 <?php
 
-add_action( 'admin_init', 'wizhi_cms_admin_init' );
-add_action( 'admin_menu', 'wizhi_cms_menu' );
-
-function wizhi_cms_menu() {
-    $page_hook_suffix = add_options_page( 'CMS设置', 'CMS设置', 'manage_options', 'wizhi-cms.php', 'wizhi_cms_management_page' );
-
-    add_action( 'admin_print_scripts-' . $page_hook_suffix, 'wizhi_cms_admin_scripts' );
-    add_action( 'admin_print_styles-' . $page_hook_suffix, 'wizhi_cms_admin_styles' );
-}
-
-// 加载js和样式
-function wizhi_cms_admin_init() {
-    wp_register_style( 'wizhi-cms-style', plugins_url( 'assets/style.css', __FILE__ ) );
-    wp_register_script( 'wizhi-cms-script', plugins_url( 'assets/script.js', __FILE__ ) );
-}
-
-// 挂载插件js
-function wizhi_cms_admin_scripts() {
-    wp_enqueue_script( 'wizhi-cms-script' );
-}
-
-// 挂载插件样式
-function wizhi_cms_admin_styles() {
-    wp_enqueue_style( 'wizhi-cms-style' );
-}
-
 /**
- * 添加验证页面到后台
+ * Wizhi CMS 插件设置
+ *
+ * @author Amos Lee
  */
-function wizhi_cms_management_page() {
+if ( ! class_exists( 'WeDevs_Settings_API_Test' ) ):
 
-    echo '<div class="wrap">';
-    echo '<h2>Wizhi CMS 插件设置</h2>';
+	class WeDevs_Settings_API_Test {
 
-    /*** 存设置选项到数据库 ***/
-    if( isset( $_POST[ 'save_filters' ] ) ) :
+		private $settings_api;
 
-        // 获取选项数据
-        $wizhi_use_cms_front = isset( $_POST[ "wizhi_use_cms_front" ] ) ? $_POST[ "wizhi_use_cms_front" ] : '';
+		function __construct() {
+			$this->settings_api = new WeDevs_Settings_API;
 
-        // 保存设置选项到数据库
-        update_option( 'wizhi_use_cms_front', $wizhi_use_cms_front );
+			add_action( 'admin_init', [ $this, 'admin_init' ] );
+			add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+		}
 
-        echo '<div class="updated"><p>恭喜！保存成功。</p></div>';
+		function admin_init() {
 
-    endif;
+			//set the settings
+			$this->settings_api->set_sections( $this->get_settings_sections() );
+			$this->settings_api->set_fields( $this->get_settings_fields() );
 
-    ?>
+			//initialize settings
+			$this->settings_api->admin_init();
+		}
 
-    <form action="" method="post">
+		function admin_menu() {
+			add_options_page( 'CMS 设置', 'CMS 设置', 'delete_posts', 'settings_api_test', [ $this, 'plugin_page' ] );
+		}
 
-        <table class="form-table">
+		function get_settings_sections() {
+			$sections = [
+				[
+					'id'    => 'wedevs_basics',
+					'title' => __( '常用设置', 'wizhi' ),
+				],
+				[
+					'id'    => 'wedevs_advanced',
+					'title' => __( '高级设置', 'wizhi' ),
+				],
+				[
+					'id'    => 'wedevs_others',
+					'title' => __( '其他设置', 'wizhi' ),
+				],
+			];
 
-            <tr>
-                <th scope="row"><label>内置前端样式</label></th>
-                <td>
-                    <label>
-                        <input type="checkbox" name="wizhi_use_cms_front"
-                               value="1" <?php echo ( get_option( 'wizhi_use_cms_front' ) ) ? 'checked' : ''; ?>>
-                        使用插件自带的CSS和JS
-                    </label> <br/>
-                </td>
-            </tr>
+			return $sections;
+		}
 
-        </table>
+		/**
+		 * 返回所有插件设置字段
+		 *
+		 * @return array 设置字段
+		 */
+		function get_settings_fields() {
+			$settings_fields = [
+				'wedevs_basics'   => [
+					[
+						'name'              => 'text_val',
+						'label'             => __( 'Text Input', 'wizhi' ),
+						'desc'              => __( 'Text input description', 'wizhi' ),
+						'type'              => 'text',
+						'default'           => 'Title',
+						'sanitize_callback' => 'intval',
+					],
+					[
+						'name'              => 'number_input',
+						'label'             => __( 'Number Input', 'wizhi' ),
+						'desc'              => __( 'Number field with validation callback `intval`', 'wizhi' ),
+						'type'              => 'number',
+						'default'           => 'Title',
+						'sanitize_callback' => 'intval',
+					],
+					[
+						'name'  => 'textarea',
+						'label' => __( 'Textarea Input', 'wizhi' ),
+						'desc'  => __( 'Textarea description', 'wizhi' ),
+						'type'  => 'textarea',
+					],
+					[
+						'name'  => 'wizhi_use_cms_front',
+						'label' => __( '加载前端文件', 'wizhi' ),
+						'desc'  => __( '选中加载插件自带的 CSS 和 JS 文件', 'wizhi' ),
+						'type'  => 'checkbox',
+					],
+					[
+						'name'    => 'radio',
+						'label'   => __( 'Radio Button', 'wizhi' ),
+						'desc'    => __( 'A radio button', 'wizhi' ),
+						'type'    => 'radio',
+						'options' => [
+							'yes' => 'Yes',
+							'no'  => 'No',
+						],
+					],
+					[
+						'name'    => 'multicheck',
+						'label'   => __( 'Multile checkbox', 'wizhi' ),
+						'desc'    => __( 'Multi checkbox description', 'wizhi' ),
+						'type'    => 'multicheck',
+						'options' => [
+							'one'   => 'One',
+							'two'   => 'Two',
+							'three' => 'Three',
+							'four'  => 'Four',
+						],
+					],
+					[
+						'name'    => 'selectbox',
+						'label'   => __( 'A Dropdown', 'wizhi' ),
+						'desc'    => __( 'Dropdown description', 'wizhi' ),
+						'type'    => 'select',
+						'default' => 'no',
+						'options' => [
+							'yes' => 'Yes',
+							'no'  => 'No',
+						],
+					],
+					[
+						'name'    => 'password',
+						'label'   => __( 'Password', 'wizhi' ),
+						'desc'    => __( 'Password description', 'wizhi' ),
+						'type'    => 'password',
+						'default' => '',
+					],
+					[
+						'name'    => 'file',
+						'label'   => __( 'File', 'wizhi' ),
+						'desc'    => __( 'File description', 'wizhi' ),
+						'type'    => 'file',
+						'default' => '',
+						'options' => [
+							'button_label' => 'Choose Image',
+						],
+					],
+				],
+				'wedevs_advanced' => [
+					[
+						'name'    => 'color',
+						'label'   => __( 'Color', 'wizhi' ),
+						'desc'    => __( 'Color description', 'wizhi' ),
+						'type'    => 'color',
+						'default' => '',
+					],
+					[
+						'name'    => 'password',
+						'label'   => __( 'Password', 'wizhi' ),
+						'desc'    => __( 'Password description', 'wizhi' ),
+						'type'    => 'password',
+						'default' => '',
+					],
+					[
+						'name'    => 'wysiwyg',
+						'label'   => __( 'Advanced Editor', 'wizhi' ),
+						'desc'    => __( 'WP_Editor description', 'wizhi' ),
+						'type'    => 'wysiwyg',
+						'default' => '',
+					],
+					[
+						'name'    => 'multicheck',
+						'label'   => __( 'Multile checkbox', 'wizhi' ),
+						'desc'    => __( 'Multi checkbox description', 'wizhi' ),
+						'type'    => 'multicheck',
+						'default' => [ 'one' => 'one', 'four' => 'four' ],
+						'options' => [
+							'one'   => 'One',
+							'two'   => 'Two',
+							'three' => 'Three',
+							'four'  => 'Four',
+						],
+					],
+					[
+						'name'    => 'selectbox',
+						'label'   => __( 'A Dropdown', 'wizhi' ),
+						'desc'    => __( 'Dropdown description', 'wizhi' ),
+						'type'    => 'select',
+						'options' => [
+							'yes' => 'Yes',
+							'no'  => 'No',
+						],
+					],
+					[
+						'name'    => 'password',
+						'label'   => __( 'Password', 'wizhi' ),
+						'desc'    => __( 'Password description', 'wizhi' ),
+						'type'    => 'password',
+						'default' => '',
+					],
+					[
+						'name'    => 'file',
+						'label'   => __( 'File', 'wizhi' ),
+						'desc'    => __( 'File description', 'wizhi' ),
+						'type'    => 'file',
+						'default' => '',
+					],
+				],
+				'wedevs_others'   => [
+					[
+						'name'    => 'text',
+						'label'   => __( 'Text Input', 'wizhi' ),
+						'desc'    => __( 'Text input description', 'wizhi' ),
+						'type'    => 'text',
+						'default' => 'Title',
+					],
+					[
+						'name'  => 'textarea',
+						'label' => __( 'Textarea Input', 'wizhi' ),
+						'desc'  => __( 'Textarea description', 'wizhi' ),
+						'type'  => 'textarea',
+					],
+					[
+						'name'  => 'checkbox',
+						'label' => __( 'Checkbox', 'wizhi' ),
+						'desc'  => __( 'Checkbox Label', 'wizhi' ),
+						'type'  => 'checkbox',
+					],
+					[
+						'name'    => 'radio',
+						'label'   => __( 'Radio Button', 'wizhi' ),
+						'desc'    => __( 'A radio button', 'wizhi' ),
+						'type'    => 'radio',
+						'options' => [
+							'yes' => 'Yes',
+							'no'  => 'No',
+						],
+					],
+					[
+						'name'    => 'multicheck',
+						'label'   => __( 'Multile checkbox', 'wizhi' ),
+						'desc'    => __( 'Multi checkbox description', 'wizhi' ),
+						'type'    => 'multicheck',
+						'options' => [
+							'one'   => 'One',
+							'two'   => 'Two',
+							'three' => 'Three',
+							'four'  => 'Four',
+						],
+					],
+					[
+						'name'    => 'selectbox',
+						'label'   => __( 'A Dropdown', 'wizhi' ),
+						'desc'    => __( 'Dropdown description', 'wizhi' ),
+						'type'    => 'select',
+						'options' => [
+							'yes' => 'Yes',
+							'no'  => 'No',
+						],
+					],
+					[
+						'name'    => 'password',
+						'label'   => __( 'Password', 'wizhi' ),
+						'desc'    => __( 'Password description', 'wizhi' ),
+						'type'    => 'password',
+						'default' => '',
+					],
+					[
+						'name'    => 'file',
+						'label'   => __( 'File', 'wizhi' ),
+						'desc'    => __( 'File description', 'wizhi' ),
+						'type'    => 'file',
+						'default' => '',
+					],
+				],
+			];
 
-        <p class="submit">
-            <input type="submit" name="save_filters" value="保存" class="button-primary"/>
-        </p>
+			return $settings_fields;
+		}
 
-    </form>
 
-    <?php
+		/**
+		 * 插件页面
+		 */
+		function plugin_page() {
+			echo '<div class="wrap">';
 
-    echo '</div>';
-}
+			$this->settings_api->show_navigation();
+			$this->settings_api->show_forms();
 
-?>
+			echo '</div>';
+		}
+
+		/**
+		 * 获取所有页面
+		 *
+		 * @return array 页面“ID->名称”键值对
+		 */
+		function get_pages() {
+			$pages         = get_pages();
+			$pages_options = [ ];
+			if ( $pages ) {
+				foreach ( $pages as $page ) {
+					$pages_options[ $page->ID ] = $page->post_title;
+				}
+			}
+
+			return $pages_options;
+		}
+
+	}
+
+endif;

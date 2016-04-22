@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * 给当前链接加 “active” 类
+ *
+ * @param $var   string 查询参数
+ * @param $value string 当前连接的查询值
+ *
+ * @return mixed string|bool 如果是当前链接, 返回“active” 字符串, 如果不是,返回 false
+ */
+function is_current_link( $var, $value, $default ) {
+	$query_value = isset( $_GET[ $var ] ) ? $_GET[ $var ] : $default;
+
+	if ( $query_value == $value ) {
+		return "active";
+	}
+
+	return false;
+}
+
+/**
  *  获取存档或文章标题作为页面标题使用
  *
  * @return array

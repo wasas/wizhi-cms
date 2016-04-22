@@ -15,8 +15,10 @@ define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 // 快速添加文章类型和分类法
 require_once( WIZHI_CMS . 'modules/post_types.php' );
 
-// 模板加载器
 require_once( WIZHI_CMS . 'inc/template-loader.php' );
+require_once( WIZHI_CMS . 'inc/ucenter.php' );
+require_once( WIZHI_CMS . 'inc/helper.php' );
+require_once( WIZHI_CMS . 'inc/class.settings-api.php' );
 
 // 添加页面分栏功能
 require_once( WIZHI_CMS . 'builder/builder.php' );
@@ -32,9 +34,6 @@ require_once( WIZHI_CMS . 'modules/shortcodes-ui.php' );
 // 过滤菜单和分类列表HTML
 require_once( WIZHI_CMS . 'modules/walker.php' );
 
-// 辅助函数
-require_once( WIZHI_CMS . 'modules/helper.php' );
-
 // 相关文章功能
 require_once( WIZHI_CMS . 'modules/related.php' );
 
@@ -49,6 +48,9 @@ require_once( WIZHI_CMS . 'settings.php' );
 
 // 获取插件设置值
 $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
+
+// 加载插件设置
+new WeDevs_Settings_API_Test();
 
 //加载 CSS 和 JS
 if ( $wizhi_use_cms_front ) {
