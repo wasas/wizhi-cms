@@ -1,14 +1,13 @@
 <?php
+// 显示简码 UI
+add_action( 'init', 'wizhi_shortcode_ui' );
+
 /**
- * Wizhi Shortcode UI by shortcacke
+ * 显示插件 UI, 基于 Shortcacke
  *
+ * @package backend
  */
-
-
-// 显示页面内容
-add_action( 'init', 'wizhi_shortcode_page_cont_ui' );
-
-function wizhi_shortcode_page_cont_ui() {
+function wizhi_shortcode_ui() {
 
 	// 检测 Shortcake 插件功能是否存在
 	if ( ! function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
@@ -401,82 +400,4 @@ function wizhi_shortcode_page_cont_ui() {
 		],
 	] );
 
-}
-
-
-// 带有结束标签的简码,比不带结束标签的多了一个inner_content
-add_action( 'register_shortcode_ui', 'shortcode_ui_dev_advanced_example' );
-
-
-function shortcode_ui_dev_advanced_example() {
-	/*
-	 * Define the Shortcode UI arguments.
-	 */
-	shortcode_ui_register_for_shortcode( 'shortcake_dev', [
-		'label'         => esc_html__( 'Shortcake Dev', 'shortcode-ui-example' ),
-		'listItemImage' => 'dashicons-editor-quote',
-
-		// 内容元素
-		'inner_content' => [
-			'label' => esc_html__( '引用', 'shortcode-ui-example' ),
-		],
-
-		'attrs' => [
-			[
-				'label'       => esc_html__( '附件', 'shortcode-ui-example' ),
-				'attr'        => 'attachment',
-				'type'        => 'attachment',
-				'libraryType' => [ 'image' ],
-				'addButton'   => esc_html__( '选择图像', 'shortcode-ui-example' ),
-				'frameTitle'  => esc_html__( '选择图像', 'shortcode-ui-example' ),
-			],
-			[
-				'label'  => esc_html__( '引用来源', 'shortcode-ui-example' ),
-				'attr'   => 'source',
-				'type'   => 'text',
-				'encode' => true,
-				'meta'   => [
-					'placeholder' => esc_html__( '从哪里引用的', 'shortcode-ui-example' ),
-					'data-test'   => 1,
-				],
-			],
-			[
-				'label'    => esc_html__( '选择页面', 'shortcode-ui-example' ),
-				'attr'     => 'page',
-				'type'     => 'post_select',
-				'query'    => [ 'post_type' => 'page' ],
-				'multiple' => true,
-			],
-			[
-				'label'  => esc_html__( '背景颜色', 'shortcode-ui-example' ),
-				'attr'   => 'background-color',
-				'type'   => 'color',
-				'encode' => true,
-				'meta'   => [
-					'placeholder' => esc_html__( '16进制颜色值', 'shortcode-ui-example' ),
-				],
-			],
-			[
-				'label'   => esc_html__( '对齐', 'shortcode-ui-example' ),
-				'attr'    => 'alignment',
-				'type'    => 'select',
-				'options' => [
-					''      => esc_html__( '浮动', 'shortcode-ui-example' ),
-					'left'  => esc_html__( '左对齐', 'shortcode-ui-example' ),
-					'right' => esc_html__( '右对齐', 'shortcode-ui-example' ),
-				],
-			],
-			[
-				'label' => esc_html__( '年份', 'shortcode-ui-example' ),
-				'attr'  => 'year',
-				'type'  => 'number',
-				'meta'  => [
-					'placeholder' => 'YYYY',
-					'min'         => '1990',
-					'max'         => date_i18n( 'Y' ),
-					'step'        => '1',
-				],
-			],
-		],
-	] );
 }

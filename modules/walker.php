@@ -2,6 +2,8 @@
 
 /**
  * 导航菜单适配 pure 菜单
+ *
+ * @package template
  */
 class Wizhi_Pure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
@@ -67,6 +69,8 @@ class Wizhi_Pure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 /**
 * 导航菜单适配 WordPress 导航菜单
+ *
+ * @package template
 */
 class wizhi_bootstrap_navwalker extends Walker_Nav_Menu {
 
@@ -267,6 +271,8 @@ class wizhi_bootstrap_navwalker extends Walker_Nav_Menu {
 
 /**
  * 分类列表适配Pure.css的菜单样式
+ *
+ * @package template
  */
 class Wizhi_Pure_Category_Walker extends Walker_Category {
 

@@ -12,6 +12,8 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	 * @param array   $support    文章类型支持的功能
 	 * @param boolean $is_publish 文章类型是否在前后台可见
 	 *
+	 * @package backend
+	 *
 	 * @usage wizhi_create_types( 'prod', '产品', [ 'title', 'editor', 'thumbnail' ], true );
 	 */
 	function wizhi_create_types( $slug, $name, $support, $is_publish ) {
@@ -68,6 +70,8 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 * @param string  $hook_type    关联到的文章类型的名称
 	 * @param string  $tax_name     分类法菜单名称
 	 * @param boolean $hierarchical 是否允许有父级分类
+	 *
+	 * @package backend
 	 *
 	 * @usage wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
 	 */

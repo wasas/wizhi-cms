@@ -13,11 +13,14 @@
 if ( ! function_exists( 'wizhi_pagination' ) ):
 
 	/**
-	 * pure.css 分页导航
+	 * Pure.css 分页导航
 	 *
 	 * @param string $query 需要分页的查询对象名称
 	 * @param string $pages 总页数
 	 * @param int    $range 每次显示的页数
+	 *
+	 * @package template
+	 * @access public
 	 *
 	 * @usage wizhi_pagination();
 	 *
@@ -83,6 +86,8 @@ if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
 	 * @param string $query 需要分页的查询对象名称
 	 * @param string $pages 总页数
 	 * @param int    $range 每次显示的页数
+	 *
+	 * @package template
 	 *
 	 * @usage wizhi_bootstrap_pagination();
 	 *

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Function wizhi_slug</title>
+	<title>Function wizhi_cms_rand_str</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -19,6 +19,21 @@
 				<h3>Packages</h3>
 			<ul>
 				<li>
+					<a href="package-backend.html">
+						backend					</a>
+
+						</li>
+				<li>
+					<a href="package-conditions.html">
+						conditions					</a>
+
+						</li>
+				<li>
+					<a href="package-front.html">
+						front					</a>
+
+						</li>
+				<li>
 					<a href="package-helper.html">
 						helper					</a>
 
@@ -29,34 +44,20 @@
 
 						</li>
 				<li>
-					<a href="package-PlaceLocalInclude.html">
-						PlaceLocalInclude					</a>
+					<a href="package-settings.html">
+						settings					</a>
 
 						</li>
 				<li>
-					<a href="package-wz.html">
-						wz<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="package-wz.get.html">
-						get<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="package-wz.get.template.html">
-						template<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="package-wz.get.template.part.html">
-						part					</a>
+					<a href="package-shortcode.html">
+						shortcode					</a>
 
 						</li>
-							</ul></li></ul></li></ul></li>
+				<li>
+					<a href="package-template.html">
+						template					</a>
+
+						</li>
 			</ul>
 		</div>
 
@@ -71,10 +72,9 @@
 
 			<h3>Functions</h3>
 			<ul>
-				<li><a href="function-is_current_link.html">is_current_link</a></li>
+				<li><a href="function-order_no.html">order_no</a></li>
+				<li class="active"><a href="function-wizhi_cms_rand_str.html">wizhi_cms_rand_str</a></li>
 				<li><a href="function-wizhi_get_taxonomy_templates.html">wizhi_get_taxonomy_templates</a></li>
-				<li><a href="function-wizhi_get_the_archive_title.html">wizhi_get_the_archive_title</a></li>
-				<li class="active"><a href="function-wizhi_slug.html">wizhi_slug</a></li>
 				<li><a href="function-wizhi_unslug.html">wizhi_unslug</a></li>
 			</ul>
 		</div>
@@ -108,29 +108,29 @@
 	</div>
 
 <div id="content" class="function">
-	<h1>Function wizhi_slug</h1>
+	<h1>Function wizhi_cms_rand_str</h1>
 
 
 	<div class="description">
-	<p>转换原文字符串为 slug</p>
+	<p>生成随机字符串</p>
 	</div>
 
 	<div class="info">
 		
 		<b>Package:</b> <a href="package-helper.html">helper</a><br>
 		<b>Located at</b>
-		<a href="source-function-wizhi_slug.html#159-176" title="Go to source code">
-			inc/helper.php
+		<a href="source-function-wizhi_cms_rand_str.html#26-48" title="Go to source code">
+			modules/optimization.php
 		</a><br>
 	</div>
 
 
 	<table class="summary" id="parameters">
 	<caption>Parameters summary</caption>
-	<tr id="$title">
-		<td class="name"><code></code></td>
-		<td class="value"><code><var>$title</var> = <span class="php-keyword1">null</span></code></td>
-		<td>分类id</td>
+	<tr id="$length">
+		<td class="name"><code>integer</code></td>
+		<td class="value"><code><var>$length</var></code></td>
+		<td>随机字符串长度</td>
 	</tr>
 	</table>
 
@@ -141,7 +141,7 @@
 			string
 		</code></td>
 		<td>
-			格式化后的网址字符串
+			string
 		</td>
 	</tr>
 	</table>
@@ -155,6 +155,6 @@
 </div>
 </div>
 <script src="resources/combined.js?cd021bc814832c24a7cec5319ea03335bfba1caf"></script>
-<script src="elementlist.js?a97ac6395454c2e46f6b8a9841b68626aac7a9e9"></script>
+<script src="elementlist.js?1a835bb088044fe51e79e56c5f17c671019658c0"></script>
 </body>
 </html>

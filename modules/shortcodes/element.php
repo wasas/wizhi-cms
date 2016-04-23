@@ -4,15 +4,18 @@
  * Wizhi CMS 插件使用的简码
  */
 
-/*-----------------------------------------------------------------------------------*/
-/* 显示分割线
-/*-----------------------------------------------------------------------------------*/
-
-/* 显示几种不同类型的分割线
- * 使用方法：<?php echo do_shortcode('[divider type="solid"]'); ?>
- */
-
 if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
+	/**
+	 * 显示几种不同类型的分割线
+	 *
+	 * @param $atts
+	 *
+	 * @package shortcode
+	 *
+	 * @usage [divider type="solid"]
+	 *
+	 * @return string 经简码格式化后的 HTML 字符串
+	 */
 	function wizhi_shortcode_divider( $atts ) {
 		$default = [
 			'type' => 'solid',
@@ -30,16 +33,18 @@ if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 add_shortcode( 'divider', 'wizhi_shortcode_divider' );
 
 
-/*-----------------------------------------------------------------------------------*/
-/* 显示不同类型的标题
-/*-----------------------------------------------------------------------------------*/
-
-/* 显示几种不同类型的分割线
- * 使用方法：<?php echo do_shortcode('[heading type="background" content="这是二级标题"]'); ?>
- */
-
-
 if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
+	/**
+	 * 显示几种不同类型的分割线
+	 *
+	 * @param $atts
+	 *
+	 * @package shortcode
+	 *
+	 * @usage [heading type="background" content="这是二级标题"]
+	 *
+	 * @return string 经简码格式化后的 HTML 字符串
+	 */
 	function wizhi_shortcode_heading( $atts ) {
 		$default = [
 			'type'    => 'background',
@@ -58,16 +63,18 @@ if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 add_shortcode( 'heading', 'wizhi_shortcode_heading' );
 
 
-/*-----------------------------------------------------------------------------------*/
-/* 显示提示消息
-/*-----------------------------------------------------------------------------------*/
-
-/* 显示几种不同类型的提示消息
- * 使用方法：<?php echo do_shortcode('[alert type="success" content="这是提示信息"]'); ?>
- */
-
-
 if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
+	/**
+	 * 显示几种不同类型的分割线
+	 *
+	 * @param $atts
+	 *
+	 * @package shortcode
+	 *
+	 * @usage [alert type="success" content="这是提示信息"]
+	 *
+	 * @return string 经简码格式化后的 HTML 字符串
+	 */
 	function wizhi_shortcode_alert( $atts ) {
 		$default = [
 			'type'    => 'info',
@@ -86,16 +93,18 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 add_shortcode( 'alert', 'wizhi_shortcode_alert' );
 
 
-/*-----------------------------------------------------------------------------------*/
-/* 显示链接按钮
-/*-----------------------------------------------------------------------------------*/
-
-/* 显示几种不同类型的分割线
- * 使用方法：<?php echo do_shortcode('[button type="success" size='' text="这是链接" url="http://www.baidu.com"]'); ?>
- */
-
-
 if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
+	/**
+	 * 显示链接按钮
+	 *
+	 * @param $atts
+	 *
+	 * @package shortcode
+	 *
+	 * @usage [button type="success" size='' text="这是链接" url="http://www.baidu.com"]
+	 *
+	 * @return string 经简码格式化后的 HTML 字符串
+	 */
 	function wizhi_shortcode_button( $atts ) {
 		$default = [
 			'type' => 'success',

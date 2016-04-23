@@ -7,9 +7,11 @@
 
 if ( ! function_exists( 'wizhi_shortcode_page_cont' ) ) {
 	/**
+	 * 输出标题文章列表时实现，默认带标题
+	 *
 	 * @param $atts
 	 *
-	 * 输出标题文章列表时实现，默认带标题
+	 * @package shortcode
 	 *
 	 * @usage [page_cont id="1" count="200" thumbs="thumbnail" more="true"]
 	 */
@@ -54,6 +56,8 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 	 * 根据自定义分类显示文章
 	 *
 	 * @param $atts
+	 *
+	 * @package shortcode
 	 *
 	 * @usage [wizhi_loop type="home" tax="home_tag" tag="yxdt" num="6" tp="content" offset="0"]
 	 */
@@ -109,13 +113,14 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 add_shortcode( 'wizhi_loop', 'wizhi_shortcode_loop' );
 
 
-
 if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 
 	/**
 	 * 显示文章标题列表
 	 *
 	 * @param $atts
+	 *
+	 * @package shortcode
 	 *
 	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" cut="26" heading="false"]
 	 */
@@ -205,6 +210,8 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 	 * 图文混排样式简码
 	 *
 	 * @param $atts
+	 *
+	 * @package shortcode
 	 *
 	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" heading="false"]
 	 */
@@ -302,6 +309,8 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 	 *
 	 * @param $atts
 	 *
+	 * @package shortcode
+	 *
 	 * @usage [slider type="post" tax="category" tag="jingcai" num="4"]
 	 */
 	function wizhi_shortcode_slider( $atts ) {
@@ -389,8 +398,10 @@ if ( ! function_exists( 'wizhi_slider_js' ) ) {
 	/**
 	 * 自适应幻灯所需的 JS
 	 *
-	 * @param $id int 自适应幻灯的 id
+	 * @param $id      int 自适应幻灯的 id
 	 * @param $options array 自适应幻灯的控制参数
+	 *
+	 * @package front
 	 *
 	 */
 	function wizhi_slider_js( $id, $options ) {

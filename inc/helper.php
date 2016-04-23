@@ -3,10 +3,10 @@
 /**
  * 给当前链接加 “active” 类
  *
- * @package   helper
- *
  * @param $var   string 查询参数
  * @param $value string 当前连接的查询值
+ *
+ * @package conditions
  *
  * @return mixed string|bool 如果是当前链接, 返回“active” 字符串, 如果不是,返回 false
  */
@@ -24,8 +24,7 @@ function is_current_link( $var, $value, $default ) {
 /**
  *  获取存档或文章标题作为页面标题使用
  *
- * @package   helper
- * @return array
+ * @package   template
  */
 function wizhi_get_the_archive_title() {
 	if ( is_category() ) {
@@ -112,10 +111,10 @@ function wizhi_get_taxonomy_templates() {
 /**
  * 判断文章是否包含在父级分类中
  *
- * @package   helper
- *
  * @param int $cats  分类id
  * @param int $_post 文章id
+ *
+ * @package   helper
  *
  * @return boolean
  */
@@ -139,9 +138,9 @@ if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
 /**
  * 反向转换slug为正常的字符串
  *
- * @package   helper
- *
  * @param  $slug string 分类id
+ *
+ * @package   helper
  *
  * @return string 反格式化后的字符串
  */
@@ -156,28 +155,14 @@ function wizhi_unslug( $slug = null ) {
 }
 
 
-/**
- * 转换原文字符串为 slug
- *
- * @package   helper
- *
- * @param  $title string 分类id
- *
- * @return  string 格式化后的网址字符串
- */
-function wizhi_slug( $title = null ) {
-
-	if ( ! $title ) {
-		$post_data = get_post( get_the_id(), ARRAY_A );
-		$slug      = $post_data[ 'post_title' ];
-	}
-
-	return str_replace( "_", " ", $slug );
-}
-
-
-// 生成订单号
 if ( ! function_exists( "order_no" ) ) {
+	/**
+	 * 生成订单号
+	 *
+	 * @package   helper
+	 *
+	 * @return string 订单号字符串
+	 */
 	function order_no() {
 		return date( 'Ymd' ) . str_pad( mt_rand( 1, 99999 ), 5, '0', STR_PAD_LEFT );
 	}

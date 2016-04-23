@@ -113,7 +113,6 @@ function dump_html_tree( $node, $show_attr = true, $deep = 0 ) {
  * PaperG - added ability for "find" routine to lowercase the value of the selector.
  * PaperG - added $tag_start to track the start position of the tag in the total byte index
  *
- * @package PlaceLocalInclude
  */
 class simple_html_dom_node {
     public $nodetype = HDOM_TYPE_TEXT;
@@ -1111,7 +1110,6 @@ class simple_html_dom_node {
  * Paperg - added ForceTagsClosed in the constructor which tells us whether we trust the html or not.  Default is to
  * NOT trust it.
  *
- * @package PlaceLocalInclude
  */
 class simple_html_dom {
     public $root = null;

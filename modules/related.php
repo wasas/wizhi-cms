@@ -8,6 +8,8 @@
  * @param int    $num  显示的相关文章的数量
  * @param string $tmp  模板名称，content-$tmp.php
  *
+ * @package template
+ *
  * @usage wizhi_related('post', 'post_tag', 4, 'related')
  */
 function wizhi_related( $type, $tax, $num, $tmp ) {

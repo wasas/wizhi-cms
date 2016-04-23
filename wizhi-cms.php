@@ -50,7 +50,7 @@ require_once( WIZHI_CMS . 'settings.php' );
 $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
 
 // 加载插件设置
-new WeDevs_Settings_API_Test();
+new Wizhi_CMS_Setting();
 
 //加载 CSS 和 JS
 if ( $wizhi_use_cms_front ) {
@@ -58,13 +58,21 @@ if ( $wizhi_use_cms_front ) {
 	add_action( 'wp_enqueue_scripts', 'wizhi_zui_style' );
 }
 
-// 加载CSS
+/**
+ * 加载CSS
+ *
+ * @package front
+ */
 function wizhi_zui_style() {
 	wp_register_style( 'wizhi-style', plugins_url( 'dist/styles/main.css', __FILE__ ) );
 	wp_enqueue_style( 'wizhi-style' );
 }
 
-// 加载JS
+/**
+ * 加载 JavaScript
+ *
+ * @package front
+ */
 function wizhi_zui_scripts() {
 	wp_register_script( 'plugin_script', plugins_url( '/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
 	wp_enqueue_script( 'plugin_script' );

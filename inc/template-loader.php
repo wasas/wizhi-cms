@@ -1,19 +1,11 @@
 <?php
 /**
- * 插件模板加载器
- *
- * @package   wz_get_template_part
- * @author    Amos Lee
- * @version   1.1.0
- */
-
-/**
  * 自定义模板加载器, 优先加载主题中的模板, 如果主题中的模板不存在, 就加载插件中的
  *
- * @access public
- *
- * @param mixed  $slug
+ * @param mixed  $slug 模板名称的前缀, 模板名称的后缀
  * @param string $name (default: '')
+ *
+ * @package template
  */
 function wz_get_template_part( $slug, $name = '' ) {
 	$template = '';

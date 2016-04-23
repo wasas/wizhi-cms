@@ -1,16 +1,21 @@
 <?php
 
-/**
- * Wizhi CMS 插件设置
- *
- * @author Amos Lee
- */
-if ( ! class_exists( 'WeDevs_Settings_API_Test' ) ):
+if ( ! class_exists( 'Wizhi_CMS_Setting' ) ):
 
-	class WeDevs_Settings_API_Test {
+	/**
+	 * Wizhi CMS 插件设置
+	 *
+	 * @package settings
+	 *
+	 * @author  Amos Lee
+	 */
+	class Wizhi_CMS_Setting {
 
 		private $settings_api;
 
+		/**
+		 * 构造函数
+		 */
 		function __construct() {
 			$this->settings_api = new WeDevs_Settings_API;
 
@@ -18,6 +23,9 @@ if ( ! class_exists( 'WeDevs_Settings_API_Test' ) ):
 			add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 		}
 
+		/**
+		 * 初始化
+		 */
 		function admin_init() {
 
 			//set the settings
@@ -28,10 +36,18 @@ if ( ! class_exists( 'WeDevs_Settings_API_Test' ) ):
 			$this->settings_api->admin_init();
 		}
 
+		/**
+		 * 管理菜单
+		 */
 		function admin_menu() {
 			add_options_page( 'CMS 设置', 'CMS 设置', 'delete_posts', 'settings_api_test', [ $this, 'plugin_page' ] );
 		}
 
+		/**
+		 * 设置选项卡
+		 *
+		 * @return array 设置选项卡数组
+		 */
 		function get_settings_sections() {
 			$sections = [
 				[
