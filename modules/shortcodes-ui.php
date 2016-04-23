@@ -407,6 +407,7 @@ function wizhi_shortcode_page_cont_ui() {
 // 带有结束标签的简码,比不带结束标签的多了一个inner_content
 add_action( 'register_shortcode_ui', 'shortcode_ui_dev_advanced_example' );
 
+
 function shortcode_ui_dev_advanced_example() {
 	/*
 	 * Define the Shortcode UI arguments.

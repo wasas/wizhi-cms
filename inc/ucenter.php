@@ -9,18 +9,18 @@
  */
 function get_user_level( $uid ) {
 
-    $level = '';
+	$level = '';
 
-    // 管理员没有等级
-    if ( current_user_can( 'manage_options' ) ) {
-        if ( ! $uid ) {
-            $user = wizhi_get_current_user();
-            $uid  = $user->ID;
-        }
-        $level = '<span class="ulever"><i class="fa fa-vimeo-square"></i> ' . count_user_posts( $uid ) . '</span>';
-    }
+	// 管理员没有等级
+	if ( current_user_can( 'manage_options' ) ) {
+		if ( ! $uid ) {
+			$user = wizhi_get_current_user();
+			$uid  = $user->ID;
+		}
+		$level = '<span class="ulever"><i class="fa fa-vimeo-square"></i> ' . count_user_posts( $uid ) . '</span>';
+	}
 
-    return $level;
+	return $level;
 
 }
 
@@ -33,14 +33,14 @@ function get_user_level( $uid ) {
  */
 function if_is_selected( $meta_key, $value ) {
 
-    $user = wizhi_get_current_user();
-    $uid  = $user->ID;
+	$user = wizhi_get_current_user();
+	$uid  = $user->ID;
 
-    $meta_value = get_user_meta( $uid, $meta_key, true );
+	$meta_value = get_user_meta( $uid, $meta_key, true );
 
-    if ( $meta_value == $value ) {
-        echo 'selected';
-    }
+	if ( $meta_value == $value ) {
+		echo 'selected';
+	}
 }
 
 
@@ -51,25 +51,25 @@ function if_is_selected( $meta_key, $value ) {
  * @return mixed
  */
 function wizhi_get_current_user() {
-    if ( ! isset( $_GET[ 'user' ] ) and ! is_user_logged_in() ) {
-        wp_safe_redirect( home_url( 'account' ) );
-    } else {
-        if ( is_user_logged_in() ) {
-            if ( isset( $_GET[ 'user' ] ) ) {
-                $user = get_user_by( 'id', $_GET[ 'user' ] );
-            } else {
-                $user = wp_get_current_user();
-            }
-        } else {
-            if ( isset( $_GET[ 'user' ] ) ) {
-                $user = get_user_by( 'id', $_GET[ 'user' ] );
-            } else {
-                wp_safe_redirect( home_url( 'account' ) );
-            }
-        }
-    }
+	if ( ! isset( $_GET[ 'user' ] ) and ! is_user_logged_in() ) {
+		wp_safe_redirect( home_url( 'account' ) );
+	} else {
+		if ( is_user_logged_in() ) {
+			if ( isset( $_GET[ 'user' ] ) ) {
+				$user = get_user_by( 'id', $_GET[ 'user' ] );
+			} else {
+				$user = wp_get_current_user();
+			}
+		} else {
+			if ( isset( $_GET[ 'user' ] ) ) {
+				$user = get_user_by( 'id', $_GET[ 'user' ] );
+			} else {
+				wp_safe_redirect( home_url( 'account' ) );
+			}
+		}
+	}
 
-    return $user;
+	return $user;
 }
 
 
@@ -81,13 +81,13 @@ function wizhi_get_current_user() {
  */
 function is_self_profile() {
 
-    $get_user    = wizhi_get_current_user();
-    $logged_user = wp_get_current_user();
+	$get_user    = wizhi_get_current_user();
+	$logged_user = wp_get_current_user();
 
-    if ( $get_user == $logged_user ) {
-        return true;
-    }
+	if ( $get_user == $logged_user ) {
+		return true;
+	}
 
-    return false;
+	return false;
 
 }

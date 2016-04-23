@@ -4,13 +4,15 @@
  * Wizhi CMS 插件使用的简码
  */
 
-/* 根据自定义分类显示文章
- * 输出标题文章列表时实现，默认带标题
- * 使用方法：[page_cont id="1" count="200" thumbs="thumbnail" more="true"]
- * todo：可以实现更多的参数控制
-*/
 
 if ( ! function_exists( 'wizhi_shortcode_page_cont' ) ) {
+	/**
+	 * @param $atts
+	 *
+	 * 输出标题文章列表时实现，默认带标题
+	 *
+	 * @usage [page_cont id="1" count="200" thumbs="thumbnail" more="true"]
+	 */
 	function wizhi_shortcode_page_cont( $atts ) {
 		$default = [
 			'id'     => 1,
@@ -46,13 +48,15 @@ if ( ! function_exists( 'wizhi_shortcode_page_cont' ) ) {
 add_shortcode( 'page_cont', 'wizhi_shortcode_page_cont' );
 
 
-/* 根据自定义分类显示文章
- * 输出标题文章列表时实现，默认带标题
- * 使用方法：[wizhi_loop type="home" tax="home_tag" tag="yxdt" num="6" tp="content" offset="0"]
- * todo：可以实现更多的参数控制
-*/
 if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 
+	/**
+	 * 根据自定义分类显示文章
+	 *
+	 * @param $atts
+	 *
+	 * @usage [wizhi_loop type="home" tax="home_tag" tag="yxdt" num="6" tp="content" offset="0"]
+	 */
 	function wizhi_shortcode_loop( $atts ) {
 
 		$default = [
@@ -105,13 +109,16 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 add_shortcode( 'wizhi_loop', 'wizhi_shortcode_loop' );
 
 
-/* 根据自定义分类显示文章
- * 输出标题文章列表时实现，默认带标题
- * 使用方法：[title_list type="home" tax="home_tag" tag="yxdt" num="6" cut="26" heading="false" time="true" sticky="true"]
- * todo：可以实现更多的参数控制
-*/
+
 if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 
+	/**
+	 * 显示文章标题列表
+	 *
+	 * @param $atts
+	 *
+	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" cut="26" heading="false"]
+	 */
 	function wizhi_shortcode_title_list( $atts ) {
 
 		$default = [
@@ -193,12 +200,14 @@ if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 add_shortcode( 'title_list', 'wizhi_shortcode_title_list' );
 
 
-/* 图文混排样式简码
- * 需要的参数：文章类型，分类法，分类，缩略图别名，标题字数，是否显示时间，内容字数
- * 使用方法：<?php echo do_shortcode('[photo_list type="home" tax="home_tag" tag="yxdt" num="6" cut="26" heading="false" time="true" thumbs="maintain" cut="6" sticky="true" class="pure-u-1-5"]'); ?>
- */
 if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
-
+	/**
+	 * 图文混排样式简码
+	 *
+	 * @param $atts
+	 *
+	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" heading="false"]
+	 */
 	function wizhi_shortcode_photo_list( $atts ) {
 		$default = [
 			'type'    => 'post',
@@ -287,14 +296,14 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 add_shortcode( 'photo_list', 'wizhi_shortcode_photo_list' );
 
 
-/* 分类自适应幻灯
- * 替代方案为上面的slider幻灯，在性能上比较好
- * 存在显示上的一些问题
- * 使用方法：<?php echo do_shortcode('[slider type="post" tax="category" tag="jingcai" speed="1000" num="4" thumbs="full" cut="46"]'); ?>
- */
-
 if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
-
+	/**
+	 * 自适应幻灯
+	 *
+	 * @param $atts
+	 *
+	 * @usage [slider type="post" tax="category" tag="jingcai" num="4"]
+	 */
 	function wizhi_shortcode_slider( $atts ) {
 		$default = [
 			'type'        => 'post',
@@ -376,13 +385,14 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 add_shortcode( 'slider', 'wizhi_shortcode_slider' );
 
 
-/**-----------------------------------------------------------------------------------*/
-/* Slider Javascript
-/* Jquery Cycle 幻灯所需的JS
-/* -----------------------------------------------------------------------------------
-*/
-
 if ( ! function_exists( 'wizhi_slider_js' ) ) {
+	/**
+	 * 自适应幻灯所需的 JS
+	 *
+	 * @param $id int 自适应幻灯的 id
+	 * @param $options array 自适应幻灯的控制参数
+	 *
+	 */
 	function wizhi_slider_js( $id, $options ) {
 
 		if ( $options[ "maxslides" ] == 1 ) : ?>
