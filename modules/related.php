@@ -25,12 +25,18 @@ function wizhi_related( $type, $tax, $num, $tmp ) {
 		}
 
 		$args = [
-			'post_type'        => $type,
-			'tag__in'          => $tag_ids,
-			'post__not_in'     => [ $post->ID ],
-			'posts_per_page'   => $num,
-			'caller_get_posts' => 1,
-		];
+            'post_type'        => $type,
+            'post__not_in'     => [ $post->ID ],
+            'posts_per_page'   => $num,
+            'caller_get_posts' => 1,
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $tax,
+                    'field' => 'id',
+                    'terms' => $tag_ids
+                )
+            )
+        ];
 
 		$related_query = new wp_query( $args );
 
