@@ -44,7 +44,7 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 			'query_var'          => true,
 			'rewrite'            => [ 'slug' => $slug ],
 			'capability_type'    => 'post',
-			'has_archive'        => $is_publish,
+			'has_archive'        => true,
 			'hierarchical'       => false,
 			'supports'           => $support,
 		];
