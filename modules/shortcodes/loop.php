@@ -101,7 +101,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 		$the_query = new WP_Query( $args );
 
 		while ( $the_query->have_posts() ) : $the_query->the_post();
-			wz_get_template_part( 'content', $tmp );
+			wizhi_get_template_part( 'content', $tmp );
 		endwhile;
 
 		wp_reset_postdata();
@@ -177,7 +177,7 @@ if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 			echo '<ul class="ui-list">';
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
-				wz_get_template_part( 'content', 'title_list' );
+				wizhi_get_template_part( 'content', 'title_list' );
 			endwhile;
 
 			echo '</ul>';
@@ -191,7 +191,7 @@ if ( ! function_exists( 'wizhi_shortcode_title_list' ) ) {
 			echo '<div class="ui-box-container"><ul class="ui-list ui-list-' . $tag . '">';
 
 			while ( $the_query->have_posts() ) : $the_query->the_post();
-				wz_get_template_part( 'content', 'title_list' );
+				wizhi_get_template_part( 'content', 'title_list' );
 			endwhile;
 
 			echo '</ul></div></div>';
@@ -267,7 +267,7 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 			echo '<div class="medias media-' . $type . $tag . '">';
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
-				wz_get_template_part( 'content', 'title_list' );
+				wizhi_get_template_part( 'content', 'title_list' );
 
 			endwhile;
 			echo '</div>';
@@ -284,7 +284,7 @@ if ( ! function_exists( 'wizhi_shortcode_photo_list' ) ) {
 			echo '<div class="medias media-' . $tag . '">';
 
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				wz_get_template_part( 'content', 'photo_list' );
+				wizhi_get_template_part( 'content', 'photo_list' );
 			endwhile;
 
 			echo '</div>';
@@ -380,7 +380,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 		echo '<ul class="bxslider" id="bxslider-' . $id . '">';
 
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();
-			wz_get_template_part( 'content', $tmp );
+			wizhi_get_template_part( 'content', $tmp );
 		endwhile;
 
 		echo '</ul></div>';
