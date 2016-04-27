@@ -59,7 +59,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [wizhi_loop type="home" tax="home_tag" tag="yxdt" num="6" tp="content" offset="0"]
+	 * @usage [wizhi_loop type="home" tax="home_tag" tag="yxdt" num="6" tmp="content" offset="0"]
 	 */
 	function wizhi_shortcode_loop( $atts ) {
 
@@ -67,7 +67,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 			'type'   => 'post',
 			'tax'    => 'category',
 			'tag'    => 'default',
-			'tp'     => 'lists',
+			'tmp'     => 'lists',
 			'offset' => 0,
 			'num'    => 8, // 数量: 显示文章数量，-1为全部显示
 		];
@@ -101,7 +101,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 		$the_query = new WP_Query( $args );
 
 		while ( $the_query->have_posts() ) : $the_query->the_post();
-			wz_get_template_part( 'content', $tp );
+			wz_get_template_part( 'content', $tmp );
 		endwhile;
 
 		wp_reset_postdata();
@@ -311,7 +311,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [slider type="post" tax="category" tag="jingcai" num="4" minslides="1" maxslides="4" slidewidth="360"]
+	 * @usage [slider type="post" tax="category" tag="jingcai" num="4" auto="false" minslides="1" maxslides="4" slidewidth="360", tmp="slider"]
 	 */
 	function wizhi_shortcode_slider( $atts ) {
 		$default = [
@@ -327,6 +327,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 			'maxslides'   => 1,
 			'slidewidth'  => 360,
 			'slidewargin' => 10,
+			'tmp'         => 'slider',
 			'easing'      => 'swing',
 		];
 
@@ -379,7 +380,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 		echo '<ul class="bxslider" id="bxslider-' . $id . '">';
 
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();
-			wz_get_template_part( 'content', 'slider' );
+			wz_get_template_part( 'content', $tmp );
 		endwhile;
 
 		echo '</ul></div>';
