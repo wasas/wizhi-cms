@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/template-loader.php" afterPath="$PROJECT_DIR$/inc/template-loader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/shortcodes/loop.php" afterPath="$PROJECT_DIR$/modules/shortcodes/loop.php" />
     </list>
     <ignored path="wizhi-cms.iws" />
@@ -26,12 +24,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="template-loader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template-loader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5797101">
-              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state vertical-scroll-proportion="-25.0">
+              <caret line="40" column="49" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="element.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10144927">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/shortcodes/loop.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.125">
+              <caret line="380" column="41" selection-start-line="380" selection-start-column="41" selection-end-line="380" selection-end-column="41" />
+              <folding>
+                <element signature="e#6#53#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,8 +93,8 @@
         <option value="$PROJECT_DIR$/modules/shortcodes-ui.php" />
         <option value="$PROJECT_DIR$/wizhi-cms.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/modules/shortcodes/loop.php" />
         <option value="$PROJECT_DIR$/inc/template-loader.php" />
+        <option value="$PROJECT_DIR$/modules/shortcodes/loop.php" />
       </list>
     </option>
   </component>
@@ -169,7 +189,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wizhi-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wizhi-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shortcodes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -606,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.018181818">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23636363">
@@ -636,15 +667,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/shortcodes/loop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.014492754">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="380" column="41" selection-start-line="380" selection-start-column="41" selection-end-line="380" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#53#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5797101">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        <state vertical-scroll-proportion="-25.0">
+          <caret line="40" column="49" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10144927">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding />
         </state>
       </provider>
