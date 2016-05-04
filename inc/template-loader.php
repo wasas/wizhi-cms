@@ -36,3 +36,24 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 		}
 	}
 }
+
+
+if ( ! function_exists( 'wizhi_load_template_part' ) ) {
+
+	/**
+	 * 获取模板为变量, 而不是直接显示
+	 *
+	 * @param  string $slug 模板名称前缀
+	 * @param string  $name 模板名称
+	 *
+	 * @return string
+	 */
+	function wizhi_load_template_part( $slug, $name = '' ) {
+		ob_start();
+		wizhi_get_template_part( $slug, $name );
+		$html = ob_get_contents();
+		ob_end_clean();
+
+		return $html;
+	}
+}
