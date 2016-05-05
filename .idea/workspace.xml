@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/shortcodes/loop.php" afterPath="$PROJECT_DIR$/modules/shortcodes/loop.php" />
-    </list>
+    <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="" />
     <ignored path="wizhi-cms.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -37,8 +35,8 @@
       <file leaf-file-name="element.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10144927">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.3188406">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -685,8 +683,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10144927">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.3188406">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
