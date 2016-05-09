@@ -29,7 +29,9 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 ### 显示一个文章或页面
 
-`<?php echo do_shortcode('[page_cont id="1" thumbs="thumbnail" cut="20" content="60" more="1"]'); ?>`
+```php
+<?php echo do_shortcode('[page_cont id="1" thumbs="thumbnail" cut="20" content="60" more="1"]'); ?>
+```
 
 参数：
 
@@ -40,9 +42,11 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 * more：是否显示“查看更多”的链接
 
 
-= 显示一个文章标题列表模块 =
+### 显示一个文章标题列表模块
 
-`<?php echo do_shortcode('[title_list type="post" tax="category" tag="default" num="6" cut="26" heading="0" time="1"]'); ?>`
+```php
+<?php echo do_shortcode('[title_list type="post" tax="category" tag="default" num="6" cut="26" heading="0" time="1"]'); ?>
+```
 
 参数：
 
@@ -56,7 +60,9 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 ### 显示一个图文列表模块
 
-`<?php echo do_shortcode('[photo_list type="post" tax="category" tag="default" num="6" cut="26" heading="0" time="1" thumbs="thumbnail" cut="6" class="pure-u-1-5" position="left"]'); ?>`
+```php
+<?php echo do_shortcode('[photo_list type="post" tax="category" tag="default" num="6" cut="26" heading="0" time="1" thumbs="thumbnail" cut="6" class="pure-u-1-5" position="left"]'); ?>
+```
 
 和上面的title_list相比，增加了以下参数：
 
@@ -68,9 +74,11 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 同时添加了一些实用的功能函数，如创建文章类型自定义分类法函数，分页函数等等。
 
-= 显示一个 Slider 模块 =
+### 显示一个 Slider 模块
 
-`<?php echo do_shortcode('[slider type="post" tax="category" tag="default" speed="1000"  minSlides="1" maxSlides="1" num="4" thumbs="full" cut="18"]'); ?>`
+```php
+<?php echo do_shortcode('[slider type="post" tax="category" tag="default" speed="1000"  minSlides="1" maxSlides="1" num="4" thumbs="full" cut="18"]'); ?>
+```
 
 参数：
 
@@ -84,7 +92,9 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 ### 显示一个 Carousel 模块
 
-`<?php echo do_shortcode('[slider type="post" tax="category" tag="default" speed="1000" minSlides="2" maxSlides="4" num="4" thumbs="full" cut="18"]'); ?>`
+```php
+<?php echo do_shortcode('[slider type="post" tax="category" tag="default" speed="1000" minSlides="2" maxSlides="4" num="4" thumbs="full" cut="18"]'); ?>
+```
 
 参数：
 
@@ -98,13 +108,15 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 * maxSlides="4" 屏幕变大时，Carousel 最多显示的图片数量
 
 
-= 创建自定义文章类型 =
+###  创建自定义文章类型
 
 如需要添加一个文章类型，只需要这样写：
 
-`<?php if ( function_exists ("wizhi_create_types")) {
+```php
+<?php if ( function_exists ("wizhi_create_types")) {
     wizhi_create_types( "pro", "产品", array( 'title', 'editor', 'author', 'thumbnail', 'comments' ), true );
-} ?>`
+} ?>
+```
 
 参数：
 
@@ -117,9 +129,11 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 需要添加一个自定义分类方法，只需要这样写：
 
-`<?php if (function_exists ("wizhi_create_taxs") ) {
+```php
+<?php if (function_exists ("wizhi_create_taxs") ) {
     wizhi_create_taxs( "procat", 'pro', "产品分类", true);
-} ?>`
+} ?>
+```
 
 参数：
 
@@ -133,17 +147,20 @@ Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签�
 
 Pure 横向导航菜单
 
-`<?php wp_nav_menu( array(
+```php
+<?php wp_nav_menu( array(
       'theme_location' => 'primary',
       'menu_id' => 'primary-menu',
       'menu_class' => 'pure-menu-list pure-u nav',
       'walker' => new Wizhi_Walker_Nav_Menu()
     ) ); 
-?>`
+?>
+```
 
 Pure 侧边栏多级分类，使用方式
 
-`<?php
+```php
+<?php
 $args = array(
   'taxonomy'     => 'category',
   'orderby'      => 'name',
@@ -153,11 +170,12 @@ $args = array(
   'title_li'     => '',
   'walker'       => new Wizhi_Pure_Category_Walker()
   );
-?>`
+?>
 
-`<ul class="pure-menu-list nav">
+<ul class="pure-menu-list nav">
   <?php wp_list_categories( $args ); ?>
-</ul>`
+</ul>
+```
 
 ## BUG反馈和功能建议
 
