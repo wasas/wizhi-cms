@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * 获取当前分类的父级类 ID
+ *
+ * @param int $cat 分类 id
+ * @param string $taxonomy 分类法名称
+ *
+ * @return mixed
+ */
+function get_term_root_id( $term_id, $taxonomy ) {
+	$this_term = get_term( $term_id, $taxonomy );
+	
+	while ( $this_term->parent ) {
+		$this_term = get_term( $this_term->parent, $taxonomy );
+	}
+
+	return $this_term->term_id;
+}
+
+/**
  * 给当前链接加 “active” 类
  *
  * @param $var   string 查询参数
