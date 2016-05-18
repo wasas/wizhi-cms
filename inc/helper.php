@@ -8,7 +8,7 @@
  *
  * @return mixed
  */
-function get_term_root_id( $term_id, $taxonomy ) {
+function wizhi_get_term_root_id( $term_id, $taxonomy ) {
 	$this_term = get_term( $term_id, $taxonomy );
 	
 	while ( $this_term->parent ) {
