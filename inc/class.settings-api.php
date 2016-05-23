@@ -1,7 +1,9 @@
 <?php
 
+require_once( WIZHI_CMS . 'vendor/autoload.php' );
+use Nette\Forms\Form;
 
-if ( ! class_exists( 'WeDevs_Settings_API' ) ):
+if ( ! class_exists( 'Wizhi_Settings_API' ) ):
 	/**
 	 * weDevs 设置 API 封装类
 	 *
@@ -13,7 +15,7 @@ if ( ! class_exists( 'WeDevs_Settings_API' ) ):
 	 * @link    https://github.com/tareq1988/wordpress-settings-api-class
 	 * @example src/settings-api.php How to use the class
 	 */
-	class WeDevs_Settings_API {
+	class Wizhi_Settings_API {
 
 		/**
 		 * settings sections array
