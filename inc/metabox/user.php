@@ -83,7 +83,7 @@ class WizhiUserMetabox {
 	public function show( $user ) {
 		$form = $this->build( $user->ID );
 
-		$form->show();
+		$form->display();
 	}
 
 

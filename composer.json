@@ -1,6 +1,6 @@
 {
   "name": "wizhi/cms",
-  "description": "the most used function in WordPress",
+  "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
     "nette/forms": "^2.3"

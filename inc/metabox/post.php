@@ -3,7 +3,7 @@
 /**
  * 注册元数据盒子
  */
-class WizhiMetabox {
+class WizhiPostMetabox {
 
 	/**
 	 * Metabox ID.
@@ -34,11 +34,20 @@ class WizhiMetabox {
 	 */
 	public function __construct( $id, $title, $fields = [ ], $args = [ ] ) {
 
-		$this->id         = $id;
-		$this->title      = $title;
-		$this->fields     = $fields;
-		$this->args       = $args;
+		$this->id     = $id;
+		$this->title  = $title;
+		$this->fields = $fields;
+
 		$this->post_types = $args[ 'post_type' ];
+		$this->context    = $args[ 'context' ];
+		$this->priority   = $args[ 'priority' ];
+
+		$args = wp_parse_args( $args, [
+			'context'  => 'advanced',
+			'priority' => 'high',
+		] );
+
+		$this->args = $args;
 
 		if ( is_admin() ) {
 			add_action( 'load-post.php', [ $this, 'init_metabox' ] );
@@ -60,11 +69,13 @@ class WizhiMetabox {
 	 * 添加元数据盒子
 	 */
 	public function add_metabox() {
-		$id    = $this->id;
-		$title = $this->title;
+		$id         = $this->id;
+		$title      = $this->title;
 		$post_types = $this->post_types;
+		$context    = $this->context;
+		$priority   = $this->priority;
 
-		add_meta_box( $id, $title, [ $this, 'display' ], $post_types, 'advanced', 'default' );
+		add_meta_box( $id, $title, [ $this, 'display' ], $post_types, $context, $priority );
 	}
 
 

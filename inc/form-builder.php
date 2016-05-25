@@ -23,23 +23,7 @@ class WizhiFormBuilder {
 	 *
 	 * @var array 表单字段数据
 	 */
-	private $fields = [ ];
-
-
-	/**
-	 * 文章类型
-	 *
-	 * @var array 自定义文章类型
-	 */
-	private $post_types;
-
-
-	/**
-	 * 分类法
-	 *
-	 * @var string 自定义分类法
-	 */
-	private $taxonomies;
+	private $fields;
 
 
 	/**
@@ -51,6 +35,14 @@ class WizhiFormBuilder {
 
 
 	/**
+	 * 附加参数
+	 *
+	 * @var array 根据各种表单类型, 添加的附加参数
+	 */
+	private $args = [ ];
+
+
+	/**
 	 * WizhiFormBuilder constructor.
 	 *
 	 * @param  string $form_type 表单类型
@@ -58,7 +50,7 @@ class WizhiFormBuilder {
 	 * @param array   $args      附加属性数组
 	 * @param int     $id        表单数据 id, 文章、分类法或用户 id
 	 *
-	 * todo: 处理附加参数, 把文章类型和分类法也加到附加参数里面
+	 * todo: 处理附加参数
 	 */
 	public function __construct( $form_type, $fields, $id = 0, $args = [ ] ) {
 		$this->form_type = $form_type;
@@ -69,8 +61,6 @@ class WizhiFormBuilder {
 		$args = wp_parse_args( $args, [
 			'post_type'  => 'post',
 			'taxonomies' => [ 'category' ],
-			'context'    => 'advanced',
-			'priority'   => 'default',
 		] );
 
 		// 如果文章类型参数是字符串, 转换成数组
@@ -83,10 +73,7 @@ class WizhiFormBuilder {
 			$args[ 'taxonomies' ] = [ $args[ 'taxonomies' ] ];
 		}
 
-		$this->post_types = $args[ 'post_type' ];
-		$this->taxonomies = $args[ 'taxonomies' ];
-		$this->context    = $args[ 'context' ];
-		$this->priority   = $args[ 'priority' ];
+		$this->args = $args;
 
 	}
 
@@ -106,35 +93,44 @@ class WizhiFormBuilder {
 	public function values() {
 		$form_type = $this->form_type;
 		$fields    = $this->fields;
+		$args      = $this->args;
 		$id        = $this->id;
 
 		$values = [ ];
 
-		foreach ( $fields as $field ) {
+		if ( $form_type == 'widget' ) {
 
-			switch ( $form_type ) {
-				case 'option':
-					$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
-					break;
+			$values = $args[ 'instance' ];
 
-				case 'post_meta':
-					$value                      = get_post_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-					break;
+		} else {
 
-				case 'user_meta':
-					$value                      = get_user_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-					break;
+			foreach ( $fields as $field ) {
 
-				case 'term_meta':
-					$value                      = get_term_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-					break;
+				switch ( $form_type ) {
+					case 'option':
+						$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
+						break;
 
-				default:
-					$value                      = get_post_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					case 'post_meta':
+						$value                      = get_post_meta( $id, $field[ 'name' ], true );
+						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+						break;
+
+					case 'user_meta':
+						$value                      = get_user_meta( $id, $field[ 'name' ], true );
+						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+						break;
+
+					case 'term_meta':
+						$value                      = get_term_meta( $id, $field[ 'name' ], true );
+						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+						break;
+
+					default:
+						$value                      = get_post_meta( $id, $field[ 'name' ], true );
+						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+				}
+
 			}
 
 		}
@@ -287,6 +283,8 @@ class WizhiFormBuilder {
 	public function display() {
 
 		$form = $this->build();
+
+		$form = str_replace( '</form>', '', $form );
 
 		echo $form;
 
