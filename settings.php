@@ -18,84 +18,16 @@ function wizhi_cms_setting_page() {
 
 	$fields = [
 		[
-			'type'        => 'text',
-			'name'        => 'url',
-			'scope'       => 'option',
-			'label'       => '表单',
-			'size'        => '80',
-			'default'     => '请输入文本',
-			'placeholder' => '输入文本, 明天更美好',
-		],
-		[
-			'type'        => 'textarea',
-			'name'        => 'text',
-			'scope'       => 'option',
-			'label'       => '文本',
-			'size'        => '80',
-			'default'     => '请输入文本',
-			'placeholder' => '输入文本, 明天更美好',
-			'attr'        => [
-				'rows' => 5,
-				'cols' => 50,
-			],
-		],
-		[
 			'type'    => 'checkbox',
-			'name'    => 'checkbox',
+			'name'    => 'wizhi_use_cms_front',
 			'scope'   => 'option',
-			'label'   => '文本',
+			'label'   => '使用插件前端资源',
 			'size'    => '80',
-			'options' => [
-				'1' => '老大',
-				'2' => '老二',
-			],
 		],
-		[
-			'type'    => 'radio',
-			'name'    => 'radio',
-			'scope'   => 'option',
-			'label'   => '文本',
-			'size'    => '80',
-			'options' => [
-				'1' => '老大',
-				'2' => '老二',
-			],
-		],
-		[
-			'type'    => 'select',
-			'name'    => 'select',
-			'scope'   => 'option',
-			'label'   => '文本',
-			'options' => [
-				'1' => '老大',
-				'2' => '老二',
-				'3' => '老三',
-				'4' => '老四',
-			],
-		],
-		[
-			'type'  => 'upload',
-			'name'  => 'upload',
-			'scope' => 'option',
-			'label' => '文本',
-		],
-		[
-			'type'    => 'multi-select',
-			'name'    => 'select2',
-			'scope'   => 'option',
-			'label'   => '文本',
-			'size'    => '80',
-			'options' => [
-				'1' => '老大',
-				'2' => '老二',
-				'3' => '老三',
-				'4' => '老四',
-			],
-		],
+
 	];
 
 	// 显示表单
-	//create_forms( 'option', $args );
 	$form = new WizhiFormBuilder( 'option', $fields );
 	$form->init();
 

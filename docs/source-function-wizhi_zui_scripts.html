@@ -124,8 +124,8 @@
 				<li><a href="function-wizhi_shortcode_ui.html">wizhi_shortcode_ui</a></li>
 				<li><a href="function-wizhi_slider_js.html">wizhi_slider_js</a></li>
 				<li><a href="function-wizhi_unslug.html">wizhi_unslug</a></li>
-				<li><a href="function-wizhi_zui_scripts.html">wizhi_zui_scripts</a></li>
-				<li><a href="function-wizhi_zui_style.html">wizhi_zui_style</a></li>
+				<li><a href="function-wizhi_ui_scripts.html">wizhi_ui_scripts</a></li>
+				<li><a href="function-wizhi_ui_style.html">wizhi_ui_style</a></li>
 				<li><a href="function-wz_get_template_part.html">wz_get_template_part</a></li>
 			</ul>
 		</div>
@@ -214,8 +214,8 @@
 </span><span id="54" class="l"><a href="#54">54: </a>
 </span><span id="55" class="l"><a href="#55">55: </a><span class="php-comment">//加载 CSS 和 JS</span>
 </span><span id="56" class="l"><a href="#56">56: </a><span class="php-keyword1">if</span> ( <span class="php-var">$wizhi_use_cms_front</span> ) {
-</span><span id="57" class="l"><a href="#57">57: </a>    add_action( <span class="php-quote">'wp_enqueue_scripts'</span>, <span class="php-quote">'wizhi_zui_scripts'</span> );
-</span><span id="58" class="l"><a href="#58">58: </a>    add_action( <span class="php-quote">'wp_enqueue_scripts'</span>, <span class="php-quote">'wizhi_zui_style'</span> );
+</span><span id="57" class="l"><a href="#57">57: </a>    add_action( <span class="php-quote">'wp_enqueue_scripts'</span>, <span class="php-quote">'wizhi_ui_scripts'</span> );
+</span><span id="58" class="l"><a href="#58">58: </a>    add_action( <span class="php-quote">'wp_enqueue_scripts'</span>, <span class="php-quote">'wizhi_ui_style'</span> );
 </span><span id="59" class="l"><a href="#59">59: </a>}
 </span><span id="60" class="l"><a href="#60">60: </a>
 </span><span id="61" class="l"><a href="#61">61: </a><span class="php-comment">/**
@@ -223,7 +223,7 @@
 </span></span><span id="63" class="l"><a href="#63">63: </a><span class="php-comment"> *
 </span></span><span id="64" class="l"><a href="#64">64: </a><span class="php-comment"> * @package front
 </span></span><span id="65" class="l"><a href="#65">65: </a><span class="php-comment"> */</span>
-</span><span id="66" class="l"><a href="#66">66: </a><span class="php-keyword1">function</span> wizhi_zui_style() {
+</span><span id="66" class="l"><a href="#66">66: </a><span class="php-keyword1">function</span> wizhi_ui_style() {
 </span><span id="67" class="l"><a href="#67">67: </a>    wp_register_style( <span class="php-quote">'wizhi-style'</span>, plugins_url( <span class="php-quote">'dist/styles/main.css'</span>, __FILE__ ) );
 </span><span id="68" class="l"><a href="#68">68: </a>    wp_enqueue_style( <span class="php-quote">'wizhi-style'</span> );
 </span><span id="69" class="l"><a href="#69">69: </a>}
@@ -233,7 +233,7 @@
 </span></span><span id="73" class="l"><a href="#73">73: </a><span class="php-comment"> *
 </span></span><span id="74" class="l"><a href="#74">74: </a><span class="php-comment"> * @package front
 </span></span><span id="75" class="l"><a href="#75">75: </a><span class="php-comment"> */</span>
-</span><span id="76" class="l"><a href="#76">76: </a><span class="php-keyword1">function</span> wizhi_zui_scripts() {
+</span><span id="76" class="l"><a href="#76">76: </a><span class="php-keyword1">function</span> wizhi_ui_scripts() {
 </span><span id="77" class="l"><a href="#77">77: </a>    wp_register_script( <span class="php-quote">'plugin_script'</span>, plugins_url( <span class="php-quote">'/dist/scripts/main.js'</span>, __FILE__ ), [ <span class="php-quote">'jquery'</span> ], <span class="php-quote">'1.1'</span>, <span class="php-keyword1">true</span> );
 </span><span id="78" class="l"><a href="#78">78: </a>    wp_enqueue_script( <span class="php-quote">'plugin_script'</span> );
 </span><span id="79" class="l"><a href="#79">79: </a>}

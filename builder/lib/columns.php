@@ -70,10 +70,8 @@ class GambitPBSandwichColumns {
         if( !function_exists( 'file_get_html' ) ) {
             require_once( PBS_PATH . 'inc/simple_html_dom.php' );
         }
-        wp_enqueue_style( 'pbsandwich-frontend', PBS_URL . 'css/frontend.css' );
 
         $columnStyles = '';
-
 
         // 移除没用的 jQuery sortable classes
         $html = preg_replace( '/(ui-sortable-handle|ui-sortable)/', '', $content );

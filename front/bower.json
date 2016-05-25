@@ -1,0 +1,19 @@
+{
+  "name": "wizhi-cms",
+  "homepage": "https://www.wpzhiku.com/",
+  "authors": [
+    "Amos Lee <iwillhappy1314@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "pure": "^0.6.0"
+  },
+  "overrides": {
+    "pure": {
+      "main": [
+
+      ]
+    }
+  }
+}

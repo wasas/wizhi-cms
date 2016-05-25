@@ -3,14 +3,14 @@
 /**
  * 获取当前分类的父级类 ID
  *
- * @param int $cat 分类 id
+ * @param int    $cat      分类 id
  * @param string $taxonomy 分类法名称
  *
  * @return mixed
  */
 function wizhi_get_term_root_id( $term_id, $taxonomy ) {
 	$this_term = get_term( $term_id, $taxonomy );
-	
+
 	while ( $this_term->parent ) {
 		$this_term = get_term( $this_term->parent, $taxonomy );
 	}
@@ -192,32 +192,45 @@ if ( ! function_exists( "order_no" ) ) {
  *
  * @return array $post_types  文章类型列表
  */
-function wizhi_get_post_types() {
-	$post_types = get_post_types();
+if ( ! function_exists( 'wizhi_get_post_types' ) ) {
 
-	foreach ( $post_types as $key => $val ) {
-		if ( $val == 'attachment' || $val == 'revision' || $val == 'nav_menu_item' ) {
-			unset( $post_types[ $key ] );
+	function wizhi_get_post_types() {
+
+		$args_type = [
+
+		];
+
+		$post_types = get_post_types( $args_type );
+
+		foreach ( $post_types as $key => $val ) {
+			if ( $val == 'attachment' || $val == 'revision' || $val == 'nav_menu_item' ) {
+				unset( $post_types[ $key ] );
+			}
 		}
+
+		return $post_types;
 	}
 
-	return $post_types;
 }
 
 
-/**
- * 获取所有缩略图尺寸
- *
- * @return array $image_sizes 缩略图尺寸列表
- */
-function wizhi_get_image_sizes() {
-	$image_sizes_orig   = get_intermediate_image_sizes();
-	$image_sizes_orig[] = 'full';
-	$image_sizes        = [ ];
+if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
 
-	foreach ( $image_sizes_orig as $size ) {
-		$image_sizes[ $size ] = $size;
+	/**
+	 * 获取所有缩略图尺寸
+	 *
+	 * @return array $image_sizes 缩略图尺寸列表
+	 */
+	function wizhi_get_image_sizes() {
+		$image_sizes_orig   = get_intermediate_image_sizes();
+		$image_sizes_orig[] = 'full';
+		$image_sizes        = [ ];
+
+		foreach ( $image_sizes_orig as $size ) {
+			$image_sizes[ $size ] = $size;
+		}
+
+		return $image_sizes;
 	}
 
-	return $image_sizes;
 }

@@ -3,6 +3,11 @@ require_once( WIZHI_CMS . 'vendor/autoload.php' );
 use Nette\Forms\Form;
 
 
+/**
+ * 基于 Nette form 的表单生成类
+ *
+ * Class WizhiFormBuilder
+ */
 class WizhiFormBuilder {
 
 	/**
@@ -48,47 +53,55 @@ class WizhiFormBuilder {
 	/**
 	 * WizhiFormBuilder constructor.
 	 *
-	 * @param       $form_type
-	 * @param       $fields
-	 * @param array $post_types
-	 * @param array $taxonomies
-	 * @param int   $id
+	 * @param  string $form_type 表单类型
+	 * @param array   $fields    表单项目
+	 * @param array   $args      附加属性数组
+	 * @param int     $id        表单数据 id, 文章、分类法或用户 id
+	 *
+	 * todo: 处理附加参数, 把文章类型和分类法也加到附加参数里面
 	 */
-	public function __construct( $form_type, $fields, $id = 0, $post_types = [ ], $taxonomies = [ ] ) {
+	public function __construct( $form_type, $fields, $id = 0, $args = [ ] ) {
 		$this->form_type = $form_type;
 		$this->fields    = $fields;
 		$this->id        = $id;
 
-
-		$fields = wp_parse_args( $fields, [
-			'post_type' => 'post',
-			'context'   => 'advanced',
-			'priority'  => 'default',
+		// 合并默认参数和用户参数
+		$args = wp_parse_args( $args, [
+			'post_type'  => 'post',
+			'taxonomies' => [ 'category' ],
+			'context'    => 'advanced',
+			'priority'   => 'default',
 		] );
 
-		if ( is_string( $fields[ 'post_type' ] ) ) {
-			$fields[ 'post_type' ] = [ $fields[ 'post_type' ] ];
+		// 如果文章类型参数是字符串, 转换成数组
+		if ( is_string( $args[ 'post_type' ] ) ) {
+			$args[ 'post_type' ] = [ $args[ 'post_type' ] ];
 		}
 
-		$this->post_types = $fields[ 'post_type' ];
-		$this->context    = $fields[ 'context' ];
-		$this->priority   = $fields[ 'priority' ];
+		// 如果分类方法是字符串, 转换成数组
+		if ( is_string( $args[ 'taxonomies' ] ) ) {
+			$args[ 'taxonomies' ] = [ $args[ 'taxonomies' ] ];
+		}
 
+		$this->post_types = $args[ 'post_type' ];
+		$this->taxonomies = $args[ 'taxonomies' ];
+		$this->context    = $args[ 'context' ];
+		$this->priority   = $args[ 'priority' ];
 
-		add_action( 'load-post.php', [ $this, 'pre_register' ] );
-		add_action( 'load-post-new.php', [ $this, 'pre_register' ] );
 	}
 
 
 	// 初始化表单
 	public function init() {
-		$this->display();
+		$this->show();
 		$this->save();
 	}
 
 
 	/**
 	 * 获取已经保存的值
+	 *
+	 * todo: 考虑是否需要合并 meta 数据获取方法
 	 */
 	public function values() {
 		$form_type = $this->form_type;
@@ -101,23 +114,27 @@ class WizhiFormBuilder {
 
 			switch ( $form_type ) {
 				case 'option':
-					$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ] );
+					$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
 					break;
 
 				case 'post_meta':
-					$values[ $field[ 'name' ] ] = get_post_meta( $id, $field[ 'name' ], true );
+					$value                      = get_post_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
 					break;
 
 				case 'user_meta':
-					$values[ $field[ 'name' ] ] = get_user_meta( $id, $field[ 'name' ], true );
+					$value                      = get_user_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
 					break;
 
 				case 'term_meta':
-					$values[ $field[ 'name' ] ] = get_term_meta( $id, $field[ 'name' ], true );
+					$value                      = get_term_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
 					break;
 
 				default:
-					$values[ $field[ 'name' ] ] = get_post_meta( $id, $field[ 'name' ], true );
+					$value                      = get_post_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
 			}
 
 		}
@@ -132,13 +149,36 @@ class WizhiFormBuilder {
 	 */
 	public function build() {
 
+		$form_type = $this->form_type;
+
 		$form = new Form;
 
-		$renderer                                        = $form->getRenderer();
-		$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-		$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr';
-		$renderer->wrappers[ 'label' ][ 'container' ]    = 'th class=row';
-		$renderer->wrappers[ 'control' ][ 'container' ]  = 'td';
+		$renderer = $form->getRenderer();
+
+		switch ( $form_type ) {
+			case 'option':
+				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+				break;
+
+			case 'post_meta':
+				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+				break;
+
+			case 'user_meta':
+				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+				break;
+
+			case 'term_meta':
+				$renderer->wrappers[ 'controls' ][ 'container' ] = '';
+				break;
+
+			default:
+				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+		}
+
+		$renderer->wrappers[ 'pair' ][ 'container' ]    = 'tr class=form-field';
+		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
+		$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
 
 		$fields = $this->fields;
 		$values = $this->values();
@@ -173,7 +213,6 @@ class WizhiFormBuilder {
 
 				case 'checkbox-list':
 					$form->addCheckboxList( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
 
@@ -185,7 +224,6 @@ class WizhiFormBuilder {
 
 				case 'select':
 					$form->addSelect( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
 
@@ -199,19 +237,15 @@ class WizhiFormBuilder {
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
 				case 'upload':
-					$form->addUpload( $field[ 'name' ], $field[ 'label' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addUpload( $field[ 'name' ], $field[ 'label' ] );
 					break;
 
 				case 'multi-upload':
-					$form->addMultiUpload( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addMultiUpload( $field[ 'name' ], $field[ 'label' ] );
 					break;
 
 				case 'hidden':
 					$form->addHidden( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
 
@@ -224,8 +258,6 @@ class WizhiFormBuilder {
 
 		}
 
-		$form->addSubmit( 'send', '保存更改' );
-
 		return $form;
 
 	}
@@ -233,6 +265,8 @@ class WizhiFormBuilder {
 
 	/**
 	 * 验证表单提交的数据
+	 *
+	 * todo: 添加验证规则, 同时添加前端验证规则
 	 */
 	public function validate() {
 
@@ -248,11 +282,24 @@ class WizhiFormBuilder {
 
 
 	/**
-	 * 显示表单
+	 * 只显示表单项目, 没有表单提交按钮
 	 */
 	public function display() {
 
 		$form = $this->build();
+
+		echo $form;
+
+	}
+
+
+	/**
+	 * 添加表单按钮, 并提交表单项目
+	 */
+	public function show() {
+
+		$form = $this->build();
+		$form->addSubmit( 'send', '保存更改' );
 
 		echo $form;
 
@@ -287,7 +334,7 @@ class WizhiFormBuilder {
 					// 保存文章元数据
 					case 'post_meta':
 
-						// 检查训技术
+						// 检查随机数
 						if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, 'wizhi_nonce' ) ) {
 							return;
 						}
@@ -306,11 +353,11 @@ class WizhiFormBuilder {
 						break;
 
 					case 'user_meta':
-						update_user_meta( $id, $values->$field[ 'name' ] );
+						update_user_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
 						break;
 
 					case 'term_meta':
-						update_term_meta( $id, $values->$field[ 'name' ] );
+						update_term_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
 						break;
 
 					default:
@@ -326,4 +373,3 @@ class WizhiFormBuilder {
 	}
 
 }
-

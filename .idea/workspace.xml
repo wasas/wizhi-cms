@@ -2,16 +2,148 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.nvmrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/form-builder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/metabox-builder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/link.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/link.bat" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/images/overlay-icon-link.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/images/overlay-icon-video.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/images/overlay-icon-zoom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/scripts/plugins/dropit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.bxslider.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_alert.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_dropdown.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_modal.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_overlay.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_pager.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_slider.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/assets/styles/components/_typo.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/metabox/term.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inc/metabox/user.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/components/_bxslider.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/components/_mixin.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/components/_pure_addon.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/components/_typo.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/plugins/bxslider.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/base.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/buttons-core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/buttons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/forms-responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/forms.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/grid-old.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/grid-responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/grid.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-dropdown.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-horizontal.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-scrollable.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/menus-skin.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/reset.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/pure/tables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/iconfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/customizer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/flexslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/html5shiv.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/maps/snap.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/snap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/editor-style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/maps/old.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/old.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/class.settings-api.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/inc/ucenter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/filters.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.bowerrc" afterPath="$PROJECT_DIR$/front/.bowerrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.jscsrc" afterPath="$PROJECT_DIR$/front/.jscsrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.jshintrc" afterPath="$PROJECT_DIR$/front/.jshintrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.nvmrc" afterPath="$PROJECT_DIR$/front/.nvmrc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/bx_loader.gif" afterPath="$PROJECT_DIR$/front/assets/images/loader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/images/controls.png" afterPath="$PROJECT_DIR$/front/assets/images/controls.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/manifest.json" afterPath="$PROJECT_DIR$/front/assets/manifest.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scripts/main.js" afterPath="$PROJECT_DIR$/front/assets/scripts/main.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/scripts/plugins/jquery.scrollbox.js" afterPath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.scrollbox.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/_variables.less" afterPath="$PROJECT_DIR$/front/assets/styles/_variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/components/_box.less" afterPath="$PROJECT_DIR$/front/assets/styles/components/_box.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/components/_helper.less" afterPath="$PROJECT_DIR$/front/assets/styles/components/_helper.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/components/_list.less" afterPath="$PROJECT_DIR$/front/assets/styles/components/_list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/components/_media.less" afterPath="$PROJECT_DIR$/front/assets/styles/components/_media.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/components/_tab.less" afterPath="$PROJECT_DIR$/front/assets/styles/components/_tab.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/styles/main.less" afterPath="$PROJECT_DIR$/front/assets/styles/main.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/front/bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/images/bx_loader.gif" afterPath="$PROJECT_DIR$/front/dist/images/bx_loader.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/images/controls.png" afterPath="$PROJECT_DIR$/front/dist/images/controls.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dist/images/height.png" afterPath="$PROJECT_DIR$/front/dist/images/height.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/front/gulpfile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/inc/metabox-builder.php" afterPath="$PROJECT_DIR$/inc/metabox/post.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/link.sh" afterPath="$PROJECT_DIR$/front/link.sh" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/front/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class.settings-api.php" afterPath="$PROJECT_DIR$/inc/class.settings-api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/builder/lib/columns.php" afterPath="$PROJECT_DIR$/builder/lib/columns.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/404.html" afterPath="$PROJECT_DIR$/docs/404.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/elementlist.js" afterPath="$PROJECT_DIR$/docs/elementlist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/function-wizhi_cms_remove_dashicons.html" afterPath="$PROJECT_DIR$/docs/function-wizhi_cms_remove_dashicons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/function-wizhi_slider_js.html" afterPath="$PROJECT_DIR$/docs/function-wizhi_slider_js.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/function-wizhi_zui_scripts.html" afterPath="$PROJECT_DIR$/docs/function-wizhi_zui_scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/function-wizhi_zui_style.html" afterPath="$PROJECT_DIR$/docs/function-wizhi_zui_style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/package-front.html" afterPath="$PROJECT_DIR$/docs/package-front.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-GambitPBSandwich.html" afterPath="$PROJECT_DIR$/docs/source-class-GambitPBSandwich.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-GambitPBSandwichColumns.html" afterPath="$PROJECT_DIR$/docs/source-class-GambitPBSandwichColumns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-GambitPBSandwichToolbar.html" afterPath="$PROJECT_DIR$/docs/source-class-GambitPBSandwichToolbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-WeDevs_Settings_API.html" afterPath="$PROJECT_DIR$/docs/source-class-WeDevs_Settings_API.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-Wizhi_CMS_Setting.html" afterPath="$PROJECT_DIR$/docs/source-class-Wizhi_CMS_Setting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-Wizhi_Pure_Category_Walker.html" afterPath="$PROJECT_DIR$/docs/source-class-Wizhi_Pure_Category_Walker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-Wizhi_Pure_Walker_Nav_Menu.html" afterPath="$PROJECT_DIR$/docs/source-class-Wizhi_Pure_Walker_Nav_Menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-simple_html_dom.html" afterPath="$PROJECT_DIR$/docs/source-class-simple_html_dom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-simple_html_dom_node.html" afterPath="$PROJECT_DIR$/docs/source-class-simple_html_dom_node.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-class-wizhi_bootstrap_navwalker.html" afterPath="$PROJECT_DIR$/docs/source-class-wizhi_bootstrap_navwalker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-additional_post_classes.html" afterPath="$PROJECT_DIR$/docs/source-function-additional_post_classes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-dump_html_tree.html" afterPath="$PROJECT_DIR$/docs/source-function-dump_html_tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-file_get_html.html" afterPath="$PROJECT_DIR$/docs/source-function-file_get_html.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-is_current_link.html" afterPath="$PROJECT_DIR$/docs/source-function-is_current_link.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-is_profile_checked.html" afterPath="$PROJECT_DIR$/docs/source-function-is_profile_checked.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-is_profile_selected.html" afterPath="$PROJECT_DIR$/docs/source-function-is_profile_selected.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-is_self_profile.html" afterPath="$PROJECT_DIR$/docs/source-function-is_self_profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-order_no.html" afterPath="$PROJECT_DIR$/docs/source-function-order_no.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-post_is_in_descendant_category.html" afterPath="$PROJECT_DIR$/docs/source-function-post_is_in_descendant_category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-sandwich_functions_display_dir.html" afterPath="$PROJECT_DIR$/docs/source-function-sandwich_functions_display_dir.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-sandwich_functions_display_order.html" afterPath="$PROJECT_DIR$/docs/source-function-sandwich_functions_display_order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-sandwich_functions_posttype_list.html" afterPath="$PROJECT_DIR$/docs/source-function-sandwich_functions_posttype_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-sandwich_functions_taxonomy_list.html" afterPath="$PROJECT_DIR$/docs/source-function-sandwich_functions_taxonomy_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-sandwich_functions_term_list.html" afterPath="$PROJECT_DIR$/docs/source-function-sandwich_functions_term_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-str_get_html.html" afterPath="$PROJECT_DIR$/docs/source-function-str_get_html.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_bootstrap_pagination.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_bootstrap_pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_cms_rand_str.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_cms_rand_str.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_cms_remove_dashicons.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_cms_remove_dashicons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_cms_upload_file.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_cms_upload_file.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_create_taxs.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_create_taxs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_create_types.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_create_types.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_get_current_user.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_get_current_user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_get_taxonomy_templates.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_get_taxonomy_templates.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_get_the_archive_title.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_get_the_archive_title.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_pagination.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_pagination.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_related.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_related.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_alert.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_alert.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_button.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_button.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_divider.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_divider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_heading.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_heading.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_loop.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_loop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_page_cont.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_page_cont.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_photo_list.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_photo_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_slider.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_slider.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_title_list.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_title_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_ui.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_shortcode_ui.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_slider_js.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_slider_js.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_unslug.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_unslug.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_zui_scripts.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_zui_scripts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wizhi_zui_style.html" afterPath="$PROJECT_DIR$/docs/source-function-wizhi_zui_style.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source-function-wz_get_template_part.html" afterPath="$PROJECT_DIR$/docs/source-function-wz_get_template_part.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/form-builder.php" afterPath="$PROJECT_DIR$/inc/form-builder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/helper.php" afterPath="$PROJECT_DIR$/inc/helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/shortcodes/element.php" afterPath="$PROJECT_DIR$/modules/shortcodes/element.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wizhi-cms.php" afterPath="$PROJECT_DIR$/wizhi-cms.php" />
     </list>
@@ -35,43 +167,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="_overlay.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_overlay.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.291666">
-              <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-              <folding>
-                <marker date="1463968165000" expanded="true" signature="291:316" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-builder.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/form-builder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.646245">
-              <caret line="289" column="32" selection-start-line="289" selection-start-column="32" selection-end-line="289" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="metabox-builder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/metabox-builder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.666668">
-              <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+            <state vertical-scroll-proportion="-35.833332">
+              <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -80,8 +180,68 @@
       <file leaf-file-name="wizhi-cms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wizhi-cms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.041666">
-              <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
+            <state vertical-scroll-proportion="-28.958334">
+              <caret line="215" column="33" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.625">
+              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form-builder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/form-builder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-114.375">
+              <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/metabox/post.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-28.083334">
+              <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inc/metabox/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.4210526">
+              <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="term.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/metabox/term.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.208333">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,28 +255,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modules/resizer.php" />
-        <option value="$PROJECT_DIR$/piklist/parts/terms/field-template.php" />
-        <option value="$PROJECT_DIR$/builder/css/frontend.css" />
-        <option value="$PROJECT_DIR$/builder/lib/columns.php" />
-        <option value="$PROJECT_DIR$/builder/lib/toolbar.php" />
-        <option value="$PROJECT_DIR$/builder/lib/functions.php" />
-        <option value="$PROJECT_DIR$/modules/helper.php" />
-        <option value="$PROJECT_DIR$/inc/class-gamajo-template-loader.php" />
-        <option value="$PROJECT_DIR$/templates/content-title_list.php" />
-        <option value="$PROJECT_DIR$/templates/content-photo_list.php" />
-        <option value="$PROJECT_DIR$/templates/content-slider.php" />
-        <option value="$PROJECT_DIR$/modules/shortcodes.php" />
-        <option value="$PROJECT_DIR$/builder/builder.php" />
-        <option value="$PROJECT_DIR$/builder/lib/templates/column-toolbar.php" />
-        <option value="$PROJECT_DIR$/modules/filters.php" />
-        <option value="$PROJECT_DIR$/inc/ucenter.php" />
         <option value="$PROJECT_DIR$/modules/post_types.php" />
         <option value="$PROJECT_DIR$/modules/related.php" />
         <option value="$PROJECT_DIR$/modules/pagination.php" />
         <option value="$PROJECT_DIR$/builder/inc/simple_html_dom.php" />
         <option value="$PROJECT_DIR$/modules/walker.php" />
-        <option value="$PROJECT_DIR$/inc/helper.php" />
         <option value="$PROJECT_DIR$/modules/optimization.php" />
         <option value="$PROJECT_DIR$/modules/shortcodes-ui.php" />
         <option value="$PROJECT_DIR$/inc/template-loader.php" />
@@ -127,22 +270,54 @@
         <option value="$PROJECT_DIR$/link.sh" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/inc/class.settings-api.php" />
-        <option value="$PROJECT_DIR$/settings.php" />
-        <option value="$PROJECT_DIR$/wizhi-cms.php" />
         <option value="$PROJECT_DIR$/inc/metabox-builder.php" />
+        <option value="$PROJECT_DIR$/inc/metabox/term-meta.php" />
+        <option value="$PROJECT_DIR$/inc/metabox/post-meta.php" />
+        <option value="$PROJECT_DIR$/builder/lib/columns.php" />
+        <option value="$PROJECT_DIR$/front/gulpfile.js" />
+        <option value="$PROJECT_DIR$/docs/404.html" />
+        <option value="$PROJECT_DIR$/front/assets/styles/pure/base.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/_pure-old.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/_pure.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/_pure-nr.less" />
+        <option value="$PROJECT_DIR$/front/assets/manifest.json" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_helper.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_alert.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_pager.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/_variables.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_dropdown.less" />
+        <option value="$PROJECT_DIR$/front/dist/styles/main.css" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_list.less" />
+        <option value="$PROJECT_DIR$/front/assets/scripts/plugins/dropit.js" />
+        <option value="$PROJECT_DIR$/front/assets/scripts/main.js" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_media.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/main.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_tab.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_box.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_typo.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_modal.less" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_slider.less" />
+        <option value="$PROJECT_DIR$/front/bower.json" />
+        <option value="$PROJECT_DIR$/front/assets/styles/components/_overlay.less" />
+        <option value="$PROJECT_DIR$/inc/metabox/term.php" />
+        <option value="$PROJECT_DIR$/settings.php" />
+        <option value="$PROJECT_DIR$/inc/metabox/user.php" />
+        <option value="$PROJECT_DIR$/inc/helper.php" />
         <option value="$PROJECT_DIR$/inc/form-builder.php" />
+        <option value="$PROJECT_DIR$/inc/metabox/post.php" />
+        <option value="$PROJECT_DIR$/wizhi-cms.php" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true">
-    <package-json value="$PROJECT_DIR$/package.json" />
+    <package-json value="$PROJECT_DIR$/front/package.json" />
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <gulpfiles>
       <GulpfileState>
-        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <gulpfile-path>$PROJECT_DIR$/front/gulpfile.js</gulpfile-path>
       </GulpfileState>
     </gulpfiles>
   </component>
@@ -230,6 +405,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wizhi-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wizhi-cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metabox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -243,13 +436,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/inc" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front/assets/scripts/plugins" />
+      <recent name="$PROJECT_DIR$/front/assets/images" />
+      <recent name="$PROJECT_DIR$/front" />
       <recent name="$PROJECT_DIR$/inc" />
+      <recent name="$PROJECT_DIR$/inc/metabox" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inc/metabox" />
+      <recent name="$PROJECT_DIR$/front/assets/images" />
+      <recent name="$PROJECT_DIR$/front/assets/scripts/plugins" />
+      <recent name="$PROJECT_DIR$/front/assets/styles/components" />
+      <recent name="$PROJECT_DIR$/front/assets/styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -300,24 +499,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12582056" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21061268" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.021159153" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.078196876" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934684" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -344,367 +543,371 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/styles/_variables.less">
+    <entry file="file://$PROJECT_DIR$/front/dist/images/height.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/dist/images/controls.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/dist/images/bx_loader.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/.bowerrc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php">
+    <entry file="file://$PROJECT_DIR$/front/.jscsrc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builder/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.149607">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/frontend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/min/admin-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3370253">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/min/editor-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3322785">
-          <caret line="172" column="49" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/js/min/frontend-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0500758">
-          <caret line="134" column="16" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/css/editor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.047244094">
-          <caret line="321" column="31" selection-start-line="321" selection-start-column="31" selection-end-line="321" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/css/frontend.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.968504">
-          <caret line="1649" column="5" selection-start-line="1649" selection-start-column="5" selection-end-line="1649" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.jscsrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-area-edit-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06779661">
-          <caret line="111" column="12" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-toolbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37288135">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-edit-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5084746">
-          <caret line="213" column="74" selection-start-line="213" selection-start-column="74" selection-end-line="213" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-row-backgrounds.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-change-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27118644">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/templates/column-custom-modal-description.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/columns.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7118645">
-          <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3220339">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/lib/toolbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050847456">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/styles/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/styles/_variables.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.jshintrc">
+    <entry file="file://$PROJECT_DIR$/front/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/ucenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.375">
-          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/post_types.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.583333">
-          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/builder/inc/simple_html_dom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.583333">
-          <caret line="114" column="2" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/related.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/walker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/optimization.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547">
-          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes/element.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes/loop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.072463766">
-          <caret line="380" column="41" selection-start-line="380" selection-start-column="41" selection-end-line="380" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/template-loader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5797101">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17391305">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.nvmrc">
+    <entry file="file://$PROJECT_DIR$/front/.nvmrc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/manifest.json">
+    <entry file="file://$PROJECT_DIR$/front/link.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6449376">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87967914">
+          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/link.sh">
+    <entry file="file://$PROJECT_DIR$/docs/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63873625">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+        <state vertical-scroll-proportion="1.826087">
+          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/pure-min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/pure.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.877071">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/pure-nr.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.337017">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/grids.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/grids-core.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.333334">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/grids-responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower_components/pure/grids-responsive-old-ie.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_helper.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-78.125">
+          <caret line="125" column="1" selection-start-line="125" selection-start-column="1" selection-end-line="125" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/_variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43032786">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_dropdown.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8213059">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/shortcodes-ui.php">
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_list.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/class.settings-api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="205" column="11" selection-start-line="205" selection-start-column="11" selection-end-line="205" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.37800688">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wizhi-cms.php">
+    <entry file="file://$PROJECT_DIR$/front/assets/scripts/plugins/dropit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.041666">
-          <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/scripts/plugins/jquery.modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_media.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.5">
+          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_alert.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/images/overlay-icon-video.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/images/overlay-icon-zoom.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/images/loader.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/images/overlay-icon-link.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_modal.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.375">
+          <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_pager.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_slider.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.875">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_tab.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/dist/scripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2356688">
+          <caret line="0" column="24585" selection-start-line="0" selection-start-column="24585" selection-end-line="0" selection-end-column="24585" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/scripts/plugins/jquery.bxslider.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.022293">
+          <caret line="9" column="22502" selection-start-line="9" selection-start-column="22502" selection-end-line="9" selection-end-column="22502" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_typo.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6601307">
+          <caret line="334" column="19" selection-start-line="334" selection-start-column="19" selection-end-line="334" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_box.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2777778">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22875817">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/dist/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9019608">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/metabox/term.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.208333">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/assets/styles/components/_overlay.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-35.833332">
+          <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.291666">
-          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
-          <folding>
-            <marker date="1463968165000" expanded="true" signature="291:316" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/metabox-builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.666668">
-          <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+        <state vertical-scroll-proportion="-20.625">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/form-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.646245">
-          <caret line="289" column="32" selection-start-line="289" selection-start-column="32" selection-end-line="289" selection-end-column="32" />
+        <state vertical-scroll-proportion="-114.375">
+          <caret line="183" column="34" selection-start-line="183" selection-start-column="34" selection-end-line="183" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/metabox/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.083334">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wizhi-cms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.958334">
+          <caret line="215" column="33" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/metabox/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4210526">
+          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
           <folding />
         </state>
       </provider>

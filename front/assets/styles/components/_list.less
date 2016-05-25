@@ -1,0 +1,62 @@
+.ui-list {
+    margin: 0;
+    padding: 10px;
+    list-style: square inside;
+    &-list-item {
+        line-height: 20px;
+        a {
+            line-height: 20px;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.ui-list-item {
+    a, span.ui-list-item-text {
+        font-size: 12px;
+        vertical-align: middle;
+    }
+}
+
+.ui-list-gray {
+    .ui-list-item {
+        color: #808080;
+    }
+}
+
+.ui-list-graylink {
+    .ui-list-item {
+        color: #808080;
+        a {
+            color: #666;
+        }
+    }
+}
+
+.ui-list-nosquare {
+    list-style: none;
+}
+
+.ui-dlist {
+    &:extend(.clearfix all);
+    float: left;
+    color: #333;
+    font-size: 12px;
+    line-height: 2.2;
+    &-title {
+        float: left;
+        font-weight: 700;
+        width: 20%;
+        text-align: right;
+        margin: 0;
+    }
+    &-desc {
+        float: left;
+        width: 80%;
+        text-align: left;
+        margin: 0;
+    }
+}

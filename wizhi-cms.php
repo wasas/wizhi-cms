@@ -16,11 +16,11 @@ define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 require_once( WIZHI_CMS . 'modules/post_types.php' );
 
 require_once( WIZHI_CMS . 'inc/form-builder.php' );
-require_once( WIZHI_CMS . 'inc/metabox-builder.php' );
+require_once( WIZHI_CMS . 'inc/metabox/post.php' );
+require_once( WIZHI_CMS . 'inc/metabox/term.php' );
+require_once( WIZHI_CMS . 'inc/metabox/user.php' );
 require_once( WIZHI_CMS . 'inc/template-loader.php' );
-require_once( WIZHI_CMS . 'inc/ucenter.php' );
 require_once( WIZHI_CMS . 'inc/helper.php' );
-require_once( WIZHI_CMS . 'inc/class.settings-api.php' );
 
 // 添加页面分栏功能
 require_once( WIZHI_CMS . 'builder/builder.php' );
@@ -39,9 +39,6 @@ require_once( WIZHI_CMS . 'modules/walker.php' );
 // 相关文章功能
 require_once( WIZHI_CMS . 'modules/related.php' );
 
-// 添加的过滤功能
-require_once( WIZHI_CMS . 'modules/filters.php' );
-
 // 加速优化功能
 require_once( WIZHI_CMS . 'modules/optimization.php' );
 
@@ -53,8 +50,8 @@ $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
 
 //加载 CSS 和 JS
 if ( $wizhi_use_cms_front ) {
-	add_action( 'wp_enqueue_scripts', 'wizhi_zui_scripts' );
-	add_action( 'wp_enqueue_scripts', 'wizhi_zui_style' );
+	add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
+	add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
 }
 
 /**
@@ -62,8 +59,8 @@ if ( $wizhi_use_cms_front ) {
  *
  * @package front
  */
-function wizhi_zui_style() {
-	wp_register_style( 'wizhi-style', plugins_url( 'dist/styles/main.css', __FILE__ ) );
+function wizhi_ui_style() {
+	wp_register_style( 'wizhi-style', plugins_url( 'front/dist/styles/main.css', __FILE__ ) );
 	wp_enqueue_style( 'wizhi-style' );
 }
 
@@ -72,8 +69,8 @@ function wizhi_zui_style() {
  *
  * @package front
  */
-function wizhi_zui_scripts() {
-	wp_register_script( 'plugin_script', plugins_url( '/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
+function wizhi_ui_scripts() {
+	wp_register_script( 'plugin_script', plugins_url( 'front/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
 	wp_enqueue_script( 'plugin_script' );
 }
 
@@ -162,12 +159,10 @@ $args = [
 	'post_type' => 'post',
 ];
 
-
 $fields = [
 	[
 		'type'        => 'text',
 		'name'        => 'url',
-		'scope'       => 'option',
 		'label'       => '表单',
 		'size'        => '80',
 		'default'     => '请输入文本',
@@ -176,7 +171,6 @@ $fields = [
 	[
 		'type'        => 'textarea',
 		'name'        => 'text',
-		'scope'       => 'option',
 		'label'       => '文本',
 		'size'        => '80',
 		'default'     => '请输入文本',
@@ -189,7 +183,6 @@ $fields = [
 	[
 		'type'    => 'checkbox',
 		'name'    => 'checkbox',
-		'scope'   => 'option',
 		'label'   => '文本',
 		'size'    => '80',
 		'options' => [
@@ -197,6 +190,38 @@ $fields = [
 			'2' => '老二',
 		],
 	],
+	[
+		'type'    => 'select',
+		'name'    => 'pyype',
+		'label'   => '文章类型',
+		'default' => 'post',
+		'options' => wizhi_get_post_types(),
+	],
+	[
+		'type'    => 'select',
+		'name'    => 'thmb',
+		'label'   => '缩略图大小',
+		'default' => 'full',
+		'options' => wizhi_get_image_sizes(),
+	],
 ];
 
-$metabox = new WizhiMetabox('test', '测试盒子', $fields);
+
+$args_post = [
+	'id'         => 'test',
+	'title'      => '文章附加数据',
+	'taxonomies' => [ 'post', 'page' ],
+];
+
+new WizhiMetabox( 'test', '文章附加数据', $fields, $args_post );
+
+
+$args_term = [
+	'id'         => 'test',
+	'title'      => '测试盒子',
+	'taxonomies' => [ 'category', 'post_tag', 'prod_cat' ],
+];
+
+new WizhiTermMetabox( 'test', '测试盒子', $fields, $args_term );
+
+new WizhiUserMetabox( 'user12', '附加资料', $fields );
