@@ -234,7 +234,7 @@ function wizhi_shortcode_ui() {
 			[
 				'label' => __( '分类方法' ),
 				'attr'  => 'tax',
-				'type'  => 'text',
+				'type'  => 'term_select',
 				'value' => 'category',
 			],
 			[

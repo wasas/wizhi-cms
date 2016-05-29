@@ -3,7 +3,7 @@
 /**
  * 获取当前分类的父级类 ID
  *
- * @param int    $cat      分类 id
+ * @param int    $term_id  分类 id
  * @param string $taxonomy 分类法名称
  *
  * @return mixed

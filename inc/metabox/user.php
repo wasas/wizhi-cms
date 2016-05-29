@@ -6,22 +6,6 @@
 class WizhiUserMetabox {
 
 	/**
-	 * Metabox ID.
-	 *
-	 * @var string
-	 */
-	private $id;
-
-
-	/**
-	 * Title.
-	 *
-	 * @var string
-	 */
-	private $title;
-
-
-	/**
 	 * 表单字段
 	 *
 	 * @var array
@@ -40,15 +24,11 @@ class WizhiUserMetabox {
 	/**
 	 * WizhiTermMetabox constructor.
 	 *
-	 * @param       $id
-	 * @param       $title
-	 * @param array $fields
-	 * @param array $args
+	 * @param array $fields 表单数组
+	 * @param array $args   附加参数
 	 */
-	public function __construct( $id, $title, $fields = [ ], $args = [ ] ) {
+	public function __construct( $fields = [ ], $args = [ ] ) {
 
-		$this->id     = $id;
-		$this->title  = $title;
 		$this->fields = $fields;
 		$this->args   = $args;
 
@@ -62,12 +42,17 @@ class WizhiUserMetabox {
 
 	}
 
-	// 构建表单
+
+	/**
+	 * 构建表单
+	 *
+	 * @param int $user_id 用户 ID
+	 *
+	 * @return \WizhiFormBuilder
+	 */
 	public function build( $user_id ) {
 		$fields = $this->fields;
-
-		// 显示表单
-		$form = new WizhiFormBuilder( 'user_meta', $fields, $user_id );
+		$form   = new WizhiFormBuilder( 'user_meta', $fields, $user_id );
 
 		return $form;
 

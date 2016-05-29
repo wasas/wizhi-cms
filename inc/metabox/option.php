@@ -1,5 +1,7 @@
 <?php
 
+use Nette\Utils\Html;
+
 class WizhiOptionPage {
 
 	/**
@@ -18,6 +20,12 @@ class WizhiOptionPage {
 	private $args;
 
 
+	/**
+	 * WizhiOptionPage constructor.
+	 *
+	 * @param array $fields 表单字段
+	 * @param array $args   附加参数
+	 */
 	public function __construct( $fields = [ ], $args = [ ] ) {
 
 		$this->fields = $fields;
@@ -27,6 +35,9 @@ class WizhiOptionPage {
 
 	}
 
+	/**
+	 * 显示菜单
+	 */
 	public function menu() {
 
 		$args = $this->args;
@@ -40,7 +51,22 @@ class WizhiOptionPage {
 	 */
 	public function page() {
 
+		$args   = $this->args;
 		$fields = $this->fields;
+
+		echo Html::el( 'h1', $args[ 'title' ] );
+		echo Html::el( 'p', '插件描述' );
+
+		add_thickbox();
+
+		echo '<div id="transform" style="display:none;">
+     <p>
+          This is my hidden content! It will appear in ThickBox when the link is clicked.
+     </p>
+</div>
+
+<a href="#TB_inline?width=600&height=550&inlineId=transform" class="thickbox">查看弹出内容</a>	';
+
 
 		// 显示表单
 		$form = new WizhiFormBuilder( 'option', $fields );

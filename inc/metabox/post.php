@@ -30,7 +30,12 @@ class WizhiPostMetabox {
 
 
 	/**
-	 * Constructor.
+	 * 元数据盒子构造函数
+	 *
+	 * @param string $id     元数据盒子 id
+	 * @param string $title  元数据盒子标题
+	 * @param array  $fields 元数据盒子表单数组
+	 * @param array  $args   附加数据
 	 */
 	public function __construct( $id, $title, $fields = [ ], $args = [ ] ) {
 

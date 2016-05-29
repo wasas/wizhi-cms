@@ -56,29 +56,16 @@ class WizhiFormBuilder {
 		$this->form_type = $form_type;
 		$this->fields    = $fields;
 		$this->id        = $id;
+		$this->args      = $args;
 
-		// 合并默认参数和用户参数
-		$args = wp_parse_args( $args, [
-			'post_type'  => 'post',
-			'taxonomies' => [ 'category' ],
-		] );
-
-		// 如果文章类型参数是字符串, 转换成数组
-		if ( is_string( $args[ 'post_type' ] ) ) {
-			$args[ 'post_type' ] = [ $args[ 'post_type' ] ];
-		}
-
-		// 如果分类方法是字符串, 转换成数组
-		if ( is_string( $args[ 'taxonomies' ] ) ) {
-			$args[ 'taxonomies' ] = [ $args[ 'taxonomies' ] ];
-		}
-
-		$this->args = $args;
+		add_action( 'admin_notices', [ $this, 'notice' ] );
 
 	}
 
 
-	// 初始化表单
+	/**
+	 * 初始化表单
+	 */
 	public function init() {
 		$this->show();
 		$this->save();
@@ -185,6 +172,11 @@ class WizhiFormBuilder {
 		foreach ( $fields as $field ) {
 
 			switch ( $field[ 'type' ] ) {
+				case 'group':
+					$form->addGroup( $field[ 'label' ] )
+					     ->setOption( 'embedNext', true );
+					break;
+
 				case 'text':
 					$form->addText( $field[ 'name' ], $field[ 'label' ] )
 					     ->setAttribute( 'size', $field[ 'size' ] )
@@ -284,9 +276,16 @@ class WizhiFormBuilder {
 
 		$form = $this->build();
 
+		$form = str_replace( '<form action="" method="post">', '', $form );
 		$form = str_replace( '</form>', '', $form );
+		$form = str_replace( '</fieldset>', '', $form );
+		$form = str_replace( '</table>', '</table></fieldset>', $form );
+
+		echo '<div id="form_tab">';
 
 		echo $form;
+
+		echo '</div>';
 
 	}
 
@@ -322,6 +321,12 @@ class WizhiFormBuilder {
 
 			$nonce = $values->wizhi_nonce;
 
+			// 无论哪种表单类型, 都要检查随机数
+			if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, 'wizhi_nonce' ) ) {
+				return;
+			}
+
+			// 循环保存所有数据
 			foreach ( $fields as $field ) {
 
 				switch ( $form_type ) {
@@ -329,13 +334,8 @@ class WizhiFormBuilder {
 						update_option( $field[ 'name' ], $values->$field[ 'name' ] );
 						break;
 
-					// 保存文章元数据
+					// 保存文章元数据, 保存之前检查权限和文章类型
 					case 'post_meta':
-
-						// 检查随机数
-						if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, 'wizhi_nonce' ) ) {
-							return;
-						}
 
 						// 检查是否有权限编辑
 						if ( ! current_user_can( 'edit_post', $id ) ) {
@@ -364,9 +364,26 @@ class WizhiFormBuilder {
 
 			}
 
-			echo '<div class="notice notice-success is-dismissible"><p>设置保存成功</p></div>';
+			return true;
 
 		}
+
+		return false;
+
+	}
+
+
+	/**
+	 * 保存表单后的通知信息
+	 */
+	function notice() {
+
+		$error = $this->save();
+
+		$class   = 'notice notice-error';
+		$message = __( '噢, 出现错误了.', 'wizhi-cms' );
+
+		echo '<div class="notice notice-error"><p>噢, 出现错误了</p></div>';
 
 	}
 

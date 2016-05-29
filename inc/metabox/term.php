@@ -6,22 +6,6 @@
 class WizhiTermMetabox {
 
 	/**
-	 * Metabox ID.
-	 *
-	 * @var string
-	 */
-	private $id;
-
-
-	/**
-	 * Title.
-	 *
-	 * @var string
-	 */
-	private $title;
-
-
-	/**
 	 * 表单字段
 	 *
 	 * @var array
@@ -40,18 +24,13 @@ class WizhiTermMetabox {
 	/**
 	 * WizhiTermMetabox constructor.
 	 *
-	 * @param       $id
-	 * @param       $title
-	 * @param array $fields
-	 * @param array $args
+	 * @param array $fields 表单数据
+	 * @param array $args   附加参数
 	 */
-	public function __construct( $id, $title, $fields = [ ], $args = [ ] ) {
+	public function __construct( $fields = [ ], $args = [ ] ) {
 
-		$this->id         = $id;
-		$this->title      = $title;
 		$this->fields     = $fields;
 		$this->args       = $args;
-		$this->post_types = $args[ 'post_type' ];
 		$this->taxonomies = $args[ 'taxonomies' ];
 
 		if ( is_admin() ) {
@@ -68,7 +47,14 @@ class WizhiTermMetabox {
 
 	}
 
-	// 构建表单
+
+	/**
+	 * 构造表单
+	 *
+	 * @param int $term_id 分类法项目 ID
+	 *
+	 * @return \WizhiFormBuilder
+	 */
 	public function build( $term_id ) {
 		$fields = $this->fields;
 

@@ -59,7 +59,12 @@ $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
 if ( $wizhi_use_cms_front ) {
 	add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
 	add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
+
+	add_action( 'admin_enqueue_scripts', 'wizhi_ui_scripts' );
+	add_action( 'admin_enqueue_scripts', 'wizhi_ui_style' );
 }
+
+add_action( 'admin_enqueue_scripts', 'wizhi_ui_scripts' );
 
 /**
  * 加载CSS
@@ -77,6 +82,7 @@ function wizhi_ui_style() {
  * @package front
  */
 function wizhi_ui_scripts() {
-	wp_register_script( 'plugin_script', plugins_url( 'front/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
-	wp_enqueue_script( 'plugin_script' );
+	wp_register_script( 'wizhi-script', plugins_url( 'front/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
+	wp_enqueue_script( 'wizhi-script' );
+	wp_enqueue_script( "jquery-ui-tabs" );
 }
