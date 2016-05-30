@@ -1,0 +1,139 @@
+/* --------------------------------------------------------------
+ * = 通用辅助样式
+ * ----------------------------------------------------------- */
+
+.inline-block {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.close {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    float: right;
+    opacity: .2;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        text-decoration: none;
+        opacity: .4;
+        color: #000;
+        filter: alpha(opacity=40);
+    }
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.pull {
+    &-right {
+        float: right;
+    }
+    &-left {
+        float: left;
+    }
+}
+
+.text {
+    &-left {
+        text-align: left;
+    }
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.affix {
+    position: fixed;
+    top: 0;
+}
+
+.fade {
+    transition: opacity .15s linear;
+    opacity: 0;
+}
+
+.in,
+.fade.in {
+    opacity: 1;
+}
+
+.collapse {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: height .35s ease;
+}
+
+.collapse.in,
+.in {
+    height: auto;
+}
+
+.dividing {
+    padding: 0 5px;
+}
+
+.only-show-on-desktop {
+    @media (max-width: 48em) {
+        display: none !important;
+    }
+}
+
+.only-show-on-mobile {
+    display: none !important;
+    @media (max-width: 48em) {
+        display: block !important;
+    }
+}
+
+.mobile-text-center {
+    @media (max-width: 48em) {
+        text-align: center;
+    }
+}
+
+.img {
+    &-rounded {
+        border-radius: 6px;
+    }
+    &-circle {
+        border-radius: 50%;
+    }
+    &-thumbnail {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+        padding: 4px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: all .2s ease-in-out;
+    }
+}

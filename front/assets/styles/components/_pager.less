@@ -1,0 +1,43 @@
+/* --------------------------------------------------------------
+ * = 分页
+ * ----------------------------------------------------------- */
+
+// 文章分页导航样式
+ul.ui-paginator {
+    width: 100%;
+    margin: 25px 0;
+    margin: 2.5rem 0;
+    padding: 0;
+    li {
+        .pure-u;
+    }
+    .pure-button {
+        border-radius: 0;
+        padding: 6px 10px;
+        padding: .6rem 1rem;
+        background: @background;
+        vertical-align: top;
+        line-height: 1;
+        border: 0;
+        &:focus,
+        &:active {
+            outline-style: none;
+        }
+        &-active {
+            color: #fff;
+            background: @maincolor;
+            box-shadow: none;
+        }
+    }
+    .prev,
+    .next {
+        color: #c0c1c3;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.45);
+    }
+    .prev {
+        border-radius: 2px 0 0 2px;
+    }
+    .next {
+        border-radius: 0 2px 2px 0;
+    }
+}
