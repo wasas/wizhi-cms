@@ -1,0 +1,84 @@
+/* --------------------------------------------------------------
+ * = 选项卡
+ * ----------------------------------------------------------- */
+
+// tab标题
+ul.tab-title{
+    border-left: 1px solid @border-color;
+    margin: 0;
+    position: relative;
+    list-style: none;
+    z-index: 2;
+    li{
+        float: left;
+        border: 1px solid @border-color;
+        border-bottom: none;
+        border-left: none;
+        background: @background;
+        line-height: normal;
+        &.active{
+            background: #fff;
+            transition: .3s;
+        }
+        a{
+            display: block;
+            padding: @padding-md @padding;
+            padding: @padding-md-rem @padding-rem;
+            white-space: nowrap;
+            color: @text-color;
+        }
+    }
+}
+
+// tab 内容
+.tab-content-pane{
+    display: none;
+    padding: @padding;
+    padding: @padding-rem;
+}
+
+// 水平表单
+.ui-tab-h{
+    .tab-content{
+        position: relative;
+        top: -1px;
+        border: 1px solid @border-color;
+        .active{
+            display: block;
+        }
+    }
+}
+
+// 垂直tab
+.ui-tab-v{
+    &:extend(.clearfix all);
+
+    .tab-title{
+        width: 20%;
+        float: left;
+        border-left: none;
+        border-bottom: 1px solid @border-color;
+        li{
+            float: none;
+            a{
+                border-left: 1px solid @border-color;
+            }
+        }
+        .active{
+            border-right: 0;
+            a{
+                color: @text-color;
+            }
+        }
+    }
+
+    .tab-content{
+        width: 80%;
+        float: left;
+        .tab-content-pane{
+            border: 1px solid #ccc;
+            margin-left: -1px;
+        }
+    }
+
+}

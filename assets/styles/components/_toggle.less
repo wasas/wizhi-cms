@@ -1,0 +1,28 @@
+/* --------------------------------------------------------------
+ * = 简码样式
+ * ----------------------------------------------------------- */
+
+// toggle 和 accordion样式
+.toggle,
+.accordion {
+    margin-top: 1px;
+	dt, dd {
+		border: 1px solid @border-color;
+	}
+	dt{
+		margin-top: -1px;
+		a{
+			background: #eee;
+			color: @text-color;
+			display: block;
+			padding: @padding-md @padding;
+			padding: @padding-md-rem @padding-rem;
+		}
+	}
+	dd {
+		margin: 0;
+		padding: @padding;
+		padding: @padding-rem;
+		border-top: 0;
+	}
+}

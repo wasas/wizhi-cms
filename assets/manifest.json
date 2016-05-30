@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js",
+        "scripts/plugins/*.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.less"
+      ],
+      "main": true
+    },
+    "old.css": {
+      "files": [
+        "styles/pure/grid-old.less"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    },
+    "html5shiv.js": {
+      "bower": ["html5shiv"]
+    }
+  },
+  "paths": {
+    "source": "assets/",
+    "dist": "dist/"
+  }
+}
