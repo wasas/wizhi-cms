@@ -2,96 +2,146 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcdb237d-2c08-4e1a-b677-099a955a1381" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/f2a8ff0eb6f4861c464acd20e51de953a6b0cf15/_base.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/f2a8ff0eb6f4861c464acd20e51de953a6b0cf15/_layout.scssc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.sass-cache/f2a8ff0eb6f4861c464acd20e51de953a6b0cf15/_syntax-highlighting.scssc" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/.bowerrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/about.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/alert.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/box.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/button.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/form.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/index.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/list.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/media.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/menu.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/modal.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/tab.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/content/table.md.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/files.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/posts.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.cache/runtime.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/css.com.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/watcherTasks.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.idea/workspace.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/.jscsrc" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.nvmrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/fonts/.gitkeep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/images/controls.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/images/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/images/overlay-icon-link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/images/overlay-icon-video.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/images/overlay-icon-zoom.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/manifest.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/accordion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/dropdowns.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/dropit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.bxslider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/helper.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.modal.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/scripts/plugins/jquery.scrollbox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/_global.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/_variables.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_alert.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_box.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_bxslider.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_dropdown.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_helper.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_list.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_media.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_modal.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_overlay.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_pager.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_site.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_slider.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_tab.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_toggle.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/components/_typo.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/grid-old.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/main.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/addon.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/buttons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/forms-responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/forms.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/grid-old.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/grid-responsive.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/grid.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/menus-core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/menus-dropdown.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/menus-horizontal.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/menus-skin.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/pure/tables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/assets/styles/ui.less" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/HISTORY.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/base-context-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/base-context.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/base-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/buttons-core-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/buttons-core.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/buttons-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/buttons.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/forms-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/forms-nr-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/forms-nr.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-core-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-core.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-responsive-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-responsive-old-ie-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-responsive-old-ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-responsive.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-units-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids-units.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/grids.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-core-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-core.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-dropdown-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-dropdown.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-horizontal-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-horizontal.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-scrollable-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-scrollable.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-skin-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus-skin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/menus.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/pure-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/pure-nr-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/pure-nr.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/pure.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/tables-min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/bower_components/pure/tables.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/bx_loader.gif" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/controls.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/height.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/overlay-icon-link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/overlay-icon-video.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/images/overlay-icon-zoom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/html5shiv.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/jquery.js.map" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/main.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/main.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/scripts/modernizr.js.map" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/styles/main.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/styles/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/styles/old.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/dist/styles/old.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/harp.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/404.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/_layout.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/index.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/_data.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/alert.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/box.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/button.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/dropdown.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/form.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/list.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/media.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/modal.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/pager.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/tab.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/table.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/public/ui/toggle.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/images/controls.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/images/loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/html5shiv.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/jquery.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/main.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/scripts/modernizr.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/styles/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/styles/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/styles/old.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/dist/styles/old.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/alert.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/box.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/button.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/dropdown.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/media.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/modal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/pager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/tab.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/docs/www/ui/toggle.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/gulpfile.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/link.sh" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/front/package.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/ruleset.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wizhi-cms.iws" />
@@ -113,28 +163,7 @@
     <favorites_list name="wizhi-cms" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name=".gitattributes" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8512397">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -210,8 +239,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="50" />
     <option name="y" value="23" />
-    <option name="width" value="1870" />
-    <option name="height" value="1177" />
+    <option name="width" value="1390" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -254,8 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,6 +303,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -345,24 +374,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="23" width="1870" height="1177" extended-state="6" />
+    <frame x="50" y="23" width="1390" height="877" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24890591" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25222552" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3928243" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39263025" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934684" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -370,6 +399,7 @@
     </layout>
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -393,6 +423,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.078947365">
@@ -515,18 +561,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.53333336">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.sass-cache/f2a8ff0eb6f4861c464acd20e51de953a6b0cf15/_base.scssc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8512397">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
