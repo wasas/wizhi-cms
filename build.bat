@@ -1,5 +1,0 @@
-@echo off
-
-call gulp build
-
-@echo ¡¥Ω”ÕÍ±œ

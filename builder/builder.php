@@ -156,9 +156,9 @@ class GambitPBSandwich {
     }
 
     public function addShortcodeButton() {
-        // if( apply_filters( 'pbs_add_shortcode_button', true ) ) {
-        //     echo '<a href="#" class="button sandwich-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'pbsandwich' ) . '</a>';
-        // }
+         if( apply_filters( 'pbs_add_shortcode_button', true ) ) {
+             echo '<a href="#" class="button sandwich-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'pbsandwich' ) . '</a>';
+         }
     }
 
 

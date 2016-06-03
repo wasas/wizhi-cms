@@ -13,7 +13,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+.publish/
+.node_modules/
 # Windows shortcuts
 *.lnk
 
@@ -42,6 +43,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .idea/
+.publish/
 .idea/workspace.xml
 front/node_modules/
 front/bower_components
+docs/

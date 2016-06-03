@@ -102,14 +102,6 @@ $args_post = [
 	'priority' => 'high',
 ];
 
-$args_post2 = [
-	'id'         => 'extra2',
-	'title'      => '文章附加数据',
-	'post_type' => [ 'post', 'page' ],
-	'context'  => 'normal',
-	'priority' => 'high',
-];
-
 $args_term = [
 	'id'         => 'test',
 	'title'      => '测试盒子',

@@ -1,0 +1,13 @@
+destination ../docs
+
+source:
+    - vendor/kdyby
+    - vendor/doctrine
+    - vendor/nette
+    - vendor/symfony
+
+skip-doc-path: "~/doctrine2/*"
+skip-doc-prefix: Nette
+
+exclude: "*/tests/*"
+title: "Kdyby"

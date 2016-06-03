@@ -329,37 +329,41 @@ class WizhiFormBuilder {
 			// 循环保存所有数据
 			foreach ( $fields as $field ) {
 
-				switch ( $form_type ) {
-					case 'option':
-						update_option( $field[ 'name' ], $values->$field[ 'name' ] );
-						break;
+				if ( $field[ 'type' ] != 'group' ) {
 
-					// 保存文章元数据, 保存之前检查权限和文章类型
-					case 'post_meta':
+					switch ( $form_type ) {
+						case 'option':
+							update_option( $field[ 'name' ], $values->$field[ 'name' ] );
+							break;
 
-						// 检查是否有权限编辑
-						if ( ! current_user_can( 'edit_post', $id ) ) {
-							return;
-						}
+						// 保存文章元数据, 保存之前检查权限和文章类型
+						case 'post_meta':
 
-						// 自动保存和版本不保存元数据
-						if ( wp_is_post_autosave( $id ) || wp_is_post_revision( $id ) ) {
-							return;
-						}
+							// 检查是否有权限编辑
+							if ( ! current_user_can( 'edit_post', $id ) ) {
+								return;
+							}
 
-						update_post_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
-						break;
+							// 自动保存和版本不保存元数据
+							if ( wp_is_post_autosave( $id ) || wp_is_post_revision( $id ) ) {
+								return;
+							}
 
-					case 'user_meta':
-						update_user_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
-						break;
+							update_post_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
+							break;
 
-					case 'term_meta':
-						update_term_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
-						break;
+						case 'user_meta':
+							update_user_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
+							break;
 
-					default:
-						update_post_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
+						case 'term_meta':
+							update_term_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
+							break;
+
+						default:
+							update_post_meta( $id, $field[ 'name' ], $values->$field[ 'name' ] );
+					}
+
 				}
 
 			}
