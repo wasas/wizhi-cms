@@ -56,7 +56,7 @@ require_once( WIZHI_CMS . 'settings.php' );
 $wizhi_use_cms_front = get_option( 'wizhi_use_cms_front' );
 
 //加载 CSS 和 JS
-if ( $wizhi_use_cms_front ) {
+if ( !is_admin() ) {
 	add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
 	add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
 
