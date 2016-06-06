@@ -21,35 +21,6 @@ function wizhi_cms_remove_dashicons() {
 }
 
 
-if ( ! function_exists( 'wizhi_rand_str' ) ) {
-
-	/**
-	 * 生成随机字符串
-	 *
-	 * @param int $length 随机字符串长度
-	 *
-	 * @package helper
-	 *
-	 * @return string
-	 */
-	function wizhi_cms_rand_str( $length ) {
-		$chars  = array_merge( range( 'a', 'z' ), range( '0', '9' ) );
-		$length = intval( $length ) > 0 ? intval( $length ) : 8;
-		$max    = count( $chars ) - 1;
-		$str    = "";
-
-		while ( $length -- ) {
-			shuffle( $chars );
-			$rand = mt_rand( 0, $max );
-			$str .= $chars[ $rand ];
-		}
-
-		return $str;
-	}
-
-}
-
-
 /**
  * 生成文件名，解决中文文件名问题
  *

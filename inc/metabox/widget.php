@@ -38,9 +38,6 @@ class WizhiWidget extends WP_Widget {
 		$this->fields = $fields;
 		$this->args   = $args;
 
-		print_r($fields);
-		print_r($args);
-
 		parent::__construct( 'uytre', 'ASD', [ 'description' => $args[ 'desc' ] ] );
 	}
 

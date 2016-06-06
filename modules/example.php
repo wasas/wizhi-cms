@@ -2,8 +2,8 @@
 
 $fields = [
 	[
-		'type'        => 'group',
-		'label'        => '群组1',
+		'type'  => 'group',
+		'label' => '群组1',
 	],
 	[
 		'type'        => 'text',
@@ -26,8 +26,8 @@ $fields = [
 		],
 	],
 	[
-		'type'        => 'group',
-		'label'        => '群组2',
+		'type'  => 'group',
+		'label' => '群组2',
 	],
 	[
 		'type'    => 'checkbox',
@@ -40,8 +40,8 @@ $fields = [
 		],
 	],
 	[
-		'type'        => 'group',
-		'label'        => '群组3',
+		'type'  => 'group',
+		'label' => '群组3',
 	],
 	[
 		'type'    => 'select',
@@ -89,17 +89,16 @@ $fields2 = [
 			'1' => '老大',
 			'2' => '老二',
 		],
-	]
+	],
 ];
 
 
-
 $args_post = [
-	'id'         => 'extra',
-	'title'      => '文章附加数据',
+	'id'        => 'extra',
+	'title'     => '文章附加数据',
 	'post_type' => [ 'post', 'page' ],
-	'context'  => 'normal',
-	'priority' => 'high',
+	'context'   => 'normal',
+	'priority'  => 'high',
 ];
 
 $args_term = [
@@ -109,16 +108,16 @@ $args_term = [
 ];
 
 $args_widget = [
-	'slug'    => 'test1',
+	'slug'  => 'test1',
 	'title' => '测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子',
 	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
 ];
 
 
-new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
-
-new WizhiTermMetabox( $fields, $args_term );
-
-new WizhiUserMetabox( $fields );
-
-new WizhiWidget( $fields, $args_widget );
+//new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
+//
+//new WizhiTermMetabox( $fields, $args_term );
+//
+//new WizhiUserMetabox( $fields );
+//
+//new WizhiWidget( $fields, $args_widget );
