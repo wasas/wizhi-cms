@@ -30,12 +30,18 @@ class WizhiWidget extends WP_Widget {
 
 	/**
 	 * 注册小工具
+	 *
+	 * @param array $fields 小工具表单元素
+	 * @param array $args 小工具参数
 	 */
 	public function __construct( $fields = [ ], $args = [ ] ) {
 		$this->fields = $fields;
 		$this->args   = $args;
 
-		parent::__construct( $args[ 'slug' ], $args[ 'title' ], [ 'description' => $args[ 'desc' ] ] );
+		print_r($fields);
+		print_r($args);
+
+		parent::__construct( 'uytre', 'ASD', [ 'description' => $args[ 'desc' ] ] );
 	}
 
 
@@ -87,7 +93,14 @@ class WizhiWidget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		$form = $this->build( $instance );
+		$fields = $this->fields;
+		$args   = $this->args;
+
+		$args = wp_parse_args( $args, [
+			'instance' => $instance,
+		] );
+
+		$form = new WizhiFormBuilder( 'widget', $fields, 0, $args );
 
 		$form->show();
 	}

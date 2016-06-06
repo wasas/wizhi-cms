@@ -46,6 +46,8 @@ require_once( WIZHI_CMS . 'modules/related.php' );
 // 加速优化功能
 require_once( WIZHI_CMS . 'modules/optimization.php' );
 
+require_once( WIZHI_CMS . 'modules/content_types.php' );
+
 require_once( WIZHI_CMS . 'example.php' );
 
 // 插件设置

@@ -114,19 +114,11 @@ $args_widget = [
 	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
 ];
 
-$args_widget2 = [
-	'slug'    => 'test222211',
-	'title' => '测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子',
-	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
-];
-
 
 new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
-new WizhiPostMetabox( 'thanks', '文章附加数据2', $fields2, $args_post2 );
 
 new WizhiTermMetabox( $fields, $args_term );
 
 new WizhiUserMetabox( $fields );
 
-$wi =  new WizhiWidget( $fields, $args_widget );
-$wi2 =  new WizhiWidget( $fields, $args_widget2 );
+new WizhiWidget( $fields, $args_widget );

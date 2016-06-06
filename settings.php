@@ -1,49 +1,23 @@
 <?php
 
+$post_types = [
+	'prod'   => '产品',
+	'case'   => '案例',
+	'corp'   => '合作',
+	'slider' => '幻灯',
+];
+
 $fields = [
 	[
-		'type'        => 'text',
-		'name'        => 'url',
-		'label'       => '表单',
-		'size'        => '80',
-		'default'     => '请输入文本',
-		'placeholder' => '输入文本, 明天更美好',
-	],
-	[
-		'type'        => 'textarea',
-		'name'        => 'text',
-		'label'       => '文本',
-		'size'        => '80',
-		'default'     => '请输入文本',
-		'placeholder' => '输入文本, 明天更美好',
-		'attr'        => [
-			'rows' => 5,
-			'cols' => 50,
-		],
+		'type'    => 'checkbox-list',
+		'name'    => 'enabled_post_types',
+		'label'   => '启用的文章类型',
+		'options' => $post_types,
 	],
 	[
 		'type'    => 'checkbox',
-		'name'    => 'checkbox',
-		'label'   => '文本',
-		'size'    => '80',
-		'options' => [
-			'1' => '老大',
-			'2' => '老二',
-		],
-	],
-	[
-		'type'    => 'select',
-		'name'    => 'pyype',
-		'label'   => '文章类型',
-		'default' => 'post',
-		'options' => wizhi_get_post_types(),
-	],
-	[
-		'type'    => 'select',
-		'name'    => 'thmb',
-		'label'   => '缩略图大小',
-		'default' => 'full',
-		'options' => wizhi_get_image_sizes(),
+		'name'    => 'is_enable_static',
+		'label'   => '使用插件内置的样式',
 	],
 ];
 
