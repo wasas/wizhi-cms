@@ -55,18 +55,6 @@ class WizhiOptionPage {
 		$fields = $this->fields;
 
 		echo Html::el( 'h1', $args[ 'title' ] );
-		echo Html::el( 'p', '插件描述' );
-
-		add_thickbox();
-
-		echo '<div id="transform" style="display:none;">
-     <p>
-          This is my hidden content! It will appear in ThickBox when the link is clicked.
-     </p>
-</div>
-
-<a href="#TB_inline?width=600&height=550&inlineId=transform" class="thickbox">查看弹出内容</a>	';
-
 
 		// 显示表单
 		$form = new WizhiFormBuilder( 'option', $fields );

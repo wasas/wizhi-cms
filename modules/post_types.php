@@ -5,7 +5,7 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	/**
 	 * 快速添加文章类型
 	 *
-	 * @since wizhi 1.0
+	 * @since   wizhi 1.0
 	 *
 	 * @param string  $slug       文章类型名称
 	 * @param string  $name       文章类型菜单名称
@@ -14,9 +14,9 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	 *
 	 * @package backend
 	 *
-	 * @usage wizhi_create_types( 'prod', '产品', [ 'title', 'editor', 'thumbnail' ], true );
+	 * @usage   wizhi_create_types( 'prod', '产品', [ 'title', 'editor', 'thumbnail' ], true );
 	 */
-	function wizhi_create_types( $slug, $name, $support, $is_publish ) {
+	function wizhi_create_types( $slug, $name, $support, $is_publish, $icon = 'dashicons-networking' ) {
 
 		//文章类型的标签
 		$labels_type = [
@@ -47,6 +47,8 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'supports'           => $support,
+			'menu_position'      => 5,
+			'menu_icon'          => $icon,
 		];
 
 		if ( strlen( $slug ) > 0 ) {
@@ -64,7 +66,7 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	/**
 	 * 快速添加分类方法
 	 *
-	 * @since wizhi 1.0
+	 * @since   wizhi 1.0
 	 *
 	 * @param string  $tax_slug     分类法名称
 	 * @param string  $hook_type    关联到的文章类型的名称
@@ -73,7 +75,7 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 *
 	 * @package backend
 	 *
-	 * @usage wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
+	 * @usage   wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
 	 */
 	function wizhi_create_taxs( $tax_slug, $hook_type, $tax_name, $hierarchical ) {
 

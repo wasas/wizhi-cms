@@ -1,11 +1,6 @@
 <?php
 
-$post_types = [
-	'prod'   => '产品',
-	'case'   => '案例',
-	'corp'   => '合作',
-	'slider' => '幻灯',
-];
+$post_types = wizhi_post_types();
 
 $fields = [
 	[
