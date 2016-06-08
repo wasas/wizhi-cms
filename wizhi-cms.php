@@ -31,3 +31,9 @@ include_all_php( WIZHI_CMS . 'inc/metabox' );
 include_all_php( WIZHI_CMS . 'modules/' );
 include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );
+
+$is_enable_builder = get_option( 'is_enable_builder' );
+
+if ( $is_enable_builder ) {
+	include_all_php( WIZHI_CMS . 'builder' );
+}

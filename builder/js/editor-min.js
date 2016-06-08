@@ -18,7 +18,7 @@
  * Click handler for the "Add Post Element" button. Basically we open the WP Media Manager then activate the shortcake state
  */
 jQuery(document).ready(function ($) {
-    $('body').on('click', '.sandwich-add-shortcode', function () {
+    $('body').on('click', '.wizhi-add-shortcode', function () {
         $(this).siblings('[id="insert-media-button"]').click();
         $('.media-menu .media-menu-item:contains("' + shortcodeUIData.strings.media_frame_menu_insert_label + '")').click();
         return false;
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
     /**
      * Add the button
      */
-    tinyMCE.PluginManager.add('pbsandwich', function (editor, url) {
+    tinyMCE.PluginManager.add('pbwizhi', function (editor, url) {
         var $ = jQuery;
 
         var sortableInit = false;
@@ -43,7 +43,7 @@ jQuery(document).ready(function ($) {
             var $ = jQuery;
             try {
                 $(editor.getBody()).sortable('destroy');
-                $(editor.getBody()).find('.pbsandwich_column td').sortable('destroy');
+                $(editor.getBody()).find('.wizhi_column td').sortable('destroy');
             } catch (e) {
             }
         }
@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
             var $ = jQuery;
             try {
                 $(editor.getBody()).sortable('cancel');
-                $(editor.getBody()).find('.pbsandwich_column td').sortable('cancel');
+                $(editor.getBody()).find('.wizhi_column td').sortable('cancel');
             } catch (e) {
             }
         }
@@ -67,8 +67,8 @@ jQuery(document).ready(function ($) {
          */
         function sortStartHandler(editor) {
             var editorBody = jQuery(editor.getBody());
-            editorBody.addClass('pbsandwich_just_dragged');
-            _pbsandwich_removeColumnToolbar(editor);
+            editorBody.addClass('pbwizhi_just_dragged');
+            _pbwizhi_removeColumnToolbar(editor);
 
             // Views with iframes (e.g. audio & video embeds) get very slow when dragging, hide them
             if (editorBody.find('.wpview-wrap[data-mce-selected="1"] iframe').length > 0) {
@@ -93,11 +93,11 @@ jQuery(document).ready(function ($) {
 
             try {
                 editorBody.sortable('refresh');
-                editorBody.find('.pbsandwich_column td').sortable('refresh');
+                editorBody.find('.wizhi_column td').sortable('refresh');
             } catch (e) {
             }
 
-            editorBody.removeClass('pbsandwich_just_dragged');
+            editorBody.removeClass('pbwizhi_just_dragged');
 
             // Views with iframes do not refresh after sorting, mceCleanup fixes this (also brings back the visibility)
             if (editorBody.find('.wpview-wrap[data-mce-selected="1"] iframe').length > 0) {
@@ -249,9 +249,9 @@ jQuery(document).ready(function ($) {
             // fixTableParagraphs( editor );
             jQuery(editor.getBody()).sortable({
                 scroll: false,
-                connectWith: jQuery(editor.getBody()).find('.pbsandwich_column td'),
+                connectWith: jQuery(editor.getBody()).find('.wizhi_column td'),
                 placeholder: "sortable-placeholder",
-                cancel: pbsandwich_column.non_sortable_elements,
+                cancel: wizhi_column.non_sortable_elements,
                 opacity: 0.15,
                 forceHelperSize: true, // This is to help dragging
                 tolerance: 'pointer',
@@ -267,11 +267,11 @@ jQuery(document).ready(function ($) {
                 // Makes sortable better at collision detection.
                 sort: enhancedSortableSort
             });
-            $(editor.getBody()).find('.pbsandwich_column td').sortable({
+            $(editor.getBody()).find('.wizhi_column td').sortable({
                 scroll: false,
-                connectWith: jQuery(editor.getBody()).find('.pbsandwich_column td').add(jQuery(editor.getBody())),
+                connectWith: jQuery(editor.getBody()).find('.wizhi_column td').add(jQuery(editor.getBody())),
                 placeholder: "sortable-placeholder",
-                cancel: pbsandwich_column.non_sortable_elements,
+                cancel: wizhi_column.non_sortable_elements,
                 opacity: 0.1,
                 forceHelperSize: true, // This is to help dragging
                 tolerance: 'pointer',
@@ -332,10 +332,10 @@ jQuery(document).ready(function ($) {
 
             // Issue #164 Sometimes, columns get wrapped inside paragraph tags. When this happens,
             // the table becomes undraggable. Unwrap from paragraph tags.
-            $(editor.getBody()).find('p .pbsandwich_column').unwrap();
+            $(editor.getBody()).find('p .wizhi_column').unwrap();
 
 
-            $(editor.getBody()).find('.pbsandwich_column td').each(function () {
+            $(editor.getBody()).find('.wizhi_column td').each(function () {
 
                 // @see http://stackoverflow.com/questions/20183324/javascript-wrapping-unwrapped-plain-text
                 var elemCount = $(this).contents().length;
@@ -561,7 +561,7 @@ jQuery(document).ready(function ($) {
             // If delete key is pressed and we have a single character, ignore (else the column will get deleted)
             if (e.keyCode === 46) {
                 var elem = editor.selection.getNode().parentNode;
-                if ($(editor.selection.getNode().parentNode).is('.pbsandwich_column > tbody > tr > td')) {
+                if ($(editor.selection.getNode().parentNode).is('.wizhi_column > tbody > tr > td')) {
                     var range = editor.selection.getRng();
 
                     if (range.startOffset === 1 && elem.textContent.length == 1) {
@@ -574,7 +574,7 @@ jQuery(document).ready(function ($) {
             if (( e.metaKey || e.altKey || e.ctrlKey ) && ( e.keyCode === 8 || e.keyCode === 46 )) {
                 try {
                     var elem = editor.selection.getNode().parentNode;
-                    if ($(editor.selection.getNode().parentNode).is('.pbsandwich_column > tbody > tr > td')) {
+                    if ($(editor.selection.getNode().parentNode).is('.wizhi_column > tbody > tr > td')) {
                         if (elem.textContent.length >= 1 && elem.textContent.match(/^[0-9a-zA-Z_]*\s?$/)) {
                             editor.selection.getNode().textContent = '';
                             e.preventDefault();
@@ -589,7 +589,7 @@ jQuery(document).ready(function ($) {
             if (e.keyCode === 8 || e.keyCode === 46) {
                 try {
                     var elem = editor.selection.getNode().parentNode;
-                    if ($(editor.selection.getNode().parentNode).is('.pbsandwich_column > tbody > tr > td')) {
+                    if ($(editor.selection.getNode().parentNode).is('.wizhi_column > tbody > tr > td')) {
                         if (elem.textContent.length == 1) {
                             editor.selection.getNode().textContent = '';
                             e.preventDefault();
@@ -642,8 +642,8 @@ jQuery(document).ready(function ($) {
 
 
             // Add the toolbar buttons
-            if (typeof pbsandwich_column.toolbar_buttons !== 'undefined') {
-                $.each(pbsandwich_column.toolbar_buttons, function (i, button) {
+            if (typeof wizhi_column.toolbar_buttons !== 'undefined') {
+                $.each(wizhi_column.toolbar_buttons, function (i, button) {
 
                     // Check if we should add in the button
                     if (typeof button.shortcode === 'string') {
@@ -669,7 +669,7 @@ jQuery(document).ready(function ($) {
                         newButton = $('<div class="mce-widget mce-btn toolbar-label"></div>').text(button.label);
 
                     } else {
-                        newButton = $('<div class="mce-widget mce-btn sandwich-toolbar-button" tabindex="-1" role="button" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-dashicon ' + button.icon + '" data-toolbar-action="' + button.action + '"></i></button></div>')
+                        newButton = $('<div class="mce-widget mce-btn wizhi-toolbar-button" tabindex="-1" role="button" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-dashicon ' + button.icon + '" data-toolbar-action="' + button.action + '"></i></button></div>')
                             .attr('aria-label', button.label)
                             .attr('title', button.label);
                     }
@@ -712,8 +712,8 @@ jQuery(document).ready(function ($) {
 
             // Add the toolbar buttons
             var inColumn, inRow;
-            if (typeof pbsandwich_column.toolbar_buttons !== 'undefined') {
-                $.each(pbsandwich_column.toolbar_buttons, function (i, button) {
+            if (typeof wizhi_column.toolbar_buttons !== 'undefined') {
+                $.each(wizhi_column.toolbar_buttons, function (i, button) {
 
                     // Check if we should add in the button
                     if (typeof button.shortcode === 'string') {
@@ -804,7 +804,7 @@ jQuery(document).ready(function ($) {
             });
             editor.fire('show-toolbar', {
                 'editor': editor,
-                'target': $(e.target).parents('.pbsandwich_column:eq(0)')[0],
+                'target': $(e.target).parents('.wizhi_column:eq(0)')[0],
                 'shortcode': 'row',
                 'toolbar': e.toolbar,
             });
@@ -828,7 +828,7 @@ jQuery(document).ready(function ($) {
             }
 
             var action = $(e.target).attr('data-toolbar-action');
-            var target = $(editor.getBody()).find('[data-mce-selected="1"]:not(.pbsandwich_column)');
+            var target = $(editor.getBody()).find('[data-mce-selected="1"]:not(.wizhi_column)');
 
             editor.fire('toolbar-' + action, {
                 'action': action,
@@ -852,7 +852,7 @@ jQuery(document).ready(function ($) {
                 e.preventDefault();
 
                 var action = $(e.target).attr('data-toolbar-action');
-                var target = $(editor.getBody()).find('[data-mce-selected="1"]:not(.pbsandwich_column)');
+                var target = $(editor.getBody()).find('[data-mce-selected="1"]:not(.wizhi_column)');
 
                 /**
                  * Handle colummn toolbar buttons
@@ -862,7 +862,7 @@ jQuery(document).ready(function ($) {
                     if ($(e.target).attr('data-shortcode') === 'column') {
                         target = $(editor.getBody()).find('[data-wp-columnselect="1"]');
                     } else { // row
-                        target = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.pbsandwich_column:eq(0)');
+                        target = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.wizhi_column:eq(0)');
                     }
 
                     editor.fire('toolbar-' + action, {
@@ -911,26 +911,26 @@ jQuery(document).ready(function ($) {
          * Adds the toolbar
          * @see http://wordpress.stackexchange.com/questions/74762/hook-for-image-edit-popup
          */
-        function _pbsandwich_addColumnToolbar(editor, node) {
+        function _pbwizhi_addColumnToolbar(editor, node) {
             var $ = jQuery;
             var rectangle, toolbarHtml, toolbar, left,
                 dom = editor.dom;
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
 
             // Don't create the toolbar if the column was just dragged
-            if ($(editor.getBody()).hasClass('pbsandwich_just_dragged')) {
+            if ($(editor.getBody()).hasClass('pbwizhi_just_dragged')) {
                 return;
             }
 
-            // Only add the toolbar for sandwich columns
+            // Only add the toolbar for wizhi columns
             if ($(node).parents('table:eq(0)').length === 0) {
                 return;
             }
-            if (!$(node).parents('table:eq(0)').is('.pbsandwich_column')) {
+            if (!$(node).parents('table:eq(0)').is('.wizhi_column')) {
                 return;
             }
-            if ($(node).parents('.pbsandwich_column:eq(0)').length === 0) {
+            if ($(node).parents('.wizhi_column:eq(0)').length === 0) {
                 return;
             }
 
@@ -1011,7 +1011,7 @@ jQuery(document).ready(function ($) {
          * Remove the toolbar
          * @see http://wordpress.stackexchange.com/questions/74762/hook-for-image-edit-popup
          */
-        function _pbsandwich_removeColumnToolbar(editor) {
+        function _pbwizhi_removeColumnToolbar(editor) {
             var toolbar = editor.dom.get('wp-column-toolbar');
 
             if (toolbar) {
@@ -1023,7 +1023,7 @@ jQuery(document).ready(function ($) {
         /**
          * Forms the column labels for TinyMCE
          */
-        function _pbsandwich_columns_sprintf(format, etc) {
+        function _wizhi_columns_sprintf(format, etc) {
             var arg = arguments;
             var i = 1;
             return format.replace(/%((%)|s)/g, function (m) {
@@ -1036,20 +1036,20 @@ jQuery(document).ready(function ($) {
          * Checks if the content selected is an existing column table.
          * If it is, get each column content
          */
-        function _pbsandwich_columns_formContent(content, numColumns) {
+        function _wizhi_columns_formContent(content, numColumns) {
             if (content === '') {
-                return pbsandwich_column.dummy_content;
+                return wizhi_column.dummy_content;
             }
 
             var $ = jQuery;
             var contents = [];
 
             var $content = $('<div></div>').html(content);
-            if ($content.find('table.pbsandwich_column').length === 0) {
-                return pbsandwich_column.dummy_content;
+            if ($content.find('table.wizhi_column').length === 0) {
+                return wizhi_column.dummy_content;
             }
 
-            $content.find('table.pbsandwich_column td').each(function (i, e) {
+            $content.find('table.wizhi_column td').each(function (i, e) {
                 if (i >= numColumns) {
                     var content = $(e).html();
                     if (!/^<p\s[^>]+>(\s|&nbsp;)*<\/p>$/.test(content)) {
@@ -1085,13 +1085,13 @@ jQuery(document).ready(function ($) {
         /**
          * Forms the table "columns"
          */
-        function _pbsandwich_columns_formTable(columns, content) {
+        function _wizhi_columns_formTable(columns, content) {
             var $ = jQuery;
 
             var cols = columns.split('+');
-            var table = '<table class="pbsandwich_column" style="width: 100%; height: auto; border: none;" border="0"><tbody class="row"><tr>';
-            var columnContents = _pbsandwich_columns_formContent(content, cols.length);
-            var columnContent = pbsandwich_column.dummy_content;
+            var table = '<table class="wizhi_column" style="width: 100%; height: auto; border: none;" border="0"><tbody class="row"><tr>';
+            var columnContents = _wizhi_columns_formContent(content, cols.length);
+            var columnContent = wizhi_column.dummy_content;
             var newTd;
 
             $.each(cols, function (i, e) {
@@ -1187,13 +1187,13 @@ jQuery(document).ready(function ($) {
          */
         editor.on('mousedown', function (e) {
             var $ = jQuery;
-            if ($(e.target).parents('.pbsandwich_column:eq(0)').length > 0) {
-                $(editor.getBody()).addClass('pbsandwich_column_selected');
+            if ($(e.target).parents('.wizhi_column:eq(0)').length > 0) {
+                $(editor.getBody()).addClass('wizhi_column_selected');
             } else {
-                $(editor.getBody()).removeClass('pbsandwich_column_selected');
+                $(editor.getBody()).removeClass('wizhi_column_selected');
             }
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1212,7 +1212,7 @@ jQuery(document).ready(function ($) {
                     'target': e.target
                 });
 
-                // _pbsandwich_removeColumnToolbar( editor );
+                // _pbwizhi_removeColumnToolbar( editor );
 
                 return;
             }
@@ -1222,7 +1222,7 @@ jQuery(document).ready(function ($) {
                 return;
             }
 
-            _pbsandwich_addColumnToolbar(editor, e.target);
+            _pbwizhi_addColumnToolbar(editor, e.target);
         });
 
 
@@ -1240,7 +1240,7 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                _pbsandwich_removeColumnToolbar(editor);
+                _pbwizhi_removeColumnToolbar(editor);
             });
         });
 
@@ -1251,72 +1251,72 @@ jQuery(document).ready(function ($) {
          */
         editor._pbsCreateNewColumn = function (columnConfig) {
             preUpdateSortable(editor);
-            editor.insertContent(_pbsandwich_columns_formTable(columnConfig, editor.selection.getContent()));
+            editor.insertContent(_wizhi_columns_formTable(columnConfig, editor.selection.getContent()));
             updateSortable(editor);
             fixTableParagraphs(editor);
         }
-        editor.addButton('pbsandwich_column', {
-            title: pbsandwich_column.modal_title,
+        editor.addButton('wizhi_column', {
+            title: wizhi_column.modal_title,
             icon: 'wp_tagcloud',
             type: 'menubutton',
             menu: [
                 {
-                    text: pbsandwich_column.column_1,
+                    text: wizhi_column.column_1,
                     value: '1/1',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_2,
+                    text: wizhi_column.column_2,
                     value: '1/2+1/2',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_3,
+                    text: wizhi_column.column_3,
                     value: '1/3+1/3+1/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_4,
+                    text: wizhi_column.column_4,
                     value: '1/4+1/4+1/4+1/4',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_1323,
+                    text: wizhi_column.column_1323,
                     value: '1/3+2/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_2313,
+                    text: wizhi_column.column_2313,
                     value: '2/3+1/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.column_141214,
+                    text: wizhi_column.column_141214,
                     value: '1/4+1/2+1/4',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
                 }, {
-                    text: pbsandwich_column.custom_columns,
+                    text: wizhi_column.custom_columns,
                     onclick: function () {
                         editor.windowManager.open({
-                            title: pbsandwich_column.custom_columns,
+                            title: wizhi_column.custom_columns,
                             id: 'pbs-modal',
                             body: [{
                                 type: 'textbox',
                                 name: 'columns',
-                                label: pbsandwich_column.modal_title,
+                                label: wizhi_column.modal_title,
                                 value: '1/2+1/2'
                             },
                                 {
                                     type: 'container',
-                                    html: wp.template('pbs-column-custom-modal-description')(pbsandwich_column)
+                                    html: wp.template('pbs-column-custom-modal-description')(wizhi_column)
                                 }],
                             onsubmit: function (e) {
                                 editor._pbsCreateNewColumn(e.data.columns);
@@ -1336,7 +1336,7 @@ jQuery(document).ready(function ($) {
         editor.on('wp-body-class-change change', function (e) {
             var $ = jQuery;
 
-            $(editor.getBody()).find('.pbsandwich_column .wpview-content.wpview-type-embed iframe:not(.resized)').each(function () {
+            $(editor.getBody()).find('.wizhi_column .wpview-content.wpview-type-embed iframe:not(.resized)').each(function () {
                 var ratio = parseInt($(this).attr('height')) / parseInt($(this).attr('width'));
 
                 var w = $(this).attr('width', '100%').width();
@@ -1353,7 +1353,7 @@ jQuery(document).ready(function ($) {
         editor.on('mousedown', function (e) {
             var $ = jQuery;
 
-            if (!$(e.target).is('.pbsandwich_column td')) {
+            if (!$(e.target).is('.wizhi_column td')) {
                 return;
             }
 
@@ -1362,11 +1362,11 @@ jQuery(document).ready(function ($) {
             // Get whether the location is near the left or right of the row
             // We need to add a placeholder when doing this since it doesn't work right
             // @see http://blog.squadedit.com/tinymce-and-cursor-position/
-            var table = $(e.target).parents('.pbsandwich_column:eq(0)');
+            var table = $(e.target).parents('.wizhi_column:eq(0)');
             if ((e.pageX - table.offset().left ) / table.width() > 0.5) {
-                $(e.target).parents('.pbsandwich_column:eq(0)').after('<span data-mce-bogus="1" id="dummy_column_selector"></span>');
+                $(e.target).parents('.wizhi_column:eq(0)').after('<span data-mce-bogus="1" id="dummy_column_selector"></span>');
             } else {
-                $(e.target).parents('.pbsandwich_column:eq(0)').before('<span data-mce-bogus="1" id="dummy_column_selector"></span>');
+                $(e.target).parents('.wizhi_column:eq(0)').before('<span data-mce-bogus="1" id="dummy_column_selector"></span>');
             }
 
             // Move the cursor
@@ -1375,7 +1375,7 @@ jQuery(document).ready(function ($) {
 
         });
         editor.on('keyup', function (e) {
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
         /**
@@ -1384,56 +1384,56 @@ jQuery(document).ready(function ($) {
         editor.on('toolbar-column-columns', function (e) {
             var colModal = editor.windowManager.open({
                 id: 'pbs-modal',
-                title: pbsandwich_column.change_column,
+                title: wizhi_column.change_column,
                 buttons: [{
-                    text: pbsandwich_column.cancel,
+                    text: wizhi_column.cancel,
                     onclick: 'close'
                 }],
                 body: [{
                     type: 'container',
-                    html: wp.template('pbs-column-change-modal')(pbsandwich_column)
+                    html: wp.template('pbs-column-change-modal')(wizhi_column)
                 }],
                 onsubmit: function (e) {
                     preUpdateSortable(editor);
-                    editor.insertContent(_pbsandwich_columns_formTable(e.data.columns, editor.selection.getContent()));
+                    editor.insertContent(_wizhi_columns_formTable(e.data.columns, editor.selection.getContent()));
                     updateSortable(editor);
                 }
             });
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
         /**
          * Change columns modal action handler. When a change column button is clicked
          */
-        jQuery('body').on('click', '#pbsandwich_column_change_modal button', function () {
+        jQuery('body').on('click', '#wizhi_column_change_modal button', function () {
             var $ = jQuery;
 
             // Get the column composition
             var columns = $(this).attr('data-columns');
             if (typeof columns === 'undefined') {
-                columns = $(this).parents('#pbsandwich_column_change_modal').find('input.custom_column').val();
+                columns = $(this).parents('#wizhi_column_change_modal').find('input.custom_column').val();
             }
 
             // The column container will have the attribute data-wp-columnselect
             var selectedColumn = $(tinyMCE.activeEditor.getBody()).find('[data-wp-columnselect="1"]')[0];
             var columnIndexPrev = $(tinyMCE.activeEditor.getBody()).find('[data-wp-columnselect="1"]').index();
-            tinyMCE.activeEditor.selection.select($(selectedColumn).parents('.pbsandwich_column:eq(0)')[0]);
+            tinyMCE.activeEditor.selection.select($(selectedColumn).parents('.wizhi_column:eq(0)')[0]);
 
             // Change the column
             preUpdateSortable(tinyMCE.activeEditor);
-            tinyMCE.activeEditor.insertContent(_pbsandwich_columns_formTable(columns, tinyMCE.activeEditor.selection.getContent()));
+            tinyMCE.activeEditor.insertContent(_wizhi_columns_formTable(columns, tinyMCE.activeEditor.selection.getContent()));
             updateSortable(tinyMCE.activeEditor);
 
             // Find out what column was previously selected
             var columnContainer = tinyMCE.activeEditor.selection.getSelectedBlocks();
             var columnToSelect = false;
             if (typeof columnContainer !== 'undefined') {
-                if ($(columnContainer).parents('.pbsandwich_column:eq(0)').find('> tbody > tr > td').length - 1 >= columnIndexPrev) {
-                    columnToSelect = $(columnContainer).parents('.pbsandwich_column:eq(0)').find('> tbody > tr > td:eq(' + columnIndexPrev + ')');
+                if ($(columnContainer).parents('.wizhi_column:eq(0)').find('> tbody > tr > td').length - 1 >= columnIndexPrev) {
+                    columnToSelect = $(columnContainer).parents('.wizhi_column:eq(0)').find('> tbody > tr > td:eq(' + columnIndexPrev + ')');
                 } else {
-                    columnToSelect = $(columnContainer).parents('.pbsandwich_column > tbody > tr > td:eq(-1)');
+                    columnToSelect = $(columnContainer).parents('.wizhi_column > tbody > tr > td:eq(-1)');
                 }
 
             }
@@ -1455,10 +1455,10 @@ jQuery(document).ready(function ($) {
         editor.on('toolbar-column-remove-row', function (e) {
             var $ = jQuery;
             preUpdateSortable(editor);
-            $(editor.getBody()).find('[data-wp-columnselect]').parents('.pbsandwich_column:eq(0)').remove();
+            $(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)').remove();
             updateSortable(editor);
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1469,8 +1469,8 @@ jQuery(document).ready(function ($) {
             var $ = jQuery;
 
             preUpdateSortable(editor);
-            var newElement = $(editor.getBody()).find('[data-wp-columnselect]').parents('.pbsandwich_column:eq(0)').clone();
-            newElement.insertAfter($(editor.getBody()).find('[data-wp-columnselect]').parents('.pbsandwich_column:eq(0)'));
+            var newElement = $(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)').clone();
+            newElement.insertAfter($(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)'));
             updateSortable(editor);
 
             // Cleanup to make views with iframes display again
@@ -1478,7 +1478,7 @@ jQuery(document).ready(function ($) {
                 editor.execCommand('mceCleanup');
             }
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1498,7 +1498,7 @@ jQuery(document).ready(function ($) {
                 bgImageURL = '';
             }
 
-            pbsandwich_column.fields = {
+            wizhi_column.fields = {
                 padding_top: parseInt($selectedColumn.css('paddingTop')),
                 padding_right: parseInt($selectedColumn.css('paddingRight')),
                 padding_bottom: parseInt($selectedColumn.css('paddingBottom')),
@@ -1520,11 +1520,11 @@ jQuery(document).ready(function ($) {
             };
 
             var colModal = editor.windowManager.open({
-                title: pbsandwich_column.column_settings,
+                title: wizhi_column.column_settings,
                 id: 'pbs-modal',
                 body: [{
                     type: 'container',
-                    html: wp.template('pbs-column-area-edit-modal')(pbsandwich_column)
+                    html: wp.template('pbs-column-area-edit-modal')(wizhi_column)
                 }],
                 /**
                  * Apply all our new styles on submit
@@ -1532,7 +1532,7 @@ jQuery(document).ready(function ($) {
                 onsubmit: function (e) {
                     var $ = jQuery;
 
-                    var form = $('#pbsandwich_column_area_edit');
+                    var form = $('#wizhi_column_area_edit');
 
                     // The column container will have the attribute data-wp-columnselect
                     var $selectedColumn = $(tinyMCE.activeEditor.getBody()).find('[data-wp-columnselect="1"]');
@@ -1583,13 +1583,13 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            $('#pbsandwich_column_area_edit').find('#border_color, #background_color').wpColorPicker();
+            $('#wizhi_column_area_edit').find('#border_color, #background_color').wpColorPicker();
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
 
             editor.fire('pre-modal-create-tabs', {
                 'editor': e.editor,
-                'target': $('#pbsandwich_column_area_edit').parent()[0],
+                'target': $('#wizhi_column_area_edit').parent()[0],
                 'action': e.action,
                 'shortcode': e.shortcode,
                 'origin': e.target
@@ -1599,7 +1599,7 @@ jQuery(document).ready(function ($) {
         /**
          * Select the whole field when the style area inputs are clicked
          */
-        jQuery('body').on('focus', '.sandwich_modal .style_area input', function (e) {
+        jQuery('body').on('focus', '.wizhi_modal .style_area input', function (e) {
             e.preventDefault();
             jQuery(this).select();
         });
@@ -1607,7 +1607,7 @@ jQuery(document).ready(function ($) {
         /**
          * Remove the image when the X button is clicked
          */
-        jQuery('body').on('click', '.sandwich_modal .image_type [src!=""] + .remove_image', function (e) {
+        jQuery('body').on('click', '.wizhi_modal .image_type [src!=""] + .remove_image', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -1622,7 +1622,7 @@ jQuery(document).ready(function ($) {
         /**
          * Open the media manager when the background image field is clicked
          */
-        jQuery('body').on('click', '.sandwich_modal .image_type', function (e) {
+        jQuery('body').on('click', '.wizhi_modal .image_type', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -1684,7 +1684,7 @@ jQuery(document).ready(function ($) {
 
             preUpdateSortable(editor);
 
-            var table = $(editor.getBody()).find('[data-wp-columnselect]').parents('.pbsandwich_column:eq(0)');
+            var table = $(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)');
 
             // Get the width of the column being deleted
             var widthRegex = /col-\w+-(\d+)/g;
@@ -1762,7 +1762,7 @@ jQuery(document).ready(function ($) {
                     .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1774,7 +1774,7 @@ jQuery(document).ready(function ($) {
 
             preUpdateSortable(editor);
 
-            var table = $(editor.getBody()).find('[data-wp-columnselect]').parents('.pbsandwich_column:eq(0)');
+            var table = $(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)');
 
             // Get the width of the column being deleted
             var widthRegex = /col-\w+-(\d+)/g;
@@ -1899,7 +1899,7 @@ jQuery(document).ready(function ($) {
                 editor.execCommand('mceCleanup');
             }
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1909,7 +1909,7 @@ jQuery(document).ready(function ($) {
         editor.on('toolbar-column-edit-row', function (e) {
             var $ = jQuery;
 
-            var $selectedRow = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.pbsandwich_column:eq(0)');
+            var $selectedRow = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.wizhi_column:eq(0)');
 
             var bgImageURL = $selectedRow.css('background-image').replace(/url\(('|")?([^\)"']+)('|")?\)/g, '$2');
 
@@ -1921,7 +1921,7 @@ jQuery(document).ready(function ($) {
                 bgImageURL = '';
             }
 
-            pbsandwich_column.fields = {
+            wizhi_column.fields = {
                 padding_top: parseInt($selectedRow.css('paddingTop')),
                 padding_right: parseInt($selectedRow.css('paddingRight')),
                 padding_bottom: parseInt($selectedRow.css('paddingBottom')),
@@ -1949,13 +1949,13 @@ jQuery(document).ready(function ($) {
 
             //
             var colModal = editor.windowManager.open({
-                title: pbsandwich_column.row_settings,
+                title: wizhi_column.row_settings,
                 id: 'pbs-modal',
                 height: $(window).height() * .8,
                 width: $(window).width() * .7 > 900 ? 900 : $(window).width() * .7,
                 body: [{
                     type: 'container',
-                    html: wp.template('pbs-column-row-edit-modal')(pbsandwich_column)
+                    html: wp.template('pbs-column-row-edit-modal')(wizhi_column)
                 }],
                 /**
                  * Apply all our new styles on submit
@@ -1963,10 +1963,10 @@ jQuery(document).ready(function ($) {
                 onsubmit: function (e) {
                     var $ = jQuery;
 
-                    var form = $('#pbsandwich_column_row_edit');
+                    var form = $('#wizhi_column_row_edit');
 
                     // The column container will have the attribute data-wp-columnselect
-                    var $selectedRow = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.pbsandwich_column:eq(0)');
+                    var $selectedRow = $(editor.getBody()).find('[data-wp-columnselect="1"]').parents('.wizhi_column:eq(0)');
 
                     // Styles that need the suffix 'px'
                     var styles = {
@@ -2034,13 +2034,13 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            $('#pbsandwich_column_row_edit').find('#border_color, #background_color').wpColorPicker();
+            $('#wizhi_column_row_edit').find('#border_color, #background_color').wpColorPicker();
 
-            _pbsandwich_removeColumnToolbar(editor);
+            _pbwizhi_removeColumnToolbar(editor);
 
             editor.fire('pre-modal-create-tabs', {
                 'editor': e.editor,
-                'target': $('#pbsandwich_column_row_edit').parent()[0],
+                'target': $('#wizhi_column_row_edit').parent()[0],
                 'action': e.action,
                 'shortcode': e.shortcode,
                 'origin': e.target
@@ -2051,7 +2051,7 @@ jQuery(document).ready(function ($) {
         /**
          * Close the modal window when the enter key is pressed
          */
-        jQuery('body').on('keypress', '.sandwich_modal input, .sandwich_modal select', function (e) {
+        jQuery('body').on('keypress', '.wizhi_modal input, .wizhi_modal select', function (e) {
             var $ = jQuery;
             if (e.which === 13) {
                 $(this).parents('.mce-window').find('.mce-primary button').trigger('click');
@@ -2088,21 +2088,21 @@ jQuery(document).ready(function ($) {
         editor.on('pre-modal-create-tabs', function (e) {
             var $ = jQuery;
 
-            if (typeof pbsandwich_column.modal_tabs === 'undefined') {
+            if (typeof wizhi_column.modal_tabs === 'undefined') {
                 return;
             }
 
-            if ($(e.target).find('.pbsandwich_modal_tabs').length === 0) {
+            if ($(e.target).find('.pbwizhi_modal_tabs').length === 0) {
                 return;
             }
 
-            $.each(pbsandwich_column.modal_tabs, function (i, newTabInfo) {
+            $.each(wizhi_column.modal_tabs, function (i, newTabInfo) {
                 if (e.shortcode !== newTabInfo.shortcode) {
                     return;
                 }
 
                 // Show the tab headings, since they're hidden by default
-                $(e.target).find('.pbsandwich_modal_tabs').css('display', '');
+                $(e.target).find('.pbwizhi_modal_tabs').css('display', '');
 
                 // Fire the event to handle template population
                 pbs_modal_fields[newTabInfo.template_id] = {};
@@ -2115,14 +2115,14 @@ jQuery(document).ready(function ($) {
 
                 // Add the tab
                 $('<div></div>')
-                    .addClass('pbsandwich_modal_tab')
+                    .addClass('pbwizhi_modal_tab')
                     .attr('data-for', newTabInfo.template_id)
                     .text(newTabInfo.name)
-                    .appendTo($(e.target).find('.pbsandwich_modal_tabs'));
+                    .appendTo($(e.target).find('.pbwizhi_modal_tabs'));
 
                 // Add the tab's contents
                 $('<div></div>')
-                    .addClass('sandwich_modal')
+                    .addClass('wizhi_modal')
                     .attr('id', newTabInfo.template_id)
                     .append(wp.template(newTabInfo.template_id)(pbs_modal_fields[newTabInfo.template_id]))
                     .appendTo($(e.target))
@@ -2135,8 +2135,8 @@ jQuery(document).ready(function ($) {
 
         editor.on('modal-save', function (e) {
             var $ = jQuery;
-            if ($('.pbsandwich_modal_tabs:visible').length > 0) {
-                $('.pbsandwich_modal_tabs .pbsandwich_modal_tab').each(function () {
+            if ($('.pbwizhi_modal_tabs:visible').length > 0) {
+                $('.pbwizhi_modal_tabs .pbwizhi_modal_tab').each(function () {
                     editor.fire('modal-tab-save', {
                         'template_id': $(this).attr('data-for'),
                         'target': e.target,
@@ -2166,7 +2166,7 @@ jQuery(document).ready(function ($) {
          * This is the 4.1 method of adding toolbar buttons to WPViews & images.
          * This was changed in 4.2
          */
-        if (pbsandwich_column.wp_version.match(/^4.1/)) {
+        if (wizhi_column.wp_version.match(/^4.1/)) {
 
             editor.on('init', function (e) {
                 var $ = jQuery;
@@ -2190,8 +2190,8 @@ jQuery(document).ready(function ($) {
 
                     // Add the toolbar buttons
                     var newButton, shortcode;
-                    if (typeof pbsandwich_column.toolbar_buttons !== 'undefined') {
-                        $.each(pbsandwich_column.toolbar_buttons, function (i, button) {
+                    if (typeof wizhi_column.toolbar_buttons !== 'undefined') {
+                        $.each(wizhi_column.toolbar_buttons, function (i, button) {
 
                             // Check if we should add in the button
                             shortcode = wrapper.attr('data-wpview-type');
@@ -2255,8 +2255,8 @@ jQuery(document).ready(function ($) {
                     }
 
                     // Add the toolbar buttons
-                    if (typeof pbsandwich_column.toolbar_buttons !== 'undefined') {
-                        $.each(pbsandwich_column.toolbar_buttons, function (i, button) {
+                    if (typeof wizhi_column.toolbar_buttons !== 'undefined') {
+                        $.each(wizhi_column.toolbar_buttons, function (i, button) {
 
                             // Check if we should add in the button
                             if (typeof button.shortcode === 'string') {
@@ -2280,7 +2280,7 @@ jQuery(document).ready(function ($) {
                                     newButton = $('<div class="mce-widget mce-btn toolbar-label"></div>').text(button.label);
 
                                 } else {
-                                    newButton = $('<div class="mce-widget mce-btn sandwich-toolbar-button" tabindex="-1" role="button" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-dashicon ' + button.icon + '" data-toolbar-action="' + button.action + '"></i></button></div>')
+                                    newButton = $('<div class="mce-widget mce-btn wizhi-toolbar-button" tabindex="-1" role="button" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-dashicon ' + button.icon + '" data-toolbar-action="' + button.action + '"></i></button></div>')
                                         .attr('aria-label', button.label)
                                         .attr('title', button.label);
                                 }

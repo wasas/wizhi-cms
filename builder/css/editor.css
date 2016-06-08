@@ -1,7 +1,7 @@
 /**
  * Some of our shortcodes use bootstrap, use them also in the editor to get a nice display
  */
-body#tinymce.wp-editor .sandwich .btn {
+body#tinymce.wp-editor .wizhi .btn {
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
@@ -22,25 +22,25 @@ body#tinymce.wp-editor .sandwich .btn {
     user-select: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn:focus, body#tinymce.wp-editor .sandwich .btn.focus, body#tinymce.wp-editor .sandwich .btn:active:focus, body#tinymce.wp-editor .sandwich .btn:active.focus, body#tinymce.wp-editor .sandwich .btn.active:focus, body#tinymce.wp-editor .sandwich .btn.active.focus {
+body#tinymce.wp-editor .wizhi .btn:focus, body#tinymce.wp-editor .wizhi .btn.focus, body#tinymce.wp-editor .wizhi .btn:active:focus, body#tinymce.wp-editor .wizhi .btn:active.focus, body#tinymce.wp-editor .wizhi .btn.active:focus, body#tinymce.wp-editor .wizhi .btn.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
 
-body#tinymce.wp-editor .sandwich .btn:hover, body#tinymce.wp-editor .sandwich .btn:focus, body#tinymce.wp-editor .sandwich .btn.focus {
+body#tinymce.wp-editor .wizhi .btn:hover, body#tinymce.wp-editor .wizhi .btn:focus, body#tinymce.wp-editor .wizhi .btn.focus {
     color: #333;
     text-decoration: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn:active, body#tinymce.wp-editor .sandwich .btn.active {
+body#tinymce.wp-editor .wizhi .btn:active, body#tinymce.wp-editor .wizhi .btn.active {
     outline: 0;
     background-image: none;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-body#tinymce.wp-editor .sandwich .btn.disabled, body#tinymce.wp-editor .sandwich .btn[disabled], fieldset[disabled] body#tinymce.wp-editor .sandwich .btn {
+body#tinymce.wp-editor .wizhi .btn.disabled, body#tinymce.wp-editor .wizhi .btn[disabled], fieldset[disabled] body#tinymce.wp-editor .wizhi .btn {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
@@ -49,226 +49,226 @@ body#tinymce.wp-editor .sandwich .btn.disabled, body#tinymce.wp-editor .sandwich
     box-shadow: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-default {
+body#tinymce.wp-editor .wizhi .btn-default {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
 }
 
-body#tinymce.wp-editor .sandwich .btn-default:hover, body#tinymce.wp-editor .sandwich .btn-default:focus, body#tinymce.wp-editor .sandwich .btn-default.focus, body#tinymce.wp-editor .sandwich .btn-default:active, body#tinymce.wp-editor .sandwich .btn-default.active, .open > body#tinymce.wp-editor .sandwich .btn-default.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-default:hover, body#tinymce.wp-editor .wizhi .btn-default:focus, body#tinymce.wp-editor .wizhi .btn-default.focus, body#tinymce.wp-editor .wizhi .btn-default:active, body#tinymce.wp-editor .wizhi .btn-default.active, .open > body#tinymce.wp-editor .wizhi .btn-default.dropdown-toggle {
     color: #333;
     background-color: #e6e6e6;
     border-color: #adadad;
 }
 
-body#tinymce.wp-editor .sandwich .btn-default:active, body#tinymce.wp-editor .sandwich .btn-default.active, .open > body#tinymce.wp-editor .sandwich .btn-default.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-default:active, body#tinymce.wp-editor .wizhi .btn-default.active, .open > body#tinymce.wp-editor .wizhi .btn-default.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-default.disabled, body#tinymce.wp-editor .sandwich .btn-default.disabled:hover, body#tinymce.wp-editor .sandwich .btn-default.disabled:focus, body#tinymce.wp-editor .sandwich .btn-default.disabled.focus, body#tinymce.wp-editor .sandwich .btn-default.disabled:active, body#tinymce.wp-editor .sandwich .btn-default.disabled.active, body#tinymce.wp-editor .sandwich .btn-default[disabled], body#tinymce.wp-editor .sandwich .btn-default[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-default[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-default[disabled].focus, body#tinymce.wp-editor .sandwich .btn-default[disabled]:active, body#tinymce.wp-editor .sandwich .btn-default[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-default.active {
+body#tinymce.wp-editor .wizhi .btn-default.disabled, body#tinymce.wp-editor .wizhi .btn-default.disabled:hover, body#tinymce.wp-editor .wizhi .btn-default.disabled:focus, body#tinymce.wp-editor .wizhi .btn-default.disabled.focus, body#tinymce.wp-editor .wizhi .btn-default.disabled:active, body#tinymce.wp-editor .wizhi .btn-default.disabled.active, body#tinymce.wp-editor .wizhi .btn-default[disabled], body#tinymce.wp-editor .wizhi .btn-default[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-default[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-default[disabled].focus, body#tinymce.wp-editor .wizhi .btn-default[disabled]:active, body#tinymce.wp-editor .wizhi .btn-default[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-default.active {
     background-color: #fff;
     border-color: #ccc;
 }
 
-body#tinymce.wp-editor .sandwich .btn-default .badge {
+body#tinymce.wp-editor .wizhi .btn-default .badge {
     color: #fff;
     background-color: #333;
 }
 
-body#tinymce.wp-editor .sandwich .btn-primary {
+body#tinymce.wp-editor .wizhi .btn-primary {
     color: #fff;
     background-color: #337ab7;
     border-color: #2e6da4;
 }
 
-body#tinymce.wp-editor .sandwich .btn-primary:hover, body#tinymce.wp-editor .sandwich .btn-primary:focus, body#tinymce.wp-editor .sandwich .btn-primary.focus, body#tinymce.wp-editor .sandwich .btn-primary:active, body#tinymce.wp-editor .sandwich .btn-primary.active, .open > body#tinymce.wp-editor .sandwich .btn-primary.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-primary:hover, body#tinymce.wp-editor .wizhi .btn-primary:focus, body#tinymce.wp-editor .wizhi .btn-primary.focus, body#tinymce.wp-editor .wizhi .btn-primary:active, body#tinymce.wp-editor .wizhi .btn-primary.active, .open > body#tinymce.wp-editor .wizhi .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #286090;
     border-color: #204d74;
 }
 
-body#tinymce.wp-editor .sandwich .btn-primary:active, body#tinymce.wp-editor .sandwich .btn-primary.active, .open > body#tinymce.wp-editor .sandwich .btn-primary.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-primary:active, body#tinymce.wp-editor .wizhi .btn-primary.active, .open > body#tinymce.wp-editor .wizhi .btn-primary.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-primary.disabled, body#tinymce.wp-editor .sandwich .btn-primary.disabled:hover, body#tinymce.wp-editor .sandwich .btn-primary.disabled:focus, body#tinymce.wp-editor .sandwich .btn-primary.disabled.focus, body#tinymce.wp-editor .sandwich .btn-primary.disabled:active, body#tinymce.wp-editor .sandwich .btn-primary.disabled.active, body#tinymce.wp-editor .sandwich .btn-primary[disabled], body#tinymce.wp-editor .sandwich .btn-primary[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-primary[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-primary[disabled].focus, body#tinymce.wp-editor .sandwich .btn-primary[disabled]:active, body#tinymce.wp-editor .sandwich .btn-primary[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-primary.active {
+body#tinymce.wp-editor .wizhi .btn-primary.disabled, body#tinymce.wp-editor .wizhi .btn-primary.disabled:hover, body#tinymce.wp-editor .wizhi .btn-primary.disabled:focus, body#tinymce.wp-editor .wizhi .btn-primary.disabled.focus, body#tinymce.wp-editor .wizhi .btn-primary.disabled:active, body#tinymce.wp-editor .wizhi .btn-primary.disabled.active, body#tinymce.wp-editor .wizhi .btn-primary[disabled], body#tinymce.wp-editor .wizhi .btn-primary[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-primary[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-primary[disabled].focus, body#tinymce.wp-editor .wizhi .btn-primary[disabled]:active, body#tinymce.wp-editor .wizhi .btn-primary[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-primary.active {
     background-color: #337ab7;
     border-color: #2e6da4;
 }
 
-body#tinymce.wp-editor .sandwich .btn-primary .badge {
+body#tinymce.wp-editor .wizhi .btn-primary .badge {
     color: #337ab7;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .btn-success {
+body#tinymce.wp-editor .wizhi .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-body#tinymce.wp-editor .sandwich .btn-success:hover, body#tinymce.wp-editor .sandwich .btn-success:focus, body#tinymce.wp-editor .sandwich .btn-success.focus, body#tinymce.wp-editor .sandwich .btn-success:active, body#tinymce.wp-editor .sandwich .btn-success.active, .open > body#tinymce.wp-editor .sandwich .btn-success.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-success:hover, body#tinymce.wp-editor .wizhi .btn-success:focus, body#tinymce.wp-editor .wizhi .btn-success.focus, body#tinymce.wp-editor .wizhi .btn-success:active, body#tinymce.wp-editor .wizhi .btn-success.active, .open > body#tinymce.wp-editor .wizhi .btn-success.dropdown-toggle {
     color: #fff;
     background-color: #449d44;
     border-color: #398439;
 }
 
-body#tinymce.wp-editor .sandwich .btn-success:active, body#tinymce.wp-editor .sandwich .btn-success.active, .open > body#tinymce.wp-editor .sandwich .btn-success.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-success:active, body#tinymce.wp-editor .wizhi .btn-success.active, .open > body#tinymce.wp-editor .wizhi .btn-success.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-success.disabled, body#tinymce.wp-editor .sandwich .btn-success.disabled:hover, body#tinymce.wp-editor .sandwich .btn-success.disabled:focus, body#tinymce.wp-editor .sandwich .btn-success.disabled.focus, body#tinymce.wp-editor .sandwich .btn-success.disabled:active, body#tinymce.wp-editor .sandwich .btn-success.disabled.active, body#tinymce.wp-editor .sandwich .btn-success[disabled], body#tinymce.wp-editor .sandwich .btn-success[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-success[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-success[disabled].focus, body#tinymce.wp-editor .sandwich .btn-success[disabled]:active, body#tinymce.wp-editor .sandwich .btn-success[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-success.active {
+body#tinymce.wp-editor .wizhi .btn-success.disabled, body#tinymce.wp-editor .wizhi .btn-success.disabled:hover, body#tinymce.wp-editor .wizhi .btn-success.disabled:focus, body#tinymce.wp-editor .wizhi .btn-success.disabled.focus, body#tinymce.wp-editor .wizhi .btn-success.disabled:active, body#tinymce.wp-editor .wizhi .btn-success.disabled.active, body#tinymce.wp-editor .wizhi .btn-success[disabled], body#tinymce.wp-editor .wizhi .btn-success[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-success[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-success[disabled].focus, body#tinymce.wp-editor .wizhi .btn-success[disabled]:active, body#tinymce.wp-editor .wizhi .btn-success[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-success.active {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-body#tinymce.wp-editor .sandwich .btn-success .badge {
+body#tinymce.wp-editor .wizhi .btn-success .badge {
     color: #5cb85c;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .btn-info {
+body#tinymce.wp-editor .wizhi .btn-info {
     color: #fff;
     background-color: #5bc0de;
     border-color: #46b8da;
 }
 
-body#tinymce.wp-editor .sandwich .btn-info:hover, body#tinymce.wp-editor .sandwich .btn-info:focus, body#tinymce.wp-editor .sandwich .btn-info.focus, body#tinymce.wp-editor .sandwich .btn-info:active, body#tinymce.wp-editor .sandwich .btn-info.active, .open > body#tinymce.wp-editor .sandwich .btn-info.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-info:hover, body#tinymce.wp-editor .wizhi .btn-info:focus, body#tinymce.wp-editor .wizhi .btn-info.focus, body#tinymce.wp-editor .wizhi .btn-info:active, body#tinymce.wp-editor .wizhi .btn-info.active, .open > body#tinymce.wp-editor .wizhi .btn-info.dropdown-toggle {
     color: #fff;
     background-color: #31b0d5;
     border-color: #269abc;
 }
 
-body#tinymce.wp-editor .sandwich .btn-info:active, body#tinymce.wp-editor .sandwich .btn-info.active, .open > body#tinymce.wp-editor .sandwich .btn-info.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-info:active, body#tinymce.wp-editor .wizhi .btn-info.active, .open > body#tinymce.wp-editor .wizhi .btn-info.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-info.disabled, body#tinymce.wp-editor .sandwich .btn-info.disabled:hover, body#tinymce.wp-editor .sandwich .btn-info.disabled:focus, body#tinymce.wp-editor .sandwich .btn-info.disabled.focus, body#tinymce.wp-editor .sandwich .btn-info.disabled:active, body#tinymce.wp-editor .sandwich .btn-info.disabled.active, body#tinymce.wp-editor .sandwich .btn-info[disabled], body#tinymce.wp-editor .sandwich .btn-info[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-info[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-info[disabled].focus, body#tinymce.wp-editor .sandwich .btn-info[disabled]:active, body#tinymce.wp-editor .sandwich .btn-info[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-info.active {
+body#tinymce.wp-editor .wizhi .btn-info.disabled, body#tinymce.wp-editor .wizhi .btn-info.disabled:hover, body#tinymce.wp-editor .wizhi .btn-info.disabled:focus, body#tinymce.wp-editor .wizhi .btn-info.disabled.focus, body#tinymce.wp-editor .wizhi .btn-info.disabled:active, body#tinymce.wp-editor .wizhi .btn-info.disabled.active, body#tinymce.wp-editor .wizhi .btn-info[disabled], body#tinymce.wp-editor .wizhi .btn-info[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-info[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-info[disabled].focus, body#tinymce.wp-editor .wizhi .btn-info[disabled]:active, body#tinymce.wp-editor .wizhi .btn-info[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-info.active {
     background-color: #5bc0de;
     border-color: #46b8da;
 }
 
-body#tinymce.wp-editor .sandwich .btn-info .badge {
+body#tinymce.wp-editor .wizhi .btn-info .badge {
     color: #5bc0de;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .btn-warning {
+body#tinymce.wp-editor .wizhi .btn-warning {
     color: #fff;
     background-color: #f0ad4e;
     border-color: #eea236;
 }
 
-body#tinymce.wp-editor .sandwich .btn-warning:hover, body#tinymce.wp-editor .sandwich .btn-warning:focus, body#tinymce.wp-editor .sandwich .btn-warning.focus, body#tinymce.wp-editor .sandwich .btn-warning:active, body#tinymce.wp-editor .sandwich .btn-warning.active, .open > body#tinymce.wp-editor .sandwich .btn-warning.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-warning:hover, body#tinymce.wp-editor .wizhi .btn-warning:focus, body#tinymce.wp-editor .wizhi .btn-warning.focus, body#tinymce.wp-editor .wizhi .btn-warning:active, body#tinymce.wp-editor .wizhi .btn-warning.active, .open > body#tinymce.wp-editor .wizhi .btn-warning.dropdown-toggle {
     color: #fff;
     background-color: #ec971f;
     border-color: #d58512;
 }
 
-body#tinymce.wp-editor .sandwich .btn-warning:active, body#tinymce.wp-editor .sandwich .btn-warning.active, .open > body#tinymce.wp-editor .sandwich .btn-warning.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-warning:active, body#tinymce.wp-editor .wizhi .btn-warning.active, .open > body#tinymce.wp-editor .wizhi .btn-warning.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-warning.disabled, body#tinymce.wp-editor .sandwich .btn-warning.disabled:hover, body#tinymce.wp-editor .sandwich .btn-warning.disabled:focus, body#tinymce.wp-editor .sandwich .btn-warning.disabled.focus, body#tinymce.wp-editor .sandwich .btn-warning.disabled:active, body#tinymce.wp-editor .sandwich .btn-warning.disabled.active, body#tinymce.wp-editor .sandwich .btn-warning[disabled], body#tinymce.wp-editor .sandwich .btn-warning[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-warning[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-warning[disabled].focus, body#tinymce.wp-editor .sandwich .btn-warning[disabled]:active, body#tinymce.wp-editor .sandwich .btn-warning[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-warning.active {
+body#tinymce.wp-editor .wizhi .btn-warning.disabled, body#tinymce.wp-editor .wizhi .btn-warning.disabled:hover, body#tinymce.wp-editor .wizhi .btn-warning.disabled:focus, body#tinymce.wp-editor .wizhi .btn-warning.disabled.focus, body#tinymce.wp-editor .wizhi .btn-warning.disabled:active, body#tinymce.wp-editor .wizhi .btn-warning.disabled.active, body#tinymce.wp-editor .wizhi .btn-warning[disabled], body#tinymce.wp-editor .wizhi .btn-warning[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-warning[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-warning[disabled].focus, body#tinymce.wp-editor .wizhi .btn-warning[disabled]:active, body#tinymce.wp-editor .wizhi .btn-warning[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-warning.active {
     background-color: #f0ad4e;
     border-color: #eea236;
 }
 
-body#tinymce.wp-editor .sandwich .btn-warning .badge {
+body#tinymce.wp-editor .wizhi .btn-warning .badge {
     color: #f0ad4e;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .btn-danger {
+body#tinymce.wp-editor .wizhi .btn-danger {
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
 }
 
-body#tinymce.wp-editor .sandwich .btn-danger:hover, body#tinymce.wp-editor .sandwich .btn-danger:focus, body#tinymce.wp-editor .sandwich .btn-danger.focus, body#tinymce.wp-editor .sandwich .btn-danger:active, body#tinymce.wp-editor .sandwich .btn-danger.active, .open > body#tinymce.wp-editor .sandwich .btn-danger.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-danger:hover, body#tinymce.wp-editor .wizhi .btn-danger:focus, body#tinymce.wp-editor .wizhi .btn-danger.focus, body#tinymce.wp-editor .wizhi .btn-danger:active, body#tinymce.wp-editor .wizhi .btn-danger.active, .open > body#tinymce.wp-editor .wizhi .btn-danger.dropdown-toggle {
     color: #fff;
     background-color: #c9302c;
     border-color: #ac2925;
 }
 
-body#tinymce.wp-editor .sandwich .btn-danger:active, body#tinymce.wp-editor .sandwich .btn-danger.active, .open > body#tinymce.wp-editor .sandwich .btn-danger.dropdown-toggle {
+body#tinymce.wp-editor .wizhi .btn-danger:active, body#tinymce.wp-editor .wizhi .btn-danger.active, .open > body#tinymce.wp-editor .wizhi .btn-danger.dropdown-toggle {
     background-image: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-danger.disabled, body#tinymce.wp-editor .sandwich .btn-danger.disabled:hover, body#tinymce.wp-editor .sandwich .btn-danger.disabled:focus, body#tinymce.wp-editor .sandwich .btn-danger.disabled.focus, body#tinymce.wp-editor .sandwich .btn-danger.disabled:active, body#tinymce.wp-editor .sandwich .btn-danger.disabled.active, body#tinymce.wp-editor .sandwich .btn-danger[disabled], body#tinymce.wp-editor .sandwich .btn-danger[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-danger[disabled]:focus, body#tinymce.wp-editor .sandwich .btn-danger[disabled].focus, body#tinymce.wp-editor .sandwich .btn-danger[disabled]:active, body#tinymce.wp-editor .sandwich .btn-danger[disabled].active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger.focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger:active, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-danger.active {
+body#tinymce.wp-editor .wizhi .btn-danger.disabled, body#tinymce.wp-editor .wizhi .btn-danger.disabled:hover, body#tinymce.wp-editor .wizhi .btn-danger.disabled:focus, body#tinymce.wp-editor .wizhi .btn-danger.disabled.focus, body#tinymce.wp-editor .wizhi .btn-danger.disabled:active, body#tinymce.wp-editor .wizhi .btn-danger.disabled.active, body#tinymce.wp-editor .wizhi .btn-danger[disabled], body#tinymce.wp-editor .wizhi .btn-danger[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-danger[disabled]:focus, body#tinymce.wp-editor .wizhi .btn-danger[disabled].focus, body#tinymce.wp-editor .wizhi .btn-danger[disabled]:active, body#tinymce.wp-editor .wizhi .btn-danger[disabled].active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger.focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger:active, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-danger.active {
     background-color: #d9534f;
     border-color: #d43f3a;
 }
 
-body#tinymce.wp-editor .sandwich .btn-danger .badge {
+body#tinymce.wp-editor .wizhi .btn-danger .badge {
     color: #d9534f;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .btn-link {
+body#tinymce.wp-editor .wizhi .btn-link {
     color: #337ab7;
     font-weight: normal;
     border-radius: 0;
 }
 
-body#tinymce.wp-editor .sandwich .btn-link, body#tinymce.wp-editor .sandwich .btn-link:active, body#tinymce.wp-editor .sandwich .btn-link.active, body#tinymce.wp-editor .sandwich .btn-link[disabled], fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-link {
+body#tinymce.wp-editor .wizhi .btn-link, body#tinymce.wp-editor .wizhi .btn-link:active, body#tinymce.wp-editor .wizhi .btn-link.active, body#tinymce.wp-editor .wizhi .btn-link[disabled], fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-link {
     background-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-link, body#tinymce.wp-editor .sandwich .btn-link:hover, body#tinymce.wp-editor .sandwich .btn-link:focus, body#tinymce.wp-editor .sandwich .btn-link:active {
+body#tinymce.wp-editor .wizhi .btn-link, body#tinymce.wp-editor .wizhi .btn-link:hover, body#tinymce.wp-editor .wizhi .btn-link:focus, body#tinymce.wp-editor .wizhi .btn-link:active {
     border-color: transparent;
 }
 
-body#tinymce.wp-editor .sandwich .btn-link:hover, body#tinymce.wp-editor .sandwich .btn-link:focus {
+body#tinymce.wp-editor .wizhi .btn-link:hover, body#tinymce.wp-editor .wizhi .btn-link:focus {
     color: #23527c;
     text-decoration: underline;
     background-color: transparent;
 }
 
-body#tinymce.wp-editor .sandwich .btn-link[disabled]:hover, body#tinymce.wp-editor .sandwich .btn-link[disabled]:focus, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-link:hover, fieldset[disabled] body#tinymce.wp-editor .sandwich .btn-link:focus {
+body#tinymce.wp-editor .wizhi .btn-link[disabled]:hover, body#tinymce.wp-editor .wizhi .btn-link[disabled]:focus, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-link:hover, fieldset[disabled] body#tinymce.wp-editor .wizhi .btn-link:focus {
     color: #777777;
     text-decoration: none;
 }
 
-body#tinymce.wp-editor .sandwich .btn-lg {
+body#tinymce.wp-editor .wizhi .btn-lg {
     padding: 10px 16px;
     font-size: 18px;
     line-height: 1.3333333;
     border-radius: 6px;
 }
 
-body#tinymce.wp-editor .sandwich .btn-sm {
+body#tinymce.wp-editor .wizhi .btn-sm {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
     border-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .btn-xs {
+body#tinymce.wp-editor .wizhi .btn-xs {
     padding: 1px 5px;
     font-size: 12px;
     line-height: 1.5;
     border-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .btn-block {
+body#tinymce.wp-editor .wizhi .btn-block {
     display: block;
     width: 100%;
 }
 
-body#tinymce.wp-editor .sandwich .btn-block + .btn-block {
+body#tinymce.wp-editor .wizhi .btn-block + .btn-block {
     margin-top: 5px;
 }
 
-body#tinymce.wp-editor .sandwich input[type="submit"].btn-block,
-body#tinymce.wp-editor .sandwich input[type="reset"].btn-block,
-body#tinymce.wp-editor .sandwich input[type="button"].btn-block {
+body#tinymce.wp-editor .wizhi input[type="submit"].btn-block,
+body#tinymce.wp-editor .wizhi input[type="reset"].btn-block,
+body#tinymce.wp-editor .wizhi input[type="button"].btn-block {
     width: 100%;
 }
 
-body#tinymce.wp-editor .sandwich .panel {
+body#tinymce.wp-editor .wizhi .panel {
     margin-bottom: 20px;
     background-color: #fff;
     border: 1px solid transparent;
@@ -277,46 +277,46 @@ body#tinymce.wp-editor .sandwich .panel {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-body#tinymce.wp-editor .sandwich .panel-body {
+body#tinymce.wp-editor .wizhi .panel-body {
     padding: 15px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-body:before, body#tinymce.wp-editor .sandwich .panel-body:after {
+body#tinymce.wp-editor .wizhi .panel-body:before, body#tinymce.wp-editor .wizhi .panel-body:after {
     content: " ";
     display: table;
 }
 
-body#tinymce.wp-editor .sandwich .panel-body:after {
+body#tinymce.wp-editor .wizhi .panel-body:after {
     clear: both;
 }
 
-body#tinymce.wp-editor .sandwich .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-heading {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-heading > .dropdown .dropdown-toggle {
+body#tinymce.wp-editor .wizhi .panel-heading > .dropdown .dropdown-toggle {
     color: inherit;
 }
 
-body#tinymce.wp-editor .sandwich .panel-title {
+body#tinymce.wp-editor .wizhi .panel-title {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 16px;
     color: inherit;
 }
 
-body#tinymce.wp-editor .sandwich .panel-title > a,
-body#tinymce.wp-editor .sandwich .panel-title > small,
-body#tinymce.wp-editor .sandwich .panel-title > .small,
-body#tinymce.wp-editor .sandwich .panel-title > small > a,
-body#tinymce.wp-editor .sandwich .panel-title > .small > a {
+body#tinymce.wp-editor .wizhi .panel-title > a,
+body#tinymce.wp-editor .wizhi .panel-title > small,
+body#tinymce.wp-editor .wizhi .panel-title > .small,
+body#tinymce.wp-editor .wizhi .panel-title > small > a,
+body#tinymce.wp-editor .wizhi .panel-title > .small > a {
     color: inherit;
 }
 
-body#tinymce.wp-editor .sandwich .panel-footer {
+body#tinymce.wp-editor .wizhi .panel-footer {
     padding: 10px 15px;
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
@@ -324,363 +324,363 @@ body#tinymce.wp-editor .sandwich .panel-footer {
     border-bottom-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .list-group,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .list-group {
+body#tinymce.wp-editor .wizhi .panel > .list-group,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .list-group {
     margin-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .list-group .list-group-item,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .list-group .list-group-item {
+body#tinymce.wp-editor .wizhi .panel > .list-group .list-group-item,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .list-group .list-group-item {
     border-width: 1px 0;
     border-radius: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .list-group:first-child .list-group-item:first-child,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+body#tinymce.wp-editor .wizhi .panel > .list-group:first-child .list-group-item:first-child,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
     border-top: 0;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .list-group:last-child .list-group-item:last-child,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+body#tinymce.wp-editor .wizhi .panel > .list-group:last-child .list-group-item:last-child,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
     border-bottom: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-heading + .list-group .list-group-item:first-child {
+body#tinymce.wp-editor .wizhi .panel-heading + .list-group .list-group-item:first-child {
     border-top-width: 0;
 }
 
-body#tinymce.wp-editor .sandwich .list-group + .panel-footer {
+body#tinymce.wp-editor .wizhi .list-group + .panel-footer {
     border-top-width: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .table {
+body#tinymce.wp-editor .wizhi .panel > .table,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .table {
     margin-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table caption,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table caption,
-body#tinymce.wp-editor .sandwich .panel > .panel-collapse > .table caption {
+body#tinymce.wp-editor .wizhi .panel > .table caption,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table caption,
+body#tinymce.wp-editor .wizhi .panel > .panel-collapse > .table caption {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child {
+body#tinymce.wp-editor .wizhi .panel > .table:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > thead:first-child > tr:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > tbody:first-child > tr:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > thead:first-child > tr:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > tbody:first-child > tr:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
     border-top-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
     border-top-right-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child {
+body#tinymce.wp-editor .wizhi .panel > .table:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child {
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tbody:last-child > tr:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tfoot:last-child > tr:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tbody:last-child > tr:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tfoot:last-child > tr:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
     border-bottom-left-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
     border-bottom-right-radius: 3px;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .panel-body + .table,
-body#tinymce.wp-editor .sandwich .panel > .panel-body + .table-responsive,
-body#tinymce.wp-editor .sandwich .panel > .table + .panel-body,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive + .panel-body {
+body#tinymce.wp-editor .wizhi .panel > .panel-body + .table,
+body#tinymce.wp-editor .wizhi .panel > .panel-body + .table-responsive,
+body#tinymce.wp-editor .wizhi .panel > .table + .panel-body,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive + .panel-body {
     border-top: 1px solid #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table > tbody:first-child > tr:first-child th,
-body#tinymce.wp-editor .sandwich .panel > .table > tbody:first-child > tr:first-child td {
+body#tinymce.wp-editor .wizhi .panel > .table > tbody:first-child > tr:first-child th,
+body#tinymce.wp-editor .wizhi .panel > .table > tbody:first-child > tr:first-child td {
     border-top: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-bordered,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered {
+body#tinymce.wp-editor .wizhi .panel > .table-bordered,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered {
     border: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr > td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr > td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr > td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr > td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr > td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr > td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
     border-left: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr > td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr > td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr > td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr > td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr > td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr > td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
     border-right: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr:first-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > thead > tr:first-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr:first-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr:first-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr:first-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > thead > tr:first-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr:first-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr:first-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
     border-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr:last-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tbody > tr:last-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr:last-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-bordered > tfoot > tr:last-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-body#tinymce.wp-editor .sandwich .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr:last-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tbody > tr:last-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr:last-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-bordered > tfoot > tr:last-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+body#tinymce.wp-editor .wizhi .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
     border-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel > .table-responsive {
+body#tinymce.wp-editor .wizhi .panel > .table-responsive {
     border: 0;
     margin-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group {
+body#tinymce.wp-editor .wizhi .panel-group {
     margin-bottom: 20px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel {
+body#tinymce.wp-editor .wizhi .panel-group .panel {
     margin-bottom: 0;
     border-radius: 4px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel + .panel {
+body#tinymce.wp-editor .wizhi .panel-group .panel + .panel {
     margin-top: 5px;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-group .panel-heading {
     border-bottom: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel-heading + .panel-collapse > .panel-body,
-body#tinymce.wp-editor .sandwich .panel-group .panel-heading + .panel-collapse > .list-group {
+body#tinymce.wp-editor .wizhi .panel-group .panel-heading + .panel-collapse > .panel-body,
+body#tinymce.wp-editor .wizhi .panel-group .panel-heading + .panel-collapse > .list-group {
     border-top: 1px solid #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel-footer {
+body#tinymce.wp-editor .wizhi .panel-group .panel-footer {
     border-top: 0;
 }
 
-body#tinymce.wp-editor .sandwich .panel-group .panel-footer + .panel-collapse .panel-body {
+body#tinymce.wp-editor .wizhi .panel-group .panel-footer + .panel-collapse .panel-body {
     border-bottom: 1px solid #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-default {
+body#tinymce.wp-editor .wizhi .panel-default {
     border-color: #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-default > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-default > .panel-heading {
     color: #333333;
     background-color: #f5f5f5;
     border-color: #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-default > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-default > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-default > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-default > .panel-heading .badge {
     color: #f5f5f5;
     background-color: #333333;
 }
 
-body#tinymce.wp-editor .sandwich .panel-default > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-default > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #ddd;
 }
 
-body#tinymce.wp-editor .sandwich .panel-primary {
+body#tinymce.wp-editor .wizhi .panel-primary {
     border-color: #337ab7;
 }
 
-body#tinymce.wp-editor .sandwich .panel-primary > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-primary > .panel-heading {
     color: #fff;
     background-color: #337ab7;
     border-color: #337ab7;
 }
 
-body#tinymce.wp-editor .sandwich .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-primary > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #337ab7;
 }
 
-body#tinymce.wp-editor .sandwich .panel-primary > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-primary > .panel-heading .badge {
     color: #337ab7;
     background-color: #fff;
 }
 
-body#tinymce.wp-editor .sandwich .panel-primary > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-primary > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #337ab7;
 }
 
-body#tinymce.wp-editor .sandwich .panel-success {
+body#tinymce.wp-editor .wizhi .panel-success {
     border-color: #d6e9c6;
 }
 
-body#tinymce.wp-editor .sandwich .panel-success > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-success > .panel-heading {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
 
-body#tinymce.wp-editor .sandwich .panel-success > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-success > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #d6e9c6;
 }
 
-body#tinymce.wp-editor .sandwich .panel-success > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-success > .panel-heading .badge {
     color: #dff0d8;
     background-color: #3c763d;
 }
 
-body#tinymce.wp-editor .sandwich .panel-success > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-success > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #d6e9c6;
 }
 
-body#tinymce.wp-editor .sandwich .panel-info {
+body#tinymce.wp-editor .wizhi .panel-info {
     border-color: #bce8f1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-info > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-info > .panel-heading {
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-info > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-info > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #bce8f1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-info > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-info > .panel-heading .badge {
     color: #d9edf7;
     background-color: #31708f;
 }
 
-body#tinymce.wp-editor .sandwich .panel-info > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-info > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #bce8f1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-warning {
+body#tinymce.wp-editor .wizhi .panel-warning {
     border-color: #faebcc;
 }
 
-body#tinymce.wp-editor .sandwich .panel-warning > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-warning > .panel-heading {
     color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
 }
 
-body#tinymce.wp-editor .sandwich .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-warning > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #faebcc;
 }
 
-body#tinymce.wp-editor .sandwich .panel-warning > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-warning > .panel-heading .badge {
     color: #fcf8e3;
     background-color: #8a6d3b;
 }
 
-body#tinymce.wp-editor .sandwich .panel-warning > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-warning > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #faebcc;
 }
 
-body#tinymce.wp-editor .sandwich .panel-danger {
+body#tinymce.wp-editor .wizhi .panel-danger {
     border-color: #ebccd1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-danger > .panel-heading {
+body#tinymce.wp-editor .wizhi .panel-danger > .panel-heading {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-danger > .panel-heading + .panel-collapse > .panel-body {
     border-top-color: #ebccd1;
 }
 
-body#tinymce.wp-editor .sandwich .panel-danger > .panel-heading .badge {
+body#tinymce.wp-editor .wizhi .panel-danger > .panel-heading .badge {
     color: #f2dede;
     background-color: #a94442;
 }
 
-body#tinymce.wp-editor .sandwich .panel-danger > .panel-footer + .panel-collapse > .panel-body {
+body#tinymce.wp-editor .wizhi .panel-danger > .panel-footer + .panel-collapse > .panel-body {
     border-bottom-color: #ebccd1;
 }
 
@@ -702,7 +702,7 @@ body#tinymce.wp-editor .sandwich .panel-danger > .panel-footer + .panel-collapse
     }
 }
 
-body#tinymce.wp-editor .sandwich .progress {
+body#tinymce.wp-editor .wizhi .progress {
     overflow: hidden;
     height: 20px;
     margin-bottom: 20px;
@@ -712,7 +712,7 @@ body#tinymce.wp-editor .sandwich .progress {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-body#tinymce.wp-editor .sandwich .progress-bar {
+body#tinymce.wp-editor .wizhi .progress-bar {
     float: left;
     width: 0%;
     height: 100%;
@@ -728,76 +728,76 @@ body#tinymce.wp-editor .sandwich .progress-bar {
     transition: width 0.6s ease;
 }
 
-body#tinymce.wp-editor .sandwich .progress-striped .progress-bar,
-body#tinymce.wp-editor .sandwich .progress-bar-striped {
+body#tinymce.wp-editor .wizhi .progress-striped .progress-bar,
+body#tinymce.wp-editor .wizhi .progress-bar-striped {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-size: 40px 40px;
 }
 
-body#tinymce.wp-editor .sandwich .progress.active .progress-bar,
-body#tinymce.wp-editor .sandwich .progress-bar.active {
+body#tinymce.wp-editor .wizhi .progress.active .progress-bar,
+body#tinymce.wp-editor .wizhi .progress-bar.active {
     -webkit-animation: progress-bar-stripes 2s linear infinite;
     -o-animation: progress-bar-stripes 2s linear infinite;
     animation: progress-bar-stripes 2s linear infinite;
 }
 
-body#tinymce.wp-editor .sandwich .progress-bar-success {
+body#tinymce.wp-editor .wizhi .progress-bar-success {
     background-color: #5cb85c;
 }
 
-.progress-striped body#tinymce.wp-editor .sandwich .progress-bar-success {
+.progress-striped body#tinymce.wp-editor .wizhi .progress-bar-success {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-body#tinymce.wp-editor .sandwich .progress-bar-info {
+body#tinymce.wp-editor .wizhi .progress-bar-info {
     background-color: #5bc0de;
 }
 
-.progress-striped body#tinymce.wp-editor .sandwich .progress-bar-info {
+.progress-striped body#tinymce.wp-editor .wizhi .progress-bar-info {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-body#tinymce.wp-editor .sandwich .progress-bar-warning {
+body#tinymce.wp-editor .wizhi .progress-bar-warning {
     background-color: #f0ad4e;
 }
 
-.progress-striped body#tinymce.wp-editor .sandwich .progress-bar-warning {
+.progress-striped body#tinymce.wp-editor .wizhi .progress-bar-warning {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-body#tinymce.wp-editor .sandwich .progress-bar-danger {
+body#tinymce.wp-editor .wizhi .progress-bar-danger {
     background-color: #d9534f;
 }
 
-.progress-striped body#tinymce.wp-editor .sandwich .progress-bar-danger {
+.progress-striped body#tinymce.wp-editor .wizhi .progress-bar-danger {
     background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-.sandwich.pbs_button {
+.wizhi.pbs_button {
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
 }
 
-.sandwich.pbs_button a, .sandwich.pbs_button a:hover, .sandwich.pbs_button a:link, .sandwich.pbs_button a:link:hover, .sandwich.pbs_button a:visited, .sandwich.pbs_button a:visited:hover {
+.wizhi.pbs_button a, .wizhi.pbs_button a:hover, .wizhi.pbs_button a:link, .wizhi.pbs_button a:link:hover, .wizhi.pbs_button a:visited, .wizhi.pbs_button a:visited:hover {
     text-decoration: none;
 }
 
-.sandwich.pbs_button.pbs_button_align_left {
+.wizhi.pbs_button.pbs_button_align_left {
     text-align: left;
 }
 
-.sandwich.pbs_button.pbs_button_align_right {
+.wizhi.pbs_button.pbs_button_align_right {
     text-align: right;
 }
 
@@ -825,7 +825,7 @@ body#tinymce.wp-editor {
      */
 }
 
-body#tinymce.wp-editor .pbsandwich_column td {
+body#tinymce.wp-editor .wizhi_column td {
     vertical-align: top;
     padding: 10px 10px;
     border: none;
@@ -833,57 +833,57 @@ body#tinymce.wp-editor .pbsandwich_column td {
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-body#tinymce.wp-editor .pbsandwich_column td .pbsandwich_column td {
+body#tinymce.wp-editor .wizhi_column td .wizhi_column td {
     box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-body#tinymce.wp-editor .pbsandwich_column td .pbsandwich_column td .pbsandwich_column td {
+body#tinymce.wp-editor .wizhi_column td .wizhi_column td .wizhi_column td {
     box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
-body#tinymce.wp-editor .pbsandwich_column {
+body#tinymce.wp-editor .wizhi_column {
     margin: 10px 0 20px;
     table-layout: fixed;
     width: 100%;
     clear: both;
 }
 
-body#tinymce.wp-editor .pbsandwich_column > tbody > tr > td {
+body#tinymce.wp-editor .wizhi_column > tbody > tr > td {
     min-width: 150px;
 }
 
-body#tinymce.wp-editor .pbsandwich_column.pbs-align-left {
+body#tinymce.wp-editor .wizhi_column.pbs-align-left {
     width: auto !important;
     margin-right: auto !important;
     margin-left: 0 !important;
 }
 
-body#tinymce.wp-editor .pbsandwich_column.pbs-align-right {
+body#tinymce.wp-editor .wizhi_column.pbs-align-right {
     width: auto !important;
     margin-right: 0 !important;
     margin-left: auto !important;
 }
 
-body#tinymce.wp-editor .pbsandwich_column.pbs-align-center {
+body#tinymce.wp-editor .wizhi_column.pbs-align-center {
     width: auto !important;
     margin-right: auto !important;
     margin-left: auto !important;
 }
 
-body#tinymce.wp-editor .pbsandwich_column.pbs-align-left > tbody > tr > td, body#tinymce.wp-editor .pbsandwich_column.pbs-align-right > tbody > tr > td, body#tinymce.wp-editor .pbsandwich_column.pbs-align-center > tbody > tr > td {
+body#tinymce.wp-editor .wizhi_column.pbs-align-left > tbody > tr > td, body#tinymce.wp-editor .wizhi_column.pbs-align-right > tbody > tr > td, body#tinymce.wp-editor .wizhi_column.pbs-align-center > tbody > tr > td {
     width: auto !important;
 }
 
-body#tinymce.wp-editor .pbsandwich_column[data-mce-selected="1"] ~ .mce-resizehandle, body#tinymce.wp-editor.pbsandwich_column_selected .mce-resizehandle {
+body#tinymce.wp-editor .wizhi_column[data-mce-selected="1"] ~ .mce-resizehandle, body#tinymce.wp-editor.wizhi_column_selected .mce-resizehandle {
     display: none !important;
 }
 
-body#tinymce.wp-editor .pbsandwich_column td:hover,
-body#tinymce.wp-editor .pbsandwich_column td td:hover {
+body#tinymce.wp-editor .wizhi_column td:hover,
+body#tinymce.wp-editor .wizhi_column td td:hover {
     cursor: move;
 }
 
-body#tinymce.wp-editor .pbsandwich_column td *:not(.wpview-wrap) {
+body#tinymce.wp-editor .wizhi_column td *:not(.wpview-wrap) {
     cursor: text;
 }
 
@@ -897,7 +897,7 @@ body#tinymce.wp-editor #wp-column-toolbar .sep {
     background: #ccc;
 }
 
-body#tinymce.wp-editor .pbsandwich_column td img {
+body#tinymce.wp-editor .wizhi_column td img {
     max-width: 100%;
     height: auto;
 }
@@ -908,7 +908,7 @@ body#tinymce.wp-editor {
      */
 }
 
-body#tinymce.wp-editor .sandwich .html5video {
+body#tinymce.wp-editor .wizhi .html5video {
     width: 100%;
     height: auto;
 }
@@ -922,11 +922,11 @@ body#tinymce.wp-editor .jetpack-video-wrapper iframe {
     height: 518px;
 }
 
-body#tinymce.wp-editor .pbsandwich_column .jetpack-video-wrapper iframe {
+body#tinymce.wp-editor .wizhi_column .jetpack-video-wrapper iframe {
     height: 300px;
 }
 
-body#tinymce.wp-editor .pbsandwich_column .pbsandwich_column .jetpack-video-wrapper iframe {
+body#tinymce.wp-editor .wizhi_column .wizhi_column .jetpack-video-wrapper iframe {
     height: 200px;
 }
 
@@ -992,18 +992,18 @@ body#tinymce.wp-editor .pbsandwich_column .pbsandwich_column .jetpack-video-wrap
 /**
  * Jetpack Facbeook Like Box
  */
-body#tinymce.wp-editor .sandwich .widget_facebook_likebox iframe {
+body#tinymce.wp-editor .wizhi .widget_facebook_likebox iframe {
     width: 100% !important;
 }
 
 /**
  * Jetpack Googlemaps
  */
-body#tinymce.wp-editor .sandwich .googlemaps * {
+body#tinymce.wp-editor .wizhi .googlemaps * {
     display: none;
 }
 
-body#tinymce.wp-editor .sandwich .googlemaps iframe {
+body#tinymce.wp-editor .wizhi .googlemaps iframe {
     display: block;
 }
 
@@ -1167,24 +1167,24 @@ body#tinymce.wp-editor {
      */
 }
 
-body#tinymce.wp-editor .sandwich .toggle [data-toggle="collapse"] {
+body#tinymce.wp-editor .wizhi .toggle [data-toggle="collapse"] {
     display: block;
     text-decoration: none;
 }
 
-body#tinymce.wp-editor .sandwich .toggle [data-toggle="collapse"].collapsed:before,
-body#tinymce.wp-editor .sandwich .toggle [data-toggle="collapse"][aria-expanded="false"]:before {
+body#tinymce.wp-editor .wizhi .toggle [data-toggle="collapse"].collapsed:before,
+body#tinymce.wp-editor .wizhi .toggle [data-toggle="collapse"][aria-expanded="false"]:before {
     content: "\f132";
 }
 
-body#tinymce.wp-editor .sandwich .toggle [data-toggle="collapse"]:before {
+body#tinymce.wp-editor .wizhi .toggle [data-toggle="collapse"]:before {
     content: "\f460";
     font-family: 'Dashicons';
     vertical-align: middle;
     margin-right: 10px;
 }
 
-body#tinymce.wp-editor .sandwich .toggle .panel-body > div > p:last-of-type {
+body#tinymce.wp-editor .wizhi .toggle .panel-body > div > p:last-of-type {
     margin-bottom: 0;
 }
 
@@ -1194,7 +1194,7 @@ body#tinymce.wp-editor {
      */
 }
 
-body#tinymce.wp-editor .sandwich.hide_title .widgettitle {
+body#tinymce.wp-editor .wizhi.hide_title .widgettitle {
     display: none;
 }
 

@@ -17,12 +17,12 @@ jQuery(document).ready(function ($) {
     /**
      * Tabs
      */
-    $('body').on('click', '.pbsandwich_modal_tab[data-for]', function () {
+    $('body').on('click', '.pbwizhi_modal_tab[data-for]', function () {
         var modal = $(this).parents('.mce-container:eq(0)');
-        var tabContainer = $(this).parents('.pbsandwich_modal_tabs:eq(0)');
+        var tabContainer = $(this).parents('.pbwizhi_modal_tabs:eq(0)');
         tabContainer.siblings().hide();
         modal.find('#' + $(this).attr('data-for')).show();
-        tabContainer.find('.pbsandwich_modal_tab').removeClass('active');
+        tabContainer.find('.pbwizhi_modal_tab').removeClass('active');
         $(this).addClass('active');
     });
 });
@@ -44,16 +44,9 @@ jQuery(document).ready(function ($) {
     $('body').on('click', '.shortcode-list-item[data-shortcode="__pbs_get_more_shortcodes"]', function (e) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        window.open('http://pbsandwi.ch/downloads/?utm_source=plugin&utm_medium=get%20more%20shortcodes&utm_campaign=Plugin%20-%20Get%20More%20Shortcode', '_blank');
     });
 });
 
 function _gambit_microtime() {
     return ( new Date ).getTime() / 1000;
 }
-
-// @codekit-prepend "_admin-jetpack.js"
-// @codekit-prepend "_admin-core.js"
-// @codekit-prepend "_admin-ads.js"
-// @codekit-prepend "_util.js"
-

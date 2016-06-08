@@ -6,7 +6,7 @@ if( !defined( 'ABSPATH' ) ) {
 ?>
 <script type="text/html" id="tmpl-pbs-column-area-edit-modal">
 
-    <div id="pbsandwich_column_area_edit" class="sandwich_modal">
+    <div id="wizhi_column_area_edit" class="wizhi_modal">
 
         <div class="style_area" style="display: inline-block; margin-right: 20px">
             <h4>{{ data.styles }}</h4>

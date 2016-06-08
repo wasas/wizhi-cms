@@ -20,22 +20,21 @@ require_once( PBS_PATH . 'lib/toolbar.php' );
 
 
 /**
- * PB Sandwich Class
+ * PB wizhi Class
  */
-class GambitPBSandwich {
+class WizhiVisualBuilder {
 
     /**
-     * GambitPBSandwich 构造器, 挂载到 WordPress
+     * WizhiVisualBuilder 构造器, 挂载到 WordPress
      */
     function __construct() {
-        add_action( 'plugins_loaded', [ $this, 'loadTextDomain' ] );
         add_action( 'admin_init', [ $this, 'addEditorStyles' ] );
         add_action( 'admin_enqueue_scripts', [ $this, 'loadAdminScripts' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'loadFrontendScripts' ] );
-        add_filter( 'tiny_mce_before_init', [ $this, 'addSandwichBootstrap' ] );
+        add_filter( 'tiny_mce_before_init', [ $this, 'addwizhiBootstrap' ] );
         add_action( 'init', [ $this, 'loadShortcake' ], 1 );
         add_action( 'media_buttons', [ $this, 'addShortcodeButton' ], 100 );
-        add_action( 'admin_head', [ $this, 'addSandwichPlugin' ] );
+        add_action( 'admin_head', [ $this, 'addwizhiPlugin' ] );
         add_filter( 'mce_buttons', [ $this, 'addPageBreakButton' ] );
     }
 
@@ -67,15 +66,6 @@ class GambitPBSandwich {
     }
 
     /**
-     * 加载翻译文件
-     *
-     * @return    void
-     */
-    public function loadTextDomain() {
-        load_plugin_textdomain( 'pbsandwich', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-    }
-
-    /**
      * 为 "table" 分栏添加样式
      *
      * @return    void
@@ -86,8 +76,8 @@ class GambitPBSandwich {
 
     public function loadFrontendScripts() {
         wp_enqueue_style( 'dashicons' );
-        wp_enqueue_style( 'pbsandwich', plugins_url( 'css/frontend.css', __FILE__ ), [ ], PBS_VERSION );
-        wp_enqueue_script( 'pbsandwich', plugins_url( 'js/min/frontend-min.js', __FILE__ ), [ 'jquery' ], PBS_VERSION );
+        wp_enqueue_style( 'pbwizhi', plugins_url( 'css/frontend.css', __FILE__ ), [ ], PBS_VERSION );
+        wp_enqueue_script( 'pbwizhi', plugins_url( 'js/frontend-min.js', __FILE__ ), [ 'jquery' ], PBS_VERSION );
     }
 
     /**
@@ -96,10 +86,10 @@ class GambitPBSandwich {
      * @return    void
      */
     public function loadAdminScripts() {
-        wp_enqueue_style( 'pbsandwich-admin', plugins_url( 'css/admin.css', __FILE__ ) );
+        wp_enqueue_style( 'pbwizhi-admin', plugins_url( 'css/admin.css', __FILE__ ) );
 
         wp_enqueue_script( 'jquery-ui-sortable' );
-        wp_enqueue_script( 'pbsandwich-admin', plugins_url( 'js/min/admin-min.js', __FILE__ ), [ 'jquery' ], PBS_VERSION );
+        wp_enqueue_script( 'pbwizhi-admin', plugins_url( 'js/admin-min.js', __FILE__ ), [ 'jquery' ], PBS_VERSION );
     }
 
     /**
@@ -107,7 +97,7 @@ class GambitPBSandwich {
      *
      * @return    void
      */
-    public function addSandwichPlugin() {
+    public function addwizhiPlugin() {
 
         // check user permissions
         if( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
@@ -125,7 +115,7 @@ class GambitPBSandwich {
      * @return    array An array of TinyMCE plugins
      */
     public function addTinyMCEPlugin( $pluginArray ) {
-        $pluginArray[ 'pbsandwich' ] = plugins_url( 'js/min/editor-min.js', __FILE__ );
+        $pluginArray[ 'pbwizhi' ] = plugins_url( 'js/editor-min.js', __FILE__ );
 
         return $pluginArray;
     }
@@ -149,15 +139,15 @@ class GambitPBSandwich {
 
     }
 
-    public function addSandwichBootstrap( $init ) {
-        $init[ 'body_class' ] = 'sandwich';
+    public function addwizhiBootstrap( $init ) {
+        $init[ 'body_class' ] = 'wizhi';
 
         return $init;
     }
 
     public function addShortcodeButton() {
          if( apply_filters( 'pbs_add_shortcode_button', true ) ) {
-             echo '<a href="#" class="button sandwich-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'pbsandwich' ) . '</a>';
+             echo '<a href="#" class="button wizhi-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'pbwizhi' ) . '</a>';
          }
     }
 
@@ -190,4 +180,4 @@ class GambitPBSandwich {
 
 }
 
-new GambitPBSandwich();
+new WizhiVisualBuilder();

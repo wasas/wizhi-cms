@@ -12,12 +12,12 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * 经常的使用的参数保存为函数, 以便更方便管理和使用
  */
-function sandwich_functions_display_order() {
+function wizhi_functions_display_order() {
     $output = [ ];
-    $output[ 'author' ] = __( '作者', 'pbsandwich' );
-    $output[ 'date' ] = __( '日期', 'pbsandwich' );
-    $output[ 'title' ] = __( '标题', 'pbsandwich' );
-    $output[ 'rand' ] = __( '随机', 'pbsandwich' );
+    $output[ 'author' ] = __( '作者', 'pbwizhi' );
+    $output[ 'date' ] = __( '日期', 'pbwizhi' );
+    $output[ 'title' ] = __( '标题', 'pbwizhi' );
+    $output[ 'rand' ] = __( '随机', 'pbwizhi' );
 
     return $output;
 }
@@ -26,10 +26,10 @@ function sandwich_functions_display_order() {
 /**
  * 经常的使用的参数保存为函数, 以便更方便管理和使用
  */
-function sandwich_functions_display_dir() {
+function wizhi_functions_display_dir() {
     $output = [ ];
-    $output[ 'ASC' ] = __( '升序', 'pbsandwich' );
-    $output[ 'DESC' ] = __( '降序', 'pbsandwich' );
+    $output[ 'ASC' ] = __( '升序', 'pbwizhi' );
+    $output[ 'DESC' ] = __( '降序', 'pbwizhi' );
 
     return $output;
 }
@@ -41,7 +41,7 @@ function sandwich_functions_display_dir() {
  *
  * @return array 文章列表数组, ID 为键, 标题为值
  */
-function sandwich_functions_posttype_list( $type = "forum", $id = "false" ) {
+function wizhi_functions_posttype_list( $type = "forum", $id = "false" ) {
     $args = [
         'post_type'      => $type,
         'posts_per_page' => '-1',
@@ -49,7 +49,7 @@ function sandwich_functions_posttype_list( $type = "forum", $id = "false" ) {
     $loop = new WP_Query( $args );
 
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
     ];
 
     if( $loop->have_posts() ) {
@@ -70,9 +70,9 @@ function sandwich_functions_posttype_list( $type = "forum", $id = "false" ) {
 /**
  * 获取分类法列表 设置为标签用来获取标签, 其他值被作为分类法对待
  */
-function sandwich_functions_taxonomy_list( $type = "taxonomy" ) {
+function wizhi_functions_taxonomy_list( $type = "taxonomy" ) {
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
     ];
     foreach ( get_taxonomies() as $taxonomy ) {
         $tax = get_taxonomy( $taxonomy );
@@ -93,14 +93,14 @@ function sandwich_functions_taxonomy_list( $type = "taxonomy" ) {
  *
  * @return array
  */
-function sandwich_functions_term_list( $taxonomyName = 'post_tag' ) {
+function wizhi_functions_term_list( $taxonomyName = 'post_tag' ) {
     $terms = get_terms( $taxonomyName, [
         'parent'     => 0,
         'hide_empty' => false,
     ] );
 
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbsandwich' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
     ];
 
     if( is_wp_error( $terms ) ) {

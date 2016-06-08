@@ -6,7 +6,7 @@ if( !defined( 'ABSPATH' ) ) {
 ?>
 <script type="text/html" id="tmpl-pbs-column-change-modal">
 
-    <div id="pbsandwich_column_change_modal">
+    <div id="wizhi_column_change_modal">
 
         <h4>{{ data.preset }}</h4>
         <p class="desc">{{ data.preset_desc }}</p>

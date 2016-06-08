@@ -5,7 +5,7 @@ if( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class GambitPBSandwichToolbar {
+class WizhiVisualBuilderToolbar {
 
     protected $toolbarButtons = [ ];
 
@@ -77,7 +77,7 @@ class GambitPBSandwichToolbar {
         $toolbarButtons[] = [
             'action'   => 'clone',
             'icon'     => 'dashicons dashicons-images-alt',
-            'label'    => __( '复制', 'pbsandwich' ),
+            'label'    => __( '复制', 'pbwizhi' ),
             'priority' => 0,
         ];
 
@@ -86,6 +86,6 @@ class GambitPBSandwichToolbar {
 
 }
 
-new GambitPBSandwichToolbar();
+new WizhiVisualBuilderToolbar();
 
 ?>

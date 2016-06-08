@@ -1,6 +1,6 @@
 <?php
 /**
- * Sandwich Columns
+ * Wzihi Builder Columns
  */
 
 // Exit if accessed directly
@@ -12,15 +12,14 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * 分类类
  */
-class GambitPBSandwichColumns {
+class WizhiVisualBuilderColumns {
 
     protected $modalTabs = [ ];
-
 
     /**
      * 挂载到 WordPress
      *
-     * GambitPBSandwichColumns constructor.
+     * WizhiVisualBuilderColumns constructor.
      */
     function __construct() {
         add_action( 'the_content', [ $this, 'cleanColumnOutput' ] );
@@ -77,17 +76,17 @@ class GambitPBSandwichColumns {
         $html = preg_replace( '/(ui-sortable-handle|ui-sortable)/', '', $content );
         $html = str_get_html( $html );
 
-        $tables = $html->find( 'table.pbsandwich_column' );
+        $tables = $html->find( 'table.wizhi_column' );
         $hashes = [ ];
         while ( count( $tables ) > 0 ) {
-            $tr = $html->find( 'table.pbsandwich_column', 0 )
+            $tr = $html->find( 'table.wizhi_column', 0 )
                        ->find( 'tr', 0 );
 
             $newDivs = '';
             $styleDump = '';
 
             //  获取表格样式Gather table styles
-            $tableStyles = $html->find( 'table.pbsandwich_column', 0 )->style;
+            $tableStyles = $html->find( 'table.wizhi_column', 0 )->style;
 
             // 移除没有任何效果的编辑器样式
 
@@ -98,7 +97,7 @@ class GambitPBSandwichColumns {
 
             // 获取分栏样式, 因为暂时没有 唯一 ID, 使用占位符作为 ID
             if( !empty( $tableStyles ) ) {
-                $columnStyles .= '.sandwich.pbsandwich_column_%' . ( count( $hashes ) + 1 ) . '$s { ' . wp_kses( $tableStyles, [ ], [ ] ) . ' }';
+                $columnStyles .= '.wizhi.wizhi_column_%' . ( count( $hashes ) + 1 ) . '$s { ' . wp_kses( $tableStyles, [ ], [ ] ) . ' }';
             }
             $styleDump .= esc_attr( $tableStyles );
 
@@ -128,7 +127,7 @@ class GambitPBSandwichColumns {
 
                 // 获取分栏样式, 因为暂时没有 唯一 ID, 使用占位符作为 ID
                 if( !empty( $columnStyle ) ) {
-                    $columnStyles .= '.sandwich.pbsandwich_column_%' . ( count( $hashes ) + 1 ) . '$s > div > div:nth-of-type(' . ( $key + 1 ) . ') { ' . wp_kses( $columnStyle, [ ], [ ] ) . ' }';
+                    $columnStyles .= '.wizhi.wizhi_column_%' . ( count( $hashes ) + 1 ) . '$s > div > div:nth-of-type(' . ( $key + 1 ) . ') { ' . wp_kses( $columnStyle, [ ], [ ] ) . ' }';
                 }
                 $styleDump .= esc_attr( $td->style );
 
@@ -155,17 +154,17 @@ class GambitPBSandwichColumns {
              * Build our converted <table>
              */
             // Our main class
-            $tableClasses = [ 'sandwich' ];
+            $tableClasses = [ 'wizhi' ];
             // Carry over custom classes
-            $tableClasses[] = $html->find( 'table.pbsandwich_column', 0 )->class;
+            $tableClasses[] = $html->find( 'table.wizhi_column', 0 )->class;
             // Custom styles class
             if( !empty( $columnStyles ) ) {
-                $tableClasses[] = 'pbsandwich_column_' . $hash;
+                $tableClasses[] = 'wizhi_column_' . $hash;
             }
 
             // 获取所有row/table 数据属性
             $dataAttributes = '';
-            foreach ( $html->find( 'table.pbsandwich_column', 0 )
+            foreach ( $html->find( 'table.wizhi_column', 0 )
                            ->getAllAttributes() as $key => $value ) {
                 if( stripos( $key, 'data-' ) !== 0 || strlen( $value ) == '' ) {
                     continue;
@@ -176,14 +175,14 @@ class GambitPBSandwichColumns {
             // 创建真实的行 div
             $newDivs = '<div class="' . esc_attr( join( ' ', $tableClasses ) ) . '" ' . $dataAttributes . '><div class="row">' . $newDivs . '</div></div>';
 
-            $html->find( 'table.pbsandwich_column', 0 )->outertext = $newDivs;
+            $html->find( 'table.wizhi_column', 0 )->outertext = $newDivs;
 
             // 保存替换 table 后的 html
             $html = $html->save();
             $html = str_get_html( $html );
 
             // 继续处理下一个table
-            $tables = $html->find( 'table.pbsandwich_column' );
+            $tables = $html->find( 'table.wizhi_column' );
         }
 
         // Sanitize the output for security
@@ -248,7 +247,7 @@ class GambitPBSandwichColumns {
 
         // 生成样式, 保存文章字段
         $parsed = $this->parseColumnContent( stripslashes( $_POST[ 'content' ] ) );
-        update_post_meta( $postID, 'pbsandwich_styles' . $suffix, $parsed[ 'styles' ] );
+        update_post_meta( $postID, 'pbwizhi_styles' . $suffix, $parsed[ 'styles' ] );
     }
 
     /**
@@ -268,83 +267,83 @@ class GambitPBSandwichColumns {
 
         $columnVars = [
             'wp_version'            => get_bloginfo( 'version' ),
-            'dummy_content'         => __( '列内容', 'pbsandwich' ),
-            'modal_title'           => __( '列', 'pbsandwich' ),
-            'modal_description'     => __( '输入用每列的百分比,<br>确保这些数字的和为 1.<br>例如:', 'pbsandwich' ),
-            'custom_columns'        => __( '自定义列', 'pbsandwich' ),
-            'column_1'              => sprintf( __( '%s 列', 'pbsandwich' ), 1 ),
-            'column_2'              => sprintf( __( '%s 列', 'pbsandwich' ), 2 ),
-            'column_3'              => sprintf( __( '%s 列', 'pbsandwich' ), 3 ),
-            'column_4'              => sprintf( __( '%s 列', 'pbsandwich' ), 4 ),
-            'column_1323'           => sprintf( __( '%s 列', 'pbsandwich' ), '1/3 + 2/3' ),
-            'column_2313'           => sprintf( __( '%s 列', 'pbsandwich' ), '2/3 + 1/3' ),
-            'column_141214'         => sprintf( __( '%s 列', 'pbsandwich' ), '1/4 + 1/2 + 1/4' ),
-            'delete'                => __( '删除', 'pbsandwich' ),
-            'edit'                  => __( '编辑', 'pbsandwich' ),
-            'change_column'         => __( '修改列', 'pbsandwich' ),
-            'clone'                 => __( '复制', 'pbsandwich' ),
-            'change_columns'        => __( '修改列', 'pbsandwich' ),
-            'cancel'                => __( '取消', 'pbsandwich' ),
-            'preset'                => __( '预设', 'pbsandwich' ),
-            'preset_desc'           => __( 'You can change the number of columns below:', 'pbsandwich' ),
-            'use_custom'            => __( '自定义', 'pbsandwich' ),
-            'custom'                => __( '自定义', 'pbsandwich' ),
+            'dummy_content'         => __( '列内容', 'pbwizhi' ),
+            'modal_title'           => __( '列', 'pbwizhi' ),
+            'modal_description'     => __( '输入用每列的百分比,<br>确保这些数字的和为 1.<br>例如:', 'pbwizhi' ),
+            'custom_columns'        => __( '自定义列', 'pbwizhi' ),
+            'column_1'              => sprintf( __( '%s 列', 'pbwizhi' ), 1 ),
+            'column_2'              => sprintf( __( '%s 列', 'pbwizhi' ), 2 ),
+            'column_3'              => sprintf( __( '%s 列', 'pbwizhi' ), 3 ),
+            'column_4'              => sprintf( __( '%s 列', 'pbwizhi' ), 4 ),
+            'column_1323'           => sprintf( __( '%s 列', 'pbwizhi' ), '1/3 + 2/3' ),
+            'column_2313'           => sprintf( __( '%s 列', 'pbwizhi' ), '2/3 + 1/3' ),
+            'column_141214'         => sprintf( __( '%s 列', 'pbwizhi' ), '1/4 + 1/2 + 1/4' ),
+            'delete'                => __( '删除', 'pbwizhi' ),
+            'edit'                  => __( '编辑', 'pbwizhi' ),
+            'change_column'         => __( '修改列', 'pbwizhi' ),
+            'clone'                 => __( '复制', 'pbwizhi' ),
+            'change_columns'        => __( '修改列', 'pbwizhi' ),
+            'cancel'                => __( '取消', 'pbwizhi' ),
+            'preset'                => __( '预设', 'pbwizhi' ),
+            'preset_desc'           => __( 'You can change the number of columns below:', 'pbwizhi' ),
+            'use_custom'            => __( '自定义', 'pbwizhi' ),
+            'custom'                => __( '自定义', 'pbwizhi' ),
             'non_sortable_elements' => $this->formNonSortableElements(),
-            'clone_row'             => __( '复制行', 'pbsandwich' ),
-            'delete_row'            => __( '删除行', 'pbsandwich' ),
-            'edit_row'              => __( '编辑行', 'pbsandwich' ),
-            'edit_area'             => __( '编辑选区', 'pbsandwich' ),
-            'clone_area'            => __( '复制选区', 'pbsandwich' ),
-            'delete_area'           => __( '删除选区', 'pbsandwich' ),
-            'column'                => __( '列', 'pbsandwich' ),
-            'row'                   => __( '行', 'pbsandwich' ),
+            'clone_row'             => __( '复制行', 'pbwizhi' ),
+            'delete_row'            => __( '删除行', 'pbwizhi' ),
+            'edit_row'              => __( '编辑行', 'pbwizhi' ),
+            'edit_area'             => __( '编辑选区', 'pbwizhi' ),
+            'clone_area'            => __( '复制选区', 'pbwizhi' ),
+            'delete_area'           => __( '删除选区', 'pbwizhi' ),
+            'column'                => __( '列', 'pbwizhi' ),
+            'row'                   => __( '行', 'pbwizhi' ),
 
             // 分栏编辑弹窗
-            'column_settings'       => __( '列设置', 'pbsandwich' ),
-            'styles'                => __( '样式', 'pbsandwich' ),
-            'style'                 => __( '样式', 'pbsandwich' ),
-            'border'                => __( '边框', 'pbsandwich' ),
-            'padding'               => __( '内边距', 'pbsandwich' ),
-            'none'                  => __( 'None', 'pbsandwich' ),
-            'dotted'                => __( 'Dotted', 'pbsandwich' ),
-            'dashed'                => __( 'Dashed', 'pbsandwich' ),
-            'solid'                 => __( 'Solid', 'pbsandwich' ),
-            'double'                => __( 'Double', 'pbsandwich' ),
-            'groove'                => __( 'Groove', 'pbsandwich' ),
-            'ridge'                 => __( 'Ridge', 'pbsandwich' ),
-            'inset'                 => __( 'Inset', 'pbsandwich' ),
-            'outset'                => __( 'Outset', 'pbsandwich' ),
-            'color'                 => __( '颜色', 'pbsandwich' ),
-            'radius'                => __( '圆角', 'pbsandwich' ),
-            'background'            => __( '背景', 'pbsandwich' ),
-            'image'                 => __( '图片', 'pbsandwich' ),
-            'size'                  => __( '尺寸', 'pbsandwich' ),
-            'inherit'               => __( 'Inherit', 'pbsandwich' ),
-            'cover'                 => __( 'Cover', 'pbsandwich' ),
-            'contain'               => __( 'Contain', 'pbsandwich' ),
-            'repeat'                => __( 'Repeat', 'pbsandwich' ),
-            'repeatx'               => __( 'Repeat-x', 'pbsandwich' ),
-            'repeaty'               => __( 'Repeat-y', 'pbsandwich' ),
-            'norepeat'              => __( 'No-repeat', 'pbsandwich' ),
-            'round'                 => __( 'Round', 'pbsandwich' ),
-            'space'                 => __( 'Space', 'pbsandwich' ),
-            'position'              => __( '位置', 'pbsandwich' ),
-            'margin'                => __( '外边距', 'pbsandwich' ),
-            'row_settings'          => __( '行设置', 'pbsandwich' ),
+            'column_settings'       => __( '列设置', 'pbwizhi' ),
+            'styles'                => __( '样式', 'pbwizhi' ),
+            'style'                 => __( '样式', 'pbwizhi' ),
+            'border'                => __( '边框', 'pbwizhi' ),
+            'padding'               => __( '内边距', 'pbwizhi' ),
+            'none'                  => __( 'None', 'pbwizhi' ),
+            'dotted'                => __( 'Dotted', 'pbwizhi' ),
+            'dashed'                => __( 'Dashed', 'pbwizhi' ),
+            'solid'                 => __( 'Solid', 'pbwizhi' ),
+            'double'                => __( 'Double', 'pbwizhi' ),
+            'groove'                => __( 'Groove', 'pbwizhi' ),
+            'ridge'                 => __( 'Ridge', 'pbwizhi' ),
+            'inset'                 => __( 'Inset', 'pbwizhi' ),
+            'outset'                => __( 'Outset', 'pbwizhi' ),
+            'color'                 => __( '颜色', 'pbwizhi' ),
+            'radius'                => __( '圆角', 'pbwizhi' ),
+            'background'            => __( '背景', 'pbwizhi' ),
+            'image'                 => __( '图片', 'pbwizhi' ),
+            'size'                  => __( '尺寸', 'pbwizhi' ),
+            'inherit'               => __( 'Inherit', 'pbwizhi' ),
+            'cover'                 => __( 'Cover', 'pbwizhi' ),
+            'contain'               => __( 'Contain', 'pbwizhi' ),
+            'repeat'                => __( 'Repeat', 'pbwizhi' ),
+            'repeatx'               => __( 'Repeat-x', 'pbwizhi' ),
+            'repeaty'               => __( 'Repeat-y', 'pbwizhi' ),
+            'norepeat'              => __( 'No-repeat', 'pbwizhi' ),
+            'round'                 => __( 'Round', 'pbwizhi' ),
+            'space'                 => __( 'Space', 'pbwizhi' ),
+            'position'              => __( '位置', 'pbwizhi' ),
+            'margin'                => __( '外边距', 'pbwizhi' ),
+            'row_settings'          => __( '行设置', 'pbwizhi' ),
 
             // 全宽行
-            'full_width'            => __( '全宽', 'pbsandwich' ),
-            'full_width_normal'     => __( '不使用全宽布局', 'pbsandwich' ),
-            'full_width_1'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '1' ),
-            'full_width_2'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '2' ),
-            'full_width_3'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '3' ),
-            'full_width_4'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '4' ),
-            'full_width_5'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '5' ),
-            'full_width_6'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '6' ),
-            'full_width_7'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '7' ),
-            'full_width_8'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '8' ),
-            'full_width_9'          => sprintf( __( '打破 %s 个容器', 'pbsandwich' ), '9' ),
-            'full_width_99'         => __( '打破所有容器', 'pbsandwich' ),
+            'full_width'            => __( '全宽', 'pbwizhi' ),
+            'full_width_normal'     => __( '不使用全宽布局', 'pbwizhi' ),
+            'full_width_1'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '1' ),
+            'full_width_2'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '2' ),
+            'full_width_3'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '3' ),
+            'full_width_4'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '4' ),
+            'full_width_5'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '5' ),
+            'full_width_6'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '6' ),
+            'full_width_7'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '7' ),
+            'full_width_8'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '8' ),
+            'full_width_9'          => sprintf( __( '打破 %s 个容器', 'pbwizhi' ), '9' ),
+            'full_width_99'         => __( '打破所有容器', 'pbwizhi' ),
             'full_width_desc'       => '行内容宽度通常被主题的全局宽度限制, 通过此设置可以打破这个限制,显示全宽行.',
 
             'modal_tabs' => [ ],
@@ -356,7 +355,7 @@ class GambitPBSandwichColumns {
         // 打印参数
         ?>
         <script type="text/javascript">
-            var pbsandwich_column = <?php echo json_encode( $columnVars ) ?>;
+            var wizhi_column = <?php echo json_encode( $columnVars ) ?>;
         </script>
         <?php
     }
@@ -368,7 +367,7 @@ class GambitPBSandwichColumns {
      */
     protected function formNonSortableElements() {
         // 点击下面的元素时, 不要拖拽
-        $nonSortableElements = 'p,code,blockquote,span,pre,td:not(.pbsandwich_column td),th,h1,h2,h3,h4,h5,h6,dt,dd,li,a,address,img';
+        $nonSortableElements = 'p,code,blockquote,span,pre,td:not(.wizhi_column td),th,h1,h2,h3,h4,h5,h6,dt,dd,li,a,address,img';
         $nonSortableElements = apply_filters( 'sc_non_sortable_elements', $nonSortableElements );
 
         // 允许拖拽所有内容
@@ -396,7 +395,7 @@ class GambitPBSandwichColumns {
      * @return    array An array of TinyMCE buttons
      */
     public function registerTinyMCEButton( $buttons ) {
-        array_push( $buttons, 'pbsandwich_column' );
+        array_push( $buttons, 'wizhi_column' );
 
         return $buttons;
     }
@@ -418,12 +417,12 @@ class GambitPBSandwichColumns {
             $suffix = '_preview';
         }
 
-        $styles = trim( get_post_meta( $post->ID, 'pbsandwich_styles' . $suffix, true ) );
+        $styles = trim( get_post_meta( $post->ID, 'pbwizhi_styles' . $suffix, true ) );
         if( empty( $styles ) ) {
             return;
         }
 
-        echo '<style id="pbsandwich_column">' . $styles . '</style>';
+        echo '<style id="wizhi_column">' . $styles . '</style>';
     }
 
     /**
@@ -456,28 +455,28 @@ class GambitPBSandwichColumns {
     public function addColumnToolbarButtons( $toolbarButtons ) {
 
         $toolbarButtons[] = [
-            'label'     => __( '列', 'pbsandwich' ),
+            'label'     => __( '列', 'pbwizhi' ),
             'shortcode' => 'column',
             'priority'  => 1001,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-edit-area',
             'icon'      => 'dashicons dashicons-edit',
-            'label'     => __( '编辑列', 'pbsandwich' ),
+            'label'     => __( '编辑列', 'pbwizhi' ),
             'shortcode' => 'column',
             'priority'  => 1002,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-clone-area',
             'icon'      => 'dashicons dashicons-images-alt',
-            'label'     => __( '复制列', 'pbsandwich' ),
+            'label'     => __( '复制列', 'pbwizhi' ),
             'shortcode' => 'column',
             'priority'  => 1003,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-remove-area',
             'icon'      => 'dashicons dashicons-no-alt',
-            'label'     => __( '删除列', 'pbsandwich' ),
+            'label'     => __( '删除列', 'pbwizhi' ),
             'shortcode' => 'column',
             'priority'  => 1004,
         ];
@@ -488,7 +487,7 @@ class GambitPBSandwichColumns {
         ];
 
         $toolbarButtons[] = [
-            'label'     => __( '行', 'pbsandwich' ),
+            'label'     => __( '行', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1100,
         ];
@@ -496,7 +495,7 @@ class GambitPBSandwichColumns {
         $toolbarButtons[] = [
             'action'    => 'row-align-left',
             'icon'      => 'dashicons dashicons-align-left',
-            'label'     => __( '左对齐', 'pbsandwich' ),
+            'label'     => __( '左对齐', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1101,
         ];
@@ -504,7 +503,7 @@ class GambitPBSandwichColumns {
         $toolbarButtons[] = [
             'action'    => 'row-align-center',
             'icon'      => 'dashicons dashicons-align-center',
-            'label'     => __( '居中对齐', 'pbsandwich' ),
+            'label'     => __( '居中对齐', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1102,
         ];
@@ -512,7 +511,7 @@ class GambitPBSandwichColumns {
         $toolbarButtons[] = [
             'action'    => 'row-align-right',
             'icon'      => 'dashicons dashicons-align-right',
-            'label'     => __( '右对齐', 'pbsandwich' ),
+            'label'     => __( '右对齐', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1103,
         ];
@@ -520,7 +519,7 @@ class GambitPBSandwichColumns {
         $toolbarButtons[] = [
             'action'    => 'row-align-none',
             'icon'      => 'dashicons dashicons-align-none',
-            'label'     => __( '不对齐', 'pbsandwich' ),
+            'label'     => __( '不对齐', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1104,
         ];
@@ -532,28 +531,28 @@ class GambitPBSandwichColumns {
         $toolbarButtons[] = [
             'action'    => 'column-edit-row',
             'icon'      => 'dashicons dashicons-edit',
-            'label'     => __( '编辑行', 'pbsandwich' ),
+            'label'     => __( '编辑行', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1106,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-columns',
             'icon'      => 'dashicons dashicons-tagcloud',
-            'label'     => __( '编辑行', 'pbsandwich' ),
+            'label'     => __( '编辑行', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1107,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-clone-row',
             'icon'      => 'dashicons dashicons-images-alt',
-            'label'     => __( '复制行', 'pbsandwich' ),
+            'label'     => __( '复制行', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1108,
         ];
         $toolbarButtons[] = [
             'action'    => 'column-remove-row',
             'icon'      => 'dashicons dashicons-no-alt',
-            'label'     => __( '删除行', 'pbsandwich' ),
+            'label'     => __( '删除行', 'pbwizhi' ),
             'shortcode' => 'row',
             'priority'  => 1109,
         ];
@@ -624,4 +623,4 @@ class GambitPBSandwichColumns {
 
 }
 
-new GambitPBSandwichColumns();
+new WizhiVisualBuilderColumns();

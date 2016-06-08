@@ -14,6 +14,11 @@ $fields = [
 		'name'    => 'is_enable_static',
 		'label'   => '使用插件内置的样式',
 	],
+	[
+		'type'    => 'checkbox',
+		'name'    => 'is_enable_builder',
+		'label'   => '启用可视化编辑器,（需要安装 Shortcake 插件）',
+	],
 ];
 
 
