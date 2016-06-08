@@ -119,6 +119,7 @@
     font-size: .8em;
     text-align: center;
     width: 36px;
+    height: 18px;
     padding: 4px;
 }
 
@@ -393,7 +394,6 @@ body .mce-window > div > .mce-container-body.mce-abs-layout .mce-container-body 
 
 .mce-container[id="pbs-modal"] .mce-container-body .mce-container-body .mce-container-body {
     height: auto !important;
-    overflow: hidden !important;
     position: relative;
 }
 

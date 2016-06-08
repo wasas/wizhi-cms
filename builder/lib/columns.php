@@ -85,7 +85,7 @@ class WizhiVisualBuilderColumns {
             $newDivs = '';
             $styleDump = '';
 
-            //  获取表格样式Gather table styles
+            // 获取表格样式
             $tableStyles = $html->find( 'table.wizhi_column', 0 )->style;
 
             // 移除没有任何效果的编辑器样式
@@ -116,7 +116,7 @@ class WizhiVisualBuilderColumns {
                     $innerHTML = '<p>' . $innerHTML . '</p>';
                 }
 
-                // 移除空白自负Remove blank classes
+                // 移除空白字符
                 $innerHTML = preg_replace( '/\sclass=[\'"]\s*[\'"]/', '', $innerHTML );
 
                 // 清理结尾 Cleanup ends
@@ -173,7 +173,7 @@ class WizhiVisualBuilderColumns {
             }
 
             // 创建真实的行 div
-            $newDivs = '<div class="' . esc_attr( join( ' ', $tableClasses ) ) . '" ' . $dataAttributes . '><div class="row">' . $newDivs . '</div></div>';
+            $newDivs = '<div class="' . esc_attr( join( ' ', $tableClasses ) ) . '" ' . $dataAttributes . '><div class="pure-g">' . $newDivs . '</div></div>';
 
             $html->find( 'table.wizhi_column', 0 )->outertext = $newDivs;
 

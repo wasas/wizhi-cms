@@ -114,7 +114,8 @@ jQuery(document).ready(function ($) {
         function enhancedSortableScroll(event, ui) {
             var $ = jQuery;
 
-            var editorTop = $('#wp-content-editor-tools').height() + parseInt($('#wp-content-editor-tools').css('paddingTop')) + parseInt($('.mce-edit-area').css('paddingTop')) + $('#wpadminbar').height();
+            var editorTop = $('#wp-content-editor-tools').height() + parseInt($('#wp-content-editor-tools').css('paddingTop')) + parseInt($('.mce-edit-area')
+                    .css('paddingTop')) + $('#wpadminbar').height();
             var editorBottom = $(window).height() - $('.mce-statusbar').height() - $('#post-status-info').height();
 
             // For faster performance, use this instead of $('.mce-edit-area').offset().top
@@ -157,14 +158,8 @@ jQuery(document).ready(function ($) {
             // Also perform an enhanced scroll
             enhancedSortableScroll(event, ui);
 
-            var that = ui.item,
-                closestDist = 9999999,
-                closestElement = null,
-                insertBefore = true,
-                dist, dist2,
-            // The current mouse position
-                pointerTop = event.pageY,
-                pointerLeft = event.pageX;
+            var that = ui.item, closestDist = 9999999, closestElement = null, insertBefore = true, dist, dist2, // The current mouse position
+                pointerTop = event.pageY, pointerLeft = event.pageX;
 
             // Find out the closest element from the one being dragged
             ui.item.parents('body:eq(0)').find('.ui-sortable-handle:not(.ui-sortable-helper)').each(function () {
@@ -174,12 +169,7 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                var element = $(this)[0],
-                    origElement = element,
-                    childTop,
-                    childLeft,
-                    childHeight = element.offsetHeight,
-                    childWidth = element.offsetWidth;
+                var element = $(this)[0], origElement = element, childTop, childLeft, childHeight = element.offsetHeight, childWidth = element.offsetWidth;
 
                 // Instead of using $(this).offset().top & $(this).offset().left, this is x10 FASTER!
                 childTop = element.offsetTop;
@@ -203,8 +193,7 @@ jQuery(document).ready(function ($) {
 
                 }
 
-                var childBottom = childTop + childHeight,
-                    childRight = childLeft + childWidth;
+                var childBottom = childTop + childHeight, childRight = childLeft + childWidth;
 
                 if (childLeft <= pointerLeft && pointerLeft <= childRight) {
 
@@ -263,8 +252,7 @@ jQuery(document).ready(function ($) {
                 },
                 start: function () {
                     sortStartHandler(editor);
-                },
-                // Makes sortable better at collision detection.
+                }, // Makes sortable better at collision detection.
                 sort: enhancedSortableSort
             });
             $(editor.getBody()).find('.wizhi_column td').sortable({
@@ -283,8 +271,7 @@ jQuery(document).ready(function ($) {
                 },
                 start: function () {
                     sortStartHandler(editor);
-                },
-                // Makes sortable better at collision detection.
+                }, // Makes sortable better at collision detection.
                 sort: enhancedSortableSort
             });
         }
@@ -629,8 +616,7 @@ jQuery(document).ready(function ($) {
 
             var $ = jQuery;
 
-            var wrapper, newButton, shortcode,
-                toolbar = $('#' + e.toolbar._id);
+            var wrapper, newButton, shortcode, toolbar = $('#' + e.toolbar._id);
 
 
             // Get the name of the shortcode
@@ -800,13 +786,13 @@ jQuery(document).ready(function ($) {
                 'editor': editor,
                 'target': e.target,
                 'shortcode': 'column',
-                'toolbar': e.toolbar,
+                'toolbar': e.toolbar
             });
             editor.fire('show-toolbar', {
                 'editor': editor,
                 'target': $(e.target).parents('.wizhi_column:eq(0)')[0],
                 'shortcode': 'row',
-                'toolbar': e.toolbar,
+                'toolbar': e.toolbar
             });
         });
 
@@ -913,8 +899,7 @@ jQuery(document).ready(function ($) {
          */
         function _pbwizhi_addColumnToolbar(editor, node) {
             var $ = jQuery;
-            var rectangle, toolbarHtml, toolbar, left,
-                dom = editor.dom;
+            var rectangle, toolbarHtml, toolbar, left, dom = editor.dom;
 
             _pbwizhi_removeColumnToolbar(editor);
 
@@ -967,11 +952,8 @@ jQuery(document).ready(function ($) {
          */
         editor.on('toolbar-column-buttons-done', function (e) {
             var $ = jQuery;
-            var rectangle, left,
-                node = e.node,
-                dom = editor.dom
-            toolbar = e.toolbar,
-                editorWidth = $(editor.getDoc()).width();
+            var rectangle, left, node = e.node, dom = editor.dom
+            toolbar = e.toolbar, editorWidth = $(editor.getDoc()).width();
 
             // Get the column selected
             if (!$(node).is('td')) {
@@ -1113,15 +1095,16 @@ jQuery(document).ready(function ($) {
                     }
                 }
 
-                // Compute our margins
+                // 计算分栏宽度
                 var fraction = e.split('/');
                 var width = parseInt(fraction[0]) / parseInt(fraction[1]) * 100;
-                var col = parseInt(parseInt(fraction[0]) / parseInt(fraction[1]) * 12);
+                //var col = parseInt(parseInt(fraction[0]) / parseInt(fraction[1]) * 12);
+                var col = parseInt(fraction[0]) + '-' + parseInt(fraction[1]);
 
-                // Create the new column
+                // 新建分栏
                 newTd = $('<td></td>');
 
-                // Retain current column styles
+                // 保持当前分栏样式
                 try {
                     if ($(content).is('table')) {
                         var oldColumn = $(content).find('> tbody > tr > td:eq(' + i + ')');
@@ -1146,9 +1129,9 @@ jQuery(document).ready(function ($) {
                 }
 
                 // Add the new contents and attributes
-                newTd.addClass('col-sm-' + col)
-                    .html(innerHTML)
-                    .css('width', width + '%');
+                newTd.addClass('pure-u-1 pure-u-md-' + col)
+                     .html(innerHTML)
+                     .css('width', width + '%');
 
                 table += newTd[0].outerHTML;
             });
@@ -1259,50 +1242,56 @@ jQuery(document).ready(function ($) {
             title: wizhi_column.modal_title,
             icon: 'wp_tagcloud',
             type: 'menubutton',
-            menu: [
+            menu: [{
+                text: wizhi_column.column_1,
+                value: '1/1',
+                onclick: function () {
+                    editor._pbsCreateNewColumn(this.value());
+                }
+            },
                 {
-                    text: wizhi_column.column_1,
-                    value: '1/1',
-                    onclick: function () {
-                        editor._pbsCreateNewColumn(this.value());
-                    }
-                }, {
                     text: wizhi_column.column_2,
                     value: '1/2+1/2',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.column_3,
                     value: '1/3+1/3+1/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.column_4,
                     value: '1/4+1/4+1/4+1/4',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.column_1323,
                     value: '1/3+2/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.column_2313,
                     value: '2/3+1/3',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.column_141214,
                     value: '1/4+1/2+1/4',
                     onclick: function () {
                         editor._pbsCreateNewColumn(this.value());
                     }
-                }, {
+                },
+                {
                     text: wizhi_column.custom_columns,
                     onclick: function () {
                         editor.windowManager.open({
@@ -1323,8 +1312,7 @@ jQuery(document).ready(function ($) {
                             }
                         });
                     }
-                }
-            ]
+                }]
         });
 
 
@@ -1757,9 +1745,9 @@ jQuery(document).ready(function ($) {
 
             // Apply new widths
             table.find('> tbody > tr > td').each(function (i, e) {
-                $(this).addClass('col-sm-' + columnWidths[i])
-                    .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
-                    .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
+                $(this).addClass('pure-u-1 pure-u-md-' + columnWidths[i])
+                       .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
+                       .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });
 
             _pbwizhi_removeColumnToolbar(editor);
@@ -1887,9 +1875,9 @@ jQuery(document).ready(function ($) {
 
             // Apply new widths
             table.find('> tbody > tr > td').each(function (i, e) {
-                $(this).addClass('col-sm-' + columnWidths[i])
-                    .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
-                    .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
+                $(this).addClass('pure-u-1 pure-u-md-' + columnWidths[i])
+                       .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
+                       .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });
 
             updateSortable(editor);
@@ -1913,9 +1901,7 @@ jQuery(document).ready(function ($) {
 
             var bgImageURL = $selectedRow.css('background-image').replace(/url\(('|")?([^\)"']+)('|")?\)/g, '$2');
 
-            var action = e.action,
-                shortcode = e.sortcode,
-                origin = e.target;
+            var action = e.action, shortcode = e.sortcode, origin = e.target;
 
             if (bgImageURL === 'none') {
                 bgImageURL = '';
