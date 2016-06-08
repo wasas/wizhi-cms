@@ -22,11 +22,14 @@ class WizhiVisualBuilder {
 		add_action( 'admin_enqueue_scripts', [ $this, 'loadAdminScripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'loadFrontendScripts' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'addwizhiBootstrap' ] );
-		add_action( 'init', [ $this, 'loadShortcake' ], 1 );
-		add_action( 'media_buttons', [ $this, 'addShortcodeButton' ], 100 );
 		add_action( 'admin_head', [ $this, 'addwizhiPlugin' ] );
 		add_filter( 'mce_buttons', [ $this, 'addPageBreakButton' ] );
+
+		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
+			add_action( 'media_buttons', [ $this, 'addShortcodeButton' ], 100 );
+		}
 	}
+
 
 	public static function printDisabledShortcakeStlyes( $shortcode, $label ) {
 		?>
@@ -55,6 +58,7 @@ class WizhiVisualBuilder {
 		<?php
 	}
 
+
 	/**
 	 * 为 "table" 分栏添加样式
 	 *
@@ -64,13 +68,17 @@ class WizhiVisualBuilder {
 		add_editor_style( plugins_url( 'css/editor.css', __FILE__ ) );
 	}
 
+
+	/**
+	 * 加载前端脚本文件
+	 */
 	public function loadFrontendScripts() {
-		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_script( 'wizhi', plugins_url( 'js/frontend-min.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
 	}
 
+
 	/**
-	 * 添加分栏按钮样式
+	 * 添加管理界面按钮样式
 	 *
 	 * @return    void
 	 */
@@ -80,6 +88,7 @@ class WizhiVisualBuilder {
 		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_enqueue_script( 'wizhi-admin', plugins_url( 'js/admin-min.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
 	}
+
 
 	/**
 	 * 添加分栏按钮到可视化编辑器工具栏
@@ -95,6 +104,7 @@ class WizhiVisualBuilder {
 		add_filter( 'mce_external_plugins', [ $this, 'addTinyMCEPlugin' ] );
 	}
 
+
 	/**
 	 * 添加JavaScript脚本到可视化编辑器
 	 *
@@ -108,22 +118,6 @@ class WizhiVisualBuilder {
 		return $pluginArray;
 	}
 
-	/**
-	 * 如果不可用, 加载插件自带的 Shortcake UI
-	 *
-	 * @return    void
-	 */
-	public function loadShortcake() {
-		// Don't do anything when we're activating a plugin to prevent errors
-		// on redeclaring Shortcake classes
-		if ( is_admin() ) {
-			if ( ! empty( $_GET[ 'action' ] ) && ! empty( $_GET[ 'plugin' ] ) ) {
-				if ( $_GET[ 'action' ] == 'activate' ) {
-					return;
-				}
-			}
-		}
-	}
 
 	/**
 	 * @param 添加 “wizhi” 类名到编辑器 body
@@ -135,6 +129,7 @@ class WizhiVisualBuilder {
 
 		return $init;
 	}
+
 
 	/**
 	 * 添加按钮到“添加媒体”后面
@@ -152,7 +147,6 @@ class WizhiVisualBuilder {
 	 * @param $mceButtons array 现有的 TinyMCE 按钮
 	 *
 	 * @return array TinyMCE 按钮数组
-	 * @see http://wpsites.net/wordpress-admin/how-to-add-next-page-links-in-posts-pages/3/
 	 */
 	public function addPageBreakButton( $mceButtons ) {
 		// 如果已存在了, 就不需要再加载了

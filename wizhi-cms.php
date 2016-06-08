@@ -16,7 +16,7 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
 /**
  * 自动加载 PHP 文件
  *
- * @param $folder
+ * @param  string $folder 需要被包含的文件夹路径, 不能自动发现子目录, 每个子目录需要单独定义
  */
 function include_all_php( $folder ) {
 	foreach ( glob( "{$folder}/*.php" ) as $filename ) {

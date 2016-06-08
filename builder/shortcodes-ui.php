@@ -135,6 +135,7 @@ function wizhi_shortcode_ui() {
 		],
 	] );
 
+
 	// 创建显示页面内容UI
 	shortcode_ui_register_for_shortcode( 'page_cont', [
 		'label'         => '页面内容',
@@ -247,13 +248,14 @@ function wizhi_shortcode_ui() {
 				'value' => 'default',
 			],
 			[
-				'label' => __( '缩略图大小' ),
-				'attr'  => 'thumbs',
-				'type'  => 'text',
-				'value' => 'tumbnails',
+				'label'   => __( '图片大小' ),
+				'attr'    => 'thumbs',
+				'type'    => 'select',
+				'value'   => 'thumbnail',
+				'options' => wizhi_get_image_sizes(),
 			],
 			[
-				'label'   => __( '缩略图位置' ),
+				'label'   => __( '图片位置' ),
 				'attr'    => 'position',
 				'type'    => 'select',
 				'options' => [
@@ -325,10 +327,11 @@ function wizhi_shortcode_ui() {
 				'value' => 'default',
 			],
 			[
-				'label' => __( '缩略图大小' ),
+				'label' => __( '图片大小' ),
 				'attr'  => 'thumbs',
-				'type'  => 'text',
-				'value' => 'tumbnails',
+				'type'  => 'select',
+				'value' => 'thumbnail',
+				'options' => wizhi_get_image_sizes(),
 			],
 			[
 				'label' => __( '显示数量' ),

@@ -11,9 +11,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-});
 
-jQuery(document).ready(function ($) {
     /**
      * Tabs
      */
@@ -25,15 +23,7 @@ jQuery(document).ready(function ($) {
         tabContainer.find('.wizhi_modal_tab').removeClass('active');
         $(this).addClass('active');
     });
-});
 
-/**
- * Open the extensions link when the "Get more shortcodes" shortcode is clicked.
- *
- * Since we can't override the click event, we change the data-shortcode attribute to
- * invalidate the default Shortcake behavior first. Only then can we add a click handler
- */
-jQuery(document).ready(function ($) {
 
     // Change the data-shortcode to remove the click handler
     $('body').on('hover', '.shortcode-list-item[data-shortcode="wizhi_get_more_shortcodes"]', function (e) {
@@ -45,6 +35,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         e.stopImmediatePropagation();
     });
+
 });
 
 function _gambit_microtime() {
