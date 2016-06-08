@@ -34,9 +34,11 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'size',
 				'type'    => 'select',
 				'options' => [
+					'xsmall' => '超小尺寸',
 					'small'  => '小尺寸',
+					''       => '普通',
 					'large'  => '大尺寸',
-					'xlarge' => '特大尺寸',
+					'xlarge' => '超大尺寸',
 				],
 			],
 			[

@@ -22,9 +22,15 @@ if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 		];
 		extract( shortcode_atts( $default, $atts ) );
 
+		$class = 'ui-divider';
+
+		if ( $type ) {
+			$class .= ' ui-divider-' . $type;
+		}
+
 		// 输出
 		$retour = '';
-		$retour .= '<div class="ui-divider ui-divider-' . $type . '"></div>';
+		$retour .= '<div class="' . $class . '"></div>';
 
 		return $retour;
 
@@ -52,9 +58,15 @@ if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 		];
 		extract( shortcode_atts( $default, $atts ) );
 
+		$class = 'ui-heading';
+
+		if ( $type ) {
+			$class .= ' ui-heading-' . $type;
+		}
+
 		// 输出
 		$retour = '';
-		$retour .= '<h2 class="ui-heading ui-heading-' . $type . '">' . $content . '</h2>';
+		$retour .= '<h2 class="' . $class . '">' . $content . '</h2>';
 
 		return $retour;
 
@@ -82,9 +94,15 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 		];
 		extract( shortcode_atts( $default, $atts ) );
 
+		$class = 'alert';
+
+		if ( $type ) {
+			$class .= ' alert-' . $type;
+		}
+
 		// 输出
 		$retour = '';
-		$retour .= '<div class="alert alert-' . $type . '">' . $content . '</div>';
+		$retour .= '<div class="' . $class . '">' . $content . '</div>';
 
 		return $retour;
 
@@ -114,9 +132,19 @@ if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 		];
 		extract( shortcode_atts( $default, $atts ) );
 
+		$class = 'pure-button';
+
+		if ( $type ) {
+			$class .= ' button-' . $type;
+		}
+
+		if ( $size ) {
+			$class .= ' button-' . $size;
+		}
+
 		// 输出
 		$retour = '';
-		$retour .= '<a class="pure-button button-' . $type . ' button-' . $size . '" href="' . $url . '">' . $text . '</a>';
+		$retour .= '<a class="' . $class . '" href="' . $url . '">' . $text . '</a>';
 
 		return $retour;
 
