@@ -4,40 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c72c36e605c5101dfce1bf2a52961a2b",
-    "content-hash": "d35c82981365425d13aee316d5ab791e",
+    "hash": "f40fdb5af6f6f76c712cf46c17f26685",
+    "content-hash": "f1c92ac4956687892503df5ee79885b3",
     "packages": [
         {
             "name": "nette/component-model",
-            "version": "dev-master",
+            "version": "v2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/component-model.git",
-                "reference": "b377e4422181342f5fe7321b7befebc6ca28366d"
+                "reference": "07bce436051fd92d084642ce7a47f00045e0d1e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/component-model/b377e4422181342f5fe7321b7befebc6ca28366d.zip",
-                "reference": "b377e4422181342f5fe7321b7befebc6ca28366d",
+                "url": "https://packagist.phpcomposer.com/files/nette/component-model/07bce436051fd92d084642ce7a47f00045e0d1e5.zip",
+                "reference": "07bce436051fd92d084642ce7a47f00045e0d1e5",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^2.4",
-                "php": ">=5.6.0"
+                "nette/utils": "^2.3.5",
+                "php": ">=5.3.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/tester": "~2.0",
-                "tracy/tracy": "^2.3"
+                "nette/tester": "~1.3"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -61,43 +55,38 @@
             ],
             "description": "Nette Component Model",
             "homepage": "https://nette.org",
-            "time": "2016-05-21 20:41:45"
+            "time": "2015-10-06 17:54:05"
         },
         {
             "name": "nette/forms",
-            "version": "dev-master",
+            "version": "v2.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/forms.git",
-                "reference": "72127b1e7970d1b9b70b11c90f4dbf3531bd9ccd"
+                "reference": "e32577062a2544fedac8a95fbc393ab98a3291c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/forms/72127b1e7970d1b9b70b11c90f4dbf3531bd9ccd.zip",
-                "reference": "72127b1e7970d1b9b70b11c90f4dbf3531bd9ccd",
+                "url": "https://packagist.phpcomposer.com/files/nette/forms/e32577062a2544fedac8a95fbc393ab98a3291c7.zip",
+                "reference": "e32577062a2544fedac8a95fbc393ab98a3291c7",
                 "shasum": ""
             },
             "require": {
-                "nette/component-model": "~2.3",
+                "nette/component-model": "~2.2.0",
                 "nette/http": "~2.2",
-                "nette/utils": "~2.4",
-                "php": ">=5.6.0"
+                "nette/utils": "~2.2",
+                "php": ">=5.3.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "latte/latte": "~2.4",
+                "latte/latte": "~2.3.2",
                 "nette/di": "~2.3",
-                "nette/tester": "~2.0",
-                "tracy/tracy": "^2.3"
+                "nette/tester": "~1.3",
+                "tracy/tracy": "~2.2"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -121,43 +110,37 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2016-05-27 12:15:35"
+            "time": "2016-05-17 15:35:20"
         },
         {
             "name": "nette/http",
-            "version": "dev-master",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/http.git",
-                "reference": "4fb88603cc7e8809304e4b61d77cffc15a06dce8"
+                "reference": "24459307b19456706febbff8dbd033e1ff56ba04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/http/4fb88603cc7e8809304e4b61d77cffc15a06dce8.zip",
-                "reference": "4fb88603cc7e8809304e4b61d77cffc15a06dce8",
+                "url": "https://packagist.phpcomposer.com/files/nette/http/24459307b19456706febbff8dbd033e1ff56ba04.zip",
+                "reference": "24459307b19456706febbff8dbd033e1ff56ba04",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^2.4",
-                "php": ">=5.6.0"
+                "nette/utils": "~2.2, >=2.2.2",
+                "php": ">=5.3.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/di": "^2.3",
-                "nette/tester": "~2.0",
-                "tracy/tracy": "^2.3"
+                "nette/di": "~2.3",
+                "nette/tester": "~1.4"
             },
             "suggest": {
                 "ext-fileinfo": "to detect type of uploaded files"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -181,31 +164,30 @@
             ],
             "description": "Nette HTTP Component",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:49:16"
+            "time": "2016-04-02 17:09:25"
         },
         {
             "name": "nette/utils",
-            "version": "dev-master",
+            "version": "v2.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "3eb3c002e77e3e1adac19ad12e46d65540df7d17"
+                "reference": "f6586f827292bd35c8593df943437f2247ba5337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/utils/3eb3c002e77e3e1adac19ad12e46d65540df7d17.zip",
-                "reference": "3eb3c002e77e3e1adac19ad12e46d65540df7d17",
+                "url": "https://packagist.phpcomposer.com/files/nette/utils/f6586f827292bd35c8593df943437f2247ba5337.zip",
+                "reference": "f6586f827292bd35c8593df943437f2247ba5337",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "php": ">=5.3.1"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/tester": "~1.7",
-                "tracy/tracy": "^2.3"
+                "nette/tester": "~1.0"
             },
             "suggest": {
                 "ext-gd": "to use Image",
@@ -214,11 +196,6 @@
                 "ext-mbstring": "to use Strings::lower() etc..."
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -242,12 +219,12 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:42:24"
+            "time": "2016-04-21 09:36:23"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,

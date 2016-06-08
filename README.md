@@ -1,31 +1,19 @@
 ## 插件信息
 
 - Contributors: Amos Lee
-
-
 - Donate link: 
-
-
 - Tags: admin, post, pages, plugin, CMS
-
-
 - Requires at least: 3.4
-
-
 - Tested up to: 4.3
-
-
 - Stable tag: 1.4
-
-
 - License: GPLv2 or later
-
-
 - License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 ## 插件功能
 
 Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签，如织梦，PHPCMS等系统中的模板标签功能。
+
 
 ### 显示一个文章或页面
 
@@ -195,7 +183,15 @@ BUG反馈和功能建议请发送邮件至：iwillhappy1314@gmail.com
 3. http://wpzhiku.u.qiniudn.com/wp-content/uploads/2015/06/250-250.gif
 
 
-## 更新日志 
+## 更新日志
+
+### 1.6
+
+* 增加 Visual builder, 需要安装并启用 Shortcake 插件
+
+###  1.5
+
+* 增加 Form builder
 
 ###  1.4
 
@@ -220,4 +216,4 @@ BUG反馈和功能建议请发送邮件至：iwillhappy1314@gmail.com
 
 ### 1.0
 
-* The first released
+* 初次发布
