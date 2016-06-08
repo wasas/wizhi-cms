@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: amoslee
- * Date: 16/6/7
- * Time: 00:35
- */
-
 
 $fields = [
 	[

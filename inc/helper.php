@@ -187,33 +187,6 @@ if ( ! function_exists( "order_no" ) ) {
 }
 
 
-/**
- * 获取注册的文章类型
- *
- * @return array $post_types  文章类型列表
- */
-if ( ! function_exists( 'wizhi_get_post_types' ) ) {
-
-	function wizhi_get_post_types() {
-
-		$args_type = [
-
-		];
-
-		$post_types = get_post_types( $args_type );
-
-		foreach ( $post_types as $key => $val ) {
-			if ( $val == 'attachment' || $val == 'revision' || $val == 'nav_menu_item' ) {
-				unset( $post_types[ $key ] );
-			}
-		}
-
-		return $post_types;
-	}
-
-}
-
-
 if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
 
 	/**
@@ -233,4 +206,177 @@ if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
 		return $image_sizes;
 	}
 
+}
+
+
+/**
+ * 排序方法
+ */
+function wizhi_get_display_order() {
+	$output             = [ ];
+	$output[ 'author' ] = __( '作者', 'wizhi' );
+	$output[ 'date' ]   = __( '日期', 'wizhi' );
+	$output[ 'title' ]  = __( '标题', 'wizhi' );
+	$output[ 'rand' ]   = __( '随机', 'wizhi' );
+
+	return $output;
+}
+
+
+/**
+ * 排序依据
+ */
+function wizhi_get_display_direction() {
+	$output           = [ ];
+	$output[ 'ASC' ]  = __( '升序', 'wizhi' );
+	$output[ 'DESC' ] = __( '降序', 'wizhi' );
+
+	return $output;
+}
+
+
+/**
+ * 获取注册的文章类型
+ *
+ * @return array $post_types  文章类型列表
+ */
+if ( ! function_exists( 'wizhi_get_post_types' ) ) {
+
+	function wizhi_get_post_types() {
+
+		$args_type = [
+			'public'   => true,
+			'_builtin' => false,
+		];
+
+		$post_types = get_post_types( $args_type, 'objects' );
+
+		$output = [
+			0      => sprintf( '— %s —', __( '选择内容类型', 'wizhi' ) ),
+			'post' => '文章',
+			'page' => '页面',
+		];
+
+		foreach ( $post_types as $post_type ) {
+			$output[ $post_type->name ] = $post_type->label;
+		}
+
+		return $output;
+	}
+
+}
+
+
+/**
+ * 获取文章类型中的所有文章数组
+ *
+ * @param string $type 自定义文章类型别名
+ * @param string $id   文章 ID
+ *
+ * @return array 文章列表数组, ID 为键, 标题为值
+ */
+function wizhi_get_post_list( $type = "post", $id = "false" ) {
+	$args = [
+		'post_type'      => $type,
+		'posts_per_page' => '-1',
+	];
+	$loop = new WP_Query( $args );
+
+	$output = [
+		0 => sprintf( '— %s —', __( '选择', 'wizhi' ) ),
+	];
+
+	if ( $loop->have_posts() ) {
+		while ( $loop->have_posts() ) : $loop->the_post();
+			$fieldout = get_the_title();
+			if ( $id != "false" ) {
+				$fieldout .= " (" . get_the_ID() . ")";
+			}
+			$output[ get_the_ID() ] = $fieldout;
+		endwhile;
+	}
+	wp_reset_postdata();
+
+	return $output;
+}
+
+
+/**
+ * 获取自定义分类法列表
+ *
+ * @param string $type
+ *
+ * @return array
+ */
+function wizhi_get_taxonomy_list( $type = "taxonomy" ) {
+	$output = [
+		0          => sprintf( '— %s —', __( '选择分类方法', 'wizhi' ) ),
+		'category' => '分类目录',
+		'post_tag' => '标签',
+	];
+
+	$args = [
+		'public'   => true,
+		'_builtin' => false,
+
+	];
+
+	$taxonomies = get_taxonomies( $args );
+
+	foreach ( $taxonomies as $taxonomy ) {
+		$tax = get_taxonomy( $taxonomy );
+		if ( ( ! $tax->show_tagcloud || empty( $tax->labels->name ) ) && $type == "tag" ) {
+			continue;
+		}
+		$output[ esc_attr( $taxonomy ) ] = esc_attr( $tax->labels->name );
+	}
+
+	return $output;
+}
+
+
+/**
+ * 获取自定义分类法项目列表
+ *
+ * @param string $taxonomy 分类法名称
+ *
+ * @return array
+ */
+function wizhi_get_term_list( $taxonomy = 'post_tag' ) {
+	$terms = get_terms( $taxonomy, [
+		'parent'     => 0,
+		'hide_empty' => false,
+	] );
+
+	$output = [
+		0 => sprintf( '— %s —', __( '选择分类', 'wizhi' ) ),
+	];
+
+	if ( is_wp_error( $terms ) ) {
+		return $output;
+	}
+
+	foreach ( $terms as $term ) {
+
+		$output[ $term->slug ] = $term->name;
+		$term_children         = get_term_children( $term->term_id, $taxonomy );
+
+		if ( is_wp_error( $term_children ) ) {
+			continue;
+		}
+
+		foreach ( $term_children as $term_child_id ) {
+
+			$term_child = get_term_by( 'id', $term_child_id, $taxonomy );
+
+			if ( is_wp_error( $term_child ) ) {
+				continue;
+			}
+
+			$output[ $term_child->slug ] = $term_child->name;
+		}
+
+	}
+
+	return $output;
 }

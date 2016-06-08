@@ -36,12 +36,12 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
 
     // Change the data-shortcode to remove the click handler
-    $('body').on('hover', '.shortcode-list-item[data-shortcode="pbs_get_more_shortcodes"]', function (e) {
-        $(this).attr('data-shortcode', '__pbs_get_more_shortcodes');
+    $('body').on('hover', '.shortcode-list-item[data-shortcode="wizhi_get_more_shortcodes"]', function (e) {
+        $(this).attr('data-shortcode', '__wizhi_get_more_shortcodes');
     });
 
     // Open our extensions link when it's clicked
-    $('body').on('click', '.shortcode-list-item[data-shortcode="__pbs_get_more_shortcodes"]', function (e) {
+    $('body').on('click', '.shortcode-list-item[data-shortcode="__wizhi_get_more_shortcodes"]', function (e) {
         e.preventDefault();
         e.stopImmediatePropagation();
     });

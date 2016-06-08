@@ -15,8 +15,8 @@ class WizhiVisualBuilderToolbar {
     protected $toolbarButtons = [ ];
 
     function __construct() {
-        add_filter( 'pbs_js_vars', [ $this, 'addToolbars' ] );
-        add_filter( 'pbs_toolbar_buttons', [ $this, 'addCoreToolbarButtons' ], 1 );
+        add_filter( 'wizhi_js_vars', [ $this, 'addToolbars' ] );
+        add_filter( 'wizhi_toolbar_buttons', [ $this, 'addCoreToolbarButtons' ], 1 );
     }
 
 
@@ -35,7 +35,7 @@ class WizhiVisualBuilderToolbar {
         $toolbarButtons = [ ];
 
         // 提供接口, 允许开发者添加工具条按钮
-        $toolbarButtons = apply_filters( 'pbs_toolbar_buttons', $toolbarButtons );
+        $toolbarButtons = apply_filters( 'wizhi_toolbar_buttons', $toolbarButtons );
 
         // 清理工具条参数
         foreach ( $toolbarButtons as $key => $args ) {
@@ -51,7 +51,7 @@ class WizhiVisualBuilderToolbar {
     }
 
     /**
-     * Filter: pbs_toolbar_buttons
+     * Filter: wizhi_toolbar_buttons
      *
      * action - 动作的名称, 点击按钮时执行的 JavaScript 对象
      * icon    - dashicon icon 类

@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // 加载插件依赖文件
 require_once( WIZHI_CMS . 'builder/lib/columns.php' );
-require_once( WIZHI_CMS . 'builder/lib/functions.php' );
 require_once( WIZHI_CMS . 'builder/lib/toolbar.php' );
 
 
@@ -141,7 +140,7 @@ class WizhiVisualBuilder {
 	 * 添加按钮到“添加媒体”后面
 	 */
 	public function addShortcodeButton() {
-		if ( apply_filters( 'pbs_add_shortcode_button', true ) ) {
+		if ( apply_filters( 'wizhi_add_shortcode_button', true ) ) {
 			echo '<a href="#" class="button wizhi-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'wizhi' ) . '</a>';
 		}
 	}

@@ -783,21 +783,21 @@ body#tinymce.wp-editor .wizhi .progress-bar-danger {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 
-.wizhi.pbs_button {
+.wizhi.wizhi_button {
     box-sizing: border-box;
     text-decoration: none;
     text-align: center;
 }
 
-.wizhi.pbs_button a, .wizhi.pbs_button a:hover, .wizhi.pbs_button a:link, .wizhi.pbs_button a:link:hover, .wizhi.pbs_button a:visited, .wizhi.pbs_button a:visited:hover {
+.wizhi.wizhi_button a, .wizhi.wizhi_button a:hover, .wizhi.wizhi_button a:link, .wizhi.wizhi_button a:link:hover, .wizhi.wizhi_button a:visited, .wizhi.wizhi_button a:visited:hover {
     text-decoration: none;
 }
 
-.wizhi.pbs_button.pbs_button_align_left {
+.wizhi.wizhi_button.wizhi_button_align_left {
     text-align: left;
 }
 
-.wizhi.pbs_button.pbs_button_align_right {
+.wizhi.wizhi_button.wizhi_button_align_right {
     text-align: right;
 }
 

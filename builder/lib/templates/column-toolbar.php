@@ -1,6 +1,6 @@
 <script type="text/html" id="tmpl-pbs-column-toolbar">
 
-	<?php do_action( 'pbs_column_toolbar_pre' ) ?>
+	<?php do_action( 'wizhi_column_toolbar_pre' ) ?>
 
 	<style>
 		.toolbar-label.column:before {
@@ -34,6 +34,6 @@
 
 	<div class="dashicons dashicons-no-alt" data-column-action="remove-row" data-mce-bogus="1" title="{{ data.delete_row }}"></div>
 
-	<?php do_action( 'pbs_column_toolbar_post' ) ?>
+	<?php do_action( 'wizhi_column_toolbar_post' ) ?>
 
 </script>

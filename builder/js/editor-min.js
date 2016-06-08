@@ -2091,7 +2091,7 @@ jQuery(document).ready(function ($) {
                 $(e.target).find('.wizhi_modal_tabs').css('display', '');
 
                 // Fire the event to handle template population
-                pbs_modal_fields[newTabInfo.template_id] = {};
+                wizhi_modal_fields[newTabInfo.template_id] = {};
                 editor.fire('modal-tab-populate-data', {
                     'editor': editor,
                     'target': e.origin,
@@ -2110,7 +2110,7 @@ jQuery(document).ready(function ($) {
                 $('<div></div>')
                     .addClass('wizhi_modal')
                     .attr('id', newTabInfo.template_id)
-                    .append(wp.template(newTabInfo.template_id)(pbs_modal_fields[newTabInfo.template_id]))
+                    .append(wp.template(newTabInfo.template_id)(wizhi_modal_fields[newTabInfo.template_id]))
                     .appendTo($(e.target))
                     .hide();
 

@@ -168,16 +168,18 @@ function wizhi_shortcode_ui() {
 		'listItemImage' => 'dashicons-media-text',
 		'attrs'         => [
 			[
-				'label' => __( '文章类型' ),
-				'attr'  => 'type',
-				'type'  => 'text',
-				'value' => 'post',
+				'label'   => __( '文章类型' ),
+				'attr'    => 'type',
+				'type'    => 'select',
+				'value'   => 'post',
+				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label' => __( '分类方法' ),
-				'attr'  => 'tax',
-				'type'  => 'text',
-				'value' => 'category',
+				'label'   => __( '分类方法' ),
+				'attr'    => 'tax',
+				'type'    => 'select',
+				'value'   => 'category',
+				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
 				'label' => __( '分类项目' ),
@@ -204,7 +206,7 @@ function wizhi_shortcode_ui() {
 				'value' => '14',
 			],
 			[
-				'label' => __( '显示分类名称作为标题' ),
+				'label' => __( '显示分类名称作为模块标题' ),
 				'attr'  => 'heading',
 				'type'  => 'checkbox',
 				'value' => true,
@@ -225,16 +227,18 @@ function wizhi_shortcode_ui() {
 		'listItemImage' => 'dashicons-welcome-widgets-menus',
 		'attrs'         => [
 			[
-				'label' => __( '文章类型' ),
-				'attr'  => 'type',
-				'type'  => 'text',
-				'value' => 'post',
+				'label'   => __( '文章类型' ),
+				'attr'    => 'type',
+				'type'    => 'select',
+				'value'   => 'post',
+				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label' => __( '分类方法' ),
-				'attr'  => 'tax',
-				'type'  => 'term_select',
-				'value' => 'category',
+				'label'   => __( '分类方法' ),
+				'attr'    => 'tax',
+				'type'    => 'select',
+				'value'   => 'category',
+				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
 				'label' => __( '分类项目' ),
@@ -277,7 +281,7 @@ function wizhi_shortcode_ui() {
 				'value' => '200',
 			],
 			[
-				'label' => __( '显示分类名称作为标题' ),
+				'label' => __( '显示分类名称作为模块标题' ),
 				'attr'  => 'heading',
 				'type'  => 'checkbox',
 				'value' => true,
@@ -301,16 +305,18 @@ function wizhi_shortcode_ui() {
 		'listItemImage' => 'dashicons-slides',
 		'attrs'         => [
 			[
-				'label' => __( '文章类型' ),
-				'attr'  => 'type',
-				'type'  => 'text',
-				'value' => 'post',
+				'label'   => __( '文章类型' ),
+				'attr'    => 'type',
+				'type'    => 'select',
+				'value'   => 'post',
+				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label' => __( '分类方法' ),
-				'attr'  => 'tax',
-				'type'  => 'text',
-				'value' => 'category',
+				'label'   => __( '分类方法' ),
+				'attr'    => 'tax',
+				'type'    => 'select',
+				'value'   => 'category',
+				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
 				'label' => __( '分类项目' ),

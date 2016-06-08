@@ -23,12 +23,12 @@ class WizhiVisualBuilderColumns {
 		add_action( 'save_post', [ $this, 'rememberColumnStyles' ], 10, 3 );
 		add_action( 'wp_head', [ $this, 'renderColumnStyles' ] );
 		add_action( 'admin_footer', [ $this, 'addColumnTemplates' ] );
-		add_filter( 'pbs_toolbar_buttons', [ $this, 'addColumnToolbarButtons' ], 1 );
+		add_filter( 'wizhi_toolbar_buttons', [ $this, 'addColumnToolbarButtons' ], 1 );
 
 		add_action( 'admin_head', [ $this, 'addModalVar' ] );
 		add_action( 'admin_init', [ $this, 'addModalTabs' ] );
 		add_action( 'admin_footer', [ $this, 'addModalTabTemplates' ] );
-		add_filter( 'pbs_js_vars', [ $this, 'addModalTabVars' ] );
+		add_filter( 'wizhi_js_vars', [ $this, 'addModalTabVars' ] );
 	}
 
 
@@ -347,8 +347,8 @@ class WizhiVisualBuilderColumns {
 			'modal_tabs' => [ ],
 
 		];
-		$columnVars = apply_filters( 'pbs_column_vars', $columnVars );
-		$columnVars = apply_filters( 'pbs_js_vars', $columnVars );
+		$columnVars = apply_filters( 'wizhi_column_vars', $columnVars );
+		$columnVars = apply_filters( 'wizhi_js_vars', $columnVars );
 
 		// 打印参数
 		?>
@@ -572,7 +572,7 @@ class WizhiVisualBuilderColumns {
 		// 打印参数
 		?>
 		<script type="text/javascript">
-			var pbs_modal_fields = {};
+			var wizhi_modal_fields = {};
 		</script>
 		<?php
 	}
@@ -582,7 +582,7 @@ class WizhiVisualBuilderColumns {
 	 * 添加弹窗标签
 	 */
 	public function addModalTabs() {
-		$this->modalTabs = apply_filters( 'pbs_modal_tabs', [ ] );
+		$this->modalTabs = apply_filters( 'wizhi_modal_tabs', [ ] );
 
 		foreach ( $this->modalTabs as $key => $tab ) {
 			$defaults                = [
