@@ -13,11 +13,8 @@ if ( has_post_thumbnail() ) {
 ?>
 
 
-<li class="bx-item" style="background-size: contain; background-image:url(<?php echo $feat_image_url; ?> . ');">
-
+<li class="bx-item">
 	<a target="_blank" href="<?php echo $cus_links; ?> " title="<?php the_title(); ?>">
-
-		<img src="<?php echo get_template_directory_uri(); ?>/front/dist/images/holder.png" alt="Slider Holder"/>
-
+		<?php if ( has_post_thumbnail() ) the_post_thumbnail('full'); ?>
 	</a>
 </li>

@@ -224,6 +224,20 @@ function wizhi_get_display_order() {
 
 
 /**
+ * 排序方法
+ */
+function wizhi_color_option() {
+	$output              = [ ];
+	$output[ 'success' ] = __( '成功（绿色））', 'wizhi' );
+	$output[ 'info' ]    = __( '普通（蓝色））', 'wizhi' );
+	$output[ 'warning' ] = __( '警告（红色））', 'wizhi' );
+	$output[ 'danger' ]  = __( '危险（红色））', 'wizhi' );
+
+	return $output;
+}
+
+
+/**
  * 排序依据
  */
 function wizhi_get_display_direction() {

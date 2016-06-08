@@ -27,11 +27,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( '按钮颜色' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' => [
-					'ok'      => '绿色',
-					'warning' => '黄色',
-					'error'   => '红色',
-				],
+				'options' => wizhi_color_option(),
 			],
 			[
 				'label'   => __( '按钮尺寸' ),
@@ -118,11 +114,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( '信息类型' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' => [
-					'success' => '成功提示（绿色））',
-					'warning' => '警告提示（黄色））',
-					'error'   => '失败提示（红色））',
-				],
+				'options' => wizhi_color_option(),
 			],
 			[
 				'label' => __( '提示内容' ),
@@ -137,7 +129,7 @@ function wizhi_shortcode_ui() {
 
 
 	// 创建显示页面内容UI
-	shortcode_ui_register_for_shortcode( 'page_cont', [
+	shortcode_ui_register_for_shortcode( 'content', [
 		'label'         => '页面内容',
 		'listItemImage' => 'dashicons-media-document',
 		'attrs'         => [
@@ -164,7 +156,7 @@ function wizhi_shortcode_ui() {
 
 
 	// 创建文章列表UI
-	shortcode_ui_register_for_shortcode( 'title_list', [
+	shortcode_ui_register_for_shortcode( 'list', [
 		'label'         => '文章标题列表',
 		'listItemImage' => 'dashicons-media-text',
 		'attrs'         => [
@@ -223,7 +215,7 @@ function wizhi_shortcode_ui() {
 
 
 	// 创建图片列表UI
-	shortcode_ui_register_for_shortcode( 'photo_list', [
+	shortcode_ui_register_for_shortcode( 'media', [
 		'label'         => '图文列表',
 		'listItemImage' => 'dashicons-welcome-widgets-menus',
 		'attrs'         => [
@@ -327,10 +319,10 @@ function wizhi_shortcode_ui() {
 				'value' => 'default',
 			],
 			[
-				'label' => __( '图片大小' ),
-				'attr'  => 'thumbs',
-				'type'  => 'select',
-				'value' => 'thumbnail',
+				'label'   => __( '图片大小' ),
+				'attr'    => 'thumbs',
+				'type'    => 'select',
+				'value'   => 'thumbnail',
 				'options' => wizhi_get_image_sizes(),
 			],
 			[

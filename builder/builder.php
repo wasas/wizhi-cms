@@ -66,6 +66,7 @@ class WizhiVisualBuilder {
 	 */
 	public function addEditorStyles() {
 		add_editor_style( plugins_url( 'css/editor.css', __FILE__ ) );
+		add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
 	}
 
 
@@ -125,7 +126,7 @@ class WizhiVisualBuilder {
 	 * @return mixed
 	 */
 	public function addwizhiBootstrap( $init ) {
-		$init[ 'body_class' ] = 'wizhi';
+		$init[ 'body_class' ] = 'wizhi wizhi-editer typo';
 
 		return $init;
 	}

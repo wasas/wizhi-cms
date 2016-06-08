@@ -13,23 +13,23 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	function wizhi_get_template_part( $slug, $name = '' ) {
 		$template = '';
 
-		// 先查找主题中指定的模板yourtheme/slug-name.php 和 yourtheme/wzcms/slug-name.php
+		// 查找主题中定义的插件模板
 		if ( $name ) {
-			$template = locate_template( [ "{$slug}-{$name}.php", "template-parts/{$slug}-{$name}.php" ] );
+			$template = locate_template( [ "{$slug}-{$name}.php", "wizhi/{$slug}-{$name}.php" ] );
 		}
 
-		// 如果主题中的模板不存在, 获取插件中指定的模板 slug-name.php
-		if ( ! $template && $name && file_exists( WIZHI_CMS . "template-parts/{$slug}-{$name}.php" ) ) {
-			$template = WIZHI_CMS . "template-parts/{$slug}-{$name}.php";
+		// 加载插件中定义的模板
+		if ( ! $template && $name && file_exists( WIZHI_CMS . "templates/{$slug}-{$name}.php" ) ) {
+			$template = WIZHI_CMS . "templates/{$slug}-{$name}.php";
 		}
 
-		// 如果模板文件还不存在, 获取主题中默认的模板, 查找 yourtheme/slug.php 和 yourtheme/template-parts/slug.php
+		// 加载主题中的默认模板
 		if ( ! $template ) {
 			$template = locate_template( [ "{$slug}.php", "template-parts/{$slug}.php" ] );
 		}
 
 		// 允许第三方插件过滤模板文件
-		$template = apply_filters( 'wz_get_template_part', $template, $slug, $name );
+		$template = apply_filters( 'wizhi_get_template_part', $template, $slug, $name );
 
 		if ( $template ) {
 			load_template( $template, false );

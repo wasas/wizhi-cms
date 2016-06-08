@@ -75,11 +75,6 @@ body#tinymce.wp-editor .wizhi_column td img {
     height: auto;
 }
 
-body#tinymce.wp-editor {
-    /**
-     * HTML5 Videos
-     */
-}
 
 body#tinymce.wp-editor .wizhi .html5video {
     width: 100%;
@@ -282,4 +277,14 @@ form#event-form h3, form#event-form .inside {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+.wizhi .wpview-wrap{
+    width: auto;
+    padding: 15px;
+}
+
+body.wizhi-editer{
+    padding: 15px !important;
 }

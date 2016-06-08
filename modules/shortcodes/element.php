@@ -84,7 +84,7 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 
 		// 输出
 		$retour = '';
-		$retour .= '<div class="ui-alert ui-alert-' . $type . '">' . $content . '</div>';
+		$retour .= '<div class="alert alert-' . $type . '">' . $content . '</div>';
 
 		return $retour;
 
