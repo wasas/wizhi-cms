@@ -17,5 +17,6 @@ Temporary Items
 .apdisk
 .idea/
 .publish/
+node_modules/
 .idea/workspace.xml
 docs/
