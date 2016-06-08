@@ -1,5 +1,4 @@
 <?php
-// 显示简码 UI
 add_action( 'init', 'wizhi_shortcode_ui' );
 
 /**

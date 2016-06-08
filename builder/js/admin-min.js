@@ -17,12 +17,12 @@ jQuery(document).ready(function ($) {
     /**
      * Tabs
      */
-    $('body').on('click', '.pbwizhi_modal_tab[data-for]', function () {
+    $('body').on('click', '.wizhi_modal_tab[data-for]', function () {
         var modal = $(this).parents('.mce-container:eq(0)');
-        var tabContainer = $(this).parents('.pbwizhi_modal_tabs:eq(0)');
+        var tabContainer = $(this).parents('.wizhi_modal_tabs:eq(0)');
         tabContainer.siblings().hide();
         modal.find('#' + $(this).attr('data-for')).show();
-        tabContainer.find('.pbwizhi_modal_tab').removeClass('active');
+        tabContainer.find('.wizhi_modal_tab').removeClass('active');
         $(this).addClass('active');
     });
 });

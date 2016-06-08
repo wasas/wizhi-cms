@@ -14,10 +14,10 @@ if( !defined( 'ABSPATH' ) ) {
  */
 function wizhi_functions_display_order() {
     $output = [ ];
-    $output[ 'author' ] = __( '作者', 'pbwizhi' );
-    $output[ 'date' ] = __( '日期', 'pbwizhi' );
-    $output[ 'title' ] = __( '标题', 'pbwizhi' );
-    $output[ 'rand' ] = __( '随机', 'pbwizhi' );
+    $output[ 'author' ] = __( '作者', 'wizhi' );
+    $output[ 'date' ] = __( '日期', 'wizhi' );
+    $output[ 'title' ] = __( '标题', 'wizhi' );
+    $output[ 'rand' ] = __( '随机', 'wizhi' );
 
     return $output;
 }
@@ -28,8 +28,8 @@ function wizhi_functions_display_order() {
  */
 function wizhi_functions_display_dir() {
     $output = [ ];
-    $output[ 'ASC' ] = __( '升序', 'pbwizhi' );
-    $output[ 'DESC' ] = __( '降序', 'pbwizhi' );
+    $output[ 'ASC' ] = __( '升序', 'wizhi' );
+    $output[ 'DESC' ] = __( '降序', 'wizhi' );
 
     return $output;
 }
@@ -49,7 +49,7 @@ function wizhi_functions_posttype_list( $type = "forum", $id = "false" ) {
     $loop = new WP_Query( $args );
 
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'wizhi' ) ),
     ];
 
     if( $loop->have_posts() ) {
@@ -72,7 +72,7 @@ function wizhi_functions_posttype_list( $type = "forum", $id = "false" ) {
  */
 function wizhi_functions_taxonomy_list( $type = "taxonomy" ) {
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'wizhi' ) ),
     ];
     foreach ( get_taxonomies() as $taxonomy ) {
         $tax = get_taxonomy( $taxonomy );
@@ -100,7 +100,7 @@ function wizhi_functions_term_list( $taxonomyName = 'post_tag' ) {
     ] );
 
     $output = [
-        0 => sprintf( '— %s —', __( '选择', 'pbwizhi' ) ),
+        0 => sprintf( '— %s —', __( '选择', 'wizhi' ) ),
     ];
 
     if( is_wp_error( $terms ) ) {

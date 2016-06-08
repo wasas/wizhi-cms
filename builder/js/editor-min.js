@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
     /**
      * Add the button
      */
-    tinyMCE.PluginManager.add('pbwizhi', function (editor, url) {
+    tinyMCE.PluginManager.add('wizhi', function (editor, url) {
         var $ = jQuery;
 
         var sortableInit = false;
@@ -67,8 +67,8 @@ jQuery(document).ready(function ($) {
          */
         function sortStartHandler(editor) {
             var editorBody = jQuery(editor.getBody());
-            editorBody.addClass('pbwizhi_just_dragged');
-            _pbwizhi_removeColumnToolbar(editor);
+            editorBody.addClass('wizhi_just_dragged');
+            _wizhi_removeColumnToolbar(editor);
 
             // Views with iframes (e.g. audio & video embeds) get very slow when dragging, hide them
             if (editorBody.find('.wpview-wrap[data-mce-selected="1"] iframe').length > 0) {
@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
             } catch (e) {
             }
 
-            editorBody.removeClass('pbwizhi_just_dragged');
+            editorBody.removeClass('wizhi_just_dragged');
 
             // Views with iframes do not refresh after sorting, mceCleanup fixes this (also brings back the visibility)
             if (editorBody.find('.wpview-wrap[data-mce-selected="1"] iframe').length > 0) {
@@ -897,14 +897,14 @@ jQuery(document).ready(function ($) {
          * Adds the toolbar
          * @see http://wordpress.stackexchange.com/questions/74762/hook-for-image-edit-popup
          */
-        function _pbwizhi_addColumnToolbar(editor, node) {
+        function _wizhi_addColumnToolbar(editor, node) {
             var $ = jQuery;
             var rectangle, toolbarHtml, toolbar, left, dom = editor.dom;
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
 
             // Don't create the toolbar if the column was just dragged
-            if ($(editor.getBody()).hasClass('pbwizhi_just_dragged')) {
+            if ($(editor.getBody()).hasClass('wizhi_just_dragged')) {
                 return;
             }
 
@@ -993,7 +993,7 @@ jQuery(document).ready(function ($) {
          * Remove the toolbar
          * @see http://wordpress.stackexchange.com/questions/74762/hook-for-image-edit-popup
          */
-        function _pbwizhi_removeColumnToolbar(editor) {
+        function _wizhi_removeColumnToolbar(editor) {
             var toolbar = editor.dom.get('wp-column-toolbar');
 
             if (toolbar) {
@@ -1176,7 +1176,7 @@ jQuery(document).ready(function ($) {
                 $(editor.getBody()).removeClass('wizhi_column_selected');
             }
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1195,7 +1195,7 @@ jQuery(document).ready(function ($) {
                     'target': e.target
                 });
 
-                // _pbwizhi_removeColumnToolbar( editor );
+                // _wizhi_removeColumnToolbar( editor );
 
                 return;
             }
@@ -1205,7 +1205,7 @@ jQuery(document).ready(function ($) {
                 return;
             }
 
-            _pbwizhi_addColumnToolbar(editor, e.target);
+            _wizhi_addColumnToolbar(editor, e.target);
         });
 
 
@@ -1223,7 +1223,7 @@ jQuery(document).ready(function ($) {
                     return;
                 }
 
-                _pbwizhi_removeColumnToolbar(editor);
+                _wizhi_removeColumnToolbar(editor);
             });
         });
 
@@ -1363,7 +1363,7 @@ jQuery(document).ready(function ($) {
 
         });
         editor.on('keyup', function (e) {
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
         /**
@@ -1388,7 +1388,7 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1446,7 +1446,7 @@ jQuery(document).ready(function ($) {
             $(editor.getBody()).find('[data-wp-columnselect]').parents('.wizhi_column:eq(0)').remove();
             updateSortable(editor);
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1466,7 +1466,7 @@ jQuery(document).ready(function ($) {
                 editor.execCommand('mceCleanup');
             }
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1573,7 +1573,7 @@ jQuery(document).ready(function ($) {
 
             $('#wizhi_column_area_edit').find('#border_color, #background_color').wpColorPicker();
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
 
             editor.fire('pre-modal-create-tabs', {
                 'editor': e.editor,
@@ -1750,7 +1750,7 @@ jQuery(document).ready(function ($) {
                        .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -1887,7 +1887,7 @@ jQuery(document).ready(function ($) {
                 editor.execCommand('mceCleanup');
             }
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
         });
 
 
@@ -2022,7 +2022,7 @@ jQuery(document).ready(function ($) {
 
             $('#wizhi_column_row_edit').find('#border_color, #background_color').wpColorPicker();
 
-            _pbwizhi_removeColumnToolbar(editor);
+            _wizhi_removeColumnToolbar(editor);
 
             editor.fire('pre-modal-create-tabs', {
                 'editor': e.editor,
@@ -2078,7 +2078,7 @@ jQuery(document).ready(function ($) {
                 return;
             }
 
-            if ($(e.target).find('.pbwizhi_modal_tabs').length === 0) {
+            if ($(e.target).find('.wizhi_modal_tabs').length === 0) {
                 return;
             }
 
@@ -2088,7 +2088,7 @@ jQuery(document).ready(function ($) {
                 }
 
                 // Show the tab headings, since they're hidden by default
-                $(e.target).find('.pbwizhi_modal_tabs').css('display', '');
+                $(e.target).find('.wizhi_modal_tabs').css('display', '');
 
                 // Fire the event to handle template population
                 pbs_modal_fields[newTabInfo.template_id] = {};
@@ -2101,10 +2101,10 @@ jQuery(document).ready(function ($) {
 
                 // Add the tab
                 $('<div></div>')
-                    .addClass('pbwizhi_modal_tab')
+                    .addClass('wizhi_modal_tab')
                     .attr('data-for', newTabInfo.template_id)
                     .text(newTabInfo.name)
-                    .appendTo($(e.target).find('.pbwizhi_modal_tabs'));
+                    .appendTo($(e.target).find('.wizhi_modal_tabs'));
 
                 // Add the tab's contents
                 $('<div></div>')
@@ -2121,8 +2121,8 @@ jQuery(document).ready(function ($) {
 
         editor.on('modal-save', function (e) {
             var $ = jQuery;
-            if ($('.pbwizhi_modal_tabs:visible').length > 0) {
-                $('.pbwizhi_modal_tabs .pbwizhi_modal_tab').each(function () {
+            if ($('.wizhi_modal_tabs:visible').length > 0) {
+                $('.wizhi_modal_tabs .wizhi_modal_tab').each(function () {
                     editor.fire('modal-tab-save', {
                         'template_id': $(this).attr('data-for'),
                         'target': e.target,

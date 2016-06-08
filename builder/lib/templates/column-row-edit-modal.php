@@ -9,8 +9,8 @@ if( !defined( 'ABSPATH' ) ) {
     <?php
     // Placeholder tabs
     ?>
-    <div class="pbwizhi_modal_tabs" style="display: none">
-        <div class="pbwizhi_modal_tab active" data-for="wizhi_column_row_edit">{{ data.styles }}</div>
+    <div class="wizhi_modal_tabs" style="display: none">
+        <div class="wizhi_modal_tab active" data-for="wizhi_column_row_edit">{{ data.styles }}</div>
     </div>
 
 

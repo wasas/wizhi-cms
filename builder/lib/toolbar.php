@@ -5,6 +5,11 @@ if( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/**
+ * 可视页面生成器工具条
+ *
+ * Class WizhiVisualBuilderToolbar
+ */
 class WizhiVisualBuilderToolbar {
 
     protected $toolbarButtons = [ ];
@@ -14,6 +19,14 @@ class WizhiVisualBuilderToolbar {
         add_filter( 'pbs_toolbar_buttons', [ $this, 'addCoreToolbarButtons' ], 1 );
     }
 
+
+	/**
+	 * 添加工具条
+	 *
+	 * @param $columnVars
+	 *
+	 * @return array
+	 */
     public function addToolbars( $columnVars ) {
         if( empty( $columnVars ) ) {
             $columnVars = [ ];
@@ -61,6 +74,15 @@ class WizhiVisualBuilderToolbar {
         ];
     }
 
+
+	/**
+	 * 工具条属性排序
+	 *
+	 * @param $a
+	 * @param $b
+	 *
+	 * @return mixed
+	 */
     public function toolbarPrioritySort( $a, $b ) {
         return $b[ 'priority' ] - $a[ 'priority' ];
     }
@@ -77,7 +99,7 @@ class WizhiVisualBuilderToolbar {
         $toolbarButtons[] = [
             'action'   => 'clone',
             'icon'     => 'dashicons dashicons-images-alt',
-            'label'    => __( '复制', 'pbwizhi' ),
+            'label'    => __( '复制', 'wizhi' ),
             'priority' => 0,
         ];
 

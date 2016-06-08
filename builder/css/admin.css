@@ -308,13 +308,13 @@
     margin: 0 6px 6px 0;
 }
 
-.mce-container .pbwizhi_modal_tabs {
+.mce-container .wizhi_modal_tabs {
     border-bottom: 1px solid #ddd;
     position: relative;
     margin-bottom: 20px;
 }
 
-.mce-container .pbwizhi_modal_tab {
+.mce-container .wizhi_modal_tab {
     display: inline-block;
     padding: .5em 1em;
     border: 1px solid #ddd;
@@ -325,7 +325,7 @@
     background: #eee;
 }
 
-.mce-container .pbwizhi_modal_tab.active {
+.mce-container .wizhi_modal_tab.active {
     border-bottom: 1px solid #fff;
     background: transparent;
 }
