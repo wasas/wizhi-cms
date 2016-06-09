@@ -1,0 +1,40 @@
+doctype
+html
+    head
+        title #{ title }
+        link(rel="stylesheet" href="#{ uri }/dist/styles/main.css")
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(src="#{ uri }/dist/scripts/jquery.js")
+        script(src="#{ uri }/dist/scripts/main.js")
+
+        style.
+          .wrap{ width: 1200px; }
+
+    body#main(data-spy="scroll", data-target="#nav")
+
+        header.demo-header.sep
+            .wrap
+                h1 Wizhi CMS WordPress 开发插件文档
+                h3 Wizhi CMS 是一个帮助我们加快开发速度的 WordPress 插件
+
+        block content
+
+            .wrap
+                .pure-g.row
+                    #sidebar.pure-u-1.pure-u-md-1-5.pure-hide-md
+                        .col
+                            ul.list
+                                for article, slug in public.ui._data
+                                    li
+                                        a(href="#{ uri }/ui/#{ slug }.html")
+                                            span= article.title
+
+                    #primary.pure-u-1.pure-u-md-4-5
+                        .col.typo
+                            != yield
+
+
+
+        footer.demo-footer
+            .wrap.text-center.text--cap
+                p CopyRight 2016 wpzhiku
