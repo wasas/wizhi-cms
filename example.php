@@ -119,5 +119,3 @@ new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
 new WizhiTermMetabox( $fields, $args_term );
 
 new WizhiUserMetabox( $fields );
-
-new WizhiWidget( $fields, $args_widget );

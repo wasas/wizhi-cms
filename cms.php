@@ -38,3 +38,5 @@ $is_enable_builder = get_option( 'is_enable_builder' );
 if ( $is_enable_builder ) {
 	include_all_php( WIZHI_CMS . 'builder' );
 }
+
+// require_once WIZHI_CMS . 'example.php';

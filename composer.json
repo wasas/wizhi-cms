@@ -3,7 +3,8 @@
   "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
-    "nette/forms": "^2.3"
+    "nette/forms": "^2.3",
+    "nette/finder": "^2.3"
   },
   "license": "MIT",
   "authors": [

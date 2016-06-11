@@ -220,5 +220,57 @@
         ],
         "description": "Nette Forms: greatly facilitates web forms",
         "homepage": "https://nette.org"
+    },
+    {
+        "name": "nette/finder",
+        "version": "v2.3.2",
+        "version_normalized": "2.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nette/finder.git",
+            "reference": "ea8e796b42d542bd90e76f5b2a41c2c86a008256"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/nette/finder/ea8e796b42d542bd90e76f5b2a41c2c86a008256.zip",
+            "reference": "ea8e796b42d542bd90e76f5b2a41c2c86a008256",
+            "shasum": ""
+        },
+        "require": {
+            "nette/utils": "~2.2",
+            "php": ">=5.3.1"
+        },
+        "conflict": {
+            "nette/nette": "<2.2"
+        },
+        "require-dev": {
+            "nette/tester": "~1.4"
+        },
+        "time": "2015-10-20 17:15:41",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "Nette Finder: Files Searching",
+        "homepage": "https://nette.org"
     }
 ]

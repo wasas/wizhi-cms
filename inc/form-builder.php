@@ -138,28 +138,28 @@ class WizhiFormBuilder {
 
 		$renderer = $form->getRenderer();
 
+		$screen = get_current_screen();
+
+		$renderer->wrappers[ 'group' ][ 'container' ] = null;
+		$renderer->wrappers[ 'group' ][ 'label' ]     = 'h2';
+
 		switch ( $form_type ) {
-			case 'option':
-				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-				break;
-
-			case 'post_meta':
-				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-				break;
-
-			case 'user_meta':
-				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-				break;
 
 			case 'term_meta':
-				$renderer->wrappers[ 'controls' ][ 'container' ] = '';
+				if ( $screen->base == 'term' ) {
+					$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=form-field';
+				} else {
+					$renderer->wrappers[ 'controls' ][ 'container' ] = '';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class=form-field';
+				}
 				break;
 
 			default:
 				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=form-field';
 		}
 
-		$renderer->wrappers[ 'pair' ][ 'container' ]    = 'tr class=form-field';
 		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
 		$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
 
@@ -281,11 +281,7 @@ class WizhiFormBuilder {
 		$form = str_replace( '</fieldset>', '', $form );
 		$form = str_replace( '</table>', '</table></fieldset>', $form );
 
-		echo '<div id="form_tab">';
-
 		echo $form;
-
-		echo '</div>';
 
 	}
 
@@ -384,10 +380,12 @@ class WizhiFormBuilder {
 
 		$error = $this->save();
 
-		$class   = 'notice notice-error';
-		$message = __( '噢, 出现错误了.', 'wizhi-cms' );
+		if ( $error ) {
+			$class   = 'notice notice-error';
+			$message = __( '噢, 出现错误了.', 'wizhi-cms' );
 
-		echo '<div class="notice notice-error"><p>噢, 出现错误了</p></div>';
+			echo '<div class="' . $class . '"><p>' . $message . '</p></div>';
+		}
 
 	}
 

@@ -1,5 +1,8 @@
 <?php
 
+use Nette\Utils\Finder;
+
+
 if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	/**
 	 * 自定义模板加载器, 优先加载主题中的模板, 如果主题中的模板不存在, 就加载插件中的
@@ -35,6 +38,47 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 			load_template( $template, false );
 		}
 	}
+}
+
+
+if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
+	/**
+	 * 获取存档页面模板
+	 *
+	 * @return array
+	 */
+	function wizhi_get_loop_template() {
+		$template_in_plugin = WIZHI_CMS . "templates";
+		$template_in_theme  = get_template_directory() . "/template-parts";
+
+		$templates_in_plugin = [ ];
+		$templates_in_theme  = [ ];
+
+		foreach (
+			Finder::findFiles( '*.php' )
+			      ->in( $template_in_plugin ) as $key => $file
+		) {
+			$filename                                         = $file->getFilename();
+			$file_name_array                                  = explode( '-', $filename );
+			$name                                             = $file_name_array[ 1 ];
+			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+		}
+
+		foreach (
+			Finder::findFiles( '*.php' )
+			      ->in( $template_in_theme ) as $key => $file
+		) {
+			$filename                                         = $file->getFilename();
+			$file_name_array                                  = explode( '-', $filename );
+			$name                                             = $file_name_array[ 1 ];
+			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+		}
+
+		$templates = wp_parse_args( $templates_in_theme, $templates_in_plugin );
+
+		return $templates;
+	}
+
 }
 
 
