@@ -99,7 +99,7 @@ class WizhiVisualBuilderToolbar {
         $toolbarButtons[] = [
             'action'   => 'clone',
             'icon'     => 'dashicons dashicons-images-alt',
-            'label'    => __( '复制', 'wizhi' ),
+            'label'    => __( 'Clone', 'wizhi' ),
             'priority' => 0,
         ];
 

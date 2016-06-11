@@ -4,7 +4,7 @@ $fields = [
 	[
 		'type'    => 'text',
 		'name'    => '_slider_url',
-		'label'   => '链接地址',
+		'label'   => __( 'Link url', 'wizhi' ),
 		'size'    => '80',
 		'default' => 'http://',
 	],
@@ -12,11 +12,11 @@ $fields = [
 
 $args_post = [
 	'id'        => 'extra',
-	'title'     => '幻灯参数',
+	'title'     => __( 'Slider Settings', 'wizhi' ),
 	'post_type' => [ 'slider' ],
 	'context'   => 'normal',
 	'priority'  => 'high',
 ];
 
 
-new WizhiPostMetabox( 'slider_data', '幻灯参数', $fields, $args_post );
+new WizhiPostMetabox( 'slider_data', __( 'Slider Settings', 'wizhi' ), $fields, $args_post );

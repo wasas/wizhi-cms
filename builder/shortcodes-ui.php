@@ -20,37 +20,37 @@ function wizhi_shortcode_ui() {
 
 	// 显示按钮
 	shortcode_ui_register_for_shortcode( 'button', [
-		'label'         => '按钮',
+		'label'         => __( 'Button', 'wizhi'  ),
 		'listItemImage' => 'dashicons-external',
 		'attrs'         => [
 			[
-				'label'   => __( '按钮颜色' ),
+				'label'   => __( 'Button color', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'options' => wizhi_color_option(),
 			],
 			[
-				'label'   => __( '按钮尺寸' ),
+				'label'   => __( 'Button Size', 'wizhi'  ),
 				'attr'    => 'size',
 				'type'    => 'select',
 				'options' => [
-					'xsmall' => '超小尺寸',
-					'small'  => '小尺寸',
-					''       => '普通',
-					'large'  => '大尺寸',
-					'xlarge' => '超大尺寸',
+					'xsmall' => __( 'xSmall', 'wizhi'  ),
+					'small'  => __( 'Small', 'wizhi'  ),
+					''       => __( 'Normal', 'wizhi'  ),
+					'large'  => __( 'Large', 'wizhi'  ),
+					'xlarge' => __( 'xLarge', 'wizhi'  ),
 				],
 			],
 			[
-				'label' => __( '按钮文字' ),
+				'label' => __( 'Button text', 'wizhi'  ),
 				'attr'  => 'text',
 				'type'  => 'text',
 				'meta'  => [
-					'placeholder' => '请输入链接文字',
+					'placeholder' => __( 'Button text', 'wizhi'  ),
 				],
 			],
 			[
-				'label' => __( '按钮连接' ),
+				'label' => __( 'Button Link', 'wizhi'  ),
 				'attr'  => 'url',
 				'type'  => 'url',
 				'meta'  => [
@@ -63,16 +63,16 @@ function wizhi_shortcode_ui() {
 
 	// 显示分割线
 	shortcode_ui_register_for_shortcode( 'divider', [
-		'label'         => '分割线',
+		'label'         => __( 'Divider line', 'wizhi'  ),
 		'listItemImage' => 'dashicons-minus',
 		'attrs'         => [
 			[
-				'label'   => __( '分割线类型' ),
+				'label'   => __( 'Divider type', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'options' => [
-					'solid'  => '实线',
-					'shadow' => '投影',
+					'solid'  => __( 'Solid', 'wizhi'  ),
+					'shadow' => __( 'Shadow', 'wizhi'  ),
 				],
 			],
 		],
@@ -81,24 +81,24 @@ function wizhi_shortcode_ui() {
 
 	// 显示内容标题
 	shortcode_ui_register_for_shortcode( 'heading', [
-			'label'         => '标题',
+			'label'         => __( 'Heading', 'wizhi'  ),
 			'listItemImage' => 'dashicons-editor-bold',
 			'attrs'         => [
 				[
-					'label'   => __( '标题类型' ),
+					'label'   => __( 'Heading type', 'wizhi'  ),
 					'attr'    => 'type',
 					'type'    => 'select',
 					'options' => [
-						'background' => '背景',
-						'border'     => '底部边框',
+						'background' => __( 'With background', 'wizhi'  ),
+						'border'     => __( 'With border', 'wizhi'  ),
 					],
 				],
 				[
-					'label' => __( '内容' ),
+					'label' => __( 'Heading text', 'wizhi'  ),
 					'attr'  => 'content',
 					'type'  => 'text',
 					'meta'  => [
-						'placeholder' => '请输入标题文字',
+						'placeholder' => __( 'Please enter heading text', 'wizhi'  ),
 					],
 				],
 			],
@@ -109,21 +109,21 @@ function wizhi_shortcode_ui() {
 
 	// 显示提示信息
 	shortcode_ui_register_for_shortcode( 'alert', [
-		'label'         => '提示信息',
+		'label'         => __( 'Alert', 'wizhi'  ),
 		'listItemImage' => 'dashicons-info',
 		'attrs'         => [
 			[
-				'label'   => __( '信息类型' ),
+				'label'   => __( 'Alert type', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'options' => wizhi_color_option(),
 			],
 			[
-				'label' => __( '提示内容' ),
+				'label' => __( 'Alert content', 'wizhi'  ),
 				'attr'  => 'content',
 				'type'  => 'textarea',
 				'meta'  => [
-					'placeholder' => '请输入提示信息内容',
+					'placeholder' => __( 'Please enter alert content', 'wizhi'  ),
 				],
 			],
 		],
@@ -132,23 +132,23 @@ function wizhi_shortcode_ui() {
 
 	// 创建显示页面内容UI
 	shortcode_ui_register_for_shortcode( 'content', [
-		'label'         => '页面内容',
+		'label'         => __( 'Page content', 'wizhi'  ),
 		'listItemImage' => 'dashicons-media-document',
 		'attrs'         => [
 			[
-				'label' => __( '页面ID' ),
+				'label' => __( 'Page ID', 'wizhi'  ),
 				'attr'  => 'id',
 				'type'  => 'post_select',
 				'query' => [ 'post_type' => 'page' ],
 			],
 			[
-				'label' => __( '内容字数' ),
+				'label' => __( 'Show text count', 'wizhi'  ),
 				'attr'  => 'cont',
 				'type'  => 'text',
 				'value' => '120',
 			],
 			[
-				'label' => __( '显示更多链接' ),
+				'label' => __( 'Show more link', 'wizhi'  ),
 				'attr'  => 'more',
 				'type'  => 'checkbox',
 				'value' => true,
@@ -159,55 +159,55 @@ function wizhi_shortcode_ui() {
 
 	// 创建文章列表UI
 	shortcode_ui_register_for_shortcode( 'list', [
-		'label'         => '文章标题列表',
+		'label'         => __( 'Post title list', 'wizhi'  ),
 		'listItemImage' => 'dashicons-media-text',
 		'attrs'         => [
 			[
-				'label'   => __( '文章类型' ),
+				'label'   => __( 'Post type', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
 				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label'   => __( '分类方法' ),
+				'label'   => __( 'Taxonomy', 'wizhi'  ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
 				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
-				'label' => __( '分类项目' ),
+				'label' => __( 'Term', 'wizhi'  ),
 				'attr'  => 'tag',
 				'type'  => 'text',
 				'value' => 'default',
 			],
 			[
-				'label' => __( '跳过文章数量' ),
+				'label' => __( 'Offset post count', 'wizhi'  ),
 				'attr'  => 'offset',
 				'type'  => 'text',
 				'value' => '0',
 			],
 			[
-				'label' => __( '显示数量' ),
+				'label' => __( 'Show post count', 'wizhi'  ),
 				'attr'  => 'num',
 				'type'  => 'text',
 				'value' => '12',
 			],
 			[
-				'label' => __( '标题字数' ),
+				'label' => __( 'Show title text count', 'wizhi'  ),
 				'attr'  => 'cut',
 				'type'  => 'text',
 				'value' => '14',
 			],
 			[
-				'label' => __( '显示分类名称作为模块标题' ),
+				'label' => __( 'Show term title as module heading', 'wizhi'  ),
 				'attr'  => 'heading',
 				'type'  => 'checkbox',
 				'value' => true,
 			],
 			[
-				'label' => __( '显示文章发布时间' ),
+				'label' => __( 'Show post datetime', 'wizhi'  ),
 				'attr'  => 'time',
 				'type'  => 'checkbox',
 				'value' => false,
@@ -218,77 +218,77 @@ function wizhi_shortcode_ui() {
 
 	// 创建图片列表UI
 	shortcode_ui_register_for_shortcode( 'media', [
-		'label'         => '图文列表',
+		'label'         => __( 'Media list', 'wizhi'  ),
 		'listItemImage' => 'dashicons-welcome-widgets-menus',
 		'attrs'         => [
 			[
-				'label'   => __( '文章类型' ),
+				'label'   => __( 'Post type', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
 				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label'   => __( '分类方法' ),
+				'label'   => __( 'Taxonomy', 'wizhi'  ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
 				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
-				'label' => __( '分类项目' ),
+				'label' => __( 'Term', 'wizhi'  ),
 				'attr'  => 'tag',
 				'type'  => 'text',
 				'value' => 'default',
 			],
 			[
-				'label'   => __( '图片大小' ),
+				'label'   => __( 'Thumbnail size', 'wizhi'  ),
 				'attr'    => 'thumbs',
 				'type'    => 'select',
 				'value'   => 'thumbnail',
 				'options' => wizhi_get_image_sizes(),
 			],
 			[
-				'label'   => __( '图片位置' ),
+				'label'   => __( 'Thumbnail position', 'wizhi'  ),
 				'attr'    => 'position',
 				'type'    => 'select',
 				'options' => [
-					'left'  => '左侧',
-					'top'   => '上面',
-					'right' => '右边',
+					'left'  => __( 'Left', 'wizhi'  ),
+					'top'   => __( 'Top', 'wizhi'  ),
+					'right' => __( 'Right', 'wizhi'  ),
 				],
 			],
 			[
-				'label' => __( '显示数量' ),
+				'label' => __( 'Show post count', 'wizhi'  ),
 				'attr'  => 'num',
 				'type'  => 'text',
 				'value' => '12',
 			],
 			[
-				'label' => __( '标题字数' ),
+				'label' => __( 'Show title text count', 'wizhi'  ),
 				'attr'  => 'cut',
 				'type'  => 'text',
-				'value' => '10',
+				'value' => '14',
 			],
 			[
-				'label' => __( '内容字数' ),
+				'label' => __( 'Show Content text count', 'wizhi'  ),
 				'attr'  => 'content',
 				'type'  => 'text',
 				'value' => '200',
 			],
 			[
-				'label' => __( '显示分类名称作为模块标题' ),
+				'label' => __( 'Show term title as module heading', 'wizhi'  ),
 				'attr'  => 'heading',
 				'type'  => 'checkbox',
 				'value' => true,
 			],
 			[
-				'label' => __( '附加CSS类' ),
+				'label' => __( 'Addon CSS class name', 'wizhi'  ),
 				'attr'  => 'class',
 				'type'  => 'text',
 				'value' => '',
 				'meta'  => [
-					'placeholder' => '用来自定义CSS,可不填',
+					'placeholder' => '',
 				],
 			],
 		],
@@ -297,104 +297,104 @@ function wizhi_shortcode_ui() {
 
 	// 创建幻灯UI
 	shortcode_ui_register_for_shortcode( 'slider', [
-		'label'         => '幻灯',
+		'label'         => __( 'Slider', 'wizhi'  ),
 		'listItemImage' => 'dashicons-slides',
 		'attrs'         => [
 			[
-				'label'   => __( '文章类型' ),
+				'label'   => __( 'Post type', 'wizhi'  ),
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
 				'options' => wizhi_get_post_types(),
 			],
 			[
-				'label'   => __( '分类方法' ),
+				'label'   => __( 'Taxonomy', 'wizhi'  ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
 				'options' => wizhi_get_taxonomy_list(),
 			],
 			[
-				'label' => __( '分类项目' ),
+				'label' => __( 'Term', 'wizhi'  ),
 				'attr'  => 'tag',
 				'type'  => 'text',
 				'value' => 'default',
 			],
 			[
-				'label'   => __( '图片大小' ),
+				'label'   => __( 'Thumbnail size', 'wizhi'  ),
 				'attr'    => 'thumbs',
 				'type'    => 'select',
 				'value'   => 'thumbnail',
 				'options' => wizhi_get_image_sizes(),
 			],
 			[
-				'label' => __( '显示数量' ),
+				'label' => __( 'Show post count', 'wizhi'  ),
 				'attr'  => 'num',
 				'type'  => 'text',
-				'value' => '4',
+				'value' => '12',
 			],
 			[
-				'label' => __( '标题字数' ),
+				'label' => __( 'Show title text count', 'wizhi'  ),
 				'attr'  => 'cut',
 				'type'  => 'text',
-				'value' => '30',
+				'value' => '14',
 			],
 			[
-				'label' => __( '内容字数' ),
+				'label' => __( 'Show Content text count', 'wizhi'  ),
 				'attr'  => 'content',
 				'type'  => 'text',
-				'value' => '60',
+				'value' => '200',
 			],
 			[
-				'label' => __( '幻灯模式' ),
+				'label' => __( 'Slider mode', 'wizhi'  ),
 				'attr'  => 'mode',
 				'type'  => 'text',
 				'value' => 'horizontal',
 			],
 			[
-				'label' => __( '切换速度' ),
+				'label' => __( 'Slider speed', 'wizhi'  ),
 				'attr'  => 'speed',
 				'type'  => 'text',
 				'value' => '500',
 			],
 			[
-				'label' => __( '自动播放' ),
+				'label' => __( 'Auto play', 'wizhi'  ),
 				'attr'  => 'auto',
 				'type'  => 'checkbox',
 				'value' => true,
 			],
 			[
-				'label' => __( '鼠标滑过时暂停' ),
+				'label' => __( 'Pause on mouse hover', 'wizhi'  ),
 				'attr'  => 'autohover',
 				'type'  => 'checkbox',
 				'value' => true,
 			],
 			[
-				'label' => __( '最少显示数量' ),
+				'label' => __( 'Minimum slider count', 'wizhi'  ),
 				'attr'  => 'minslides',
 				'type'  => 'text',
 				'value' => '1',
 			],
 			[
-				'label' => __( '最多显示数量' ),
+				'label' => __( 'Maximum slider count', 'wizhi'  ),
 				'attr'  => 'maxslides',
 				'type'  => 'text',
 				'value' => '1',
 			],
 			[
-				'label' => __( '图片宽度' ),
+				'label' => __( 'Slider width', 'wizhi'  ),
 				'attr'  => 'slidewidth',
 				'type'  => 'text',
 				'value' => '360',
 			],
 			[
-				'label' => __( '图片间距' ),
+				'label' => __( 'Slider margin', 'wizhi'  ),
 				'attr'  => 'slidewargin',
 				'type'  => 'text',
 				'value' => '10',
 			],
 			[
-				'label' => __( '动画效果' ),
+				'label' => __( 'Animation', 'wizhi'  ),
 				'attr'  => 'easing',
 				'type'  => 'text',
 				'value' => 'swing',

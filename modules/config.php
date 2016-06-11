@@ -2,13 +2,13 @@
 
 function wizhi_post_types() {
 	$post_types = [
-		'prod'     => '产品',
-		'case'     => '案例',
-		'corp'     => '合作',
-		'team'     => '团队',
-		'slider'   => '幻灯',
-		'faq'      => '问题',
-		'download' => '下载',
+		'prod'     => __( 'Product', 'wizhi' ),
+		'case'     => __( 'Portfolio', 'wizhi' ),
+		'corp'     => __( 'Cooperation', 'wizhi' ),
+		'team'     => __( 'Team', 'wizhi' ),
+		'slider'   => __( 'Slider', 'wizhi' ),
+		'faq'      => __( 'Faq', 'wizhi' ),
+		'download' => __( 'Download', 'wizhi' ),
 	];
 
 	return $post_types;

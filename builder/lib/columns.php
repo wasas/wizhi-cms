@@ -265,43 +265,43 @@ class WizhiVisualBuilderColumns {
 
 		$columnVars = [
 			'wp_version'            => get_bloginfo( 'version' ),
-			'dummy_content'         => __( '列内容', 'wizhi' ),
-			'modal_title'           => __( '列', 'wizhi' ),
-			'modal_description'     => __( '输入用每列的百分比,<br>确保这些数字的和为 1.<br>例如:', 'wizhi' ),
-			'custom_columns'        => __( '自定义列', 'wizhi' ),
-			'column_1'              => sprintf( __( '%s 列', 'wizhi' ), 1 ),
-			'column_2'              => sprintf( __( '%s 列', 'wizhi' ), 2 ),
-			'column_3'              => sprintf( __( '%s 列', 'wizhi' ), 3 ),
-			'column_4'              => sprintf( __( '%s 列', 'wizhi' ), 4 ),
-			'column_1323'           => sprintf( __( '%s 列', 'wizhi' ), '1/3 + 2/3' ),
-			'column_2313'           => sprintf( __( '%s 列', 'wizhi' ), '2/3 + 1/3' ),
-			'column_141214'         => sprintf( __( '%s 列', 'wizhi' ), '1/4 + 1/2 + 1/4' ),
-			'delete'                => __( '删除', 'wizhi' ),
-			'edit'                  => __( '编辑', 'wizhi' ),
-			'change_column'         => __( '修改列', 'wizhi' ),
-			'clone'                 => __( '复制', 'wizhi' ),
-			'change_columns'        => __( '修改列', 'wizhi' ),
-			'cancel'                => __( '取消', 'wizhi' ),
-			'preset'                => __( '预设', 'wizhi' ),
-			'preset_desc'           => __( '在下面修改分栏数量:', 'wizhi' ),
-			'use_custom'            => __( '自定义', 'wizhi' ),
-			'custom'                => __( '自定义', 'wizhi' ),
+			'dummy_content'         => __( 'Column content', 'wizhi' ),
+			'modal_title'           => __( 'Column', 'wizhi' ),
+			'modal_description'     => __( 'Enter a composition here of column ratios separated by spaces.<br>Make sure the ratios sum up to 1.<br>For example:', 'wizhi' ),
+			'custom_columns'        => __( 'Custom columns', 'wizhi' ),
+			'column_1'              => sprintf( __( '%s column', 'wizhi' ), 1 ),
+			'column_2'              => sprintf( __( '%s column', 'wizhi' ), 2 ),
+			'column_3'              => sprintf( __( '%s column', 'wizhi' ), 3 ),
+			'column_4'              => sprintf( __( '%s column', 'wizhi' ), 4 ),
+			'column_1323'           => sprintf( __( '%s column', 'wizhi' ), '1/3 + 2/3' ),
+			'column_2313'           => sprintf( __( '%s column', 'wizhi' ), '2/3 + 1/3' ),
+			'column_141214'         => sprintf( __( '%s column', 'wizhi' ), '1/4 + 1/2 + 1/4' ),
+			'delete'                => __( 'Delete', 'wizhi' ),
+			'edit'                  => __( 'Edit', 'wizhi' ),
+			'change_column'         => __( 'Change column', 'wizhi' ),
+			'clone'                 => __( 'Clone', 'wizhi' ),
+			'change_columns'        => __( 'Change columns', 'wizhi' ),
+			'cancel'                => __( 'Cancel', 'wizhi' ),
+			'preset'                => __( 'Preset', 'wizhi' ),
+			'preset_desc'           => __( 'Modify column count below:', 'wizhi' ),
+			'use_custom'            => __( 'Use custom', 'wizhi' ),
+			'custom'                => __( 'Custom', 'wizhi' ),
 			'non_sortable_elements' => $this->formNonSortableElements(),
-			'clone_row'             => __( '复制行', 'wizhi' ),
-			'delete_row'            => __( '删除行', 'wizhi' ),
-			'edit_row'              => __( '编辑行', 'wizhi' ),
-			'edit_area'             => __( '编辑选区', 'wizhi' ),
-			'clone_area'            => __( '复制选区', 'wizhi' ),
-			'delete_area'           => __( '删除选区', 'wizhi' ),
-			'column'                => __( '列', 'wizhi' ),
-			'row'                   => __( '行', 'wizhi' ),
+			'clone_row'             => __( 'Clone row', 'wizhi' ),
+			'delete_row'            => __( 'Delete row', 'wizhi' ),
+			'edit_row'              => __( 'Edit row', 'wizhi' ),
+			'edit_area'             => __( 'Edit area', 'wizhi' ),
+			'clone_area'            => __( 'Clone area', 'wizhi' ),
+			'delete_area'           => __( 'Delete area', 'wizhi' ),
+			'column'                => __( 'Column', 'wizhi' ),
+			'row'                   => __( 'Row', 'wizhi' ),
 
 			// 分栏编辑弹窗
-			'column_settings'       => __( '列设置', 'wizhi' ),
-			'styles'                => __( '样式', 'wizhi' ),
-			'style'                 => __( '样式', 'wizhi' ),
-			'border'                => __( '边框', 'wizhi' ),
-			'padding'               => __( '内边距', 'wizhi' ),
+			'column_settings'       => __( 'Column Settings', 'wizhi' ),
+			'styles'                => __( 'Styles', 'wizhi' ),
+			'style'                 => __( 'Style', 'wizhi' ),
+			'border'                => __( 'Border', 'wizhi' ),
+			'padding'               => __( 'Padding', 'wizhi' ),
 			'none'                  => __( 'None', 'wizhi' ),
 			'dotted'                => __( 'Dotted', 'wizhi' ),
 			'dashed'                => __( 'Dashed', 'wizhi' ),
@@ -311,11 +311,13 @@ class WizhiVisualBuilderColumns {
 			'ridge'                 => __( 'Ridge', 'wizhi' ),
 			'inset'                 => __( 'Inset', 'wizhi' ),
 			'outset'                => __( 'Outset', 'wizhi' ),
-			'color'                 => __( '颜色', 'wizhi' ),
-			'radius'                => __( '圆角', 'wizhi' ),
-			'background'            => __( '背景', 'wizhi' ),
-			'image'                 => __( '图片', 'wizhi' ),
-			'size'                  => __( '尺寸', 'wizhi' ),
+			'color'                 => __( 'Color', 'wizhi' ),
+			'radius'                => __( 'Radius', 'wizhi' ),
+
+			// 背景设置
+			'background'            => __( 'Background', 'wizhi' ),
+			'image'                 => __( 'Image', 'wizhi' ),
+			'size'                  => __( 'Size', 'wizhi' ),
 			'inherit'               => __( 'Inherit', 'wizhi' ),
 			'cover'                 => __( 'Cover', 'wizhi' ),
 			'contain'               => __( 'Contain', 'wizhi' ),
@@ -325,28 +327,30 @@ class WizhiVisualBuilderColumns {
 			'norepeat'              => __( 'No-repeat', 'wizhi' ),
 			'round'                 => __( 'Round', 'wizhi' ),
 			'space'                 => __( 'Space', 'wizhi' ),
-			'position'              => __( '位置', 'wizhi' ),
-			'margin'                => __( '外边距', 'wizhi' ),
-			'row_settings'          => __( '行设置', 'wizhi' ),
+			'position'              => __( 'Position', 'wizhi' ),
+			'margin'                => __( 'Margin', 'wizhi' ),
+			'row_settings'          => __( 'Row settings', 'wizhi' ),
 
 			// 全宽行
-			'full_width'            => __( '全宽', 'wizhi' ),
-			'full_width_normal'     => __( '不使用全宽布局', 'wizhi' ),
-			'full_width_1'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '1' ),
-			'full_width_2'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '2' ),
-			'full_width_3'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '3' ),
-			'full_width_4'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '4' ),
-			'full_width_5'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '5' ),
-			'full_width_6'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '6' ),
-			'full_width_7'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '7' ),
-			'full_width_8'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '8' ),
-			'full_width_9'          => sprintf( __( '打破 %s 个容器', 'wizhi' ), '9' ),
-			'full_width_99'         => __( '打破所有容器', 'wizhi' ),
-			'full_width_desc'       => '行内容宽度通常被主题的全局宽度限制, 通过此设置可以打破这个限制,显示全宽行.',
+			'full_width'            => __( 'Full-width', 'wizhi' ),
+			'full_width_normal'     => __( 'Do not break out into full width', 'wizhi' ),
+			'full_width_1'          => sprintf( __( 'Break out of %s container', 'wizhi' ), '1' ),
+			'full_width_2'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '2' ),
+			'full_width_3'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '3' ),
+			'full_width_4'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '4' ),
+			'full_width_5'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '5' ),
+			'full_width_6'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '6' ),
+			'full_width_7'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '7' ),
+			'full_width_8'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '8' ),
+			'full_width_9'          => sprintf( __( 'Break out of %s containers', 'wizhi' ), '9' ),
+			'full_width_99'         => __( 'Break out of all containers', 'wizhi' ),
+			'full_width_desc'       => __( 'Rows are restricted to the content areas defined by your theme. You can use this to break out of the constraint and turn your row into a full width row', 'wizhi' ),
+
 
 			'modal_tabs' => [ ],
 
 		];
+
 		$columnVars = apply_filters( 'wizhi_column_vars', $columnVars );
 		$columnVars = apply_filters( 'wizhi_js_vars', $columnVars );
 
@@ -453,28 +457,28 @@ class WizhiVisualBuilderColumns {
 	public function addColumnToolbarButtons( $toolbarButtons ) {
 
 		$toolbarButtons[] = [
-			'label'     => __( '列', 'wizhi' ),
+			'label'     => __( 'Column', 'wizhi' ),
 			'shortcode' => 'column',
 			'priority'  => 1001,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-edit-area',
 			'icon'      => 'dashicons dashicons-edit',
-			'label'     => __( '编辑列', 'wizhi' ),
+			'label'     => __( 'Edit column', 'wizhi' ),
 			'shortcode' => 'column',
 			'priority'  => 1002,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-clone-area',
 			'icon'      => 'dashicons dashicons-images-alt',
-			'label'     => __( '复制列', 'wizhi' ),
+			'label'     => __( 'Clone column', 'wizhi' ),
 			'shortcode' => 'column',
 			'priority'  => 1003,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-remove-area',
 			'icon'      => 'dashicons dashicons-no-alt',
-			'label'     => __( '删除列', 'wizhi' ),
+			'label'     => __( 'Delete column', 'wizhi' ),
 			'shortcode' => 'column',
 			'priority'  => 1004,
 		];
@@ -485,7 +489,7 @@ class WizhiVisualBuilderColumns {
 		];
 
 		$toolbarButtons[] = [
-			'label'     => __( '行', 'wizhi' ),
+			'label'     => __( 'Row', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1100,
 		];
@@ -493,7 +497,7 @@ class WizhiVisualBuilderColumns {
 		$toolbarButtons[] = [
 			'action'    => 'row-align-left',
 			'icon'      => 'dashicons dashicons-align-left',
-			'label'     => __( '左对齐', 'wizhi' ),
+			'label'     => __( 'Align left', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1101,
 		];
@@ -501,7 +505,7 @@ class WizhiVisualBuilderColumns {
 		$toolbarButtons[] = [
 			'action'    => 'row-align-center',
 			'icon'      => 'dashicons dashicons-align-center',
-			'label'     => __( '居中对齐', 'wizhi' ),
+			'label'     => __( 'Align center', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1102,
 		];
@@ -509,7 +513,7 @@ class WizhiVisualBuilderColumns {
 		$toolbarButtons[] = [
 			'action'    => 'row-align-right',
 			'icon'      => 'dashicons dashicons-align-right',
-			'label'     => __( '右对齐', 'wizhi' ),
+			'label'     => __( 'Align right', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1103,
 		];
@@ -517,7 +521,7 @@ class WizhiVisualBuilderColumns {
 		$toolbarButtons[] = [
 			'action'    => 'row-align-none',
 			'icon'      => 'dashicons dashicons-align-none',
-			'label'     => __( '不对齐', 'wizhi' ),
+			'label'     => __( 'No align', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1104,
 		];
@@ -529,28 +533,28 @@ class WizhiVisualBuilderColumns {
 		$toolbarButtons[] = [
 			'action'    => 'column-edit-row',
 			'icon'      => 'dashicons dashicons-edit',
-			'label'     => __( '编辑行', 'wizhi' ),
+			'label'     => __( 'Edit row', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1106,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-columns',
 			'icon'      => 'dashicons dashicons-tagcloud',
-			'label'     => __( '编辑行', 'wizhi' ),
+			'label'     => __( 'Edit column', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1107,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-clone-row',
 			'icon'      => 'dashicons dashicons-images-alt',
-			'label'     => __( '复制行', 'wizhi' ),
+			'label'     => __( 'Clone row', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1108,
 		];
 		$toolbarButtons[] = [
 			'action'    => 'column-remove-row',
 			'icon'      => 'dashicons dashicons-no-alt',
-			'label'     => __( '删除行', 'wizhi' ),
+			'label'     => __( 'Delete row', 'wizhi' ),
 			'shortcode' => 'row',
 			'priority'  => 1109,
 		];

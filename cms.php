@@ -14,6 +14,14 @@ define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
 
 /**
+ * Load translations
+ */
+add_action( 'plugins_loaded', 'wizhi_cms_load_textdomain' );
+function wizhi_cms_load_textdomain() {
+	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+}
+
+/**
  * 自动加载 PHP 文件
  *
  * @param  string $folder 需要被包含的文件夹路径, 不能自动发现子目录, 每个子目录需要单独定义

@@ -80,44 +80,35 @@ class WizhiFormBuilder {
 	public function values() {
 		$form_type = $this->form_type;
 		$fields    = $this->fields;
-		$args      = $this->args;
 		$id        = $this->id;
 
 		$values = [ ];
 
-		if ( $form_type == 'widget' ) {
+		foreach ( $fields as $field ) {
 
-			$values = $args[ 'instance' ];
+			switch ( $form_type ) {
+				case 'option':
+					$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
+					break;
 
-		} else {
+				case 'post_meta':
+					$value                      = get_post_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					break;
 
-			foreach ( $fields as $field ) {
+				case 'user_meta':
+					$value                      = get_user_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					break;
 
-				switch ( $form_type ) {
-					case 'option':
-						$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
-						break;
+				case 'term_meta':
+					$value                      = get_term_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					break;
 
-					case 'post_meta':
-						$value                      = get_post_meta( $id, $field[ 'name' ], true );
-						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-						break;
-
-					case 'user_meta':
-						$value                      = get_user_meta( $id, $field[ 'name' ], true );
-						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-						break;
-
-					case 'term_meta':
-						$value                      = get_term_meta( $id, $field[ 'name' ], true );
-						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-						break;
-
-					default:
-						$value                      = get_post_meta( $id, $field[ 'name' ], true );
-						$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
-				}
-
+				default:
+					$value                      = get_post_meta( $id, $field[ 'name' ], true );
+					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
 			}
 
 		}
@@ -292,7 +283,7 @@ class WizhiFormBuilder {
 	public function show() {
 
 		$form = $this->build();
-		$form->addSubmit( 'send', '保存更改' );
+		$form->addSubmit( 'send', __( 'Save', 'wizhi' ) );
 
 		echo $form;
 
@@ -319,7 +310,7 @@ class WizhiFormBuilder {
 
 			// 无论哪种表单类型, 都要检查随机数
 			if ( ! isset( $nonce ) || ! wp_verify_nonce( $nonce, 'wizhi_nonce' ) ) {
-				return;
+				return false;
 			}
 
 			// 循环保存所有数据
@@ -382,7 +373,7 @@ class WizhiFormBuilder {
 
 		if ( $error ) {
 			$class   = 'notice notice-error';
-			$message = __( '噢, 出现错误了.', 'wizhi-cms' );
+			$message = __( 'Oah, Some errors occured', 'wizhi' );
 
 			echo '<div class="' . $class . '"><p>' . $message . '</p></div>';
 		}

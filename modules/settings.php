@@ -6,26 +6,26 @@ $fields = [
 	[
 		'type'    => 'checkbox-list',
 		'name'    => 'enabled_post_types',
-		'label'   => '启用的文章类型',
+		'label'   => __( 'Enable content types', 'wizhi' ),
 		'options' => $post_types,
 	],
 	[
 		'type'    => 'checkbox',
 		'name'    => 'is_enable_static',
-		'label'   => '使用插件内置的样式',
+		'label'   => __( 'Use build in JavaScript And CSS', 'wizhi' ),
 	],
 	[
 		'type'    => 'checkbox',
 		'name'    => 'is_enable_builder',
-		'label'   => '启用可视化编辑器,（需要安装 Shortcake 插件）',
+		'label'   => __( 'Enable visual content builder（required install and active Shortcake plugin）', 'wizhi' ),
 	],
 ];
 
 
 $args = [
 	'slug'  => 'wizhi-cms-settings',
-	'label' => '插件设置',
-	'title' => 'Wizhi CMS 插件设置',
+	'label' => __( 'Plugin settings', 'wizhi' ),
+	'title' => __( 'Wizhi CMS Plugin settings', 'wizhi' ),
 ];
 
 new WizhiOptionPage( $fields, $args );

@@ -1,0 +1,826 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Wizhi CMS\n"
+"POT-Creation-Date: 2016-06-11 23:35+0800\n"
+"PO-Revision-Date: 2016-06-11 23:34+0800\n"
+"Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
+"Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: cms.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: builder/builder.php:140
+msgid "Add content"
+msgstr ""
+
+#: builder/lib/columns.php:268
+msgid "Column content"
+msgstr ""
+
+#: builder/lib/columns.php:269 builder/lib/columns.php:296
+#: builder/lib/columns.php:460
+msgid "Column"
+msgstr ""
+
+#: builder/lib/columns.php:270
+msgid ""
+"Enter a composition here of column ratios separated by spaces.<br>Make sure "
+"the ratios sum up to 1.<br>For example:"
+msgstr ""
+
+#: builder/lib/columns.php:271
+msgid "Custom columns"
+msgstr ""
+
+#: builder/lib/columns.php:272 builder/lib/columns.php:273
+#: builder/lib/columns.php:274 builder/lib/columns.php:275
+#: builder/lib/columns.php:276 builder/lib/columns.php:277
+#: builder/lib/columns.php:278
+#, php-format
+msgid "%s column"
+msgstr ""
+
+#: builder/lib/columns.php:279
+msgid "Delete"
+msgstr ""
+
+#: builder/lib/columns.php:280 inc/post_types.php:27 inc/post_types.php:90
+msgid "Edit"
+msgstr ""
+
+#: builder/lib/columns.php:281
+msgid "Change column"
+msgstr ""
+
+#: builder/lib/columns.php:282 builder/lib/toolbar.php:102
+msgid "Clone"
+msgstr ""
+
+#: builder/lib/columns.php:283
+msgid "Change columns"
+msgstr ""
+
+#: builder/lib/columns.php:284
+msgid "Cancel"
+msgstr ""
+
+#: builder/lib/columns.php:285
+msgid "Preset"
+msgstr ""
+
+#: builder/lib/columns.php:286
+msgid "Modify column count below:"
+msgstr ""
+
+#: builder/lib/columns.php:287
+msgid "Use custom"
+msgstr ""
+
+#: builder/lib/columns.php:288
+msgid "Custom"
+msgstr ""
+
+#: builder/lib/columns.php:290 builder/lib/columns.php:550
+msgid "Clone row"
+msgstr ""
+
+#: builder/lib/columns.php:291 builder/lib/columns.php:557
+msgid "Delete row"
+msgstr ""
+
+#: builder/lib/columns.php:292 builder/lib/columns.php:536
+msgid "Edit row"
+msgstr ""
+
+#: builder/lib/columns.php:293
+msgid "Edit area"
+msgstr ""
+
+#: builder/lib/columns.php:294
+msgid "Clone area"
+msgstr ""
+
+#: builder/lib/columns.php:295
+msgid "Delete area"
+msgstr ""
+
+#: builder/lib/columns.php:297 builder/lib/columns.php:492
+msgid "Row"
+msgstr ""
+
+#: builder/lib/columns.php:300
+msgid "Column Settings"
+msgstr ""
+
+#: builder/lib/columns.php:301
+msgid "Styles"
+msgstr ""
+
+#: builder/lib/columns.php:302
+msgid "Style"
+msgstr ""
+
+#: builder/lib/columns.php:303
+msgid "Border"
+msgstr ""
+
+#: builder/lib/columns.php:304
+msgid "Padding"
+msgstr ""
+
+#: builder/lib/columns.php:305
+msgid "None"
+msgstr ""
+
+#: builder/lib/columns.php:306
+msgid "Dotted"
+msgstr ""
+
+#: builder/lib/columns.php:307
+msgid "Dashed"
+msgstr ""
+
+#: builder/lib/columns.php:308 builder/shortcodes-ui.php:74
+msgid "Solid"
+msgstr ""
+
+#: builder/lib/columns.php:309
+msgid "Double"
+msgstr ""
+
+#: builder/lib/columns.php:310
+msgid "Groove"
+msgstr ""
+
+#: builder/lib/columns.php:311
+msgid "Ridge"
+msgstr ""
+
+#: builder/lib/columns.php:312
+msgid "Inset"
+msgstr ""
+
+#: builder/lib/columns.php:313
+msgid "Outset"
+msgstr ""
+
+#: builder/lib/columns.php:314
+msgid "Color"
+msgstr ""
+
+#: builder/lib/columns.php:315
+msgid "Radius"
+msgstr ""
+
+#: builder/lib/columns.php:318
+msgid "Background"
+msgstr ""
+
+#: builder/lib/columns.php:319
+msgid "Image"
+msgstr ""
+
+#: builder/lib/columns.php:320
+msgid "Size"
+msgstr ""
+
+#: builder/lib/columns.php:321
+msgid "Inherit"
+msgstr ""
+
+#: builder/lib/columns.php:322
+msgid "Cover"
+msgstr ""
+
+#: builder/lib/columns.php:323
+msgid "Contain"
+msgstr ""
+
+#: builder/lib/columns.php:324
+msgid "Repeat"
+msgstr ""
+
+#: builder/lib/columns.php:325
+msgid "Repeat-x"
+msgstr ""
+
+#: builder/lib/columns.php:326
+msgid "Repeat-y"
+msgstr ""
+
+#: builder/lib/columns.php:327
+msgid "No-repeat"
+msgstr ""
+
+#: builder/lib/columns.php:328
+msgid "Round"
+msgstr ""
+
+#: builder/lib/columns.php:329
+msgid "Space"
+msgstr ""
+
+#: builder/lib/columns.php:330
+msgid "Position"
+msgstr ""
+
+#: builder/lib/columns.php:331
+msgid "Margin"
+msgstr ""
+
+#: builder/lib/columns.php:332
+msgid "Row settings"
+msgstr ""
+
+#: builder/lib/columns.php:335
+msgid "Full-width"
+msgstr ""
+
+#: builder/lib/columns.php:336
+msgid "Do not break out into full width"
+msgstr ""
+
+#: builder/lib/columns.php:337
+#, php-format
+msgid "Break out of %s container"
+msgstr ""
+
+#: builder/lib/columns.php:338 builder/lib/columns.php:339
+#: builder/lib/columns.php:340 builder/lib/columns.php:341
+#: builder/lib/columns.php:342 builder/lib/columns.php:343
+#: builder/lib/columns.php:344 builder/lib/columns.php:345
+#, php-format
+msgid "Break out of %s containers"
+msgstr ""
+
+#: builder/lib/columns.php:346
+msgid "Break out of all containers"
+msgstr ""
+
+#: builder/lib/columns.php:347
+msgid ""
+"Rows are restricted to the content areas defined by your theme. You can use "
+"this to break out of the constraint and turn your row into a full width row"
+msgstr ""
+
+#: builder/lib/columns.php:467 builder/lib/columns.php:543
+msgid "Edit column"
+msgstr ""
+
+#: builder/lib/columns.php:474
+msgid "Clone column"
+msgstr ""
+
+#: builder/lib/columns.php:481
+msgid "Delete column"
+msgstr ""
+
+#: builder/lib/columns.php:500
+msgid "Align left"
+msgstr ""
+
+#: builder/lib/columns.php:508
+msgid "Align center"
+msgstr ""
+
+#: builder/lib/columns.php:516
+msgid "Align right"
+msgstr ""
+
+#: builder/lib/columns.php:524
+msgid "No align"
+msgstr ""
+
+#: builder/shortcodes-ui.php:23
+msgid "Button"
+msgstr ""
+
+#: builder/shortcodes-ui.php:27
+msgid "Button color"
+msgstr ""
+
+#: builder/shortcodes-ui.php:33
+msgid "Button Size"
+msgstr ""
+
+#: builder/shortcodes-ui.php:37
+msgid "xSmall"
+msgstr ""
+
+#: builder/shortcodes-ui.php:38
+msgid "Small"
+msgstr ""
+
+#: builder/shortcodes-ui.php:39
+msgid "Normal"
+msgstr ""
+
+#: builder/shortcodes-ui.php:40
+msgid "Large"
+msgstr ""
+
+#: builder/shortcodes-ui.php:41
+msgid "xLarge"
+msgstr ""
+
+#: builder/shortcodes-ui.php:45 builder/shortcodes-ui.php:49
+msgid "Button text"
+msgstr ""
+
+#: builder/shortcodes-ui.php:53
+msgid "Button Link"
+msgstr ""
+
+#: builder/shortcodes-ui.php:66
+msgid "Divider line"
+msgstr ""
+
+#: builder/shortcodes-ui.php:70
+msgid "Divider type"
+msgstr ""
+
+#: builder/shortcodes-ui.php:75
+msgid "Shadow"
+msgstr ""
+
+#: builder/shortcodes-ui.php:84
+msgid "Heading"
+msgstr ""
+
+#: builder/shortcodes-ui.php:88
+msgid "Heading type"
+msgstr ""
+
+#: builder/shortcodes-ui.php:92
+msgid "With background"
+msgstr ""
+
+#: builder/shortcodes-ui.php:93
+msgid "With border"
+msgstr ""
+
+#: builder/shortcodes-ui.php:97
+msgid "Heading text"
+msgstr ""
+
+#: builder/shortcodes-ui.php:101
+msgid "Please enter heading text"
+msgstr ""
+
+#: builder/shortcodes-ui.php:112
+msgid "Alert"
+msgstr ""
+
+#: builder/shortcodes-ui.php:116
+msgid "Alert type"
+msgstr ""
+
+#: builder/shortcodes-ui.php:122
+msgid "Alert content"
+msgstr ""
+
+#: builder/shortcodes-ui.php:126
+msgid "Please enter alert content"
+msgstr ""
+
+#: builder/shortcodes-ui.php:135
+msgid "Page content"
+msgstr ""
+
+#: builder/shortcodes-ui.php:139
+msgid "Page ID"
+msgstr ""
+
+#: builder/shortcodes-ui.php:145
+msgid "Show text count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:151
+msgid "Show more link"
+msgstr ""
+
+#: builder/shortcodes-ui.php:162
+msgid "Post title list"
+msgstr ""
+
+#: builder/shortcodes-ui.php:166 builder/shortcodes-ui.php:225
+#: builder/shortcodes-ui.php:304
+msgid "Post type"
+msgstr ""
+
+#: builder/shortcodes-ui.php:173 builder/shortcodes-ui.php:232
+#: builder/shortcodes-ui.php:311
+msgid "Taxonomy"
+msgstr ""
+
+#: builder/shortcodes-ui.php:180 builder/shortcodes-ui.php:239
+#: builder/shortcodes-ui.php:318
+msgid "Term"
+msgstr ""
+
+#: builder/shortcodes-ui.php:186
+msgid "Offset post count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:192 builder/shortcodes-ui.php:262
+#: builder/shortcodes-ui.php:331
+msgid "Show post count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:198 builder/shortcodes-ui.php:268
+#: builder/shortcodes-ui.php:337
+msgid "Show title text count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:204 builder/shortcodes-ui.php:280
+msgid "Show term title as module heading"
+msgstr ""
+
+#: builder/shortcodes-ui.php:210
+msgid "Show post datetime"
+msgstr ""
+
+#: builder/shortcodes-ui.php:221
+msgid "Media list"
+msgstr ""
+
+#: builder/shortcodes-ui.php:245 builder/shortcodes-ui.php:324
+msgid "Thumbnail size"
+msgstr ""
+
+#: builder/shortcodes-ui.php:252
+msgid "Thumbnail position"
+msgstr ""
+
+#: builder/shortcodes-ui.php:256
+msgid "Left"
+msgstr ""
+
+#: builder/shortcodes-ui.php:257
+msgid "Top"
+msgstr ""
+
+#: builder/shortcodes-ui.php:258
+msgid "Right"
+msgstr ""
+
+#: builder/shortcodes-ui.php:274 builder/shortcodes-ui.php:343
+msgid "Show Content text count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:286
+msgid "Addon CSS class name"
+msgstr ""
+
+#: builder/shortcodes-ui.php:300 modules/config.php:9
+msgid "Slider"
+msgstr ""
+
+#: builder/shortcodes-ui.php:349
+msgid "Slider mode"
+msgstr ""
+
+#: builder/shortcodes-ui.php:355
+msgid "Slider speed"
+msgstr ""
+
+#: builder/shortcodes-ui.php:361
+msgid "Auto play"
+msgstr ""
+
+#: builder/shortcodes-ui.php:367
+msgid "Pause on mouse hover"
+msgstr ""
+
+#: builder/shortcodes-ui.php:373
+msgid "Minimum slider count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:379
+msgid "Maximum slider count"
+msgstr ""
+
+#: builder/shortcodes-ui.php:385
+msgid "Slider width"
+msgstr ""
+
+#: builder/shortcodes-ui.php:391
+msgid "Slider margin"
+msgstr ""
+
+#: builder/shortcodes-ui.php:397
+msgid "Animation"
+msgstr ""
+
+#: inc/form-builder.php:286
+msgid "Save"
+msgstr ""
+
+#: inc/form-builder.php:376
+msgid "Oah, Some errors occured"
+msgstr ""
+
+#: inc/helper.php:49 inc/helper.php:51 inc/helper.php:53 inc/helper.php:55
+#: inc/helper.php:57 inc/helper.php:59 inc/helper.php:81 inc/helper.php:83
+#: inc/helper.php:85
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: inc/helper.php:55
+msgctxt "wizhi"
+msgid "Y"
+msgstr ""
+
+#: inc/helper.php:57
+msgctxt "wizhi"
+msgid "F Y"
+msgstr ""
+
+#: inc/helper.php:59
+msgctxt "wizhi"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/helper.php:62
+msgctxt "wizhi"
+msgid "Asides"
+msgstr ""
+
+#: inc/helper.php:64
+msgctxt "wizhi"
+msgid "Galleries"
+msgstr ""
+
+#: inc/helper.php:66
+msgctxt "wizhi"
+msgid "Images"
+msgstr ""
+
+#: inc/helper.php:68
+msgctxt "wizhi"
+msgid "Videos"
+msgstr ""
+
+#: inc/helper.php:70
+msgctxt "wizhi"
+msgid "Quotes"
+msgstr ""
+
+#: inc/helper.php:72
+msgctxt "wizhi"
+msgid "Links"
+msgstr ""
+
+#: inc/helper.php:74
+msgctxt "wizhi"
+msgid "Statuses"
+msgstr ""
+
+#: inc/helper.php:76
+msgctxt "wizhi"
+msgid "Audio"
+msgstr ""
+
+#: inc/helper.php:78
+msgctxt "wizhi"
+msgid "Chats"
+msgstr ""
+
+#: inc/helper.php:88
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: inc/helper.php:90
+msgid "Archives"
+msgstr ""
+
+#: inc/helper.php:217
+msgid "Author"
+msgstr ""
+
+#: inc/helper.php:218
+msgid "Date"
+msgstr ""
+
+#: inc/helper.php:219
+msgid "Title"
+msgstr ""
+
+#: inc/helper.php:220
+msgid "Random"
+msgstr ""
+
+#: inc/helper.php:231
+msgid "Default"
+msgstr ""
+
+#: inc/helper.php:232
+msgid "Success（Green）"
+msgstr ""
+
+#: inc/helper.php:233
+msgid "Info（Blue）"
+msgstr ""
+
+#: inc/helper.php:234
+msgid "Warning（Orange）"
+msgstr ""
+
+#: inc/helper.php:235
+msgid "Danger（Red）"
+msgstr ""
+
+#: inc/helper.php:246
+msgid "ASC"
+msgstr ""
+
+#: inc/helper.php:247
+msgid "DESC"
+msgstr ""
+
+#: inc/helper.php:270
+msgid "Select content type"
+msgstr ""
+
+#: inc/helper.php:271
+msgid "Post"
+msgstr ""
+
+#: inc/helper.php:272
+msgid "Page"
+msgstr ""
+
+#: inc/helper.php:301
+msgid "Select content"
+msgstr ""
+
+#: inc/helper.php:328
+msgid "Select taxonomy"
+msgstr ""
+
+#: inc/helper.php:329 modules/content_types.php:15
+msgid "Category"
+msgstr ""
+
+#: inc/helper.php:330
+msgid "Tags"
+msgstr ""
+
+#: inc/helper.php:367
+msgid "Select Category"
+msgstr ""
+
+#: inc/post_types.php:25 inc/post_types.php:26 inc/post_types.php:92
+msgid "Add New"
+msgstr ""
+
+#: inc/post_types.php:28
+msgid "New"
+msgstr ""
+
+#: inc/post_types.php:29 inc/post_types.php:87
+msgid "All"
+msgstr ""
+
+#: inc/post_types.php:30
+msgid "View"
+msgstr ""
+
+#: inc/post_types.php:31 inc/post_types.php:86
+msgid "Search"
+msgstr ""
+
+#: inc/post_types.php:32
+#, php-format
+msgid "Could not find %s"
+msgstr ""
+
+#: inc/post_types.php:33
+#, php-format
+msgid "Could not find %s in trash"
+msgstr ""
+
+#: inc/post_types.php:88 inc/post_types.php:89
+msgid "Parent"
+msgstr ""
+
+#: inc/post_types.php:91
+msgid "Upgrade"
+msgstr ""
+
+#: inc/post_types.php:93
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: modules/config.php:5
+msgid "Product"
+msgstr ""
+
+#: modules/config.php:6
+msgid "Portfolio"
+msgstr ""
+
+#: modules/config.php:7
+msgid "Cooperation"
+msgstr ""
+
+#: modules/config.php:8
+msgid "Team"
+msgstr ""
+
+#: modules/config.php:10
+msgid "Faq"
+msgstr ""
+
+#: modules/config.php:11
+msgid "Download"
+msgstr ""
+
+#: modules/metabox/slider.php:7
+msgid "Link url"
+msgstr ""
+
+#: modules/metabox/slider.php:15 modules/metabox/slider.php:22
+msgid "Slider Settings"
+msgstr ""
+
+#: modules/metabox/term.php:7
+msgid "Loop template"
+msgstr ""
+
+#: modules/metabox/term.php:14
+msgid "Posts per page"
+msgstr ""
+
+#: modules/metabox/term.php:22
+msgid "Term template"
+msgstr ""
+
+#: modules/settings.php:9
+msgid "Enable content types"
+msgstr ""
+
+#: modules/settings.php:15
+msgid "Use build in JavaScript And CSS"
+msgstr ""
+
+#: modules/settings.php:20
+msgid ""
+"Enable visual content builder（required install and active Shortcake plugin）"
+msgstr ""
+
+#: modules/settings.php:27
+msgid "Plugin settings"
+msgstr ""
+
+#: modules/settings.php:28
+msgid "Wizhi CMS Plugin settings"
+msgstr ""
+
+#: modules/walker.php:301
+#, php-format
+msgid "View all posts filed under %s"
+msgstr ""
+
+#: templates/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: templates/content.php:38
+msgid "Pages:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Wizhi CMS"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.wpzhiku.com/wordpress-cms-plugin-wizhi-cms/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "添加一些实用的功能，增加了一些效果类似dedecms(织梦)模板标签的一些简码。"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Amos Lee"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.wpzhiku.com/"
+msgstr ""

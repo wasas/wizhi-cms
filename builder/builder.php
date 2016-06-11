@@ -137,7 +137,7 @@ class WizhiVisualBuilder {
 	 */
 	public function addShortcodeButton() {
 		if ( apply_filters( 'wizhi_add_shortcode_button', true ) ) {
-			echo '<a href="#" class="button wizhi-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( '添加内容', 'wizhi' ) . '</a>';
+			echo '<a href="#" class="button wizhi-add-shortcode"><span class="dashicons dashicons-plus st_add_content"></span>' . __( 'Add content', 'wizhi' ) . '</a>';
 		}
 	}
 

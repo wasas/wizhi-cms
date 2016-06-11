@@ -52,30 +52,30 @@ function wizhi_get_the_archive_title() {
 	} elseif ( is_author() ) {
 		$title = sprintf( __( '%s' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( '%s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
+		$title = sprintf( __( '%s' ), get_the_date( _x( 'Y', 'wizhi', 'yearly archives date format' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( '%s' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
+		$title = sprintf( __( '%s' ), get_the_date( _x( 'F Y', 'wizhi', 'monthly archives date format' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( '%s' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
+		$title = sprintf( __( '%s' ), get_the_date( _x( 'F j, Y', 'wizhi', 'daily archives date format' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title' );
+			$title = _x( 'Asides', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title' );
+			$title = _x( 'Galleries', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title' );
+			$title = _x( 'Images', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title' );
+			$title = _x( 'Videos', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title' );
+			$title = _x( 'Quotes', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title' );
+			$title = _x( 'Links', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title' );
+			$title = _x( 'Statuses', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title' );
+			$title = _x( 'Audio', 'wizhi', 'post format archive title' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title' );
+			$title = _x( 'Chats', 'wizhi', 'post format archive title' );
 		}
 	} elseif ( is_post_type_archive() ) {
 		$title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
@@ -87,7 +87,7 @@ function wizhi_get_the_archive_title() {
 		$tax   = get_taxonomy( get_queried_object()->taxonomy );
 		$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives' );
+		$title = __( 'Archives', 'wizhi' );
 	}
 
 	/**
@@ -214,10 +214,10 @@ if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
  */
 function wizhi_get_display_order() {
 	$output             = [ ];
-	$output[ 'author' ] = __( '作者', 'wizhi' );
-	$output[ 'date' ]   = __( '日期', 'wizhi' );
-	$output[ 'title' ]  = __( '标题', 'wizhi' );
-	$output[ 'rand' ]   = __( '随机', 'wizhi' );
+	$output[ 'author' ] = __( 'Author', 'wizhi' );
+	$output[ 'date' ]   = __( 'Date', 'wizhi' );
+	$output[ 'title' ]  = __( 'Title', 'wizhi' );
+	$output[ 'rand' ]   = __( 'Random', 'wizhi' );
 
 	return $output;
 }
@@ -228,11 +228,11 @@ function wizhi_get_display_order() {
  */
 function wizhi_color_option() {
 	$output              = [ ];
-	$output[]            = __( '默认', 'wizhi' );
-	$output[ 'success' ] = __( '成功（绿色）', 'wizhi' );
-	$output[ 'info' ]    = __( '普通（蓝色）', 'wizhi' );
-	$output[ 'warning' ] = __( '警告（红色）', 'wizhi' );
-	$output[ 'danger' ]  = __( '危险（红色）', 'wizhi' );
+	$output[]            = __( 'Default', 'wizhi' );
+	$output[ 'success' ] = __( 'Success（Green）', 'wizhi' );
+	$output[ 'info' ]    = __( 'Info（Blue）', 'wizhi' );
+	$output[ 'warning' ] = __( 'Warning（Orange）', 'wizhi' );
+	$output[ 'danger' ]  = __( 'Danger（Red）', 'wizhi' );
 
 	return $output;
 }
@@ -243,8 +243,8 @@ function wizhi_color_option() {
  */
 function wizhi_get_display_direction() {
 	$output           = [ ];
-	$output[ 'ASC' ]  = __( '升序', 'wizhi' );
-	$output[ 'DESC' ] = __( '降序', 'wizhi' );
+	$output[ 'ASC' ]  = __( 'ASC', 'wizhi' );
+	$output[ 'DESC' ] = __( 'DESC', 'wizhi' );
 
 	return $output;
 }
@@ -267,9 +267,9 @@ if ( ! function_exists( 'wizhi_get_post_types' ) ) {
 		$post_types = get_post_types( $args_type, 'objects' );
 
 		$output = [
-			0      => sprintf( '— %s —', __( '选择内容类型', 'wizhi' ) ),
-			'post' => '文章',
-			'page' => '页面',
+			0      => sprintf( '— %s —', __( 'Select content type', 'wizhi' ) ),
+			'post' => __( 'Post', 'wizhi' ),
+			'page' => __( 'Page', 'wizhi' ),
 		];
 
 		foreach ( $post_types as $post_type ) {
@@ -298,7 +298,7 @@ function wizhi_get_post_list( $type = "post", $id = "false" ) {
 	$loop = new WP_Query( $args );
 
 	$output = [
-		0 => sprintf( '— %s —', __( '选择', 'wizhi' ) ),
+		0 => sprintf( '— %s —', __( 'Select content', 'wizhi' ) ),
 	];
 
 	if ( $loop->have_posts() ) {
@@ -325,9 +325,9 @@ function wizhi_get_post_list( $type = "post", $id = "false" ) {
  */
 function wizhi_get_taxonomy_list( $type = "taxonomy" ) {
 	$output = [
-		0          => sprintf( '— %s —', __( '选择分类方法', 'wizhi' ) ),
-		'category' => '分类目录',
-		'post_tag' => '标签',
+		0          => sprintf( '— %s —', __( 'Select taxonomy', 'wizhi' ) ),
+		'category' => __( 'Category', 'wizhi' ),
+		'post_tag' => __( 'Tags', 'wizhi' ),
 	];
 
 	$args = [
@@ -364,7 +364,7 @@ function wizhi_get_term_list( $taxonomy = 'post_tag' ) {
 	] );
 
 	$output = [
-		0 => sprintf( '— %s —', __( '选择分类', 'wizhi' ) ),
+		0 => sprintf( '— %s —', __( 'Select Category', 'wizhi' ) ),
 	];
 
 	if ( is_wp_error( $terms ) ) {
