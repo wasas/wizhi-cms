@@ -16,6 +16,11 @@ $fields = [
 	],
 	[
 		'type'    => 'checkbox',
+		'name'    => 'is_enable_font',
+		'label'   => __( '是否加载插件自带的 FontAwesome 字体图标', 'wizhi' ),
+	],
+	[
+		'type'    => 'checkbox',
 		'name'    => 'is_enable_builder',
 		'label'   => __( 'Enable visual content builder（required install and active Shortcake plugin）', 'wizhi' ),
 	],

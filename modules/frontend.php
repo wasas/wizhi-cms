@@ -1,5 +1,25 @@
 <?php
 
+// 获取插件设置值
+$is_enable_static = get_option( 'is_enable_static' );
+$is_enable_font   = get_option( 'is_enable_font' );
+
+
+// 加载 FontAwesome
+if ( $is_enable_font ) {
+	add_action( 'wp_enqueue_scripts', 'wizhi_ui_font' );
+}
+
+
+if ( $is_enable_static ) {
+	//加载 CSS 和 JS
+	if ( ! is_admin() ) {
+		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
+		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
+	}
+}
+
+
 /**
  * 加载CSS
  *
@@ -8,6 +28,17 @@
 function wizhi_ui_style() {
 	wp_register_style( 'wizhi-style', plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
 	wp_enqueue_style( 'wizhi-style' );
+}
+
+
+/**
+ * 加载 FontAwesome 子图图标
+ *
+ * @package front
+ */
+function wizhi_ui_font() {
+	wp_register_style( 'wizhi-font', plugins_url( '../front/dist/styles/font.css', __FILE__ ) );
+	wp_enqueue_style( 'wizhi-font' );
 }
 
 
@@ -22,17 +53,4 @@ function wizhi_ui_scripts() {
 }
 
 
-// 获取插件设置值
-$is_enable_static = get_option( 'is_enable_static' );
-
-if ( $is_enable_static ) {
-	//加载 CSS 和 JS
-	if ( ! is_admin() ) {
-		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
-		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
-
-		add_action( 'admin_enqueue_scripts', 'wizhi_ui_scripts' );
-		add_action( 'admin_enqueue_scripts', 'wizhi_ui_style' );
-	}
-}
 
