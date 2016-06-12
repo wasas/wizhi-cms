@@ -9,16 +9,9 @@
 
 ?>
 
-<?php
-$cus_links = get_post_meta( get_the_ID(), 'cus_links', true );
-if ( empty( $cus_links ) ) {
-	$cus_links = get_permalink();
-}
-?>
-
 <li class="ui-list-item">
-	<span class="pull-right time"><?php the_time( 'm-d' ); ?></span>
-	<a href="<?php echo $cus_links; ?>" title="<?php the_title(); ?>">
+	<span class="pull-right time"><?php the_time( 'Y-m-d' ); ?></span>
+	<a href="<?php the_permalink();; ?>" title="<?php the_title(); ?>">
 		<?php echo wp_trim_words( get_the_title(), 100, "..." ); ?>
 	</a>
 </li>

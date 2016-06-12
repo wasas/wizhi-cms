@@ -18,6 +18,28 @@ function wizhi_get_term_root_id( $term_id, $taxonomy ) {
 	return $this_term->term_id;
 }
 
+
+add_filter( 'the_permalink', 'filter_permalink' );
+/**
+ * 过滤固定链接, 添加自定义链接选项
+ *
+ * @return mixed
+ */
+function filter_permalink() {
+	global $post;
+
+	$post_id = $post->ID;
+
+	$link = get_post_meta( $post_id, '_link_url', true );
+
+	if ( empty( $link ) ) {
+		$link = get_permalink();
+	}
+
+	return $link;
+}
+
+
 /**
  * 给当前链接加 “active” 类
  *

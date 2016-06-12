@@ -3,7 +3,7 @@
 $fields = [
 	[
 		'type'    => 'text',
-		'name'    => '_slider_url',
+		'name'    => '_link_url',
 		'label'   => __( 'Link url', 'wizhi' ),
 		'size'    => '80',
 		'default' => 'http://',
