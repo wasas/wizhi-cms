@@ -1,14 +1,3 @@
-<?php
-/**
- * Template part for displaying posts.
- *
- * @link    https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Rhine
- */
-
-?>
-
 <div class="media">
 
 	<a class="media-cap" target="_blank" href="<?php the_permalink(); ?>">
