@@ -8,7 +8,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" cut="26" heading="false"]
+	 * @usage [list type="post" tax="category" tag="default" num="6" cut="26" heading="false" pager="0" tmp="list"]
 	 */
 	function wizhi_shortcode_list( $atts ) {
 
@@ -16,9 +16,10 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			'type'    => 'post',
 			'tax'     => 'category',
 			'tag'     => 'default',
-			'offset'  => 0,
-			'num'     => 8, // 数量: 显示文章数量，-1为全部显示
+			'num'     => 8,
 			'heading' => true,
+			'pager'   => false,
+			'tmp'     => 'list'
 		];
 
 		extract( shortcode_atts( $default, $atts ) );
@@ -36,13 +37,15 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			];
 		}
 
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 		// 构建文章查询数组
 		$args = [
 			'post_type'      => $type,
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',
 			'posts_per_page' => $num,
-			'offset'         => $offset,
+			'paged'          => $paged,
 			'tax_query'      => $tax_query,
 		];
 
@@ -55,15 +58,14 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 		}
 
 		// 输出
-		global $post;
-		$the_query = new WP_Query( $args );
+		$wizhi_query = new WP_Query( $args );
 
 		if ( $heading == false || empty( $tax ) ) {
 			echo '<div class="sep ui-list-' . $type . $tag . '">';
 			echo '<ul class="ui-list">';
 
-			while ( $the_query->have_posts() ) : $the_query->the_post();
-				echo wizhi_load_template_part( 'content', 'list' );
+			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
+				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 
 			echo '</ul>';
@@ -76,12 +78,14 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '</div>';
 			echo '<div class="ui-box-container"><div class="ui-box-content"><ul class="ui-list ui-list-' . $tag . '">';
 
-			while ( $the_query->have_posts() ) : $the_query->the_post();
-				echo wizhi_load_template_part( 'content', 'list' );
+			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
+				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 
 			echo '</ul></div></div></div>';
 		}
+
+		wizhi_pagination( $wizhi_query );
 
 		wp_reset_postdata();
 		wp_reset_query();

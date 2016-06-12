@@ -12,16 +12,18 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [title_list type="home" tax="home_tag" tag="yxdt" num="6" heading="false"]
+	 * @usage [media type="post" tax="category" tag="default" num="6" heading="false", pager="0" tmp="list"]
 	 */
 	function wizhi_shortcode_media( $atts ) {
+
 		$default = [
 			'type'    => 'post',
 			'tax'     => 'category',
 			'tag'     => 'default',
 			'num'     => '4',
-			'paged'   => '1',
 			'heading' => true,
+			'pager'   => false,
+			'tmp'     => 'media',
 		];
 
 		extract( shortcode_atts( $default, $atts ) );
@@ -59,17 +61,18 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 		}
 
 		// 输出
-		global $post;
-		$wp_query = new WP_Query( $args );
+		$wizhi_query = new WP_Query( $args );
 
 		if ( $heading == false || empty( $tax ) ) {
+
 			echo '<div class="sep medias media-' . $type . $tag . '">';
-			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				echo wizhi_load_template_part( 'content', 'media' );
+			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
+				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 			echo '</div>';
 
 		} else {
+
 			echo '<div class="sep ui-box ' . $type . $tag . '">';
 			echo '<div class="ui-box-head">';
 			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
@@ -80,8 +83,8 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 			echo '<div class="medias media-' . $tag . '">';
 
-			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				echo wizhi_load_template_part( 'content', 'media' );
+			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
+				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 
 			echo '</div>';
@@ -91,6 +94,8 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 			echo '</div>';
 
 		}
+
+		wizhi_pagination( $wizhi_query );
 
 		wp_reset_postdata();
 		wp_reset_query();
