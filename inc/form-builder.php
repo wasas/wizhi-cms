@@ -162,8 +162,9 @@ class WizhiFormBuilder {
 
 		foreach ( $fields as $field ) {
 
+			// 对于多选项, 排序默认数组中没有的, 以免设置默认值时出错
 			if ( $field[ 'type' ] == 'multi-checkbox' || $field[ 'type' ] == 'multi-select' || $field[ 'type' ] == 'multi-upload' ) {
-				$values[ $field[ 'name' ] ] = array_intersect( $values[ $field[ 'name' ] ], $field[ 'options' ] );
+				$values[ $field[ 'name' ] ] = array_flip( array_intersect_key( array_flip( $values[ $field[ 'name' ] ] ), $field[ 'options' ] ) );
 			}
 
 			switch ( $field[ 'type' ] ) {
