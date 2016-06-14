@@ -162,6 +162,10 @@ class WizhiFormBuilder {
 
 		foreach ( $fields as $field ) {
 
+			if ( $field[ 'type' ] == 'multi-checkbox' || $field[ 'type' ] == 'multi-select' || $field[ 'type' ] == 'multi-upload' ) {
+				$values[ $field[ 'name' ] ] = array_intersect( $values[ $field[ 'name' ] ], $field[ 'options' ] );
+			}
+
 			switch ( $field[ 'type' ] ) {
 				case 'group':
 					$form->addGroup( $field[ 'label' ] )
@@ -190,7 +194,7 @@ class WizhiFormBuilder {
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
 
-				case 'checkbox-list':
+				case 'multi-checkbox':
 					$form->addCheckboxList( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;

@@ -4,7 +4,7 @@ $post_types = wizhi_post_types();
 
 $fields = [
 	[
-		'type'    => 'checkbox-list',
+		'type'    => 'multi-checkbox',
 		'name'    => 'enabled_post_types',
 		'label'   => __( 'Enable content types', 'wizhi' ),
 		'options' => $post_types,

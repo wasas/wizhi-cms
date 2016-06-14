@@ -1,19 +1,3 @@
-// @codekit-append "_editor-add-post-element.js";
-// @codekit-append "_editor-start.js";
-// @codekit-append "_editor-core.js";
-// @codekit-append "_editor-toolbars.js";
-// @codekit-append "_editor-toolbar-actions.js";
-// @codekit-append "_editor-columns.js";
-// @codekit-append "_editor-column-actions.js";
-// @codekit-append "_editor-modal.js";
-// @codekit-append "_editor-jetpack.js";
-
-// Backward Compatibility: WP 4.1
-// @codekit-append "backward-compatibility/4.1/_editor-toolbars.js"
-
-// @codekit-append "_editor-end.js";
-// @codekit-append "_util.js";
-
 /**
  * Click handler for the "Add Post Element" button. Basically we open the WP Media Manager then activate the shortcake state
  */
@@ -28,7 +12,7 @@ jQuery(document).ready(function ($) {
 (function () {
 
     /**
-     * Add the button
+     * 添加按钮
      */
     tinyMCE.PluginManager.add('wizhi', function (editor, url) {
         var $ = jQuery;
@@ -37,7 +21,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Destroys all the sortables
+         * 破坏所有排序
          */
         function preUpdateSortable(editor) {
             var $ = jQuery;
@@ -50,7 +34,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Cancel sortable
+         * 取消排序
          */
         function cancelSortable(editor) {
             var $ = jQuery;
@@ -63,7 +47,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Sortable start handler
+         * 排序开始处理
          */
         function sortStartHandler(editor) {
             var editorBody = jQuery(editor.getBody());
@@ -78,7 +62,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Sortable end handler
+         * 排序结束处理
          */
         function sortEndHandler(editor) {
             var $ = jQuery;
@@ -230,7 +214,7 @@ jQuery(document).ready(function ($) {
         }
 
         /**
-         * Create sortables
+         * 创建排序
          */
         function updateSortable(editor) {
             var $ = jQuery;
@@ -1237,7 +1221,8 @@ jQuery(document).ready(function ($) {
             editor.insertContent(_wizhi_columns_formTable(columnConfig, editor.selection.getContent()));
             updateSortable(editor);
             fixTableParagraphs(editor);
-        }
+        };
+
         editor.addButton('wizhi_column', {
             title: wizhi_column.modal_title,
             icon: 'wp_tagcloud',
@@ -1665,7 +1650,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Column remove area/column toolbar button
+         * 分栏删除按钮
          */
         editor.on('toolbar-column-remove-area', function (e) {
             var $ = jQuery;
@@ -1755,7 +1740,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Column clone area/column toolbar button
+         * 分栏复制按钮
          */
         editor.on('toolbar-column-clone-area', function (e) {
             var $ = jQuery;
@@ -1892,7 +1877,7 @@ jQuery(document).ready(function ($) {
 
 
         /**
-         * Renders the edit column modal
+         * 渲染编辑分栏模态窗口
          */
         editor.on('toolbar-column-edit-row', function (e) {
             var $ = jQuery;
@@ -2068,8 +2053,9 @@ jQuery(document).ready(function ($) {
             $(e.target).removeClass('pbs-align-left pbs-align-center pbs-align-right');
         });
 
+
         /**
-         * Creates tabs for modal windows
+         * 添加标签页到模态窗口
          */
         editor.on('pre-modal-create-tabs', function (e) {
             var $ = jQuery;
@@ -2233,14 +2219,14 @@ jQuery(document).ready(function ($) {
 
 
                 /**
-                 * Add the clone button in image toolbars
+                 * 添加复制按钮到图片工具条上
                  */
                 $(editor.getBody()).on('mousedown', function (e) {
                     if (!$(e.target).is('img.alignleft, img.alignright, img.aligncenter, img.alignnone')) {
                         return;
                     }
 
-                    // Add the toolbar buttons
+                    // 添加工具条按钮
                     if (typeof wizhi_column.toolbar_buttons !== 'undefined') {
                         $.each(wizhi_column.toolbar_buttons, function (i, button) {
 

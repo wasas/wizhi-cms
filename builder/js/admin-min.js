@@ -1,19 +1,7 @@
 jQuery(document).ready(function ($) {
 
     /**
-     * Jetpack Contact Form
-     * replace Shortcake's UI with Jetpack's own UI for the contact form shortcode
-     */
-    $('body').on('mousedown', '.media-frame [data-shortcode="contact-form"]', function (e) {
-        e.preventDefault();
-        wp.media.frame.close();
-        $('#insert-jetpack-contact-form').trigger('click');
-        return false;
-    });
-
-
-    /**
-     * Tabs
+     * 选项卡
      */
     $('body').on('click', '.wizhi_modal_tab[data-for]', function () {
         var modal = $(this).parents('.mce-container:eq(0)');
@@ -28,12 +16,6 @@ jQuery(document).ready(function ($) {
     // Change the data-shortcode to remove the click handler
     $('body').on('hover', '.shortcode-list-item[data-shortcode="wizhi_get_more_shortcodes"]', function (e) {
         $(this).attr('data-shortcode', '__wizhi_get_more_shortcodes');
-    });
-
-    // Open our extensions link when it's clicked
-    $('body').on('click', '.shortcode-list-item[data-shortcode="__wizhi_get_more_shortcodes"]', function (e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
     });
 
 });
