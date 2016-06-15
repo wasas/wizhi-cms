@@ -10,13 +10,12 @@ $fields = [
 		'name'    => 'urlstext',
 		'label'   => '表单组',
 		'size'    => '80',
-		'options' => [
+		'fields' => [
 			[
 				'type'        => 'text',
 				'name'        => 'uname',
 				'label'       => ' 姓名',
 				'size'        => '80',
-				'default'     => '请输入文本',
 				'placeholder' => '输入文本, 明天更美好',
 			],
 			[
@@ -24,7 +23,6 @@ $fields = [
 				'name'        => 'email',
 				'label'       => '邮件',
 				'size'        => '80',
-				'default'     => '请输入文本',
 				'placeholder' => '输入文本, 明天更美好',
 			],
 		],
@@ -32,9 +30,80 @@ $fields = [
 	[
 		'type'        => 'text',
 		'name'        => 'urls',
-		'label'       => '表单',
+		'label'       => '文本',
 		'size'        => '80',
-		'default'     => '请输入文本',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'email',
+		'name'        => 'urls_email',
+		'label'       => '邮件',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'url',
+		'name'        => 'urls_url',
+		'label'       => '网址',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],[
+		'type'        => 'number',
+		'name'        => 'urls_number',
+		'label'       => '数字',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'date',
+		'name'        => 'urls_date',
+		'label'       => '日期',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'month',
+		'name'        => 'urls_month',
+		'label'       => '月份',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'week',
+		'name'        => 'urls_week',
+		'label'       => '周数',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+
+	[
+		'type'        => 'time',
+		'name'        => 'urls_time',
+		'label'       => '时间',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+
+	[
+		'type'        => 'datetime-local',
+		'name'        => 'urls_datetime',
+		'label'       => '本地时间日期',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+
+	[
+		'type'        => 'search',
+		'name'        => 'urls_search',
+		'label'       => '搜索',
+		'size'        => '80',
+		'placeholder' => '输入文本, 明天更美好',
+	],
+	[
+		'type'        => 'color',
+		'name'        => 'urls_color',
+		'label'       => '颜色',
+		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
 	[
@@ -42,7 +111,6 @@ $fields = [
 		'name'        => 'ups',
 		'label'       => '上传文件',
 		'size'        => '80',
-		'default'     => '请输入文本',
 		'placeholder' => '输入文本, 明天更美好',
 	],
 	[
@@ -50,7 +118,6 @@ $fields = [
 		'name'        => 'text',
 		'label'       => '文本',
 		'size'        => '80',
-		'default'     => '请输入文本',
 		'placeholder' => '输入文本, 明天更美好',
 		'attr'        => [
 			'rows' => 5,
@@ -97,7 +164,6 @@ $fields2 = [
 		'name'        => 'url',
 		'label'       => '表单',
 		'size'        => '80',
-		'default'     => '请输入文本',
 		'placeholder' => '输入文本, 明天更美好',
 	],
 	[
@@ -105,7 +171,6 @@ $fields2 = [
 		'name'        => 'text',
 		'label'       => '文本',
 		'size'        => '80',
-		'default'     => '请输入文本',
 		'placeholder' => '输入文本, 明天更美好',
 		'attr'        => [
 			'rows' => 5,
@@ -136,7 +201,7 @@ $args_post = [
 $args_term = [
 	'id'         => 'test',
 	'title'      => '测试盒子',
-	'taxonomies' => [ 'category', 'post_tag', 'prod_cat' ],
+	'taxonomies' => [ 'category', 'post_tag', 'product_cat' ],
 ];
 
 $args_widget = [

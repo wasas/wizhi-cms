@@ -180,21 +180,34 @@ class WizhiFormBuilder {
 				case 'container':
 					$container = $form->addContainer( $field[ 'name' ] );
 
-					foreach ( $field[ 'options' ] as $option ) {
-						$container->addText( $option[ 'name' ], $option[ 'label' ] )
-						          ->setDefaultValue( $values[ $field[ 'name' ] ]->$option[ 'name' ] );
+					foreach ( $field[ 'fields' ] as $fld ) {
+						$container->addText( $fld[ 'name' ], $fld[ 'label' ] )
+						          ->setDefaultValue( $values[ $field[ 'name' ] ]->$fld[ 'name' ] );
 					}
 
 					break;
 
 				case 'text':
-					$form->addText( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setAttribute( 'placeholder', $field[ 'placeholder' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] )
-					     ->setOption( 'description', Html::el()
-					                                     ->setHtml( '<a class="add-row button" href="#">添加</a> <a class="button remove-row" href="#">删除</a>' ) );
+				case 'email':
+				case 'url':
+				case 'number':
+				case 'date':
+				case 'month':
+				case 'week':
+				case 'time':
+				case 'datetime-local':
+				case 'search':
+				case 'color':
+					$html = $form->addText( $field[ 'name' ], $field[ 'label' ] )
+					             ->setType( $field[ 'type' ] )
+					             ->setAttribute( 'size', $field[ 'size' ] )
+					             ->setAttribute( 'placeholder', $field[ 'placeholder' ] )
+					             ->setDefaultValue( $values[ $field[ 'name' ] ] );
 
+					if ( $field[ 'clone' ] ) {
+						$html->setOption( 'description', Html::el()
+						                                     ->setHtml( '<a class="add-row button" href="#">添加</a> <a class="button remove-row" href="#">删除</a>' ) );
+					}
 
 					break;
 
