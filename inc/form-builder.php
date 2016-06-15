@@ -1,6 +1,7 @@
 <?php
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 use Nette\Forms\Form;
+use Nette\Utils\Html;
 
 
 /**
@@ -152,7 +153,7 @@ class WizhiFormBuilder {
 		}
 
 		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
-		$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
+		$renderer->wrappers[ 'control' ][ 'container' ] = 'td class="repeatable-fieldset"';
 
 		$fields = $this->fields;
 		$values = $this->values();
@@ -171,13 +172,30 @@ class WizhiFormBuilder {
 				case 'group':
 					$form->addGroup( $field[ 'label' ] )
 					     ->setOption( 'embedNext', true );
+
+					break;
+
+
+				// container 里面也会有各种各样的表单类型, 怎么渲染, 基本表单类型单独提取为一个方法?
+				case 'container':
+					$container = $form->addContainer( $field[ 'name' ] );
+
+					foreach ( $field[ 'options' ] as $option ) {
+						$container->addText( $option[ 'name' ], $option[ 'label' ] )
+						          ->setDefaultValue( $values[ $field[ 'name' ] ]->$option[ 'name' ] );
+					}
+
 					break;
 
 				case 'text':
 					$form->addText( $field[ 'name' ], $field[ 'label' ] )
 					     ->setAttribute( 'size', $field[ 'size' ] )
 					     ->setAttribute( 'placeholder', $field[ 'placeholder' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					     ->setDefaultValue( $values[ $field[ 'name' ] ] )
+					     ->setOption( 'description', Html::el()
+					                                     ->setHtml( '<a class="add-row button" href="#">添加</a> <a class="button remove-row" href="#">删除</a>' ) );
+
+
 					break;
 
 				case 'textarea':
@@ -220,8 +238,12 @@ class WizhiFormBuilder {
 					     ->setAttribute( 'size', $field[ 'size' ] )
 					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
 					break;
+
 				case 'upload':
-					$form->addUpload( $field[ 'name' ], $field[ 'label' ] );
+					$form->addText( $field[ 'name' ], $field[ 'label' ] )
+					     ->setDefaultValue( $values[ $field[ 'name' ] ] )
+					     ->setOption( 'description', Html::el()
+					                                     ->setHtml( '<a class="wizhi_upload_button button" href="#">选择</a>' ) );
 					break;
 
 				case 'multi-upload':
@@ -324,6 +346,7 @@ class WizhiFormBuilder {
 				if ( $field[ 'type' ] != 'group' ) {
 
 					switch ( $form_type ) {
+
 						case 'option':
 							update_option( $field[ 'name' ], $values->$field[ 'name' ] );
 							break;
