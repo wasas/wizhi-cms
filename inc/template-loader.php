@@ -54,6 +54,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 		$templates_in_plugin = [ ];
 		$templates_in_theme  = [ ];
 
+
 		foreach (
 			Finder::findFiles( '*.php' )
 			      ->in( $template_in_plugin ) as $key => $file
@@ -64,14 +65,16 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
 		}
 
-		foreach (
-			Finder::findFiles( '*.php' )
-			      ->in( $template_in_theme ) as $key => $file
-		) {
-			$filename                                         = $file->getFilename();
-			$file_name_array                                  = explode( '-', $filename );
-			$name                                             = $file_name_array[ 1 ];
-			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+		if ( file_exists( $template_in_theme ) ) {
+			foreach (
+				Finder::findFiles( '*.php' )
+				      ->in( $template_in_theme ) as $key => $file
+			) {
+				$filename                                         = $file->getFilename();
+				$file_name_array                                  = explode( '-', $filename );
+				$name                                             = $file_name_array[ 1 ];
+				$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+			}
 		}
 
 		$templates = wp_parse_args( $templates_in_theme, $templates_in_plugin );
