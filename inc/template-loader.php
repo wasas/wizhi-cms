@@ -1,7 +1,7 @@
 <?php
 
 use Nette\Utils\Finder;
-
+use Nette\Utils\Arrays;
 
 if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	/**
@@ -54,14 +54,13 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 		$templates_in_plugin = [ ];
 		$templates_in_theme  = [ ];
 
-
 		foreach (
 			Finder::findFiles( '*.php' )
 			      ->in( $template_in_plugin ) as $key => $file
 		) {
 			$filename                                         = $file->getFilename();
 			$file_name_array                                  = explode( '-', $filename );
-			$name                                             = $file_name_array[ 1 ];
+			$name                                             = Arrays::get($file_name_array, 1, 'None');;
 			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
 		}
 
@@ -72,7 +71,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 			) {
 				$filename                                         = $file->getFilename();
 				$file_name_array                                  = explode( '-', $filename );
-				$name                                             = $file_name_array[ 1 ];
+				$name                                             = Arrays::get($file_name_array, 1, 'None');;
 				$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
 			}
 		}

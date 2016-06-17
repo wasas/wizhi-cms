@@ -1,0 +1,44 @@
+{
+  "types": {
+    "title": "文章类型/分类法",
+    "sub": {
+      "types": {
+        "title": "文章类型"
+      },
+      "taxonomy": {
+        "title": "分类方法"
+      }
+    }
+  },
+  "form": {
+    "title": "表单构建类",
+    "sub": {
+      "forms/form": {
+        "title": "设置选项构建类"
+      },
+      "forms/option": {
+        "title": "设置选项"
+      },
+      "forms/post-meta": {
+        "title": "文章元数据"
+      },
+      "forms/term-meta": {
+        "title": "分类法元数据"
+      },
+      "forms/user-meta": {
+        "title": "用户元数据"
+      }
+    }
+  },
+  "shortcode": {
+    "title": "简码",
+    "sub": {
+      "shortcodes/page": {
+        "title": "页面内容"
+      },
+      "shortcodes/loop": {
+        "title": "文章循环"
+      }
+    }
+  }
+}

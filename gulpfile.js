@@ -25,7 +25,7 @@ gulp.task('harp', shell.task(['harp compile docs', 'gulp copy']));
  * 编译所有资源
  */
 gulp.task('build', function (callback) {
-    runSequence('harp', 'copy', callback);
+    runSequence('harp', callback);
 });
 
 /**

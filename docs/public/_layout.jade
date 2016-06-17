@@ -2,39 +2,74 @@ doctype
 html
     head
         title #{ title }
-        link(rel="stylesheet" href="#{ uri }/dist/styles/main.css")
+        link(rel="stylesheet" href="#{ uri }/style.css")
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        script(src="#{ uri }/dist/scripts/jquery.js")
-        script(src="#{ uri }/dist/scripts/main.js")
 
         style.
-          .wrap{ width: 1200px; }
+            .wrap {
+                width: 1200px;
+            }
 
     body#main(data-spy="scroll", data-target="#nav")
 
-        header.demo-header.sep
-            .wrap
-                h1 Wizhi CMS WordPress 开发插件文档
-                h3 Wizhi CMS 是一个帮助我们加快开发速度的 WordPress 插件
+        header#header.wrapper
+            #header-inner.inner
+                h1#logo-wrap
+                    a#logo(href='/wizhi-cms/') Wizhi CMS
+                nav#main-nav
+                    a.main-nav-link(href='/wizhi-cms/docs/') 文档
+                    a.main-nav-link(href='https://github.com/iwillhappy1314/wizhi-cms') 代码
+                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/wizhi-ui') UI
+                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/front') 前端工具
+                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/enter') 主题
+                    a.main-nav-link(target='_blank', href='https://www.wpzhiku.com/') 我站
+
 
         block content
 
-            .wrap
-                .pure-g.row
-                    #sidebar.pure-u-1.pure-u-md-1-5.pure-hide-md
-                        .col
-                            ul.list
-                                for article, slug in public.ui._data
-                                    li
-                                        a(href="#{ uri }/ui/#{ slug }.html")
-                                            span= article.title
+            #content-wrap
+                #content.wrapper
+                    #content-inner
+                        article.article-container(itemscope='', itemtype='http://schema.org/Article')
+                            .article-inner
+                                .article
+                                    .inner
+                                        header.article-header
+                                            span #{ title }
+                                        .article-content(itemprop='articleBody')
+                                            != yield
 
-                    #primary.pure-u-1.pure-u-md-4-5
-                        .col.typo
-                            != yield
+                                        #disqus_thread
+                                            script.
+                                                (function () {
+                                                    var d = document, s = d.createElement('script');
+                                                    s.src = '//wizhicms.disqus.com/embed.js';
+                                                    s.setAttribute('data-timestamp', +new Date());
+                                                    (d.head || d.body).appendChild(s);
+                                                })();
 
 
+                        aside#sidebar(role='navigation')
+                            .inner
+                                for menu, slug in public.docs._data
+                                    strong.sidebar-title
+                                        span= menu.title
+                                    for m, slug in menu.sub
+                                        a.sidebar-link(href="#{ uri }/docs/#{ slug }.html")
+                                            span= m.title
 
-        footer.demo-footer
-            .wrap.text-center.text--cap
-                p CopyRight 2016 wpzhiku
+
+        footer#footer
+            .wrapper
+                .inner
+                    #footer-copyright
+                        | © 2016
+                        a(href='https://www.wpzhiku.com/', target='_blank') WordPress 智库
+                        br
+                        | Live in China, WordPress Developer
+                    #footer-links
+                        a.footer-link(href='https://github.com/iwillhappy1314', target='_blank') Profile
+                        a.footer-link(href='https://github.com/iwillhappy1314/wizhi-cms', target='_blank') Github
+
+
+        script#dsq-count-scr(src='//wizhicms.disqus.com/count.js', async='')

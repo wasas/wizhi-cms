@@ -1,15 +1,30 @@
-<?php
+## WizhiFormBuilder 类
 
+这是一个比较底层的类, 用来为文章、用户、分类项目等自定义字段提供支持, 当然也可以直接使用这个类。
+
+WizhiFormBuilder 支持4个参数
+
+- $form_type: 字符串、表单类型, 可能的值为: post_meta、option、term_meta、user_meta
+- $fields: 数组, 具体参考下方的示例
+- $id: 如果表单类型是post_meta、term_meta 或 user_meta, 需要传入一个数据 ID 才能正确保存和读取数据, 根据数据类型的不同, 这个 ID 也不同
+- $args: 数组, 附加参数, 构建各种不同的表单所需的附加参数, 具体在各种表单构建类中介绍
+
+
+## `$fields` 表单数组示例
+
+插件还在积极开发中, 目前没有太多时间写详细的文档, 直接用一个数组演示各种表单类型的添加方法。
+
+```php
 $fields = [
 	[
 		'type'  => 'group',
 		'label' => '群组1',
 	],
 	[
-		'type'   => 'container',
-		'name'   => 'urlstext',
-		'label'  => '表单组',
-		'size'   => '80',
+		'type'    => 'container',
+		'name'    => 'urlstext',
+		'label'   => '表单组',
+		'size'    => '80',
 		'fields' => [
 			[
 				'type'        => 'text',
@@ -47,8 +62,7 @@ $fields = [
 		'label'       => '网址',
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
-	],
-	[
+	],[
 		'type'        => 'number',
 		'name'        => 'urls_number',
 		'label'       => '数字',
@@ -76,7 +90,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'time',
 		'name'        => 'urls_time',
@@ -84,7 +97,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'datetime-local',
 		'name'        => 'urls_datetime',
@@ -92,7 +104,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'search',
 		'name'        => 'urls_search',
@@ -140,16 +151,6 @@ $fields = [
 		],
 	],
 	[
-		'type'    => 'radio',
-		'name'    => 'checkbox1',
-		'label'   => '文本',
-		'size'    => '80',
-		'options' => [
-			'1' => '老大',
-			'2' => '老二',
-		],
-	],
-	[
 		'type'  => 'group',
 		'label' => '群组3',
 	],
@@ -168,60 +169,4 @@ $fields = [
 		'options' => wizhi_get_image_sizes(),
 	],
 ];
-
-$fields2 = [
-	[
-		'type'        => 'text',
-		'name'        => 'url',
-		'label'       => '表单',
-		'size'        => '80',
-		'placeholder' => '输入文本, 明天更美好',
-	],
-	[
-		'type'        => 'textarea',
-		'name'        => 'text',
-		'label'       => '文本',
-		'size'        => '80',
-		'placeholder' => '输入文本, 明天更美好',
-		'attr'        => [
-			'rows' => 5,
-			'cols' => 50,
-		],
-	],
-	[
-		'type'    => 'checkbox',
-		'name'    => 'checkbox',
-		'label'   => '文本',
-		'size'    => '80',
-		'options' => [
-			'1' => '老大',
-			'2' => '老二',
-		],
-	],
-];
-
-
-$args_post = [
-	'post_type' => [ 'post', 'page' ],
-	'context'   => 'normal',
-	'priority'  => 'high',
-];
-
-$args_term = [
-	'id'         => 'test',
-	'title'      => '测试盒子',
-	'taxonomies' => [ 'category', 'post_tag', 'prod_cat' ],
-];
-
-$args_widget = [
-	'slug'  => 'test1',
-	'title' => '测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子',
-	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
-];
-
-
-new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
-
-new WizhiTermMetabox( $fields, $args_term );
-
-new WizhiUserMetabox( $fields );
+```

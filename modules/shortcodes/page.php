@@ -8,7 +8,7 @@ if ( ! function_exists( 'wizhi_shortcode_content' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [page_cont id="1" count="200" thumbs="thumbnail" more="true"]
+	 * @usage [content id="1" count="200" thumbs="thumbnail" more="true"]
 	 */
 	function wizhi_shortcode_content( $atts ) {
 		$default = [

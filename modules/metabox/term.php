@@ -5,8 +5,8 @@ $fields = [
 		'type'    => 'select',
 		'name'    => '_term_template',
 		'label'   => __( 'Loop template', 'wizhi' ),
-		'size'    => '80',
 		'options' => wizhi_get_loop_template(),
+		'default' => 'list',
 	],
 	[
 		'type'    => 'text',

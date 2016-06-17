@@ -1,15 +1,25 @@
-<?php
+## 快速添加用户字段
 
+### 为什么要使用文章类型和分类法
+
+- 每种类型的文章都会有不同的字段，使用文档类型区分开，上传的时候问题比较少。
+- 显示子菜单的时候比较方便
+
+### 字段类型数组示例
+
+插件还在积极开发中, 目前没有太多时间写详细的文档, 直接用一个数组演示各种表单类型的添加方法。
+
+```php
 $fields = [
 	[
 		'type'  => 'group',
 		'label' => '群组1',
 	],
 	[
-		'type'   => 'container',
-		'name'   => 'urlstext',
-		'label'  => '表单组',
-		'size'   => '80',
+		'type'    => 'container',
+		'name'    => 'urlstext',
+		'label'   => '表单组',
+		'size'    => '80',
 		'fields' => [
 			[
 				'type'        => 'text',
@@ -47,8 +57,7 @@ $fields = [
 		'label'       => '网址',
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
-	],
-	[
+	],[
 		'type'        => 'number',
 		'name'        => 'urls_number',
 		'label'       => '数字',
@@ -76,7 +85,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'time',
 		'name'        => 'urls_time',
@@ -84,7 +92,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'datetime-local',
 		'name'        => 'urls_datetime',
@@ -92,7 +99,6 @@ $fields = [
 		'size'        => '80',
 		'placeholder' => '输入文本, 明天更美好',
 	],
-
 	[
 		'type'        => 'search',
 		'name'        => 'urls_search',
@@ -140,16 +146,6 @@ $fields = [
 		],
 	],
 	[
-		'type'    => 'radio',
-		'name'    => 'checkbox1',
-		'label'   => '文本',
-		'size'    => '80',
-		'options' => [
-			'1' => '老大',
-			'2' => '老二',
-		],
-	],
-	[
 		'type'  => 'group',
 		'label' => '群组3',
 	],
@@ -168,60 +164,4 @@ $fields = [
 		'options' => wizhi_get_image_sizes(),
 	],
 ];
-
-$fields2 = [
-	[
-		'type'        => 'text',
-		'name'        => 'url',
-		'label'       => '表单',
-		'size'        => '80',
-		'placeholder' => '输入文本, 明天更美好',
-	],
-	[
-		'type'        => 'textarea',
-		'name'        => 'text',
-		'label'       => '文本',
-		'size'        => '80',
-		'placeholder' => '输入文本, 明天更美好',
-		'attr'        => [
-			'rows' => 5,
-			'cols' => 50,
-		],
-	],
-	[
-		'type'    => 'checkbox',
-		'name'    => 'checkbox',
-		'label'   => '文本',
-		'size'    => '80',
-		'options' => [
-			'1' => '老大',
-			'2' => '老二',
-		],
-	],
-];
-
-
-$args_post = [
-	'post_type' => [ 'post', 'page' ],
-	'context'   => 'normal',
-	'priority'  => 'high',
-];
-
-$args_term = [
-	'id'         => 'test',
-	'title'      => '测试盒子',
-	'taxonomies' => [ 'category', 'post_tag', 'prod_cat' ],
-];
-
-$args_widget = [
-	'slug'  => 'test1',
-	'title' => '测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子',
-	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
-];
-
-
-new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
-
-new WizhiTermMetabox( $fields, $args_term );
-
-new WizhiUserMetabox( $fields );
+```

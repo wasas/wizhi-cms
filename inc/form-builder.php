@@ -1,6 +1,7 @@
 <?php
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 use Nette\Forms\Form;
+use Nette\Utils\Arrays;
 use Nette\Utils\Html;
 
 
@@ -87,29 +88,32 @@ class WizhiFormBuilder {
 
 		foreach ( $fields as $field ) {
 
+			$name    = Arrays::get( $field, 'name', false );
+			$default = Arrays::get( $field, 'default', false );
+
 			switch ( $form_type ) {
 				case 'option':
-					$values[ $field[ 'name' ] ] = get_option( $field[ 'name' ], $field[ 'default' ] );
+					$values[ $name ] = get_option( $name, $default );
 					break;
 
 				case 'post_meta':
-					$value                      = get_post_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					$value           = get_post_meta( $id, $name, true );
+					$values[ $name ] = ( $value ) ? $value : $default;
 					break;
 
 				case 'user_meta':
-					$value                      = get_user_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					$value           = get_user_meta( $id, $name, true );
+					$values[ $name ] = ( $value ) ? $value : $default;
 					break;
 
 				case 'term_meta':
-					$value                      = get_term_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					$value           = get_term_meta( $id, $name, true );
+					$values[ $name ] = ( $value ) ? $value : $default;
 					break;
 
 				default:
-					$value                      = get_post_meta( $id, $field[ 'name' ], true );
-					$values[ $field[ 'name' ] ] = ( $value ) ? $value : $field[ 'default' ];
+					$value           = get_post_meta( $id, $name, true );
+					$values[ $name ] = ( $value ) ? $value : $default;
 			}
 
 		}
@@ -158,31 +162,56 @@ class WizhiFormBuilder {
 		$fields = $this->fields;
 		$values = $this->values();
 
+
 		$form->addHidden( 'wizhi_nonce' )
 		     ->setDefaultValue( wp_create_nonce( 'wizhi_nonce' ) );
 
 		foreach ( $fields as $field ) {
 
+			// 表单属性数据
+			$size = Arrays::get( $field, 'size', false );
+
+			$type  = Arrays::get( $field, 'type', false );
+			$name  = Arrays::get( $field, 'name', false );
+			$label = Arrays::get( $field, 'label', false );
+
+			$rows        = Arrays::get( $field, [ 'attr', 'rows' ], 3 );
+			$cols        = Arrays::get( $field, [ 'attr', 'cols' ], 50 );
+			$placeholder = Arrays::get( $field, 'placeholder', false );
+
+			$options = Arrays::get( $field, 'options', false );
+			$default = $values[ $name ];
+
 			// 对于多选项, 排序默认数组中没有的, 以免设置默认值时出错
-			if ( $field[ 'type' ] == 'multi-checkbox' || $field[ 'type' ] == 'multi-select' || $field[ 'type' ] == 'multi-upload' ) {
-				$values[ $field[ 'name' ] ] = array_flip( array_intersect_key( array_flip( $values[ $field[ 'name' ] ] ), $field[ 'options' ] ) );
+			if ( $type == 'multi-checkbox' || $type == 'multi-select' ) {
+				$default = array_flip( array_intersect_key( array_flip( $default ), $options ) );
 			}
 
-			switch ( $field[ 'type' ] ) {
+			if ( $type == 'select' || $type == 'radio' ) {
+				if ( ! $default ) {
+					$default = $options[ 0 ];
+				}
+			}
+
+			// 根据不同的表单类型为表单添加属性
+			switch ( $type ) {
 				case 'group':
-					$form->addGroup( $field[ 'label' ] )
+					$form->addGroup( $label )
 					     ->setOption( 'embedNext', true );
 
 					break;
 
-
 				// container 里面也会有各种各样的表单类型, 怎么渲染, 基本表单类型单独提取为一个方法?
 				case 'container':
-					$container = $form->addContainer( $field[ 'name' ] );
+					$container = $form->addContainer( $name );
 
 					foreach ( $field[ 'fields' ] as $fld ) {
-						$container->addText( $fld[ 'name' ], $fld[ 'label' ] )
-						          ->setDefaultValue( $values[ $field[ 'name' ] ]->$fld[ 'name' ] );
+						$fld_name  = Arrays::get( $fld, 'name', false );
+						$fld_label = Arrays::get( $fld, 'label', false );
+						$value     = Arrays::get( $values, $name, false );
+
+						$container->addText( $fld_name, $fld_label )
+						          ->setDefaultValue( $value->$fld_name );
 					}
 
 					break;
@@ -198,80 +227,88 @@ class WizhiFormBuilder {
 				case 'datetime-local':
 				case 'search':
 				case 'color':
-					$html = $form->addText( $field[ 'name' ], $field[ 'label' ] )
-					             ->setType( $field[ 'type' ] )
-					             ->setAttribute( 'size', $field[ 'size' ] )
-					             ->setAttribute( 'placeholder', $field[ 'placeholder' ] )
-					             ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$html = $form->addText( $name, $label )
+					             ->setType( $type )
+					             ->setAttribute( 'size', $size )
+					             ->setAttribute( 'placeholder', $placeholder )
+					             ->setDefaultValue( $default );
 
-					if ( $field[ 'clone' ] ) {
+					if ( isset( $field[ 'clone' ] ) ) {
 						$html->setOption( 'description', Html::el()
 						                                     ->setHtml( '<a class="add-row button" href="#">添加</a> <a class="button remove-row" href="#">删除</a>' ) );
 					}
 
 					break;
 
+
 				case 'textarea':
-					$form->addTextArea( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'rows', $field[ 'attr' ][ 'rows' ] )
-					     ->setAttribute( 'cols', $field[ 'attr' ][ 'cols' ] )
+					$form->addTextArea( $name, $label )
+					     ->setAttribute( 'rows', $rows )
+					     ->setAttribute( 'cols', $cols )
 					     ->setAttribute( 'class', 'large-text' )
-					     ->setAttribute( 'placeholder', $field[ 'placeholder' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					     ->setAttribute( 'placeholder', $placeholder )
+					     ->setDefaultValue( $default );
 					break;
 
-				case 'checkbox':
-					$form->addCheckbox( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
-					break;
-
-				case 'multi-checkbox':
-					$form->addCheckboxList( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
-					break;
 
 				case 'radio':
-					$form->addRadioList( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addRadioList( $name, $label, $options )
+					     ->setDefaultValue( $default );
 					break;
+
+
+				case 'checkbox':
+					$form->addCheckbox( $name, $label )
+					     ->setDefaultValue( $default );
+					break;
+
 
 				case 'select':
-					$form->addSelect( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addSelect( $name, $label, $options )
+					     ->setDefaultValue( $default );
 					break;
 
+
 				case 'multi-select':
-					$form->addMultiSelect( $field[ 'name' ], $field[ 'label' ], $field[ 'options' ] );
+					$form->addMultiSelect( $name, $label, $options )
+					     ->setDefaultValue( $default );
+					break;
+
+
+				case 'multi-checkbox':
+					$form->addCheckboxList( $name, $label, $options )
+					     ->setDefaultValue( $default );
 					break;
 
 				case 'password':
-					$form->addPassword( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addPassword( $name, $label )
+					     ->setAttribute( 'size', $size )
+					     ->setDefaultValue( $default );
 					break;
 
 				case 'upload':
-					$form->addText( $field[ 'name' ], $field[ 'label' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] )
+					$form->addText( $name, $label )
+					     ->setDefaultValue( $default )
 					     ->setOption( 'description', Html::el()
 					                                     ->setHtml( '<a class="wizhi_upload_button button" href="#">选择</a>' ) );
 					break;
 
+
 				case 'multi-upload':
-					$form->addMultiUpload( $field[ 'name' ], $field[ 'label' ] );
+					$form->addMultiUpload( $name, $label );
 					break;
+
 
 				case 'hidden':
-					$form->addHidden( $field[ 'name' ], $field[ 'label' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addHidden( $name, $label )
+					     ->setDefaultValue( $default );
 					break;
 
+
 				default:
-					$form->addText( $field[ 'name' ], $field[ 'label' ] )
-					     ->setAttribute( 'size', $field[ 'size' ] )
-					     ->setDefaultValue( $values[ $field[ 'name' ] ] );
+					$form->addText( $name, $label )
+					     ->setAttribute( 'size', $size )
+					     ->setDefaultValue( $default );
 					break;
 			}
 
