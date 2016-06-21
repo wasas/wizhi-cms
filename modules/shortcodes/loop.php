@@ -14,12 +14,12 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 	function wizhi_shortcode_loop( $atts ) {
 
 		$default = [
-			'type'   => 'post',
-			'tax'    => 'category',
-			'tag'    => 'default',
-			'num'    => 8,
-			'pager'  => false,
-			'tmp'    => 'lists'
+			'type'  => 'post',
+			'tax'   => 'category',
+			'tag'   => 'default',
+			'num'   => 8,
+			'pager' => false,
+			'tmp'   => 'lists',
 		];
 
 		extract( shortcode_atts( $default, $atts ) );
@@ -37,6 +37,12 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 			];
 		}
 
+		if ( $pager ) {
+			$no_found_rows = false;
+		} else {
+			$no_found_rows = true;
+		}
+
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 		// 构建文章查询数组
@@ -47,6 +53,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 			'posts_per_page' => $num,
 			'paged'          => $paged,
 			'tax_query'      => $tax_query,
+			'no_found_rows'  => $no_found_rows,
 		];
 
 		// 输出
@@ -56,7 +63,9 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 			echo wizhi_load_template_part( 'content', $tmp );
 		endwhile;
 
-		wizhi_pagination( $wizhi_query );
+		if ( $pager ) {
+			wizhi_pagination( $wizhi_query );
+		}
 
 		wp_reset_postdata();
 		wp_reset_query();

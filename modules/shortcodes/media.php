@@ -43,6 +43,12 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
+		if ( $pager ) {
+			$no_found_rows = false;
+		} else {
+			$no_found_rows = true;
+		}
+
 		// 根据分类别名获取分类ID
 		$args = [
 			'post_type'      => $type,
@@ -51,6 +57,7 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 			'posts_per_page' => $num,
 			'paged'          => $paged,
 			'tax_query'      => $tax_query,
+			'no_found_rows'  => $no_found_rows,
 		];
 
 		$cat = get_term_by( 'slug', $tag, $tax );
@@ -95,7 +102,9 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 		}
 
-		wizhi_pagination( $wizhi_query );
+		if ( $pager ) {
+			wizhi_pagination( $wizhi_query );
+		}
 
 		wp_reset_postdata();
 		wp_reset_query();

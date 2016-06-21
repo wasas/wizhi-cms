@@ -19,7 +19,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			'num'     => 8,
 			'heading' => true,
 			'pager'   => false,
-			'tmp'     => 'list'
+			'tmp'     => 'list',
 		];
 
 		extract( shortcode_atts( $default, $atts ) );
@@ -39,6 +39,12 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
+		if ( $pager ) {
+			$no_found_rows = false;
+		} else {
+			$no_found_rows = true;
+		}
+
 		// 构建文章查询数组
 		$args = [
 			'post_type'      => $type,
@@ -47,6 +53,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			'posts_per_page' => $num,
 			'paged'          => $paged,
 			'tax_query'      => $tax_query,
+			'no_found_rows'  => $no_found_rows,
 		];
 
 		// get term archive name and link
@@ -85,7 +92,9 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '</ul></div></div></div>';
 		}
 
-		wizhi_pagination( $wizhi_query );
+		if ( $pager ) {
+			wizhi_pagination( $wizhi_query );
+		}
 
 		wp_reset_postdata();
 		wp_reset_query();
