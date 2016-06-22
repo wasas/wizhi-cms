@@ -32,6 +32,7 @@ $fields = [
 		'name'        => 'urls',
 		'label'       => '文本',
 		'size'        => '80',
+		'desc'        => '表单文本描述',
 		'placeholder' => '输入文本, 明天更美好',
 	],
 	[

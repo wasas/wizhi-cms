@@ -144,16 +144,16 @@ class WizhiFormBuilder {
 			case 'term_meta':
 				if ( $screen->base == 'term' ) {
 					$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=form-field';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
 				} else {
 					$renderer->wrappers[ 'controls' ][ 'container' ] = '';
-					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class=form-field';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class=wizhi-form-filed';
 				}
 				break;
 
 			default:
 				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=form-field';
+				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
 		}
 
 		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
@@ -178,6 +178,7 @@ class WizhiFormBuilder {
 			$rows        = Arrays::get( $field, [ 'attr', 'rows' ], 3 );
 			$cols        = Arrays::get( $field, [ 'attr', 'cols' ], 50 );
 			$placeholder = Arrays::get( $field, 'placeholder', false );
+			$description = Arrays::get( $field, 'desc', false );
 
 			$options = Arrays::get( $field, 'options', false );
 			$default = $values[ $name ];
@@ -231,6 +232,7 @@ class WizhiFormBuilder {
 					             ->setType( $type )
 					             ->setAttribute( 'size', $size )
 					             ->setAttribute( 'placeholder', $placeholder )
+					             ->setOption( 'description', $description )
 					             ->setDefaultValue( $default );
 
 					if ( isset( $field[ 'clone' ] ) ) {
@@ -348,6 +350,8 @@ class WizhiFormBuilder {
 		$form = str_replace( '</form>', '', $form );
 		$form = str_replace( '</fieldset>', '', $form );
 		$form = str_replace( '</table>', '</table></fieldset>', $form );
+		$form = str_replace( '</table>', '</table></fieldset>', $form );
+		$form = str_replace( 'class="text"', 'class="regular-text"', $form );
 
 		echo $form;
 
