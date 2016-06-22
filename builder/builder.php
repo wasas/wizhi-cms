@@ -9,16 +9,6 @@ require_once( WIZHI_CMS . 'builder/lib/columns.php' );
 require_once( WIZHI_CMS . 'builder/lib/toolbar.php' );
 
 
-function load_custom_wp_admin_style() {
-	wp_enqueue_style( 'wizhi-admin', plugins_url( 'css/admin.css', __FILE__ ) );
-
-	wp_enqueue_script( 'jquery-ui-sortable' );
-	wp_enqueue_script( 'wizhi-admin', plugins_url( 'js/admin.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
-}
-
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
-
-
 /**
  * 可视化页面生成器
  */
