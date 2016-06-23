@@ -49,7 +49,9 @@ function wizhi_ui_font() {
  */
 function wizhi_ui_scripts() {
 	wp_register_script( 'wizhi-script', plugins_url( '../front/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
+	wp_register_script( 'wizhi-cms-script', plugins_url( '../admin/dist/scripts/front.js', __FILE__ ), [ 'jquery' ], '1.1', true );
 	wp_enqueue_script( 'wizhi-script' );
+	wp_enqueue_script( 'wizhi-cms-script' );
 }
 
 
