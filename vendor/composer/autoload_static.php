@@ -6,6 +6,20 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
 {
+    public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'TheFold\\WordPress\\' => 18,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'TheFold\\WordPress\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thefold/wordpress-dispatcher',
+        ),
+    );
+
     public static $classMap = array (
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Bridges\\FormsDI\\FormsExtension' => __DIR__ . '/..' . '/nette/forms/src/Bridges/FormsDI/FormsExtension.php',
@@ -77,6 +91,8 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
         'Nette\\NotSupportedException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Object' => __DIR__ . '/..' . '/nette/utils/src/Utils/Object.php',
         'Nette\\OutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
+        'Nette\\SmartObject' => __DIR__ . '/..' . '/nette/utils/src/Utils/SmartObject.php',
+        'Nette\\StaticClass' => __DIR__ . '/..' . '/nette/utils/src/Utils/StaticClass.php',
         'Nette\\StaticClassException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\UnexpectedValueException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\ArrayHash' => __DIR__ . '/..' . '/nette/utils/src/Utils/ArrayHash.php',
@@ -84,7 +100,6 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
         'Nette\\Utils\\Arrays' => __DIR__ . '/..' . '/nette/utils/src/Utils/Arrays.php',
         'Nette\\Utils\\AssertionException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Callback' => __DIR__ . '/..' . '/nette/utils/src/Utils/Callback.php',
-        'Nette\\Utils\\CallbackFilterIterator' => __DIR__ . '/..' . '/nette/finder/src/Finder/CallbackFilterIterator.php',
         'Nette\\Utils\\DateTime' => __DIR__ . '/..' . '/nette/utils/src/Utils/DateTime.php',
         'Nette\\Utils\\FileSystem' => __DIR__ . '/..' . '/nette/utils/src/Utils/FileSystem.php',
         'Nette\\Utils\\Finder' => __DIR__ . '/..' . '/nette/finder/src/Finder/Finder.php',
@@ -97,7 +112,6 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
         'Nette\\Utils\\ObjectMixin' => __DIR__ . '/..' . '/nette/utils/src/Utils/ObjectMixin.php',
         'Nette\\Utils\\Paginator' => __DIR__ . '/..' . '/nette/utils/src/Utils/Paginator.php',
         'Nette\\Utils\\Random' => __DIR__ . '/..' . '/nette/utils/src/Utils/Random.php',
-        'Nette\\Utils\\RecursiveCallbackFilterIterator' => __DIR__ . '/..' . '/nette/finder/src/Finder/RecursiveCallbackFilterIterator.php',
         'Nette\\Utils\\RegexpException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Strings' => __DIR__ . '/..' . '/nette/utils/src/Utils/Strings.php',
         'Nette\\Utils\\UnknownImageFileException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
@@ -107,6 +121,8 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$classMap;
 
         }, null, ClassLoader::class);

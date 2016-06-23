@@ -57,7 +57,7 @@ abstract class Object
 	 */
 	public static function getReflection()
 	{
-		$class = class_exists('Nette\Reflection\ClassType') ? 'Nette\Reflection\ClassType' : 'ReflectionClass';
+		$class = class_exists(Nette\Reflection\ClassType::class) ? Nette\Reflection\ClassType::class : 'ReflectionClass';
 		return new $class(get_called_class());
 	}
 
@@ -100,8 +100,7 @@ abstract class Object
 			$class = get_called_class();
 		} else {
 			list($class, $name) = explode('::', $name);
-			$rc = new \ReflectionClass($class);
-			$class = $rc->getName();
+			$class = (new \ReflectionClass($class))->getName();
 		}
 		if ($callback === NULL) {
 			return Nette\Utils\ObjectMixin::getExtensionMethod($class, $name);

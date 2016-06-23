@@ -18,4 +18,8 @@ Temporary Items
 .idea/
 .publish/
 node_modules/
+admin/node_modules/
+admin/bower_components/
 .idea/workspace.xml
+
+front/dist/.DS_Store
