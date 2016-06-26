@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "admin.js": {
+      "files": [
+        "scripts/admin/*.js",
+        "scripts/admin.js"
+      ],
+      "main": true
+    },
+    "front.js": {
+      "files": [
+        "scripts/front/*.js"
+      ]
+    },
+    "main.css": {
+      "files": [
+        "styles/admin.less"
+      ],
+      "main": true
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    }
+  },
+  "paths": {
+    "source": "assets/",
+    "dist": "dist/"
+  }
+}
