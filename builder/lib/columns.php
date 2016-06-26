@@ -4,6 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use Sunra\PhpSimple\HtmlDomParser as Dom;
+
 
 /**
  * 可视化页面生成器分栏
@@ -18,22 +20,25 @@ class WizhiVisualBuilderColumns {
 	 * WizhiVisualBuilderColumns constructor.
 	 */
 	function __construct() {
-		add_action( 'the_content', [ $this, 'cleanColumnOutput' ] );
-		add_action( 'admin_head', [ $this, 'addColumnButton' ] );
-		add_action( 'save_post', [ $this, 'rememberColumnStyles' ], 10, 3 );
 		add_action( 'wp_head', [ $this, 'renderColumnStyles' ] );
-		add_action( 'admin_footer', [ $this, 'addColumnTemplates' ] );
-		add_filter( 'wizhi_toolbar_buttons', [ $this, 'addColumnToolbarButtons' ], 1 );
 
+		add_action( 'admin_head', [ $this, 'addColumnButton' ] );
 		add_action( 'admin_head', [ $this, 'addModalVar' ] );
+
 		add_action( 'admin_init', [ $this, 'addModalTabs' ] );
+		add_action( 'admin_footer', [ $this, 'addColumnTemplates' ] );
 		add_action( 'admin_footer', [ $this, 'addModalTabTemplates' ] );
+
+		add_action( 'the_content', [ $this, 'cleanColumnOutput' ] );
+		add_action( 'save_post', [ $this, 'rememberColumnStyles' ], 10, 3 );
+
 		add_filter( 'wizhi_js_vars', [ $this, 'addModalTabVars' ] );
+		add_filter( 'wizhi_toolbar_buttons', [ $this, 'addColumnToolbarButtons' ], 1 );
 	}
 
 
 	/**
-	 * 表格只是在编辑器用使用了, 在前端需要转换成 div
+	 * 表格只是在编辑器用使用, 在前端需要转换成 div
 	 *
 	 * @param    $content string 需要在前端输出的内容
 	 *
@@ -44,6 +49,19 @@ class WizhiVisualBuilderColumns {
 
 		return $parsed[ 'content' ];
 	}
+
+
+	/**
+	 * 封装 simple_html_dom 的 str_get_html 方法
+	 *
+	 * @param $str
+	 *
+	 * @return mixed
+	 */
+	public function str_get_html( $str ) {
+		return Dom::str_get_html( $str, $lowercase = true, $forceTagsClosed = true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN = false );
+	}
+
 
 	/**
 	 * 解析 HTML 内容, 修复分栏, 转换表格为 div, 分离 margin
@@ -62,16 +80,13 @@ class WizhiVisualBuilderColumns {
 			];
 		}
 
-		if ( ! function_exists( 'file_get_html' ) ) {
-			require_once( WIZHI_CMS . 'builder/inc/simple_html_dom.php' );
-		}
-
 		$columnStyles = '';
 
 		// 移除没用的 jQuery sortable classes
 		$html = preg_replace( '/(ui-sortable-handle|ui-sortable)/', '', $content );
-		$html = str_get_html( $html );
+		$html = $this->str_get_html( $html );
 
+		// 搜索分栏表格
 		$tables = $html->find( 'table.wizhi_column' );
 		$hashes = [ ];
 		while ( count( $tables ) > 0 ) {
@@ -97,6 +112,8 @@ class WizhiVisualBuilderColumns {
 			}
 			$styleDump .= esc_attr( $tableStyles );
 
+
+			// 循环替换表格里面的内容
 			foreach ( $tr->children() as $key => $td ) {
 				if ( $td->tag != 'td' ) {
 					continue;
@@ -115,10 +132,10 @@ class WizhiVisualBuilderColumns {
 				// 移除空白字符
 				$innerHTML = preg_replace( '/\sclass=[\'"]\s*[\'"]/', '', $innerHTML );
 
-				// 清理结尾 Cleanup ends
+				// 清理结尾
 				$innerHTML = trim( $innerHTML );
 
-				// 移除宽度, 使用 class 代替Remove the widths since we are using classes for those:
+				// 移除宽度, 使用 class 代替
 				$columnStyle = trim( preg_replace( '/(^|\s)width:[^;]+;\s?/', '', $td->style ) );
 
 				// 获取分栏样式, 因为暂时没有 唯一 ID, 使用占位符作为 ID
@@ -177,7 +194,7 @@ class WizhiVisualBuilderColumns {
 
 			// 保存替换 table 后的 html
 			$html = $html->save();
-			$html = str_get_html( $html );
+			$html = $this->str_get_html( $html );
 
 			// 继续处理下一个table
 			$tables = $html->find( 'table.wizhi_column' );

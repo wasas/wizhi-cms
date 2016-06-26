@@ -20,6 +20,16 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Sunra\\PhpSimple\\HtmlDomParser' => 
+            array (
+                0 => __DIR__ . '/..' . '/sunra/php-simple-html-dom-parser/Src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Bridges\\FormsDI\\FormsExtension' => __DIR__ . '/..' . '/nette/forms/src/Bridges/FormsDI/FormsExtension.php',
@@ -123,6 +133,7 @@ class ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd6f294f18bd8fc9e4d1e8f7f2ed58d85::$classMap;
 
         }, null, ClassLoader::class);
