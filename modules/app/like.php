@@ -17,6 +17,7 @@ function wizhi_like( $arg = null ) {
 	$post_id = get_the_ID();
 	$ip      = wizhi_get_real_ip();
 	$html    = "";
+	$class   = "";
 
 	$has_already_voted = wizhi_already_vote( $post_id, $ip );
 
@@ -24,8 +25,8 @@ function wizhi_like( $arg = null ) {
 		$class = 'voted';
 	}
 
-	$title_text_like   = __( '喜欢', 'wti-like-post' );
-	$title_text_unlike = __( '不喜欢', 'wti-like-post' );
+	$title_text_like   = __( '喜欢', 'wizhi' );
+	$title_text_unlike = __( '不喜欢', 'wizhi' );
 
 	// 安全验证
 	$nonce = wp_create_nonce( "wizhi_like_post_vote_nonce" );
@@ -39,24 +40,24 @@ function wizhi_like( $arg = null ) {
 	$show_dislike = 0;
 
 	$html .= "<span class='watch-action $class'>";
-	$html .= "<span class='watch-position " . $alignment . "'>";
+	$html .= "<span class='watch-position $alignment'>";
 
 	$html .= "<span class='action-like'>";
-	$html .= "<a class='like-" . $post_id . " jlk' href='javascript:void(0)' data-task='like' data-post_id='" . $post_id . "' data-nonce='" . $nonce . "' rel='nofollow'>";
-	$html .= '<i class="fa fa-thumbs-up" aria-hidden="true" title="' . $title_text_like . '"></i>';
-	$html .= "<span class='lc-" . $post_id . " lc'>" . $like_count . "</span>";
+	$html .= "<a class='like-$post_id jlk' href='javascript:void(0)' data-task='like' data-post_id=' $post_id' data-nonce='$nonce' rel='nofollow'>";
+	$html .= "<i class='fa fa-thumbs-up' aria-hidden='true' title='$title_text_like'></i>";
+	$html .= "<span class='lc-$post_id lc'>$like_count</span>";
 	$html .= "</a></span>";
 
 	if ( $show_dislike ) {
 		$html .= "<span class='action-unlike'>";
-		$html .= "<a class='unlike-" . $post_id . " jlk' href='javascript:void(0)' data-task='unlike' data-post_id='" . $post_id . "' data-nonce='" . $nonce . "' rel='nofollow'>";
-		$html .= '<i class="fa fa-thumbs-down" aria-hidden="true" title="' . $title_text_unlike . '"></i>';
-		$html .= "<span class='unlc-" . $post_id . " unlc'>" . $unlike_count . "</span>";
+		$html .= "<a class='unlike-$post_id jlk' href='javascript:void(0)' data-task='unlike' data-post_id='$post_id' data-nonce='$nonce' rel='nofollow'>";
+		$html .= "<i class='fa fa-thumbs-down' aria-hidden='true' title='$title_text_unlike'></i>";
+		$html .= "<span class='unlc-$post_id unlc'>$unlike_count</span>";
 		$html .= "</a></span> ";
 	}
 
-	$html .= "</span> ";
-	$html .= "<span class='status-" . $post_id . " status " . $alignment . "'>" . $msg . "</span>";
+	$html .= "</span>";
+	$html .= "<span class='status-$post_id status $alignment'>$msg</span>";
 	$html .= "</span>";
 
 	echo $html;
@@ -257,7 +258,7 @@ new Dispatch( [
 		// 检查随机数
 		if ( ! wp_verify_nonce( $_REQUEST[ 'nonce' ], 'wizhi_like_post_vote_nonce' ) ) {
 			$error = 1;
-			$msg   = __( '访问受限。', 'wti-like-post' );
+			$msg   = __( '访问受限。', 'wizhi' );
 
 			// 判断是否可以投票
 		} else {
@@ -302,7 +303,7 @@ new Dispatch( [
 
 							$can_vote = false;
 							$error    = 1;
-							$msg      = __( '你可以在', 'wti-like-post' ) . ' ' . ceil( $revote_duration ) . ' ' . __( '天后重新投票。', 'wti-like-post' );
+							$msg      = __( '你可以在', 'wizhi' ) . ' ' . ceil( $revote_duration ) . ' ' . __( '天后重新投票。', 'wizhi' );
 						} else {
 							$can_vote = true;
 						}
@@ -346,7 +347,7 @@ new Dispatch( [
 					$msg   = '感谢投票!';
 				} else {
 					$error = 1;
-					$msg   = __( '投票失败, 请稍后重试。', 'wti-like-post' );
+					$msg   = __( '投票失败, 请稍后重试。', 'wizhi' );
 				}
 			}
 

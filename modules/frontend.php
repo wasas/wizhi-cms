@@ -32,7 +32,7 @@ function wizhi_ui_style() {
 
 
 /**
- * 加载 FontAwesome 子图图标
+ * 加载 FontAwesome 字体图标
  *
  * @package front
  */

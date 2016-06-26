@@ -32,6 +32,11 @@ function include_all_php( $folder ) {
 	}
 }
 
+// 加载 RedBean PHP
+if( !class_exists('R') ){
+    require_once WIZHI_CMS . 'rb.php';
+}
+
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );
 include_all_php( WIZHI_CMS . 'inc/metabox' );

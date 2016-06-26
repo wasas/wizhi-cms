@@ -305,6 +305,37 @@ if ( ! function_exists( 'wizhi_get_post_types' ) ) {
 
 
 /**
+ * 获取注册的分类方法
+ *
+ * @return array $post_types  文章类型列表
+ */
+if ( ! function_exists( 'wizhi_get_taxonomies' ) ) {
+
+	function wizhi_get_taxonomies() {
+
+		$args = [
+			'public'   => true,
+			'_builtin' => false,
+		];
+
+		$output = 'objects';
+
+		// get all custom taxonomy
+		$taxonomies = get_taxonomies( $args, $output );
+
+		// get taxonomy names
+		foreach ( $taxonomies as $taxonomy ) {
+			$taxonomy_list[] = $taxonomy->name;
+		}
+
+		return $taxonomy_list;
+	}
+
+}
+
+
+
+/**
  * 获取文章类型中的所有文章数组
  *
  * @param string $type 自定义文章类型别名

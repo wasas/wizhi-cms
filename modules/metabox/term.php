@@ -15,12 +15,19 @@ $fields = [
 		'size'    => '80',
 		'default' => get_option('posts_per_page'),
 	],
+	[
+		'type'        => 'upload',
+		'name'        => '_term_banner',
+		'label'       => '封面图像',
+		'size'        => '80',
+		'placeholder' => '为每个分类设置一个分类图像',
+	],
 ];
 
 $args_term = [
 	'id'         => 'template',
 	'title'      => __( 'Term template', 'wizhi' ),
-	'taxonomies' => [ 'category', 'post_tag', 'prodcat' ],
+	'taxonomies' => wizhi_get_taxonomies(),
 ];
 
 new WizhiTermMetabox( $fields, $args_term );
