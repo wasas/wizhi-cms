@@ -211,8 +211,13 @@ class WizhiFormBuilder {
 						$fld_label = Arrays::get( $fld, 'label', false );
 						$value     = Arrays::get( $values, $name, false );
 
+						$value_child = '';
+						if ( $value ) {
+							$value_child = $value->$fld_name;
+						}
+
 						$container->addText( $fld_name, $fld_label )
-						          ->setDefaultValue( $value->$fld_name );
+						          ->setDefaultValue( $value_child );
 					}
 
 					break;

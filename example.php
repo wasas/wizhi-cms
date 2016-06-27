@@ -145,6 +145,7 @@ $fields = [
 		'name'    => 'checkbox1',
 		'label'   => '文本',
 		'size'    => '80',
+		'default' => '1',
 		'options' => [
 			'1' => '老大',
 			'2' => '老二',
@@ -214,10 +215,10 @@ $args_term = [
 	'taxonomies' => [ 'category', 'post_tag', 'prod_cat' ],
 ];
 
-$args_widget = [
-	'slug'  => 'test1',
-	'title' => '测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子测试盒子',
-	'desc'  => '描述一下这个小工具, 看看小工具是有多么不好整',
+$args_option = [
+	'slug'  => 'wizhi-demo-settings',
+	'label' => __( '插件设置演示', 'wizhi' ),
+	'title' => __( 'Wizhi CMS 插件设置', 'wizhi' ),
 ];
 
 
@@ -227,4 +228,4 @@ new WizhiTermMetabox( $fields, $args_term );
 
 new WizhiUserMetabox( $fields );
 
-new WizhiWidget( $args_widget, $fields );
+new WizhiOptionPage( $fields, $args_option );

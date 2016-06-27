@@ -324,6 +324,7 @@ if ( ! function_exists( 'wizhi_get_taxonomies' ) ) {
 		$taxonomies = get_taxonomies( $args, $output );
 
 		// get taxonomy names
+		$taxonomy_list = [];
 		foreach ( $taxonomies as $taxonomy ) {
 			$taxonomy_list[] = $taxonomy->name;
 		}
