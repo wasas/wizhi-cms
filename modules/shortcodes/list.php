@@ -83,13 +83,13 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
 			echo '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
 			echo '</div>';
-			echo '<div class="ui-box-container"><div class="ui-box-content"><ul class="ui-list ui-list-' . $tag . '">';
+			echo '<div class="ui-box-content"><ul class="ui-list ui-list-' . $tag . '">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
 				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 
-			echo '</ul></div></div></div>';
+			echo '</ul></div></div>';
 		}
 
 		if ( $pager ) {
