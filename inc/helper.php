@@ -305,38 +305,6 @@ if ( ! function_exists( 'wizhi_get_post_types' ) ) {
 
 
 /**
- * 获取注册的分类方法
- *
- * @return array $post_types  文章类型列表
- */
-if ( ! function_exists( 'wizhi_get_taxonomies' ) ) {
-
-	function wizhi_get_taxonomies() {
-
-		$args = [
-			'public'   => true,
-			'_builtin' => false,
-		];
-
-		$output = 'objects';
-
-		// get all custom taxonomy
-		$taxonomies = get_taxonomies( $args, $output );
-
-		// get taxonomy names
-		$taxonomy_list = [];
-		foreach ( $taxonomies as $taxonomy ) {
-			$taxonomy_list[] = $taxonomy->name;
-		}
-
-		return $taxonomy_list;
-	}
-
-}
-
-
-
-/**
  * 获取文章类型中的所有文章数组
  *
  * @param string $type 自定义文章类型别名
@@ -387,7 +355,6 @@ function wizhi_get_taxonomy_list( $type = "taxonomy" ) {
 	$args = [
 		'public'   => true,
 		'_builtin' => false,
-
 	];
 
 	$taxonomies = get_taxonomies( $args );
@@ -401,6 +368,34 @@ function wizhi_get_taxonomy_list( $type = "taxonomy" ) {
 	}
 
 	return $output;
+}
+
+
+/**
+ * 获取注册的分类方法
+ *
+ * @return array $post_types  文章类型列表
+ */
+if ( ! function_exists( 'wizhi_get_taxonomies' ) ) {
+
+	function wizhi_get_taxonomies() {
+
+		$args = [
+			'public'   => true,
+			'_builtin' => false,
+		];
+
+		$taxonomies = get_taxonomies( $args );
+
+		$output = [ 'category', 'post_tag' ];
+
+		foreach ( $taxonomies as $taxonomy ) {
+			$output[] = $taxonomy;
+		}
+
+		return $output;
+	}
+
 }
 
 

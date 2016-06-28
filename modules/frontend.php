@@ -58,11 +58,10 @@ function wizhi_ui_scripts() {
 /**
  * 加载后台样式
  */
-function load_custom_wp_admin_style() {
-	wp_enqueue_style( 'wizhi-admin', plugins_url( '../builder/css/admin.css', __FILE__ ) );
-
-	wp_enqueue_script( 'jquery-ui-sortable' );
-	wp_enqueue_script( 'wizhi-admin', plugins_url( '../builder/js/admin.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
+add_action( 'admin_enqueue_scripts', 'load_custom_admin_style' );
+function load_custom_admin_style() {
+	wp_enqueue_media();
+	wp_enqueue_style( 'wizhi-form-style', plugins_url( '../admin/dist/styles/main.css', __FILE__ ) );
+	wp_enqueue_script( 'wizhi-form-scripts', plugins_url( '../admin/dist/scripts/admin.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
 }
 
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
