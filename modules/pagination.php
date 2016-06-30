@@ -48,9 +48,9 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 		}
 
 		if ( 1 != $pages ) {
-			echo '<ul class="ui-paginator"><li><span class="pure-button"> ' . _e('Page', 'wizhi') . $paged . ' / ' . $pages . '</span></li>';
+			echo '<ul class="ui-paginator"><li><span class="pure-button"> ' . __('Page', 'wizhi') . $paged . ' / ' . $pages . '</span></li>';
 			if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
-				echo '<li><a class="pure-button prev" href="' . get_pagenum_link( 1 ) . '">' . _e('Home', 'wizhi') . '</a></li>';
+				echo '<li><a class="pure-button prev" href="' . get_pagenum_link( 1 ) . '">' . __('Home', 'wizhi') . '</a></li>';
 			}
 			if ( $paged > 1 && $showitems < $pages ) {
 				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged - 1 ) . '"> < </a></li>';
@@ -70,7 +70,7 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged + 1 ) . '">></a></li>';
 			}
 			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
-				echo '<a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . _e('Last', 'wizhi') . '</a>';
+				echo '<a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __('Last', 'wizhi') . '</a>';
 			}
 			echo '</ul>';
 		}
