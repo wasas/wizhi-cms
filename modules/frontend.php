@@ -11,6 +11,26 @@ if ( $is_enable_font ) {
 }
 
 
+add_filter( 'body_class', 'wizhi_body_class' );
+function wizhi_body_class( $classes ) {
+
+	$detect = new Mobile_Detect;
+
+	// top level
+	if ( $detect->isTablet() ) {
+		$classes[] = "is_tablet";
+	};
+	if ( $detect->isMobile() ) {
+		$classes[] = "is_mobile";
+	};
+	if ( $detect->isiOS() ) {
+		$classes[] = "is_ios";
+	};
+
+	return $classes;
+}
+
+
 if ( $is_enable_static ) {
 	//加载 CSS 和 JS
 	if ( ! is_admin() ) {

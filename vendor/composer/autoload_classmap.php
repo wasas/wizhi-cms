@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Mobile_Detect' => $vendorDir . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
     'Nette\\ArgumentOutOfRangeException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\Bridges\\FormsDI\\FormsExtension' => $vendorDir . '/nette/forms/src/Bridges/FormsDI/FormsExtension.php',
     'Nette\\Bridges\\FormsLatte\\FormMacros' => $vendorDir . '/nette/forms/src/Bridges/FormsLatte/FormMacros.php',
