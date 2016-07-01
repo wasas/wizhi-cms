@@ -70,7 +70,7 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged + 1 ) . '">></a></li>';
 			}
 			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
-				echo '<a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __('Last', 'wizhi') . '</a>';
+				echo '<li><a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __('Last', 'wizhi') . '</a></li>';
 			}
 			echo '</ul>';
 		}
