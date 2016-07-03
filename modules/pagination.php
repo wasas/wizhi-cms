@@ -26,6 +26,10 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 	 *
 	 */
 	function wizhi_pagination( $query = '', $pages = '', $range = 5 ) {
+        if(wp_is_mobile()){
+            $range = 0;
+        }
+
 		$showitems = ( $range * 2 ) + 1;
 
 		global $paged;

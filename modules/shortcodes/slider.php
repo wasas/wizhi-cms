@@ -70,6 +70,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 			'orderby'        => 'post_date',
 			'order'          => 'DESC',
 			'no_found_rows'  => true,
+			'ignore_sticky_posts' => 1,
 			'tax_query'      => $tax_query,
 		];
 

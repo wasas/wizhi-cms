@@ -53,6 +53,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 			'posts_per_page' => $num,
 			'paged'          => $paged,
 			'tax_query'      => $tax_query,
+			'ignore_sticky_posts' => 1,
 			'no_found_rows'  => $no_found_rows,
 		];
 
