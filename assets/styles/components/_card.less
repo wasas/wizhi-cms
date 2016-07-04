@@ -1,0 +1,55 @@
+/* --------------------------------------------------------------
+ * = 卡片
+ * ----------------------------------------------------------- */
+// Cards
+.card {
+    background: #fff;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    z-index: 999;
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding: @padding @padding 0 @padding;
+
+        &:last-child {
+            padding-bottom: @padding;
+        }
+    }
+    .card-image {
+        padding-top: @padding;
+
+        &:first-child {
+            padding-top: 0;
+
+            img {
+                border-top-left-radius: @border-radius;
+                border-top-right-radius: @border-radius;
+            }
+        }
+
+        &:last-child {
+            img {
+                border-bottom-left-radius: @border-radius;
+                border-bottom-right-radius: @border-radius;
+            }
+        }
+    }
+    .card-title {
+        font-size: 21px;
+        line-height: 1;
+        margin-bottom: @padding-md;
+        margin-top: 0;
+    }
+    .card-meta {
+        color: lighten(@text-color, 50%);
+        font-size: 14px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}

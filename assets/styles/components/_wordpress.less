@@ -1,0 +1,104 @@
+/* --------------------------------------------------------------
+ * = 评论样式
+ * ----------------------------------------------------------- */
+
+// 评论区域标题
+.comments-title {
+    margin-top: 30px;
+}
+
+// 评论列表样式
+.comment-list {
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    .avatar {
+        border-radius: 3px;
+        border: 1px solid #ddd;
+    }
+    ol {
+        list-style: none;
+    }
+    .children {
+        margin-left: 0;
+        padding-left: 40px;
+        background-repeat: no-repeat;
+        background-position: left 20px;
+    }
+    li.comment > div img.avatar {
+        position: absolute;
+        left: 29px;
+        top: 29px;
+    }
+}
+
+// 单条评论样式
+.comment {
+    .comment-body {
+        overflow: hidden;
+        padding: 25px 25px 25px 80px;
+        margin: 2em 0 0;
+        position: relative;
+        border: 1px solid #EDEDED;
+        background: #FBFCFD;
+        border-radius: 3px;
+        border-bottom: 1px solid #ddd;
+    }
+    &-author.vcard {
+        .avatar {
+            position: absolute;
+            left: 15px;
+            top: 29px;
+            border-radius: 2px;
+        }
+        .says {
+            padding-left: 2px;
+        }
+    }
+    &-metadata {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 10px;
+        a {
+            color: #999;
+            font-size: 12px;
+        }
+    }
+    &-reply-link {
+        color: #bbb;
+    }
+    &-reply-title {
+        margin-top: 15px;
+    }
+    &-notes {
+        color: #bbb;
+    }
+    &-content {
+        margin-top: 10px;
+    }
+    &-navigation {
+        overflow: hidden;
+        margin-top: 30px;
+    }
+}
+
+// 评论表单
+.comment-form {
+    &:extend(.pure-form all);
+    &:extend(.pure-form-stacked all);
+    p {
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        width: 100%;
+        height: auto;
+    }
+
+    input[type="submit"]{
+        &:extend(.pure-botton all);
+        &:extend(.button-primary all);
+    }
+}

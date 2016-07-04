@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------
+ * = 分页
+ * ----------------------------------------------------------- */
+
+// 文章分页导航样式
+.ui-paginator {
+    &:extend(.pure-g);
+    width: 100%;
+    margin: 25px 0;
+    padding: 0;
+    li {
+        &:extend(.pure-u);
+        &:first-child{
+            .pure-button{
+                border-radius: 3px 0 0 3px;
+            }
+        }
+        &:last-child{
+            .pure-button{
+                border-radius: 0 3px 3px 0;
+            }
+        }
+    }
+    .pure-button {
+        border-radius: 0;
+        padding: 10px 15px;
+        background: @background;
+        vertical-align: top;
+        line-height: 1;
+        border: 0;
+        &:focus,
+        &:active {
+            outline-style: none;
+        }
+        &-active {
+            color: #fff;
+            background: @maincolor;
+            box-shadow: none;
+        }
+    }
+    .prev,
+    .next {
+        color: #666;
+    }
+}
