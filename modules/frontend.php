@@ -63,6 +63,15 @@ function wizhi_ui_font() {
 
 
 /**
+ * 添加编辑器样式
+ */
+function wizhi_add_editor_styles() {
+    add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
+}
+add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
+
+
+/**
  * 加载 JavaScript
  *
  * @package front
