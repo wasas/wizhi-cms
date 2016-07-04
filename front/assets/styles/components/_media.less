@@ -1,0 +1,91 @@
+.media {
+    &:extend(.clearfix all);
+    padding: @padding-md;
+    &-cap {
+        display: table-cell;
+        vertical-align: top;
+        width: 128px;
+        padding-right: @padding;
+    }
+    &-body {
+        display: table-cell;
+        &-title {
+            line-height: 1;
+            margin-bottom: @padding-md;
+        }
+    }
+    &-label {
+        line-height: 1;
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    // 媒体中图片的不同位置
+    &.media-top {
+        .media-cap {
+            display: block;
+            width: 100%;
+            padding-right: 0;
+            img {
+                width: auto;
+                max-width: 100%;
+                vertical-align: top;
+            }
+        }
+        .media {
+            margin: 0 @padding;
+        }
+        .media-body {
+            display: block;
+            border: 1px solid #eee;
+            padding: @padding;
+            &-title {
+                line-height: 1.4;
+            }
+        }
+    }
+    &.media-right {
+        .media-cap {
+            float: right;
+            padding-left: @padding;
+            padding-right: 0;
+        }
+    }
+
+    // 鼠标滑过
+    .media-hover {
+        background: rgb(255, 255, 245);
+        padding: 0;
+        border: 0;
+        .media-body{
+            padding: @padding;
+            margin: 0 -@padding;
+        }
+    }
+
+    // 媒体列表
+    & + .media {
+        border-top: 1px solid rgba(211, 214, 219, 0.5);
+        margin-top: @padding;
+        padding-top: @padding;
+    }
+
+    &:first-child{
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    // 和列表一起使用
+    & + .ui-list {
+        margin-top: @padding;
+    }
+
+    // 去除通用样式
+    p{
+        margin-bottom: 0;
+    }
+}

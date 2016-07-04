@@ -1,0 +1,13 @@
+/* --------------------------------------------------------------
+ * = 标签
+ * ----------------------------------------------------------- */
+.label {
+    background: @border-color;
+    color: lighten(@text-color, 20%);
+    .label-base();
+    white-space: nowrap;
+
+    &.label-primary {
+        .toast-variant(@brand-color);
+    }
+}

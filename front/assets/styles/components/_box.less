@@ -1,0 +1,87 @@
+/* --------------------------------------------------------------
+ * = 盒子
+ * ----------------------------------------------------------- */
+
+// 元素盒子
+.ui-box {
+    &:extend(.clearfix all);
+    border: 1px solid @border-color;
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    &-content{
+        padding: @padding;
+        border-bottom: 1px solid @border-color;
+        .media{
+            padding: 0;
+        }
+        .ui-list{
+            padding: 0;
+            margin-bottom: 0;
+        }
+        p{
+            margin-bottom: 0;
+            & + p{
+                margin-top: 1.2em;
+            }
+        }
+    }
+    &-shadow{
+        box-shadow: 0 1px 2px 0 rgba(0,0,0, .2);
+    }
+    &-follow{
+        border-top: none;
+    }
+    &-head {
+        border-bottom: 1px solid @border-color;
+        position: relative;
+        padding: @padding-md @padding;
+        line-height: normal;
+        zoom: 1;
+
+        // 标题栏标题
+        &-title {
+            color: @text-color;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+        }
+
+        // 标题栏标题后面的描述文字
+        &-text {
+            margin-left: 10px;
+            color: @text-light;
+        }
+
+        // 标题栏右边的更多
+        &-more {
+            float: right;
+        }
+    }
+    &-foot {
+        border-bottom: 1px solid @border-color;
+        position: relative;
+        padding: @padding-md @padding;
+        zoom: 1;
+
+        // 标题栏标题
+        &-left {
+            .inline-block;
+            color: @text-color;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+        }
+
+        // 标题栏右边的更多
+        &-right {
+            float: right;
+        }
+    }
+}
