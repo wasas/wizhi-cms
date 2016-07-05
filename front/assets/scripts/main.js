@@ -1,8 +1,5 @@
 jQuery(document).ready(function ($) {
 
-    $('.menu').dropit();
-
-
     // ---------------------------------------------------------
     // 滚动缩小导航菜单
     // ---------------------------------------------------------
@@ -73,34 +70,6 @@ jQuery(document).ready(function ($) {
         return data_to_string;
 
     }
-
-
-    // ---------------------------------------------------------
-    // Tab 切换
-    // ---------------------------------------------------------
-    $('.ui-tab').each(function () {
-        var el = $(this);
-        el.find('.tab-content-pane:first').show();
-    });
-
-    $('.tab-title').each(function () {
-        var el = $(this);
-        el.find('li:first').addClass('active');
-    });
-
-    $('.ui-tab .tab-title li a').click(function () {
-        var el = $(this),
-            parent = el.closest('.ui-tab'),
-            activetab = el.attr('href');
-        parent.find('li').removeClass('active');
-
-        el.closest('li').addClass('active');
-        parent.find('.tab-content-pane').hide();
-
-        parent.find(activetab).show();
-
-        return false;
-    });
 
 
     // ---------------------------------------------------------
