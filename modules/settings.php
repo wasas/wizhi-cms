@@ -11,8 +11,13 @@ $fields = [
 	],
 	[
 		'type'    => 'checkbox',
-		'name'    => 'is_enable_static',
-		'label'   => __( '使用内置的CSS 和 JavaScript', 'wizhi' ),
+		'name'    => 'is_enable_css',
+		'label'   => __( '使用内置的CSS', 'wizhi' ),
+	],
+	[
+		'type'    => 'checkbox',
+		'name'    => 'is_enable_js',
+		'label'   => __( '使用内置JavaScript', 'wizhi' ),
 	],
 	[
 		'type'    => 'checkbox',

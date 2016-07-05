@@ -1,7 +1,8 @@
 <?php
 
 // 获取插件设置值
-$is_enable_static = get_option( 'is_enable_static' );
+$is_enable_css = get_option( 'is_enable_css' );
+$is_enable_js = get_option( 'is_enable_js' );
 $is_enable_font   = get_option( 'is_enable_font' );
 
 
@@ -30,12 +31,12 @@ function wizhi_body_class( $classes ) {
 	return $classes;
 }
 
-
-if ( $is_enable_static ) {
-	//加载 CSS 和 JS
-	if ( ! is_admin() ) {
-		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
+if ( ! is_admin() ) {
+	if ( $is_enable_css ) {		
 		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
+	}
+	if ( $is_enable_js ) {		
+		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
 	}
 }
 
