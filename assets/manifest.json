@@ -13,6 +13,11 @@
       ],
       "main": true
     },
+    "demo.css": {
+      "files": [
+        "styles/demo.less"
+      ]
+    },
     "old.css": {
       "files": [
         "styles/pure/grid-old.less"
