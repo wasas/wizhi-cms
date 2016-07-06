@@ -1,7 +1,7 @@
 <?php
 
-use Nette\Utils\Finder;
 use Nette\Utils\Arrays;
+use Nette\Utils\Finder;
 
 if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	/**
@@ -28,7 +28,7 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 
 		// 加载主题中的默认模板
 		if ( ! $template ) {
-			$template = locate_template( [ "{$slug}.php", "template-parts/{$slug}.php" ] );
+			$template = locate_template( [ "{$slug}.php", "wizhi/{$slug}.php" ] );
 		}
 
 		// 允许第三方插件过滤模板文件
@@ -49,7 +49,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	 */
 	function wizhi_get_loop_template() {
 		$template_in_plugin = WIZHI_CMS . "templates";
-		$template_in_theme  = get_template_directory() . "/template-parts";
+		$template_in_theme  = get_template_directory() . "/wizhi";
 
 		$templates_in_plugin = [ ];
 		$templates_in_theme  = [ ];
@@ -58,9 +58,9 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 			Finder::findFiles( '*.php' )
 			      ->in( $template_in_plugin ) as $key => $file
 		) {
-			$filename                                         = $file->getFilename();
-			$file_name_array                                  = explode( '-', $filename );
-			$name                                             = Arrays::get($file_name_array, 1, 'None');;
+			$filename        = $file->getFilename();
+			$file_name_array = explode( '-', $filename );
+			$name            = Arrays::get( $file_name_array, 1, 'None' );;
 			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
 		}
 
@@ -69,9 +69,9 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 				Finder::findFiles( '*.php' )
 				      ->in( $template_in_theme ) as $key => $file
 			) {
-				$filename                                         = $file->getFilename();
-				$file_name_array                                  = explode( '-', $filename );
-				$name                                             = Arrays::get($file_name_array, 1, 'None');;
+				$filename        = $file->getFilename();
+				$file_name_array = explode( '-', $filename );
+				$name            = Arrays::get( $file_name_array, 1, 'None' );;
 				$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
 			}
 		}
