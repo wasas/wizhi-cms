@@ -37,6 +37,7 @@ class WizhiOptionPage {
 
 	/**
 	 * 显示菜单
+	 * todo: 在 slug 上面添加参数或者过滤函数， 实现设置选项 tab
 	 */
 	public function menu() {
 
