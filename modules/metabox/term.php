@@ -17,7 +17,7 @@ $fields = [
 	],
 	[
 		'type'        => 'upload',
-		'name'        => '_term_banner',
+		'name'        => '_banner_image',
 		'label'       => '封面图像',
 		'size'        => '80',
 		'placeholder' => '为每个分类设置一个分类图像',
