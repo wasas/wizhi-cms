@@ -77,7 +77,7 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 *
 	 * @usage   wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
 	 */
-	function wizhi_create_taxs( $tax_slug, $hook_type, $tax_name, $hierarchical ) {
+	function wizhi_create_taxs( $tax_slug, $hook_type, $tax_name, $hierarchical = true ) {
 
 		//分类法的标签
 		$labels_tax = [

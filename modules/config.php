@@ -28,3 +28,21 @@ function wizhi_post_types_icon() {
 
 	return $post_types_icons;
 }
+
+
+if ( is_admin() ) {
+	$config = [
+		'slug'               => plugin_basename( __FILE__ ),
+		'proper_folder_name' => 'wizhi-cms',
+		'api_url'            => 'https://api.github.com/repos/username/iwillhappy1314',
+		'raw_url'            => 'https://raw.githubusercontent.com/iwillhappy1314/wizhi-cms/master',
+		'github_url'         => 'https://github.com/iwillhappy1314/wizhi-cms',
+		'zip_url'            => 'https://github.com/iwillhappy1314/wizhi-cms/zipball/master',
+		'sslverify'          => true,
+		'requires'           => '3.0',
+		'tested'             => '4.5',
+		'readme'             => 'readme.txt',
+		'access_token'       => '',
+	];
+	new WP_GitHub_Updater( $config );
+}
