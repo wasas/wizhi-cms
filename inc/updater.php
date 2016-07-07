@@ -1,21 +1,5 @@
 <?php
 
-/*  Copyright 2014  Cooper Dukes @INNEO  (email : hello@inneosg.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
 class WP_GitHub_Updater {
 
 	private $api_url = 'https://api.github.com';
@@ -39,7 +23,7 @@ class WP_GitHub_Updater {
 		// Optional config
 		$this->branch  = ! empty( $settings[ 'branch' ] ) ? $settings[ 'branch' ] : 'master';
 		$this->token   = ! empty( $settings[ 'access_token' ] ) ? $settings[ 'access_token' ] : false;
-		$this->timeout = ! empty( $settings[ 'timeout' ] ) ? (int) $settings[ 'timeout' ] : 10;
+		$this->timeout = ! empty( $settings[ 'timeout' ] ) ? (int) $settings[ 'timeout' ] : 12000;
 
 		// Determine plugin folder and main file name from basename
 		$dir             = explode( '/', $settings[ 'basename' ] );
@@ -60,6 +44,14 @@ class WP_GitHub_Updater {
 
 	}
 
+
+	/**
+	 * 检查插件升级
+	 *
+	 * @param $transient
+	 *
+	 * @return mixed
+	 */
 	public function check_for_update( $transient ) {
 
 		// $transient->checked the array of plugins to check for updates. If our plugin isn't in the array, stop.
@@ -82,6 +74,16 @@ class WP_GitHub_Updater {
 
 	}
 
+
+	/**
+	 * 准备升级
+	 *
+	 * @param $obj
+	 * @param $action
+	 * @param $arg
+	 *
+	 * @return \stdClass
+	 */
 	public function pre_run_update( $obj, $action, $arg ) {
 
 		// Make sure plugin_information is being requested
@@ -102,6 +104,15 @@ class WP_GitHub_Updater {
 
 	}
 
+
+	/**
+	 * 从 Github 获取数据, Github 接口封装
+	 *
+	 * @param       $endpoint
+	 * @param array $params
+	 *
+	 * @return bool
+	 */
 	private function get_from_github( $endpoint, $params = [ ] ) {
 
 		// If you've set an access_token, append it to the query
@@ -125,13 +136,24 @@ class WP_GitHub_Updater {
 			$url .= '?' . $query;
 		}
 
+		$args = array(
+			'method' => 'GET',
+			'timeout' => 3000000,
+		);
+
 		// Initialize the request
-		$response = wp_remote_retrieve_body( wp_remote_get( $url ) );
+		$response = wp_remote_get( $url, $args );
 
 		return ! empty( $response ) ? $response : false;
 
 	}
 
+
+	/**
+	 * 从仓库中获取插件元数据
+	 *
+	 * @return bool
+	 */
 	private function get_repo_meta() {
 
 		$params = [
@@ -142,8 +164,9 @@ class WP_GitHub_Updater {
 
 		// If data is returned
 		if ( $response ) {
+
 			// GH API v3 returns the file contents as base64. We need to decode it.
-			$base_file_content = base64_decode( $response );
+			$base_file_content = base64_decode( json_decode( wp_remote_retrieve_body( $response ) )->content );
 
 			// If decoding went well
 			if ( ! empty( $base_file_content ) ) {
@@ -172,51 +195,75 @@ class WP_GitHub_Updater {
 			$this->errors[] = 'GitHub connection timed out.';
 		}
 
+		return false;
+
 	}
 
+
+	/**
+	 * 从仓库中获取插件 zip 存档
+	 *
+	 * @return bool
+	 */
 	private function get_repo_zip() {
 
 		$response = $this->get_from_github( 'zipball/' . $this->branch );
+
+		$status   = wp_remote_retrieve_header( $response, 'Status' );
+		$location = wp_remote_retrieve_header( $response, 'Location' );
+
+		update_option( 'ggggg', $response );
+
 		if ( $response ) {
 			// If request is successful (code 302 is from the GH API documentation)
-			if ( 302 == $response->code ) {
+			if ( 302 == $status ) {
 				// Return the URL of the zipball
-				return $response->headers[ 'location' ];
+				return 'https://api.github.com/repos/iwillhappy1314/wizhi-cms/zipball/master';
 			}
 		}
 
+		return 'https://api.github.com/repos/iwillhappy1314/wizhi-cms/zipball/master';
+
 	}
 
+
+	/**
+	 * 设置插件更新对象
+	 *
+	 * @param      $meta
+	 * @param bool $include_zip_url
+	 *
+	 * @return \stdClass
+	 */
 	private function set_update_object( $meta, $include_zip_url = true ) {
 
-		// Thanks to http://code.tutsplus.com/tutorials/a-guide-to-the-wordpress-http-api-automatic-plugin-updates--wp-25181 for the available fields
 		$obj              = new stdClass();
 		$obj->url         = $meta[ 'PluginURI' ];
 		$obj->slug        = $this->repo;
 		$obj->new_version = $meta[ 'Version' ];
 
-		// $obj->requires = '3.0';
-		// $obj->tested = '3.3.1';
-		// $obj->downloaded = 12540;
-		// $obj->last_updated = '2012-01-12';
-		// $obj->sections = array(
-		// 	'description' => 'The new version of the Auto-Update plugin',
-		// 	'another_section' => 'This is another section',
-		// 	'changelog' => 'Some new features'
-		// );
-		// $obj->download_link = 'http://localhost/update.php';
-
 		if ( $include_zip_url ) {
 			$obj->package = $this->get_repo_zip();
 		}
+
+		update_option( 'xxxxxxxxx', $obj );
 
 		return $obj;
 
 	}
 
+
+	/**
+	 * 设置安装源名称
+	 *
+	 * @param $source
+	 * @param $remote_source
+	 * @param $plugin
+	 *
+	 * @return mixed
+	 */
 	public function set_install_source_name( $source, $remote_source, $plugin ) {
 
-		// We have to check that our plugin is the one currently being processed. GitHub returns the zipball with a name that includes {{owner}}-{{repo}}-. We'll use this to check.
 		if ( strpos( $source, $this->owner . '-' . $this->repo . '-' ) !== false ) {
 			$plugins_basenames = array_keys( get_plugins() );
 			$plugins_names     = [ ];
