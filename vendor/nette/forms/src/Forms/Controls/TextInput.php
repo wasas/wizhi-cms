@@ -24,8 +24,8 @@ class TextInput extends TextBase
 	public function __construct($label = NULL, $maxLength = NULL)
 	{
 		parent::__construct($label);
-		$this->control->type = 'text';
 		$this->control->maxlength = $maxLength;
+		$this->setOption('type', 'text');
 	}
 
 
@@ -62,13 +62,17 @@ class TextInput extends TextBase
 		foreach ($this->getRules() as $rule) {
 			if ($rule->isNegative || $rule->branch) {
 
-			} elseif (in_array($rule->validator, array(Form::MIN, Form::MAX, Form::RANGE), TRUE)
-				&& in_array($input->type, array('number', 'range', 'datetime-local', 'datetime', 'date', 'month', 'week', 'time'), TRUE)
+			} elseif ($input->type === NULL && in_array($rule->validator, [Form::EMAIL, Form::URL, Form::INTEGER, Form::FLOAT], TRUE)) {
+				static $types = [Form::EMAIL => 'email', Form::URL => 'url', Form::INTEGER => 'number', Form::FLOAT => 'number'];
+				$input->type = $types[$rule->validator];
+
+			} elseif (in_array($rule->validator, [Form::MIN, Form::MAX, Form::RANGE], TRUE)
+				&& in_array($input->type, ['number', 'range', 'datetime-local', 'datetime', 'date', 'month', 'week', 'time'], TRUE)
 			) {
 				if ($rule->validator === Form::MIN) {
-					$range = array($rule->arg, NULL);
+					$range = [$rule->arg, NULL];
 				} elseif ($rule->validator === Form::MAX) {
-					$range = array(NULL, $rule->arg);
+					$range = [NULL, $rule->arg];
 				} else {
 					$range = $rule->arg;
 				}
@@ -80,7 +84,7 @@ class TextInput extends TextBase
 				}
 
 			} elseif ($rule->validator === Form::PATTERN && is_scalar($rule->arg)
-				&& in_array($input->type, array('text', 'search', 'tel', 'url', 'email', 'password'), TRUE)
+				&& in_array($input->type, [NULL, 'text', 'search', 'tel', 'url', 'email', 'password'], TRUE)
 			) {
 				$input->pattern = $rule->arg;
 			}
@@ -91,6 +95,7 @@ class TextInput extends TextBase
 				? $this->translate($this->emptyValue)
 				: $this->rawValue;
 		}
+		$input->type = $input->type ?: 'text';
 		return $input;
 	}
 

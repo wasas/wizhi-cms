@@ -8,9 +8,10 @@
 namespace Nette\Forms\Controls;
 
 use Nette;
-use Nette\Forms\IControl;
-use Nette\Utils\Html;
 use Nette\Forms\Form;
+use Nette\Forms\IControl;
+use Nette\Forms\Rules;
+use Nette\Utils\Html;
 
 
 /**
@@ -27,7 +28,10 @@ use Nette\Forms\Form;
  * @property-read Html $controlPrototype
  * @property-read Html $labelPrototype
  * @property   bool $required
+ * @property-read bool $filled
  * @property-read array $errors
+ * @property-read array $options
+ * @property-read string $error
  */
 abstract class BaseControl extends Nette\ComponentModel\Component implements IControl
 {
@@ -47,22 +51,25 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	protected $label;
 
 	/** @var array */
-	private $errors = array();
+	private $errors = [];
 
 	/** @var bool */
 	protected $disabled = FALSE;
 
-	/** @var bool */
-	private $omitted = FALSE;
+	/** @var bool|NULL */
+	private $omitted;
 
-	/** @var Nette\Forms\Rules */
+	/** @var Rules */
 	private $rules;
 
 	/** @var Nette\Localization\ITranslator */
 	private $translator = TRUE; // means autodetect
 
 	/** @var array user options */
-	private $options = array();
+	private $options = [];
+
+	/** @var bool */
+	private static $autoOptional = FALSE;
 
 
 	/**
@@ -70,12 +77,15 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 */
 	public function __construct($caption = NULL)
 	{
-		$this->monitor('Nette\Forms\Form');
+		$this->monitor(Form::class);
 		parent::__construct();
-		$this->control = Html::el('input', array('type' => NULL, 'name' => NULL));
+		$this->control = Html::el('input', ['type' => NULL, 'name' => NULL]);
 		$this->label = Html::el('label');
 		$this->caption = $caption;
-		$this->rules = new Nette\Forms\Rules($this);
+		$this->rules = new Rules($this);
+		if (self::$autoOptional) {
+			$this->setRequired(FALSE);
+		}
 		$this->setValue(NULL);
 	}
 
@@ -100,7 +110,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 */
 	public function getForm($need = TRUE)
 	{
-		return $this->lookup('Nette\Forms\Form', $need);
+		return $this->lookup(Form::class, $need);
 	}
 
 
@@ -118,7 +128,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 * Loads HTTP data.
 	 * @return mixed
 	 */
-	public function getHttpData($type, $htmlTail = NULL)
+	protected function getHttpData($type, $htmlTail = NULL)
 	{
 		return $this->getForm()->getHttpData($type, $this->getHtmlName() . $htmlTail);
 	}
@@ -130,7 +140,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 */
 	public function getHtmlName()
 	{
-		return Nette\Forms\Helpers::generateHtmlName($this->lookupPath('Nette\Forms\Form'));
+		return Nette\Forms\Helpers::generateHtmlName($this->lookupPath(Form::class));
 	}
 
 
@@ -140,6 +150,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	/**
 	 * Sets control's value.
 	 * @return self
+	 * @internal
 	 */
 	public function setValue($value)
 	{
@@ -165,7 +176,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	public function isFilled()
 	{
 		$value = $this->getValue();
-		return $value !== NULL && $value !== array() && $value !== '';
+		return $value !== NULL && $value !== [] && $value !== '';
 	}
 
 
@@ -191,7 +202,6 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	public function setDisabled($value = TRUE)
 	{
 		if ($this->disabled = (bool) $value) {
-			$this->omitted = TRUE;
 			$this->setValue(NULL);
 		}
 		return $this;
@@ -226,7 +236,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 */
 	public function isOmitted()
 	{
-		return $this->omitted;
+		return $this->omitted || ($this->isDisabled() && $this->omitted === NULL);
 	}
 
 
@@ -241,13 +251,13 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	{
 		$this->setOption('rendered', TRUE);
 		$el = clone $this->control;
-		return $el->addAttributes(array(
+		return $el->addAttributes([
 			'name' => $this->getHtmlName(),
 			'id' => $this->getHtmlId(),
 			'required' => $this->isRequired(),
 			'disabled' => $this->isDisabled(),
 			'data-nette-rules' => Nette\Forms\Helpers::exportRules($this->rules) ?: NULL,
-		));
+		]);
 	}
 
 
@@ -262,6 +272,24 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 		$label->for = $this->getHtmlId();
 		$label->setText($this->translate($caption === NULL ? $this->caption : $caption));
 		return $label;
+	}
+
+
+	/**
+	 * @return Nette\Utils\Html|NULL
+	 */
+	public function getControlPart()
+	{
+		return $this->getControl();
+	}
+
+
+	/**
+	 * @return Nette\Utils\Html|NULL
+	 */
+	public function getLabelPart()
+	{
+		return $this->getLabel();
 	}
 
 
@@ -359,7 +387,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	public function translate($value, $count = NULL)
 	{
 		if ($translator = $this->getTranslator()) {
-			$tmp = is_array($value) ? array(& $value) : array(array(& $value));
+			$tmp = is_array($value) ? [& $value] : [[& $value]];
 			foreach ($tmp[0] as & $v) {
 				if ($v != NULL && !$v instanceof Html) { // intentionally ==
 					$v = $translator->translate($v, $count);
@@ -391,7 +419,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 * Adds a validation condition a returns new branch.
 	 * @param  mixed     condition type
 	 * @param  mixed     optional condition arguments
-	 * @return Nette\Forms\Rules      new branch
+	 * @return Rules      new branch
 	 */
 	public function addCondition($validator, $value = NULL)
 	{
@@ -404,7 +432,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 * @param  IControl form control
 	 * @param  mixed      condition type
 	 * @param  mixed      optional condition arguments
-	 * @return Nette\Forms\Rules      new branch
+	 * @return Rules      new branch
 	 */
 	public function addConditionOn(IControl $control, $validator, $value = NULL)
 	{
@@ -413,7 +441,7 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 
 
 	/**
-	 * @return Nette\Forms\Rules
+	 * @return Rules
 	 */
 	public function getRules()
 	{
@@ -502,15 +530,17 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	 */
 	public function cleanErrors()
 	{
-		$this->errors = array();
+		$this->errors = [];
 	}
 
 
-	/** @deprecated */
-	protected static function exportRules($rules)
+	/**
+	 * Globally enables new required/optional behavior.
+	 * This method will be deprecated in next version.
+	 */
+	public static function enableAutoOptionalMode()
 	{
-		trigger_error(__METHOD__ . '() is deprecated; use Nette\Forms\Helpers::exportRules() instead.', E_USER_DEPRECATED);
-		return Nette\Forms\Helpers::exportRules($rules);
+		self::$autoOptional = TRUE;
 	}
 
 
@@ -549,6 +579,27 @@ abstract class BaseControl extends Nette\ComponentModel\Component implements ICo
 	public function getOptions()
 	{
 		return $this->options;
+	}
+
+
+	/********************* extension methods ****************d*g**/
+
+
+	public function __call($name, $args)
+	{
+		if ($callback = Nette\Utils\ObjectMixin::getExtensionMethod(get_class($this), $name)) {
+			return Nette\Utils\Callback::invoke($callback, $this, ...$args);
+		}
+		return parent::__call($name, $args);
+	}
+
+
+	public static function extensionMethod($name, $callback = NULL)
+	{
+		if (strpos($name, '::') !== FALSE) { // back compatibility
+			list(, $name) = explode('::', $name);
+		}
+		Nette\Utils\ObjectMixin::setExtensionMethod(get_called_class(), $name, $callback);
 	}
 
 }

@@ -10,7 +10,6 @@ if (@!include __DIR__ . '/../vendor/autoload.php') {
 }
 
 use Nette\Forms\Form;
-use Nette\Forms\Controls;
 use Tracy\Debugger;
 use Tracy\Dumper;
 
@@ -23,17 +22,17 @@ $form->addGroup('Personal data');
 $form->addText('name', 'Your name')
 	->setRequired('Enter your name');
 
-$form->addRadioList('gender', 'Your gender', array(
+$form->addRadioList('gender', 'Your gender', [
 	'male', 'female',
-));
+]);
 
-$form->addCheckboxList('colors', 'Favorite colors:', array(
+$form->addCheckboxList('colors', 'Favorite colors:', [
 	'red', 'green', 'blue',
-));
+]);
 
-$form->addSelect('country', 'Country', array(
+$form->addSelect('country', 'Country', [
 	'Buranda', 'Qumran', 'Saint Georges Island',
-));
+]);
 
 $form->addCheckbox('send', 'Ship to address');
 
@@ -69,15 +68,16 @@ $renderer->wrappers['control']['errorcontainer'] = 'span class=help-block';
 $form->getElementPrototype()->class('form-horizontal');
 
 foreach ($form->getControls() as $control) {
-	if ($control instanceof Controls\Button) {
+	$type = $control->getOption('type');
+	if ($type === 'button') {
 		$control->getControlPrototype()->addClass(empty($usedPrimary) ? 'btn btn-primary' : 'btn btn-default');
 		$usedPrimary = TRUE;
 
-	} elseif ($control instanceof Controls\TextBase || $control instanceof Controls\SelectBox || $control instanceof Controls\MultiSelectBox) {
+	} elseif (in_array($type, ['text', 'textarea', 'select'], TRUE)) {
 		$control->getControlPrototype()->addClass('form-control');
 
-	} elseif ($control instanceof Controls\Checkbox || $control instanceof Controls\CheckboxList || $control instanceof Controls\RadioList) {
-		$control->getSeparatorPrototype()->setName('div')->addClass($control->getControlPrototype()->type);
+	} elseif (in_array($type, ['checkbox', 'radio'], TRUE)) {
+		$control->getSeparatorPrototype()->setName('div')->addClass($type);
 	}
 }
 

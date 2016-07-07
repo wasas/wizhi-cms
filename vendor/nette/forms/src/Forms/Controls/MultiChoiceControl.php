@@ -22,7 +22,7 @@ abstract class MultiChoiceControl extends BaseControl
 	public $checkAllowedValues = TRUE;
 
 	/** @var array */
-	private $items = array();
+	private $items = [];
 
 
 	public function __construct($label = NULL, array $items = NULL)
@@ -51,6 +51,7 @@ abstract class MultiChoiceControl extends BaseControl
 	 * Sets selected items (by keys).
 	 * @param  array
 	 * @return self
+	 * @internal
 	 */
 	public function setValue($values)
 	{
@@ -59,7 +60,7 @@ abstract class MultiChoiceControl extends BaseControl
 		} elseif (!is_array($values)) {
 			throw new Nette\InvalidArgumentException(sprintf("Value must be array or NULL, %s given in field '%s'.", gettype($values), $this->name));
 		}
-		$flip = array();
+		$flip = [];
 		foreach ($values as $value) {
 			if (!is_scalar($value) && !method_exists($value, '__toString')) {
 				throw new Nette\InvalidArgumentException(sprintf("Values must be scalar, %s given in field '%s'.", gettype($value), $this->name));
@@ -103,7 +104,7 @@ abstract class MultiChoiceControl extends BaseControl
 	 */
 	public function isFilled()
 	{
-		return $this->getValue() !== array();
+		return $this->getValue() !== [];
 	}
 
 

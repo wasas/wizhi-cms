@@ -28,6 +28,7 @@ abstract class TextBase extends BaseControl
 	 * Sets control's value.
 	 * @param  string
 	 * @return self
+	 * @internal
 	 */
 	public function setValue($value)
 	{
@@ -92,7 +93,7 @@ abstract class TextBase extends BaseControl
 	 */
 	public function addFilter($filter)
 	{
-		$this->rules->addFilter($filter);
+		$this->getRules()->addFilter($filter);
 		return $this;
 	}
 

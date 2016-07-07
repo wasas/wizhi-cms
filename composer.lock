@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "89936f4a074e507bf7f236472a644c19",
-    "content-hash": "a19171b22a0cb03ced61c4508d95d540",
+    "hash": "c90d4746d08c31e35c28ccb5e33f6075",
+    "content-hash": "a89cf9817ce141a36d2537a77277dbe5",
     "packages": [
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -63,29 +63,36 @@
         },
         {
             "name": "nette/component-model",
-            "version": "v2.2.4",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/component-model.git",
-                "reference": "07bce436051fd92d084642ce7a47f00045e0d1e5"
+                "reference": "9b5817b246bf409b8f0f8309c23e599dd8729d28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/component-model/07bce436051fd92d084642ce7a47f00045e0d1e5.zip",
-                "reference": "07bce436051fd92d084642ce7a47f00045e0d1e5",
+                "url": "https://packagist.phpcomposer.com/files/nette/component-model/9b5817b246bf409b8f0f8309c23e599dd8729d28.zip",
+                "reference": "9b5817b246bf409b8f0f8309c23e599dd8729d28",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^2.3.5",
-                "php": ">=5.3.1"
+                "nette/utils": "^2.4",
+                "php": ">=5.6.0"
             },
             "conflict": {
+                "nette/application": "<2.4",
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "nette/tester": "~1.3"
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -109,7 +116,7 @@
             ],
             "description": "Nette Component Model",
             "homepage": "https://nette.org",
-            "time": "2015-10-06 17:54:05"
+            "time": "2016-06-17 17:36:56"
         },
         {
             "name": "nette/finder",
@@ -169,34 +176,39 @@
         },
         {
             "name": "nette/forms",
-            "version": "v2.3.9",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/forms.git",
-                "reference": "e32577062a2544fedac8a95fbc393ab98a3291c7"
+                "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/forms/e32577062a2544fedac8a95fbc393ab98a3291c7.zip",
-                "reference": "e32577062a2544fedac8a95fbc393ab98a3291c7",
+                "url": "https://packagist.phpcomposer.com/files/nette/forms/ed7ecd76661af5b090f452c1b49ea41b6d82dbf2.zip",
+                "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2",
                 "shasum": ""
             },
             "require": {
-                "nette/component-model": "~2.2.0",
+                "nette/component-model": "~2.3",
                 "nette/http": "~2.2",
-                "nette/utils": "~2.2",
-                "php": ">=5.3.1"
+                "nette/utils": "~2.4",
+                "php": ">=5.6.0"
             },
             "conflict": {
                 "nette/nette": "<2.2"
             },
             "require-dev": {
-                "latte/latte": "~2.3.2",
-                "nette/di": "~2.3",
-                "nette/tester": "~1.3",
-                "tracy/tracy": "~2.2"
+                "latte/latte": "~2.4",
+                "nette/di": "~2.4",
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.4"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -220,7 +232,7 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:35:20"
+            "time": "2016-06-30 18:18:10"
         },
         {
             "name": "nette/http",

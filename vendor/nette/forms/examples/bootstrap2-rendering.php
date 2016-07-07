@@ -10,7 +10,6 @@ if (@!include __DIR__ . '/../vendor/autoload.php') {
 }
 
 use Nette\Forms\Form;
-use Nette\Forms\Controls;
 use Tracy\Debugger;
 use Tracy\Dumper;
 
@@ -23,17 +22,17 @@ $form->addGroup('Personal data');
 $form->addText('name', 'Your name')
 	->setRequired('Enter your name');
 
-$form->addRadioList('gender', 'Your gender', array(
+$form->addRadioList('gender', 'Your gender', [
 	'male', 'female',
-));
+]);
 
-$form->addCheckboxList('colors', 'Favorite colors:', array(
+$form->addCheckboxList('colors', 'Favorite colors:', [
 	'red', 'green', 'blue',
-));
+]);
 
-$form->addSelect('country', 'Country', array(
+$form->addSelect('country', 'Country', [
 	'Buranda', 'Qumran', 'Saint Georges Island',
-));
+]);
 
 $form->addCheckbox('send', 'Ship to address');
 
@@ -69,12 +68,13 @@ $renderer->wrappers['control']['errorcontainer'] = 'span class=help-inline';
 $form->getElementPrototype()->class('form-horizontal');
 
 foreach ($form->getControls() as $control) {
-	if ($control instanceof Controls\Button) {
+	$type = $control->getOption('type');
+	if ($type === 'button') {
 		$control->getControlPrototype()->addClass(empty($usedPrimary) ? 'btn btn-primary' : 'btn');
 		$usedPrimary = TRUE;
 
-	} elseif ($control instanceof Controls\Checkbox || $control instanceof Controls\CheckboxList || $control instanceof Controls\RadioList) {
-		$control->getLabelPrototype()->addClass($control->getControlPrototype()->type);
+	} elseif (in_array($type, ['checkbox', 'radio'], TRUE)) {
+		$control->getLabelPrototype()->addClass($type);
 		$control->getSeparatorPrototype()->setName(NULL);
 	}
 }

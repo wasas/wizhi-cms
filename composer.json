@@ -5,8 +5,8 @@
   "require": {
     "thefold/wordpress-dispatcher": "^1.0",
     "sunra/php-simple-html-dom-parser": "1.5.1",
-    "nette/forms": "^2.3",
-    "nette/finder": "^2.3",
+    "nette/forms": "^2.4",
+    "nette/finder": "^2.4",
     "mobiledetect/mobiledetectlib": "^2.8"
   },
   "license": "MIT",

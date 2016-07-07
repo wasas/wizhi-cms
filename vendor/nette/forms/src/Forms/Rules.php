@@ -13,22 +13,24 @@ use Nette;
 /**
  * List of validation & condition rules.
  */
-class Rules extends Nette\Object implements \IteratorAggregate
+class Rules implements \IteratorAggregate
 {
+	use Nette\SmartObject;
+
 	/** @deprecated */
 	public static $defaultMessages;
 
-	/** @var Rule */
+	/** @var Rule|FALSE|NULL */
 	private $required;
 
 	/** @var Rule[] */
-	private $rules = array();
+	private $rules = [];
 
 	/** @var Rules */
 	private $parent;
 
 	/** @var array */
-	private $toggles = array();
+	private $toggles = [];
 
 	/** @var IControl */
 	private $control;
@@ -48,9 +50,9 @@ class Rules extends Nette\Object implements \IteratorAggregate
 	public function setRequired($value = TRUE)
 	{
 		if ($value) {
-			$this->addRule(Form::REQUIRED, is_string($value) ? $value : NULL);
+			$this->addRule(Form::REQUIRED, $value === TRUE ? NULL : $value);
 		} else {
-			$this->required = NULL;
+			$this->required = FALSE;
 		}
 		return $this;
 	}
@@ -62,7 +64,16 @@ class Rules extends Nette\Object implements \IteratorAggregate
 	 */
 	public function isRequired()
 	{
-		return $this->required instanceof Rule ? !$this->required->isNegative : FALSE;
+		return (bool) $this->required;
+	}
+
+
+	/**
+	 * @internal
+	 */
+	public function isOptional()
+	{
+		return $this->required === FALSE;
 	}
 
 
@@ -120,10 +131,10 @@ class Rules extends Nette\Object implements \IteratorAggregate
 		$rule = new Rule;
 		$rule->control = $control;
 		$rule->validator = $validator;
-		$this->adjustOperation($rule);
 		$rule->arg = $arg;
 		$rule->branch = new static($this->control);
 		$rule->branch->parent = $this;
+		$this->adjustOperation($rule);
 
 		$this->rules[] = $rule;
 		return $rule->branch;
@@ -200,13 +211,13 @@ class Rules extends Nette\Object implements \IteratorAggregate
 	 * @internal
 	 * @return array
 	 */
-	public function getToggleStates($toggles = array(), $success = TRUE)
+	public function getToggleStates($toggles = [], $success = TRUE)
 	{
 		foreach ($this->toggles as $id => $hide) {
 			$toggles[$id] = ($success xor !$hide) || !empty($toggles[$id]);
 		}
 
-		foreach ($this as $rule) {
+		foreach ($this->rules as $rule) {
 			if ($rule->branch) {
 				$toggles = $rule->branch->getToggleStates($toggles, $success && static::validateRule($rule));
 			}
@@ -219,12 +230,16 @@ class Rules extends Nette\Object implements \IteratorAggregate
 	 * Validates against ruleset.
 	 * @return bool
 	 */
-	public function validate()
+	public function validate($emptyOptional = FALSE)
 	{
+		$emptyOptional = $emptyOptional || $this->isOptional() && !$this->control->isFilled();
 		foreach ($this as $rule) {
-			$success = $this->validateRule($rule);
+			if (!$rule->branch && $emptyOptional && $rule->validator !== Form::FILLED) {
+				return TRUE;
+			}
 
-			if ($success && $rule->branch && !$rule->branch->validate()) {
+			$success = $this->validateRule($rule);
+			if ($success && $rule->branch && !$rule->branch->validate($rule->validator === Form::BLANK ? FALSE : $emptyOptional)) {
 				return FALSE;
 
 			} elseif (!$success && !$rule->branch) {
@@ -237,12 +252,35 @@ class Rules extends Nette\Object implements \IteratorAggregate
 
 
 	/**
+	 * @internal
+	 */
+	public function check()
+	{
+		if ($this->required !== NULL) {
+			return;
+		}
+		foreach ($this->rules as $rule) {
+			if ($rule->control === $this->control && ($rule->validator === Form::FILLED || $rule->validator === Form::BLANK)) {
+				// ignore
+			} elseif ($rule->branch) {
+				if ($rule->branch->check() === TRUE) {
+					return TRUE;
+				}
+			} else {
+				trigger_error("Missing setRequired(TRUE | FALSE) on field '{$rule->control->getName()}' in form '{$rule->control->getForm()->getName()}'.", E_USER_WARNING);
+				return TRUE;
+			}
+		}
+	}
+
+
+	/**
 	 * Validates single rule.
 	 * @return bool
 	 */
 	public static function validateRule(Rule $rule)
 	{
-		$args = is_array($rule->arg) ? $rule->arg : array($rule->arg);
+		$args = is_array($rule->arg) ? $rule->arg : [$rule->arg];
 		foreach ($args as & $val) {
 			$val = $val instanceof IControl ? $val->getValue() : $val;
 		}
@@ -275,6 +313,15 @@ class Rules extends Nette\Object implements \IteratorAggregate
 		if (is_string($rule->validator) && ord($rule->validator[0]) > 127) {
 			$rule->isNegative = TRUE;
 			$rule->validator = ~$rule->validator;
+			if (!$rule->branch) {
+				$name = strncmp($rule->validator, ':', 1) ? $rule->validator : 'Form:' . strtoupper($rule->validator);
+				trigger_error("Negative validation rules such as ~$name are deprecated.", E_USER_DEPRECATED);
+			}
+			if ($rule->validator === Form::FILLED) {
+				$rule->validator = Form::BLANK;
+				$rule->isNegative = FALSE;
+				trigger_error('Replace negative validation rule ~Form::FILLED with Form::BLANK.', E_USER_DEPRECATED);
+			}
 		}
 
 		if (!is_callable($this->getCallback($rule))) {
