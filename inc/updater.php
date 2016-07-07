@@ -106,14 +106,14 @@ class WP_GitHub_Updater {
 
 
 	/**
-	 * 从 Github 获取数据, Github 接口封装
+	 * 构造 Github API URL
 	 *
 	 * @param       $endpoint
 	 * @param array $params
 	 *
 	 * @return bool
 	 */
-	private function get_from_github( $endpoint, $params = [ ] ) {
+	private function build_api_url( $endpoint, $params = [ ] ) {
 
 		// If you've set an access_token, append it to the query
 		if ( $this->token ) {
@@ -136,10 +136,31 @@ class WP_GitHub_Updater {
 			$url .= '?' . $query;
 		}
 
-		$args = array(
-			'method' => 'GET',
-			'timeout' => 3000000,
-		);
+		return $url;
+
+	}
+
+
+	/**
+	 * 从 Github 获取数据, Github 接口封装
+	 *
+	 * @param       $endpoint
+	 *
+	 * @return bool
+	 */
+	private function get_from_github( $endpoint ) {
+
+		// If you've set an access_token, append it to the query
+		if ( $this->token ) {
+			$params[ 'access_token' ] = $this->token;
+		}
+
+		$url = $this->build_api_url( $endpoint );
+
+		$args = [
+			'method'  => 'GET',
+			'timeout' => 300,
+		];
 
 		// Initialize the request
 		$response = wp_remote_get( $url, $args );
@@ -207,22 +228,9 @@ class WP_GitHub_Updater {
 	 */
 	private function get_repo_zip() {
 
-		$response = $this->get_from_github( 'zipball/' . $this->branch );
+		$url = $this->build_api_url( 'zipball/' . $this->branch );
 
-		$status   = wp_remote_retrieve_header( $response, 'Status' );
-		$location = wp_remote_retrieve_header( $response, 'Location' );
-
-		update_option( 'ggggg', $response );
-
-		if ( $response ) {
-			// If request is successful (code 302 is from the GH API documentation)
-			if ( 302 == $status ) {
-				// Return the URL of the zipball
-				return 'https://api.github.com/repos/iwillhappy1314/wizhi-cms/zipball/master';
-			}
-		}
-
-		return 'https://api.github.com/repos/iwillhappy1314/wizhi-cms/zipball/master';
+		return $url;
 
 	}
 
@@ -245,8 +253,6 @@ class WP_GitHub_Updater {
 		if ( $include_zip_url ) {
 			$obj->package = $this->get_repo_zip();
 		}
-
-		update_option( 'xxxxxxxxx', $obj );
 
 		return $obj;
 
