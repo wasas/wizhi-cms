@@ -1,285 +1,261 @@
 <?php
 
-if ( ! class_exists( 'GitHub_Plugin_Updater' ) ) :
+/*  Copyright 2014  Cooper Dukes @INNEO  (email : hello@inneosg.com)
 
-	/**
-	 * Register a new GitHub plugin
-	 *
-	 * @param array $config
-	 */
-	function github_plugin_updater_register( $config ) {
-		new GitHub_Plugin_Updater( $config );
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+class WP_GitHub_Updater {
+
+	private $api_url = 'https://api.github.com';
+
+	function __construct( $settings ) {
+
+		// Never load outside of the admin... would be a waste of cycles
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		// Check for minimum config
+		if ( ! isset( $settings[ 'owner' ] ) || ! isset( $settings[ 'repo' ] ) || ! isset( $settings[ 'basename' ] ) ) {
+			return;
+		}
+
+		$this->owner    = $settings[ 'owner' ];
+		$this->repo     = $settings[ 'repo' ];
+		$this->basename = $settings[ 'basename' ];
+
+		// Optional config
+		$this->branch  = ! empty( $settings[ 'branch' ] ) ? $settings[ 'branch' ] : 'master';
+		$this->token   = ! empty( $settings[ 'access_token' ] ) ? $settings[ 'access_token' ] : false;
+		$this->timeout = ! empty( $settings[ 'timeout' ] ) ? (int) $settings[ 'timeout' ] : 10;
+
+		// Determine plugin folder and main file name from basename
+		$dir             = explode( '/', $settings[ 'basename' ] );
+		$this->folder    = $dir[ 0 ];
+		$this->main_file = $dir[ 1 ];
+
+		// Not current output anywhere, but might be useful for debugging
+		$this->errors = [ ];
+
+		// Check for GH plugin updates when WP checks for plugin updates
+		add_filter( 'pre_set_site_transient_update_plugins', [ &$this, 'check_for_update' ] );
+
+		// Get latest plugin information when the updater is run
+		add_filter( 'plugins_api', [ &$this, 'pre_run_update' ], 10, 3 );
+
+		// GitHub's archives have ugly names that break the WP plugin installer. This function changes the downloaded archive path to align with the old plugin's path
+		add_filter( 'upgrader_source_selection', [ &$this, 'set_install_source_name' ], 10, 3 );
+
 	}
 
-	/**
-	 * Update a WordPress plugin via GitHub
-	 *
-	 * It's best avoided to call when is_admin() would return false.
-	 *
-	 * @version 1.0
-	 */
-	class GitHub_Plugin_Updater {
+	public function check_for_update( $transient ) {
 
-		/**
-		 * Stores the config.
-		 *
-		 * @since 1.0
-		 * @var type
-		 */
-		protected $config;
-
-		/**
-		 * Constructor.
-		 *
-		 * @since 1.0
-		 * @param array $config
-		 */
-		public function __construct( $config ) {
-			$defaults = array(
-				'repo'			=> null,
-				'owner'			=> null,
-				'slug'			=> null,
-				'access_token'  => null,
-				'http_args'		=> array(),
-			);
-			$this->config = (object) array_merge( $defaults, $config );
-
-			// default slug equals the repo name
-			if ( empty( $this->config->slug ) )
-				$this->config->slug = $this->config->repo . '/' . $this->config->repo . '.php';
-
-			add_filter( 'http_request_args', array( $this, 'add_http_args' ), 10, 2 );
-			add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'update_available' ) );
-
-			if ( isset( $_GET['get-zipball'] ) && $_GET['get-zipball'] == $this->config->slug )
-				add_action( 'admin_init', array( $this, 'get_zipball' ) );
-		}
-
-		/**
-		 * Call the GitHub API and return a json decoded body.
-		 *
-		 * @since 1.0
-		 * @param string $url
-		 * @see http://developer.github.com/v3/
-		 * @return boolean|object
-		 */
-		protected function api( $url ) {
-
-			add_filter( 'http_request_args', array( $this, 'add_http_args' ), 10, 2 );
-
-			$response = wp_remote_get( $this->get_api_url( $url ) );
-
-			remove_filter( 'http_request_args', array( $this, 'add_http_args' ) );
-
-			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) != '200' )
-				return false;
-
-			return json_decode( wp_remote_retrieve_body( $response ) );
-		}
-
-		/**
-		 * Return API url.
-		 *
-		 * @todo Maybe allow a filter to add or modify segments.
-		 * @since 1.0
-		 * @param string $endpoint
-		 * @return string
-		 */
-		protected function get_api_url( $endpoint ) {
-			$segments = array(
-				'owner'			 => $this->config->owner,
-				'repo'			 => $this->config->repo,
-				'archive_format' => 'zipball',
-			);
-
-			foreach ( $segments as $segment => $value ) {
-				$endpoint = str_replace( '/:' . $segment, '/' . $value, $endpoint );
-			}
-
-			if ( ! empty( $this->config->access_token ) )
-				$endpoint = add_query_arg( 'access_token', $this->config->access_token );
-
-			return 'https://api.github.com' . $endpoint;
-		}
-
-		/**
-		 * Reads the remote plugin file.
-		 *
-		 * Uses a transient to limit the calls to the API.
-		 *
-		 * @since 1.0
-		 */
-		protected function get_remote_info() {
-			$remote = get_site_transient( __CLASS__ . ':remote' );
-
-			if ( ! $remote ) {
-				$remote = $this->api( '/repos/:owner/:repo/contents/' . basename( $this->config->slug ) );
-
-				if ( $remote )
-					set_site_transient( __CLASS__ . ':remote', $remote, 60 * 60 );
-			}
-
-			return $remote;
-		}
-
-		/**
-		 * Retrieves the local version from the file header of the plugin
-		 *
-		 * @since 1.0
-		 * @return string|boolean
-		 */
-		protected function get_local_version() {
-			$data = get_plugin_data( WP_PLUGIN_DIR . '/' . $this->config->slug );
-
-			if ( ! empty( $data['Version'] ) )
-				return $data['Version'];
-
-			return false;
-		}
-
-		/**
-		 * Retrieves the remote version from the file header of the plugin
-		 *
-		 * @since 1.0
-		 * @return string|boolean
-		 */
-		protected function get_remote_version() {
-			$response = $this->get_remote_info();
-
-			if ( ! $response )
-				return false;
-
-			preg_match( '#^\s*Version\:\s*(.*)$#im', base64_decode( $response->content ), $matches );
-
-			if ( ! empty( $matches[1] ) )
-				return $matches[1];
-
-			return false;
-		}
-
-		/**
-		 * Hooks into pre_set_site_transient_update_plugins to update from GitHub.
-		 *
-		 * @since 1.0
-		 * @todo fill url with value from remote repostory
-		 * @param $transient
-		 * @return $transient If all goes well, an updated one.
-		 */
-		public function update_available( $transient ) {
-
-			if ( empty( $transient->checked ) )
-				return $transient;
-
-			$local_version  = $this->get_local_version();
-			$remote_version = $this->get_remote_version();
-
-			if ( $local_version && $remote_version && version_compare( $remote_version, $local_version, '>' ) ) {
-				$plugin = array(
-					'slug'		  => dirname( $this->config->slug ),
-					'new_version' => $remote_version,
-					'url'		  => null,
-					'package'	  => admin_url( '?get-zipball=' . $this->config->slug ),
-				);
-
-				$transient->response[ $this->config->slug ] = (object) $plugin;
-			}
-
+		// $transient->checked the array of plugins to check for updates. If our plugin isn't in the array, stop.
+		if ( empty( $transient->checked[ $this->basename ] ) ) {
 			return $transient;
 		}
 
-		/**
-		 * Allows to change any args used on downloading the zipball
-		 *
-		 * @since 1.0
-		 * @param type $args
-		 * @return type
-		 */
-		public function add_http_args( $args, $url ) {
-
-			if ( 0 === strpos( $url, $this->get_api_url( '/repos/:owner/:repo/:archive_format' ) ) ) {
-				foreach( $this->config->http_args as $name => $value ) {
-					$args[ $name ] = $value;
-				}
-			}
-
-			if ( admin_url( '?get-zipball=' . $this->config->slug ) == $url ) {
-				$cookie = new WP_Http_Cookie( array(
-					'name'		=> AUTH_COOKIE,
-					'path'		=> ADMIN_COOKIE_PATH,
-					'value'		=> $_COOKIE[ AUTH_COOKIE ],
-					'expires'	=> 300,
-					'domain'	=> defined( 'COOKIE_DOMAIN' ) ? COOKIE_DOMAIN : $_SERVER['HTTP_HOST'],
-				) );
-
-				$args['cookies'][] = $cookie;
-			}
-
-			return $args;
+		// Get the latest plugin meta from the GH repo
+		$repo_meta = $this->get_repo_meta();
+		if ( ! $repo_meta ) {
+			return $transient;
 		}
 
-		/**
-		 * GitHub decides on the root directory in the zipball, but we might disagree.
-		 *
-		 * @since 1.0
-		 */
-		public function get_zipball() {
-
-			add_filter( 'http_request_args', array( $this, 'add_http_args' ), 10, 2 );
-
-			$zipball = download_url( $this->get_api_url( '/repos/:owner/:repo/:archive_format' ) );
-
-			remove_filter( 'http_request_args', array( $this, 'add_http_args' ) );
-
-			if ( is_wp_error( $zipball ) )
-				$this->return_404();
-
-			$z = new ZipArchive();
-
-			if ( true === $z->open( $zipball ) ) {
-				$length	= strlen( $z->getNameIndex( 0 ) );
-				$status = true;
-
-				for ( $i=0; $i<$z->numFiles; $i++ ) {
-					$name = $z->getNameIndex( $i );
-
-					if ( ! $name )
-						$status = false;
-
-					$newname = substr_replace( $name, $this->config->repo, 0, $length - 1 );
-
-					if ( ! $z->renameName( $name, $newname ) )
-						$status = false;
-				}
-
-				$z->close();
-
-				if ( $status ) {
-					header( 'Content-Disposition: attachment; filename=' . $this->config->repo . '.zip' );
-					header( 'Content-Type: application/zip' );
-					header( 'Content-Length: ' . filesize( $zipball ) );
-
-					ob_clean();
-					flush();
-					readfile( $zipball );
-					unlink( $zipball );
-					exit;
-				}
-			}
-
-			unlink( $zipball );
-
-			$this->return_404();
+		// Compare the current plugin version to the repo's version. See the PHP documentation on version_compare() for acceptable version strings
+		if ( version_compare( $repo_meta[ 'Version' ], $transient->checked[ $this->basename ], '>' ) ) {
+			$transient->response[ $this->basename ] = $this->set_update_object( $repo_meta );
 		}
 
-		/**
-		 * Getting the zipball has failed. All hail the zipball.
-		 *
-		 * @since 1.0
-		 */
-		protected function return_404() {
-			header( 'HTTP/1.1 404 Not Found', true, 404 );
-			exit;
-		}
+		return $transient;
+
 	}
 
-endif;
+	public function pre_run_update( $obj, $action, $arg ) {
+
+		// Make sure plugin_information is being requested
+		if ( 'plugin_information' !== $action ) {
+			return $obj;
+		}
+
+		// Make sure this plugin's info is being requested
+		if ( $this->repo !== $arg->slug ) {
+			return $obj;
+		}
+
+		// Get the latest plugin meta from the GH repo...
+		$repo_meta = $this->get_repo_meta();
+
+		// ...and use that meta to append the plugin info object
+		return $this->set_update_object( $repo_meta );
+
+	}
+
+	private function get_from_github( $endpoint, $params = [ ] ) {
+
+		// If you've set an access_token, append it to the query
+		if ( $this->token ) {
+			$params[ 'access_token' ] = $this->token;
+		}
+
+		// Build the GitHub API URL
+		$url = [
+			untrailingslashit( $this->api_url ),
+			'repos',
+			$this->owner,
+			$this->repo,
+			$endpoint,
+		];
+		$url = implode( '/', $url );
+
+		// Add the query, if it exists
+		$query = http_build_query( $params, '' );
+		if ( ! empty( $query ) ) {
+			$url .= '?' . $query;
+		}
+
+		// Initialize the request
+		$response = wp_remote_retrieve_body( wp_remote_get( $url ) );
+
+		return ! empty( $response ) ? $response : false;
+
+	}
+
+	private function get_repo_meta() {
+
+		$params = [
+			'ref' => $this->branch,
+		];
+
+		$response = $this->get_from_github( 'contents/' . $this->main_file, $params );
+
+		// If data is returned
+		if ( $response ) {
+			// GH API v3 returns the file contents as base64. We need to decode it.
+			$base_file_content = base64_decode( $response );
+
+			// If decoding went well
+			if ( ! empty( $base_file_content ) ) {
+
+				// We want to use WP's get_plugin_data() function for parsing metadata from the returned plugin file. This function requires a physical file, so we create a temporary one.
+				// http://sg3.php.net/tempnam
+				$temp_base_file = tempnam( sys_get_temp_dir(), "WPGH" );
+				$handle         = fopen( $temp_base_file, "w" );
+				fwrite( $handle, $base_file_content );
+				fclose( $handle );
+
+				// Get the repo plugin file's metadata
+				$repo_plugin_meta = get_plugin_data( $temp_base_file, false, false );
+				unlink( $temp_base_file );
+
+				// If successful, return the meta
+				if ( ! empty( $repo_plugin_meta ) ) {
+					return $repo_plugin_meta;
+				} else {
+					$this->errors[] = 'Repo plugin version is unreadable.';
+				}
+			} else {
+				$this->errors[] = 'Repo plugin base file is unreadable.';
+			}
+		} else {
+			$this->errors[] = 'GitHub connection timed out.';
+		}
+
+	}
+
+	private function get_repo_zip() {
+
+		$response = $this->get_from_github( 'zipball/' . $this->branch );
+		if ( $response ) {
+			// If request is successful (code 302 is from the GH API documentation)
+			if ( 302 == $response->code ) {
+				// Return the URL of the zipball
+				return $response->headers[ 'location' ];
+			}
+		}
+
+	}
+
+	private function set_update_object( $meta, $include_zip_url = true ) {
+
+		// Thanks to http://code.tutsplus.com/tutorials/a-guide-to-the-wordpress-http-api-automatic-plugin-updates--wp-25181 for the available fields
+		$obj              = new stdClass();
+		$obj->url         = $meta[ 'PluginURI' ];
+		$obj->slug        = $this->repo;
+		$obj->new_version = $meta[ 'Version' ];
+
+		// $obj->requires = '3.0';
+		// $obj->tested = '3.3.1';
+		// $obj->downloaded = 12540;
+		// $obj->last_updated = '2012-01-12';
+		// $obj->sections = array(
+		// 	'description' => 'The new version of the Auto-Update plugin',
+		// 	'another_section' => 'This is another section',
+		// 	'changelog' => 'Some new features'
+		// );
+		// $obj->download_link = 'http://localhost/update.php';
+
+		if ( $include_zip_url ) {
+			$obj->package = $this->get_repo_zip();
+		}
+
+		return $obj;
+
+	}
+
+	public function set_install_source_name( $source, $remote_source, $plugin ) {
+
+		// We have to check that our plugin is the one currently being processed. GitHub returns the zipball with a name that includes {{owner}}-{{repo}}-. We'll use this to check.
+		if ( strpos( $source, $this->owner . '-' . $this->repo . '-' ) !== false ) {
+			$plugins_basenames = array_keys( get_plugins() );
+			$plugins_names     = [ ];
+
+			foreach ( $plugins_basenames as $basename ) {
+				$path      = explode( '/', $basename );
+				$path[ 1 ] = str_replace( '.php', '', $path[ 1 ] );
+				if ( $this->repo !== $path[ 1 ] ) {
+					$plugins_names[] = $path[ 1 ];
+				}
+			}
+
+			foreach ( $plugins_names as $name ) {
+				if ( strpos( $source, $this->owner . '-' . $name . '-' ) !== false ) {
+					return $source;
+				}
+			}
+
+			// Break the unzipped archive's path apart
+			$target = untrailingslashit( $source );
+			$path   = explode( '/', $target );
+
+			// Change the last part of the path to the plugin folder's name
+			$length              = count( $path );
+			$path[ $length - 1 ] = $this->folder;
+
+			// Assemble the new path
+			$target = trailingslashit( implode( '/', $path ) );
+
+			// Move the unzipped archive from the old path to the new one
+			rename( $source, $target );
+
+			// Return the new path
+			return $target;
+		} else {
+			// Return the original value, if not our plugin
+			return $source;
+		}
+
+	}
+
+}

@@ -31,10 +31,11 @@ function wizhi_post_types_icon() {
 
 
 if ( is_admin() ) {
-	$config = [
+	$config = array(
 		'owner' => 'iwillhappy1314',
-		'repo'  => 'wizhi-cms',
-		'slug'  => plugin_basename( __FILE__ ),
-	];
-	new GitHub_Plugin_Updater( $config );
+		'repo' => 'wizhi-cms',
+		'basename' => 'wizhi-cms/cms.php',
+	);
+
+	new WP_GitHub_Updater( $config );
 }
