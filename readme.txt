@@ -1,5 +1,5 @@
 ﻿=== Plugin Name ===
-Contributors: Amos Lee
+Contributors: iwillhappy1314
 Donate link: 
 Tags: admin, post, pages, plugin, CMS
 Requires at least: 3.4
