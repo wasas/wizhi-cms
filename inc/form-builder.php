@@ -147,7 +147,7 @@ class WizhiFormBuilder {
 					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
 				} else {
 					$renderer->wrappers[ 'controls' ][ 'container' ] = '';
-					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class=wizhi-form-filed';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class="form-field wizhi-form-filed"';
 				}
 				break;
 
