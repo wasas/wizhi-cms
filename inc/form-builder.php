@@ -47,10 +47,10 @@ class WizhiFormBuilder {
 	/**
 	 * WizhiFormBuilder constructor.
 	 *
-	 * @param  string $form_type 表单类型
-	 * @param array   $fields    表单项目
-	 * @param array   $args      附加属性数组
-	 * @param int     $id        表单数据 id, 文章、分类法或用户 id
+	 * @param string $form_type 表单类型
+	 * @param array  $fields    表单项目
+	 * @param array  $args      附加属性数组
+	 * @param int    $id        表单数据 id, 文章、分类法或用户 id
 	 *
 	 * todo: 处理附加参数
 	 */
@@ -59,9 +59,6 @@ class WizhiFormBuilder {
 		$this->fields    = $fields;
 		$this->id        = $id;
 		$this->args      = $args;
-
-		add_action( 'admin_notices', [ $this, 'notice' ] );
-
 	}
 
 
@@ -183,9 +180,13 @@ class WizhiFormBuilder {
 			$options = Arrays::get( $field, 'options', false );
 			$default = $values[ $name ];
 
-			// 对于多选项, 排序默认数组中没有的, 以免设置默认值时出错
+			// 对于多选项, 排除默认数组中没有的, 以免设置默认值时出错
 			if ( $type == 'multi-checkbox' || $type == 'multi-select' ) {
-				$default = array_flip( array_intersect_key( array_flip( $default ), $options ) );
+				if ( $default ) {
+					$default = array_flip( array_intersect_key( array_flip( $default ), $options ) );
+				} else {
+					$default = [ ];
+				}
 			}
 
 			if ( $type == 'select' || $type == 'radio' ) {
@@ -441,6 +442,9 @@ class WizhiFormBuilder {
 				}
 
 			}
+
+			echo "保存成功。";
+			add_action( 'admin_notices', [ $this, 'notice' ] );
 
 			return true;
 

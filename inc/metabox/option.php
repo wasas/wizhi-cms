@@ -55,11 +55,15 @@ class WizhiOptionPage {
 		$args   = $this->args;
 		$fields = $this->fields;
 
+		echo '<div class="wrap">';
+
 		echo Html::el( 'h1', $args[ 'title' ] );
 
 		// 显示表单
 		$form = new WizhiFormBuilder( 'option', $fields );
 		$form->init();
+
+		echo '</div>';
 
 	}
 
