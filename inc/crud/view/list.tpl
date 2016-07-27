@@ -36,7 +36,7 @@
                     $condition['order'] = 'ASC';
                 }
                 echo "<a href='" . $this->url['list'] . "&#038;" . http_build_query($condition) . "'>";
-                echo "<span>$name</span><span class='sorting-indicator'></span></a></th>";
+                echo "<span>" . $column_names[ $name ] . "</span><span class='sorting-indicator'></span></a></th>";
             }
         ?>
 		<tbody>

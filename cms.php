@@ -76,8 +76,9 @@ $args = [
 new CrudController( 'wp_posts', 'wizhi_post', $args );
 
 $args2 = [
-	'rows_per_page'   => 20,
-	'column_names' => [
+	'rows_per_page' => 20,
+	'column_names'  => [
+		'umeta_id'   => '主键',
 		'user_id'    => '用户 ID',
 		'meta_key'   => '键名',
 		'meta_value' => '键值',

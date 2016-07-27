@@ -9,9 +9,9 @@
                 require_once("util.php");
                 foreach ($columns as $name => $type) {
                     if ($name == $primary_key) {
-                        echo "<tr><th class='row'>$name *</th><td>" . data_type2html_input($columns[$name], $name, $new_id) . "</td></tr>";
+                        echo "<tr><th class='row'>" . $column_names[ $name ] . " *</th><td>" . data_type2html_input($columns[$name], $name, $new_id) . "</td></tr>";
                     } else {
-                        echo "<tr><th class='row'>$name</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
+                        echo "<tr><th class='row'>" . $column_names[ $name ] . "</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
                     }
                 }
             ?>

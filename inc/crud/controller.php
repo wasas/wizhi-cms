@@ -7,6 +7,7 @@
 class CrudController {
 
 	private $model;
+	private $column_names;
 	private $rows_per_page;
 	private $slug;
 	private $url;
@@ -21,7 +22,8 @@ class CrudController {
 		$this->rows_per_page = $args[ 'rows_per_page' ];
 
 		// 数据库
-		$this->model = new Model( $table_name );
+		$this->model        = new Model( $table_name );
+		$this->column_names = $args[ 'column_names' ];
 
 		// 菜单页面别名
 		$this->slug[ 'list' ] = $slug . '_list';
@@ -94,6 +96,8 @@ class CrudController {
 		$columns     = $this->model->get_columns();
 		$result      = $this->model->select( $key_word, $order_by, $order, $begin_row, $this->rows_per_page );
 
+		$column_names = $this->column_names;
+
 		include( dirname( __FILE__ ) . "/view/list.tpl" );
 	}
 
@@ -108,6 +112,8 @@ class CrudController {
 		$primary_key = $this->model->get_primary_key();
 		$columns     = $this->model->get_columns();
 		$new_id      = $this->model->get_new_candidate_id();
+
+		$column_names = $this->column_names;
 
 		include( dirname( __FILE__ ) . "/view/add.tpl" );
 	}
@@ -132,20 +138,20 @@ class CrudController {
 		// 更新
 		if ( isset( $_POST[ 'update' ] ) ) {
 			if ( $this->model->update( $_POST ) ) {
-				$message = "Record successfully updated";
+				$message = "更新成功";
 				$status  = "success";
 			} else {
-				$message = "No rows were affected";
+				$message = "更新失败";
 				$status  = "error";
 			}
 
 			// 删除
 		} else if ( isset( $_POST[ 'delete' ] ) ) {
 			if ( $this->model->delete( $id ) ) {
-				$message = "Record successfully deleted";
+				$message = "删除成功";
 				$status  = "success";
 			} else {
-				$message = "Error deleting record";
+				$message = "删除出错";
 				$status  = "error";
 			}
 
@@ -154,10 +160,10 @@ class CrudController {
 			$id = $this->model->insert( $_POST );
 
 			if ( "" != $id ) {
-				$message = "Record successfully inserted";
+				$message = "添加成功!";
 				$status  = "success";
 			} else {
-				$message = "Error inserting record";
+				$message = "添加出错";
 				$status  = "error";
 			}
 		}
@@ -166,6 +172,8 @@ class CrudController {
 		$primary_key = $this->model->get_primary_key();
 		$columns     = $this->model->get_columns();
 		$row         = $this->model->get_row( $id );
+
+		$column_names = $this->column_names;
 
 		include( dirname( __FILE__ ) . "/view/edit.tpl" );
 	}
