@@ -17,10 +17,10 @@
 	</form>
 
 	<?php if (empty($result)) { ?>
-		<table class='wp-list-table widefat fixed'><tr><th>暂无数据</th></tr></table>
+		<table class='wp-list-table widefat striped fixed'><tr><th>暂无数据</th></tr></table>
 
 	<?php } else { ?>
-		<table class='wp-list-table widefat fixed'>
+		<table class='wp-list-table widefat striped fixed'>
 		<thead>
 		<th></th>
         <?php

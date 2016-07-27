@@ -14,14 +14,14 @@
 
     <?php if (!empty($row)) { ?>
         <form method='post' action='<?php echo $this->url['edit'] ?>'>
-        <table class='wp-list-table widefat fixed'>
+        <table class='wp-list-table form-table fixed'>
             <?php
                 require_once("util.php");
                 foreach ($row as $name => $value) {
                     if ($name == $primary_key) {
-                        echo "<tr><th class='simple-table-manager'>$name *</th><td><input type='text' readonly='readonly' name='$name' value='$value'/></td></tr>";
+                        echo "<tr><th class='row'>$name *</th><td><input type='text' readonly='readonly' name='$name' value='$value'/></td></tr>";
                     } else {
-                        echo "<tr><th class='simple-table-manager'>$name</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
+                        echo "<tr><th class='row'>$name</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
                     }
                 }
             ?>
