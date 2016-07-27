@@ -50,6 +50,7 @@ if( !class_exists('R') ){
 
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );
+include_all_php( WIZHI_CMS . 'inc/crud' );
 include_all_php( WIZHI_CMS . 'inc/metabox' );
 
 // 加载逻辑个设置代码
@@ -63,5 +64,20 @@ $is_enable_builder = get_option( 'is_enable_builder' );
 if ( $is_enable_builder ) {
 	include_all_php( WIZHI_CMS . 'builder' );
 }
+
+
+$args = [
+	'rows_per_page' => 20,
+	'exclude_columns' => [],
+];
+
+new CrudController('wp_posts', 'wizhi_post', $args);
+
+$args2 = [
+	'rows_per_page' => 20,
+    'exclude_columns' => [],
+];
+
+new CrudController('wp_usermeta', 'wizhi_post2', $args2);
 
 // require_once WIZHI_CMS . 'example.php';
