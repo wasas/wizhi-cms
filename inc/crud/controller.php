@@ -8,6 +8,7 @@ class CrudController {
 
 	private $model;
 	private $column_names;
+	private $excluded_columns;
 	private $rows_per_page;
 	private $slug;
 	private $url;
@@ -24,6 +25,7 @@ class CrudController {
 		// 数据库
 		$this->model        = new Model( $table_name );
 		$this->column_names = $args[ 'column_names' ];
+		$this->excluded_columns = $args[ 'excluded_columns' ];
 
 		// 菜单页面别名
 		$this->slug[ 'list' ] = $slug . '_list';
@@ -97,6 +99,7 @@ class CrudController {
 		$result      = $this->model->select( $key_word, $order_by, $order, $begin_row, $this->rows_per_page );
 
 		$column_names = $this->column_names;
+		$excluded_columns = $this->excluded_columns;
 
 		include( dirname( __FILE__ ) . "/view/list.tpl" );
 	}
@@ -114,6 +117,7 @@ class CrudController {
 		$new_id      = $this->model->get_new_candidate_id();
 
 		$column_names = $this->column_names;
+		$excluded_columns = $this->excluded_columns;
 
 		include( dirname( __FILE__ ) . "/view/add.tpl" );
 	}
@@ -174,6 +178,7 @@ class CrudController {
 		$row         = $this->model->get_row( $id );
 
 		$column_names = $this->column_names;
+		$excluded_columns = $this->excluded_columns;
 
 		include( dirname( __FILE__ ) . "/view/edit.tpl" );
 	}

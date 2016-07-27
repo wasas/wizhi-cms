@@ -63,17 +63,6 @@ include_all_php( WIZHI_CMS . 'modules/app' );
 
 $is_enable_builder = get_option( 'is_enable_builder' );
 
-if ( $is_enable_builder ) {
-	include_all_php( WIZHI_CMS . 'builder' );
-}
-
-
-$args = [
-	'rows_per_page'   => 20,
-	'exclude_columns' => [ ],
-];
-
-new CrudController( 'wp_posts', 'wizhi_post', $args );
 
 $args2 = [
 	'rows_per_page' => 20,
@@ -83,6 +72,7 @@ $args2 = [
 		'meta_key'   => '键名',
 		'meta_value' => '键值',
 	],
+	'excluded_columns' => [ 'umeta_id' ],
 ];
 
 new CrudController( 'wp_usermeta', 'wizhi_post2', $args2 );

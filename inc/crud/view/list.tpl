@@ -27,16 +27,19 @@
             // 分栏名称
             $condition = array('search' => $key_word);
             foreach ($columns as $name => $type) {
-                $condition['orderby'] = $name;
-                if ($name == $order_by and "ASC" == $order) {
-                    echo "<th scope='col' class='manage-column sortable asc'>";
+                if( !in_array( $name, $excluded_columns ) ){
+                    $condition['orderby'] = $name;
+                    if ($name == $order_by and "ASC" == $order) {
+                        echo "<th scope='col' class='manage-column sortable asc'>";
                     $condition['order'] = 'DESC';
-                } else {
-                    echo "<th scope='col' class='manage-column sortable desc'>";
-                    $condition['order'] = 'ASC';
+                    } else {
+                        echo "<th scope='col' class='manage-column sortable desc'>";
+                        $condition['order'] = 'ASC';
+                    }
+                    echo "<a href='" . $this->url['list'] . "&#038;" . http_build_query($condition) . "'>";
+                    echo "<span>" . $column_names[ $name ] . "</span><span class='sorting-indicator'></span></a></th>";
                 }
-                echo "<a href='" . $this->url['list'] . "&#038;" . http_build_query($condition) . "'>";
-                echo "<span>" . $column_names[ $name ] . "</span><span class='sorting-indicator'></span></a></th>";
+
             }
         ?>
 		<tbody>
@@ -50,7 +53,9 @@
                     if ($k == $primary_key) {
                         echo "<td class='" . $row_bgcolor[$row_bgcolor_index] . "' nowrap><a href='" . $this->url['edit'] . '&#038id=' . $v . "'>编辑</a></td>";
                     }
-                    echo "<td class='" . $row_bgcolor[$row_bgcolor_index] . "'>" . htmlspecialchars($v) . "</td>";
+                    if( !in_array( $k, $excluded_columns ) ){
+                        echo "<td class='" . $row_bgcolor[$row_bgcolor_index] . "'>" . htmlspecialchars($v) . "</td>";
+                    }
                 }
                 echo "</tr>";
                 $row_bgcolor_index = ($row_bgcolor_index + 1) % count($row_bgcolor);

@@ -18,10 +18,12 @@
             <?php
                 require_once("util.php");
                 foreach ($row as $name => $value) {
-                    if ($name == $primary_key) {
-                        echo "<tr><th class='row'>" . $column_names[ $name ] . " *</th><td><input type='text' readonly='readonly' name='$name' value='$value'/></td></tr>";
-                    } else {
-                        echo "<tr><th class='row'>" . $column_names[ $name ] . "</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
+                    if( !in_array( $name, $excluded_columns ) ){
+                        if ($name == $primary_key) {
+                            echo "<tr><th class='row'>" . $column_names[ $name ] . " *</th><td><input type='text' readonly='readonly' name='$name' value='$value'/></td></tr>";
+                        } else {
+                            echo "<tr><th class='row'>" . $column_names[ $name ] . "</th><td>" . data_type2html_input($columns[$name], $name, $value) . "</td></tr>";
+                        }
                     }
                 }
             ?>
