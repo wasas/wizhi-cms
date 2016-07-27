@@ -24,15 +24,15 @@
 		<thead>
 		<th></th>
         <?php
-            // column names
+            // 分栏名称
             $condition = array('search' => $key_word);
             foreach ($columns as $name => $type) {
                 $condition['orderby'] = $name;
                 if ($name == $order_by and "ASC" == $order) {
-                    echo "<th scope='col' class='manage-column sortable asc'  style=''>";
+                    echo "<th scope='col' class='manage-column sortable asc'>";
                     $condition['order'] = 'DESC';
                 } else {
-                    echo "<th scope='col' class='manage-column sortable desc'  style=''>";
+                    echo "<th scope='col' class='manage-column sortable desc'>";
                     $condition['order'] = 'ASC';
                 }
                 echo "<a href='" . $this->url['list'] . "&#038;" . http_build_query($condition) . "'>";

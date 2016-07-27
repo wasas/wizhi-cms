@@ -70,7 +70,7 @@ class CrudController {
 			$order    = $_GET[ 'order' ];
 		}
 
-		// manage record quantity
+		// 管理记录数量
 		$begin_row = 0;
 		if ( isset( $_GET[ 'beginrow' ] ) ) {
 			if ( is_numeric( $_GET[ 'beginrow' ] ) ) {
@@ -79,7 +79,7 @@ class CrudController {
 		}
 
 		// 统计行数
-		$total          = $this->model->count_rows( $key_word );
+		$total = $this->model->count_rows( $key_word );
 
 		$next_begin_row = $begin_row + $this->rows_per_page;
 		if ( $total < $next_begin_row ) {
@@ -94,7 +94,7 @@ class CrudController {
 		$columns     = $this->model->get_columns();
 		$result      = $this->model->select( $key_word, $order_by, $order, $begin_row, $this->rows_per_page );
 
-		include( FILE_VIEW_LIST );
+		include( dirname( __FILE__ ) . "/view/list.tpl" );
 	}
 
 
@@ -109,7 +109,7 @@ class CrudController {
 		$columns     = $this->model->get_columns();
 		$new_id      = $this->model->get_new_candidate_id();
 
-		include( FILE_VIEW_ADD );
+		include( dirname( __FILE__ ) . "/view/add.tpl" );
 	}
 
 	/**
@@ -167,7 +167,7 @@ class CrudController {
 		$columns     = $this->model->get_columns();
 		$row         = $this->model->get_row( $id );
 
-		include( FILE_VIEW_EDIT );
+		include( dirname( __FILE__ ) . "/view/edit.tpl" );
 	}
 
 }

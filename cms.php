@@ -13,15 +13,17 @@ License URI:        http://opensource.org/licenses/MIT
 define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
 
-if(version_compare(phpversion(), '5.6.0', '<')) {
-    function wizhi_cms_phpold(){
-        printf('<div class="error"><p>' . __('您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则插件没有任何作用。', 'wizhi') . '</p></div>', phpversion(), '5.6.0');
-    }
-    // 显示警告信息
-    if(is_admin()){
-        add_action('admin_notices', 'wizhi_cms_phpold');
-    }
-    return;
+if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
+	function wizhi_cms_phpold() {
+		printf( '<div class="error"><p>' . __( '您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则插件没有任何作用。', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
+	}
+
+	// 显示警告信息
+	if ( is_admin() ) {
+		add_action( 'admin_notices', 'wizhi_cms_phpold' );
+	}
+
+	return;
 }
 
 /**
@@ -44,8 +46,8 @@ function include_all_php( $folder ) {
 }
 
 // 加载 RedBean PHP
-if( !class_exists('R') ){
-    require_once WIZHI_CMS . 'rb.php';
+if ( ! class_exists( 'R' ) ) {
+	require_once WIZHI_CMS . 'rb.php';
 }
 
 // 加载功能函数
@@ -67,17 +69,21 @@ if ( $is_enable_builder ) {
 
 
 $args = [
-	'rows_per_page' => 20,
-	'exclude_columns' => [],
+	'rows_per_page'   => 20,
+	'exclude_columns' => [ ],
 ];
 
-new CrudController('wp_posts', 'wizhi_post', $args);
+new CrudController( 'wp_posts', 'wizhi_post', $args );
 
 $args2 = [
-	'rows_per_page' => 20,
-    'exclude_columns' => [],
+	'rows_per_page'   => 20,
+	'column_names' => [
+		'user_id'    => '用户 ID',
+		'meta_key'   => '键名',
+		'meta_value' => '键值',
+	],
 ];
 
-new CrudController('wp_usermeta', 'wizhi_post2', $args2);
+new CrudController( 'wp_usermeta', 'wizhi_post2', $args2 );
 
 // require_once WIZHI_CMS . 'example.php';

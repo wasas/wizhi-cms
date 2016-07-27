@@ -86,7 +86,7 @@ class Model {
 			$new_id = $this->db->get_var( "SELECT MAX(`$this->primary_key`)+1 FROM `$this->table_name`" );
 		} else {
 			$new_id = $this->db->get_var( "SELECT MAX(`$this->primary_key`) FROM `$this->table_name`" );
-			$new_id .= NEW_ID_HINT;
+			$new_id .= " - Edit new ID";
 		}
 		if ( $new_id == "" ) {
 			$new_id = "1";
