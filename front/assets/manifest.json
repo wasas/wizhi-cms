@@ -2,8 +2,10 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/plugins/*.js",
+        "scripts/plugins/*.coffee",
         "scripts/main.js",
-        "scripts/plugins/*.js"
+        "scripts/main.coffee"
       ],
       "main": true
     },
@@ -12,6 +14,11 @@
         "styles/main.less"
       ],
       "main": true
+    },
+    "responsive.css": {
+      "files": [
+        "styles/responsive.less"
+      ]
     },
     "demo.css": {
       "files": [

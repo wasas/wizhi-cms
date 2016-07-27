@@ -2,6 +2,53 @@
  * = 评论样式
  * ----------------------------------------------------------- */
 
+ // 媒体对齐
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+.aligncenter {
+  display: block;
+  margin: @padding auto;
+}
+.alignleft,
+.alignright {
+  margin-bottom: @padding;
+}
+
+@media (min-width: 64rem) {
+  // Only float if not on an extra small device
+  .alignleft {
+    float: left;
+    margin-right: @padding;
+  }
+  .alignright {
+    float: right;
+    margin-left: @padding;
+  }
+}
+
+// 图片说明
+.wp-caption {
+  display: block;
+  margin-bottom: 23px;
+  transition: border .2s ease-in-out;
+}
+
+.wp-caption-text {
+  padding: 6px 10px;
+  color: #fff;
+  margin-top: -36px;
+  background-image: linear-gradient(transparent 0,#000000 300%);
+  position: relative;
+}
+
+// 屏幕阅读器
+.screen-reader-text {
+  display: none;
+}
+
 // 评论区域标题
 .comments-title {
     margin-top: 30px;
@@ -30,6 +77,10 @@
         left: 29px;
         top: 29px;
     }
+}
+
+.wp-caption{
+    margin-bottom: 16px;
 }
 
 // 单条评论样式
