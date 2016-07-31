@@ -1,5 +1,4 @@
 <?php
-require_once( WIZHI_CMS . 'vendor/autoload.php' );
 use Nette\Forms\Form;
 use Nette\Utils\Arrays;
 use Nette\Utils\Html;
