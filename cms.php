@@ -72,7 +72,7 @@ $args2 = [
 		'meta_key'   => '键名',
 		'meta_value' => '键值',
 	],
-	'excluded_columns' => [ 'umeta_id' ],
+	'excluded_columns' => [  ],
 ];
 
 new CrudController( 'wp_usermeta', 'wizhi_post2', $args2 );
