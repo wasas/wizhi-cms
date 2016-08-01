@@ -10,6 +10,14 @@
       }
     }
   },
+  "helper": {
+    "title": "辅助函数",
+    "sub": {
+      "helper/options": {
+        "title": "表单选项"
+      },
+    }
+  },
   "form": {
     "title": "表单构建类",
     "sub": {
