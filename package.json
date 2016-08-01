@@ -27,6 +27,7 @@
     "npm": ">=2.1.5"
   },
   "devDependencies": {
+    "run-sequence": "*",
     "gulp": "^3.8.11",
     "gulp-gh-pages": "*",
     "gulp-copy2": "*",
