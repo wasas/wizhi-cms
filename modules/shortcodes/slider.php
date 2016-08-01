@@ -12,7 +12,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 	 *
 	 * @package shortcode
 	 *
-	 * @usage [slider type="post" tax="category" tag="jingcai" num="4" auto="false" minslides="1" maxslides="4" slidewidth="360", tmp="slider"]
+	 * @usage [slider type="slider" tax="category" tag="jingcai" num="4" auto="false" minslides="1" maxslides="4" slidewidth="360", tmp="slider"]
 	 */
 	function wizhi_shortcode_slider( $atts ) {
 		$default = [

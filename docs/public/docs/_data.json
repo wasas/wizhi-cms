@@ -15,6 +15,9 @@
     "sub": {
       "helper/options": {
         "title": "表单选项"
+      },
+      "helper/template": {
+        "title": "模板函数"
       }
     }
   },
@@ -41,11 +44,23 @@
   "shortcode": {
     "title": "简码",
     "sub": {
+      "shortcodes/loop": {
+        "title": "文章循环"
+      },
+      "shortcodes/list": {
+        "title": "文章标题列表"
+      },
+      "shortcodes/media": {
+        "title": "图文文章列表"
+      },
+      "shortcodes/slider": {
+        "title": "幻灯片"
+      },
       "shortcodes/page": {
         "title": "页面内容"
       },
-      "shortcodes/loop": {
-        "title": "文章循环"
+      "shortcodes/element": {
+        "title": "UI 元素"
       }
     }
   }

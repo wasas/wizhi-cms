@@ -19,10 +19,9 @@ html
                 nav#main-nav
                     a.main-nav-link(href='/wizhi-cms/docs/') 文档
                     a.main-nav-link(href='https://github.com/iwillhappy1314/wizhi-cms') 代码
-                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/wizhi-ui') UI
+                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/wizhi-ui') UI 库
                     a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/front') 前端工具
-                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/enter') 主题
-                    a.main-nav-link(target='_blank', href='https://www.wpzhiku.com/') 我站
+                    a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/enter') 主题框架
 
 
         block content
@@ -38,15 +37,6 @@ html
                                             span #{ title }
                                         .article-content(itemprop='articleBody')
                                             != yield
-
-                                        #disqus_thread
-                                            script.
-                                                (function () {
-                                                    var d = document, s = d.createElement('script');
-                                                    s.src = '//wizhicms.disqus.com/embed.js';
-                                                    s.setAttribute('data-timestamp', +new Date());
-                                                    (d.head || d.body).appendChild(s);
-                                                })();
 
 
                         aside#sidebar(role='navigation')
@@ -70,6 +60,3 @@ html
                     #footer-links
                         a.footer-link(href='https://github.com/iwillhappy1314', target='_blank') Profile
                         a.footer-link(href='https://github.com/iwillhappy1314/wizhi-cms', target='_blank') Github
-
-
-        script#dsq-count-scr(src='//wizhicms.disqus.com/count.js', async='')
