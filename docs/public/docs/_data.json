@@ -10,6 +10,22 @@
       }
     }
   },
+  "orm": {
+    "title": "ORM",
+    "sub": {
+      "orm": {
+        "title": "RedbeanPHP ORM"
+      }
+    }
+  },
+  "router": {
+    "title": "路由",
+    "sub": {
+      "router": {
+        "title": "路由系统"
+      }
+    }
+  },
   "helper": {
     "title": "辅助函数",
     "sub": {

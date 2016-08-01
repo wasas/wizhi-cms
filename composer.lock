@@ -176,16 +176,16 @@
         },
         {
             "name": "nette/forms",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/forms.git",
-                "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2"
+                "reference": "57295d16f8e90173465735eb6be49a1e3ce614bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/forms/ed7ecd76661af5b090f452c1b49ea41b6d82dbf2.zip",
-                "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2",
+                "url": "https://packagist.phpcomposer.com/files/nette/forms/57295d16f8e90173465735eb6be49a1e3ce614bd.zip",
+                "reference": "57295d16f8e90173465735eb6be49a1e3ce614bd",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2016-06-30 18:18:10"
+            "time": "2016-07-09 12:02:06"
         },
         {
             "name": "nette/http",

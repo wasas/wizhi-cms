@@ -17,7 +17,7 @@ html
                 h1#logo-wrap
                     a#logo(href='/wizhi-cms/') Wizhi CMS
                 nav#main-nav
-                    a.main-nav-link(href='/wizhi-cms/docs/') 文档
+                    a.main-nav-link(href='/wizhi-cms/') 文档
                     a.main-nav-link(href='https://github.com/iwillhappy1314/wizhi-cms') 代码
                     a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/wizhi-ui') UI 库
                     a.main-nav-link(target='_blank', href='https://github.com/iwillhappy1314/front') 前端工具
@@ -45,7 +45,7 @@ html
                                     strong.sidebar-title
                                         span= menu.title
                                     for m, slug in menu.sub
-                                        a.sidebar-link(href="#{ uri }/docs/#{ slug }.html")
+                                        a(class="#{ current.source == slug ? 'sidebar-link current' : 'sidebar-link' }", href="#{ uri }/docs/#{ slug }.html")
                                             span= m.title
 
 
@@ -54,9 +54,7 @@ html
                 .inner
                     #footer-copyright
                         | © 2016
-                        a(href='https://www.wpzhiku.com/', target='_blank') WordPress 智库
-                        br
-                        | Live in China, WordPress Developer
+                        a(href='https://www.wpzhiku.com/', target='_blank') WordPress 智库 | Live in China, WordPress Developer
                     #footer-links
                         a.footer-link(href='https://github.com/iwillhappy1314', target='_blank') Profile
                         a.footer-link(href='https://github.com/iwillhappy1314/wizhi-cms', target='_blank') Github

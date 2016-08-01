@@ -1,5 +1,88 @@
 [
     {
+        "name": "thefold/wordpress-dispatcher",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/timbofield/wordpress-dispatcher.git",
+            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/timbofield/wordpress-dispatcher/a6a6b1b8961cbcaa850a54a5dcd569230900fbda.zip",
+            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2015-04-29 10:54:48",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "TheFold\\WordPress\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tim Field",
+                "email": "tim@thefold.co.nz"
+            }
+        ],
+        "description": "Create URL endpoints within WordPress"
+    },
+    {
+        "name": "sunra/php-simple-html-dom-parser",
+        "version": "v1.5.1",
+        "version_normalized": "1.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sunra/php-simple-html-dom-parser.git",
+            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/sunra/php-simple-html-dom-parser/f910346ce47513a49ed5b8de197cde26c3f0b193.zip",
+            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "time": "2016-05-20 11:21:15",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Sunra\\PhpSimple\\HtmlDomParser": "Src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sunra",
+                "email": "sunra@yandex.ru",
+                "homepage": "https://github.com/sunra"
+            }
+        ],
+        "description": "Composer adaptation of: A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way! Require PHP 5+. Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.",
+        "homepage": "https://github.com/sunra/php-simple-html-dom-parser",
+        "keywords": [
+            "dom",
+            "html",
+            "parser"
+        ]
+    },
+    {
         "name": "nette/utils",
         "version": "v2.4.0",
         "version_normalized": "2.4.0.0",
@@ -121,44 +204,6 @@
         "homepage": "https://nette.org"
     },
     {
-        "name": "thefold/wordpress-dispatcher",
-        "version": "1.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/timbofield/wordpress-dispatcher.git",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/timbofield/wordpress-dispatcher/a6a6b1b8961cbcaa850a54a5dcd569230900fbda.zip",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4"
-        },
-        "time": "2015-04-29 10:54:48",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "TheFold\\WordPress\\": "/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Tim Field",
-                "email": "tim@thefold.co.nz"
-            }
-        ],
-        "description": "Create URL endpoints within WordPress"
-    },
-    {
         "name": "nette/http",
         "version": "v2.4.0",
         "version_normalized": "2.4.0.0",
@@ -221,107 +266,6 @@
         "homepage": "https://nette.org"
     },
     {
-        "name": "sunra/php-simple-html-dom-parser",
-        "version": "v1.5.1",
-        "version_normalized": "1.5.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sunra/php-simple-html-dom-parser.git",
-            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/sunra/php-simple-html-dom-parser/f910346ce47513a49ed5b8de197cde26c3f0b193.zip",
-            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "time": "2016-05-20 11:21:15",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Sunra\\PhpSimple\\HtmlDomParser": "Src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Sunra",
-                "email": "sunra@yandex.ru",
-                "homepage": "https://github.com/sunra"
-            }
-        ],
-        "description": "Composer adaptation of: A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way! Require PHP 5+. Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.",
-        "homepage": "https://github.com/sunra/php-simple-html-dom-parser",
-        "keywords": [
-            "dom",
-            "html",
-            "parser"
-        ]
-    },
-    {
-        "name": "mobiledetect/mobiledetectlib",
-        "version": "2.8.22",
-        "version_normalized": "2.8.22.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/serbanghita/Mobile-Detect.git",
-            "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/53cddae0c272a478b24a4b5fb60d0f838caf70b6.zip",
-            "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "require-dev": {
-            "codeclimate/php-test-reporter": "dev-master",
-            "johnkary/phpunit-speedtrap": "~1.0@dev",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2016-04-24 09:47:16",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "Mobile_Detect.php"
-            ],
-            "psr-0": {
-                "Detection": "namespaced/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Serban Ghita",
-                "email": "serbanghita@gmail.com",
-                "homepage": "http://mobiledetect.net",
-                "role": "Developer"
-            }
-        ],
-        "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
-        "homepage": "https://github.com/serbanghita/Mobile-Detect",
-        "keywords": [
-            "detect mobile devices",
-            "mobile",
-            "mobile detect",
-            "mobile detector",
-            "php mobile detect"
-        ]
-    },
-    {
         "name": "nette/component-model",
         "version": "v2.3.0",
         "version_normalized": "2.3.0.0",
@@ -382,17 +326,17 @@
     },
     {
         "name": "nette/forms",
-        "version": "v2.4.0",
-        "version_normalized": "2.4.0.0",
+        "version": "v2.4.1",
+        "version_normalized": "2.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/nette/forms.git",
-            "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2"
+            "reference": "57295d16f8e90173465735eb6be49a1e3ce614bd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/nette/forms/ed7ecd76661af5b090f452c1b49ea41b6d82dbf2.zip",
-            "reference": "ed7ecd76661af5b090f452c1b49ea41b6d82dbf2",
+            "url": "https://packagist.phpcomposer.com/files/nette/forms/57295d16f8e90173465735eb6be49a1e3ce614bd.zip",
+            "reference": "57295d16f8e90173465735eb6be49a1e3ce614bd",
             "shasum": ""
         },
         "require": {
@@ -410,7 +354,7 @@
             "nette/tester": "~2.0",
             "tracy/tracy": "^2.4"
         },
-        "time": "2016-06-30 18:18:10",
+        "time": "2016-07-09 12:02:06",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -441,5 +385,61 @@
         ],
         "description": "Nette Forms: greatly facilitates web forms",
         "homepage": "https://nette.org"
+    },
+    {
+        "name": "mobiledetect/mobiledetectlib",
+        "version": "2.8.22",
+        "version_normalized": "2.8.22.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/serbanghita/Mobile-Detect.git",
+            "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/53cddae0c272a478b24a4b5fb60d0f838caf70b6.zip",
+            "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "require-dev": {
+            "codeclimate/php-test-reporter": "dev-master",
+            "johnkary/phpunit-speedtrap": "~1.0@dev",
+            "phpunit/phpunit": "*"
+        },
+        "time": "2016-04-24 09:47:16",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "Mobile_Detect.php"
+            ],
+            "psr-0": {
+                "Detection": "namespaced/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Serban Ghita",
+                "email": "serbanghita@gmail.com",
+                "homepage": "http://mobiledetect.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+        "homepage": "https://github.com/serbanghita/Mobile-Detect",
+        "keywords": [
+            "detect mobile devices",
+            "mobile",
+            "mobile detect",
+            "mobile detector",
+            "php mobile detect"
+        ]
     }
 ]

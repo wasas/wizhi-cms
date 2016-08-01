@@ -1,4 +1,4 @@
-## 在表单选项中使用的 Options 数据
+获取在表单选项如、select、multi checkbox、multi radio 中使用的数据，返回的数据是数组的形式，直接传入表单字段的`options` 中即可。
 
 ## 获取后台数据
 

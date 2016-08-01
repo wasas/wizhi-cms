@@ -23,6 +23,9 @@ abstract class TextBase extends BaseControl
 	/** @var mixed unfiltered submitted value */
 	protected $rawValue = '';
 
+	/** @var bool */
+	private $nullable;
+
 
 	/**
 	 * Sets control's value.
@@ -48,7 +51,19 @@ abstract class TextBase extends BaseControl
 	 */
 	public function getValue()
 	{
-		return $this->value === Strings::trim($this->translate($this->emptyValue)) ? '' : $this->value;
+		return $this->nullable && $this->value === '' ? NULL : $this->value;
+	}
+
+
+	/**
+	 * Sets whether getValue() returns NULL instead of empty string.
+	 * @param  bool
+	 * @return self
+	 */
+	public function setNullable($value = TRUE)
+	{
+		$this->nullable = (bool) $value;
+		return $this;
 	}
 
 
@@ -111,6 +126,17 @@ abstract class TextBase extends BaseControl
 	}
 
 
+	/**
+	 * @return string|NULL
+	 */
+	protected function getRenderedValue()
+	{
+		return $this->rawValue === ''
+			? ($this->emptyValue === '' ? NULL : $this->translate($this->emptyValue))
+			: $this->rawValue;
+	}
+
+
 	public function addRule($validator, $message = NULL, $arg = NULL)
 	{
 		if ($validator === Form::LENGTH || $validator === Form::MAX_LENGTH) {
@@ -120,6 +146,19 @@ abstract class TextBase extends BaseControl
 			}
 		}
 		return parent::addRule($validator, $message, $arg);
+	}
+
+
+	/**
+	 * Performs the server side validation.
+	 * @return void
+	 */
+	public function validate()
+	{
+		if ($this->value === Strings::trim($this->translate($this->emptyValue))) {
+			$this->value = '';
+		}
+		parent::validate();
 	}
 
 }
