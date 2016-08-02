@@ -4,81 +4,81 @@
 
 // 元素盒子
 .ui-box {
-    &:extend(.clearfix all);
-    border: 1px solid @border-color;
-    margin: 0;
-    padding: 0;
-    border-bottom: none;
-    &-content{
-        padding: @padding;
-        border-bottom: 1px solid @border-color;
-        .media{
-            padding: 0;
-        }
-        .ui-list{
-            padding: 0;
-            margin-bottom: 0;
-        }
-        p{
-            margin-bottom: 0;
-            & + p{
-                margin-top: 1.2em;
-            }
-        }
+  &:extend(.clearfix all);
+  border: 1px solid @gray-lighter;
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  &-content {
+    padding: @panel-heading-padding;
+    border-bottom: 1px solid @gray-lighter;
+    .media {
+      padding: 0;
     }
-    &-shadow{
-        box-shadow: 0 1px 2px 0 rgba(0,0,0, .2);
+    .ui-list {
+      padding: 0;
+      margin-bottom: 0;
     }
-    &-follow{
-        border-top: none;
+    p {
+      margin-bottom: 0;
+      & + p {
+        margin-top: 1.2em;
+      }
     }
-    &-head {
-        border-bottom: 1px solid @border-color;
-        position: relative;
-        padding: @padding-md @padding;
-        line-height: normal;
+  }
+  &-shadow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  }
+  &-follow {
+    border-top: none;
+  }
+  &-head {
+    border-bottom: 1px solid @gray-lighter;
+    position: relative;
+    padding: @panel-heading-padding;
+    line-height: normal;
 
-        // 标题栏标题
-        &-title {
-            color: @text-color;
-            font-size: 14px;
-            font-weight: bold;
-            display: inline;
-            margin: 0;
-            padding: 0;
-            line-height: normal;
-        }
-
-        // 标题栏标题后面的描述文字
-        &-text {
-            margin-left: 10px;
-            color: @text-light;
-        }
-
-        // 标题栏右边的更多
-        &-more {
-            float: right;
-        }
+    // 标题栏标题
+    &-title {
+      color: @text-color;
+      font-size: 14px;
+      font-weight: bold;
+      display: inline;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
     }
-    &-foot {
-        border-bottom: 1px solid @border-color;
-        position: relative;
-        padding: @padding-md @padding;
 
-        // 标题栏标题
-        &-left {
-            .inline-block;
-            color: @text-color;
-            font-size: 14px;
-            font-weight: bold;
-            margin: 0;
-            padding: 0;
-            line-height: normal;
-        }
-
-        // 标题栏右边的更多
-        &-right {
-            float: right;
-        }
+    // 标题栏标题后面的描述文字
+    &-text {
+      margin-left: 10px;
+      color: @gray-light;
     }
+
+    // 标题栏右边的更多
+    &-more {
+      float: right;
+    }
+  }
+  &-foot {
+    border-bottom: 1px solid @gray-lighter;
+    position: relative;
+    padding: @panel-heading-padding;
+
+    // 标题栏标题
+    &-left {
+      .inline-block;
+      color: @text-color;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+    }
+
+    // 标题栏右边的更多
+    &-right {
+      float: right;
+    }
+  }
 }
