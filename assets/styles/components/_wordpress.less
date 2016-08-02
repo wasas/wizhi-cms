@@ -10,22 +10,22 @@
 }
 .aligncenter {
   display: block;
-  margin: @padding auto;
+  margin: @panel-body-padding auto;
 }
 .alignleft,
 .alignright {
-  margin-bottom: @padding;
+  margin-bottom: @panel-body-padding;
 }
 
 @media (min-width: 64rem) {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
-    margin-right: @padding;
+    margin-right: @panel-body-padding;
   }
   .alignright {
     float: right;
-    margin-left: @padding;
+    margin-left: @panel-body-padding;
   }
 }
 

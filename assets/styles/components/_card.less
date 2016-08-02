@@ -4,8 +4,8 @@
 // Cards
 .card {
     background: #fff;
-    border: 1px solid @border-color;
-    border-radius: @border-radius;
+    border: 1px solid @gray-lighter;
+    border-radius: @border-radius-base;
     display: block;
     margin: 0;
     padding: 0;
@@ -15,35 +15,35 @@
     .card-header,
     .card-body,
     .card-footer {
-        padding: @padding @padding 0 @padding;
+        padding: @grid-gutter-width/2 @grid-gutter-width/2 0 @grid-gutter-width/2;
 
         &:last-child {
-            padding-bottom: @padding;
+            padding-bottom: @grid-gutter-width/2;
         }
     }
     .card-image {
-        padding-top: @padding;
+        padding-top: @grid-gutter-width/2;
 
         &:first-child {
             padding-top: 0;
 
             img {
-                border-top-left-radius: @border-radius;
-                border-top-right-radius: @border-radius;
+                border-top-left-radius: @border-radius-base;
+                border-top-right-radius: @border-radius-base;
             }
         }
 
         &:last-child {
             img {
-                border-bottom-left-radius: @border-radius;
-                border-bottom-right-radius: @border-radius;
+                border-bottom-left-radius: @border-radius-base;
+                border-bottom-right-radius: @border-radius-base;
             }
         }
     }
     .card-title {
         font-size: 21px;
         line-height: 1;
-        margin-bottom: @padding-md;
+        margin-bottom: @grid-gutter-width/2;
         margin-top: 0;
     }
     .card-meta {

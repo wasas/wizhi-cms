@@ -5,7 +5,7 @@
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
     color: @text-color;
-    background: @body-background;
+    background: @body-bg;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-rendering: optimizelegibility;
@@ -57,9 +57,9 @@ fieldset, img {
 /* 块/段落引用 */
 blockquote {
     position: relative;
-    color: @text-lighter;
+    color: @gray;
     font-weight: 400;
-    border-left: 1px solid @secondcolor;
+    border-left: 1px solid @brand-primary;
     padding-left: 1em;
     margin: 1em 3em 1em 2em;
 }
@@ -207,7 +207,7 @@ figcaption {
 
 strong, b {
     font-weight: bold;
-    color: #000;
+    color: @gray-dark;
 }
 
 /* 可拖动文件添加拖动手势 */
@@ -248,7 +248,7 @@ strong, b {
 h1, h2, h3, h4, h5, h6 {
     font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
     font-weight: 100;
-    color: #000;
+    color: @gray-dark;
     line-height: 1.35;
 }
 
@@ -302,17 +302,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 同 ul/ol，在文章中应用 table 基本格式 */
 .typo table th, .typo table td, .typo-table th, .typo-table td, .typo table caption {
-    border: 1px solid @border-color;
+    border: 1px solid @gray-lighter;
     padding: 0.5em 1em;
-    color: @text-light;
+    color: @gray-light;
 }
 
 .typo table th, .typo-table th {
-    background: @background;
+    background: lighten(@gray-lighter, 10%);
 }
 
 .typo table thead th, .typo-table thead th {
-    background: @background;
+    background: lighten(@gray-lighter, 10%);
 }
 
 .typo table caption {
