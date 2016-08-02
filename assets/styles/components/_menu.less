@@ -2,204 +2,204 @@
  * = 菜单
  * ----------------------------------------------------------- */
 
-.pure-nav{
-    background: @brand-color;
-    padding-left: @padding;
-    padding-right: @padding;
-    &-left{
+.pure-nav {
+  background: @brand-color;
+  padding-left: @padding;
+  padding-right: @padding;
+  &-left {
 
-    }
-    &-center{
+  }
+  &-center {
 
-    }
-    &-right{
+  }
+  &-right {
 
-    }
-    &-menu{
+  }
+  &-menu {
 
-    }
-    &-brand{
-        a{
-            color: #fff;
-            font-size: 18px;
-            height: 40px;
-            line-height: 40px;
-            display: block;
-        }
-    }
+  }
+  &-brand {
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+  }
 }
 
 // 菜单基础样式, 一下都不用修改
 .sf-menu, .sf-menu * {
-    margin: 0 !important;
-    padding: 0;
-    list-style: none;
+  margin: 0 !important;
+  padding: 0;
+  list-style: none;
 }
 
 .sf-menu {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
+  ul {
+    position: absolute;
+    display: none;
+    margin: 0 !important;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    text-align: left;
     ul {
-        position: absolute;
-        display: none;
-        margin: 0 !important;
-        top: 100%;
-        left: 0;
-        z-index: 99;
-        text-align: left;
-        ul {
-            top: 0;
-            left: 100%;
-        }
+      top: 0;
+      left: 100%;
     }
-    li {
-        position: relative;
+  }
+  li {
+    position: relative;
+  }
+  & > li {
+    float: left;
+  }
+  li:hover,
+  li.sfHover {
+    ul {
+      display: block;
     }
-    & > li {
-        float: left;
-    }
-    li:hover,
-    li.sfHover {
-        ul {
-            display: block;
-        }
-    }
-    a {
-        display: block;
-        position: relative;
-    }
+  }
+  a {
+    display: block;
+    position: relative;
+  }
 }
 
 // 菜单皮肤,根据主题修改
 .sf-menu {
-    &:extend(.clearfix all);
-    margin-bottom: 1em;
+  &:extend(.clearfix all);
+  margin-bottom: 1em;
 
-    a {
+  a {
+    color: #fff;
+    display: block;
+    padding: 15px 12px;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  li {
+    background: transparent;
+    white-space: nowrap;
+    *white-space: normal;
+    transition: background .2s;
+    &.current-menu-item,
+    &:hover,
+    &.sfHover {
+      background: darken(@maincolor, 10%);
+      transition: none;
+      a {
         color: #fff;
-        display: block;
-        padding: 15px 12px;
-        line-height: normal;
-        text-decoration: none;
+      }
+      .sub-menu {
+        a {
+          color: #fff;
+        }
+      }
     }
 
+  }
+
+  // 二级菜单
+  .sub-menu {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
+    min-width: 120px;
     li {
-        background: transparent;
-        white-space: nowrap;
-        *white-space: normal;
-        transition: background .2s;
-        &.current-menu-item,
-        &:hover,
-        &.sfHover {
-            background: darken(@maincolor, 10%);
-            transition: none;
-            a {
-                color: #fff;
-            }
-            .sub-menu{
-                a{
-                    color: #fff;
-                }
-            }
+      background: @maincolor;
+      a {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      &.current-menu-item,
+      &:hover,
+      &.sfHover {
+        background: darken(@maincolor, 10%);
+        transition: none;
+        a {
+          color: #fff;
         }
+      }
 
+      // 三级菜单
+      .sub-menu {
+
+      }
     }
-
-    // 二级菜单
-    .sub-menu{
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
-        min-width: 120px;
-        li {
-            background: @maincolor;
-            a{
-                padding-top: 3px;
-                padding-bottom: 3px;
-            }
-            &.current-menu-item,
-            &:hover,
-            &.sfHover {
-                background: darken(@maincolor, 10%);
-                transition: none;
-                a {
-                    color: #fff;
-                }
-            }
-
-            // 三级菜单
-            .sub-menu{
-
-            }
-        }
-    }
+  }
 
 }
 
 // 向下剪头, 一般不用修改
 .sf-arrows {
-    .sf-with-ul {
-        padding-right: 25px;
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 8px;
-            margin-top: -3px;
-            height: 0;
-            width: 0;
-            border: 5px solid transparent;
-            border-top-color: #fff;
-            border-top-color: rgba(255, 255, 255, .5);
-        }
+  .sf-with-ul {
+    padding-right: 25px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      margin-top: -3px;
+      height: 0;
+      width: 0;
+      border: 5px solid transparent;
+      border-top-color: #fff;
+      border-top-color: rgba(255, 255, 255, .5);
     }
-    & > li > .sf-with-ul:focus:after,
-    & > li:hover > .sf-with-ul:after,
-    & > .sfHover > .sf-with-ul:after {
-        border-top-color: #fff;
+  }
+  & > li > .sf-with-ul:focus:after,
+  & > li:hover > .sf-with-ul:after,
+  & > .sfHover > .sf-with-ul:after {
+    border-top-color: #fff;
+  }
+  .sub-menu {
+    // 向右箭头
+    .sf-with-ul:after {
+      margin-top: -5px;
+      margin-right: -3px;
+      border-color: transparent;
+      border-left-color: #fff;
+      border-left-color: rgba(255, 255, 255, .5);
     }
-    .sub-menu {
-        // 向右箭头
-        .sf-with-ul:after {
-            margin-top: -5px;
-            margin-right: -3px;
-            border-color: transparent;
-            border-left-color: #fff;
-            border-left-color: rgba(255, 255, 255, .5);
-        }
-        li > .sf-with-ul:focus:after,
-        li:hover > .sf-with-ul:after,
-        .sfHover > .sf-with-ul:after {
-            border-left-color: #fff;
-        }
+    li > .sf-with-ul:focus:after,
+    li:hover > .sf-with-ul:after,
+    .sfHover > .sf-with-ul:after {
+      border-left-color: #fff;
     }
+  }
 }
 
 // 垂直显示的菜单
 .sf-vertical {
-    width: 120px;
-    background: @brand-color;
-    .sub-menu {
-        left: 100%;
-        top: 0;
+  width: 120px;
+  background: @brand-color;
+  a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .sub-menu {
+    left: 100%;
+    top: 0;
+  }
+  & > li {
+    float: none;
+  }
+  li {
+    width: 100%;
+  }
+  // 修改剪头方向
+  &.sf-arrows {
+    & > li > .sf-with-ul:after {
+      margin-top: -5px;
+      margin-right: -3px;
+      border-color: transparent;
+      border-left-color: #fff;
+      border-left-color: rgba(255, 255, 255, .5);
     }
-    & > li {
-        float: none;
+    li > .sf-with-ul:focus:after,
+    li:hover > .sf-with-ul:after,
+    .sfHover > .sf-with-ul:after {
+      border-left-color: #fff;
     }
-    li {
-        width: 100%;
-    }
-    // 修改剪头方向
-    &.sf-arrows {
-        & > li > .sf-with-ul:after {
-            margin-top: -5px;
-            margin-right: -3px;
-            border-color: transparent;
-            border-left-color: #fff;
-            border-left-color: rgba(255, 255, 255, .5);
-        }
-        li > .sf-with-ul:focus:after,
-        li:hover > .sf-with-ul:after,
-        .sfHover > .sf-with-ul:after {
-            border-left-color: #fff;
-        }
-    }
+  }
 }

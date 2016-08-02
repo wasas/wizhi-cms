@@ -11,23 +11,6 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // ---------------------------------------------------------
-    // SuperFish 菜单
-    // ---------------------------------------------------------
-    $('ul.sf-menu').superfish(
-        {
-            popUpSelector: 'ul,.sf-mega',
-            hoverClass: 'sfHover',
-            pathClass: 'overideThisToUse',
-            pathLevels: 1,
-            delay: 0,
-            animation: {opacity: 'show'},
-            animationOut: {opacity: 'hide'},
-            speed: 'normal',
-            speedOut: 'fast'
-        }
-    );
-
 
     // ---------------------------------------------------------
     // 图片遮罩，鼠标滑过显示隐藏的元素
