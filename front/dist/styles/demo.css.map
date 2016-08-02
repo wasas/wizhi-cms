@@ -1,1 +1,0 @@
-{"version":3,"sources":["../assets/styles/demo.less","demo.css"],"names":[],"mappings":"AAMA,KACI,iBAAA,AACA,kBAAA,CCJH","file":"demo.css","sourcesContent":["@charset \"utf-8\";\n\n.navbar-default{\n\n}\n\n.col{\n    padding-top: 15px;\n    margin-bottom: 15px;\n}","@charset \"utf-8\";\n.col {\n  padding-top: 15px;\n  margin-bottom: 15px;\n}\n"],"sourceRoot":"assets/styles/"}
