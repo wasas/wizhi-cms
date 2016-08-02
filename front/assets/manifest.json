@@ -44,9 +44,6 @@
     "superfish.js": {
       "bower": ["superfish"]
     },
-    "snap.js": {
-      "bower": ["Snap.js"]
-    },
     "modernizr.js": {
       "bower": ["modernizr"]
     },
