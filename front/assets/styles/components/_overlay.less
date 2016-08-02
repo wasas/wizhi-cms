@@ -1,0 +1,69 @@
+/* --------------------------------------------------------------
+ * = 鼠标滑过效果
+ * ----------------------------------------------------------- */
+
+// 外边的嵌套层
+.item-picture {
+  position: relative;
+}
+.item-picture iframe,
+.item-picture .html5-video {
+  display: none;
+}
+
+// 鼠标划过时显示的内容
+.image-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: #000;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+.image-overlay.default-cursor {
+  cursor: default;
+}
+.image-overlay span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 60%;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+.image-overlay .link {
+  background-image: url(../images/icons/overlay-icon-link.png);
+}
+.image-overlay .zoom {
+  background-image: url(../images/icons/overlay-icon-zoom.png);
+}
+.image-overlay .video {
+  background-image: url(../images/icons/overlay-icon-video.png);
+}
+
+.item-picture:hover .image-overlay { background: rgba(0, 0, 0, 0.35); }
+.item-picture:hover .image-overlay span {
+  background-position: 50% 50%;
+  opacity: 1;
+}
+
+// 触屏设备
+.touch-screen .item-picture .image-overlay span {
+  display: none;
+  background-position: 50% 50%;
+}
+.touch-screen .item-picture:hover .image-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+.touch-screen .flexslider.gallery .item-picture .image-overlay span,
+.touch-screen .projects-carousel .item-picture .image-overlay span {
+  display: block;
+  background-image: none;
+}
