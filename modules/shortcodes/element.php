@@ -132,14 +132,14 @@ if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 		];
 		extract( shortcode_atts( $default, $atts ) );
 
-		$class = 'pure-button';
+		$class = 'btn';
 
 		if ( $type ) {
-			$class .= ' button-' . $type;
+			$class .= ' btn-' . $type;
 		}
 
 		if ( $size ) {
-			$class .= ' button-' . $size;
+			$class .= ' btn-' . $size;
 		}
 
 		// 输出
