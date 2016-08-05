@@ -47,9 +47,9 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	 *
 	 * @return array
 	 */
-	function wizhi_get_loop_template() {
+	function wizhi_get_loop_template($dir = "wizhi") {
 		$template_in_plugin = WIZHI_CMS . "templates";
-		$template_in_theme  = get_template_directory() . "/wizhi";
+		$template_in_theme  = get_template_directory() . "/" . $dir;
 
 		$templates_in_plugin = [ ];
 		$templates_in_theme  = [ ];
