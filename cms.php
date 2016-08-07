@@ -65,6 +65,9 @@ include_all_php( WIZHI_CMS . 'modules/app' );
 
 $is_enable_builder = get_option( 'is_enable_builder' );
 
+if ( $is_enable_builder ) {
+	include_all_php( WIZHI_CMS . 'builder' );
+}
 
 $args2 = [
 	'rows_per_page' => 20,

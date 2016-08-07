@@ -43,7 +43,7 @@ class WizhiOptionPage {
 
 		$args = $this->args;
 
-		add_options_page( $args[ 'title' ], $args[ 'label' ], 'manage_options', $args[ 'slug' ], [ $this, 'page', ] );
+		add_submenu_page( $args['parent'], $args[ 'title' ], $args[ 'label' ], 'manage_options', $args[ 'slug' ], [ $this, 'page', ] );
 	}
 
 

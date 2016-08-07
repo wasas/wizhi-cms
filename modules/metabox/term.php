@@ -13,7 +13,7 @@ $fields = [
 		'name'    => '_term_posts_per_page',
 		'label'   => __( 'Posts per page', 'wizhi' ),
 		'size'    => '80',
-		'default' => get_option('posts_per_page'),
+		'default' => get_option( 'posts_per_page' ),
 	],
 	[
 		'type'        => 'upload',
