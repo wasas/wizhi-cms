@@ -12,8 +12,7 @@ function add_type_options( $type, $name ) {
 			'type'    => 'select',
 			'name'    => $type . "_archive_template",
 			'label'   => __( 'Archive template', 'wizhi' ),
-			'options' => wizhi_get_loop_template(),
-			'default' => 'list',
+			'options' => wizhi_get_loop_template('wizhi/archive'),
 		],
 		[
 			'type'    => 'text',

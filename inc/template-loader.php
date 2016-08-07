@@ -45,10 +45,12 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	/**
 	 * 获取存档页面模板
 	 *
+	 * @param string $dir 模板文件所在的目录名称
+	 *
 	 * @return array
 	 */
-	function wizhi_get_loop_template($dir = "wizhi") {
-		$template_in_plugin = WIZHI_CMS . "templates";
+	function wizhi_get_loop_template( $dir = "wizhi" ) {
+		$template_in_plugin = WIZHI_CMS . "templates/" . $dir;
 		$template_in_theme  = get_template_directory() . "/" . $dir;
 
 		$templates_in_plugin = [ ];
