@@ -295,6 +295,7 @@ class WizhiFormBuilder {
 
 				case 'upload':
 					$form->addText( $name, $label )
+					     ->setAttribute( 'size', 80 )
 					     ->setDefaultValue( $default )
 					     ->setOption( 'description', Html::el()
 					                                     ->setHtml( '<a class="wizhi_upload_button button" href="#">选择</a>' ) );
