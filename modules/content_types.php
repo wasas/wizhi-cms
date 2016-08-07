@@ -55,6 +55,19 @@ function add_type_options( $type, $name ) {
 
 
 /**
+ * 获取文章类型存档设置
+ *
+ * @param string $type 文章类型别名
+ * @param string $name 设置名称
+ *
+ * @return mixed
+ */
+function get_archive_option( $type, $name ) {
+	return get_option( $type . "_archive_" . $name );
+}
+
+
+/**
  * 添加默认的自定义文章类型和分类法
  */
 function add_default_content_type() {
