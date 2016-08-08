@@ -21,3 +21,32 @@ if ( function_exists ("wizhi_create_types") and function_exists ("wizhi_create_t
 ```
 
 把以上代码加入到主题的function.php即可
+
+## 文章类型设置
+
+内置的文章类型均支持文章类型设置，目前支持的设置选项有:
+
+- 封面图像
+- 每页显示的文章数量
+- 文章类型存档页模板
+- 文章类型描述
+
+### 获取文章类型设置
+
+文章类型设置是保存在 WordPress 选项数据表中的，可以用 WordPress 标准的 `get_option` 函数获取设置值，也可以用插件增加的快捷方式：
+
+```php
+get_archive_option($type, $name)
+```
+
+- $type 字符串，文章类型别名
+- $name 字符串，设置选项名称
+
+### 目前各选项的名称
+
+设置选项完整的名称为：$type\_archive\_$name
+
+- 封面图像：banner_image
+- 模板：template
+- 每页文章数：per_page
+- 描述：description
