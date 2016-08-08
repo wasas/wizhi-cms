@@ -3,14 +3,14 @@
  * ----------------------------------------------------------- */
 
 // 外边的嵌套层
-.item-picture {
+.media-hover {
   position: relative;
   iframe,
   .html5-video {
     display: none;
   }
   &:hover {
-    .image-overlay {
+    .media-overlay {
       background: rgba(0, 0, 0, 0.35);
       span {
         background-position: 50% 50%;
@@ -21,7 +21,7 @@
 }
 
 // 鼠标划过时显示的内容
-.image-overlay {
+.media-overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -59,15 +59,15 @@
 
 // 触屏设备
 .touch-screen{
-  .item-picture .image-overlay span {
+  .media-hover .media-overlay span {
     display: none;
     background-position: 50% 50%;
   }
-  .item-picture:hover .image-overlay {
+  .media-hover:hover .media-overlay {
     background: rgba(0, 0, 0, 0);
   }
-  .flexslider.gallery .item-picture .image-overlay span,
-  .projects-carousel .item-picture .image-overlay span {
+  .flexslider.gallery .media-hover .media-overlay span,
+  .projects-carousel .media-hover .media-overlay span {
     display: block;
     background-image: none;
   }
