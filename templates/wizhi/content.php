@@ -1,3 +1,10 @@
+<?php
+/**
+ * Loop Template Name: 默认内容
+ *
+ */
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php

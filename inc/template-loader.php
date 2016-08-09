@@ -56,25 +56,56 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 		$templates_in_plugin = [ ];
 		$templates_in_theme  = [ ];
 
-		foreach (
-			Finder::findFiles( '*.php' )
-			      ->in( $template_in_plugin ) as $key => $file
-		) {
+		$finder = Finder::findFiles( '*.php' )
+		                ->in( $template_in_plugin );
+
+		foreach ( $finder as $key => $file ) {
+
 			$filename        = $file->getFilename();
 			$file_name_array = explode( '-', $filename );
-			$name            = Arrays::get( $file_name_array, 1, 'None' );;
-			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+			$name            = Arrays::get( $file_name_array, 1, 'None' );
+
+			$headers = [
+				'Name' => 'Loop Template Name',
+			];
+
+			$file_info = get_file_data( $key, $headers );
+
+			if ( $file_info[ 'Name' ] ) {
+				$option_name = $file_info[ 'Name' ];
+			} else {
+				$option_name = ucfirst( $name );
+			}
+
+			$templates_in_theme[ explode( '.', $name )[ 0 ] ] = $option_name;
+
 		}
 
 		if ( file_exists( $template_in_theme ) ) {
-			foreach (
-				Finder::findFiles( '*.php' )
-				      ->in( $template_in_theme ) as $key => $file
-			) {
+
+			$finder = Finder::findFiles( '*.php' )
+			                ->in( $template_in_theme );
+
+			foreach ( $finder as $key => $file ) {
+
 				$filename        = $file->getFilename();
 				$file_name_array = explode( '-', $filename );
-				$name            = Arrays::get( $file_name_array, 1, 'None' );;
-				$templates_in_theme[ explode( '.', $name )[ 0 ] ] = ucfirst( $name );
+				$name            = Arrays::get( $file_name_array, 1, 'None' );
+
+				$headers = [
+					'Name' => 'Loop Template Name',
+				];
+
+				$file_info = get_file_data( $key, $headers );
+
+				if ( $file_info[ 'Name' ] ) {
+					$option_name = $file_info[ 'Name' ];
+				} else {
+					$option_name = ucfirst( $name );
+				}
+
+				$templates_in_theme[ explode( '.', $name )[ 0 ] ] = $option_name;
+
 			}
 		}
 

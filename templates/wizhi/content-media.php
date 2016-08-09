@@ -1,3 +1,10 @@
+<?php
+/**
+ * Loop Template Name: 媒体内容
+ *
+ */
+?>
+
 <div class="media">
 
 	<a class="media-cap" target="_blank" href="<?php the_permalink(); ?>">

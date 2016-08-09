@@ -1,3 +1,17 @@
+<?php
+/**
+ * Loop Template Name: Carousel 内容
+ *
+ * Template part for displaying posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package enter
+ */
+
+?>
+
+
 <li>
 	<div class="pic">
 		<a href="<?php the_permalink(); ?>">
