@@ -423,7 +423,7 @@ function wizhi_get_term_list( $taxonomy = 'post_tag' ) {
 	foreach ( $terms as $term ) {
 
 		$output[ $term->term_id ] = $term->name;
-		$term_children         = get_term_children( $term->term_id, $taxonomy );
+		$term_children            = get_term_children( $term->term_id, $taxonomy );
 
 		if ( is_wp_error( $term_children ) ) {
 			continue;

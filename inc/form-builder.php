@@ -1,7 +1,14 @@
 <?php
+use Nette\Forms\Container;
 use Nette\Forms\Form;
 use Nette\Utils\Arrays;
 use Nette\Utils\Html;
+use Wizhi\Forms\Controls;
+
+Container::extensionMethod( 'addWysiwyg', function ( Container $container, $name, $label = null, array $items = null ) {
+	return $container[ $name ] = new Controls\Wysiwyg( $label, $items );
+} );
+
 
 
 /**
@@ -153,7 +160,7 @@ class WizhiFormBuilder {
 		}
 
 		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
-		$renderer->wrappers[ 'control' ][ 'container' ] = 'td class="repeatable-fieldset"';
+		$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
 
 		$fields = $this->fields;
 		$values = $this->values();
@@ -255,6 +262,63 @@ class WizhiFormBuilder {
 					     ->setAttribute( 'class', 'large-text' )
 					     ->setAttribute( 'placeholder', $placeholder )
 					     ->setDefaultValue( $default );
+					break;
+
+
+				case 'editer':
+					$html = $form->addWysiwyg( $name, $label )
+					             ->setAttribute( 'rows', $rows )
+					             ->setAttribute( 'cols', $cols )
+					             ->setAttribute( 'class', 'large-text' )
+					             ->setAttribute( 'placeholder', $placeholder )
+					             ->setDefaultValue( $default );
+
+					$html->setOption( 'description', Html::el()
+					                                     ->setHtml( '<script>jQuery(document).ready(function(){
+															tinyMCE.init({
+															        theme : "modern",
+															        skin : "lightgray",
+															        formats: {
+													                alignleft: [{
+													                    selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li",
+													                    styles: {textAlign: "left"}
+													                },
+													                    {
+													                        selector: "img,table,dl.wp-caption",
+													                        classes: "alignleft"
+													                    }],
+													                aligncenter: [{
+													                    selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li",
+													                    styles: {textAlign: "center"}
+													                },
+													                    {
+													                        selector: "img,table,dl.wp-caption",
+													                        classes: "aligncenter"
+													                    }],
+													                alignright: [{
+													                    selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li",
+													                    styles: {textAlign: "right"}
+													                },
+													                    {
+													                        selector: "img,table,dl.wp-caption",
+													                        classes: "alignright"
+													                    }],
+													                strikethrough: {inline: "del"}
+													            },
+																plugins: "charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,wpembed",
+															    selector: ".tinymce",
+													            resize: false,
+													            menubar: false,
+													            wpautop: true,
+													            indent: false,
+													            toolbar1: "bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,wp_more,wp_page,spellchecker,dfw,wp_adv,wizhi_column",
+            													toolbar2: "formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help",
+            													tabfocus_elements: "content-html,save-post",
+            													body_class: "wizhi wizhi-editer typo",
+            													wp_autoresize_on: true,
+            													add_unload_trigger: false
+															    });
+															});</script>' ) );
 					break;
 
 
