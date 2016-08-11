@@ -119,7 +119,7 @@ function show_select() {
 			'placeholder' => '输入文本',
 		],
 		[
-			'type'        => 'editer',
+			'type'        => 'editor',
 			'name'        => 'abdesc',
 			'label'       => '文本编辑器',
 			'size'        => '80',
