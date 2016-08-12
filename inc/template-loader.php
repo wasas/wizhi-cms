@@ -71,6 +71,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 
 			$file_info = get_file_data( $key, $headers );
 
+			// 获取模板名称
 			if ( $file_info[ 'Name' ] ) {
 				$option_name = $file_info[ 'Name' ];
 			} else {
@@ -98,6 +99,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 
 				$file_info = get_file_data( $key, $headers );
 
+				// 获取模板名称
 				if ( $file_info[ 'Name' ] ) {
 					$option_name = $file_info[ 'Name' ];
 				} else {

@@ -49,7 +49,7 @@ function include_all_php( $folder ) {
 
 // 加载 RedBean PHP
 if ( ! class_exists( 'R' ) ) {
-	require_once WIZHI_CMS . 'rb.php';
+	require_once WIZHI_CMS . 'inc/rb.php';
 }
 
 // 加载功能函数

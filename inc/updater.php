@@ -8,12 +8,12 @@ if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 
 		function __construct( $settings ) {
 
-			// Never load outside of the admin... would be a waste of cycles
+			// 非管理界面不加载, 提高性能
 			if ( ! is_admin() ) {
 				return;
 			}
 
-			// Check for minimum config
+			// 检查最少配置
 			if ( ! isset( $settings[ 'owner' ] ) || ! isset( $settings[ 'repo' ] ) || ! isset( $settings[ 'basename' ] ) ) {
 				return;
 			}
@@ -22,7 +22,7 @@ if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 			$this->repo     = $settings[ 'repo' ];
 			$this->basename = $settings[ 'basename' ];
 
-			// Optional config
+			// 通用配置
 			$this->branch  = ! empty( $settings[ 'branch' ] ) ? $settings[ 'branch' ] : 'master';
 			$this->token   = ! empty( $settings[ 'access_token' ] ) ? $settings[ 'access_token' ] : false;
 			$this->timeout = ! empty( $settings[ 'timeout' ] ) ? (int) $settings[ 'timeout' ] : 12000;
