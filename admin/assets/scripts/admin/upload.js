@@ -205,9 +205,10 @@
 
 jQuery(document).ready(function ($) {
 
-    jQuery('.tinymce').wp_editor({
-        "body_class": "typo wizhi wid"
-    });
+    $('.tinymce').wp_editor();
+
+    $('#frm-abdesc').wp_editor();
+    $('#frm-abc').wp_editor();
 
     // ---------------------------------------------------------
     // 添加更多, 用于重复字段

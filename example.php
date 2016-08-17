@@ -5,10 +5,6 @@ function show_select() {
 
 	$fields = [
 		[
-			'type'  => 'group',
-			'label' => '群组1',
-		],
-		[
 			'type'   => 'container',
 			'name'   => 'urlstext',
 			'label'  => '表单组',
@@ -105,11 +101,33 @@ function show_select() {
 			'placeholder' => '输入文本',
 		],
 		[
+			'type'        => 'editor',
+			'name'        => 'abcdf',
+			'label'       => '文本编辑器',
+			'size'        => '80',
+			'placeholder' => '输入文本',
+			'attr'        => [
+				'rows' => 5,
+				'cols' => 50,
+			],
+		],
+		[
 			'type'        => 'color',
 			'name'        => 'urls_color',
 			'label'       => '颜色',
 			'size'        => '80',
 			'placeholder' => '输入文本',
+		],
+		[
+			'type'        => 'editor',
+			'name'        => 'abc',
+			'label'       => '文本编辑器',
+			'size'        => '80',
+			'placeholder' => '输入文本',
+			'attr'        => [
+				'rows' => 5,
+				'cols' => 50,
+			],
 		],
 		[
 			'type'        => 'upload',
@@ -128,10 +146,6 @@ function show_select() {
 				'rows' => 5,
 				'cols' => 50,
 			],
-		],
-		[
-			'type'  => 'group',
-			'label' => '群组2',
 		],
 		[
 			'type'    => 'checkbox',
@@ -153,10 +167,6 @@ function show_select() {
 				'1' => '老大',
 				'2' => '老二',
 			],
-		],
-		[
-			'type'  => 'group',
-			'label' => '群组3',
 		],
 		[
 			'type'    => 'select',
