@@ -29,7 +29,7 @@ function add_type_options( $type, $name ) {
 			'placeholder' => '为每个分类设置一个分类图像',
 		],
 		[
-			'type'        => 'textarea',
+			'type'        => 'editor',
 			'name'        => $type . "_archive_description",
 			'label'       => '存档描述',
 			'size'        => '80',
