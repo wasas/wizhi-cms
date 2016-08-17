@@ -54,7 +54,6 @@ if ( ! class_exists( 'R' ) ) {
 
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );
-include_all_php( WIZHI_CMS . 'inc/crud' );
 include_all_php( WIZHI_CMS . 'inc/controls' );
 include_all_php( WIZHI_CMS . 'inc/metabox' );
 
@@ -67,20 +66,7 @@ include_all_php( WIZHI_CMS . 'modules/app' );
 $is_enable_builder = get_option( 'is_enable_builder' );
 
 if ( $is_enable_builder ) {
-	// include_all_php( WIZHI_CMS . 'builder' );
+	include_all_php( WIZHI_CMS . 'builder' );
 }
-
-//$args2 = [
-//	'rows_per_page' => 20,
-//	'column_names'  => [
-//		'umeta_id'   => '主键',
-//		'user_id'    => '用户 ID',
-//		'meta_key'   => '键名',
-//		'meta_value' => '键值',
-//	],
-//	'excluded_columns' => [  ],
-//];
-//
-//new CrudController( 'wp_usermeta', 'wizhi_post2', $args2 );
 
 require_once WIZHI_CMS . 'example.php';
