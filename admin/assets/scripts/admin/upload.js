@@ -85,7 +85,7 @@
                 "wpeditimage_disable_captions": false,
                 "wpeditimage_html5_captions": false,
                 "plugins": "charmap,hr,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpemoji,wpeditimage,wpgallery,wptextpattern,wplink,wpdialogs,wpview,image,wpembed",
-                "content_css": wizhi_vars.includes_url + "css/dashicons.css," + wizhi_vars.includes_url + "js/mediaelement/mediaelementplayer.min.css," + wizhi_vars.includes_url + "js/mediaelement/wp-mediaelement.css," + wizhi_vars.includes_url + "js/tinymce/skins/wordpress/wp-content.css" + wizhi_vars.cms_url + "wizhi-cms/front/dist/styles/main.css",
+                "content_css": wizhi_vars.includes_url + "css/dashicons.css," + wizhi_vars.includes_url + "js/mediaelement/mediaelementplayer.min.css," + wizhi_vars.includes_url + "js/mediaelement/wp-mediaelement.css," + wizhi_vars.includes_url + "js/tinymce/skins/wordpress/wp-content.css," + wizhi_vars.cms_url + "/wizhi-cms/front/dist/styles/main.css," + wizhi_vars.cms_url + "/wizhi-cms/admin/dist/styles/main.css",
                 "wp_lang_attr": "zh-CN",
                 "selector": "#wid",
                 "resize": "vertical",
@@ -166,7 +166,7 @@
                 }
 
                 $(self)
-                    .before('<link rel="stylesheet" id="editor-buttons-css" href="' + wizhi_vars.includes_url + 'css/editor.css" type="text/css" media="all">');
+                    .before('<link rel="stylesheet" id="editor-buttons-css" href="' + wizhi_vars.includes_url + '/css/editor.css" type="text/css" media="all">');
 
                 $(self).before(wrap);
                 $(self).remove();
