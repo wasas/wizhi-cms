@@ -30,7 +30,7 @@ function wizhi_wp_editor( $settings = [ ] ) {
 		] );
 	}
 
-	_WP_Editors::editor_settings( 'wid', $set );
+	_WP_Editors::editor_settings( 'wizhi-editor', $set );
 
 	$wizhi_vars = [
 		'url'          => get_home_url(),
@@ -49,6 +49,8 @@ add_action( 'init', 'wizhi_load_editor' );
 function wizhi_load_editor() {
 	$settings = [
 		'editor_css' => 'typo wizhi',
+		'textarea_rows' => 15,
+	    'drag_drop_upload' => true
 	];
 
 	wizhi_wp_editor( $settings );
