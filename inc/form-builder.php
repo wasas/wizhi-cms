@@ -287,8 +287,13 @@ class WizhiFormBuilder {
 
 
 				case 'select':
-					$form->addSelect( $name, $label, $options )
-					     ->setDefaultValue( $default );
+					if ( in_array( $default, array_keys( $options ) ) ) {
+						$form->addSelect( $name, $label, $options )
+						     ->setDefaultValue( $default );
+					} else {
+						$form->addSelect( $name, $label, $options );
+					}
+
 					break;
 
 
