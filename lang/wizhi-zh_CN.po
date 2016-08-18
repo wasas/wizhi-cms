@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-08-07 22:31+0800\n"
-"PO-Revision-Date: 2016-08-07 22:31+0800\n"
+"POT-Creation-Date: 2016-08-17 21:27+0800\n"
+"PO-Revision-Date: 2016-08-17 21:28+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: cache\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: front\n"
+"X-Poedit-SearchPathExcluded-4: admin\n"
 
 #: builder/builder.php:140
 msgid "Add content"
@@ -532,111 +533,111 @@ msgid ""
 "插件没有任何作用。"
 msgstr ""
 
-#: example.php:220
+#: example.php:208
 msgid "插件设置演示"
 msgstr ""
 
-#: example.php:221 modules/settings.php:39
+#: example.php:209 modules/settings.php:39
 msgid "Wizhi CMS 插件设置"
 msgstr ""
 
-#: inc/form-builder.php:373
+#: inc/form-builder.php:394
 msgid "Save"
 msgstr "保存"
 
-#: inc/form-builder.php:467
+#: inc/form-builder.php:488
 msgid "Oah, Some errors occured"
 msgstr "嗷，发生了一些错误！"
 
-#: inc/helper.php:71 inc/helper.php:73 inc/helper.php:75 inc/helper.php:77
-#: inc/helper.php:79 inc/helper.php:81 inc/helper.php:103 inc/helper.php:105
-#: inc/helper.php:107
+#: inc/helper.php:128 inc/helper.php:130 inc/helper.php:132 inc/helper.php:134
+#: inc/helper.php:136 inc/helper.php:138 inc/helper.php:160 inc/helper.php:162
+#: inc/helper.php:164
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: inc/helper.php:110
+#: inc/helper.php:167
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
 
-#: inc/helper.php:112
+#: inc/helper.php:169
 msgid "Archives"
 msgstr "归档"
 
-#: inc/helper.php:239
+#: inc/helper.php:296
 msgid "Author"
 msgstr "作者"
 
-#: inc/helper.php:240
+#: inc/helper.php:297
 msgid "Date"
 msgstr "日期"
 
-#: inc/helper.php:241
+#: inc/helper.php:298
 msgid "Title"
 msgstr "标签"
 
-#: inc/helper.php:242
+#: inc/helper.php:299
 msgid "Random"
 msgstr "随机"
 
-#: inc/helper.php:253
+#: inc/helper.php:310
 msgid "Default"
 msgstr "默认"
 
-#: inc/helper.php:254
+#: inc/helper.php:311
 msgid "Success（Green）"
 msgstr "成功（绿色）"
 
-#: inc/helper.php:255
+#: inc/helper.php:312
 msgid "Info（Blue）"
 msgstr "信息（蓝色）"
 
-#: inc/helper.php:256
+#: inc/helper.php:313
 msgid "Warning（Orange）"
 msgstr "警告（橙色）"
 
-#: inc/helper.php:257
+#: inc/helper.php:314
 msgid "Danger（Red）"
 msgstr "危险（红色）"
 
-#: inc/helper.php:268
+#: inc/helper.php:325
 msgid "ASC"
 msgstr "升序"
 
-#: inc/helper.php:269
+#: inc/helper.php:326
 msgid "DESC"
 msgstr "降序"
 
-#: inc/helper.php:292
+#: inc/helper.php:349
 msgid "Select content type"
 msgstr "选择内容类型"
 
-#: inc/helper.php:293
+#: inc/helper.php:350
 msgid "Post"
 msgstr "文章"
 
-#: inc/helper.php:294 modules/pagination.php:55
+#: inc/helper.php:351 modules/pagination.php:55
 msgid "Page"
 msgstr "页面"
 
-#: inc/helper.php:323
+#: inc/helper.php:380
 msgid "Select content"
 msgstr "选择内容"
 
-#: inc/helper.php:350
+#: inc/helper.php:407
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:351 modules/content_types.php:82
+#: inc/helper.php:408 modules/content_types.php:82
 msgid "Category"
 msgstr "分类"
 
-#: inc/helper.php:352
+#: inc/helper.php:409
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helper.php:416
+#: inc/helper.php:473
 msgid "Select Category"
 msgstr "选择分类目录"
 
@@ -735,7 +736,7 @@ msgstr "下载"
 msgid "Archive template"
 msgstr "存档模板"
 
-#: modules/content_types.php:20 modules/metabox/term.php:14
+#: modules/content_types.php:20 modules/metabox/term.php:13
 msgid "Posts per page"
 msgstr "每页文章数"
 
@@ -760,7 +761,7 @@ msgstr "链接URL"
 msgid "Loop template"
 msgstr "循环模板"
 
-#: modules/metabox/term.php:29
+#: modules/metabox/term.php:28
 msgid "Term template"
 msgstr "分类模板"
 
@@ -773,8 +774,8 @@ msgid "Last"
 msgstr "末页"
 
 #: modules/settings.php:9
-msgid "Enabled Post Types"
-msgstr "启用的内容类型"
+msgid "启用的文章类型"
+msgstr ""
 
 #: modules/settings.php:15
 msgid "使用内置的CSS"
@@ -801,19 +802,34 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr "查看 %s 下的所有文章"
 
-#: templates/wizhi/content.php:22
+#: templates/wizhi/content.php:29
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
-#~ msgid "show"
-#~ msgstr "显示"
+#, fuzzy
+#~ msgid "Options:"
+#~ msgstr "Relevanssi搜索选项"
 
-#~ msgid "hide"
-#~ msgstr "隐藏"
+#, fuzzy
+#~ msgid "count"
+#~ msgstr "数"
 
-#~ msgid "toggle"
-#~ msgstr "切换"
+#, fuzzy
+#~ msgid "required"
+#~ msgstr "必需"
+
+#, fuzzy
+#~ msgid "default:"
+#~ msgstr "默认"
+
+#, fuzzy
+#~ msgid "number"
+#~ msgstr "數字欄位"
+
+#, fuzzy
+#~ msgid "&lt;"
+#~ msgstr "可以使用任何 CSS 样式"
 
 #, fuzzy
 #~ msgid "1"
@@ -834,6 +850,18 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 #, fuzzy
 #~ msgid "true"
 #~ msgstr "真（正确）"
+
+#~ msgid "Enabled Post Types"
+#~ msgstr "启用的内容类型"
+
+#~ msgid "show"
+#~ msgstr "显示"
+
+#~ msgid "hide"
+#~ msgstr "隐藏"
+
+#~ msgid "toggle"
+#~ msgstr "切换"
 
 #~ msgid "Use build in JavaScript And CSS"
 #~ msgstr "使用内置的 JavaScript 和 CSS 文件"
