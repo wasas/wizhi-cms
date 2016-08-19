@@ -205,7 +205,7 @@
 
 jQuery(document).ready(function ($) {
 
-    $('#frm-prod_desc').wp_editor();
+    $('.tinymce').wp_editor();
     $('#frm-prod_detail').wp_editor();
     $('#frm-prod_intro').wp_editor();
 
