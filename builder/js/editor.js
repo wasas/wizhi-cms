@@ -1,5 +1,5 @@
 /**
- * Click handler for the "Add Post Element" button. Basically we open the WP Media Manager then activate the shortcake state
+ * 点击 "添加内容元素" 按钮时的动作. 激活媒体 Modal, 并转到简码 UI
  */
 jQuery(document).ready(function ($) {
     $('body').on('click', '.wizhi-add-shortcode', function () {

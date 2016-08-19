@@ -21,8 +21,8 @@ class WizhiVisualBuilder {
 		add_action( 'admin_init', [ $this, 'addEditorStyles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'loadAdminScripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'loadFrontendScripts' ] );
-		add_filter( 'tiny_mce_before_init', [ $this, 'addwizhiBootstrap' ] );
-		add_action( 'admin_head', [ $this, 'addwizhiPlugin' ] );
+		add_filter( 'tiny_mce_before_init', [ $this, 'addWizhiBootstrap' ] );
+		add_action( 'admin_head', [ $this, 'addWizhiPlugin' ] );
 		add_filter( 'mce_buttons', [ $this, 'addPageBreakButton' ] );
 
 		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
@@ -96,7 +96,7 @@ class WizhiVisualBuilder {
 	 *
 	 * @return    void
 	 */
-	public function addwizhiPlugin() {
+	public function addWizhiPlugin() {
 
 		if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
 			return;
@@ -125,7 +125,7 @@ class WizhiVisualBuilder {
 	 *
 	 * @return mixed
 	 */
-	public function addwizhiBootstrap( $init ) {
+	public function addWizhiBootstrap( $init ) {
 		$init[ 'body_class' ] = 'wizhi wizhi-editer typo';
 
 		return $init;

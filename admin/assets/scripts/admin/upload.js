@@ -98,7 +98,7 @@
                 "toolbar4": "",
                 "tabfocus_elements": ":prev,:next",
                 "body_class": "typo wizhi wid",
-                wp_autoresize_on: true
+                "wp_autoresize_on": true
             }
         }, id_regexp = new RegExp('wid', 'g');
 
@@ -137,17 +137,17 @@
                 var wrap = $('<div id="wp-' + current_id + '-wrap" class="wp-core-ui wp-editor-wrap ' + options.mode + '-active" />');
                 var editor_tools = $('<div id="wp-' + current_id + '-editor-tools" class="wp-editor-tools hide-if-no-js" />');
                 var editor_tabs = $('<div class="wp-editor-tabs" />');
-                var switch_editor_html = $('<a id="' + current_id + '-html" class="wp-switch-editor switch-html" data-wp-editor-id="' + current_id + '">Text</a>');
-                var switch_editor_tmce = $('<a id="' + current_id + '-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="' + current_id + '">Visual</a>');
+                var switch_editor_html = $('<a id="' + current_id + '-html" class="wp-switch-editor switch-html" data-wp-editor-id="' + current_id + '">文本</a>');
+                var switch_editor_tmce = $('<a id="' + current_id + '-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="' + current_id + '">可视化</a>');
                 var media_buttons = $('<div id="wp-' + current_id + '-media-buttons" class="wp-media-buttons" />');
-                var insert_media_button = $('<a href="#" id="insert-media-button" class="button insert-media add_media" data-editor="' + current_id + '" title="Add Media"><span class="wp-media-buttons-icon"></span> Add Media</a>'), editor_container = $('<div id="wp-' + current_id + '-editor-container" class="wp-editor-container" />');
+                var insert_media_button = $('<a href="#" id="insert-media-button" class="button insert-media add_media" data-editor="' + current_id + '" title="Add Media"><span class="wp-media-buttons-icon"></span> 添加媒体</a>'), editor_container = $('<div id="wp-' + current_id + '-editor-container" class="wp-editor-container" />');
                 var content_css = false;
 
                 insert_media_button.appendTo(media_buttons);
                 media_buttons.appendTo(editor_tools);
 
-                switch_editor_html.appendTo(editor_tabs);
                 switch_editor_tmce.appendTo(editor_tabs);
+                switch_editor_html.appendTo(editor_tabs);
                 editor_tabs.appendTo(editor_tools);
 
                 editor_tools.appendTo(wrap);
@@ -205,10 +205,9 @@
 
 jQuery(document).ready(function ($) {
 
-    $('.tinymce').wp_editor();
-
-    $('#frm-abdesc').wp_editor();
-    $('#frm-abc').wp_editor();
+    $('#frm-prod_desc').wp_editor();
+    $('#frm-prod_detail').wp_editor();
+    $('#frm-prod_intro').wp_editor();
 
     // ---------------------------------------------------------
     // 添加更多, 用于重复字段

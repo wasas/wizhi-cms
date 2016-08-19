@@ -109,5 +109,3 @@ class WizhiVisualBuilderToolbar {
 }
 
 new WizhiVisualBuilderToolbar();
-
-?>
