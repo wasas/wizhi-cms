@@ -39,4 +39,7 @@ $args = [
 	'title'  => __( 'Wizhi CMS 插件设置', 'wizhi' ),
 ];
 
-new WizhiOptionPage( $fields, $args );
+
+if ( class_exists( 'WizhiOptionPage' ) ) {
+	new WizhiOptionPage( $fields, $args );
+}

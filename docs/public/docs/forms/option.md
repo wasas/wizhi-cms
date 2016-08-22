@@ -28,7 +28,9 @@ $args = [
 ### 第三步: 实例化设置选项页面
 
 ```php
-new WizhiOptionPage( $fields, $args );
+if ( class_exists( 'WizhiOptionPage' ) ) {
+	new WizhiOptionPage( $fields, $args );
+}
 ```
 
 把以上代码加入到主题的function.php即可

@@ -19,5 +19,7 @@ $args_term = [
 
 ### 第三步: 直接实例化`WizhiTermMetabox` 
 ```php
-new WizhiTermMetabox( $fields, $args_term );
+if ( class_exists( 'WizhiTermMetabox' ) ) {
+	new WizhiTermMetabox( $fields, $args_term );
+}
 ```

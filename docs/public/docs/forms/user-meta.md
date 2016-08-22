@@ -15,6 +15,8 @@ $fields = [
 ### 第二步: 然后直接实例化`WizhiPostMetabox` 
 
 ```php
-new WizhiUserMetabox( $fields );
+if ( class_exists( 'WizhiUserMetabox' ) ) {
+	new WizhiUserMetabox( $fields );
+}
 ```
 

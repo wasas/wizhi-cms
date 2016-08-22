@@ -19,7 +19,9 @@ $args_post = [
 
 ### 第三步: 实例化`WizhiPostMetabox` 类就可以了
 ```php
-new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
+if ( class_exists( 'WizhiPostMetabox' ) ) {
+	new WizhiPostMetabox( 'extra', '文章附加数据', $fields, $args_post );
+}
 ```
 ## 使用辅助函数获取文章类型和分类法选项
 
@@ -45,7 +47,6 @@ function show_select() {
 			'size'  => '80',
 			'options' => wizhi_get_term_list('category')
 		],
-		...
 	];
 
 	$args = [
@@ -54,7 +55,10 @@ function show_select() {
 		'priority'  => 'high',
 	];
 
-	new WizhiPostMetabox( 'fees-attrs', '运费数据', $fields, $args );
+    if ( class_exists( 'WizhiPostMetabox' ) ) {
+        new WizhiPostMetabox( 'fees-attrs', '运费数据', $fields, $args );
+    }
+    
 }
 
 ```
