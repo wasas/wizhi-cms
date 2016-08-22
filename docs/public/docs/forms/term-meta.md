@@ -16,6 +16,9 @@ $args_term = [
 	'taxonomies' => [ 'category', 'post_tag', 'product_cat' ],
 ];
 ```
+- `id`: 元数据盒子的 ID 
+- `title`: 元数据盒子的标题
+- `taxonomies` : 支持的分类方法
 
 ### 第三步: 直接实例化`WizhiTermMetabox` 
 ```php

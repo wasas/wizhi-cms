@@ -16,6 +16,9 @@ $args_post = [
 	'priority'  => 'high',
 ];
 ```
+- `post_type`: 元数据盒子支持的文章类型
+- `context`: 元数据盒子出现的位置
+- `priority` : 元数据盒子的优先级
 
 ### 第三步: 实例化`WizhiPostMetabox` 类就可以了
 ```php

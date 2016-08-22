@@ -22,7 +22,7 @@ function show_select() {
 					'name'        => 'second_name',
 					'label'       => '姓氏',
 					'size'        => '80',
-					'placeholder' => '请输入形式',
+					'placeholder' => '请输入姓氏',
 				],
 			],
 		],
