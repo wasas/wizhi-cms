@@ -56,6 +56,9 @@ function load_fieldmanager() {
 	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
 		require_once WIZHI_CMS . 'inc/fieldmanager/fieldmanager.php';
 	}
+	if ( ! class_exists( 'Shortcode_UI' ) ) {
+		require_once( WIZHI_CMS . 'inc/shortcake/shortcode-ui.php' );
+	}
 }
 
 // 加载 RedBean PHP
