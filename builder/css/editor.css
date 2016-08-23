@@ -141,9 +141,10 @@ body#tinymce.wp-editor #wp-column-toolbar {
 body#tinymce.wp-editor #wp-column-toolbar .dashicons {
     margin: 2px;
     padding: 2px 3px;
-    width: 20px;
-    height: 20px;
-    color: #777;
+    line-height: normal;
+    width: 28px;
+    height: 26px;
+    color: #555d66;
     cursor: pointer;
     font-size: 20px;
     border: 1px solid transparent;
