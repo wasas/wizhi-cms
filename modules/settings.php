@@ -1,45 +1,30 @@
 <?php
 
-$post_types = wizhi_post_types();
+add_action( 'init', 'cms_settings_page' );
 
-$fields = [
-	[
-		'type'    => 'multi-checkbox',
-		'name'    => 'enabled_post_types',
-		'label'   => __( '启用的文章类型', 'wizhi' ),
-		'options' => $post_types,
-	],
-	[
-		'type'  => 'checkbox',
-		'name'  => 'is_enable_css',
-		'label' => __( '使用内置的CSS', 'wizhi' ),
-	],
-	[
-		'type'  => 'checkbox',
-		'name'  => 'is_enable_js',
-		'label' => __( '使用内置JavaScript', 'wizhi' ),
-	],
-	[
-		'type'  => 'checkbox',
-		'name'  => 'is_enable_font',
-		'label' => __( '是否加载插件自带的 FontAwesome 字体图标', 'wizhi' ),
-	],
-	[
-		'type'  => 'checkbox',
-		'name'  => 'is_enable_builder',
-		'label' => __( '启用可视化编辑器（需要安装并激活 Shortcake 插件）', 'wizhi' ),
-	],
-];
+function cms_settings_page() {
 
+	if ( function_exists( 'fm_register_submenu_page' ) ) {
+		fm_register_submenu_page( 'wizhi_cms_settings', 'options-general.php', __( 'CMS Settings', 'wizhi' ) );
+	}
 
-$args = [
-	'parent' => 'options-general.php',
-	'slug'   => 'wizhi-cms-settings',
-	'label'  => __( '插件设置', 'wizhi' ),
-	'title'  => __( 'Wizhi CMS 插件设置', 'wizhi' ),
-];
+	add_action( 'fm_submenu_wizhi_cms_settings', function () {
 
+		$post_types = wizhi_post_types();
 
-if ( class_exists( 'WizhiOptionPage' ) ) {
-	new WizhiOptionPage( $fields, $args );
+		$fm = new Fieldmanager_Group( [
+			'name'     => 'wizhi_cms_settings',
+			'children' => [
+				"enabled_post_types" => new Fieldmanager_Checkboxes( __( 'Enabled content types', 'wizhi' ), [ 'options' => $post_types ] ),
+				"is_enable_css"      => new Fieldmanager_Checkbox( __( 'Use build-in CSS', 'wizhi' ) ),
+				"is_enable_js"       => new Fieldmanager_Checkbox( __( 'Use build-in Javascript', 'wizhi' ) ),
+				"is_enable_font"     => new Fieldmanager_Checkbox( __( 'Load build-in FontAwesome icons', 'wizhi' ) ),
+				"is_enable_builder"  => new Fieldmanager_Checkbox( __( 'Enable Shortcode UI', 'wizhi' ) ),
+			],
+		] );
+
+		$fm->activate_submenu_page();
+
+	} );
+
 }

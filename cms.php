@@ -34,6 +34,7 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 add_action( 'plugins_loaded', 'wizhi_cms_load_textdomain' );
 function wizhi_cms_load_textdomain() {
 	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/lang/' );
 }
 
 /**
