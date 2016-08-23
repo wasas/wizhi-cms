@@ -51,5 +51,3 @@ function wizhi_cms_banner_image() {
 	}
 
 }
-
-?>
