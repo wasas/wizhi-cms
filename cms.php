@@ -11,6 +11,7 @@ License URI:        http://opensource.org/licenses/MIT
 */
 
 define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
+define( 'WIZHI_URL', plugins_url( '', __FILE__ ) );
 defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );

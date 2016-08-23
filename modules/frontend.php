@@ -48,7 +48,7 @@ if ( ! is_admin() ) {
  * @package front
  */
 function wizhi_ui_style() {
-	wp_register_style( 'wizhi-style', plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
+	wp_register_style( 'wizhi-style', WIZHI_URL . '/front/dist/styles/main.css' );
 	wp_enqueue_style( 'wizhi-style' );
 }
 
@@ -59,7 +59,7 @@ function wizhi_ui_style() {
  * @package front
  */
 function wizhi_ui_font() {
-	wp_register_style( 'wizhi-font', plugins_url( '../front/dist/styles/font.css', __FILE__ ) );
+	wp_register_style( 'wizhi-font', WIZHI_URL . '/front/dist/styles/font.css' );
 	wp_enqueue_style( 'wizhi-font' );
 }
 
@@ -79,8 +79,8 @@ add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
  * @package front
  */
 function wizhi_ui_scripts() {
-	wp_register_script( 'wizhi-script', plugins_url( '../front/dist/scripts/main.js', __FILE__ ), [ 'jquery' ], '1.1', true );
-	wp_register_script( 'wizhi-cms-script', plugins_url( '../admin/dist/scripts/front.js', __FILE__ ), [ 'jquery' ], '1.1', true );
+	wp_register_script( 'wizhi-script', WIZHI_URL .  '/front/dist/scripts/main.js', [ 'jquery' ], '1.1', true );
+	wp_register_script( 'wizhi-cms-script', WIZHI_URL .  '/admin/dist/scripts/front.js', [ 'jquery' ], '1.1', true );
 	wp_enqueue_script( 'wizhi-script' );
 	wp_enqueue_script( 'wizhi-cms-script' );
 }
