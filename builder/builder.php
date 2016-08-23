@@ -24,10 +24,7 @@ class WizhiVisualBuilder {
 		add_filter( 'tiny_mce_before_init', [ $this, 'addWizhiBootstrap' ] );
 		add_action( 'admin_head', [ $this, 'addWizhiPlugin' ] );
 		add_filter( 'mce_buttons', [ $this, 'addPageBreakButton' ] );
-
-		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
-			add_action( 'media_buttons', [ $this, 'addShortcodeButton' ], 100 );
-		}
+		add_action( 'media_buttons', [ $this, 'addShortcodeButton' ], 100 );
 	}
 
 
