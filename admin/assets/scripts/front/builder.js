@@ -1,7 +1,12 @@
-/*
- * 全屏显示图片
- */
 jQuery(document).ready(function ($) {
+
+    function _gambit_microtime() {
+        return ( new Date ).getTime() / 1000;
+    }
+
+    // ---------------------------------------------------------
+    // 全屏显示图片
+    // ---------------------------------------------------------
     var applyBreakOut = function () {
         "use strict";
         var $ = jQuery;
@@ -81,9 +86,5 @@ jQuery(document).ready(function ($) {
     };
     $(window).resize(applyBreakOut);
     applyBreakOut();
+
 });
-
-
-function _gambit_microtime() {
-    return ( new Date ).getTime() / 1000;
-}

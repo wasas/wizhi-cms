@@ -1,5 +1,8 @@
 jQuery(document).ready(function ($) {
-    
+
+    // ---------------------------------------------------------
+    // 喜欢功能
+    // ---------------------------------------------------------
     $(document).on("click", ".jlk", function (e) {
         e.preventDefault();
         var task = $(this).attr("data-task");

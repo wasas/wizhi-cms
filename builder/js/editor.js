@@ -1113,7 +1113,7 @@ jQuery(document).ready(function ($) {
                 }
 
                 // Add the new contents and attributes
-                newTd.addClass('pure-u-1 pure-u-md-' + col)
+                newTd.addClass('col pure-u-1 pure-u-md-' + col)
                      .html(innerHTML)
                      .css('width', width + '%');
 
@@ -1730,7 +1730,7 @@ jQuery(document).ready(function ($) {
 
             // Apply new widths
             table.find('> tbody > tr > td').each(function (i, e) {
-                $(this).addClass('pure-u-1 pure-u-md-' + columnWidths[i])
+                $(this).addClass('col pure-u-1 pure-u-md-' + columnWidths[i])
                        .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
                        .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });
@@ -1860,7 +1860,7 @@ jQuery(document).ready(function ($) {
 
             // Apply new widths
             table.find('> tbody > tr > td').each(function (i, e) {
-                $(this).addClass('pure-u-1 pure-u-md-' + columnWidths[i])
+                $(this).addClass('col pure-u-1 pure-u-md-' + columnWidths[i])
                        .attr('style', $(this).attr('style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'))
                        .attr('data-mce-style', $(this).attr('data-mce-style').replace(/width:\s?[\d.]+\%/, 'width: ' + ( columnWidths[i] / 12 * 100 ) + '%'));
             });

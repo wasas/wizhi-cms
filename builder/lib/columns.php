@@ -188,7 +188,7 @@ class WizhiVisualBuilderColumns {
 			}
 
 			// 创建真实的行 div
-			$newDivs = '<div class="' . esc_attr( join( ' ', $tableClasses ) ) . '" ' . $dataAttributes . '><div class="pure-g">' . $newDivs . '</div></div>';
+			$newDivs = '<div class="' . esc_attr( join( ' ', $tableClasses ) ) . '" ' . $dataAttributes . '><div class="pure-g row">' . $newDivs . '</div></div>';
 
 			$html->find( 'table.wizhi_column', 0 )->outertext = $newDivs;
 

@@ -20,7 +20,6 @@ class WizhiVisualBuilder {
 	function __construct() {
 		add_action( 'admin_init', [ $this, 'addEditorStyles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'loadAdminScripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'loadFrontendScripts' ] );
 		add_filter( 'tiny_mce_before_init', [ $this, 'addWizhiBootstrap' ] );
 		add_action( 'admin_head', [ $this, 'addWizhiPlugin' ] );
 		add_filter( 'mce_buttons', [ $this, 'addPageBreakButton' ] );
@@ -64,14 +63,6 @@ class WizhiVisualBuilder {
 	public function addEditorStyles() {
 		add_editor_style( plugins_url( 'css/editor.css', __FILE__ ) );
 		add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
-	}
-
-
-	/**
-	 * 加载前端脚本文件
-	 */
-	public function loadFrontendScripts() {
-		wp_enqueue_script( 'wizhi', plugins_url( 'js/frontend.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION );
 	}
 
 
