@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-08-23 23:21+0800\n"
-"PO-Revision-Date: 2016-08-23 23:21+0800\n"
+"POT-Creation-Date: 2016-08-24 03:51+0800\n"
+"PO-Revision-Date: 2016-08-24 03:52+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: front\n"
 "X-Poedit-SearchPathExcluded-4: admin\n"
 
-#: builder/builder.php:140
+#: builder/builder.php:128
 msgid "Add content"
 msgstr "添加内容"
 
@@ -529,20 +529,22 @@ msgstr "动画"
 #: cms.php:20
 #, php-format
 msgid ""
+"Your PHP version（%1$s）can`t match plugin require, please update to PHP "
+"%2$s or later."
+msgstr ""
 "您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则"
 "插件没有任何作用。"
-msgstr ""
 
 #: inc/fieldmanager/php/class-fieldmanager-checkbox.php:69
 msgid "Saved a checkbox with a value that was not one of the options"
-msgstr ""
+msgstr "保存的值不是选项之一。"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:337
 #: inc/fieldmanager/php/class-fieldmanager-group.php:158
 msgid ""
 "A post can only have one parent, therefore you cannot store to post_parent "
 "in repeatable fields."
-msgstr ""
+msgstr "一篇文章只能有一个父级文章，所以不能存储 post_parent 为可重复字段。"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:372
 #: inc/fieldmanager/php/datasource/class-fieldmanager-datasource.php:64
@@ -551,26 +553,27 @@ msgid ""
 "You attempted to set a property \"%1$s\" that is nonexistant or invalid for "
 "an instance of \"%2$s\" named \"%3$s\"."
 msgstr ""
+"您试图设置\"%1$s\"属性，该属性不存在或实例\"%2$s\"的名称\"%3$s\"无效。"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:733
 #, php-format
 msgid "$values should be an array because $limit is %d"
-msgstr ""
+msgstr "$values 应该是一个数组，因为 $limit 是 %d"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:748
 #, php-format
 msgid "submitted %1$d values against a limit of %2$d"
-msgstr ""
+msgstr "提交的 %1$d 超过了 %2$d 的限制"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:866
 msgid "presave() in the base class should not get arrays, but did."
-msgstr ""
+msgstr "基类中的 presave() 不应该得到数组，但却得到了。"
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:871
 #: inc/fieldmanager/php/class-fieldmanager-options.php:216
 #, php-format
 msgid "Input \"%1$s\" is not valid for field \"%2$s\" "
-msgstr ""
+msgstr "输入\"%1$s\"不是有效的字段\"%2$s\""
 
 #: inc/fieldmanager/php/class-fieldmanager-field.php:929
 msgid "Add group"
@@ -583,18 +586,20 @@ msgstr "添加字段"
 #: inc/fieldmanager/php/class-fieldmanager-field.php:1138
 msgid ""
 "You may be able to use your browser's back button to resolve this error."
-msgstr ""
+msgstr "使用浏览器的后退按钮可能会解决此错误。"
 
 #: inc/fieldmanager/php/class-fieldmanager-group.php:313
 #, php-format
 msgid "Found \"%1$s\" in data but not in children"
-msgstr ""
+msgstr "数据中的\"%1$s\"不是选项之一"
 
 #: inc/fieldmanager/php/class-fieldmanager-media.php:70
 msgid "Attach a File"
 msgstr "附加文件"
 
 #: inc/fieldmanager/php/class-fieldmanager-media.php:71
+#: inc/shortcake/inc/fields/class-field-attachment.php:79
+#: inc/shortcake/inc/fields/class-field-attachment.php:80
 msgid "Select Attachment"
 msgstr "选择附件"
 
@@ -623,7 +628,7 @@ msgstr "你没有权限编辑此页面"
 #: inc/fieldmanager/php/context/class-fieldmanager-context-term.php:220
 #, php-format
 msgid "The field name \"%s\" is reserved for WordPress on the term form."
-msgstr ""
+msgstr "字段名称\"%s\" 是 WordPress 的保留项"
 
 #: inc/fieldmanager/php/context/class-fieldmanager-context-term.php:271
 msgid "User cannot edit this term"
@@ -639,27 +644,30 @@ msgid ""
 "Tried to alter %s %d through field \"%s\", which user is not permitted to "
 "edit."
 msgstr ""
+"Tried to alter %s %d through field \"%s\", which user is not permitted to "
+"edit."
 
 #: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:78
 #, php-format
 msgid "Store property %s is invalid. Must be one of %s."
-msgstr ""
+msgstr "存储属性 %s 无效。必须是 %s 之一。"
 
 #: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:85
 msgid ""
 "You cannot use reciprocal relationships with FM_Datasource_User if "
 "store_property is not set to ID."
 msgstr ""
+"如果 store_property 不设为 ID, FM_Datasource_User 就不能使用相互关系。"
 
 #: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:91
 #, php-format
 msgid "Display property %s is invalid. Must be one of %s."
-msgstr ""
+msgstr "显示属性 %s 无效。必须是 %s 之一。"
 
 #: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:206
 #, php-format
 msgid "Tried to refer to user \"%s\" which current user cannot edit."
-msgstr ""
+msgstr "试图引用的用户\"%s\"不能编辑。"
 
 #: inc/fieldmanager/php/util/class-fieldmanager-util-term-meta.php:65
 msgid "Fieldmanager Term Metadata"
@@ -669,7 +677,7 @@ msgstr "分类项目字段"
 #: inc/fieldmanager/php/util/class-fieldmanager-util-validation.php:152
 #, php-format
 msgid "The validation rule \"%s\" does not exist."
-msgstr ""
+msgstr "验证规则\"%s\"不存在。"
 
 #: inc/helper.php:71 inc/helper.php:73 inc/helper.php:75 inc/helper.php:77
 #: inc/helper.php:79 inc/helper.php:81 inc/helper.php:103 inc/helper.php:105
@@ -780,6 +788,7 @@ msgid "View"
 msgstr "查看"
 
 #: inc/post_types.php:31 inc/post_types.php:86
+#: inc/shortcake/inc/class-shortcode-ui.php:243
 msgid "Search"
 msgstr "搜索"
 
@@ -806,29 +815,59 @@ msgstr "更新"
 msgid "New %s"
 msgstr "新 %s"
 
+#: inc/shortcake/inc/class-shortcode-ui.php:236
+#: inc/shortcake/inc/class-shortcode-ui.php:237
+msgid "Insert Post Element"
+msgstr "插入内容"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:238
+#, php-format
+msgid "%s Details"
+msgstr "%s 详情"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:239
+msgid "Insert Element"
+msgstr "插入内容"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:240
+msgid "Update"
+msgstr "更新"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:241
+msgid "There are no attributes to configure for this Post Element."
+msgstr "此文章元素没有需要设置的属性。"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:242
+msgid "Failed to load preview"
+msgstr "加载预览失败"
+
+#: inc/shortcake/inc/class-shortcode-ui.php:244
+msgid "Insert Content"
+msgstr "插入内容"
+
 #: modules/app/like.php:28
-msgid "喜欢"
-msgstr ""
+msgid "Like"
+msgstr "点赞"
 
 #: modules/app/like.php:29
-msgid "不喜欢"
-msgstr ""
+msgid "Unlike"
+msgstr "取消点赞"
 
 #: modules/app/like.php:261
-msgid "访问受限。"
-msgstr ""
+msgid "Access denied"
+msgstr "拒绝访问"
 
 #: modules/app/like.php:306
-msgid "你可以在"
-msgstr ""
+msgid "You can vote again after"
+msgstr "你可以在"
 
 #: modules/app/like.php:306
-msgid "天后重新投票。"
-msgstr ""
+msgid "days"
+msgstr "天"
 
 #: modules/app/like.php:350
-msgid "投票失败, 请稍后重试。"
-msgstr ""
+msgid "Voting failed, tye again later。"
+msgstr "投票失败，请稍后重试。"
 
 #: modules/config.php:5
 msgid "Product"
@@ -858,7 +897,8 @@ msgstr "下载"
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: modules/content_types.php:20 modules/metabox/term.php:14
+#: modules/content_types.php:20 modules/metabox/posts.php:8
+#: modules/metabox/term.php:14
 msgid "Cover image"
 msgstr "封面图像"
 
@@ -873,6 +913,10 @@ msgstr "每页的文章数"
 #: modules/content_types.php:25
 msgid "Archive Description"
 msgstr "存档描述"
+
+#: modules/metabox/slider.php:5 modules/metabox/slider.php:6
+msgid "Custom link"
+msgstr "自定义链接"
 
 #: modules/metabox/term.php:9
 msgid "Post per page"

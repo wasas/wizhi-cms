@@ -25,8 +25,8 @@ function wizhi_like( $arg = null ) {
 		$class = 'voted';
 	}
 
-	$title_text_like   = __( '喜欢', 'wizhi' );
-	$title_text_unlike = __( '不喜欢', 'wizhi' );
+	$title_text_like   = __( 'Like', 'wizhi' );
+	$title_text_unlike = __( 'Unlike', 'wizhi' );
 
 	// 安全验证
 	$nonce = wp_create_nonce( "wizhi_like_post_vote_nonce" );
@@ -237,7 +237,7 @@ function wizhi_get_voted_msg( $post_id, $ip = null ) {
 	$count = R::count( LIKE, ' post_id = ? AND ip = ? ', [ $post_id, $ip ] );
 
 	if ( $count > 0 ) {
-		$msg = "你已投票";
+		$msg = "Already voted";
 	}
 
 	return $msg;
@@ -258,7 +258,7 @@ new Dispatch( [
 		// 检查随机数
 		if ( ! wp_verify_nonce( $_REQUEST[ 'nonce' ], 'wizhi_like_post_vote_nonce' ) ) {
 			$error = 1;
-			$msg   = __( '访问受限。', 'wizhi' );
+			$msg   = __( 'Access denied', 'wizhi' );
 
 			// 判断是否可以投票
 		} else {
@@ -270,7 +270,7 @@ new Dispatch( [
 			if ( $login_required && ! $is_logged_in ) {
 				// 是否需要登录
 				$error = 1;
-				$msg   = '登录后才能投票!';
+				$msg   = 'Please login to vote!';
 			} else {
 
 				$has_already_voted = wizhi_already_vote( $post_id, $wizhi_ip_address );
@@ -281,7 +281,7 @@ new Dispatch( [
 				if ( "once" == $voting_period && $has_already_voted ) {
 					// 是否只能投票一次
 					$error = 1;
-					$msg   = '您已投票';
+					$msg   = 'Already voted';
 
 				} elseif ( '0' == $voting_period ) {
 					// 是否可投票多次
@@ -303,7 +303,7 @@ new Dispatch( [
 
 							$can_vote = false;
 							$error    = 1;
-							$msg      = __( '你可以在', 'wizhi' ) . ' ' . ceil( $revote_duration ) . ' ' . __( '天后重新投票。', 'wizhi' );
+							$msg      = __( 'You can vote again after', 'wizhi' ) . ' ' . ceil( $revote_duration ) . ' ' . __( 'days', 'wizhi' );
 						} else {
 							$can_vote = true;
 						}
@@ -344,10 +344,10 @@ new Dispatch( [
 
 				if ( $success ) {
 					$error = 0;
-					$msg   = '感谢投票!';
+					$msg   = 'Thanks for voting!';
 				} else {
 					$error = 1;
-					$msg   = __( '投票失败, 请稍后重试。', 'wizhi' );
+					$msg   = __( 'Voting failed, tye again later。', 'wizhi' );
 				}
 			}
 

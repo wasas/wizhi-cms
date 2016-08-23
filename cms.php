@@ -17,7 +17,7 @@ require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 	function wizhi_cms_phpold() {
-		printf( '<div class="error"><p>' . __( '您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则插件没有任何作用。', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
+		printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
 	}
 
 	// 显示警告信息
