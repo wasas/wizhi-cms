@@ -7,49 +7,29 @@
  * @param $name
  */
 function add_type_options( $type, $name ) {
-	$fields = [
-		[
-			'type'    => 'select',
-			'name'    => $type . "_archive_template",
-			'label'   => __( 'Archive template', 'wizhi' ),
-			'options' => wizhi_get_loop_template('wizhi/archive'),
-		],
-		[
-			'type'    => 'text',
-			'name'    => $type . "_archive_per_page",
-			'label'   => __( 'Posts per page', 'wizhi' ),
-			'size'    => '80',
-			'default' => get_option( $type . "_archive_per_page" ),
-		],
-		[
-			'type'        => 'upload',
-			'name'        => $type . "_archive_banner_image",
-			'label'       => '封面图像',
-			'size'        => '80',
-			'placeholder' => '为每个分类设置一个分类图像',
-		],
-		[
-			'type'        => 'editor',
-			'name'        => $type . "_archive_description",
-			'label'       => '存档描述',
-			'size'        => '80',
-			'placeholder' => '',
-			'attr'        => [
-				'rows' => 5,
-				'cols' => 50,
+
+	if ( function_exists( 'fm_register_submenu_page' ) ) {
+		fm_register_submenu_page( $type . '_archive_settings', 'edit.php?post_type=' . $type, '存档设置' );
+	}
+
+	add_action( 'fm_submenu_' . $type . '_archive_settings', function () {
+
+		$fm = new Fieldmanager_Group( [
+			'name'     => $type . '_archive_settings',
+			'children' => [
+				$type . "_archive_banner_image" => new Fieldmanager_Media( '封面图像' ),
+				$type . "_archive_template"     => new Fieldmanager_Select( '存档模板', [
+					'options' => wizhi_get_loop_template( 'wizhi/archive' ),
+				] ),
+				$type . "_archive_per_page"     => new Fieldmanager_Textfield( '每页显示的内容数量' ),
+				$type . "_archive_description"  => new Fieldmanager_RichTextArea( '存档描述' ),
 			],
-		],
-	];
+		] );
+		
+		$fm->activate_submenu_page();
 
+	} );
 
-	$args = [
-		'parent' => 'edit.php?post_type=' . $type,
-		'slug'   => "archive_" . $type . "_settings",
-		'label'  => __( '存档设置', 'wizhi' ),
-		'title'  => __( $name . '存档设置', 'wizhi' ),
-	];
-
-	new WizhiOptionPage( $fields, $args );
 }
 
 

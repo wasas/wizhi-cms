@@ -1,63 +1,6 @@
 <?php
 
 /**
- * 加载 wp_editor 需要的脚本, 设置项同 wp_editor
- *
- * @param array $settings
- */
-function wizhi_wp_editor( $settings = [ ] ) {
-	if ( ! class_exists( '_WP_Editors' ) ) {
-		require( ABSPATH . WPINC . '/class-wp-editor.php' );
-	}
-	$set = _WP_Editors::parse_settings( 'wid', $settings );
-
-	if ( ! current_user_can( 'upload_files' ) ) {
-		$set[ 'media_buttons' ] = false;
-	}
-
-	if ( $set[ 'media_buttons' ] ) {
-		wp_enqueue_script( 'thickbox' );
-		wp_enqueue_style( 'thickbox' );
-		wp_enqueue_script( 'media-upload' );
-
-		$post = get_post();
-		if ( ! $post && ! empty( $GLOBALS[ 'post_ID' ] ) ) {
-			$post = $GLOBALS[ 'post_ID' ];
-		}
-
-		wp_enqueue_media( [
-			'post' => $post,
-		] );
-	}
-
-	_WP_Editors::editor_settings( 'wizhi-editor', $set );
-
-	$wizhi_vars = [
-		'url'          => get_home_url(),
-		'cms_url'      => plugins_url(),
-		'includes_url' => includes_url(),
-	];
-
-	wp_localize_script( 'jquery', 'wizhi_vars', $wizhi_vars );
-}
-
-
-/**
- * 初始化后加载 wp_editor
- */
-add_action( 'init', 'wizhi_load_editor' );
-function wizhi_load_editor() {
-	$settings = [
-		'editor_css' => 'typo wizhi',
-		'textarea_rows' => 15,
-	    'drag_drop_upload' => true
-	];
-
-	wizhi_wp_editor( $settings );
-}
-
-
-/**
  * 获取当前分类的父级类 ID
  *
  * @param int    $term_id  分类 id

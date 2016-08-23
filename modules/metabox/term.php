@@ -1,32 +1,21 @@
 <?php
 
-$fields = [
-	[
-		'type'    => 'select',
+add_action( 'after_setup_theme', 'wizhi_cms_term_meta' );
+function wizhi_cms_term_meta() {
+
+	$fm = new Fieldmanager_Textfield( [
+		'name' => '_term_posts_per_page',
+	] );
+	$fm->add_term_meta_box( '每页显示的文章数量', 'category' );
+
+	$fm = new Fieldmanager_Media( [
+		'name' => '_banner_image',
+	] );
+	$fm->add_term_meta_box( '封面图像', 'category' );
+
+	$fm = new Fieldmanager_Select( [
 		'name'    => '_term_template',
-		'label'   => __( 'Loop template', 'wizhi' ),
-		'options' => wizhi_get_loop_template('wizhi/category'),
-	],
-	[
-		'type'    => 'text',
-		'name'    => '_term_posts_per_page',
-		'label'   => __( 'Posts per page', 'wizhi' ),
-		'size'    => '80',
-		'default' => get_option( 'posts_per_page' ),
-	],
-	[
-		'type'        => 'upload',
-		'name'        => '_banner_image',
-		'label'       => '封面图像',
-		'size'        => '80',
-		'placeholder' => '为每个分类设置一个分类图像',
-	],
-];
-
-$args_term = [
-	'id'         => 'template',
-	'title'      => __( 'Term template', 'wizhi' ),
-	'taxonomies' => wizhi_get_taxonomies(),
-];
-
-new WizhiTermMetabox( $fields, $args_term );
+		'options' => wizhi_get_loop_template( 'wizhi/category' ),
+	] );
+	$fm->add_term_meta_box( '存档模板', 'category' );
+}

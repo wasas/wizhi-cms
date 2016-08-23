@@ -1,22 +1,7 @@
 <?php
 
-$fields = [
-	[
-		'type'    => 'text',
-		'name'    => '_link_url',
-		'label'   => __( 'Link url', 'wizhi' ),
-		'size'    => '80',
-		'default' => 'http://',
-	],
-];
-
-$args_post = [
-	'id'        => 'extra',
-	'title'     => __( 'Slider Settings', 'wizhi' ),
-	'post_type' => [ 'slider' ],
-	'context'   => 'normal',
-	'priority'  => 'high',
-];
-
-
-new WizhiPostMetabox( 'slider_data', __( 'Slider Settings', 'wizhi' ), $fields, $args_post );
+add_action( 'after_setup_theme', 'wizhi_cms_slider_meta' );
+function wizhi_cms_slider_meta() {
+	$fm = new Fieldmanager_Textfield( [ 'name' => '_link_url', 'label' => '自定义链接' ] );
+	$fm->add_meta_box( '自定义链接', 'post' );
+}

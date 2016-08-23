@@ -47,6 +47,16 @@ function include_all_php( $folder ) {
 	}
 }
 
+/**
+ * 插件启用时,检测 fieldmanager 插件是否激活, 如果未激活, 包含插件内置的 fieldmanager
+ */
+add_action( 'plugins_loaded', 'load_fieldmanager', 0 );
+function load_fieldmanager() {
+	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
+		require_once WIZHI_CMS . 'inc/fieldmanager/fieldmanager.php';
+	}
+}
+
 // 加载 RedBean PHP
 if ( ! class_exists( 'R' ) ) {
 	require_once WIZHI_CMS . 'inc/rb.php';
@@ -54,10 +64,8 @@ if ( ! class_exists( 'R' ) ) {
 
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );
-include_all_php( WIZHI_CMS . 'inc/controls' );
-include_all_php( WIZHI_CMS . 'inc/metabox' );
 
-// 加载逻辑个设置代码
+// 加载逻辑设置代码
 include_all_php( WIZHI_CMS . 'modules/' );
 include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );
@@ -68,5 +76,3 @@ $is_enable_builder = get_option( 'is_enable_builder' );
 if ( $is_enable_builder ) {
 	include_all_php( WIZHI_CMS . 'builder' );
 }
-
-require_once WIZHI_CMS . 'example.php';

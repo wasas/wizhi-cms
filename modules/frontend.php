@@ -31,6 +31,7 @@ function wizhi_body_class( $classes ) {
 	return $classes;
 }
 
+
 if ( ! is_admin() ) {
 	if ( $is_enable_css ) {		
 		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
@@ -94,4 +95,3 @@ function load_custom_admin_style() {
 	wp_enqueue_style( 'wizhi-form-style', plugins_url( '../admin/dist/styles/main.css', __FILE__ ) );
 	wp_enqueue_script( 'wizhi-form-scripts', plugins_url( '../admin/dist/scripts/admin.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION, true );
 }
-
