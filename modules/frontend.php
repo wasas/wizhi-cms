@@ -1,9 +1,11 @@
 <?php
 
+$cms_settings = get_option( 'is_enable_css' );
+
 // 获取插件设置值
-$is_enable_css = get_option( 'is_enable_css' );
-$is_enable_js = get_option( 'is_enable_js' );
-$is_enable_font   = get_option( 'is_enable_font' );
+$is_enable_css  = $cms_settings[ 'is_enable_css' ];
+$is_enable_js   = $cms_settings[ 'is_enable_js' ];
+$is_enable_font = $cms_settings[ 'is_enable_font' ];
 
 
 // 加载 FontAwesome
@@ -33,10 +35,10 @@ function wizhi_body_class( $classes ) {
 
 
 if ( ! is_admin() ) {
-	if ( $is_enable_css ) {		
+	if ( $is_enable_css ) {
 		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
 	}
-	if ( $is_enable_js ) {		
+	if ( $is_enable_js ) {
 		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
 	}
 }
@@ -68,8 +70,9 @@ function wizhi_ui_font() {
  * 添加编辑器样式
  */
 function wizhi_add_editor_styles() {
-    add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
+	add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
 }
+
 add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
 
 
@@ -79,8 +82,8 @@ add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
  * @package front
  */
 function wizhi_ui_scripts() {
-	wp_register_script( 'wizhi-script', WIZHI_URL .  '/front/dist/scripts/main.js', [ 'jquery' ], '1.1', true );
-	wp_register_script( 'wizhi-cms-script', WIZHI_URL .  '/admin/dist/scripts/front.js', [ 'jquery' ], '1.1', true );
+	wp_register_script( 'wizhi-script', WIZHI_URL . '/front/dist/scripts/main.js', [ 'jquery' ], '1.1', true );
+	wp_register_script( 'wizhi-cms-script', WIZHI_URL . '/admin/dist/scripts/front.js', [ 'jquery' ], '1.1', true );
 	wp_enqueue_script( 'wizhi-script' );
 	wp_enqueue_script( 'wizhi-cms-script' );
 }
