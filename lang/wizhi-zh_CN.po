@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
 "POT-Creation-Date: 2016-08-24 03:51+0800\n"
-"PO-Revision-Date: 2016-08-24 03:52+0800\n"
+"PO-Revision-Date: 2016-08-25 16:50+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -944,11 +944,11 @@ msgstr "启用的内容类型"
 
 #: modules/settings.php:19
 msgid "Use build-in CSS"
-msgstr "使用内置的 JavaScript 和 CSS 文件"
+msgstr "使用内置的 CSS 文件"
 
 #: modules/settings.php:20
 msgid "Use build-in Javascript"
-msgstr "使用内置的 JavaScript 和 CSS 文件"
+msgstr "使用内置的 JavaScript 和"
 
 #: modules/settings.php:21
 msgid "Load build-in FontAwesome icons"
