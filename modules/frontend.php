@@ -1,12 +1,11 @@
 <?php
 
-$cms_settings = get_option( 'is_enable_css' );
+$cms_settings = get_option( 'wizhi_cms_settings' );
 
 // 获取插件设置值
 $is_enable_css  = $cms_settings[ 'is_enable_css' ];
 $is_enable_js   = $cms_settings[ 'is_enable_js' ];
 $is_enable_font = $cms_settings[ 'is_enable_font' ];
-
 
 // 加载 FontAwesome
 if ( $is_enable_font ) {
