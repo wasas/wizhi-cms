@@ -41,9 +41,6 @@
     "bxslider.js": {
       "bower": ["bxslider-4"]
     },
-    "superfish.js": {
-      "bower": ["superfish"]
-    },
     "modernizr.js": {
       "bower": ["modernizr"]
     },
