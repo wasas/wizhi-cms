@@ -17,6 +17,7 @@ function add_type_options( $type ) {
 		$fm = new Fieldmanager_Group( [
 			'name'     => $type,
 			'children' => [
+                "title"       => new Fieldmanager_TextField(__('Archive Title', 'wizhi')),
 				"banner"      => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
 				"template"    => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
 					'options' => wizhi_get_loop_template( 'wizhi/archive' ),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-08-24 03:51+0800\n"
-"PO-Revision-Date: 2016-08-30 15:45+0800\n"
+"POT-Creation-Date: 2016-08-31 09:43+0800\n"
+"PO-Revision-Date: 2016-08-31 09:43+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -526,7 +526,7 @@ msgstr "幻灯高度"
 msgid "Animation"
 msgstr "动画"
 
-#: cms.php:20
+#: cms.php:21
 #, php-format
 msgid ""
 "Your PHP version（%1$s）can`t match plugin require, please update to PHP "
@@ -897,20 +897,24 @@ msgstr "下载"
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: modules/content_types.php:20 modules/metabox/posts.php:8
+#: modules/content_types.php:20
+msgid "Archive Title"
+msgstr "存档标题"
+
+#: modules/content_types.php:21 modules/metabox/posts.php:8
 #: modules/metabox/term.php:14
 msgid "Cover image"
 msgstr "封面图像"
 
-#: modules/content_types.php:21
+#: modules/content_types.php:22
 msgid "Archive Template"
 msgstr "存档模板"
 
-#: modules/content_types.php:24
+#: modules/content_types.php:25
 msgid "Posts Per Page"
 msgstr "每页的文章数"
 
-#: modules/content_types.php:25
+#: modules/content_types.php:26
 msgid "Archive Description"
 msgstr "存档描述"
 
