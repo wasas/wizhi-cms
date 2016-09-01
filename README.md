@@ -62,27 +62,7 @@ Wizhi CMS 是一个帮助我们加快 WordPress 开发速度的 WordPress 开发
 
 #### 快速添加设置选项页面
 
-```php
-$fields = [
-	[
-		'type'  => 'text',
-		'name'  => 'wechat_app_id',
-		'size'  => '80',
-		'label' => __( '微信应用 ID', 'wizhi' ),
-		'desc'  => '微信应用 ID',
-	],
-];
-
-$args = [
-	'title' => __( '主题设置', 'wizhi' ),
-	'label' => __( '主题设置', 'wizhi' ),
-	'slug'  => 'enter-theme-settings',
-];
-
-if ( class_exists( 'WizhiOptionPage' ) ) {
-	new WizhiOptionPage( $fields, $args );
-}
-```
+请参考 WordPress Formbuilder 插件文档
 
 ## BUG反馈和功能建议
 
