@@ -20,7 +20,6 @@
 }
 
 .bx-viewport {
-  /*fix other elements on the page moving (on Chrome)*/
   -webkit-transform: translatez(0);
 }
 
@@ -28,15 +27,13 @@
 ===================================*/
 
 .bx-wrapper {
-  -moz-box-shadow: 0 0 5px #ccc;
-  -webkit-box-shadow: 0 0 5px #ccc;
   box-shadow: 0 0 5px #ccc;
   border:  5px solid #fff;
   background: #fff;
   .bx-pager,
   .bx-controls-auto {
     position: absolute;
-    bottom: -30px;
+    bottom: --@grid-gutter-width/2;
     width: 100%;
   }
 }
@@ -61,7 +58,7 @@
     font-family: Arial;
     font-weight: bold;
     color: #666;
-    padding-top: 20px;
+    bottom: 20px;
     &.bx-default-pager a {
       background: #666;
       text-indent: -9999px;
@@ -71,16 +68,18 @@
       margin: 0 5px;
       outline: 0;
       border-radius: 5px;
+      &.active,
       &:hover,
       &.active,
       &:focus {
-        background: #000;
+        background: @brand-primary;
       }
     }
   }
   .bx-pager-item,
   .bx-controls-auto .bx-controls-auto-item {
     display: inline-block;
+    vertical-align: middle;
   }
   .bx-pager-item {
     font-size: 0;
