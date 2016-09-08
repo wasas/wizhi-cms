@@ -22,3 +22,7 @@ admin/bower_components/
 .idea/workspace.xml
 
 .DS_Store
+
+front/dist/.DS_Store
+
+front/dist/scripts/.DS_Store
