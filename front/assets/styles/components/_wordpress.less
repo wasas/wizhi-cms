@@ -138,6 +138,46 @@
     }
 }
 
+
+// 默认相册样式
+.gallery{
+  .clearfix;
+  margin-left: -8px;
+  margin-right: -8px;
+  .gallery-item{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    .gallery-icon{
+      height: 100%;
+    }
+    .wp-caption-text{
+      
+    }
+  }
+  &-columns-2{
+    .gallery-item{
+      width: 50%;
+    }
+  }
+  &-columns-3{
+    .gallery-item{
+      width: 33.33%;
+    }
+  }
+  &-columns-4{
+    .gallery-item{
+      width: 25%;
+    }
+  }
+  &-columns-5{
+    .gallery-item{
+      width: 20%;
+    }
+  }
+}
+
+
 // 评论表单
 .comment-form {
     p {
