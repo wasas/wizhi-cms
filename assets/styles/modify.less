@@ -1,0 +1,41 @@
+ .media{
+    & + .ui-list{
+      margin-top: 10px;
+    }
+ }
+
+.media-body{
+  line-height: 1.5;
+}
+
+.nav-tabs-bordered{
+    &>li{
+        &>a{
+            padding: 10px 0;
+            margin-right: 15px;
+            &:focus,
+            &:hover{
+                outline: none;
+                border-color: transparent;
+                border-bottom: 1px solid @brand-primary;
+                background: transparent;
+            }
+        }
+        &.active{
+            &>a{
+                border-color: transparent;
+                border-bottom: 1px solid @brand-primary;
+                &:focus,
+                &:hover{
+                    border-color: transparent;
+                    border-bottom: 1px solid @brand-primary;
+                }
+            }
+        }
+
+    }
+}
+
+.tab-content{
+    padding-top: 15px;
+}
