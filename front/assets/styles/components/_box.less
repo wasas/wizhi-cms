@@ -9,7 +9,7 @@
   padding: 0;
   border-bottom: none;
   &-content {
-    padding: @panel-heading-padding;
+    padding: @grid-gutter-width/2;
     border-bottom: 1px solid @panel-default-border;
     .media {
       padding: 0;
@@ -79,5 +79,17 @@
     &-right {
       float: right;
     }
+  }
+}
+
+// 没有边框的盒子
+.ui-box-noborder{
+  border: 0;
+  .ui-box-head{
+    padding: 10px 0;
+  }
+  .ui-box-content{
+    padding: 15px 0 0;
+    border-bottom: 0;
   }
 }

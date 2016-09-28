@@ -46,10 +46,18 @@
     ul {
       top: 0;
       left: 100%;
+      @media screen and (max-width: 48em) {
+        top: 100%;
+        left: 0;
+      }
     }
   }
   li {
     position: relative;
+    @media screen and (max-width: 48em) {
+        display: block;
+        width: 100%;
+    }
   }
   & > li {
     float: left;
@@ -77,6 +85,9 @@
     padding: 15px 12px;
     line-height: normal;
     text-decoration: none;
+    @media screen and (max-width: 48em) {
+        
+    }
   }
 
   li {
@@ -105,8 +116,15 @@
   .sub-menu {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
     min-width: 120px;
+    @media screen and (max-width: 48em) {
+      position: relative;
+      box-shadow: none;
+    }
     li {
       background: @brand-primary;
+      @media screen and (max-width: 48em) {
+        background: @gray-dark;
+      }
       a {
         padding-top: 8px;
         padding-bottom: 8px;
