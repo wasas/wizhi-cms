@@ -9,6 +9,7 @@ if ( ! WP_DEBUG ) {
 function wizhi_cms_remove_menus() {
     global $submenu;
 
+    remove_menu_page( 'index.php' ); // 仪表盘
     remove_menu_page( 'upload.php' ); //多媒体
     remove_menu_page( 'edit-comments.php' ); //评论
     remove_menu_page( 'plugins.php' ); //插件
