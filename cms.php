@@ -76,7 +76,7 @@ include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );
 include_all_php( WIZHI_CMS . 'modules/app' );
 
-$is_enable_builder = get_option( 'is_enable_builder' );
+$is_enable_builder = get_option( 'wizhi_cms_settings' )['is_enable_builder'];
 
 if ( $is_enable_builder ) {
 	include_all_php( WIZHI_CMS . 'builder' );
