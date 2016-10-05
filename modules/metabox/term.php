@@ -3,7 +3,7 @@
 add_action( 'after_setup_theme', 'wizhi_cms_term_meta' );
 function wizhi_cms_term_meta() {
 
-	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', 'category', 'arg1', 'arg2 ');
+	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', 'category' );
 
 	$fm = new Fieldmanager_Textfield( [
 		'name' => '_term_posts_per_page',
@@ -17,7 +17,7 @@ function wizhi_cms_term_meta() {
 
 	$fm = new Fieldmanager_Select( [
 		'name'    => '_term_template',
-		'options' => wizhi_get_loop_template( 'wizhi/category' ),
+		'options' => wizhi_get_loop_template( 'wizhi/taxonomy' ),
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
 }
