@@ -53,7 +53,7 @@ function add_default_content_type() {
 
 	$types              = wizhi_post_types();
 	$icons              = wizhi_post_types_icon();
-	$enabled_post_types = get_option( 'wizhi_cms_settings', [] )[ 'enabled_post_types' ];
+	$enabled_post_types = get_option( 'wizhi_cms_settings', [ 'enabled_post_types' => [] ] )[ 'enabled_post_types' ];
 
 	if ( count( $enabled_post_types ) > 0 ) {
 		// 添加默认的文章类型和分类方法
