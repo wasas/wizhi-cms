@@ -27,6 +27,7 @@ function wizhi_cms_remove_admin_bar() {
     $wp_admin_bar->remove_menu( 'wp-logo' );
     $wp_admin_bar->remove_menu( 'about' );
     $wp_admin_bar->remove_menu( 'wporg' );
+    $wp_admin_bar->remove_menu( 'customize' );
     $wp_admin_bar->remove_menu( 'documentation' );
     $wp_admin_bar->remove_menu( 'support-forums' );
     $wp_admin_bar->remove_menu( 'feedback' );
