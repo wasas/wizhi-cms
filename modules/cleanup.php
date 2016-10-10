@@ -1,6 +1,6 @@
 <?php
 
-if ( ! WP_DEBUG ) {
+if ( ! WIZHI_CLEAN ) {
     add_action( 'admin_menu', 'wizhi_cms_remove_menus' );
     add_action( 'wp_before_admin_bar_render', 'wizhi_cms_remove_admin_bar' );
 }
