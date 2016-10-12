@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * 根据分类法获取文章类型
+ *
+ * @param string $taxonomy 分类法名称
+ *
+ * @return array
+ */
+function get_post_types_by_taxonomy( $taxonomy = 'category' ) {
+	global $wp_taxonomies;
+
+	return ( isset( $wp_taxonomies[ $taxonomy ] ) ) ? $wp_taxonomies[ $taxonomy ]->object_type : [];
+}
+
+/**
  * 获取当前分类的父级类 ID
  *
  * @param int    $term_id  分类 id
