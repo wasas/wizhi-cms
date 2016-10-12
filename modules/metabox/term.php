@@ -17,7 +17,7 @@ function wizhi_cms_term_meta() {
 
 	$fm = new Fieldmanager_Select( [
 		'name'    => '_term_template',
-		'options' => wizhi_get_loop_template( 'wizhi/taxonomy' ),
+		'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
 }
