@@ -47,7 +47,7 @@ function wizhi_cms_banner_image( $show = "false" ) {
 
         // 分类方法的 banner 不存在，则用文章类型的
         if( ! $banner_src ){
-            $post_type          = get_post_types_by_taxonomy( $object->taxonomy );
+            $post_type          = get_post_types_by_taxonomy( $queried_object->taxonomy );
             $post_type_settings = get_archive_option( $post_type[ 0 ] );
 
             $banner_src = $post_type_settings[ 'banner' ];
