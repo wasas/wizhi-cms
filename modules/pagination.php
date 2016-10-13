@@ -71,7 +71,7 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 			}
 
 			if ( $paged < $pages ) {
-				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged + 1 ) . '">></a></li>';
+				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged + 1 ) . '"> > </a></li>';
 			}
 			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
 				echo '<li><a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __('Last', 'wizhi') . '</a></li>';
@@ -124,7 +124,7 @@ if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
 				echo '<li><a aria-label="Previous" href="' . get_pagenum_link( 1 ) . '"><span aria-hidden="true">«</span></a></li>';
 			}
 			if ( $paged > 1 && $showitems < $pages ) {
-				echo '<li><a aria-label="Previous" href="' . get_pagenum_link( $paged - 1 ) . '"> < </a></li>';
+				echo '<li><a aria-label="Previous" href="' . get_pagenum_link( $paged - 1 ) . '"><span aria-hidden="true"><</span></a></li>';
 			}
 
 			for ( $i = 1; $i <= $pages; $i ++ ) {
