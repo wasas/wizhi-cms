@@ -3,7 +3,7 @@
 /**
  * @return string attachment images src
  */
-function wizhi_cms_banner_image() {
+function wizhi_cms_banner_image( $show = "false" ) {
 
 	global $post;
 
@@ -31,8 +31,15 @@ function wizhi_cms_banner_image() {
 
 		$banner_src = get_term_meta( $term_id, '_banner_image', true );
 
+	} elseif ( is_post_type_archive() ) {
+
+		// 文章类型存档
+		$queried_object = get_queried_object();
+		$banner_src = get_archive_option( 'case' )[ 'banner' ];
+
 	} elseif ( is_tax() || is_category() ) {
 
+		// 分类方法或默认的分类
 		$queried_object = get_queried_object();
 		$term_id        = $queried_object->term_id;
 
@@ -40,14 +47,23 @@ function wizhi_cms_banner_image() {
 
 	} else {
 
-		$banner_src = null;
+		// 默认为网站 Banner
+		$banner_src = get_option( 'wizhi_cms_settings' )['banner'];
 
 	}
 
-	if ( $banner_src ) {
-		return $banner_src;
+	if( $show ){
+		if ( $banner_src ) {
+			return wp_get_attachment_url( $banner_src );
+		} else {
+			return '';
+		}
 	} else {
-		return '';
+		if ( $banner_src ) {
+			return $banner_src;
+		} else {
+			return '';
+		}
 	}
 
 }
