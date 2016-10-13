@@ -35,7 +35,7 @@ function wizhi_cms_banner_image( $show = "false" ) {
 
 		// 文章类型存档
 		$queried_object = get_queried_object();
-		$banner_src = get_archive_option( 'case' )[ 'banner' ];
+		$banner_src = get_archive_option( $queried_object->name )[ 'banner' ];
 
 	} elseif ( is_tax() || is_category() ) {
 
@@ -44,6 +44,14 @@ function wizhi_cms_banner_image( $show = "false" ) {
 		$term_id        = $queried_object->term_id;
 
 		$banner_src = get_term_meta( $term_id, '_banner_image', true );
+
+        // 分类方法的 banner 不存在，则用文章类型的
+        if( ! $banner_src ){
+            $post_type          = get_post_types_by_taxonomy( $object->taxonomy );
+            $post_type_settings = get_archive_option( $post_type[ 0 ] );
+
+            $banner_src = $post_type_settings[ 'banner' ];
+        }
 
 	} else {
 
