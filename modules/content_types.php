@@ -14,17 +14,19 @@ function add_type_options( $type ) {
 
 	add_action( 'fm_submenu_' . $type . '_archive_settings', function ( $type ) {
 
+		$fields = [
+            "title"       => new Fieldmanager_TextField(__('Archive Title', 'wizhi')),
+			"banner"      => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+			"template"    => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
+				'options' => wizhi_get_loop_template( 'wizhi/archive' ),
+			] ),
+			"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
+			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
+		],
+
 		$fm = new Fieldmanager_Group( [
 			'name'     => $type,
-			'children' => [
-                "title"       => new Fieldmanager_TextField(__('Archive Title', 'wizhi')),
-				"banner"      => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
-				"template"    => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
-					'options' => wizhi_get_loop_template( 'wizhi/archive' ),
-				] ),
-				"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
-				"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
-			],
+			'children' => apply_filters( 'wizhi_archive_setting_fields', $fields);
 		] );
 
 		$fm->activate_submenu_page();
@@ -49,6 +51,7 @@ function get_archive_option( $type ) {
 /**
  * 添加默认的自定义文章类型和分类法
  */
+add_action( 'init', 'add_default_content_type' );
 function add_default_content_type() {
 
 	$types              = wizhi_post_types();
@@ -74,5 +77,3 @@ function add_default_content_type() {
 	}
 
 }
-
-add_action( 'init', 'add_default_content_type' );
