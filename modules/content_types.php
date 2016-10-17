@@ -26,7 +26,7 @@ function add_type_options( $type ) {
 
 		$fm = new Fieldmanager_Group( [
 			'name'     => $type,
-			'children' => apply_filters( 'wizhi_archive_setting_fields', $fields);
+			'children' => apply_filters( 'wizhi_archive_setting_fields', $fields),
 		] );
 
 		$fm->activate_submenu_page();
