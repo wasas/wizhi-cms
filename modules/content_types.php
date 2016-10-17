@@ -22,7 +22,7 @@ function add_type_options( $type ) {
 			] ),
 			"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
 			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
-		],
+		];
 
 		$fm = new Fieldmanager_Group( [
 			'name'     => $type,
