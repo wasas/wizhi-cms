@@ -4,6 +4,11 @@
  * Wizhi CMS 插件使用的简码
  */
 
+add_shortcode( 'divider', 'wizhi_shortcode_divider' );
+add_shortcode( 'heading', 'wizhi_shortcode_heading' );
+add_shortcode( 'alert', 'wizhi_shortcode_alert' );
+add_shortcode( 'button', 'wizhi_shortcode_button' );
+
 if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 	/**
 	 * 显示几种不同类型的分割线
@@ -36,8 +41,6 @@ if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 
 	}
 }
-add_shortcode( 'divider', 'wizhi_shortcode_divider' );
-
 
 if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 	/**
@@ -72,8 +75,6 @@ if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 
 	}
 }
-add_shortcode( 'heading', 'wizhi_shortcode_heading' );
-
 
 if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 	/**
@@ -108,8 +109,6 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 
 	}
 }
-add_shortcode( 'alert', 'wizhi_shortcode_alert' );
-
 
 if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 	/**
@@ -150,4 +149,3 @@ if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 
 	}
 }
-add_shortcode( 'button', 'wizhi_shortcode_button' );

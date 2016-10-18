@@ -2,6 +2,9 @@
 
 add_action( 'init', 'cms_settings_page' );
 
+/**
+ * 插件功能设置选项
+ */
 function cms_settings_page() {
 
 	if ( function_exists( 'fm_register_submenu_page' ) ) {

@@ -1,7 +1,6 @@
 <?php
 
 if ( ! function_exists( "wizhi_create_types" ) ) {
-
 	/**
 	 * 快速添加文章类型
 	 *
@@ -57,12 +56,10 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 
 		flush_rewrite_rules();
 	}
-
 }
 
 
 if ( ! function_exists( "wizhi_create_taxs" ) ) {
-
 	/**
 	 * 快速添加分类方法
 	 *
@@ -111,5 +108,4 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 
 		flush_rewrite_rules();
 	}
-
 }

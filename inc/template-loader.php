@@ -12,7 +12,6 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	 *
 	 * @package template
 	 */
-
 	function wizhi_get_template_part( $slug, $name = '' ) {
 		$template = '';
 
@@ -39,7 +38,6 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 		}
 	}
 }
-
 
 if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	/**
@@ -115,12 +113,9 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 
 		return $templates;
 	}
-
 }
 
-
 if ( ! function_exists( 'wizhi_load_template_part' ) ) {
-
 	/**
 	 * 获取模板为变量, 而不是直接显示
 	 *

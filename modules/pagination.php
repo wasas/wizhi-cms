@@ -1,6 +1,6 @@
 <?php
 /**
- * display pagination
+ * 显示分页导航
  *
  * @Author: kriesi
  * @Link  : http://www.kriesi.at/archives/how-to-build-a-wordpress-post-pagination-without-plugin
@@ -11,7 +11,6 @@
  */
 
 if ( ! function_exists( 'wizhi_pagination' ) ):
-
 	/**
 	 * Pure.css 分页导航
 	 *
@@ -83,7 +82,6 @@ endif;
 
 
 if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
-
 	/**
 	 * Bootstrap 分页导航
 	 *

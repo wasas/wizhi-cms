@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * 在不同类型的页面显示不同的封面图
+ *
  * @return string attachment images src
  */
 function wizhi_cms_banner_image( $show = "false" ) {

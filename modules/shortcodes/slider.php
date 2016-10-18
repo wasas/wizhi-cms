@@ -4,6 +4,8 @@
  * Wizhi CMS 插件使用的简码
  */
 
+add_shortcode( 'slider', 'wizhi_shortcode_slider' );
+
 if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 	/**
 	 * 自适应幻灯
@@ -94,8 +96,6 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 
 	}
 }
-add_shortcode( 'slider', 'wizhi_shortcode_slider' );
-
 
 if ( ! function_exists( 'wizhi_slider_js' ) ) {
 	/**

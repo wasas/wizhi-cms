@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 内置的文章类型选项
+ *
+ * @return array
+ */
 function wizhi_post_types() {
 	$post_types = [
 		'prod'     => __( 'Product', 'wizhi' ),
@@ -15,6 +20,11 @@ function wizhi_post_types() {
 }
 
 
+/**
+ * 默认的文章类型图标
+ *
+ * @return array
+ */
 function wizhi_post_types_icon() {
 	$post_types_icons = [
 		'prod'     => 'dashicons-cart',

@@ -1,5 +1,9 @@
 <?php
 
+add_filter( 'body_class', 'wizhi_body_class' );
+add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
+add_action( 'admin_enqueue_scripts', 'load_custom_admin_style' );
+
 $cms_settings = get_option( 'wizhi_cms_settings' );
 
 // 获取插件设置值
@@ -12,8 +16,23 @@ if ( $is_enable_font ) {
 	add_action( 'wp_enqueue_scripts', 'wizhi_ui_font' );
 }
 
+if ( ! is_admin() ) {
+	if ( $is_enable_css ) {
+		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
+	}
+	if ( $is_enable_js ) {
+		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
+	}
+}
 
-add_filter( 'body_class', 'wizhi_body_class' );
+
+/**
+ * 添加检测到的移动设备名称到 Body Class 中
+ *
+ * @param $classes
+ *
+ * @return array
+ */
 function wizhi_body_class( $classes ) {
 
 	$detect = new Mobile_Detect;
@@ -30,16 +49,6 @@ function wizhi_body_class( $classes ) {
 	};
 
 	return $classes;
-}
-
-
-if ( ! is_admin() ) {
-	if ( $is_enable_css ) {
-		add_action( 'wp_enqueue_scripts', 'wizhi_ui_style' );
-	}
-	if ( $is_enable_js ) {
-		add_action( 'wp_enqueue_scripts', 'wizhi_ui_scripts' );
-	}
 }
 
 
@@ -72,8 +81,6 @@ function wizhi_add_editor_styles() {
 	add_editor_style( plugins_url( '../front/dist/styles/main.css', __FILE__ ) );
 }
 
-add_action( 'after_setup_theme', 'wizhi_add_editor_styles' );
-
 
 /**
  * 加载 JavaScript
@@ -91,7 +98,7 @@ function wizhi_ui_scripts() {
 /**
  * 加载后台样式
  */
-add_action( 'admin_enqueue_scripts', 'load_custom_admin_style' );
+
 function load_custom_admin_style() {
 	wp_enqueue_media();
 	wp_enqueue_style( 'wizhi-form-style', plugins_url( '../admin/dist/styles/main.css', __FILE__ ) );

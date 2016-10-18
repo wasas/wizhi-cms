@@ -1,6 +1,6 @@
 <?php
+add_shortcode( 'list', 'wizhi_shortcode_list' );
 if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
-
 	/**
 	 * 显示文章标题列表
 	 *
@@ -102,4 +102,3 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 
 	}
 }
-add_shortcode( 'list', 'wizhi_shortcode_list' );

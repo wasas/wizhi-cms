@@ -4,6 +4,7 @@
  * Wizhi CMS 插件使用的简码
  */
 
+add_shortcode( 'media', 'wizhi_shortcode_media' );
 if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 	/**
 	 * 图文混排样式简码
@@ -110,4 +111,3 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 	}
 }
-add_shortcode( 'media', 'wizhi_shortcode_media' );

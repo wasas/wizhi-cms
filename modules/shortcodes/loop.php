@@ -1,5 +1,10 @@
 <?php
+/**
+ * Wizhi Shortcode
+ * Wizhi CMS 插件使用的简码
+ */
 
+add_shortcode( 'loop', 'wizhi_shortcode_loop' );
 if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 
 	/**
@@ -74,4 +79,3 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 	}
 }
 
-add_shortcode( 'loop', 'wizhi_shortcode_loop' );

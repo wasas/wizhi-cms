@@ -64,7 +64,6 @@ function wizhi_like( $arg = null ) {
 
 }
 
-
 /**
  * 获取真实 IP 地址
  *
@@ -89,7 +88,6 @@ function wizhi_get_real_ip() {
 
 	return $ip;
 }
-
 
 /**
  * 获取最近投票日期
@@ -165,7 +163,6 @@ function get_next_vote_date( $last_voted_date, $voting_period ) {
 	return $next_voting_date;
 }
 
-
 /**
  * 获取喜欢数量
  *
@@ -197,9 +194,8 @@ function wizhi_get_unlike_count( $post_id ) {
 	return $count;
 }
 
-
 /**
- * Check whether user has already voted or not
+ * 检查用户是否已经投票
  *
  * @param $post_id integer
  * @param $ip      string
@@ -217,9 +213,8 @@ function wizhi_already_vote( $post_id, $ip = null ) {
 	return $count;
 }
 
-
 /**
- * Check whether user has already voted or not
+ * 检查用户是否已经投票后的提示消息
  *
  * @param $post_id integer
  * @param $ip      string
@@ -244,7 +239,7 @@ function wizhi_get_voted_msg( $post_id, $ip = null ) {
 }
 
 /**
- * 个人资料页面
+ * 喜欢功能后端
  */
 new Dispatch( [
 

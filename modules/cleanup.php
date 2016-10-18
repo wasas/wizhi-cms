@@ -1,9 +1,7 @@
 <?php
 
-if ( WIZHI_CLEAN ) {
-    add_action( 'admin_menu', 'wizhi_cms_remove_menus' );
-    add_action( 'wp_before_admin_bar_render', 'wizhi_cms_remove_admin_bar' );
-}
+//add_action( 'admin_menu', 'wizhi_cms_remove_menus' );
+//add_action( 'wp_before_admin_bar_render', 'wizhi_cms_remove_admin_bar' );
 
 //移除后台无用的菜单
 function wizhi_cms_remove_menus() {

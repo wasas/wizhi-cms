@@ -30,7 +30,7 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 }
 
 /**
- * Load translations
+ * 加载翻译文件
  */
 add_action( 'plugins_loaded', 'wizhi_cms_load_textdomain' );
 function wizhi_cms_load_textdomain() {

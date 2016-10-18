@@ -1,4 +1,10 @@
 <?php
+/**
+ * Wizhi Shortcode
+ * Wizhi CMS 插件使用的简码
+ */
+
+add_shortcode( 'content', 'wizhi_shortcode_content' );
 
 if ( ! function_exists( 'wizhi_shortcode_content' ) ) {
 	/**
@@ -46,4 +52,3 @@ if ( ! function_exists( 'wizhi_shortcode_content' ) ) {
 		wp_reset_query();
 	}
 }
-add_shortcode( 'content', 'wizhi_shortcode_content' );
