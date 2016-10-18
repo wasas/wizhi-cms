@@ -31,6 +31,11 @@ function wizhi_cms_banner_image( $show = "false" ) {
 
 		$banner_src = get_term_meta( $term_id, '_banner_image', true );
 
+		// 获取所在分类的缩略图
+		if( !$banner_src ){
+			$banner_src = get_archive_option( $post_type )[ 'banner' ];
+		}
+
 	} elseif ( is_post_type_archive() ) {
 
 		// 文章类型存档
