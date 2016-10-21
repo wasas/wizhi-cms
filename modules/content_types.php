@@ -17,13 +17,15 @@ function add_type_options( $type ) {
 	add_action( 'fm_submenu_' . $type . '_archive_settings', function ( $type ) {
 
 		$fields = [
-			"title"       => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
 			"banner"      => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
 			"template"    => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
 				'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 			] ),
 			"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
+			"title"       => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
 			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
+			"seo_title" => new Fieldmanager_Textfield( __( 'SEO Title', 'wizhi' ) ),
+			"seo_description" => new Fieldmanager_TextArea( __( 'SEO Description', 'wizhi' ) ),
 		];
 
 		$fm = new Fieldmanager_Group( [

@@ -20,5 +20,15 @@ function wizhi_cms_term_meta() {
 		'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
+
+	$fm = new Fieldmanager_Textfield( [
+		'name'    => '_seo_title',
+	] );
+	$fm->add_term_meta_box( __( 'SEO Title', 'wizhi' ), $taxonomies );
+
+	$fm = new Fieldmanager_TextArea( [
+		'name'    => '_seo_description',
+	] );
+	$fm->add_term_meta_box( __( 'SEO Description', 'wizhi' ), $taxonomies );
 	
 }
