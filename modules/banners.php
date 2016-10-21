@@ -34,15 +34,15 @@ function wizhi_cms_banner_image( $show = "false" ) {
 		$banner_src = get_term_meta( $term_id, '_banner_image', true );
 
 		// 获取所在分类的缩略图
-		if( !$banner_src ){
+		if ( ! $banner_src ) {
 			$banner_src = get_archive_option( $post_type )[ 'banner' ];
 		}
 
 	} elseif ( is_post_type_archive() ) {
 
 		// 文章类型存档
-		$queried_object = get_queried_object();
-		$banner_src = get_archive_option( $queried_object->name )[ 'banner' ];
+		$post_type  = get_query_var( 'post_type' );
+		$banner_src = get_archive_option( $post_type )[ 'banner' ];
 
 	} elseif ( is_tax() || is_category() ) {
 
@@ -52,22 +52,22 @@ function wizhi_cms_banner_image( $show = "false" ) {
 
 		$banner_src = get_term_meta( $term_id, '_banner_image', true );
 
-        // 分类方法的 banner 不存在，则用文章类型的
-        if( ! $banner_src ){
-            $post_type          = get_post_types_by_taxonomy( $queried_object->taxonomy );
-            $post_type_settings = get_archive_option( $post_type[ 0 ] );
+		// 分类方法的 banner 不存在，则用文章类型的
+		if ( ! $banner_src ) {
+			$post_type          = get_post_types_by_taxonomy( $queried_object->taxonomy );
+			$post_type_settings = get_archive_option( $post_type[ 0 ] );
 
-            $banner_src = $post_type_settings[ 'banner' ];
-        }
+			$banner_src = $post_type_settings[ 'banner' ];
+		}
 
 	} else {
 
 		// 默认为网站 Banner
-		$banner_src = get_option( 'wizhi_cms_settings' )['banner'];
+		$banner_src = get_option( 'wizhi_cms_settings' )[ 'banner' ];
 
 	}
 
-	if( $show ){
+	if ( $show ) {
 		if ( $banner_src ) {
 			return wp_get_attachment_url( $banner_src );
 		} else {

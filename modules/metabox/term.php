@@ -3,7 +3,7 @@
 add_action( 'after_setup_theme', 'wizhi_cms_term_meta' );
 function wizhi_cms_term_meta() {
 
-	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', ['category'] );
+	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', ['category', 'prodcat'] );
 
 	$fm = new Fieldmanager_Textfield( [
 		'name' => '_term_posts_per_page',
