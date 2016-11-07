@@ -39,10 +39,10 @@ function wizhi_post_types_icon() {
 	return $post_types_icons;
 }
 
-$config = array(
-	'owner' => 'iwillhappy1314',
-	'repo' => 'wizhi-cms',
+$config = [
+	'owner'    => 'iwillhappy1314',
+	'repo'     => 'wizhi-cms',
 	'basename' => 'wizhi-cms/cms.php',
-);
+];
 
 new WP_GitHub_Updater( $config );
