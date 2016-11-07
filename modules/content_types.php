@@ -23,9 +23,7 @@ function add_type_options( $type ) {
 			] ),
 			"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
 			"title"       => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
-			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
-			"seo_title" => new Fieldmanager_Textfield( __( 'SEO Title', 'wizhi' ) ),
-			"seo_description" => new Fieldmanager_TextArea( __( 'SEO Description', 'wizhi' ) ),
+			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) )
 		];
 
 		$fm = new Fieldmanager_Group( [

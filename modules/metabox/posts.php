@@ -7,8 +7,6 @@ function wizhi_cms_post_meta() {
 
 	$fields = [
 		"_banner_image"    => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
-		"_seo_title"       => new Fieldmanager_Textfield( __( 'SEO Title', 'wizhi' ) ),
-		"_seo_description" => new Fieldmanager_TextArea( __( 'SEO Description', 'wizhi' ) ),
 	];
 
 	$fm = new Fieldmanager_Group( [
