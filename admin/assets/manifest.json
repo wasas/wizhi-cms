@@ -7,11 +7,6 @@
       ],
       "main": true
     },
-    "front.js": {
-      "files": [
-        "scripts/front/*.js"
-      ]
-    },
     "main.css": {
       "files": [
         "styles/admin.less"

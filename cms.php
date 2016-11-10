@@ -3,7 +3,7 @@
 Plugin Name:        Wizhi CMS
 Plugin URI:         http://www.wpzhiku.com/wordpress-cms-plugin-wizhi-cms/
 Description:        添加一些实用的功能，增加了一些效果类似dedecms(织梦)模板标签的一些简码。
-Version:            1.7
+Version:            1.7.2
 Author:             Amos Lee
 Author URI:         http://www.wpzhiku.com/
 License:            MIT License
@@ -50,7 +50,7 @@ function include_all_php( $folder ) {
 }
 
 /**
- * 插件启用时,检测 fieldmanager 插件是否激活, 如果未激活, 包含插件内置的 fieldmanager
+ * 插件启用时,检测 fieldmanager 和 shortcode ui 插件是否激活, 如果未激活, 包含插件内置的 fieldmanager
  */
 add_action( 'plugins_loaded', 'load_fieldmanager', 0 );
 function load_fieldmanager() {
@@ -67,6 +67,10 @@ if ( ! class_exists( 'R' ) ) {
 	require_once WIZHI_CMS . 'inc/rb.php';
 }
 
+global $cms_settings;
+
+$cms_settings = get_option( 'wizhi_cms_settings' );
+
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );
 
@@ -75,9 +79,3 @@ include_all_php( WIZHI_CMS . 'modules/' );
 include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );
 include_all_php( WIZHI_CMS . 'modules/app' );
-
-$is_enable_builder = get_option( 'wizhi_cms_settings' )['is_enable_builder'];
-
-if ( $is_enable_builder ) {
-	include_all_php( WIZHI_CMS . 'builder' );
-}

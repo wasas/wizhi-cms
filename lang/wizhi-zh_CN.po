@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-08-31 09:43+0800\n"
-"PO-Revision-Date: 2016-08-31 09:43+0800\n"
+"POT-Creation-Date: 2016-11-10 16:19+0800\n"
+"PO-Revision-Date: 2016-11-10 16:20+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,511 +20,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: front\n"
 "X-Poedit-SearchPathExcluded-4: admin\n"
-
-#: builder/builder.php:128
-msgid "Add content"
-msgstr "添加内容"
-
-#: builder/lib/columns.php:285
-msgid "Column content"
-msgstr "列内容"
-
-#: builder/lib/columns.php:286 builder/lib/columns.php:313
-#: builder/lib/columns.php:477
-msgid "Column"
-msgstr "列"
-
-#: builder/lib/columns.php:287
-msgid ""
-"Enter a composition here of column ratios separated by spaces.<br>Make sure "
-"the ratios sum up to 1.<br>For example:"
-msgstr "输入百分比，<br>确保各列的总和为1。 <br>如："
-
-#: builder/lib/columns.php:288
-msgid "Custom columns"
-msgstr "自定义列"
-
-#: builder/lib/columns.php:289 builder/lib/columns.php:290
-#: builder/lib/columns.php:291 builder/lib/columns.php:292
-#: builder/lib/columns.php:293 builder/lib/columns.php:294
-#: builder/lib/columns.php:295
-#, php-format
-msgid "%s column"
-msgstr "%s 列"
-
-#: builder/lib/columns.php:296
-msgid "Delete"
-msgstr "删除"
-
-#: builder/lib/columns.php:297 inc/post_types.php:27 inc/post_types.php:90
-msgid "Edit"
-msgstr "编辑"
-
-#: builder/lib/columns.php:298
-msgid "Change column"
-msgstr "修改列"
-
-#: builder/lib/columns.php:299 builder/lib/toolbar.php:102
-msgid "Clone"
-msgstr "复制"
-
-#: builder/lib/columns.php:300
-msgid "Change columns"
-msgstr "修改列"
-
-#: builder/lib/columns.php:301
-msgid "Cancel"
-msgstr "取消"
-
-#: builder/lib/columns.php:302
-msgid "Preset"
-msgstr "预设"
-
-#: builder/lib/columns.php:303
-msgid "Modify column count below:"
-msgstr "再下面修改列数量："
-
-#: builder/lib/columns.php:304
-msgid "Use custom"
-msgstr "使用自定义"
-
-#: builder/lib/columns.php:305
-msgid "Custom"
-msgstr "自定义"
-
-#: builder/lib/columns.php:307 builder/lib/columns.php:567
-msgid "Clone row"
-msgstr "复制行"
-
-#: builder/lib/columns.php:308 builder/lib/columns.php:574
-msgid "Delete row"
-msgstr "删除行"
-
-#: builder/lib/columns.php:309 builder/lib/columns.php:553
-msgid "Edit row"
-msgstr "编辑行"
-
-#: builder/lib/columns.php:310
-msgid "Edit area"
-msgstr "编辑选区"
-
-#: builder/lib/columns.php:311
-msgid "Clone area"
-msgstr "复制选区"
-
-#: builder/lib/columns.php:312
-msgid "Delete area"
-msgstr "删除选区"
-
-#: builder/lib/columns.php:314 builder/lib/columns.php:509
-msgid "Row"
-msgstr "行"
-
-#: builder/lib/columns.php:317
-msgid "Column Settings"
-msgstr "列设置"
-
-#: builder/lib/columns.php:318
-msgid "Styles"
-msgstr "样式"
-
-#: builder/lib/columns.php:319
-msgid "Style"
-msgstr "样式"
-
-#: builder/lib/columns.php:320
-msgid "Border"
-msgstr "边框"
-
-#: builder/lib/columns.php:321
-msgid "Padding"
-msgstr "内边距"
-
-#: builder/lib/columns.php:322
-msgid "None"
-msgstr "None"
-
-#: builder/lib/columns.php:323
-msgid "Dotted"
-msgstr "点线"
-
-#: builder/lib/columns.php:324
-msgid "Dashed"
-msgstr "虚线"
-
-#: builder/lib/columns.php:325 builder/shortcodes-ui.php:74
-msgid "Solid"
-msgstr "实线"
-
-#: builder/lib/columns.php:326
-msgid "Double"
-msgstr "双实线"
-
-#: builder/lib/columns.php:327
-msgid "Groove"
-msgstr "Groove"
-
-#: builder/lib/columns.php:328
-msgid "Ridge"
-msgstr "Ridge"
-
-#: builder/lib/columns.php:329
-msgid "Inset"
-msgstr "Inset"
-
-#: builder/lib/columns.php:330
-msgid "Outset"
-msgstr "Outset"
-
-#: builder/lib/columns.php:331
-msgid "Color"
-msgstr "颜色"
-
-#: builder/lib/columns.php:332
-msgid "Radius"
-msgstr "圆角"
-
-#: builder/lib/columns.php:335
-msgid "Background"
-msgstr "背景"
-
-#: builder/lib/columns.php:336
-msgid "Image"
-msgstr "图像"
-
-#: builder/lib/columns.php:337
-msgid "Size"
-msgstr "尺寸"
-
-#: builder/lib/columns.php:338
-msgid "Inherit"
-msgstr "Inherit"
-
-#: builder/lib/columns.php:339
-msgid "Cover"
-msgstr "Cover"
-
-#: builder/lib/columns.php:340
-msgid "Contain"
-msgstr "Contain"
-
-#: builder/lib/columns.php:341
-msgid "Repeat"
-msgstr "Repeat"
-
-#: builder/lib/columns.php:342
-msgid "Repeat-x"
-msgstr "Repeat-x"
-
-#: builder/lib/columns.php:343
-msgid "Repeat-y"
-msgstr "Repeat-y"
-
-#: builder/lib/columns.php:344
-msgid "No-repeat"
-msgstr "No-repeat"
-
-#: builder/lib/columns.php:345
-msgid "Round"
-msgstr "圆形"
-
-#: builder/lib/columns.php:346
-msgid "Space"
-msgstr "间距"
-
-#: builder/lib/columns.php:347
-msgid "Position"
-msgstr "位置"
-
-#: builder/lib/columns.php:348
-msgid "Margin"
-msgstr "外边距"
-
-#: builder/lib/columns.php:349
-msgid "Row settings"
-msgstr "行设置"
-
-#: builder/lib/columns.php:352
-msgid "Full-width"
-msgstr "全屏"
-
-#: builder/lib/columns.php:353
-msgid "Do not break out into full width"
-msgstr "不要打破容器"
-
-#: builder/lib/columns.php:354
-#, php-format
-msgid "Break out of %s container"
-msgstr "打破%s个容器"
-
-#: builder/lib/columns.php:355 builder/lib/columns.php:356
-#: builder/lib/columns.php:357 builder/lib/columns.php:358
-#: builder/lib/columns.php:359 builder/lib/columns.php:360
-#: builder/lib/columns.php:361 builder/lib/columns.php:362
-#, php-format
-msgid "Break out of %s containers"
-msgstr "打破%s个容器"
-
-#: builder/lib/columns.php:363
-msgid "Break out of all containers"
-msgstr "打破所有容器"
-
-#: builder/lib/columns.php:364
-msgid ""
-"Rows are restricted to the content areas defined by your theme. You can use "
-"this to break out of the constraint and turn your row into a full width row"
-msgstr ""
-"行内容通常被网站整体宽度限制，我们可以使用这个功能打破这个限制，显示全宽内"
-"容。"
-
-#: builder/lib/columns.php:484 builder/lib/columns.php:560
-msgid "Edit column"
-msgstr "编辑列"
-
-#: builder/lib/columns.php:491
-msgid "Clone column"
-msgstr "复制列"
-
-#: builder/lib/columns.php:498
-msgid "Delete column"
-msgstr "删除列"
-
-#: builder/lib/columns.php:517
-msgid "Align left"
-msgstr "左对齐"
-
-#: builder/lib/columns.php:525
-msgid "Align center"
-msgstr "居中对齐"
-
-#: builder/lib/columns.php:533
-msgid "Align right"
-msgstr "右对齐"
-
-#: builder/lib/columns.php:541
-msgid "No align"
-msgstr "不对齐"
-
-#: builder/shortcodes-ui.php:23
-msgid "Button"
-msgstr "按钮"
-
-#: builder/shortcodes-ui.php:27
-msgid "Button color"
-msgstr "按钮颜色"
-
-#: builder/shortcodes-ui.php:33
-msgid "Button Size"
-msgstr "按钮尺寸"
-
-#: builder/shortcodes-ui.php:37
-msgid "xSmall"
-msgstr "超小"
-
-#: builder/shortcodes-ui.php:38
-msgid "Small"
-msgstr "小"
-
-#: builder/shortcodes-ui.php:39
-msgid "Normal"
-msgstr "正常"
-
-#: builder/shortcodes-ui.php:40
-msgid "Large"
-msgstr "大"
-
-#: builder/shortcodes-ui.php:41
-msgid "xLarge"
-msgstr "超大"
-
-#: builder/shortcodes-ui.php:45 builder/shortcodes-ui.php:49
-msgid "Button text"
-msgstr "按钮文本"
-
-#: builder/shortcodes-ui.php:53
-msgid "Button Link"
-msgstr "按钮链接"
-
-#: builder/shortcodes-ui.php:66
-msgid "Divider line"
-msgstr "分隔线"
-
-#: builder/shortcodes-ui.php:70
-msgid "Divider type"
-msgstr "分隔线类型"
-
-#: builder/shortcodes-ui.php:75
-msgid "Shadow"
-msgstr "投影"
-
-#: builder/shortcodes-ui.php:84
-msgid "Heading"
-msgstr "标题"
-
-#: builder/shortcodes-ui.php:88
-msgid "Heading type"
-msgstr "标题类型"
-
-#: builder/shortcodes-ui.php:92
-msgid "With background"
-msgstr "带背景"
-
-#: builder/shortcodes-ui.php:93
-msgid "With border"
-msgstr "带边框"
-
-#: builder/shortcodes-ui.php:97
-msgid "Heading text"
-msgstr "标题文字"
-
-#: builder/shortcodes-ui.php:101
-msgid "Please enter heading text"
-msgstr "请输入标题文本"
-
-#: builder/shortcodes-ui.php:112
-msgid "Alert"
-msgstr "提示框"
-
-#: builder/shortcodes-ui.php:116
-msgid "Alert type"
-msgstr "提示框类型"
-
-#: builder/shortcodes-ui.php:122
-msgid "Alert content"
-msgstr "提示框内容"
-
-#: builder/shortcodes-ui.php:126
-msgid "Please enter alert content"
-msgstr "请输入提示内容"
-
-#: builder/shortcodes-ui.php:135
-msgid "Page content"
-msgstr "页面内容"
-
-#: builder/shortcodes-ui.php:139
-msgid "Page ID"
-msgstr "页面ID"
-
-#: builder/shortcodes-ui.php:145
-msgid "Show text count"
-msgstr "显示文本字数"
-
-#: builder/shortcodes-ui.php:151
-msgid "Show more link"
-msgstr "显示更多链接"
-
-#: builder/shortcodes-ui.php:162
-msgid "Post title list"
-msgstr "文章标题列表"
-
-#: builder/shortcodes-ui.php:166 builder/shortcodes-ui.php:225
-#: builder/shortcodes-ui.php:304
-msgid "Post type"
-msgstr "文章类型"
-
-#: builder/shortcodes-ui.php:173 builder/shortcodes-ui.php:232
-#: builder/shortcodes-ui.php:311
-msgid "Taxonomy"
-msgstr "分类法"
-
-#: builder/shortcodes-ui.php:180 builder/shortcodes-ui.php:239
-#: builder/shortcodes-ui.php:318
-msgid "Term"
-msgstr "分类项目"
-
-#: builder/shortcodes-ui.php:186
-msgid "Offset post count"
-msgstr "跳过文章数量"
-
-#: builder/shortcodes-ui.php:192 builder/shortcodes-ui.php:262
-#: builder/shortcodes-ui.php:331
-msgid "Show post count"
-msgstr "显示的文章数量"
-
-#: builder/shortcodes-ui.php:198 builder/shortcodes-ui.php:268
-#: builder/shortcodes-ui.php:337
-msgid "Show title text count"
-msgstr "显示标题文字数"
-
-#: builder/shortcodes-ui.php:204 builder/shortcodes-ui.php:280
-msgid "Show term title as module heading"
-msgstr "显示分类项目名称作为模块标题"
-
-#: builder/shortcodes-ui.php:210
-msgid "Show post datetime"
-msgstr "显示文章发布日期"
-
-#: builder/shortcodes-ui.php:221
-msgid "Media list"
-msgstr "图文媒体列表"
-
-#: builder/shortcodes-ui.php:245 builder/shortcodes-ui.php:324
-msgid "Thumbnail size"
-msgstr "缩略图大小"
-
-#: builder/shortcodes-ui.php:252
-msgid "Thumbnail position"
-msgstr "缩略图位置"
-
-#: builder/shortcodes-ui.php:256
-msgid "Left"
-msgstr "靠左"
-
-#: builder/shortcodes-ui.php:257
-msgid "Top"
-msgstr "靠上"
-
-#: builder/shortcodes-ui.php:258
-msgid "Right"
-msgstr "靠右"
-
-#: builder/shortcodes-ui.php:274 builder/shortcodes-ui.php:343
-msgid "Show Content text count"
-msgstr "显示文章内容字数"
-
-#: builder/shortcodes-ui.php:286
-msgid "Addon CSS class name"
-msgstr "附加的CSS类名"
-
-#: builder/shortcodes-ui.php:300 modules/config.php:9
-msgid "Slider"
-msgstr "幻灯"
-
-#: builder/shortcodes-ui.php:349
-msgid "Slider mode"
-msgstr "幻灯模式"
-
-#: builder/shortcodes-ui.php:355
-msgid "Slider speed"
-msgstr "切换速度"
-
-#: builder/shortcodes-ui.php:361
-msgid "Auto play"
-msgstr "自动播放"
-
-#: builder/shortcodes-ui.php:367
-msgid "Pause on mouse hover"
-msgstr "鼠标经过时暂停"
-
-#: builder/shortcodes-ui.php:373
-msgid "Minimum slider count"
-msgstr "最少显示的幻灯片数量"
-
-#: builder/shortcodes-ui.php:379
-msgid "Maximum slider count"
-msgstr "最多显示的幻灯片数量"
-
-#: builder/shortcodes-ui.php:385
-msgid "Slider width"
-msgstr "幻灯宽度"
-
-#: builder/shortcodes-ui.php:391
-msgid "Slider margin"
-msgstr "幻灯高度"
-
-#: builder/shortcodes-ui.php:397
-msgid "Animation"
-msgstr "动画"
 
 #: cms.php:21
 #, php-format
@@ -679,138 +174,142 @@ msgstr "分类项目字段"
 msgid "The validation rule \"%s\" does not exist."
 msgstr "验证规则\"%s\"不存在。"
 
-#: inc/helper.php:71 inc/helper.php:73 inc/helper.php:75 inc/helper.php:77
-#: inc/helper.php:79 inc/helper.php:81 inc/helper.php:103 inc/helper.php:105
-#: inc/helper.php:107
+#: inc/helper.php:84 inc/helper.php:86 inc/helper.php:88 inc/helper.php:90
+#: inc/helper.php:92 inc/helper.php:94 inc/helper.php:116 inc/helper.php:118
+#: inc/helper.php:120
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: inc/helper.php:110
+#: inc/helper.php:123
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
 
-#: inc/helper.php:112
+#: inc/helper.php:125
 msgid "Archives"
 msgstr "归档"
 
-#: inc/helper.php:239
+#: inc/helper.php:252
 msgid "Author"
 msgstr "作者"
 
-#: inc/helper.php:240
+#: inc/helper.php:253
 msgid "Date"
 msgstr "日期"
 
-#: inc/helper.php:241
+#: inc/helper.php:254
 msgid "Title"
 msgstr "标签"
 
-#: inc/helper.php:242
+#: inc/helper.php:255
 msgid "Random"
 msgstr "随机"
 
-#: inc/helper.php:253
+#: inc/helper.php:266
 msgid "Default"
 msgstr "默认"
 
-#: inc/helper.php:254
+#: inc/helper.php:267
 msgid "Success（Green）"
 msgstr "成功（绿色）"
 
-#: inc/helper.php:255
+#: inc/helper.php:268
 msgid "Info（Blue）"
 msgstr "信息（蓝色）"
 
-#: inc/helper.php:256
+#: inc/helper.php:269
 msgid "Warning（Orange）"
 msgstr "警告（橙色）"
 
-#: inc/helper.php:257
+#: inc/helper.php:270
 msgid "Danger（Red）"
 msgstr "危险（红色）"
 
-#: inc/helper.php:268
+#: inc/helper.php:281
 msgid "ASC"
 msgstr "升序"
 
-#: inc/helper.php:269
+#: inc/helper.php:282
 msgid "DESC"
 msgstr "降序"
 
-#: inc/helper.php:292
+#: inc/helper.php:305
 msgid "Select content type"
 msgstr "选择内容类型"
 
-#: inc/helper.php:293
+#: inc/helper.php:306
 msgid "Post"
 msgstr "文章"
 
-#: inc/helper.php:294 modules/pagination.php:55
+#: inc/helper.php:307 modules/pagination.php:54
 msgid "Page"
 msgstr "页面"
 
-#: inc/helper.php:323
+#: inc/helper.php:336
 msgid "Select content"
 msgstr "选择内容"
 
-#: inc/helper.php:350
+#: inc/helper.php:363
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:351 modules/content_types.php:62
+#: inc/helper.php:364 modules/content_types.php:70
 msgid "Category"
 msgstr "分类"
 
-#: inc/helper.php:352
+#: inc/helper.php:365
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helper.php:416
+#: inc/helper.php:429
 msgid "Select Category"
 msgstr "选择分类目录"
 
-#: inc/post_types.php:25 inc/post_types.php:26 inc/post_types.php:92
+#: inc/post_types.php:24 inc/post_types.php:25 inc/post_types.php:89
 msgid "Add New"
 msgstr "添加"
 
-#: inc/post_types.php:28
+#: inc/post_types.php:26 inc/post_types.php:87
+msgid "Edit"
+msgstr "编辑"
+
+#: inc/post_types.php:27
 msgid "New"
 msgstr "新"
 
-#: inc/post_types.php:29 inc/post_types.php:87
+#: inc/post_types.php:28 inc/post_types.php:84
 msgid "All"
 msgstr "所有"
 
-#: inc/post_types.php:30
+#: inc/post_types.php:29
 msgid "View"
 msgstr "查看"
 
-#: inc/post_types.php:31 inc/post_types.php:86
+#: inc/post_types.php:30 inc/post_types.php:83
 #: inc/shortcake/inc/class-shortcode-ui.php:243
 msgid "Search"
 msgstr "搜索"
 
-#: inc/post_types.php:32
+#: inc/post_types.php:31
 #, php-format
 msgid "Could not find %s"
 msgstr "找不到%s"
 
-#: inc/post_types.php:33
+#: inc/post_types.php:32
 #, php-format
 msgid "Could not find %s in trash"
 msgstr "回收站中没有%s"
 
-#: inc/post_types.php:88 inc/post_types.php:89
+#: inc/post_types.php:85 inc/post_types.php:86
 msgid "Parent"
 msgstr "父级"
 
-#: inc/post_types.php:91
+#: inc/post_types.php:88
 msgid "Upgrade"
 msgstr "更新"
 
-#: inc/post_types.php:93
+#: inc/post_types.php:90
 #, php-format
 msgid "New %s"
 msgstr "新 %s"
@@ -853,116 +352,136 @@ msgstr "点赞"
 msgid "Unlike"
 msgstr "取消点赞"
 
-#: modules/app/like.php:261
+#: modules/app/like.php:256
 msgid "Access denied"
 msgstr "拒绝访问"
 
-#: modules/app/like.php:306
+#: modules/app/like.php:301
 msgid "You can vote again after"
 msgstr "你可以在"
 
-#: modules/app/like.php:306
+#: modules/app/like.php:301
 msgid "days"
 msgstr "天"
 
-#: modules/app/like.php:350
+#: modules/app/like.php:345
 msgid "Voting failed, tye again later。"
 msgstr "投票失败，请稍后重试。"
 
-#: modules/config.php:5
+#: modules/config.php:10
 msgid "Product"
 msgstr "产品"
 
-#: modules/config.php:6
+#: modules/config.php:11
 msgid "Portfolio"
 msgstr "案例"
 
-#: modules/config.php:7
+#: modules/config.php:12
 msgid "Cooperation"
 msgstr "合作"
 
-#: modules/config.php:8
+#: modules/config.php:13
 msgid "Team"
 msgstr "团队"
 
-#: modules/config.php:10
+#: modules/config.php:14
+msgid "Slider"
+msgstr "幻灯"
+
+#: modules/config.php:15
 msgid "Faq"
 msgstr "问题"
 
-#: modules/config.php:11
+#: modules/config.php:16
 msgid "Download"
 msgstr "下载"
 
-#: modules/content_types.php:12
+#: modules/content_types.php:14
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: modules/content_types.php:20
-msgid "Archive Title"
-msgstr "存档标题"
-
-#: modules/content_types.php:21 modules/metabox/posts.php:8
-#: modules/metabox/term.php:14
+#: modules/content_types.php:20 modules/metabox/posts.php:9
+#: modules/metabox/term.php:16
 msgid "Cover image"
 msgstr "封面图像"
 
-#: modules/content_types.php:22
+#: modules/content_types.php:21
 msgid "Archive Template"
 msgstr "存档模板"
 
-#: modules/content_types.php:25
+#: modules/content_types.php:24
 msgid "Posts Per Page"
 msgstr "每页的文章数"
+
+#: modules/content_types.php:25
+msgid "Archive Title"
+msgstr "存档标题"
 
 #: modules/content_types.php:26
 msgid "Archive Description"
 msgstr "存档描述"
 
+#: modules/metabox/posts.php:19
+msgid "Post Fields"
+msgstr "文章字段"
+
 #: modules/metabox/slider.php:5 modules/metabox/slider.php:6
 msgid "Custom link"
 msgstr "自定义链接"
 
-#: modules/metabox/term.php:9
+#: modules/metabox/term.php:11
 msgid "Post per page"
 msgstr "每页的文章数"
 
-#: modules/metabox/term.php:20
+#: modules/metabox/term.php:22
 msgid "Archive template"
 msgstr "存档模板"
 
-#: modules/pagination.php:57
+#: modules/pagination.php:56
 msgid "Home"
 msgstr "首页 "
 
-#: modules/pagination.php:77
+#: modules/pagination.php:76
 msgid "Last"
 msgstr "末页"
 
-#: modules/settings.php:8
-msgid "CMS Settings"
-msgstr "CMS 设置"
+#: modules/settings.php:11
+msgid "Modules"
+msgstr "模块"
 
-#: modules/settings.php:18
+#: modules/settings.php:23
+msgid "Site Banner"
+msgstr "网站横幅"
+
+#: modules/settings.php:24
 msgid "Enabled content types"
 msgstr "启用的内容类型"
 
-#: modules/settings.php:19
+#: modules/settings.php:25
 msgid "Use build-in CSS"
 msgstr "使用内置的 CSS 文件"
 
-#: modules/settings.php:20
+#: modules/settings.php:26
 msgid "Use build-in Javascript"
 msgstr "使用内置的 JavaScript"
 
-#: modules/settings.php:21
+#: modules/settings.php:27
 msgid "Load build-in FontAwesome icons"
 msgstr "加载内置的 FontAwesome 图标"
 
-#: modules/settings.php:22
+#: modules/settings.php:28
 msgid "Enable Shortcode UI"
 msgstr "启用简码 UI"
 
-#: modules/walker.php:301
+#: modules/settings.php:29
+msgid "Clean up useless menus for normal user"
+msgstr "清理后台菜单"
+
+#: modules/settings.php:30
+msgid "Deny modify files in backend"
+msgstr "禁止在后台修改文件"
+
+#: modules/walker.php:300
 #, php-format
 msgid "View all posts filed under %s"
 msgstr "查看 %s 下的所有文章"
@@ -971,6 +490,370 @@ msgstr "查看 %s 下的所有文章"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "CMS Settings"
+#~ msgstr "CMS 设置"
+
+#~ msgid "Add content"
+#~ msgstr "添加内容"
+
+#~ msgid "Column content"
+#~ msgstr "列内容"
+
+#~ msgid "Column"
+#~ msgstr "列"
+
+#~ msgid ""
+#~ "Enter a composition here of column ratios separated by spaces.<br>Make "
+#~ "sure the ratios sum up to 1.<br>For example:"
+#~ msgstr "输入百分比，<br>确保各列的总和为1。 <br>如："
+
+#~ msgid "Custom columns"
+#~ msgstr "自定义列"
+
+#~ msgid "%s column"
+#~ msgstr "%s 列"
+
+#~ msgid "Delete"
+#~ msgstr "删除"
+
+#~ msgid "Change column"
+#~ msgstr "修改列"
+
+#~ msgid "Clone"
+#~ msgstr "复制"
+
+#~ msgid "Change columns"
+#~ msgstr "修改列"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Preset"
+#~ msgstr "预设"
+
+#~ msgid "Modify column count below:"
+#~ msgstr "再下面修改列数量："
+
+#~ msgid "Use custom"
+#~ msgstr "使用自定义"
+
+#~ msgid "Custom"
+#~ msgstr "自定义"
+
+#~ msgid "Clone row"
+#~ msgstr "复制行"
+
+#~ msgid "Delete row"
+#~ msgstr "删除行"
+
+#~ msgid "Edit row"
+#~ msgstr "编辑行"
+
+#~ msgid "Edit area"
+#~ msgstr "编辑选区"
+
+#~ msgid "Clone area"
+#~ msgstr "复制选区"
+
+#~ msgid "Delete area"
+#~ msgstr "删除选区"
+
+#~ msgid "Row"
+#~ msgstr "行"
+
+#~ msgid "Column Settings"
+#~ msgstr "列设置"
+
+#~ msgid "Styles"
+#~ msgstr "样式"
+
+#~ msgid "Style"
+#~ msgstr "样式"
+
+#~ msgid "Border"
+#~ msgstr "边框"
+
+#~ msgid "Padding"
+#~ msgstr "内边距"
+
+#~ msgid "None"
+#~ msgstr "None"
+
+#~ msgid "Dotted"
+#~ msgstr "点线"
+
+#~ msgid "Dashed"
+#~ msgstr "虚线"
+
+#~ msgid "Solid"
+#~ msgstr "实线"
+
+#~ msgid "Double"
+#~ msgstr "双实线"
+
+#~ msgid "Groove"
+#~ msgstr "Groove"
+
+#~ msgid "Ridge"
+#~ msgstr "Ridge"
+
+#~ msgid "Inset"
+#~ msgstr "Inset"
+
+#~ msgid "Outset"
+#~ msgstr "Outset"
+
+#~ msgid "Color"
+#~ msgstr "颜色"
+
+#~ msgid "Radius"
+#~ msgstr "圆角"
+
+#~ msgid "Background"
+#~ msgstr "背景"
+
+#~ msgid "Image"
+#~ msgstr "图像"
+
+#~ msgid "Size"
+#~ msgstr "尺寸"
+
+#~ msgid "Inherit"
+#~ msgstr "Inherit"
+
+#~ msgid "Cover"
+#~ msgstr "Cover"
+
+#~ msgid "Contain"
+#~ msgstr "Contain"
+
+#~ msgid "Repeat"
+#~ msgstr "Repeat"
+
+#~ msgid "Repeat-x"
+#~ msgstr "Repeat-x"
+
+#~ msgid "Repeat-y"
+#~ msgstr "Repeat-y"
+
+#~ msgid "No-repeat"
+#~ msgstr "No-repeat"
+
+#~ msgid "Round"
+#~ msgstr "圆形"
+
+#~ msgid "Space"
+#~ msgstr "间距"
+
+#~ msgid "Position"
+#~ msgstr "位置"
+
+#~ msgid "Margin"
+#~ msgstr "外边距"
+
+#~ msgid "Row settings"
+#~ msgstr "行设置"
+
+#~ msgid "Full-width"
+#~ msgstr "全屏"
+
+#~ msgid "Do not break out into full width"
+#~ msgstr "不要打破容器"
+
+#~ msgid "Break out of %s container"
+#~ msgstr "打破%s个容器"
+
+#~ msgid "Break out of %s containers"
+#~ msgstr "打破%s个容器"
+
+#~ msgid "Break out of all containers"
+#~ msgstr "打破所有容器"
+
+#~ msgid ""
+#~ "Rows are restricted to the content areas defined by your theme. You can "
+#~ "use this to break out of the constraint and turn your row into a full "
+#~ "width row"
+#~ msgstr ""
+#~ "行内容通常被网站整体宽度限制，我们可以使用这个功能打破这个限制，显示全宽"
+#~ "内容。"
+
+#~ msgid "Edit column"
+#~ msgstr "编辑列"
+
+#~ msgid "Clone column"
+#~ msgstr "复制列"
+
+#~ msgid "Delete column"
+#~ msgstr "删除列"
+
+#~ msgid "Align left"
+#~ msgstr "左对齐"
+
+#~ msgid "Align center"
+#~ msgstr "居中对齐"
+
+#~ msgid "Align right"
+#~ msgstr "右对齐"
+
+#~ msgid "No align"
+#~ msgstr "不对齐"
+
+#~ msgid "Button"
+#~ msgstr "按钮"
+
+#~ msgid "Button color"
+#~ msgstr "按钮颜色"
+
+#~ msgid "Button Size"
+#~ msgstr "按钮尺寸"
+
+#~ msgid "xSmall"
+#~ msgstr "超小"
+
+#~ msgid "Small"
+#~ msgstr "小"
+
+#~ msgid "Normal"
+#~ msgstr "正常"
+
+#~ msgid "Large"
+#~ msgstr "大"
+
+#~ msgid "xLarge"
+#~ msgstr "超大"
+
+#~ msgid "Button text"
+#~ msgstr "按钮文本"
+
+#~ msgid "Button Link"
+#~ msgstr "按钮链接"
+
+#~ msgid "Divider line"
+#~ msgstr "分隔线"
+
+#~ msgid "Divider type"
+#~ msgstr "分隔线类型"
+
+#~ msgid "Shadow"
+#~ msgstr "投影"
+
+#~ msgid "Heading"
+#~ msgstr "标题"
+
+#~ msgid "Heading type"
+#~ msgstr "标题类型"
+
+#~ msgid "With background"
+#~ msgstr "带背景"
+
+#~ msgid "With border"
+#~ msgstr "带边框"
+
+#~ msgid "Heading text"
+#~ msgstr "标题文字"
+
+#~ msgid "Please enter heading text"
+#~ msgstr "请输入标题文本"
+
+#~ msgid "Alert"
+#~ msgstr "提示框"
+
+#~ msgid "Alert type"
+#~ msgstr "提示框类型"
+
+#~ msgid "Alert content"
+#~ msgstr "提示框内容"
+
+#~ msgid "Please enter alert content"
+#~ msgstr "请输入提示内容"
+
+#~ msgid "Page content"
+#~ msgstr "页面内容"
+
+#~ msgid "Page ID"
+#~ msgstr "页面ID"
+
+#~ msgid "Show text count"
+#~ msgstr "显示文本字数"
+
+#~ msgid "Show more link"
+#~ msgstr "显示更多链接"
+
+#~ msgid "Post type"
+#~ msgstr "文章类型"
+
+#~ msgid "Taxonomy"
+#~ msgstr "分类法"
+
+#~ msgid "Term"
+#~ msgstr "分类项目"
+
+#~ msgid "Offset post count"
+#~ msgstr "跳过文章数量"
+
+#~ msgid "Show post count"
+#~ msgstr "显示的文章数量"
+
+#~ msgid "Show title text count"
+#~ msgstr "显示标题文字数"
+
+#~ msgid "Show term title as module heading"
+#~ msgstr "显示分类项目名称作为模块标题"
+
+#~ msgid "Show post datetime"
+#~ msgstr "显示文章发布日期"
+
+#~ msgid "Media list"
+#~ msgstr "图文媒体列表"
+
+#~ msgid "Thumbnail size"
+#~ msgstr "缩略图大小"
+
+#~ msgid "Thumbnail position"
+#~ msgstr "缩略图位置"
+
+#~ msgid "Left"
+#~ msgstr "靠左"
+
+#~ msgid "Top"
+#~ msgstr "靠上"
+
+#~ msgid "Right"
+#~ msgstr "靠右"
+
+#~ msgid "Show Content text count"
+#~ msgstr "显示文章内容字数"
+
+#~ msgid "Addon CSS class name"
+#~ msgstr "附加的CSS类名"
+
+#~ msgid "Slider mode"
+#~ msgstr "幻灯模式"
+
+#~ msgid "Slider speed"
+#~ msgstr "切换速度"
+
+#~ msgid "Auto play"
+#~ msgstr "自动播放"
+
+#~ msgid "Pause on mouse hover"
+#~ msgstr "鼠标经过时暂停"
+
+#~ msgid "Minimum slider count"
+#~ msgstr "最少显示的幻灯片数量"
+
+#~ msgid "Maximum slider count"
+#~ msgstr "最多显示的幻灯片数量"
+
+#~ msgid "Slider width"
+#~ msgstr "幻灯宽度"
+
+#~ msgid "Slider margin"
+#~ msgstr "幻灯高度"
+
+#~ msgid "Animation"
+#~ msgstr "动画"
 
 #~ msgid "Save"
 #~ msgstr "保存"
@@ -1050,6 +933,3 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 #~ msgid ""
 #~ "Enter percentage per row,<br>ensure the sum of the number is 1.<br>like:"
 #~ msgstr "输入百分比，<br>确保各列的总和为1。 <br>如："
-
-#~ msgid "Set Banner Image"
-#~ msgstr "设置头部图像"

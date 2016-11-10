@@ -8,7 +8,7 @@ add_action( 'init', 'cms_settings_page' );
 function cms_settings_page() {
 
 	if ( function_exists( 'fm_register_submenu_page' ) ) {
-		fm_register_submenu_page( 'wizhi_cms_settings', 'options-general.php', __( 'CMS Settings', 'wizhi' ) );
+		fm_register_submenu_page( 'wizhi_cms_settings', 'themes.php', __( 'Modules', 'wizhi' ) );
 	}
 
 	add_action( 'fm_submenu_wizhi_cms_settings', function () {
@@ -27,6 +27,7 @@ function cms_settings_page() {
 				"is_enable_font"     => new Fieldmanager_Checkbox( __( 'Load build-in FontAwesome icons', 'wizhi' ) ),
 				"is_enable_builder"  => new Fieldmanager_Checkbox( __( 'Enable Shortcode UI', 'wizhi' ) ),
 				"is_cleanup"         => new Fieldmanager_Checkbox( __( 'Clean up useless menus for normal user', 'wizhi' ) ),
+				"deny_modify"         => new Fieldmanager_Checkbox( __( 'Deny modify files in backend', 'wizhi' ) ),
 			],
 		] );
 
