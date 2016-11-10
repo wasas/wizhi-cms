@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-11-10 16:19+0800\n"
-"PO-Revision-Date: 2016-11-10 16:20+0800\n"
+"POT-Creation-Date: 2016-11-10 16:42+0800\n"
+"PO-Revision-Date: 2016-11-10 16:42+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -384,7 +384,7 @@ msgstr "合作"
 msgid "Team"
 msgstr "团队"
 
-#: modules/config.php:14
+#: modules/config.php:14 modules/shortcodes-ui.php:300
 msgid "Slider"
 msgstr "幻灯"
 
@@ -470,16 +470,233 @@ msgid "Load build-in FontAwesome icons"
 msgstr "加载内置的 FontAwesome 图标"
 
 #: modules/settings.php:28
-msgid "Enable Shortcode UI"
-msgstr "启用简码 UI"
-
-#: modules/settings.php:29
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: modules/settings.php:30
+#: modules/settings.php:29
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
+
+#: modules/shortcodes-ui.php:23
+msgid "Button"
+msgstr "按钮"
+
+#: modules/shortcodes-ui.php:27
+msgid "Button color"
+msgstr "按钮颜色"
+
+#: modules/shortcodes-ui.php:33
+msgid "Button Size"
+msgstr "按钮尺寸"
+
+#: modules/shortcodes-ui.php:37
+msgid "xSmall"
+msgstr "超小"
+
+#: modules/shortcodes-ui.php:38
+msgid "Small"
+msgstr "小"
+
+#: modules/shortcodes-ui.php:39
+msgid "Normal"
+msgstr "正常"
+
+#: modules/shortcodes-ui.php:40
+msgid "Large"
+msgstr "大"
+
+#: modules/shortcodes-ui.php:41
+msgid "xLarge"
+msgstr "超大"
+
+#: modules/shortcodes-ui.php:45 modules/shortcodes-ui.php:49
+msgid "Button text"
+msgstr "按钮文本"
+
+#: modules/shortcodes-ui.php:53
+msgid "Button Link"
+msgstr "按钮链接"
+
+#: modules/shortcodes-ui.php:66
+msgid "Divider line"
+msgstr "分隔线"
+
+#: modules/shortcodes-ui.php:70
+msgid "Divider type"
+msgstr "分隔线类型"
+
+#: modules/shortcodes-ui.php:74
+msgid "Solid"
+msgstr "实线"
+
+#: modules/shortcodes-ui.php:75
+msgid "Shadow"
+msgstr "投影"
+
+#: modules/shortcodes-ui.php:84
+msgid "Heading"
+msgstr "标题"
+
+#: modules/shortcodes-ui.php:88
+msgid "Heading type"
+msgstr "标题类型"
+
+#: modules/shortcodes-ui.php:92
+msgid "With background"
+msgstr "带背景"
+
+#: modules/shortcodes-ui.php:93
+msgid "With border"
+msgstr "带边框"
+
+#: modules/shortcodes-ui.php:97
+msgid "Heading text"
+msgstr "标题文字"
+
+#: modules/shortcodes-ui.php:101
+msgid "Please enter heading text"
+msgstr "请输入标题文本"
+
+#: modules/shortcodes-ui.php:112
+msgid "Alert"
+msgstr "提示框"
+
+#: modules/shortcodes-ui.php:116
+msgid "Alert type"
+msgstr "提示框类型"
+
+#: modules/shortcodes-ui.php:122
+msgid "Alert content"
+msgstr "提示框内容"
+
+#: modules/shortcodes-ui.php:126
+msgid "Please enter alert content"
+msgstr "请输入提示内容"
+
+#: modules/shortcodes-ui.php:135
+msgid "Page content"
+msgstr "页面内容"
+
+#: modules/shortcodes-ui.php:139
+msgid "Page ID"
+msgstr "页面ID"
+
+#: modules/shortcodes-ui.php:145
+msgid "Show text count"
+msgstr "显示文本字数"
+
+#: modules/shortcodes-ui.php:151
+msgid "Show more link"
+msgstr "显示更多链接"
+
+#: modules/shortcodes-ui.php:162
+msgid "Post title list"
+msgstr "文章标题列表"
+
+#: modules/shortcodes-ui.php:166 modules/shortcodes-ui.php:225
+#: modules/shortcodes-ui.php:304
+msgid "Post type"
+msgstr "文章类型"
+
+#: modules/shortcodes-ui.php:173 modules/shortcodes-ui.php:232
+#: modules/shortcodes-ui.php:311
+msgid "Taxonomy"
+msgstr "分类法"
+
+#: modules/shortcodes-ui.php:180 modules/shortcodes-ui.php:239
+#: modules/shortcodes-ui.php:318
+msgid "Term"
+msgstr "分类项目"
+
+#: modules/shortcodes-ui.php:186
+msgid "Offset post count"
+msgstr "跳过文章数量"
+
+#: modules/shortcodes-ui.php:192 modules/shortcodes-ui.php:262
+#: modules/shortcodes-ui.php:331
+msgid "Show post count"
+msgstr "显示的文章数量"
+
+#: modules/shortcodes-ui.php:198 modules/shortcodes-ui.php:268
+#: modules/shortcodes-ui.php:337
+msgid "Show title text count"
+msgstr "显示标题文字数"
+
+#: modules/shortcodes-ui.php:204 modules/shortcodes-ui.php:280
+msgid "Show term title as module heading"
+msgstr "显示分类项目名称作为模块标题"
+
+#: modules/shortcodes-ui.php:210
+msgid "Show post datetime"
+msgstr "显示文章发布日期"
+
+#: modules/shortcodes-ui.php:221
+msgid "Media list"
+msgstr "图文媒体列表"
+
+#: modules/shortcodes-ui.php:245 modules/shortcodes-ui.php:324
+msgid "Thumbnail size"
+msgstr "缩略图大小"
+
+#: modules/shortcodes-ui.php:252
+msgid "Thumbnail position"
+msgstr "缩略图位置"
+
+#: modules/shortcodes-ui.php:256
+msgid "Left"
+msgstr "靠左"
+
+#: modules/shortcodes-ui.php:257
+msgid "Top"
+msgstr "靠上"
+
+#: modules/shortcodes-ui.php:258
+msgid "Right"
+msgstr "靠右"
+
+#: modules/shortcodes-ui.php:274 modules/shortcodes-ui.php:343
+msgid "Show Content text count"
+msgstr "显示文章内容字数"
+
+#: modules/shortcodes-ui.php:286
+msgid "Addon CSS class name"
+msgstr "附加的CSS类名"
+
+#: modules/shortcodes-ui.php:349
+msgid "Slider mode"
+msgstr "幻灯模式"
+
+#: modules/shortcodes-ui.php:355
+msgid "Slider speed"
+msgstr "切换速度"
+
+#: modules/shortcodes-ui.php:361
+msgid "Auto play"
+msgstr "自动播放"
+
+#: modules/shortcodes-ui.php:367
+msgid "Pause on mouse hover"
+msgstr "鼠标经过时暂停"
+
+#: modules/shortcodes-ui.php:373
+msgid "Minimum slider count"
+msgstr "最少显示的幻灯片数量"
+
+#: modules/shortcodes-ui.php:379
+msgid "Maximum slider count"
+msgstr "最多显示的幻灯片数量"
+
+#: modules/shortcodes-ui.php:385
+msgid "Slider width"
+msgstr "幻灯宽度"
+
+#: modules/shortcodes-ui.php:391
+msgid "Slider margin"
+msgstr "幻灯高度"
+
+#: modules/shortcodes-ui.php:397
+msgid "Animation"
+msgstr "动画"
 
 #: modules/walker.php:300
 #, php-format
@@ -490,9 +707,6 @@ msgstr "查看 %s 下的所有文章"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "CMS Settings"
-#~ msgstr "CMS 设置"
 
 #~ msgid "Add content"
 #~ msgstr "添加内容"
@@ -585,9 +799,6 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "Dashed"
 #~ msgstr "虚线"
-
-#~ msgid "Solid"
-#~ msgstr "实线"
 
 #~ msgid "Double"
 #~ msgstr "双实线"
@@ -699,161 +910,11 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 #~ msgid "No align"
 #~ msgstr "不对齐"
 
-#~ msgid "Button"
-#~ msgstr "按钮"
+#~ msgid "CMS Settings"
+#~ msgstr "CMS 设置"
 
-#~ msgid "Button color"
-#~ msgstr "按钮颜色"
-
-#~ msgid "Button Size"
-#~ msgstr "按钮尺寸"
-
-#~ msgid "xSmall"
-#~ msgstr "超小"
-
-#~ msgid "Small"
-#~ msgstr "小"
-
-#~ msgid "Normal"
-#~ msgstr "正常"
-
-#~ msgid "Large"
-#~ msgstr "大"
-
-#~ msgid "xLarge"
-#~ msgstr "超大"
-
-#~ msgid "Button text"
-#~ msgstr "按钮文本"
-
-#~ msgid "Button Link"
-#~ msgstr "按钮链接"
-
-#~ msgid "Divider line"
-#~ msgstr "分隔线"
-
-#~ msgid "Divider type"
-#~ msgstr "分隔线类型"
-
-#~ msgid "Shadow"
-#~ msgstr "投影"
-
-#~ msgid "Heading"
-#~ msgstr "标题"
-
-#~ msgid "Heading type"
-#~ msgstr "标题类型"
-
-#~ msgid "With background"
-#~ msgstr "带背景"
-
-#~ msgid "With border"
-#~ msgstr "带边框"
-
-#~ msgid "Heading text"
-#~ msgstr "标题文字"
-
-#~ msgid "Please enter heading text"
-#~ msgstr "请输入标题文本"
-
-#~ msgid "Alert"
-#~ msgstr "提示框"
-
-#~ msgid "Alert type"
-#~ msgstr "提示框类型"
-
-#~ msgid "Alert content"
-#~ msgstr "提示框内容"
-
-#~ msgid "Please enter alert content"
-#~ msgstr "请输入提示内容"
-
-#~ msgid "Page content"
-#~ msgstr "页面内容"
-
-#~ msgid "Page ID"
-#~ msgstr "页面ID"
-
-#~ msgid "Show text count"
-#~ msgstr "显示文本字数"
-
-#~ msgid "Show more link"
-#~ msgstr "显示更多链接"
-
-#~ msgid "Post type"
-#~ msgstr "文章类型"
-
-#~ msgid "Taxonomy"
-#~ msgstr "分类法"
-
-#~ msgid "Term"
-#~ msgstr "分类项目"
-
-#~ msgid "Offset post count"
-#~ msgstr "跳过文章数量"
-
-#~ msgid "Show post count"
-#~ msgstr "显示的文章数量"
-
-#~ msgid "Show title text count"
-#~ msgstr "显示标题文字数"
-
-#~ msgid "Show term title as module heading"
-#~ msgstr "显示分类项目名称作为模块标题"
-
-#~ msgid "Show post datetime"
-#~ msgstr "显示文章发布日期"
-
-#~ msgid "Media list"
-#~ msgstr "图文媒体列表"
-
-#~ msgid "Thumbnail size"
-#~ msgstr "缩略图大小"
-
-#~ msgid "Thumbnail position"
-#~ msgstr "缩略图位置"
-
-#~ msgid "Left"
-#~ msgstr "靠左"
-
-#~ msgid "Top"
-#~ msgstr "靠上"
-
-#~ msgid "Right"
-#~ msgstr "靠右"
-
-#~ msgid "Show Content text count"
-#~ msgstr "显示文章内容字数"
-
-#~ msgid "Addon CSS class name"
-#~ msgstr "附加的CSS类名"
-
-#~ msgid "Slider mode"
-#~ msgstr "幻灯模式"
-
-#~ msgid "Slider speed"
-#~ msgstr "切换速度"
-
-#~ msgid "Auto play"
-#~ msgstr "自动播放"
-
-#~ msgid "Pause on mouse hover"
-#~ msgstr "鼠标经过时暂停"
-
-#~ msgid "Minimum slider count"
-#~ msgstr "最少显示的幻灯片数量"
-
-#~ msgid "Maximum slider count"
-#~ msgstr "最多显示的幻灯片数量"
-
-#~ msgid "Slider width"
-#~ msgstr "幻灯宽度"
-
-#~ msgid "Slider margin"
-#~ msgstr "幻灯高度"
-
-#~ msgid "Animation"
-#~ msgstr "动画"
+#~ msgid "Enable Shortcode UI"
+#~ msgstr "启用简码 UI"
 
 #~ msgid "Save"
 #~ msgstr "保存"
