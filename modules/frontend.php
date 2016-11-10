@@ -101,3 +101,16 @@ function load_custom_admin_style() {
 	wp_enqueue_style( 'wizhi-form-style', plugins_url( '../admin/dist/styles/main.css', __FILE__ ) );
 	wp_enqueue_script( 'wizhi-form-scripts', plugins_url( '../admin/dist/scripts/admin.js', __FILE__ ), [ 'jquery' ], WIZHI_CMS_VERSION, true );
 }
+
+
+/**
+ * @param 添加 “wizhi” 类名到编辑器 body
+ *
+ * @return mixed
+ */
+add_filter( 'tiny_mce_before_init', 'add_editor_class' );
+function add_editor_class( $init ) {
+	$init[ 'body_class' ] = 'wizhi wizhi-editer typo';
+
+	return $init;
+}
