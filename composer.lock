@@ -4,9 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ded34048a1d2d585cdf999efed33ee8a",
-    "content-hash": "b1facb5845fe00992032ac592443f62e",
+    "hash": "de6c2e0f2c2d1c74913823f1281a3f45",
+    "content-hash": "9260aac16c3b529f49d72f95f2796a5e",
     "packages": [
+        {
+            "name": "jjgrainger/posttypes",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jjgrainger/PostTypes.git",
+                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/jjgrainger/PostTypes/69d25ea289a984b6a8b068a7038aee66e9a6e0bf.zip",
+                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PostTypes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Grainger",
+                    "email": "hello@jjgrainger.co.uk",
+                    "homepage": "http://jjgrainger.co.uk"
+                }
+            ],
+            "description": "A single class to help you build more advanced custom post types quickly.",
+            "homepage": "https://github.com/jjgrainger/posttype",
+            "time": "2016-08-16 12:45:44"
+        },
         {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.22",

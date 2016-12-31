@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'TheFold\\WordPress\\' => array($vendorDir . '/thefold/wordpress-dispatcher'),
+    'PostTypes\\' => array($vendorDir . '/jjgrainger/posttypes/src'),
 );

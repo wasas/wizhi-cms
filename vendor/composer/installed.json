@@ -258,5 +258,45 @@
             "mobile detector",
             "php mobile detect"
         ]
+    },
+    {
+        "name": "jjgrainger/posttypes",
+        "version": "v1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jjgrainger/PostTypes.git",
+            "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/jjgrainger/PostTypes/69d25ea289a984b6a8b068a7038aee66e9a6e0bf.zip",
+            "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-16 12:45:44",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PostTypes\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Joe Grainger",
+                "email": "hello@jjgrainger.co.uk",
+                "homepage": "http://jjgrainger.co.uk"
+            }
+        ],
+        "description": "A single class to help you build more advanced custom post types quickly.",
+        "homepage": "https://github.com/jjgrainger/posttype"
     }
 ]

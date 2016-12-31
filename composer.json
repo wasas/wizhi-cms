@@ -6,7 +6,8 @@
     "thefold/wordpress-dispatcher": "^1.0",
     "sunra/php-simple-html-dom-parser": "1.5.1",
     "mobiledetect/mobiledetectlib": "^2.8",
-    "nette/finder": "^2.4"
+    "nette/finder": "^2.4",
+    "jjgrainger/posttypes": "^1.0"
   },
   "license": "MIT",
   "authors": [
