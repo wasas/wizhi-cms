@@ -4,9 +4,10 @@ Donate link:
 Tags: admin, post, pages, plugin, CMS
 Requires at least: 3.4
 Tested up to: 4.3
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 ~Current Version:1.7~
 
 Wizhi CMS 以简码的形式添加了中国一些CMS系统常用的调用标签，如织梦，PHPCMS等系统中的模板标签功能。
