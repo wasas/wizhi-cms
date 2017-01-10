@@ -29,7 +29,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 			'minslides'   => 1,
 			'maxslides'   => 1,
 			'slidewidth'  => 360,
-			'slidewargin' => 10,
+			'slidemargin' => 15,
 			'tmp'         => 'slider',
 			'easing'      => 'swing',
 		];
@@ -48,7 +48,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 			'minslides'   => $minslides,
 			'maxslides'   => $maxslides,
 			'slidewidth'  => $slidewidth,
-			'slidemargin' => $slidewargin,
+			'slidemargin' => $slidemargin,
 			'easing'      => $easing,
 		];
 
