@@ -113,7 +113,16 @@ function wizhi_get_the_archive_title() {
 			$title = _x( 'Chats', 'wizhi', 'post format archive title' );
 		}
 	} elseif ( is_post_type_archive() ) {
+
 		$title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
+
+		$post_type      = get_queried_object()->name;
+		$post_type_settings = get_archive_option( $post_type );
+
+		if ( ! empty( $post_type_settings[ 'title' ] ) ) {
+			$title = $post_type_settings[ 'title' ];
+		}
+		
 	} elseif ( is_page() ) {
 		$title = sprintf( __( '%s' ), get_the_title( '', false ) );
 	} elseif ( is_single() ) {
