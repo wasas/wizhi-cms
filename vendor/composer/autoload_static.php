@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
 {
+    public static $files = array (
+        'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (

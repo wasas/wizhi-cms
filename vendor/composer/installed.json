@@ -345,5 +345,48 @@
             "Pinyin",
             "cn2pinyin"
         ]
+    },
+    {
+        "name": "lightboxdigital/wp-dynamic-image-resizer",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LightboxDigital/wp-dynamic-image-resizer.git",
+            "reference": "cc1d67192c8463eba4c0920130abec933ed2296b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/LightboxDigital/wp-dynamic-image-resizer/cc1d67192c8463eba4c0920130abec933ed2296b.zip",
+            "reference": "cc1d67192c8463eba4c0920130abec933ed2296b",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.8.*"
+        },
+        "time": "2017-01-10 18:32:16",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "wp-dynamic-image-resizer.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Warren Bickley",
+                "email": "warren@lightboxdigital.co.uk"
+            }
+        ],
+        "description": "Resize WordPress images on the fly without needing to register image sizes.",
+        "keywords": [
+            "images",
+            "wordpress",
+            "wp"
+        ]
     }
 ]
