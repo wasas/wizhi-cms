@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jjgrainger/posttypes" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lightboxdigital/wp-dynamic-image-resizer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mobiledetect/mobiledetectlib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/finder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
@@ -28,6 +29,7 @@
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/jjgrainger/posttypes" />
+          <root url="file://$MODULE_DIR$/vendor/lightboxdigital/wp-dynamic-image-resizer" />
           <root url="file://$MODULE_DIR$/vendor/mobiledetect/mobiledetectlib" />
           <root url="file://$MODULE_DIR$/vendor/nette/finder" />
           <root url="file://$MODULE_DIR$/vendor/nette/utils" />
@@ -38,6 +40,7 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/jjgrainger/posttypes" />
+          <root url="file://$MODULE_DIR$/vendor/lightboxdigital/wp-dynamic-image-resizer" />
           <root url="file://$MODULE_DIR$/vendor/mobiledetect/mobiledetectlib" />
           <root url="file://$MODULE_DIR$/vendor/nette/finder" />
           <root url="file://$MODULE_DIR$/vendor/nette/utils" />
