@@ -3,7 +3,7 @@
   "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
-    "thefold/wordpress-dispatcher": "^1.0",
+    "thefold/wordpress-dispatcher": "^2.0",
     "sunra/php-simple-html-dom-parser": "1.5.1",
     "mobiledetect/mobiledetectlib": "^2.8",
     "nette/finder": "^2.4",

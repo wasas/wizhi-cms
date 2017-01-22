@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c7a2f8e426f6fc4e7d9ed77ac1abd2a3",
-    "content-hash": "92fe2129efd0de44664a1a316c7bd2e1",
+    "hash": "5820467ced1799e25261845fe295c706",
+    "content-hash": "aa54e3cc07bc4a89e4a8f025b9a038c9",
     "packages": [
         {
             "name": "jjgrainger/posttypes",
@@ -88,16 +88,16 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.22",
+            "version": "2.8.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6"
+                "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/53cddae0c272a478b24a4b5fb60d0f838caf70b6.zip",
-                "reference": "53cddae0c272a478b24a4b5fb60d0f838caf70b6",
+                "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3.zip",
+                "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2016-04-24 09:47:16"
+            "time": "2016-11-11 14:56:25"
         },
         {
             "name": "nette/finder",
@@ -198,16 +198,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v2.4.0",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "c455ade9f24a1f99aa81772516764045296b8ca0"
+                "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/utils/c455ade9f24a1f99aa81772516764045296b8ca0.zip",
-                "reference": "c455ade9f24a1f99aa81772516764045296b8ca0",
+                "url": "https://packagist.phpcomposer.com/files/nette/utils/714afb64d0da07d0da7178cbf5680008e4b0180b.zip",
+                "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,9 @@
                 "ext-gd": "to use Image",
                 "ext-iconv": "to use Strings::webalize() and toAscii()",
                 "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
-                "ext-mbstring": "to use Strings::lower() etc..."
+                "ext-json": "to use Nette\\Utils\\Json",
+                "ext-mbstring": "to use Strings::lower() etc...",
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
             },
             "type": "library",
             "extra": {
@@ -255,7 +257,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2016-06-17 13:15:10"
+            "time": "2017-01-16 12:30:14"
         },
         {
             "name": "overtrue/pinyin",
@@ -347,16 +349,16 @@
         },
         {
             "name": "thefold/wordpress-dispatcher",
-            "version": "1.0",
+            "version": "2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/timbofield/wordpress-dispatcher.git",
-                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
+                "url": "https://github.com/tim-field/wordpress-dispatcher.git",
+                "reference": "94b7e14198e01bbc7cc7da947263cf6e731bc08a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/timbofield/wordpress-dispatcher/a6a6b1b8961cbcaa850a54a5dcd569230900fbda.zip",
-                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
+                "url": "https://packagist.phpcomposer.com/files/tim-field/wordpress-dispatcher/94b7e14198e01bbc7cc7da947263cf6e731bc08a.zip",
+                "reference": "94b7e14198e01bbc7cc7da947263cf6e731bc08a",
                 "shasum": ""
             },
             "require": {
@@ -375,11 +377,11 @@
             "authors": [
                 {
                     "name": "Tim Field",
-                    "email": "tim@thefold.co.nz"
+                    "email": "field.tim@gmail.com"
                 }
             ],
             "description": "Create URL endpoints within WordPress",
-            "time": "2015-04-29 10:54:48"
+            "time": "2016-07-03 22:23:46"
         }
     ],
     "packages-dev": [],
