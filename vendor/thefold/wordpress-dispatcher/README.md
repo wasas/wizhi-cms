@@ -1,29 +1,18 @@
-# WordPress Dispatcher / Router
+# WordPress Dispatcher
 
-Easily add custom URL endpoints in WordPress. Map a url to a function.
+URL endpoints in WordPress
 
 ##Example
 
 ```
-use \TheFold\WordPress\Router;
-
-Router::routes([
+new \TheFold\WordPress\Dispatch([
 
     'testing-a-url' => function(){
-        echo 'Hello Ted';
+        echo 'Hello Ted'; 
     },
-
+    
     'hello-([a-z]+)' => function($request, $name){
         echo "Hello $name";
     }
 ]);
 ```
-
-/testing-a-url & /hello-dougle will now be accessable in your WordPress site.
-
-
-##Install
-
-###Composer
-
-composer require thefold/wordpress-dispatcher

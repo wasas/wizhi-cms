@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5820467ced1799e25261845fe295c706",
-    "content-hash": "aa54e3cc07bc4a89e4a8f025b9a038c9",
+    "hash": "651a29d5e325b2760af284c3e92f6891",
+    "content-hash": "92fe2129efd0de44664a1a316c7bd2e1",
     "packages": [
         {
             "name": "jjgrainger/posttypes",
@@ -349,16 +349,16 @@
         },
         {
             "name": "thefold/wordpress-dispatcher",
-            "version": "2.0",
+            "version": "1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tim-field/wordpress-dispatcher.git",
-                "reference": "94b7e14198e01bbc7cc7da947263cf6e731bc08a"
+                "url": "https://github.com/timbofield/wordpress-dispatcher.git",
+                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/tim-field/wordpress-dispatcher/94b7e14198e01bbc7cc7da947263cf6e731bc08a.zip",
-                "reference": "94b7e14198e01bbc7cc7da947263cf6e731bc08a",
+                "url": "https://packagist.phpcomposer.com/files/timbofield/wordpress-dispatcher/a6a6b1b8961cbcaa850a54a5dcd569230900fbda.zip",
+                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
                 "shasum": ""
             },
             "require": {
@@ -377,11 +377,11 @@
             "authors": [
                 {
                     "name": "Tim Field",
-                    "email": "field.tim@gmail.com"
+                    "email": "tim@thefold.co.nz"
                 }
             ],
             "description": "Create URL endpoints within WordPress",
-            "time": "2016-07-03 22:23:46"
+            "time": "2015-04-29 10:54:48"
         }
     ],
     "packages-dev": [],
