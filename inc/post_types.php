@@ -10,6 +10,7 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
      * @param string  $name       文章类型菜单名称
      * @param array   $support    文章类型支持的功能
      * @param boolean $is_publish 文章类型是否在前后台可见
+     * @param string  $icon       后台使用的 dashicon 图标
      *
      * @package backend
      *
