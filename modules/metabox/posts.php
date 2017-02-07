@@ -1,12 +1,11 @@
 <?php
 
-add_action( 'after_setup_theme', 'wizhi_cms_post_meta' );
-function wizhi_cms_post_meta() {
+add_action( 'after_setup_theme', function () {
 
 	$types = [ 'post', 'page' ];
 
 	$fields = [
-		"_banner_image"    => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+		"_banner_image" => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
 	];
 
 	$fm = new Fieldmanager_Group( [
@@ -18,4 +17,4 @@ function wizhi_cms_post_meta() {
 
 	$fm->add_meta_box( __( 'Post Fields', 'wizhi' ), apply_filters( 'wizhi_post_fields_supports', $types ) );
 
-}
+} );

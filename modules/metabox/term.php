@@ -1,9 +1,8 @@
 <?php
 
-add_action( 'after_setup_theme', 'wizhi_cms_term_meta' );
-function wizhi_cms_term_meta() {
+add_action( 'after_setup_theme', function () {
 
-	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', ['category', 'prodcat'] );
+	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', [ 'category', 'prodcat' ] );
 
 	$fm = new Fieldmanager_Textfield( [
 		'name' => '_term_posts_per_page',
@@ -20,5 +19,5 @@ function wizhi_cms_term_meta() {
 		'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
-	
-}
+
+} );
