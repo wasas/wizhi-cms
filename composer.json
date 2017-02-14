@@ -1,5 +1,5 @@
 {
-  "name": "wizhi/cms",
+  "name": "wpcio/cms",
   "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
