@@ -2,7 +2,7 @@
 
 add_action( 'after_setup_theme', function () {
 
-	$types = [ 'post', 'page' ];
+	$types = [ 'page' ];
 
 	$fields = [
 		"_banner_image" => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),

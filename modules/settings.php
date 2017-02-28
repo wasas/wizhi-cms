@@ -15,7 +15,6 @@ add_action( 'init', function () {
 		$post_types = wizhi_post_types();
 
 		$fields = [
-			"banner"             => new Fieldmanager_Media( __( 'Site Banner', 'enter' ) ),
 			"enabled_post_types" => new Fieldmanager_Checkboxes( __( 'Enabled content types', 'wizhi' ), [ 'options' => $post_types ] ),
 			"is_enable_css"      => new Fieldmanager_Checkbox( __( 'Use build-in CSS', 'wizhi' ) ),
 			"is_enable_js"       => new Fieldmanager_Checkbox( __( 'Use build-in Javascript', 'wizhi' ) ),

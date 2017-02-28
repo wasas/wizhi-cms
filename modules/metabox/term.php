@@ -2,7 +2,7 @@
 
 add_action( 'after_setup_theme', function () {
 
-	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', [ 'category', 'prodcat' ] );
+	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', [ 'category' ] );
 
 	$fm = new Fieldmanager_Textfield( [
 		'name' => '_term_posts_per_page',
