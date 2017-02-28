@@ -1,4 +1,8 @@
 <?php
+/**
+ * 默认文章类型的自定义数据盒子
+ *
+ */
 
 add_action( 'after_setup_theme', function () {
 

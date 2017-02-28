@@ -17,13 +17,12 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
-	function wizhi_cms_phpold() {
-		printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
-	}
 
 	// 显示警告信息
 	if ( is_admin() ) {
-		add_action( 'admin_notices', 'wizhi_cms_phpold' );
+		add_action( 'admin_notices', function () {
+			printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
+		} );
 	}
 
 	return;
@@ -32,11 +31,10 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 /**
  * 加载翻译文件
  */
-add_action( 'plugins_loaded', 'wizhi_cms_load_textdomain' );
-function wizhi_cms_load_textdomain() {
+add_action( 'plugins_loaded', function () {
 	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/lang/' );
 	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/lang/' );
-}
+} );
 
 /**
  * 自动加载 PHP 文件

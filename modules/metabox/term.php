@@ -1,4 +1,9 @@
 <?php
+/**
+ * 默认分类项目的数据盒子
+ *
+ */
+
 
 add_action( 'after_setup_theme', function () {
 
