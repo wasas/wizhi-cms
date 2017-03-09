@@ -2,6 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/front/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jjgrainger/posttypes" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lightboxdigital/wp-dynamic-image-resizer" />
@@ -34,6 +36,7 @@
           <root url="file://$MODULE_DIR$/vendor/nette/finder" />
           <root url="file://$MODULE_DIR$/vendor/nette/utils" />
           <root url="file://$MODULE_DIR$/vendor/overtrue/pinyin" />
+          <root url="file://$MODULE_DIR$/vendor/oyejorge/less.php" />
           <root url="file://$MODULE_DIR$/vendor/sunra/php-simple-html-dom-parser" />
           <root url="file://$MODULE_DIR$/vendor/thefold/wordpress-dispatcher" />
         </CLASSES>
@@ -45,6 +48,7 @@
           <root url="file://$MODULE_DIR$/vendor/nette/finder" />
           <root url="file://$MODULE_DIR$/vendor/nette/utils" />
           <root url="file://$MODULE_DIR$/vendor/overtrue/pinyin" />
+          <root url="file://$MODULE_DIR$/vendor/oyejorge/less.php" />
           <root url="file://$MODULE_DIR$/vendor/sunra/php-simple-html-dom-parser" />
           <root url="file://$MODULE_DIR$/vendor/thefold/wordpress-dispatcher" />
         </SOURCES>

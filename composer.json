@@ -9,7 +9,8 @@
     "nette/finder": "^2.4",
     "jjgrainger/posttypes": "^1.0",
     "overtrue/pinyin": "^3.0",
-    "lightboxdigital/wp-dynamic-image-resizer": "^1.0"
+    "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
+    "oyejorge/less.php": "v1.7.0.13"
   },
   "license": "MIT",
   "authors": [
