@@ -70,6 +70,7 @@ $cms_settings = get_option( 'wizhi_cms_settings' );
 include_all_php( WIZHI_CMS . 'inc/' );
 
 // 加载逻辑设置代码
+// todo: 改善自动加载性能
 include_all_php( WIZHI_CMS . 'modules/' );
 include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );

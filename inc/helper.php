@@ -146,6 +146,30 @@ function wizhi_get_the_archive_title() {
 
 
 /**
+ * @param $post_type string 文章类型标签
+ *
+ * @return bool
+ */
+function wizhi_get_the_archive_description( $post_type = '' ) {
+
+	if ( $post_type ) {
+		$post_type_settings = get_archive_option( $post_type );
+	} else {
+		$post_type          = get_queried_object()->name;
+		$post_type_settings = get_archive_option( $post_type );
+	}
+
+	if ( ! empty( $post_type_settings[ 'description' ] ) ) {
+		return $post_type_settings[ 'description' ];
+	}
+
+	return false;
+
+}
+
+
+
+/**
  * 获取分类法列表模板, 排除默认的页面模板
  *
  * @package   helper
