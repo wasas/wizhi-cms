@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Template Name: 默认内容
+ * Loop Template Name: 默认内容模板
  *
  */
 ?>

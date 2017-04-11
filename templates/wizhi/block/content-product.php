@@ -1,6 +1,6 @@
 <?php
 /**
- * Loop Template Name: 产品系列
+ * Loop Template Name: 默认模块模板
  *
  */
 ?>

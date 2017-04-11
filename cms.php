@@ -57,11 +57,6 @@ function load_fieldmanager() {
 	}
 }
 
-// 加载 RedBean PHP
-if ( ! class_exists( 'R' ) ) {
-	require_once WIZHI_CMS . 'inc/rb.php';
-}
-
 global $cms_settings;
 
 $cms_settings = get_option( 'wizhi_cms_settings' );
@@ -74,4 +69,3 @@ include_all_php( WIZHI_CMS . 'inc/' );
 include_all_php( WIZHI_CMS . 'modules/' );
 include_all_php( WIZHI_CMS . 'modules/metabox' );
 include_all_php( WIZHI_CMS . 'modules/shortcodes' );
-include_all_php( WIZHI_CMS . 'modules/app' );

@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4dde63dc7427883704ec4846929ee77",
-    "content-hash": "15fa72d74b0f39e0dcdc67212560d658",
+    "content-hash": "b71802aadd5b27028128b55de689a091",
     "packages": [
         {
             "name": "jjgrainger/posttypes",
@@ -43,7 +42,7 @@
             ],
             "description": "A single class to help you build more advanced custom post types quickly.",
             "homepage": "https://github.com/jjgrainger/posttype",
-            "time": "2016-08-16 12:45:44"
+            "time": "2016-08-16T12:45:44+00:00"
         },
         {
             "name": "lightboxdigital/wp-dynamic-image-resizer",
@@ -84,61 +83,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2017-01-10 18:32:16"
-        },
-        {
-            "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.24",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3.zip",
-                "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.0.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "johnkary/phpunit-speedtrap": "~1.0@dev",
-                "phpunit/phpunit": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "Mobile_Detect.php"
-                ],
-                "psr-0": {
-                    "Detection": "namespaced/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Serban Ghita",
-                    "email": "serbanghita@gmail.com",
-                    "homepage": "http://mobiledetect.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
-            "homepage": "https://github.com/serbanghita/Mobile-Detect",
-            "keywords": [
-                "detect mobile devices",
-                "mobile",
-                "mobile detect",
-                "mobile detector",
-                "php mobile detect"
-            ],
-            "time": "2016-11-11 14:56:25"
+            "time": "2017-01-10T18:32:16+00:00"
         },
         {
             "name": "nette/finder",
@@ -194,20 +139,20 @@
             ],
             "description": "Nette Finder: Files Searching",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:49:06"
+            "time": "2016-05-17T15:49:06+00:00"
         },
         {
             "name": "nette/utils",
-            "version": "v2.4.4",
+            "version": "v2.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b"
+                "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/nette/utils/714afb64d0da07d0da7178cbf5680008e4b0180b.zip",
-                "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b",
+                "url": "https://files.phpcomposer.com/files/nette/utils/28ad4e2a6dcf143c23bde969a825f10a5d513602.zip",
+                "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602",
                 "shasum": ""
             },
             "require": {
@@ -226,7 +171,8 @@
                 "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
                 "ext-json": "to use Nette\\Utils\\Json",
                 "ext-mbstring": "to use Strings::lower() etc...",
-                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available",
+                "https://nette.org/donate": "\u001b[1;37;42m Please consider supporting Nette via a donation \u001b[0m"
             },
             "type": "library",
             "extra": {
@@ -257,20 +203,20 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2017-01-16 12:30:14"
+            "time": "2017-03-29T16:55:54+00:00"
         },
         {
             "name": "overtrue/pinyin",
-            "version": "3.0.4",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/overtrue/pinyin.git",
-                "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9"
+                "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/overtrue/pinyin/7af85b01b16f558ef58c3e9863f0fd44e4c064d9.zip",
-                "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9",
+                "url": "https://files.phpcomposer.com/files/overtrue/pinyin/590fd5820d65c3967d33b4d0dc114b893d0a1168.zip",
+                "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168",
                 "shasum": ""
             },
             "require": {
@@ -302,7 +248,7 @@
                 "Pinyin",
                 "cn2pinyin"
             ],
-            "time": "2016-08-17 12:05:07"
+            "time": "2017-02-27T02:31:58+00:00"
         },
         {
             "name": "oyejorge/less.php",
@@ -368,50 +314,7 @@
                 "php",
                 "stylesheet"
             ],
-            "time": "2017-02-23 14:18:55"
-        },
-        {
-            "name": "sunra/php-simple-html-dom-parser",
-            "version": "v1.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sunra/php-simple-html-dom-parser.git",
-                "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/sunra/php-simple-html-dom-parser/f910346ce47513a49ed5b8de197cde26c3f0b193.zip",
-                "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Sunra\\PhpSimple\\HtmlDomParser": "Src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sunra",
-                    "email": "sunra@yandex.ru",
-                    "homepage": "https://github.com/sunra"
-                }
-            ],
-            "description": "Composer adaptation of: A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way! Require PHP 5+. Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.",
-            "homepage": "https://github.com/sunra/php-simple-html-dom-parser",
-            "keywords": [
-                "dom",
-                "html",
-                "parser"
-            ],
-            "time": "2016-05-20 11:21:15"
+            "time": "2017-02-23T14:18:55+00:00"
         },
         {
             "name": "thefold/wordpress-dispatcher",
@@ -447,7 +350,7 @@
                 }
             ],
             "description": "Create URL endpoints within WordPress",
-            "time": "2015-04-29 10:54:48"
+            "time": "2015-04-29T10:54:48+00:00"
         }
     ],
     "packages-dev": [],

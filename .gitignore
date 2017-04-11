@@ -16,13 +16,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .publish/
-node_modules/
-admin/node_modules/
-admin/bower_components/
-.idea/workspace.xml
-
-.DS_Store
-
-front/dist/.DS_Store
-
-front/dist/scripts/.DS_Store
+.idea/

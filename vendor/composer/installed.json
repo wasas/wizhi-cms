@@ -1,50 +1,5 @@
 [
     {
-        "name": "sunra/php-simple-html-dom-parser",
-        "version": "v1.5.1",
-        "version_normalized": "1.5.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sunra/php-simple-html-dom-parser.git",
-            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/sunra/php-simple-html-dom-parser/f910346ce47513a49ed5b8de197cde26c3f0b193.zip",
-            "reference": "f910346ce47513a49ed5b8de197cde26c3f0b193",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "time": "2016-05-20 11:21:15",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Sunra\\PhpSimple\\HtmlDomParser": "Src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Sunra",
-                "email": "sunra@yandex.ru",
-                "homepage": "https://github.com/sunra"
-            }
-        ],
-        "description": "Composer adaptation of: A HTML DOM parser written in PHP5+ let you manipulate HTML in a very easy way! Require PHP 5+. Supports invalid HTML. Find tags on an HTML page with selectors just like jQuery. Extract contents from HTML in a single line.",
-        "homepage": "https://github.com/sunra/php-simple-html-dom-parser",
-        "keywords": [
-            "dom",
-            "html",
-            "parser"
-        ]
-    },
-    {
         "name": "nette/finder",
         "version": "v2.4.0",
         "version_normalized": "2.4.0.0",
@@ -70,7 +25,7 @@
             "nette/tester": "~2.0",
             "tracy/tracy": "^2.3"
         },
-        "time": "2016-05-17 15:49:06",
+        "time": "2016-05-17T15:49:06+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -120,7 +75,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-08-16 12:45:44",
+        "time": "2016-08-16T12:45:44+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -143,53 +98,6 @@
         "homepage": "https://github.com/jjgrainger/posttype"
     },
     {
-        "name": "overtrue/pinyin",
-        "version": "3.0.4",
-        "version_normalized": "3.0.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/overtrue/pinyin.git",
-            "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/overtrue/pinyin/7af85b01b16f558ef58c3e9863f0fd44e4c064d9.zip",
-            "reference": "7af85b01b16f558ef58c3e9863f0fd44e4c064d9",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.8"
-        },
-        "time": "2016-08-17 12:05:07",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Overtrue\\Pinyin\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Carlos",
-                "homepage": "http://github.com/overtrue"
-            }
-        ],
-        "description": "Chinese to pinyin translator.",
-        "homepage": "https://github.com/overtrue/pinyin",
-        "keywords": [
-            "Chinese",
-            "Pinyin",
-            "cn2pinyin"
-        ]
-    },
-    {
         "name": "lightboxdigital/wp-dynamic-image-resizer",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
@@ -207,7 +115,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.8.*"
         },
-        "time": "2017-01-10 18:32:16",
+        "time": "2017-01-10T18:32:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -233,127 +141,6 @@
         ]
     },
     {
-        "name": "mobiledetect/mobiledetectlib",
-        "version": "2.8.24",
-        "version_normalized": "2.8.24.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/serbanghita/Mobile-Detect.git",
-            "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/serbanghita/Mobile-Detect/cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3.zip",
-            "reference": "cdf8f8efaf993bc687e78e4622f5eebd0b8b3bf3",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "require-dev": {
-            "codeclimate/php-test-reporter": "dev-master",
-            "johnkary/phpunit-speedtrap": "~1.0@dev",
-            "phpunit/phpunit": "*"
-        },
-        "time": "2016-11-11 14:56:25",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "Mobile_Detect.php"
-            ],
-            "psr-0": {
-                "Detection": "namespaced/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Serban Ghita",
-                "email": "serbanghita@gmail.com",
-                "homepage": "http://mobiledetect.net",
-                "role": "Developer"
-            }
-        ],
-        "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
-        "homepage": "https://github.com/serbanghita/Mobile-Detect",
-        "keywords": [
-            "detect mobile devices",
-            "mobile",
-            "mobile detect",
-            "mobile detector",
-            "php mobile detect"
-        ]
-    },
-    {
-        "name": "nette/utils",
-        "version": "v2.4.4",
-        "version_normalized": "2.4.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nette/utils.git",
-            "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/nette/utils/714afb64d0da07d0da7178cbf5680008e4b0180b.zip",
-            "reference": "714afb64d0da07d0da7178cbf5680008e4b0180b",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.6.0"
-        },
-        "conflict": {
-            "nette/nette": "<2.2"
-        },
-        "require-dev": {
-            "nette/tester": "~2.0",
-            "tracy/tracy": "^2.3"
-        },
-        "suggest": {
-            "ext-gd": "to use Image",
-            "ext-iconv": "to use Strings::webalize() and toAscii()",
-            "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
-            "ext-json": "to use Nette\\Utils\\Json",
-            "ext-mbstring": "to use Strings::lower() etc...",
-            "ext-xml": "to use Strings::length() etc. when mbstring is not available"
-        },
-        "time": "2017-01-16 12:30:14",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause",
-            "GPL-2.0",
-            "GPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "David Grudl",
-                "homepage": "https://davidgrudl.com"
-            },
-            {
-                "name": "Nette Community",
-                "homepage": "https://nette.org/contributors"
-            }
-        ],
-        "description": "Nette Utility Classes",
-        "homepage": "https://nette.org"
-    },
-    {
         "name": "thefold/wordpress-dispatcher",
         "version": "1.0",
         "version_normalized": "1.0.0.0",
@@ -371,7 +158,7 @@
         "require": {
             "php": ">=5.4"
         },
-        "time": "2015-04-29 10:54:48",
+        "time": "2015-04-29T10:54:48+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -412,7 +199,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.8.24"
         },
-        "time": "2017-02-23 14:18:55",
+        "time": "2017-02-23T14:18:55+00:00",
         "bin": [
             "bin/lessc"
         ],
@@ -458,5 +245,118 @@
             "php",
             "stylesheet"
         ]
+    },
+    {
+        "name": "overtrue/pinyin",
+        "version": "3.0.5",
+        "version_normalized": "3.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/overtrue/pinyin.git",
+            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/overtrue/pinyin/590fd5820d65c3967d33b4d0dc114b893d0a1168.zip",
+            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2017-02-27T02:31:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Overtrue\\Pinyin\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Carlos",
+                "homepage": "http://github.com/overtrue"
+            }
+        ],
+        "description": "Chinese to pinyin translator.",
+        "homepage": "https://github.com/overtrue/pinyin",
+        "keywords": [
+            "Chinese",
+            "Pinyin",
+            "cn2pinyin"
+        ]
+    },
+    {
+        "name": "nette/utils",
+        "version": "v2.4.5",
+        "version_normalized": "2.4.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nette/utils.git",
+            "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/nette/utils/28ad4e2a6dcf143c23bde969a825f10a5d513602.zip",
+            "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "conflict": {
+            "nette/nette": "<2.2"
+        },
+        "require-dev": {
+            "nette/tester": "~2.0",
+            "tracy/tracy": "^2.3"
+        },
+        "suggest": {
+            "ext-gd": "to use Image",
+            "ext-iconv": "to use Strings::webalize() and toAscii()",
+            "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
+            "ext-json": "to use Nette\\Utils\\Json",
+            "ext-mbstring": "to use Strings::lower() etc...",
+            "ext-xml": "to use Strings::length() etc. when mbstring is not available",
+            "https://nette.org/donate": "\u001b[1;37;42m Please consider supporting Nette via a donation \u001b[0m"
+        },
+        "time": "2017-03-29T16:55:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "Nette Utility Classes",
+        "homepage": "https://nette.org"
     }
 ]

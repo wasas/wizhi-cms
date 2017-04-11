@@ -6,7 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Sunra\\PhpSimple\\HtmlDomParser' => array($vendorDir . '/sunra/php-simple-html-dom-parser/Src'),
     'Less' => array($vendorDir . '/oyejorge/less.php/lib'),
-    'Detection' => array($vendorDir . '/mobiledetect/mobiledetectlib/namespaced'),
 );

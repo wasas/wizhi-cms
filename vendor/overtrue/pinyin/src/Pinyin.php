@@ -10,10 +10,6 @@ namespace Overtrue\Pinyin;
 
 use InvalidArgumentException;
 
-define('PINYIN_NONE', 'none');
-define('PINYIN_ASCII', 'ascii');
-define('PINYIN_UNICODE', 'unicode');
-
 /**
  * Chinese to pinyin translator.
  *
@@ -23,6 +19,11 @@ define('PINYIN_UNICODE', 'unicode');
  * @link      https://github.com/overtrue/pinyin
  * @link      http://overtrue.me
  */
+
+define('PINYIN_NONE', 'none');
+define('PINYIN_ASCII', 'ascii');
+define('PINYIN_UNICODE', 'unicode');
+
 class Pinyin
 {
     const NONE = 'none';
@@ -56,11 +57,11 @@ class Pinyin
     /**
      * Constructor.
      *
-     * @param \Overtrue\Pinyin\DictLoaderInterface $loader
+     * @param string $loaderName
      */
-    public function __construct(DictLoaderInterface $loader = null)
+    public function __construct($loaderName = null)
     {
-        $this->loader = $loader;
+        $this->loader = $loaderName ?: 'Overtrue\\Pinyin\\FileDictLoader';
     }
 
     /**
@@ -126,10 +127,24 @@ class Pinyin
     }
 
     /**
+     * Chinese phrase to pinyin.
+     *
+     * @param string $string
+     * @param string $delimiter
+     * @param string $option
+     *
+     * @return string
+     */
+    public function phrase($string, $delimiter = ' ', $option = self::NONE)
+    {
+        return implode($delimiter, $this->convert($string, $option));
+    }
+
+    /**
      * Chinese to pinyin sentense.
      *
      * @param string $sentence
-     * @param string $option
+     * @param bool $withTone
      *
      * @return string
      */
@@ -168,7 +183,14 @@ class Pinyin
      */
     public function getLoader()
     {
-        return $this->loader ?: new FileDictLoader(__DIR__.'/../data/');
+        if (!($this->loader instanceof DictLoaderInterface)) {
+            $dataDir = dirname(__DIR__).'/data/';
+
+            $loaderName = $this->loader;
+            $this->loader = new $loaderName($dataDir);
+        }
+
+        return $this->loader;
     }
 
     /**

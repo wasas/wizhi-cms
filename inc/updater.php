@@ -1,4 +1,7 @@
 <?php
+/**
+ * 从 Github 更新插件
+ */
 
 if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 

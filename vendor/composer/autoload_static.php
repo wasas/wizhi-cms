@@ -41,13 +41,6 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
     );
 
     public static $prefixesPsr0 = array (
-        'S' => 
-        array (
-            'Sunra\\PhpSimple\\HtmlDomParser' => 
-            array (
-                0 => __DIR__ . '/..' . '/sunra/php-simple-html-dom-parser/Src',
-            ),
-        ),
         'L' => 
         array (
             'Less' => 
@@ -55,17 +48,9 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
                 0 => __DIR__ . '/..' . '/oyejorge/less.php/lib',
             ),
         ),
-        'D' => 
-        array (
-            'Detection' => 
-            array (
-                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
-            ),
-        ),
     );
 
     public static $classMap = array (
-        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',

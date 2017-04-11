@@ -1,4 +1,8 @@
 <?php
+/**
+ * 添加默认的文章类型、添加文章类型存档设置
+ *
+ */
 
 use Nette\Utils\Arrays;
 use Nette\Utils\Strings;
