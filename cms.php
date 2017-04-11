@@ -3,7 +3,7 @@
 Plugin Name:        Wizhi CMS
 Plugin URI:         http://www.wpzhiku.com/wordpress-cms-plugin-wizhi-cms/
 Description:        添加一些实用的功能，增加了一些效果类似dedecms(织梦)模板标签的一些简码。
-Version:            1.7.8
+Version:            1.8
 Author:             Amos Lee
 Author URI:         http://www.wpzhiku.com/
 License:            MIT License
@@ -12,7 +12,7 @@ License URI:        http://opensource.org/licenses/MIT
 
 define( 'WIZHI_CMS', plugin_dir_path( __FILE__ ) );
 define( 'WIZHI_URL', plugins_url( '', __FILE__ ) );
-defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.6' );
+defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
@@ -21,7 +21,7 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 	// 显示警告信息
 	if ( is_admin() ) {
 		add_action( 'admin_notices', function () {
-			printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6.0' );
+			printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6' );
 		} );
 	}
 
