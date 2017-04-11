@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2016-11-10 16:42+0800\n"
-"PO-Revision-Date: 2016-11-10 16:42+0800\n"
+"POT-Creation-Date: 2017-04-11 17:29+0800\n"
+"PO-Revision-Date: 2017-04-11 17:29+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: front\n"
 "X-Poedit-SearchPathExcluded-4: admin\n"
 
-#: cms.php:21
+#: cms.php:24
 #, php-format
 msgid ""
 "Your PHP version（%1$s）can`t match plugin require, please update to PHP "
@@ -93,8 +93,6 @@ msgid "Attach a File"
 msgstr "附加文件"
 
 #: inc/fieldmanager/php/class-fieldmanager-media.php:71
-#: inc/shortcake/inc/fields/class-field-attachment.php:79
-#: inc/shortcake/inc/fields/class-field-attachment.php:80
 msgid "Select Attachment"
 msgstr "选择附件"
 
@@ -174,199 +172,144 @@ msgstr "分类项目字段"
 msgid "The validation rule \"%s\" does not exist."
 msgstr "验证规则\"%s\"不存在。"
 
-#: inc/helper.php:84 inc/helper.php:86 inc/helper.php:88 inc/helper.php:90
-#: inc/helper.php:92 inc/helper.php:94 inc/helper.php:116 inc/helper.php:118
-#: inc/helper.php:120
+#: inc/helper.php:89 inc/helper.php:91 inc/helper.php:93 inc/helper.php:95
+#: inc/helper.php:97 inc/helper.php:99 inc/helper.php:122 inc/helper.php:132
+#: inc/helper.php:134
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: inc/helper.php:123
+#: inc/helper.php:137
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"
 
-#: inc/helper.php:125
+#: inc/helper.php:139
 msgid "Archives"
 msgstr "归档"
 
-#: inc/helper.php:252
+#: inc/helper.php:290
 msgid "Author"
 msgstr "作者"
 
-#: inc/helper.php:253
+#: inc/helper.php:291
 msgid "Date"
 msgstr "日期"
 
-#: inc/helper.php:254
+#: inc/helper.php:292
 msgid "Title"
 msgstr "标签"
 
-#: inc/helper.php:255
+#: inc/helper.php:293
 msgid "Random"
 msgstr "随机"
 
-#: inc/helper.php:266
+#: inc/helper.php:304
 msgid "Default"
 msgstr "默认"
 
-#: inc/helper.php:267
+#: inc/helper.php:305
 msgid "Success（Green）"
 msgstr "成功（绿色）"
 
-#: inc/helper.php:268
+#: inc/helper.php:306
 msgid "Info（Blue）"
 msgstr "信息（蓝色）"
 
-#: inc/helper.php:269
+#: inc/helper.php:307
 msgid "Warning（Orange）"
 msgstr "警告（橙色）"
 
-#: inc/helper.php:270
+#: inc/helper.php:308
 msgid "Danger（Red）"
 msgstr "危险（红色）"
 
-#: inc/helper.php:281
+#: inc/helper.php:319
 msgid "ASC"
 msgstr "升序"
 
-#: inc/helper.php:282
+#: inc/helper.php:320
 msgid "DESC"
 msgstr "降序"
 
-#: inc/helper.php:305
+#: inc/helper.php:343
 msgid "Select content type"
 msgstr "选择内容类型"
 
-#: inc/helper.php:306
+#: inc/helper.php:344
 msgid "Post"
 msgstr "文章"
 
-#: inc/helper.php:307 modules/pagination.php:54
+#: inc/helper.php:345 modules/pagination.php:54
 msgid "Page"
 msgstr "页面"
 
-#: inc/helper.php:336
+#: inc/helper.php:374
 msgid "Select content"
 msgstr "选择内容"
 
-#: inc/helper.php:363
+#: inc/helper.php:401
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:364 modules/content_types.php:70
+#: inc/helper.php:402 modules/content_types.php:80
 msgid "Category"
 msgstr "分类"
 
-#: inc/helper.php:365
+#: inc/helper.php:403
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helper.php:429
+#: inc/helper.php:467
 msgid "Select Category"
 msgstr "选择分类目录"
 
-#: inc/post_types.php:24 inc/post_types.php:25 inc/post_types.php:89
+#: inc/post_types.php:28 inc/post_types.php:29 inc/post_types.php:93
 msgid "Add New"
 msgstr "添加"
 
-#: inc/post_types.php:26 inc/post_types.php:87
+#: inc/post_types.php:30 inc/post_types.php:91
 msgid "Edit"
 msgstr "编辑"
 
-#: inc/post_types.php:27
+#: inc/post_types.php:31
 msgid "New"
 msgstr "新"
 
-#: inc/post_types.php:28 inc/post_types.php:84
+#: inc/post_types.php:32 inc/post_types.php:88
 msgid "All"
 msgstr "所有"
 
-#: inc/post_types.php:29
+#: inc/post_types.php:33
 msgid "View"
 msgstr "查看"
 
-#: inc/post_types.php:30 inc/post_types.php:83
-#: inc/shortcake/inc/class-shortcode-ui.php:243
+#: inc/post_types.php:34 inc/post_types.php:87
 msgid "Search"
 msgstr "搜索"
 
-#: inc/post_types.php:31
+#: inc/post_types.php:35
 #, php-format
 msgid "Could not find %s"
 msgstr "找不到%s"
 
-#: inc/post_types.php:32
+#: inc/post_types.php:36
 #, php-format
 msgid "Could not find %s in trash"
 msgstr "回收站中没有%s"
 
-#: inc/post_types.php:85 inc/post_types.php:86
+#: inc/post_types.php:89 inc/post_types.php:90
 msgid "Parent"
 msgstr "父级"
 
-#: inc/post_types.php:88
+#: inc/post_types.php:92
 msgid "Upgrade"
 msgstr "更新"
 
-#: inc/post_types.php:90
+#: inc/post_types.php:94
 #, php-format
 msgid "New %s"
 msgstr "新 %s"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:236
-#: inc/shortcake/inc/class-shortcode-ui.php:237
-msgid "Insert Post Element"
-msgstr "插入内容"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:238
-#, php-format
-msgid "%s Details"
-msgstr "%s 详情"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:239
-msgid "Insert Element"
-msgstr "插入内容"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:240
-msgid "Update"
-msgstr "更新"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:241
-msgid "There are no attributes to configure for this Post Element."
-msgstr "此文章元素没有需要设置的属性。"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:242
-msgid "Failed to load preview"
-msgstr "加载预览失败"
-
-#: inc/shortcake/inc/class-shortcode-ui.php:244
-msgid "Insert Content"
-msgstr "插入内容"
-
-#: modules/app/like.php:28
-msgid "Like"
-msgstr "点赞"
-
-#: modules/app/like.php:29
-msgid "Unlike"
-msgstr "取消点赞"
-
-#: modules/app/like.php:256
-msgid "Access denied"
-msgstr "拒绝访问"
-
-#: modules/app/like.php:301
-msgid "You can vote again after"
-msgstr "你可以在"
-
-#: modules/app/like.php:301
-msgid "days"
-msgstr "天"
-
-#: modules/app/like.php:345
-msgid "Voting failed, tye again later。"
-msgstr "投票失败，请稍后重试。"
 
 #: modules/config.php:10
 msgid "Product"
@@ -396,44 +339,44 @@ msgstr "问题"
 msgid "Download"
 msgstr "下载"
 
-#: modules/content_types.php:14
+#: modules/content_types.php:21
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: modules/content_types.php:20 modules/metabox/posts.php:9
-#: modules/metabox/term.php:16
+#: modules/content_types.php:27 modules/metabox/posts.php:12
+#: modules/metabox/term.php:20
 msgid "Cover image"
 msgstr "封面图像"
 
-#: modules/content_types.php:21
+#: modules/content_types.php:28
 msgid "Archive Template"
 msgstr "存档模板"
 
-#: modules/content_types.php:24
+#: modules/content_types.php:31
 msgid "Posts Per Page"
 msgstr "每页的文章数"
 
-#: modules/content_types.php:25
+#: modules/content_types.php:32
 msgid "Archive Title"
 msgstr "存档标题"
 
-#: modules/content_types.php:26
+#: modules/content_types.php:33
 msgid "Archive Description"
 msgstr "存档描述"
 
-#: modules/metabox/posts.php:19
+#: modules/metabox/posts.php:22
 msgid "Post Fields"
 msgstr "文章字段"
 
-#: modules/metabox/slider.php:5 modules/metabox/slider.php:6
+#: modules/metabox/slider.php:8 modules/metabox/slider.php:9
 msgid "Custom link"
 msgstr "自定义链接"
 
-#: modules/metabox/term.php:11
+#: modules/metabox/term.php:15
 msgid "Post per page"
 msgstr "每页的文章数"
 
-#: modules/metabox/term.php:22
+#: modules/metabox/term.php:26
 msgid "Archive template"
 msgstr "存档模板"
 
@@ -445,35 +388,19 @@ msgstr "首页 "
 msgid "Last"
 msgstr "末页"
 
-#: modules/settings.php:11
+#: modules/settings.php:10
 msgid "Modules"
 msgstr "模块"
 
-#: modules/settings.php:23
-msgid "Site Banner"
-msgstr "网站横幅"
-
-#: modules/settings.php:24
+#: modules/settings.php:18
 msgid "Enabled content types"
 msgstr "启用的内容类型"
 
-#: modules/settings.php:25
-msgid "Use build-in CSS"
-msgstr "使用内置的 CSS 文件"
-
-#: modules/settings.php:26
-msgid "Use build-in Javascript"
-msgstr "使用内置的 JavaScript"
-
-#: modules/settings.php:27
-msgid "Load build-in FontAwesome icons"
-msgstr "加载内置的 FontAwesome 图标"
-
-#: modules/settings.php:28
+#: modules/settings.php:19
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: modules/settings.php:29
+#: modules/settings.php:20
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
 
@@ -707,6 +634,57 @@ msgstr "查看 %s 下的所有文章"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Insert Post Element"
+#~ msgstr "插入内容"
+
+#~ msgid "%s Details"
+#~ msgstr "%s 详情"
+
+#~ msgid "Insert Element"
+#~ msgstr "插入内容"
+
+#~ msgid "Update"
+#~ msgstr "更新"
+
+#~ msgid "There are no attributes to configure for this Post Element."
+#~ msgstr "此文章元素没有需要设置的属性。"
+
+#~ msgid "Failed to load preview"
+#~ msgstr "加载预览失败"
+
+#~ msgid "Insert Content"
+#~ msgstr "插入内容"
+
+#~ msgid "Like"
+#~ msgstr "点赞"
+
+#~ msgid "Unlike"
+#~ msgstr "取消点赞"
+
+#~ msgid "Access denied"
+#~ msgstr "拒绝访问"
+
+#~ msgid "You can vote again after"
+#~ msgstr "你可以在"
+
+#~ msgid "days"
+#~ msgstr "天"
+
+#~ msgid "Voting failed, tye again later。"
+#~ msgstr "投票失败，请稍后重试。"
+
+#~ msgid "Site Banner"
+#~ msgstr "网站横幅"
+
+#~ msgid "Use build-in CSS"
+#~ msgstr "使用内置的 CSS 文件"
+
+#~ msgid "Use build-in Javascript"
+#~ msgstr "使用内置的 JavaScript"
+
+#~ msgid "Load build-in FontAwesome icons"
+#~ msgstr "加载内置的 FontAwesome 图标"
 
 #~ msgid "Add content"
 #~ msgstr "添加内容"
