@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-04-11 17:29+0800\n"
-"PO-Revision-Date: 2017-04-11 17:29+0800\n"
+"POT-Creation-Date: 2017-05-12 21:24+0800\n"
+"PO-Revision-Date: 2017-05-12 21:25+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -248,19 +248,19 @@ msgstr "页面"
 msgid "Select content"
 msgstr "选择内容"
 
-#: inc/helper.php:401
+#: inc/helper.php:402
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:402 modules/content_types.php:80
+#: inc/helper.php:403 modules/content_types.php:80
 msgid "Category"
 msgstr "分类"
 
-#: inc/helper.php:403
+#: inc/helper.php:404
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helper.php:467
+#: inc/helper.php:468
 msgid "Select Category"
 msgstr "选择分类目录"
 
@@ -311,31 +311,35 @@ msgstr "更新"
 msgid "New %s"
 msgstr "新 %s"
 
-#: modules/config.php:10
+#: modules/config.php:10 modules/config.php:11
 msgid "Product"
 msgstr "产品"
 
-#: modules/config.php:11
+#: modules/config.php:12
+msgid "Review"
+msgstr "评价"
+
+#: modules/config.php:13
 msgid "Portfolio"
 msgstr "案例"
 
-#: modules/config.php:12
+#: modules/config.php:14
 msgid "Cooperation"
 msgstr "合作"
 
-#: modules/config.php:13
+#: modules/config.php:15
 msgid "Team"
 msgstr "团队"
 
-#: modules/config.php:14 modules/shortcodes-ui.php:300
+#: modules/config.php:16 modules/shortcodes-ui.php:300
 msgid "Slider"
 msgstr "幻灯"
 
-#: modules/config.php:15
+#: modules/config.php:17
 msgid "Faq"
 msgstr "问题"
 
-#: modules/config.php:16
+#: modules/config.php:18
 msgid "Download"
 msgstr "下载"
 

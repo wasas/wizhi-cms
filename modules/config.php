@@ -8,6 +8,8 @@
 function wizhi_post_types() {
 	$post_types = [
 		'prod'     => __( 'Product', 'wizhi' ),
+		'event'    => __( 'Product', 'wizhi' ),
+		'review'   => __( 'Review', 'wizhi' ),
 		'case'     => __( 'Portfolio', 'wizhi' ),
 		'corp'     => __( 'Cooperation', 'wizhi' ),
 		'team'     => __( 'Team', 'wizhi' ),
@@ -28,6 +30,8 @@ function wizhi_post_types() {
 function wizhi_post_types_icon() {
 	$post_types_icons = [
 		'prod'     => 'dashicons-cart',
+		'event'    => 'dashicons-calendar',
+		'review'   => 'dashicons-thumbs-up',
 		'case'     => 'dashicons-awards',
 		'corp'     => 'dashicons-universal-access',
 		'team'     => 'dashicons-groups',

@@ -383,6 +383,7 @@ function wizhi_get_post_list( $type = "post", $id = "false" ) {
 			$output[ get_the_ID() ] = $fieldout;
 		endwhile;
 	}
+	
 	wp_reset_postdata();
 
 	return $output;
