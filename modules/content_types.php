@@ -23,14 +23,32 @@ function add_type_options( $type ) {
 
 	add_action( 'fm_submenu_' . $type . '_archive_settings', function ( $type ) {
 
+		$column = [
+			''   => '1 Colmun',
+			'-2' => '2 Colmun',
+			'-3' => '3 Colmun',
+			'-4' => '4 Colmun',
+			'-5' => '5 Colmun',
+			'-6' => '6 Colmun',
+		];
+
 		$fields = [
-			"banner"      => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
-			"template"    => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
+			"banner"       => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+			"title"        => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
+			"description"  => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
+			"template"     => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
 				'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 			] ),
-			"per_page"    => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
-			"title"       => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
-			"description" => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
+			"main_tax"     => new Fieldmanager_Select( __( 'Main Taxonomy', 'wizhi' ), [
+				'options' => wizhi_get_taxonomy_list(),
+			] ),
+			"column"       => new Fieldmanager_Select( __( 'Column', 'wizhi' ), [
+				'options' => $column,
+			] ),
+			"column_small" => new Fieldmanager_Select( __( 'Small Screen Column', 'wizhi' ), [
+				'options' => $column,
+			] ),
+			"per_page"     => new Fieldmanager_Textfield( __( 'Posts Per Page', 'wizhi' ) ),
 		];
 
 		$fm = new Fieldmanager_Group( [
