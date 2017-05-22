@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-05-12 21:24+0800\n"
-"PO-Revision-Date: 2017-05-12 21:25+0800\n"
+"POT-Creation-Date: 2017-05-22 16:47+0800\n"
+"PO-Revision-Date: 2017-05-22 16:48+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -252,7 +252,7 @@ msgstr "选择内容"
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:403 modules/content_types.php:80
+#: inc/helper.php:403 modules/content_types.php:98
 msgid "Category"
 msgstr "分类"
 
@@ -347,26 +347,62 @@ msgstr "下载"
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: modules/content_types.php:27 modules/metabox/posts.php:12
+#: modules/content_types.php:27
+msgid "1 Column"
+msgstr "1 列"
+
+#: modules/content_types.php:28
+msgid "2 Column"
+msgstr "2 列"
+
+#: modules/content_types.php:29
+msgid "3 Column"
+msgstr "3 列"
+
+#: modules/content_types.php:30
+msgid "4 Column"
+msgstr "4 列"
+
+#: modules/content_types.php:31
+msgid "5 Column"
+msgstr "5 列"
+
+#: modules/content_types.php:32
+msgid "6 Column"
+msgstr "6 列"
+
+#: modules/content_types.php:36 modules/metabox/posts.php:12
 #: modules/metabox/term.php:20
 msgid "Cover image"
 msgstr "封面图像"
 
-#: modules/content_types.php:28
-msgid "Archive Template"
-msgstr "存档模板"
-
-#: modules/content_types.php:31
-msgid "Posts Per Page"
-msgstr "每页的文章数"
-
-#: modules/content_types.php:32
+#: modules/content_types.php:37
 msgid "Archive Title"
 msgstr "存档标题"
 
-#: modules/content_types.php:33
+#: modules/content_types.php:38
 msgid "Archive Description"
 msgstr "存档描述"
+
+#: modules/content_types.php:39
+msgid "Archive Template"
+msgstr "存档模板"
+
+#: modules/content_types.php:42
+msgid "Main Taxonomy"
+msgstr "主分类方法"
+
+#: modules/content_types.php:45
+msgid "Column"
+msgstr "列"
+
+#: modules/content_types.php:48
+msgid "Small Screen Column"
+msgstr "小屏幕分栏数量"
+
+#: modules/content_types.php:51
+msgid "Posts Per Page"
+msgstr "每页的文章数"
 
 #: modules/metabox/posts.php:22
 msgid "Post Fields"
@@ -695,9 +731,6 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "Column content"
 #~ msgstr "列内容"
-
-#~ msgid "Column"
-#~ msgstr "列"
 
 #~ msgid ""
 #~ "Enter a composition here of column ratios separated by spaces.<br>Make "

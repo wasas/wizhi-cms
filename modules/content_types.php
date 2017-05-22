@@ -24,12 +24,12 @@ function add_type_options( $type ) {
 	add_action( 'fm_submenu_' . $type . '_archive_settings', function ( $type ) {
 
 		$column = [
-			''   => '1 Colmun',
-			'-2' => '2 Colmun',
-			'-3' => '3 Colmun',
-			'-4' => '4 Colmun',
-			'-5' => '5 Colmun',
-			'-6' => '6 Colmun',
+			''   => __( '1 Column', 'wizhi' ),
+			'-2' => __( '2 Column', 'wizhi' ),
+			'-3' => __( '3 Column', 'wizhi' ),
+			'-4' => __( '4 Column', 'wizhi' ),
+			'-5' => __( '5 Column', 'wizhi' ),
+			'-6' => __( '6 Column', 'wizhi' ),
 		];
 
 		$fields = [
