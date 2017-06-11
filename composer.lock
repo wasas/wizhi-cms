@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f6f98d7004d8c9086e795f41240ca4f",
+    "content-hash": "680b7155f91a9628d7338f39549e54b3",
     "packages": [
+        {
+            "name": "jjgrainger/wp-custom-post-type-class",
+            "version": "v1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jjgrainger/wp-custom-post-type-class.git",
+                "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/jjgrainger/wp-custom-post-type-class/f152d2c33a8ec0740e2fa2544168557e5fe1d5c7.zip",
+                "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "CPT": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Grainger",
+                    "email": "hello@joegrainger.co.uk",
+                    "homepage": "http://jjgrainger.co.uk"
+                }
+            ],
+            "description": "A single class to help you build more advanced custom post types quickly.",
+            "homepage": "https://github.com/jjgrainger/wp-custom-post-type-class",
+            "time": "2015-08-11T08:44:43+00:00"
+        },
         {
             "name": "lightboxdigital/wp-dynamic-image-resizer",
             "version": "1.0.2",
@@ -105,16 +143,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v2.4.5",
+            "version": "v2.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602"
+                "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/nette/utils/28ad4e2a6dcf143c23bde969a825f10a5d513602.zip",
-                "reference": "28ad4e2a6dcf143c23bde969a825f10a5d513602",
+                "url": "https://files.phpcomposer.com/files/nette/utils/266160aec0d99516e0ea510de1dfa24a0dc1e76e.zip",
+                "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e",
                 "shasum": ""
             },
             "require": {
@@ -133,8 +171,7 @@
                 "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
                 "ext-json": "to use Nette\\Utils\\Json",
                 "ext-mbstring": "to use Strings::lower() etc...",
-                "ext-xml": "to use Strings::length() etc. when mbstring is not available",
-                "https://nette.org/donate": "\u001b[1;37;42m Please consider supporting Nette via a donation \u001b[0m"
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
             },
             "type": "library",
             "extra": {
@@ -165,7 +202,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2017-03-29T16:55:54+00:00"
+            "time": "2017-04-26T10:04:49+00:00"
         },
         {
             "name": "overtrue/pinyin",

@@ -40,6 +40,13 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
                 0 => __DIR__ . '/..' . '/oyejorge/less.php/lib',
             ),
         ),
+        'C' => 
+        array (
+            'CPT' => 
+            array (
+                0 => __DIR__ . '/..' . '/jjgrainger/wp-custom-post-type-class/src',
+            ),
+        ),
     );
 
     public static $classMap = array (

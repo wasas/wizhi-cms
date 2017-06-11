@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Less' => array($vendorDir . '/oyejorge/less.php/lib'),
+    'CPT' => array($vendorDir . '/jjgrainger/wp-custom-post-type-class/src'),
 );

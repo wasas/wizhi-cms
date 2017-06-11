@@ -7,7 +7,8 @@
     "nette/finder": "^2.4",
     "overtrue/pinyin": "^3.0",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
-    "oyejorge/less.php": "v1.7.0.13"
+    "oyejorge/less.php": "v1.7.0.13",
+    "jjgrainger/wp-custom-post-type-class": "^1.4"
   },
   "license": "MIT",
   "authors": [
