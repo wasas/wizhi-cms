@@ -8,7 +8,7 @@
 function wizhi_post_types() {
 	$post_types = [
 		'prod'     => __( 'Product', 'wizhi' ),
-		'event'    => __( 'Product', 'wizhi' ),
+		'event'    => __( 'Event', 'wizhi' ),
 		'review'   => __( 'Review', 'wizhi' ),
 		'case'     => __( 'Portfolio', 'wizhi' ),
 		'corp'     => __( 'Cooperation', 'wizhi' ),

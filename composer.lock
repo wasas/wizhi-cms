@@ -4,29 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "680b7155f91a9628d7338f39549e54b3",
+    "content-hash": "5f8455d69760af47b6fa9761f5cc0e3d",
     "packages": [
         {
-            "name": "jjgrainger/wp-custom-post-type-class",
-            "version": "v1.4",
+            "name": "jjgrainger/posttypes",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jjgrainger/wp-custom-post-type-class.git",
-                "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7"
+                "url": "https://github.com/jjgrainger/PostTypes.git",
+                "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/jjgrainger/wp-custom-post-type-class/f152d2c33a8ec0740e2fa2544168557e5fe1d5c7.zip",
-                "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7",
+                "url": "https://files.phpcomposer.com/files/jjgrainger/PostTypes/736c43ecf3e6272a1b18c3857ecea3ac4b030745.zip",
+                "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.8"
+            },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "CPT": "src/"
+                "psr-4": {
+                    "PostTypes\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -36,13 +39,13 @@
             "authors": [
                 {
                     "name": "Joe Grainger",
-                    "email": "hello@joegrainger.co.uk",
+                    "email": "hello@jjgrainger.co.uk",
                     "homepage": "http://jjgrainger.co.uk"
                 }
             ],
-            "description": "A single class to help you build more advanced custom post types quickly.",
-            "homepage": "https://github.com/jjgrainger/wp-custom-post-type-class",
-            "time": "2015-08-11T08:44:43+00:00"
+            "description": "Simple WordPress custom post types.",
+            "homepage": "https://github.com/jjgrainger/posttype",
+            "time": "2017-05-19T12:53:48+00:00"
         },
         {
             "name": "lightboxdigital/wp-dynamic-image-resizer",

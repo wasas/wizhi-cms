@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-05-22 16:47+0800\n"
-"PO-Revision-Date: 2017-05-22 16:48+0800\n"
+"POT-Creation-Date: 2017-06-12 09:34+0800\n"
+"PO-Revision-Date: 2017-06-12 09:38+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -174,7 +174,14 @@ msgstr "验证规则\"%s\"不存在。"
 
 #: inc/helper.php:89 inc/helper.php:91 inc/helper.php:93 inc/helper.php:95
 #: inc/helper.php:97 inc/helper.php:99 inc/helper.php:122 inc/helper.php:132
-#: inc/helper.php:134
+#: inc/helper.php:134 vendor/jjgrainger/posttypes/src/PostType.php:207
+#: vendor/jjgrainger/posttypes/src/PostType.php:208
+#: vendor/jjgrainger/posttypes/src/PostType.php:209
+#: vendor/jjgrainger/posttypes/src/PostType.php:210
+#: vendor/jjgrainger/posttypes/src/PostType.php:485
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:120
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:121
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:122
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -264,56 +271,60 @@ msgstr "标签"
 msgid "Select Category"
 msgstr "选择分类目录"
 
-#: inc/post_types.php:28 inc/post_types.php:29 inc/post_types.php:93
-msgid "Add New"
+#: inc/post_types.php:34 inc/post_types.php:35 inc/post_types.php:104
+msgid "Add New "
 msgstr "添加"
 
-#: inc/post_types.php:30 inc/post_types.php:91
-msgid "Edit"
+#: inc/post_types.php:36 inc/post_types.php:102
+msgid "Edit "
 msgstr "编辑"
 
-#: inc/post_types.php:31
-msgid "New"
-msgstr "新"
+#: inc/post_types.php:37
+msgid "New "
+msgstr "添加"
 
-#: inc/post_types.php:32 inc/post_types.php:88
-msgid "All"
+#: inc/post_types.php:38 inc/post_types.php:99
+msgid "All "
 msgstr "所有"
 
-#: inc/post_types.php:33
-msgid "View"
+#: inc/post_types.php:39
+msgid "View "
 msgstr "查看"
 
-#: inc/post_types.php:34 inc/post_types.php:87
-msgid "Search"
+#: inc/post_types.php:40 inc/post_types.php:98
+msgid "Search "
 msgstr "搜索"
 
-#: inc/post_types.php:35
+#: inc/post_types.php:41
 #, php-format
 msgid "Could not find %s"
 msgstr "找不到%s"
 
-#: inc/post_types.php:36
+#: inc/post_types.php:42
 #, php-format
 msgid "Could not find %s in trash"
 msgstr "回收站中没有%s"
 
-#: inc/post_types.php:89 inc/post_types.php:90
-msgid "Parent"
+#: inc/post_types.php:100 inc/post_types.php:101
+msgid "Parent "
 msgstr "父级"
 
-#: inc/post_types.php:92
-msgid "Upgrade"
+#: inc/post_types.php:103
+msgid "Upgrade "
 msgstr "更新"
 
-#: inc/post_types.php:94
+#: inc/post_types.php:105 vendor/jjgrainger/posttypes/src/PostType.php:214
 #, php-format
 msgid "New %s"
 msgstr "新 %s"
 
-#: modules/config.php:10 modules/config.php:11
+#: modules/config.php:10
 msgid "Product"
 msgstr "产品"
+
+#: modules/config.php:11
+msgid "Event"
+msgstr "事件"
 
 #: modules/config.php:12
 msgid "Review"
@@ -675,6 +686,151 @@ msgstr "查看 %s 下的所有文章"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
+#: vendor/jjgrainger/posttypes/src/PostType.php:211
+msgid "Add New"
+msgstr "添加"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:212
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:127
+#, php-format
+msgid "Add New %s"
+msgstr "添加%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:213
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:124
+#, php-format
+msgid "Edit %s"
+msgstr "编辑%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:215
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:125
+#, php-format
+msgid "View %s"
+msgstr "查看%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:216
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:131
+#, php-format
+msgid "Search %s"
+msgstr "搜索%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:217
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:136
+#, php-format
+msgid "No %s found"
+msgstr "没找到%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:218
+#, php-format
+msgid "No %s found in Trash"
+msgstr "回收站没有找到%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:219
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:130
+#, php-format
+msgid "Parent %s:"
+msgstr "父级%s："
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:419
+#, php-format
+msgid "Show all %s"
+msgstr "显示所有%s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:567
+#, php-format
+msgid "No %s"
+msgstr "没有 %s"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:699
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr "%2$s已从修订版本 %1$s恢复"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:705
+#: vendor/jjgrainger/posttypes/src/PostType.php:708
+#: vendor/jjgrainger/posttypes/src/PostType.php:710
+#, php-format
+msgid "%s updated."
+msgstr "%s 已更新"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:706
+msgid "Custom field updated."
+msgstr "自定义字段已更新。"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:707
+msgid "Custom field deleted."
+msgstr "自定义字段已删除。"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:711
+#, php-format
+msgid "%s saved."
+msgstr "%s 已保存。"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:712
+#, php-format
+msgid "%s submitted."
+msgstr "%s已提交。"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:714
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr "%2$s 将于: <strong>%1$s</strong>发表。"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:715
+msgid "M j, Y @ G:i"
+msgstr "Y年m月d日 G:i"
+
+#: vendor/jjgrainger/posttypes/src/PostType.php:718
+#, php-format
+msgid "%s draft updated."
+msgstr "%s草稿已更新。"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:123
+#, php-format
+msgid "All %s"
+msgstr "所有%s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:126
+#, php-format
+msgid "Update %s"
+msgstr "更新 %s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:128
+#, php-format
+msgid "New %s Name"
+msgstr "新%s名称"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:129
+#, php-format
+msgid "Parent %s"
+msgstr "父级%s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:132
+#, php-format
+msgid "Popular %s"
+msgstr "热门%s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:133
+#, php-format
+msgid "Seperate %s with commas"
+msgstr "用逗号分隔%s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:134
+#, php-format
+msgid "Add or remove %s"
+msgstr "添加或删除%s"
+
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:135
+#, php-format
+msgid "Choose from most used %s"
+msgstr "从最常用的%s中选择"
+
+#~ msgid "New"
+#~ msgstr "新"
+
+#~ msgid "All"
+#~ msgstr "所有"
+
 #~ msgid "Insert Post Element"
 #~ msgstr "插入内容"
 
@@ -683,9 +839,6 @@ msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "Insert Element"
 #~ msgstr "插入内容"
-
-#~ msgid "Update"
-#~ msgstr "更新"
 
 #~ msgid "There are no attributes to configure for this Post Element."
 #~ msgstr "此文章元素没有需要设置的属性。"

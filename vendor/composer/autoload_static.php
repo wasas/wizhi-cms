@@ -15,6 +15,10 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
         array (
             'TheFold\\WordPress\\' => 18,
         ),
+        'P' => 
+        array (
+            'PostTypes\\' => 10,
+        ),
         'O' => 
         array (
             'Overtrue\\Pinyin\\' => 16,
@@ -25,6 +29,10 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
         'TheFold\\WordPress\\' => 
         array (
             0 => __DIR__ . '/..' . '/thefold/wordpress-dispatcher',
+        ),
+        'PostTypes\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jjgrainger/posttypes/src',
         ),
         'Overtrue\\Pinyin\\' => 
         array (
@@ -38,13 +46,6 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
             'Less' => 
             array (
                 0 => __DIR__ . '/..' . '/oyejorge/less.php/lib',
-            ),
-        ),
-        'C' => 
-        array (
-            'CPT' => 
-            array (
-                0 => __DIR__ . '/..' . '/jjgrainger/wp-custom-post-type-class/src',
             ),
         ),
     );

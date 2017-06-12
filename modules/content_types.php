@@ -8,7 +8,8 @@ use Nette\Utils\Arrays;
 use Nette\Utils\Strings;
 
 add_action( 'init', 'add_type_options' );
-add_action( 'init', 'add_default_content_type' );
+add_action( 'init', 'add_default_post_type_options' );
+
 
 /**
  * 为每个文章类型添加存档设置
@@ -64,6 +65,19 @@ function add_type_options( $type ) {
 
 
 /**
+ * 添加默认文章类型存档设置
+ */
+function add_default_post_type_options() {
+	$enabled_post_types = get_option( 'wizhi_cms_settings' )[ 'enabled_post_types' ];
+	$enabled_post_types = apply_filters( 'wizhi_archive_setting_supports', $enabled_post_types );
+
+	foreach ( $enabled_post_types as $slug ) {
+		add_type_options( $slug );
+	}
+}
+
+
+/**
  * 获取文章类型存档设置
  *
  * @param string $type 文章类型别名
@@ -78,33 +92,17 @@ function get_archive_option( $type ) {
 /**
  * 添加默认的自定义文章类型和分类法
  */
-function add_default_content_type() {
+$types              = wizhi_post_types();
+$icons              = wizhi_post_types_icon();
+$default_supports   = [ 'title', 'editor', 'thumbnail', ];
+$enabled_post_types = get_option( 'wizhi_cms_settings' )[ 'enabled_post_types' ];
 
-	$types              = wizhi_post_types();
-	$icons              = wizhi_post_types_icon();
-	$enabled_post_types = get_option( 'wizhi_cms_settings' )[ 'enabled_post_types' ];
+if ( count( $enabled_post_types ) > 0 ) {
 
-	if ( count( $enabled_post_types ) > 0 ) {
-
-		// 添加默认的文章类型和分类方法
-		foreach ( $enabled_post_types as $slug ) {
-
-			wizhi_create_types( $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ), [
-				'title',
-				'editor',
-				'thumbnail',
-			], true, Arrays::get( $icons, $slug, 'dashicons-admin-post' ) );
-
-			wizhi_create_taxs( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( 'Category', 'wizhi' ), true );
-
-		}
-
-		$enabled_post_types = apply_filters( 'wizhi_archive_setting_supports', $enabled_post_types );
-
-		foreach ( $enabled_post_types as $slug ) {
-			add_type_options( $slug );
-		}
-
+	// 添加默认的文章类型和分类方法
+	foreach ( $enabled_post_types as $slug ) {
+		wizhi_create_types( $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ), $default_supports, true, Arrays::get( $icons, $slug, 'dashicons-admin-post' ) );
+		wizhi_create_taxs( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( ' Category', 'wizhi' ), true );
 	}
 
 }

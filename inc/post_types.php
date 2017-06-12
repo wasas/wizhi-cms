@@ -3,6 +3,8 @@
  * 快速添加文章类型和分类方法
  */
 
+use PostTypes\PostType;
+
 if ( ! function_exists( "wizhi_create_types" ) ) {
 	/**
 	 * 快速添加文章类型
@@ -18,27 +20,38 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	 * @package backend
 	 *
 	 * @usage   wizhi_create_types( 'prod', '产品', [ 'title', 'editor', 'thumbnail' ], true );
+	 *
+	 * @return \PostTypes\PostType mixed 创建的文件类型对象
 	 */
 	function wizhi_create_types( $slug, $name, $support, $is_publish, $icon = 'dashicons-networking' ) {
+
+		$type = '';
+
+		$names = [
+	        'name' => $slug,
+	        'singular' => $name,
+	        'plural' => $name,
+	        'slug' => $slug,
+		];
 
 		//文章类型的标签
 		$labels = [
 			'name'               => $name,
 			'singular_name'      => $name,
-			'add_new'            => __( 'Add New', 'wizhi' ) . $name,
-			'add_new_item'       => __( 'Add New', 'wizhi' ) . $name,
-			'edit_item'          => __( 'Edit', 'wizhi' ) . $name,
-			'new_item'           => __( 'New', 'wizhi' ) . $name,
-			'all_items'          => __( 'All', 'wizhi' ) . $name,
-			'view_item'          => __( 'View', 'wizhi' ) . $name,
-			'search_items'       => __( 'Search', 'wizhi' ) . $name,
+			'add_new'            => __( 'Add New ', 'wizhi' ) . $name,
+			'add_new_item'       => __( 'Add New ', 'wizhi' ) . $name,
+			'edit_item'          => __( 'Edit ', 'wizhi' ) . $name,
+			'new_item'           => __( 'New ', 'wizhi' ) . $name,
+			'all_items'          => __( 'All ', 'wizhi' ) . $name,
+			'view_item'          => __( 'View ', 'wizhi' ) . $name,
+			'search_items'       => __( 'Search ', 'wizhi' ) . $name,
 			'not_found'          => sprintf( __( 'Could not find %s', 'wizhi' ), $name ),
 			'not_found_in_trash' => sprintf( __( 'Could not find %s in trash', 'wizhi' ), $name ),
 			'menu_name'          => $name,
 		];
 
 		//注册文章类型需要的参数
-		$args = [
+		$options = [
 			'labels'             => $labels,
 			'public'             => $is_publish,
 			'publicly_queryable' => $is_publish,
@@ -55,10 +68,11 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 		];
 
 		if ( strlen( $slug ) > 0 ) {
-			register_post_type( $slug, $args );
+			$type = new PostType( $names, $options, $labels );
 		}
 
-		flush_rewrite_rules();
+		return $type;
+
 	}
 }
 
@@ -77,20 +91,32 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 * @package backend
 	 *
 	 * @usage   wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
+	 *
+	 * @return \PostTypes\PostType mixed 创建的文件类型对象
 	 */
 	function wizhi_create_taxs( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
+
+		$type = '';
+
+		$names = [
+		    'name' => $tax_slug,
+		    'singular' => $tax_name,
+		    'plural' => $tax_name,
+		    'slug' => $tax_slug,
+		];
+
 
 		//分类法的标签
 		$labels = [
 			'name'              => $tax_name,
 			'singular_name'     => $tax_name,
-			'search_items'      => __( 'Search', 'wizhi' ) . $tax_name,
-			'all_items'         => __( 'All', 'wizhi' ) . $tax_name,
-			'parent_item'       => __( 'Parent', 'wizhi' ) . $tax_name,
-			'parent_item_colon' => __( 'Parent', 'wizhi' ) . $tax_name,
-			'edit_item'         => __( 'Edit', 'wizhi' ) . $tax_name,
-			'update_item'       => __( 'Upgrade', 'wizhi' ) . $tax_name,
-			'add_new_item'      => __( 'Add New', 'wizhi' ) . $tax_name,
+			'search_items'      => __( 'Search ', 'wizhi' ) . $tax_name,
+			'all_items'         => __( 'All ', 'wizhi' ) . $tax_name,
+			'parent_item'       => __( 'Parent ', 'wizhi' ) . $tax_name,
+			'parent_item_colon' => __( 'Parent ', 'wizhi' ) . $tax_name,
+			'edit_item'         => __( 'Edit ', 'wizhi' ) . $tax_name,
+			'update_item'       => __( 'Upgrade ', 'wizhi' ) . $tax_name,
+			'add_new_item'      => __( 'Add New ', 'wizhi' ) . $tax_name,
 			'new_item_name'     => sprintf( __( 'New %s', 'wizhi' ), $tax_name ),
 			'menu_name'         => $tax_name,
 		];
@@ -107,9 +133,10 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 		];
 
 		if ( strlen( $tax_slug ) > 0 ) {
-			register_taxonomy( $tax_slug, [ $post_type ], $args );
+			$type = new PostType( $post_type );
+			$type->taxonomy( $names, $args );
 		}
 
-		flush_rewrite_rules();
+		return $type;
 	}
 }

@@ -254,46 +254,6 @@
         ]
     },
     {
-        "name": "jjgrainger/wp-custom-post-type-class",
-        "version": "v1.4",
-        "version_normalized": "1.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jjgrainger/wp-custom-post-type-class.git",
-            "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/jjgrainger/wp-custom-post-type-class/f152d2c33a8ec0740e2fa2544168557e5fe1d5c7.zip",
-            "reference": "f152d2c33a8ec0740e2fa2544168557e5fe1d5c7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2015-08-11T08:44:43+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "CPT": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Joe Grainger",
-                "email": "hello@joegrainger.co.uk",
-                "homepage": "http://jjgrainger.co.uk"
-            }
-        ],
-        "description": "A single class to help you build more advanced custom post types quickly.",
-        "homepage": "https://github.com/jjgrainger/wp-custom-post-type-class"
-    },
-    {
         "name": "nette/utils",
         "version": "v2.4.6",
         "version_normalized": "2.4.6.0",
@@ -357,5 +317,48 @@
         ],
         "description": "Nette Utility Classes",
         "homepage": "https://nette.org"
+    },
+    {
+        "name": "jjgrainger/posttypes",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jjgrainger/PostTypes.git",
+            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/jjgrainger/PostTypes/736c43ecf3e6272a1b18c3857ecea3ac4b030745.zip",
+            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "squizlabs/php_codesniffer": "^2.8"
+        },
+        "time": "2017-05-19T12:53:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PostTypes\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Joe Grainger",
+                "email": "hello@jjgrainger.co.uk",
+                "homepage": "http://jjgrainger.co.uk"
+            }
+        ],
+        "description": "Simple WordPress custom post types.",
+        "homepage": "https://github.com/jjgrainger/posttype"
     }
 ]
