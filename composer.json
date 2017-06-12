@@ -8,7 +8,8 @@
     "overtrue/pinyin": "^3.0",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "oyejorge/less.php": "v1.7.0.13",
-    "jjgrainger/posttypes": "^1.1"
+    "jjgrainger/posttypes": "^1.1",
+    "doctrine/inflector": "^1.1"
   },
   "license": "MIT",
   "authors": [

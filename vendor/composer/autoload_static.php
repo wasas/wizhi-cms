@@ -48,6 +48,13 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
                 0 => __DIR__ . '/..' . '/oyejorge/less.php/lib',
             ),
         ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+        ),
     );
 
     public static $classMap = array (

@@ -3,6 +3,7 @@
  * 快速添加文章类型和分类方法
  */
 
+use Doctrine\Common\Inflector\Inflector;
 use PostTypes\PostType;
 
 if ( ! function_exists( "wizhi_create_types" ) ) {
@@ -25,29 +26,30 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	 */
 	function wizhi_create_types( $slug, $name, $support, $is_publish, $icon = 'dashicons-networking' ) {
 
-		$type = '';
+		$type  = '';
+		$slugs = Inflector::pluralize( $name );
 
 		$names = [
 			'name'     => $slug,
 			'singular' => $name,
-			'plural'   => $name,
+			'plural'   => $slugs,
 			'slug'     => $slug,
 		];
 
 		//文章类型的标签
 		$labels = [
-			'name'               => sprintf( __( '%s', 'wizhi' ), $name ),
+			'name'               => sprintf( __( '%s', 'wizhi' ), $slugs ),
 			'singular_name'      => sprintf( __( '%s', 'wizhi' ), $name ),
-			'menu_name'          => sprintf( __( '%s', 'wizhi' ), $name ),
-			'all_items'          => sprintf( __( '%s', 'wizhi' ), $name ),
+			'menu_name'          => sprintf( __( '%s', 'wizhi' ), $slugs ),
+			'all_items'          => sprintf( __( '%s', 'wizhi' ), $slugs ),
 			'add_new'            => sprintf( __( 'Add New %s', 'wizhi' ), $name ),
 			'add_new_item'       => sprintf( __( 'Add New %s', 'wizhi' ), $name ),
 			'edit_item'          => sprintf( __( 'Edit %s', 'wizhi' ), $name ),
 			'new_item'           => sprintf( __( 'New %s', 'wizhi' ), $name ),
 			'view_item'          => sprintf( __( 'View %s', 'wizhi' ), $name ),
-			'search_items'       => sprintf( __( 'Search %s', 'wizhi' ), $name ),
-			'not_found'          => sprintf( __( 'No %s found', 'wizhi' ), $name ),
-			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'wizhi' ), $name ),
+			'search_items'       => sprintf( __( 'Search %s', 'wizhi' ), $slugs ),
+			'not_found'          => sprintf( __( 'No %s found', 'wizhi' ), $slugs ),
+			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'wizhi' ), $slugs ),
 			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'wizhi' ), $name ),
 		];
 
@@ -97,34 +99,35 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 */
 	function wizhi_create_taxs( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
 
-		$type = '';
+		$type      = '';
+		$tax_slugs = Inflector::pluralize( $tax_name );
 
 		$names = [
 			'name'     => $tax_slug,
 			'singular' => $tax_name,
-			'plural'   => $tax_name,
+			'plural'   => $tax_slugs,
 			'slug'     => $tax_slug,
 		];
 
 		//分类法的标签
 		$labels = [
-			'name'                       => sprintf( __( '%s', 'wizhi' ), $tax_name ),
+			'name'                       => sprintf( __( '%s', 'wizhi' ), $tax_slugs ),
 			'singular_name'              => sprintf( __( '%s', 'wizhi' ), $tax_name ),
-			'menu_name'                  => sprintf( __( '%s', 'wizhi' ), $tax_name ),
-			'all_items'                  => sprintf( __( 'All %s', 'wizhi' ), $tax_name ),
+			'menu_name'                  => sprintf( __( '%s', 'wizhi' ), $tax_slugs ),
+			'all_items'                  => sprintf( __( 'All %s', 'wizhi' ), $tax_slugs ),
 			'edit_item'                  => sprintf( __( 'Edit %s', 'wizhi' ), $tax_name ),
 			'view_item'                  => sprintf( __( 'View %s', 'wizhi' ), $tax_name ),
 			'update_item'                => sprintf( __( 'Update %s', 'wizhi' ), $tax_name ),
 			'add_new_item'               => sprintf( __( 'Add New %s', 'wizhi' ), $tax_name ),
 			'new_item_name'              => sprintf( __( 'New %s Name', 'wizhi' ), $tax_name ),
-			'parent_item'                => sprintf( __( 'Parent %s', 'wizhi' ), $tax_name ),
-			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'wizhi' ), $tax_name ),
-			'search_items'               => sprintf( __( 'Search %s', 'wizhi' ), $tax_name ),
-			'popular_items'              => sprintf( __( 'Popular %s', 'wizhi' ), $tax_name ),
-			'separate_items_with_commas' => sprintf( __( 'Seperate %s with commas', 'wizhi' ), $tax_name ),
-			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'wizhi' ), $tax_name ),
-			'choose_from_most_used'      => sprintf( __( 'Choose from most used %s', 'wizhi' ), $tax_name ),
-			'not_found'                  => sprintf( __( 'No %s found', 'wizhi' ), $tax_name ),
+			'parent_item'                => sprintf( __( 'Parent %s', 'wizhi' ), $tax_slugs ),
+			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'wizhi' ), $tax_slugs ),
+			'search_items'               => sprintf( __( 'Search %s', 'wizhi' ), $tax_slugs ),
+			'popular_items'              => sprintf( __( 'Popular %s', 'wizhi' ), $tax_slugs ),
+			'separate_items_with_commas' => sprintf( __( 'Seperate %s with commas', 'wizhi' ), $tax_slugs ),
+			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'wizhi' ), $tax_slugs ),
+			'choose_from_most_used'      => sprintf( __( 'Choose from most used %s', 'wizhi' ), $tax_slugs ),
+			'not_found'                  => sprintf( __( 'No %s found', 'wizhi' ), $tax_slugs ),
 		];
 
 		//分类法参数

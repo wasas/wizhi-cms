@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Less' => array($vendorDir . '/oyejorge/less.php/lib'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
 );
