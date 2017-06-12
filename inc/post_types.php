@@ -3,9 +3,6 @@
  * 快速添加文章类型和分类方法
  */
 
-use Doctrine\Common\Inflector\Inflector;
-use PostTypes\PostType;
-
 if ( ! function_exists( "wizhi_create_types" ) ) {
 	/**
 	 * 快速添加文章类型
@@ -21,40 +18,27 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 	 * @package backend
 	 *
 	 * @usage   wizhi_create_types( 'prod', '产品', [ 'title', 'editor', 'thumbnail' ], true );
-	 *
-	 * @return \PostTypes\PostType mixed 创建的文件类型对象
 	 */
 	function wizhi_create_types( $slug, $name, $support, $is_publish, $icon = 'dashicons-networking' ) {
 
-		$type  = '';
-		$slugs = Inflector::pluralize( $name );
-
-		$names = [
-			'name'     => $slug,
-			'singular' => $name,
-			'plural'   => $slugs,
-			'slug'     => $slug,
-		];
-
 		//文章类型的标签
 		$labels = [
-			'name'               => sprintf( __( '%s', 'wizhi' ), $slugs ),
-			'singular_name'      => sprintf( __( '%s', 'wizhi' ), $name ),
-			'menu_name'          => sprintf( __( '%s', 'wizhi' ), $slugs ),
-			'all_items'          => sprintf( __( '%s', 'wizhi' ), $slugs ),
-			'add_new'            => sprintf( __( 'Add New %s', 'wizhi' ), $name ),
-			'add_new_item'       => sprintf( __( 'Add New %s', 'wizhi' ), $name ),
-			'edit_item'          => sprintf( __( 'Edit %s', 'wizhi' ), $name ),
-			'new_item'           => sprintf( __( 'New %s', 'wizhi' ), $name ),
-			'view_item'          => sprintf( __( 'View %s', 'wizhi' ), $name ),
-			'search_items'       => sprintf( __( 'Search %s', 'wizhi' ), $slugs ),
-			'not_found'          => sprintf( __( 'No %s found', 'wizhi' ), $slugs ),
-			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'wizhi' ), $slugs ),
-			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'wizhi' ), $name ),
+			'name'               => $name,
+			'singular_name'      => $name,
+			'add_new'            => __( 'Add New', 'wizhi' ) . $name,
+			'add_new_item'       => __( 'Add New', 'wizhi' ) . $name,
+			'edit_item'          => __( 'Edit', 'wizhi' ) . $name,
+			'new_item'           => __( 'New', 'wizhi' ) . $name,
+			'all_items'          => __( 'All', 'wizhi' ) . $name,
+			'view_item'          => __( 'View', 'wizhi' ) . $name,
+			'search_items'       => __( 'Search', 'wizhi' ) . $name,
+			'not_found'          => sprintf( __( 'Could not find %s', 'wizhi' ), $name ),
+			'not_found_in_trash' => sprintf( __( 'Could not find %s in trash', 'wizhi' ), $name ),
+			'menu_name'          => $name,
 		];
 
 		//注册文章类型需要的参数
-		$options = [
+		$args = [
 			'labels'             => $labels,
 			'public'             => $is_publish,
 			'publicly_queryable' => $is_publish,
@@ -71,10 +55,8 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 		];
 
 		if ( strlen( $slug ) > 0 ) {
-			$type = new PostType( $names, $options, $labels );
+			register_post_type( $slug, $args );
 		}
-
-		return $type;
 
 	}
 }
@@ -94,44 +76,26 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 * @package backend
 	 *
 	 * @usage   wizhi_create_taxs('prodcat', 'prod', '产品分类', true);
-	 *
-	 * @return \PostTypes\PostType mixed 创建的文件类型对象
 	 */
 	function wizhi_create_taxs( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
 
-		$type      = '';
-		$tax_slugs = Inflector::pluralize( $tax_name );
-
-		$names = [
-			'name'     => $tax_slug,
-			'singular' => $tax_name,
-			'plural'   => $tax_slugs,
-			'slug'     => $tax_slug,
-		];
-
 		//分类法的标签
 		$labels = [
-			'name'                       => sprintf( __( '%s', 'wizhi' ), $tax_slugs ),
-			'singular_name'              => sprintf( __( '%s', 'wizhi' ), $tax_name ),
-			'menu_name'                  => sprintf( __( '%s', 'wizhi' ), $tax_slugs ),
-			'all_items'                  => sprintf( __( 'All %s', 'wizhi' ), $tax_slugs ),
-			'edit_item'                  => sprintf( __( 'Edit %s', 'wizhi' ), $tax_name ),
-			'view_item'                  => sprintf( __( 'View %s', 'wizhi' ), $tax_name ),
-			'update_item'                => sprintf( __( 'Update %s', 'wizhi' ), $tax_name ),
-			'add_new_item'               => sprintf( __( 'Add New %s', 'wizhi' ), $tax_name ),
-			'new_item_name'              => sprintf( __( 'New %s Name', 'wizhi' ), $tax_name ),
-			'parent_item'                => sprintf( __( 'Parent %s', 'wizhi' ), $tax_slugs ),
-			'parent_item_colon'          => sprintf( __( 'Parent %s:', 'wizhi' ), $tax_slugs ),
-			'search_items'               => sprintf( __( 'Search %s', 'wizhi' ), $tax_slugs ),
-			'popular_items'              => sprintf( __( 'Popular %s', 'wizhi' ), $tax_slugs ),
-			'separate_items_with_commas' => sprintf( __( 'Seperate %s with commas', 'wizhi' ), $tax_slugs ),
-			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'wizhi' ), $tax_slugs ),
-			'choose_from_most_used'      => sprintf( __( 'Choose from most used %s', 'wizhi' ), $tax_slugs ),
-			'not_found'                  => sprintf( __( 'No %s found', 'wizhi' ), $tax_slugs ),
+			'name'              => $tax_name,
+			'singular_name'     => $tax_name,
+			'search_items'      => __( 'Search', 'wizhi' ) . $tax_name,
+			'all_items'         => __( 'All', 'wizhi' ) . $tax_name,
+			'parent_item'       => __( 'Parent', 'wizhi' ) . $tax_name,
+			'parent_item_colon' => __( 'Parent', 'wizhi' ) . $tax_name,
+			'edit_item'         => __( 'Edit', 'wizhi' ) . $tax_name,
+			'update_item'       => __( 'Upgrade', 'wizhi' ) . $tax_name,
+			'add_new_item'      => __( 'Add New', 'wizhi' ) . $tax_name,
+			'new_item_name'     => sprintf( __( 'New %s', 'wizhi' ), $tax_name ),
+			'menu_name'         => $tax_name,
 		];
 
 		//分类法参数
-		$options = [
+		$args = [
 			'hierarchical'      => $hierarchical,
 			'labels'            => $labels,
 			'show_ui'           => true,
@@ -142,10 +106,8 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 		];
 
 		if ( strlen( $tax_slug ) > 0 ) {
-			$type = new PostType( $post_type );
-			$type->taxonomy( $names, $options );
+			register_taxonomy( $tax_slug, [ $post_type ], $args );
 		}
 
-		return $type;
 	}
 }
