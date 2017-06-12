@@ -41,13 +41,6 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
     );
 
     public static $prefixesPsr0 = array (
-        'L' => 
-        array (
-            'Less' => 
-            array (
-                0 => __DIR__ . '/..' . '/oyejorge/less.php/lib',
-            ),
-        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 
@@ -101,7 +94,6 @@ class ComposerStaticInit3b62548a3de3a2a4320710ab9c8a25e3
         'Nette\\Utils\\Strings' => __DIR__ . '/..' . '/nette/utils/src/Utils/Strings.php',
         'Nette\\Utils\\UnknownImageFileException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Validators' => __DIR__ . '/..' . '/nette/utils/src/Utils/Validators.php',
-        'lessc' => __DIR__ . '/..' . '/oyejorge/less.php/lessc.inc.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
