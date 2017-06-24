@@ -1,6 +1,15 @@
 <?php
+/**
+ * 已被弃用的类，在未来的版本中会被移除
+ */
 
-// Nette Form 和 BootStrap 3 表单相结合
+/**
+ * 格式化 Nette Form
+ *
+ * @param \Form $form
+ *
+ * @deprecated
+ */
 function wizhi_form(Form $form){
 	$renderer = $form->getRenderer();
 	$renderer->wrappers['controls']['container'] = NULL;
