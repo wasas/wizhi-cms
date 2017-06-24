@@ -1,5 +1,7 @@
 <?php
 
+use Nette\Neon\Neon;
+
 /**
  * 内置的文章类型选项
  *
@@ -28,25 +30,27 @@ function wizhi_post_types() {
  * @return array
  */
 function wizhi_post_types_icon() {
-	$post_types_icons = [
-		'prod'     => 'dashicons-cart',
-		'event'    => 'dashicons-calendar',
-		'review'   => 'dashicons-thumbs-up',
-		'case'     => 'dashicons-awards',
-		'corp'     => 'dashicons-universal-access',
-		'team'     => 'dashicons-groups',
-		'slider'   => 'dashicons-slides',
-		'faq'      => 'dashicons-editor-help',
-		'download' => 'dashicons-download',
-	];
 
-	return $post_types_icons;
+	$post_types_icons = "
+		prod: dashicons-cart
+		event: dashicons-calendar
+		review: dashicons-thumbs-up
+		case: dashicons-awards
+		corp: dashicons-universal-access
+		team: dashicons-groups
+		slider: dashicons-slides
+		faq: dashicons-editor-help
+		download: dashicons-download
+	";
+
+	return Neon::decode( $post_types_icons );
 }
 
-$config = [
-	'owner'    => 'iwillhappy1314',
-	'repo'     => 'wizhi-cms',
-	'basename' => 'wizhi-cms/cms.php',
-];
 
-new WP_GitHub_Updater( $config );
+$config = "
+	owner: iwillhappy1314
+	repo: wizhi-cms
+	basename: wizhi-cms/cms.php'
+";
+
+new WP_GitHub_Updater( Neon::decode( $config ) );

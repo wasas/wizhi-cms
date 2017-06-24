@@ -9,4 +9,6 @@ return array(
     'TheFold\\WordPress\\' => array($vendorDir . '/thefold/wordpress-dispatcher'),
     'PostTypes\\' => array($vendorDir . '/jjgrainger/posttypes/src'),
     'Overtrue\\Pinyin\\' => array($vendorDir . '/overtrue/pinyin/src'),
+    'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),
+    'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
 );

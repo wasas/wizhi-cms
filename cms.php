@@ -16,6 +16,9 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
+use Nette\Loaders\RobotLoader;
+
+
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 
 	// 显示警告信息
@@ -60,6 +63,14 @@ function load_fieldmanager() {
 global $cms_settings;
 
 $cms_settings = get_option( 'wizhi_cms_settings' );
+
+// 自动加载目录中的类
+$loader = new RobotLoader;
+$loader->addDirectory( WIZHI_CMS . 'src' );
+
+// And set caching to the 'temp' directory
+$loader->setTempDirectory( WP_CONTENT_DIR . '/cache' );
+$loader->register();
 
 // 加载功能函数
 include_all_php( WIZHI_CMS . 'inc/' );

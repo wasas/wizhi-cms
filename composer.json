@@ -8,7 +8,10 @@
     "overtrue/pinyin": "^3.0",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "jjgrainger/posttypes": "^1.1",
-    "doctrine/inflector": "^1.1"
+    "doctrine/inflector": "^1.1",
+    "nette/neon": "^2.4",
+    "nette/robot-loader": "^3.0",
+    "illuminate/support": "^5.4"
   },
   "license": "MIT",
   "authors": [

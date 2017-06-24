@@ -4,7 +4,6 @@
  *
  */
 
-
 /**
  * 根据分类法获取文章类型
  *
@@ -121,13 +120,13 @@ function wizhi_get_the_archive_title() {
 
 		$title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
 
-		$post_type      = get_queried_object()->name;
+		$post_type          = get_queried_object()->name;
 		$post_type_settings = get_archive_option( $post_type );
 
 		if ( ! empty( $post_type_settings[ 'title' ] ) ) {
 			$title = $post_type_settings[ 'title' ];
 		}
-		
+
 	} elseif ( is_page() ) {
 		$title = sprintf( __( '%s' ), get_the_title( '', false ) );
 	} elseif ( is_single() ) {
@@ -173,7 +172,6 @@ function wizhi_get_the_archive_description( $post_type = '' ) {
 }
 
 
-
 /**
  * 获取分类法列表模板, 排除默认的页面模板
  *
@@ -184,7 +182,7 @@ function wizhi_get_taxonomy_templates() {
 
 	$page_templates = wp_get_theme()->get_page_templates();
 
-	$taxonomy_templates = [ ];
+	$taxonomy_templates = [];
 
 	foreach ( $page_templates as $filename => $template_name ) {
 
@@ -270,7 +268,7 @@ if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
 	function wizhi_get_image_sizes() {
 		$image_sizes_orig   = get_intermediate_image_sizes();
 		$image_sizes_orig[] = 'full';
-		$image_sizes        = [ ];
+		$image_sizes        = [];
 
 		foreach ( $image_sizes_orig as $size ) {
 			$image_sizes[ $size ] = $size;
@@ -286,7 +284,7 @@ if ( ! function_exists( 'wizhi_get_image_sizes' ) ) {
  * 排序方法
  */
 function wizhi_get_display_order() {
-	$output             = [ ];
+	$output             = [];
 	$output[ 'author' ] = __( 'Author', 'wizhi' );
 	$output[ 'date' ]   = __( 'Date', 'wizhi' );
 	$output[ 'title' ]  = __( 'Title', 'wizhi' );
@@ -300,7 +298,7 @@ function wizhi_get_display_order() {
  * 排序方法
  */
 function wizhi_color_option() {
-	$output              = [ ];
+	$output              = [];
 	$output[]            = __( 'Default', 'wizhi' );
 	$output[ 'success' ] = __( 'Success（Green）', 'wizhi' );
 	$output[ 'info' ]    = __( 'Info（Blue）', 'wizhi' );
@@ -315,7 +313,7 @@ function wizhi_color_option() {
  * 排序依据
  */
 function wizhi_get_display_direction() {
-	$output           = [ ];
+	$output           = [];
 	$output[ 'ASC' ]  = __( 'ASC', 'wizhi' );
 	$output[ 'DESC' ] = __( 'DESC', 'wizhi' );
 
@@ -383,7 +381,7 @@ function wizhi_get_post_list( $type = "post", $id = "false" ) {
 			$output[ get_the_ID() ] = $fieldout;
 		endwhile;
 	}
-	
+
 	wp_reset_postdata();
 
 	return $output;
