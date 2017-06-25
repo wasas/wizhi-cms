@@ -83,7 +83,7 @@ function add_default_content_type() {
 				'thumbnail',
 			], true, Arrays::get( $icons, $slug, 'dashicons-admin-post' ) );
 
-			wizhi_create_taxs( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( 'Category', 'wizhi' ), true );
+			wizhi_create_taxs( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( ' Category', 'wizhi' ), true );
 
 		}
 

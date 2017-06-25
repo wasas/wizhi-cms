@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-06-12 14:05+0800\n"
-"PO-Revision-Date: 2017-06-12 14:05+0800\n"
+"POT-Creation-Date: 2017-06-25 09:23+0800\n"
+"PO-Revision-Date: 2017-06-25 09:23+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: front\n"
 "X-Poedit-SearchPathExcluded-4: admin\n"
 
-#: cms.php:24
+#: cms.php:27
 #, php-format
 msgid ""
 "Your PHP version（%1$s）can`t match plugin require, please update to PHP "
@@ -29,6 +29,30 @@ msgid ""
 msgstr ""
 "您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则"
 "插件没有任何作用。"
+
+#: inc/deprecated.php:62 inc/deprecated.php:64 inc/deprecated.php:66
+#: inc/deprecated.php:68 inc/deprecated.php:70 inc/deprecated.php:72
+#: inc/deprecated.php:95 inc/deprecated.php:104 inc/deprecated.php:106
+#: vendor/jjgrainger/posttypes/src/PostType.php:207
+#: vendor/jjgrainger/posttypes/src/PostType.php:208
+#: vendor/jjgrainger/posttypes/src/PostType.php:209
+#: vendor/jjgrainger/posttypes/src/PostType.php:210
+#: vendor/jjgrainger/posttypes/src/PostType.php:485
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:120
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:121
+#: vendor/jjgrainger/posttypes/src/Taxonomy.php:122
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: inc/deprecated.php:109
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: inc/deprecated.php:111
+msgid "Archives"
+msgstr "归档"
 
 #: inc/fieldmanager/php/class-fieldmanager-checkbox.php:69
 msgid "Saved a checkbox with a value that was not one of the options"
@@ -172,128 +196,104 @@ msgstr "分类项目字段"
 msgid "The validation rule \"%s\" does not exist."
 msgstr "验证规则\"%s\"不存在。"
 
-#: inc/helper.php:89 inc/helper.php:91 inc/helper.php:93 inc/helper.php:95
-#: inc/helper.php:97 inc/helper.php:99 inc/helper.php:122 inc/helper.php:132
-#: inc/helper.php:134 vendor/jjgrainger/posttypes/src/PostType.php:207
-#: vendor/jjgrainger/posttypes/src/PostType.php:208
-#: vendor/jjgrainger/posttypes/src/PostType.php:209
-#: vendor/jjgrainger/posttypes/src/PostType.php:210
-#: vendor/jjgrainger/posttypes/src/PostType.php:485
-#: vendor/jjgrainger/posttypes/src/Taxonomy.php:120
-#: vendor/jjgrainger/posttypes/src/Taxonomy.php:121
-#: vendor/jjgrainger/posttypes/src/Taxonomy.php:122
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: inc/helper.php:137
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
-
-#: inc/helper.php:139
-msgid "Archives"
-msgstr "归档"
-
-#: inc/helper.php:290
+#: inc/helper.php:194
 msgid "Author"
 msgstr "作者"
 
-#: inc/helper.php:291
+#: inc/helper.php:195
 msgid "Date"
 msgstr "日期"
 
-#: inc/helper.php:292
+#: inc/helper.php:196
 msgid "Title"
 msgstr "标签"
 
-#: inc/helper.php:293
+#: inc/helper.php:197
 msgid "Random"
 msgstr "随机"
 
-#: inc/helper.php:304
+#: inc/helper.php:208
 msgid "Default"
 msgstr "默认"
 
-#: inc/helper.php:305
+#: inc/helper.php:209
 msgid "Success（Green）"
 msgstr "成功（绿色）"
 
-#: inc/helper.php:306
+#: inc/helper.php:210
 msgid "Info（Blue）"
 msgstr "信息（蓝色）"
 
-#: inc/helper.php:307
+#: inc/helper.php:211
 msgid "Warning（Orange）"
 msgstr "警告（橙色）"
 
-#: inc/helper.php:308
+#: inc/helper.php:212
 msgid "Danger（Red）"
 msgstr "危险（红色）"
 
-#: inc/helper.php:319
+#: inc/helper.php:223
 msgid "ASC"
 msgstr "升序"
 
-#: inc/helper.php:320
+#: inc/helper.php:224
 msgid "DESC"
 msgstr "降序"
 
-#: inc/helper.php:343
+#: inc/helper.php:247
 msgid "Select content type"
 msgstr "选择内容类型"
 
-#: inc/helper.php:344
+#: inc/helper.php:248
 msgid "Post"
 msgstr "文章"
 
-#: inc/helper.php:345 modules/pagination.php:54
+#: inc/helper.php:249 modules/pagination.php:54
 msgid "Page"
 msgstr "页面"
 
-#: inc/helper.php:374
+#: inc/helper.php:278
 msgid "Select content"
 msgstr "选择内容"
 
-#: inc/helper.php:402
+#: inc/helper.php:306
 msgid "Select taxonomy"
 msgstr "选择分类方法"
 
-#: inc/helper.php:403 modules/content_types.php:98
+#: inc/helper.php:307
 msgid "Category"
 msgstr "分类"
 
-#: inc/helper.php:404
+#: inc/helper.php:308
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helper.php:468
+#: inc/helper.php:372
 msgid "Select Category"
 msgstr "选择分类目录"
 
 #: inc/post_types.php:28 inc/post_types.php:29 inc/post_types.php:92
-#: vendor/jjgrainger/posttypes/src/PostType.php:211
-msgid "Add New"
+msgid "Add New "
 msgstr "添加"
 
 #: inc/post_types.php:30 inc/post_types.php:90
-msgid "Edit"
+msgid "Edit "
 msgstr "编辑"
 
 #: inc/post_types.php:31
-msgid "New"
-msgstr "新"
+msgid "New "
+msgstr "添加"
 
 #: inc/post_types.php:32 inc/post_types.php:87
-msgid "All"
+msgid "All "
 msgstr "所有"
 
 #: inc/post_types.php:33
-msgid "View"
+msgid "View "
 msgstr "查看"
 
 #: inc/post_types.php:34 inc/post_types.php:86
-msgid "Search"
+msgid "Search "
 msgstr "搜索"
 
 #: inc/post_types.php:35
@@ -307,11 +307,11 @@ msgid "Could not find %s in trash"
 msgstr "回收站中没有%s"
 
 #: inc/post_types.php:88 inc/post_types.php:89
-msgid "Parent"
+msgid "Parent "
 msgstr "父级"
 
 #: inc/post_types.php:91
-msgid "Upgrade"
+msgid "Upgrade "
 msgstr "更新"
 
 #: inc/post_types.php:93 vendor/jjgrainger/posttypes/src/PostType.php:214
@@ -319,39 +319,39 @@ msgstr "更新"
 msgid "New %s"
 msgstr "新 %s"
 
-#: modules/config.php:10
+#: modules/config.php:12
 msgid "Product"
 msgstr "产品"
 
-#: modules/config.php:11
+#: modules/config.php:13
 msgid "Event"
 msgstr "事件"
 
-#: modules/config.php:12
+#: modules/config.php:14
 msgid "Review"
 msgstr "评价"
 
-#: modules/config.php:13
+#: modules/config.php:15
 msgid "Portfolio"
 msgstr "案例"
 
-#: modules/config.php:14
+#: modules/config.php:16
 msgid "Cooperation"
 msgstr "合作"
 
-#: modules/config.php:15
+#: modules/config.php:17
 msgid "Team"
 msgstr "团队"
 
-#: modules/config.php:16 modules/shortcodes-ui.php:300
+#: modules/config.php:18 modules/shortcodes-ui.php:300
 msgid "Slider"
 msgstr "幻灯"
 
-#: modules/config.php:17
+#: modules/config.php:19
 msgid "Faq"
 msgstr "问题"
 
-#: modules/config.php:18
+#: modules/config.php:20
 msgid "Download"
 msgstr "下载"
 
@@ -415,6 +415,10 @@ msgstr "小屏幕分栏数量"
 #: modules/content_types.php:51
 msgid "Posts Per Page"
 msgstr "每页的文章数"
+
+#: modules/content_types.php:86
+msgid " Category"
+msgstr "分类"
 
 #: modules/metabox/posts.php:22
 msgid "Post Fields"
@@ -687,6 +691,10 @@ msgstr "查看 %s 下的所有文章"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
+#: vendor/jjgrainger/posttypes/src/PostType.php:211
+msgid "Add New"
+msgstr "添加"
+
 #: vendor/jjgrainger/posttypes/src/PostType.php:212
 #: vendor/jjgrainger/posttypes/src/Taxonomy.php:127
 #, php-format
@@ -822,16 +830,10 @@ msgstr "添加或删除%s"
 msgid "Choose from most used %s"
 msgstr "从最常用的%s中选择"
 
-#~ msgid " Category"
-#~ msgstr "分类"
+#~ msgid "New"
+#~ msgstr "新"
 
-#~ msgid "Add New "
-#~ msgstr "添加"
-
-#~ msgid "New "
-#~ msgstr "添加"
-
-#~ msgid "All "
+#~ msgid "All"
 #~ msgstr "所有"
 
 #~ msgid "Insert Post Element"
