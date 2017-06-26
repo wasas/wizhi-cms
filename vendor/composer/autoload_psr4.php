@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'TheFold\\WordPress\\' => array($vendorDir . '/thefold/wordpress-dispatcher'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'PostTypes\\' => array($vendorDir . '/jjgrainger/posttypes/src'),
     'Overtrue\\Pinyin\\' => array($vendorDir . '/overtrue/pinyin/src'),
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),

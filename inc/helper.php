@@ -4,6 +4,40 @@
  *
  */
 
+
+if (! function_exists('dd')) {
+	/**
+	 * Dump the passed variables and end the script.
+	 *
+	 * @param  mixed
+	 * @return void
+	 */
+	function dd(...$args)
+	{
+		foreach ($args as $x) {
+			(new Dumper)->dump($x);
+		}
+		die(1);
+	}
+}
+
+if (! function_exists('dda')) {
+	/**
+	 * Dump the passed array variables and end the script.
+	 *
+	 * @param  mixed
+	 * @return void
+	 */
+	function dda(...$args)
+	{
+		foreach ($args as $x) {
+			(new Dumper)->dump($x->toArray());
+		}
+		die(1);
+	}
+}
+
+
 /**
  * 根据分类法获取文章类型
  *

@@ -11,7 +11,8 @@
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "jjgrainger/posttypes": "^1.1",
     "doctrine/inflector": "^1.1",
-    "illuminate/support": "^5.4"
+    "illuminate/support": "^5.4",
+    "symfony/var-dumper": "^3.3"
   },
   "license": "MIT",
   "authors": [
