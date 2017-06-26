@@ -7,7 +7,7 @@
 
 if (! function_exists('dd')) {
 	/**
-	 * Dump the passed variables and end the script.
+	 * 输出传入的变量并结束程序
 	 *
 	 * @param  mixed
 	 * @return void
@@ -23,7 +23,7 @@ if (! function_exists('dd')) {
 
 if (! function_exists('dda')) {
 	/**
-	 * Dump the passed array variables and end the script.
+	 * 输出传入的变量并结束程序
 	 *
 	 * @param  mixed
 	 * @return void

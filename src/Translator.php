@@ -22,7 +22,7 @@ class Translator implements ITranslator {
 	 */
 	public function translate( $message, $count = null ) {
 
-		$messages = file_get_contents( get_theme_file_path( 'strings.ini' ) );
+		$messages = file_get_contents( get_theme_file_path( 'strings.neon' ) );
 		$messages = Neon::decode( $messages );
 
 		$lang = get_bloginfo( 'language' );
