@@ -138,3 +138,40 @@ function wizhi_get_the_archive_description( $post_type = '' ) {
 	return false;
 
 }
+
+
+
+
+/**
+ * 获取自定义分类法列表
+ *
+ * @param string $type
+ *
+ * @return array
+ *
+ * @deprecated
+ */
+function taxonomy_list( $type = "taxonomy" ) {
+	$output = [
+		0          => sprintf( '— %s —', __( 'Select taxonomy', 'wizhi' ) ),
+		'category' => __( 'Category', 'wizhi' ),
+		'post_tag' => __( 'Tags', 'wizhi' ),
+	];
+
+	$args = [
+		'public'   => true,
+		'_builtin' => false,
+	];
+
+	$taxonomies = get_taxonomies( $args );
+
+	foreach ( $taxonomies as $taxonomy ) {
+		$tax = get_taxonomy( $taxonomy );
+		if ( ( ! $tax->show_tagcloud || empty( $tax->labels->name ) ) && $type == "tag" ) {
+			continue;
+		}
+		$output[ esc_attr( $taxonomy ) ] = esc_attr( $tax->labels->name );
+	}
+
+	return $output;
+}

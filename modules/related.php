@@ -10,40 +10,42 @@
  *
  * @package template
  *
- * @usage wizhi_related('post', 'post_tag', 4, 'related')
+ * @usage   wizhi_related('post', 'post_tag', 4, 'related')
  */
-function wizhi_related( $type, $tax, $num, $tmp ) {
+if ( ! function_exists( 'wizhi_related' ) ) {
+	function wizhi_related( $type, $tax, $num, $tmp ) {
 
-	global $post;
-	$tags = wp_get_post_terms( $post->ID, $tax );
+		global $post;
+		$tags = wp_get_post_terms( $post->ID, $tax );
 
-	if ( $tags ) {
-		$tag_ids = [ ];
+		if ( $tags ) {
+			$tag_ids = [];
 
-		foreach ( $tags as $tag ) {
-			$tag_ids[] = $tag->term_id;
+			foreach ( $tags as $tag ) {
+				$tag_ids[] = $tag->term_id;
+			}
+
+			$args = [
+				'post_type'        => $type,
+				'post__not_in'     => [ $post->ID ],
+				'posts_per_page'   => $num,
+				'caller_get_posts' => 1,
+				'tax_query'        => [
+					[
+						'taxonomy' => $tax,
+						'field'    => 'id',
+						'terms'    => $tag_ids,
+					],
+				],
+			];
+
+			$related_query = new wp_query( $args );
+
+			while ( $related_query->have_posts() ) : $related_query->the_post();
+				wizhi_get_template_part( 'content', $tmp );
+			endwhile;
+
 		}
-
-		$args = [
-            'post_type'        => $type,
-            'post__not_in'     => [ $post->ID ],
-            'posts_per_page'   => $num,
-            'caller_get_posts' => 1,
-            'tax_query' => array(
-                array(
-                    'taxonomy' => $tax,
-                    'field' => 'id',
-                    'terms' => $tag_ids
-                )
-            )
-        ];
-
-		$related_query = new wp_query( $args );
-
-		while ( $related_query->have_posts() ) : $related_query->the_post();
-			wizhi_get_template_part( 'content', $tmp );
-		endwhile;
-
+		wp_reset_query();
 	}
-	wp_reset_query();
 }

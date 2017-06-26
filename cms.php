@@ -18,7 +18,6 @@ require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
 use Nette\Loaders\RobotLoader;
 
-
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 
 	// 显示警告信息
@@ -37,6 +36,11 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 add_action( 'plugins_loaded', function () {
 	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/lang/' );
 	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+
+	// 检测是否安装了 fieldmanager 插件，如果未安装，包含插件内置的
+	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
+		require_once WIZHI_CMS . 'inc/fieldmanager/fieldmanager.php';
+	}
 } );
 
 /**
@@ -50,18 +54,8 @@ function include_all_php( $folder ) {
 	}
 }
 
-/**
- * 插件启用时,检测 fieldmanager 和 shortcode ui 插件是否激活, 如果未激活, 包含插件内置的 fieldmanager
- */
-add_action( 'plugins_loaded', 'load_fieldmanager', 0 );
-function load_fieldmanager() {
-	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
-		require_once WIZHI_CMS . 'inc/fieldmanager/fieldmanager.php';
-	}
-}
 
 global $cms_settings;
-
 $cms_settings = get_option( 'wizhi_cms_settings' );
 
 // 自动加载目录中的类

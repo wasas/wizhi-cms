@@ -5,9 +5,6 @@
 
 use Overtrue\Pinyin\Pinyin;
 
-add_filter( 'name_save_pre', 'wizhi_post_slug', 0 );
-add_filter( 'pre_category_nicename', 'wizhi_term_slug', 0 );
-add_filter( 'sanitize_file_name', 'wizhi_filename_slug', 0 );
 
 /**
  * 替换文章标题为拼音
@@ -16,7 +13,7 @@ add_filter( 'sanitize_file_name', 'wizhi_filename_slug', 0 );
  *
  * @return mixed
  */
-function wizhi_post_slug( $slug ) {
+add_filter( 'name_save_pre', function ( $slug ) {
 
 	// 手动编辑时，不自动转换为拼音
 	if ( $slug ) {
@@ -29,7 +26,7 @@ function wizhi_post_slug( $slug ) {
 	$title = $pinyin->permalink( $_POST[ 'post_title' ] );
 
 	return sanitize_title( $title );
-}
+}, 0 );
 
 
 /**
@@ -39,7 +36,7 @@ function wizhi_post_slug( $slug ) {
  *
  * @return mixed
  */
-function wizhi_term_slug( $slug ) {
+add_filter( 'pre_category_nicename', function ( $slug ) {
 
 	// 手动编辑时，不自动转换为拼音
 	if ( $slug ) {
@@ -52,7 +49,7 @@ function wizhi_term_slug( $slug ) {
 	$title = $pinyin->permalink( $_POST[ 'tag-name' ] );
 
 	return sanitize_title( $title );
-}
+}, 0 );
 
 
 /**
@@ -62,7 +59,7 @@ function wizhi_term_slug( $slug ) {
  *
  * @return mixed
  */
-function wizhi_filename_slug( $filename ) {
+add_filter( 'sanitize_file_name', function ( $filename ) {
 
 	// 手动编辑时，不自动转换为拼音
 	$pinyin = new Pinyin();
@@ -83,4 +80,4 @@ function wizhi_filename_slug( $filename ) {
 
 	return $filename;
 
-}
+}, 0 );

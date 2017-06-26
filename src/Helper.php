@@ -51,4 +51,21 @@ class Helper {
 		};
 	}
 
+
+	/**
+	 * 判断是否为英文
+	 *
+	 * @return bool
+	 */
+	function en() {
+
+		$lang = get_bloginfo( 'language' );
+
+		if ( $lang == 'en-US' ) {
+			return true;
+		}
+
+		return false;
+	}
+
 }
