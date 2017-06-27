@@ -189,7 +189,7 @@ class DataOption {
 	 *
 	 * @return array $image_sizes 缩略图尺寸列表
 	 */
-	function sizes() {
+	public static function sizes() {
 		$image_sizes_orig   = get_intermediate_image_sizes();
 		$image_sizes_orig[] = 'full';
 		$image_sizes        = [];

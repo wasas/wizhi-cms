@@ -27,7 +27,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( 'Button color', 'wizhi' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' => wizhi_color_option(),
+				'options' =>  DataOption::colors(),
 			],
 			[
 				'label'   => __( 'Button Size', 'wizhi' ),
@@ -116,7 +116,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( 'Alert type', 'wizhi' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' => wizhi_color_option(),
+				'options' =>  DataOption::colors(),
 			],
 			[
 				'label' => __( 'Alert content', 'wizhi' ),
@@ -167,14 +167,14 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
-				'options' => wizhi_get_post_types(),
+				'options' => DataOption::types(),
 			],
 			[
 				'label'   => __( 'Taxonomy', 'wizhi' ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
-				'options' => wizhi_get_taxonomy_list(),
+				'options' => DataOption::taxonomies(),
 			],
 			[
 				'label' => __( 'Term', 'wizhi' ),
@@ -226,14 +226,14 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
-				'options' => wizhi_get_post_types(),
+				'options' => DataOption::types(),
 			],
 			[
 				'label'   => __( 'Taxonomy', 'wizhi' ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
-				'options' => wizhi_get_taxonomy_list(),
+				'options' => DataOption::taxonomies(),
 			],
 			[
 				'label' => __( 'Term', 'wizhi' ),
@@ -246,7 +246,7 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'thumbs',
 				'type'    => 'select',
 				'value'   => 'thumbnail',
-				'options' => wizhi_get_image_sizes(),
+				'options' => DataOption::size(),
 			],
 			[
 				'label'   => __( 'Thumbnail position', 'wizhi' ),
@@ -305,14 +305,14 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'type',
 				'type'    => 'select',
 				'value'   => 'post',
-				'options' => wizhi_get_post_types(),
+				'options' => DataOption::types(),
 			],
 			[
 				'label'   => __( 'Taxonomy', 'wizhi' ),
 				'attr'    => 'tax',
 				'type'    => 'select',
 				'value'   => 'category',
-				'options' => wizhi_get_taxonomy_list(),
+				'options' => DataOption::taxonomies(),
 			],
 			[
 				'label' => __( 'Term', 'wizhi' ),
@@ -325,7 +325,7 @@ function wizhi_shortcode_ui() {
 				'attr'    => 'thumbs',
 				'type'    => 'select',
 				'value'   => 'thumbnail',
-				'options' => wizhi_get_image_sizes(),
+				'options' => DataOption::sizes(),
 			],
 			[
 				'label' => __( 'Show post count', 'wizhi' ),
