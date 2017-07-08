@@ -140,8 +140,6 @@ function wizhi_get_the_archive_description( $post_type = '' ) {
 }
 
 
-
-
 /**
  * 获取自定义分类法列表
  *

@@ -12,7 +12,8 @@
     "jjgrainger/posttypes": "^1.1",
     "doctrine/inflector": "^1.1",
     "illuminate/support": "^5.4",
-    "symfony/var-dumper": "^3.3"
+    "symfony/var-dumper": "^3.3",
+    "league/color-extractor": "^0.3.2"
   },
   "license": "MIT",
   "authors": [
