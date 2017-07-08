@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
+class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -12,11 +12,18 @@ class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
+        'cc0107e88c368125e4c340f82346108a' => __DIR__ . '/../..' . '/src/Wizhi/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Wizhi\\' => 6,
+            'Whoops\\' => 7,
+        ),
         'T' => 
         array (
+            'Twig\\' => 5,
             'TheFold\\WordPress\\' => 18,
         ),
         'S' => 
@@ -55,11 +62,24 @@ class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
         ),
         'C' => 
         array (
+            'Composer\\Installers\\' => 20,
             'Carbon\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Wizhi\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Wizhi',
+        ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
         'TheFold\\WordPress\\' => 
         array (
             0 => __DIR__ . '/..' . '/thefold/wordpress-dispatcher',
@@ -152,6 +172,10 @@ class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -163,6 +187,13 @@ class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
     );
 
     public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 
@@ -227,11 +258,11 @@ class ComposerStaticInitbd73824851756d6ce2e22695151ed81e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbd73824851756d6ce2e22695151ed81e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbd73824851756d6ce2e22695151ed81e::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitbd73824851756d6ce2e22695151ed81e::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitbd73824851756d6ce2e22695151ed81e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitbd73824851756d6ce2e22695151ed81e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,218 +1,42 @@
 [
     {
-        "name": "nette/utils",
-        "version": "v2.4.6",
-        "version_normalized": "2.4.6.0",
+        "name": "composer/installers",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/nette/utils.git",
-            "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e"
+            "url": "https://github.com/composer/installers.git",
+            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nette/utils/zipball/266160aec0d99516e0ea510de1dfa24a0dc1e76e",
-            "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e",
+            "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.6.0"
+            "composer-plugin-api": "^1.0"
         },
-        "conflict": {
-            "nette/nette": "<2.2"
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
         },
         "require-dev": {
-            "nette/tester": "~2.0",
-            "tracy/tracy": "^2.3"
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
         },
-        "suggest": {
-            "ext-gd": "to use Image",
-            "ext-iconv": "to use Strings::webalize() and toAscii()",
-            "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
-            "ext-json": "to use Nette\\Utils\\Json",
-            "ext-mbstring": "to use Strings::lower() etc...",
-            "ext-xml": "to use Strings::length() etc. when mbstring is not available"
-        },
-        "time": "2017-04-26T10:04:49+00:00",
-        "type": "library",
+        "time": "2017-04-24T06:37:16+00:00",
+        "type": "composer-plugin",
         "extra": {
+            "class": "Composer\\Installers\\Plugin",
             "branch-alias": {
-                "dev-master": "2.4-dev"
+                "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause",
-            "GPL-2.0",
-            "GPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "David Grudl",
-                "homepage": "https://davidgrudl.com"
-            },
-            {
-                "name": "Nette Community",
-                "homepage": "https://nette.org/contributors"
-            }
-        ],
-        "description": "Nette Utility Classes",
-        "homepage": "https://nette.org"
-    },
-    {
-        "name": "nette/finder",
-        "version": "v2.4.0",
-        "version_normalized": "2.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nette/finder.git",
-            "reference": "5cabd5fe89f9903715359a403b820c7f94f9bb5e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nette/finder/zipball/5cabd5fe89f9903715359a403b820c7f94f9bb5e",
-            "reference": "5cabd5fe89f9903715359a403b820c7f94f9bb5e",
-            "shasum": ""
-        },
-        "require": {
-            "nette/utils": "~2.4",
-            "php": ">=5.6.0"
-        },
-        "conflict": {
-            "nette/nette": "<2.2"
-        },
-        "require-dev": {
-            "nette/tester": "~2.0",
-            "tracy/tracy": "^2.3"
-        },
-        "time": "2016-05-17T15:49:06+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause",
-            "GPL-2.0",
-            "GPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "David Grudl",
-                "homepage": "https://davidgrudl.com"
-            },
-            {
-                "name": "Nette Community",
-                "homepage": "https://nette.org/contributors"
-            }
-        ],
-        "description": "Nette Finder: Files Searching",
-        "homepage": "https://nette.org"
-    },
-    {
-        "name": "nette/robot-loader",
-        "version": "v3.0.0",
-        "version_normalized": "3.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nette/robot-loader.git",
-            "reference": "459fc6bf08f0fd7f6889897e3acdff523dbf1159"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nette/robot-loader/zipball/459fc6bf08f0fd7f6889897e3acdff523dbf1159",
-            "reference": "459fc6bf08f0fd7f6889897e3acdff523dbf1159",
-            "shasum": ""
-        },
-        "require": {
-            "ext-tokenizer": "*",
-            "nette/finder": "^2.3 || ^3.0",
-            "nette/utils": "^2.4 || ^3.0",
-            "php": ">=5.6.0"
-        },
-        "conflict": {
-            "nette/nette": "<2.2"
-        },
-        "require-dev": {
-            "nette/tester": "^2.0",
-            "tracy/tracy": "^2.3"
-        },
-        "time": "2017-02-10T13:44:22+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause",
-            "GPL-2.0",
-            "GPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "David Grudl",
-                "homepage": "https://davidgrudl.com"
-            },
-            {
-                "name": "Nette Community",
-                "homepage": "https://nette.org/contributors"
-            }
-        ],
-        "description": "🍀 RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
-        "homepage": "https://nette.org",
-        "keywords": [
-            "autoload",
-            "class",
-            "interface",
-            "nette",
-            "trait"
-        ]
-    },
-    {
-        "name": "thefold/wordpress-dispatcher",
-        "version": "1.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/timbofield/wordpress-dispatcher.git",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/timbofield/wordpress-dispatcher/zipball/a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4"
-        },
-        "time": "2015-04-29T10:54:48+00:00",
-        "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "TheFold\\WordPress\\": "/"
+                "Composer\\Installers\\": "src/Composer/Installers"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -221,11 +45,75 @@
         ],
         "authors": [
             {
-                "name": "Tim Field",
-                "email": "tim@thefold.co.nz"
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
             }
         ],
-        "description": "Create URL endpoints within WordPress"
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Eliasis",
+            "Hurad",
+            "ImageCMS",
+            "Kanboard",
+            "MODX Evo",
+            "Mautic",
+            "Maya",
+            "OXID",
+            "Plentymarkets",
+            "Porto",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "itop",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lavalite",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "sydes",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
     },
     {
         "name": "doctrine/inflector",
@@ -297,37 +185,34 @@
         ]
     },
     {
-        "name": "league/color-extractor",
-        "version": "0.3.2",
-        "version_normalized": "0.3.2.0",
+        "name": "psr/log",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/thephpleague/color-extractor.git",
-            "reference": "837086ec60f50c84c611c613963e4ad2e2aec806"
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/color-extractor/zipball/837086ec60f50c84c611c613963e4ad2e2aec806",
-            "reference": "837086ec60f50c84c611c613963e4ad2e2aec806",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
             "shasum": ""
         },
         "require": {
-            "ext-gd": "*",
-            "php": ">=5.4.0"
+            "php": ">=5.3.0"
         },
-        "replace": {
-            "matthecat/colorextractor": "*"
-        },
-        "require-dev": {
-            "friendsofphp/php-cs-fixer": "~2",
-            "phpunit/phpunit": "~5"
-        },
-        "time": "2016-12-15T09:30:02+00:00",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "": "src"
+                "Psr\\Log\\": "Psr/Log/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -336,77 +221,80 @@
         ],
         "authors": [
             {
-                "name": "Mathieu Lechat",
-                "email": "math.lechat@gmail.com",
-                "homepage": "http://matthecat.com",
-                "role": "Developer"
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
             }
         ],
-        "description": "Extract colors from an image as a human would do.",
-        "homepage": "https://github.com/thephpleague/color-extractor",
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
         "keywords": [
-            "color",
-            "extract",
-            "human",
-            "image",
-            "palette"
+            "log",
+            "psr",
+            "psr-3"
         ]
     },
     {
-        "name": "nette/neon",
-        "version": "v2.4.1",
-        "version_normalized": "2.4.1.0",
+        "name": "filp/whoops",
+        "version": "2.1.9",
+        "version_normalized": "2.1.9.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/nette/neon.git",
-            "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b"
+            "url": "https://github.com/filp/whoops.git",
+            "reference": "b238974e1c7cc1859b0c16ddc1c02ecb70ecc07f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/nette/neon/zipball/1a78ff64b1e161ebccc03bdf9366450a69365f5b",
-            "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b",
+            "url": "https://api.github.com/repos/filp/whoops/zipball/b238974e1c7cc1859b0c16ddc1c02ecb70ecc07f",
+            "reference": "b238974e1c7cc1859b0c16ddc1c02ecb70ecc07f",
             "shasum": ""
         },
         "require": {
-            "ext-iconv": "*",
-            "ext-json": "*",
-            "php": ">=5.6.0"
+            "php": "^5.5.9 || ^7.0",
+            "psr/log": "^1.0.1"
         },
         "require-dev": {
-            "nette/tester": "~2.0",
-            "tracy/tracy": "^2.3"
+            "mockery/mockery": "0.9.*",
+            "phpunit/phpunit": "^4.8 || ^5.0",
+            "symfony/var-dumper": "^2.6 || ^3.0"
         },
-        "time": "2017-01-13T08:00:19+00:00",
+        "suggest": {
+            "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
+            "whoops/soap": "Formats errors as SOAP responses"
+        },
+        "time": "2017-06-03T18:33:07+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.4-dev"
+                "dev-master": "2.0-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
-            "classmap": [
-                "src/"
-            ]
+            "psr-4": {
+                "Whoops\\": "src/Whoops/"
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-3-Clause",
-            "GPL-2.0",
-            "GPL-3.0"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "David Grudl",
-                "homepage": "https://davidgrudl.com"
-            },
-            {
-                "name": "Nette Community",
-                "homepage": "https://nette.org/contributors"
+                "name": "Filipe Dobreira",
+                "homepage": "https://github.com/filp",
+                "role": "Developer"
             }
         ],
-        "description": "Nette NEON: parser & generator for Nette Object Notation",
-        "homepage": "http://ne-on.org"
+        "description": "php error handling for cool kids",
+        "homepage": "https://filp.github.io/whoops/",
+        "keywords": [
+            "error",
+            "exception",
+            "handling",
+            "library",
+            "whoops",
+            "zf2"
+        ]
     },
     {
         "name": "symfony/routing",
@@ -487,113 +375,6 @@
             "uri",
             "url"
         ]
-    },
-    {
-        "name": "psr/log",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/php-fig/log.git",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2016-10-10T12:19:37+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Psr\\Log\\": "Psr/Log/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
-            }
-        ],
-        "description": "Common interface for logging libraries",
-        "homepage": "https://github.com/php-fig/log",
-        "keywords": [
-            "log",
-            "psr",
-            "psr-3"
-        ]
-    },
-    {
-        "name": "symfony/debug",
-        "version": "v3.3.4",
-        "version_normalized": "3.3.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/debug.git",
-            "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
-            "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.5.9",
-            "psr/log": "~1.0"
-        },
-        "conflict": {
-            "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
-        },
-        "require-dev": {
-            "symfony/http-kernel": "~2.8|~3.0"
-        },
-        "time": "2017-07-05T13:02:37+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Debug\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Debug Component",
-        "homepage": "https://symfony.com"
     },
     {
         "name": "symfony/polyfill-mbstring",
@@ -774,6 +555,64 @@
             }
         ],
         "description": "Symfony EventDispatcher Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/debug",
+        "version": "v3.3.4",
+        "version_normalized": "3.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/debug.git",
+            "reference": "63b85a968486d95ff9542228dc2e4247f16f9743"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/debug/zipball/63b85a968486d95ff9542228dc2e4247f16f9743",
+            "reference": "63b85a968486d95ff9542228dc2e4247f16f9743",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "psr/log": "~1.0"
+        },
+        "conflict": {
+            "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+        },
+        "require-dev": {
+            "symfony/http-kernel": "~2.8|~3.0"
+        },
+        "time": "2017-07-05T13:02:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Debug\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Debug Component",
         "homepage": "https://symfony.com"
     },
     {
@@ -1590,32 +1429,32 @@
         "homepage": "https://laravel.com"
     },
     {
-        "name": "overtrue/pinyin",
-        "version": "3.0.5",
-        "version_normalized": "3.0.5.0",
+        "name": "jjgrainger/posttypes",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/overtrue/pinyin.git",
-            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168"
+            "url": "https://github.com/jjgrainger/PostTypes.git",
+            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/overtrue/pinyin/zipball/590fd5820d65c3967d33b4d0dc114b893d0a1168",
-            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168",
+            "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/736c43ecf3e6272a1b18c3857ecea3ac4b030745",
+            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3"
+            "php": ">=5.3.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "~4.8"
+            "squizlabs/php_codesniffer": "^2.8"
         },
-        "time": "2017-02-27T02:31:58+00:00",
+        "time": "2017-05-19T12:53:48+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Overtrue\\Pinyin\\": "src/"
+                "PostTypes\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1624,16 +1463,68 @@
         ],
         "authors": [
             {
-                "name": "Carlos",
-                "homepage": "http://github.com/overtrue"
+                "name": "Joe Grainger",
+                "email": "hello@jjgrainger.co.uk",
+                "homepage": "http://jjgrainger.co.uk"
             }
         ],
-        "description": "Chinese to pinyin translator.",
-        "homepage": "https://github.com/overtrue/pinyin",
+        "description": "Simple WordPress custom post types.",
+        "homepage": "https://github.com/jjgrainger/posttype"
+    },
+    {
+        "name": "league/color-extractor",
+        "version": "0.3.2",
+        "version_normalized": "0.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/color-extractor.git",
+            "reference": "837086ec60f50c84c611c613963e4ad2e2aec806"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/color-extractor/zipball/837086ec60f50c84c611c613963e4ad2e2aec806",
+            "reference": "837086ec60f50c84c611c613963e4ad2e2aec806",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.4.0"
+        },
+        "replace": {
+            "matthecat/colorextractor": "*"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "~2",
+            "phpunit/phpunit": "~5"
+        },
+        "time": "2016-12-15T09:30:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mathieu Lechat",
+                "email": "math.lechat@gmail.com",
+                "homepage": "http://matthecat.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Extract colors from an image as a human would do.",
+        "homepage": "https://github.com/thephpleague/color-extractor",
         "keywords": [
-            "Chinese",
-            "Pinyin",
-            "cn2pinyin"
+            "color",
+            "extract",
+            "human",
+            "image",
+            "palette"
         ]
     },
     {
@@ -1680,32 +1571,278 @@
         ]
     },
     {
-        "name": "jjgrainger/posttypes",
-        "version": "1.1.2",
-        "version_normalized": "1.1.2.0",
+        "name": "nette/neon",
+        "version": "v2.4.1",
+        "version_normalized": "2.4.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/jjgrainger/PostTypes.git",
-            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745"
+            "url": "https://github.com/nette/neon.git",
+            "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/736c43ecf3e6272a1b18c3857ecea3ac4b030745",
-            "reference": "736c43ecf3e6272a1b18c3857ecea3ac4b030745",
+            "url": "https://api.github.com/repos/nette/neon/zipball/1a78ff64b1e161ebccc03bdf9366450a69365f5b",
+            "reference": "1a78ff64b1e161ebccc03bdf9366450a69365f5b",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.0"
+            "ext-iconv": "*",
+            "ext-json": "*",
+            "php": ">=5.6.0"
         },
         "require-dev": {
-            "squizlabs/php_codesniffer": "^2.8"
+            "nette/tester": "~2.0",
+            "tracy/tracy": "^2.3"
         },
-        "time": "2017-05-19T12:53:48+00:00",
+        "time": "2017-01-13T08:00:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "Nette NEON: parser & generator for Nette Object Notation",
+        "homepage": "http://ne-on.org"
+    },
+    {
+        "name": "nette/utils",
+        "version": "v2.4.6",
+        "version_normalized": "2.4.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nette/utils.git",
+            "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nette/utils/zipball/266160aec0d99516e0ea510de1dfa24a0dc1e76e",
+            "reference": "266160aec0d99516e0ea510de1dfa24a0dc1e76e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "conflict": {
+            "nette/nette": "<2.2"
+        },
+        "require-dev": {
+            "nette/tester": "~2.0",
+            "tracy/tracy": "^2.3"
+        },
+        "suggest": {
+            "ext-gd": "to use Image",
+            "ext-iconv": "to use Strings::webalize() and toAscii()",
+            "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
+            "ext-json": "to use Nette\\Utils\\Json",
+            "ext-mbstring": "to use Strings::lower() etc...",
+            "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+        },
+        "time": "2017-04-26T10:04:49+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "Nette Utility Classes",
+        "homepage": "https://nette.org"
+    },
+    {
+        "name": "nette/finder",
+        "version": "v2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nette/finder.git",
+            "reference": "5cabd5fe89f9903715359a403b820c7f94f9bb5e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nette/finder/zipball/5cabd5fe89f9903715359a403b820c7f94f9bb5e",
+            "reference": "5cabd5fe89f9903715359a403b820c7f94f9bb5e",
+            "shasum": ""
+        },
+        "require": {
+            "nette/utils": "~2.4",
+            "php": ">=5.6.0"
+        },
+        "conflict": {
+            "nette/nette": "<2.2"
+        },
+        "require-dev": {
+            "nette/tester": "~2.0",
+            "tracy/tracy": "^2.3"
+        },
+        "time": "2016-05-17T15:49:06+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "Nette Finder: Files Searching",
+        "homepage": "https://nette.org"
+    },
+    {
+        "name": "nette/robot-loader",
+        "version": "v3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nette/robot-loader.git",
+            "reference": "459fc6bf08f0fd7f6889897e3acdff523dbf1159"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nette/robot-loader/zipball/459fc6bf08f0fd7f6889897e3acdff523dbf1159",
+            "reference": "459fc6bf08f0fd7f6889897e3acdff523dbf1159",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "nette/finder": "^2.3 || ^3.0",
+            "nette/utils": "^2.4 || ^3.0",
+            "php": ">=5.6.0"
+        },
+        "conflict": {
+            "nette/nette": "<2.2"
+        },
+        "require-dev": {
+            "nette/tester": "^2.0",
+            "tracy/tracy": "^2.3"
+        },
+        "time": "2017-02-10T13:44:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "https://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "https://nette.org/contributors"
+            }
+        ],
+        "description": "🍀 RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
+        "homepage": "https://nette.org",
+        "keywords": [
+            "autoload",
+            "class",
+            "interface",
+            "nette",
+            "trait"
+        ]
+    },
+    {
+        "name": "overtrue/pinyin",
+        "version": "3.0.5",
+        "version_normalized": "3.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/overtrue/pinyin.git",
+            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/overtrue/pinyin/zipball/590fd5820d65c3967d33b4d0dc114b893d0a1168",
+            "reference": "590fd5820d65c3967d33b4d0dc114b893d0a1168",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2017-02-27T02:31:58+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "PostTypes\\": "src/"
+                "Overtrue\\Pinyin\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1714,13 +1851,17 @@
         ],
         "authors": [
             {
-                "name": "Joe Grainger",
-                "email": "hello@jjgrainger.co.uk",
-                "homepage": "http://jjgrainger.co.uk"
+                "name": "Carlos",
+                "homepage": "http://github.com/overtrue"
             }
         ],
-        "description": "Simple WordPress custom post types.",
-        "homepage": "https://github.com/jjgrainger/posttype"
+        "description": "Chinese to pinyin translator.",
+        "homepage": "https://github.com/overtrue/pinyin",
+        "keywords": [
+            "Chinese",
+            "Pinyin",
+            "cn2pinyin"
+        ]
     },
     {
         "name": "symfony/var-dumper",
@@ -1790,6 +1931,112 @@
         "keywords": [
             "debug",
             "dump"
+        ]
+    },
+    {
+        "name": "thefold/wordpress-dispatcher",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/timbofield/wordpress-dispatcher.git",
+            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/timbofield/wordpress-dispatcher/zipball/a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
+            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2015-04-29T10:54:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "TheFold\\WordPress\\": "/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tim Field",
+                "email": "tim@thefold.co.nz"
+            }
+        ],
+        "description": "Create URL endpoints within WordPress"
+    },
+    {
+        "name": "twig/twig",
+        "version": "v2.4.3",
+        "version_normalized": "2.4.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/eab7c3288ae6603d7d6f92b531626af2b162d1f2",
+            "reference": "eab7c3288ae6603d7d6f92b531626af2b162d1f2",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "require-dev": {
+            "psr/container": "^1.0",
+            "symfony/debug": "~2.7",
+            "symfony/phpunit-bridge": "~3.3@dev"
+        },
+        "time": "2017-06-07T18:47:58+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            },
+            "psr-4": {
+                "Twig\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "http://twig.sensiolabs.org/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
         ]
     }
 ]

@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Wizhi\\' => array($baseDir . '/src/Wizhi'),
+    'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'TheFold\\WordPress\\' => array($vendorDir . '/thefold/wordpress-dispatcher'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
@@ -29,6 +32,7 @@ return array(
     'Illuminate\\Events\\' => array($vendorDir . '/illuminate/events'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
+    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     '' => array($vendorDir . '/league/color-extractor/src'),
 );
