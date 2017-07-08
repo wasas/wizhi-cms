@@ -1,10 +1,4 @@
-
-
-
-
-
-
-    <div class="misc-pub-section misc-pub-visibility" id="visibility">
+ <div class="misc-pub-section misc-pub-visibility" id="visibility">
         <?php _e('Visibility:'); ?> <span id="post-visibility-display"><?php
 
             if ( 'private' == $post->post_status ) {

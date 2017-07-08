@@ -2,14 +2,13 @@
 
 namespace Wizhi\Ajax;
 
-interface IAjax
-{
-    /**
-     * Listen to AJAX API calls.
-     *
-     * @param string          $action   The AJAX action name.
-     * @param \Closure|string $callback
-     * @param string|bool     $logged   true, false or 'both' type of users.
-     */
-    public function listen($action, $callback, $logged = 'both');
+interface IAjax {
+	/**
+	 * 监听 AJAX API 调用
+	 *
+	 * @param string          $action   AJAX action 名称
+	 * @param \Closure|string $callback 回调功能名称, 函数或类方法
+	 * @param string|bool     是否登录，true , false 或 'both'
+	 */
+	public function listen( $action, $callback, $logged = 'both' );
 }
