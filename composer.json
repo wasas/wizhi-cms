@@ -27,11 +27,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Wizhi\\": "src/Wizhi/"
+      "Themosis\\": "framework/src/Themosis/"
     },
-    "files": [
-      "src/Wizhi/helpers.php"
-    ]
+    "files": ["framework/src/Themosis/helpers.php"]
   },
   "license": "MIT",
   "authors": [

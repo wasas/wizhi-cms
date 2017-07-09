@@ -12,18 +12,18 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
-        'cc0107e88c368125e4c340f82346108a' => __DIR__ . '/../..' . '/src/Wizhi/helpers.php',
+        '1da68de4f8b24be5f0c8ffb78dc0d818' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'Wizhi\\' => 6,
             'Whoops\\' => 7,
         ),
         'T' => 
         array (
             'Twig\\' => 5,
+            'Themosis\\' => 9,
             'TheFold\\WordPress\\' => 18,
         ),
         'S' => 
@@ -68,10 +68,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
     );
 
     public static $prefixDirsPsr4 = array (
-        'Wizhi\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Wizhi',
-        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
@@ -79,6 +75,10 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Themosis\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/framework/src/Themosis',
         ),
         'TheFold\\WordPress\\' => 
         array (
