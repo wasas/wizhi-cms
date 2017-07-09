@@ -15,6 +15,7 @@
     "illuminate/events": "^5.4",
     "illuminate/view": "^5.4",
     "illuminate/filesystem": "^5.4",
+    "illuminate/database": "^5.3",
     "filp/whoops": "^2.1",
     "overtrue/pinyin": "^3.0",
     "thefold/wordpress-dispatcher": "^1.0",
