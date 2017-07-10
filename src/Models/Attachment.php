@@ -2,108 +2,97 @@
 
 namespace Wizhi\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 /**
- * Attachment model
- * Attachments are only a special type of posts.
- *
- * @author José CI <josec89@gmail.com>
+ * 附件模型，附件是一个文章类型
  */
-class Attachment extends Post
-{
-    /**
-     * Type of post.
-     *
-     * @var string
-     */
-    protected $postType = 'attachment';
+class Attachment extends Post {
+	/**
+	 * 附件文章类型
+	 *
+	 * @var string
+	 */
+	protected $postType = 'attachment';
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'title',
-        'url',
-        'type',
-        'description',
-        'caption',
-        'alt',
-    ];
+	/**
+	 * 附加可以存取的字段到模型表单
+	 *
+	 * @var array
+	 */
+	protected $appends = [
+		'title',
+		'url',
+		'type',
+		'description',
+		'caption',
+		'alt',
+	];
 
-    /**
-     * Gets the title attribute.
-     *
-     * @return string
-     */
-    public function getTitleAttribute()
-    {
-        return $this->post_title;
-    }
+	/**
+	 * 获取附件标题
+	 *
+	 * @return string
+	 */
+	public function getTitleAttribute() {
+		return $this->post_title;
+	}
 
-    /**
-     * Gets the url attribute.
-     *
-     * @return string
-     */
-    public function getUrlAttribute()
-    {
-        return $this->guid;
-    }
+	/**
+	 * 获取附件 URL
+	 *
+	 * @return string
+	 */
+	public function getUrlAttribute() {
+		return $this->guid;
+	}
 
-    /**
-     * Gets the mime type attribute.
-     *
-     * @return string
-     */
-    public function getTypeAttribute()
-    {
-        return $this->post_mime_type;
-    }
+	/**
+	 * 获取附件 Mime 类型
+	 *
+	 * @return string
+	 */
+	public function getTypeAttribute() {
+		return $this->post_mime_type;
+	}
 
-    /**
-     * Gets the description attribute.
-     *
-     * @return string
-     */
-    public function getDescriptionAttribute()
-    {
-        return $this->post_content;
-    }
+	/**
+	 * 获取附件描述
+	 *
+	 * @return string
+	 */
+	public function getDescriptionAttribute() {
+		return $this->post_content;
+	}
 
-    /**
-     * Gets the caption attribute.
-     *
-     * @return string
-     */
-    public function getCaptionAttribute()
-    {
-        return $this->post_excerpt;
-    }
+	/**
+	 * 获取附件说明
+	 *
+	 * @return string
+	 */
+	public function getCaptionAttribute() {
+		return $this->post_excerpt;
+	}
 
-    /**
-     * Gets the alt attribute.
-     *
-     * @return string
-     */
-    public function getAltAttribute()
-    {
-        return $this->meta->_wp_attachment_image_alt;
-    }
+	/**
+	 * 获取附件 Alt 属性
+	 *
+	 * @return string
+	 */
+	public function getAltAttribute() {
+		return $this->meta->_wp_attachment_image_alt;
+	}
 
-    /**
-     * Returns the basic Attachment information.
-     *
-     * @return string
-     */
-    public function toArray()
-    {
-        foreach ($this->appends as $field) {
-            $result[$field] = $this[$field];
-        }
+	/**
+	 * 返回附件基本信息
+	 *
+	 * @return array
+	 */
+	public function toArray() {
+		$result = [];
 
-        return $result;
-    }
+		foreach ( $this->appends as $field ) {
+			$result[ $field ] = $this[ $field ];
+		}
+
+		return $result;
+	}
 }

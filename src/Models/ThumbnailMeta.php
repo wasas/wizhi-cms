@@ -2,6 +2,10 @@
 
 namespace Wizhi\Models;
 
+
+/**
+ * 附件元数据类
+ */
 class ThumbnailMeta extends PostMeta
 {
     const SIZE_THUMBNAIL = 'thumbnail';
@@ -11,16 +15,36 @@ class ThumbnailMeta extends PostMeta
 
     protected $with = ['attachment'];
 
+
+	/**
+	 * 和附件的关系
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
     public function attachment()
     {
         return $this->belongsTo('Wizhi\Models\Attachment', 'meta_value');
     }
 
+
+	/**
+	 * 转为字符串
+	 *
+	 * @return mixed
+	 */
     public function __toString()
     {
         return $this->attachment->guid;
     }
 
+	/**
+	 * 尺寸
+	 *
+	 * @param $size
+	 *
+	 * @return string
+	 * @throws \Exception
+	 */
     public function size($size)
     {
         if ($size  == self::SIZE_FULL) {

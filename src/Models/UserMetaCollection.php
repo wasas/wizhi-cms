@@ -24,6 +24,8 @@ class UserMetaCollection extends Collection {
 				return $item->meta_value;
 			}
 		}
+
+		return false;
 	}
 
 	/**

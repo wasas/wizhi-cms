@@ -2,8 +2,6 @@
 
 /**
  * 用户构建类
- *
- * @author Mickael Burguet <www.rundef.com>
  */
 
 namespace Wizhi\Models;
@@ -27,7 +25,7 @@ class UserBuilder extends Builder {
 	}
 
 	/**
-	 * Add nested meta exists conditions to the query.
+	 * 向查询添加嵌套元数据条件。
 	 *
 	 * @param string $metaKey
 	 * @param string $metaValue

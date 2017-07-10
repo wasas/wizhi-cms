@@ -3,9 +3,7 @@
 namespace Wizhi\Models;
 
 /**
- * Taxonomy class.
- *
- * @author Yoram de Langen <yoramdelangen@gmail.com>
+ * 自定义分类法类
  */
 class Taxonomy extends TermTaxonomy {
 }

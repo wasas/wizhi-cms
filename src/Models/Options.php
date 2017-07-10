@@ -10,29 +10,28 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package Wizhi\Models
  */
-
-/**
- * Options class.
- *
- * @author José CI <josec89@gmail.com>
- */
 class Options extends Model {
 	const CREATED_AT = null;
 	const UPDATED_AT = null;
+
 	/**
-	 * The database table used by the model.
+	 * 选项类数据表
 	 *
 	 * @var string
 	 */
 	protected $table = 'options';
+
+
 	/**
-	 * The primary key of the model.
+	 * 选项类主键
 	 *
 	 * @var string
 	 */
 	protected $primaryKey = 'option_id';
+
+
 	/**
-	 * The attributes that are mass assignable.
+	 * 可修改的选项属性
 	 *
 	 * @var array
 	 */
@@ -41,6 +40,8 @@ class Options extends Model {
 		'option_value',
 		'autoload',
 	];
+
+
 	/**
 	 * The accessors to append to the model's array form.
 	 *

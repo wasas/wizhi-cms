@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * 分类法项目类
- *
- * @author Junior Grossi <juniorgro@gmail.com>
  */
 class Term extends Model {
 	protected $table = 'terms';

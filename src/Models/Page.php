@@ -2,7 +2,6 @@
 
 namespace Wizhi\Models;
 
-class Page extends Post
-{
-    protected $postType = 'page';
+class Page extends Post {
+	protected $postType = 'page';
 }

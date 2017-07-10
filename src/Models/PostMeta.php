@@ -2,8 +2,6 @@
 
 /**
  * 文章元数据
- *
- * @author Junior Grossi <juniorgro@gmail.com>
  */
 
 namespace Wizhi\Models;
@@ -18,7 +16,7 @@ class PostMeta extends Model {
 	protected $fillable = [ 'meta_key', 'meta_value', 'post_id' ];
 
 	/**
-	 * Post relationship.
+	 * 文章关系
 	 *
 	 * @param bool $ref
 	 *
@@ -35,7 +33,7 @@ class PostMeta extends Model {
 	}
 
 	/**
-	 * The accessors to append to the model's array form.
+	 * 可以存取的字段
 	 *
 	 * @var array
 	 */
@@ -43,8 +41,7 @@ class PostMeta extends Model {
 
 
 	/**
-	 * Gets the value.
-	 * Tries to unserialize the object and returns the value if that doesn't work.
+	 * 获取元数据值，尝试反序列化对象并返回值
 	 *
 	 * @return bool|mixed
 	 */
@@ -62,7 +59,7 @@ class PostMeta extends Model {
 
 
 	/**
-	 * Taxonomy relationship from the meta_value.
+	 * 从元数据值生成分类法关系
 	 *
 	 * @param null $primary
 	 * @param null $where
@@ -70,12 +67,13 @@ class PostMeta extends Model {
 	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
 	 */
 	public function taxonomy( $primary = null, $where = null ) {
+
 		// possible to exclude a relationship connection
 		if ( ! is_null( $primary ) && ! empty( $primary ) ) {
 			$this->primaryKey = $primary;
 		}
 
-		// load relationship
+		// 加载关系
 		$relation = $this->hasOne( 'Wizhi\Models\TermTaxonomy', 'term_taxonomy_id' );
 
 		// do we need to filter which value to look for with meta_value
@@ -87,7 +85,7 @@ class PostMeta extends Model {
 	}
 
 	/**
-	 * Override newCollection() to return a custom collection.
+	 * 覆盖 newCollection() 以返回自定义 collection.
 	 *
 	 * @param array $models
 	 *
