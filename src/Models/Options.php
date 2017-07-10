@@ -43,7 +43,7 @@ class Options extends Model {
 
 
 	/**
-	 * The accessors to append to the model's array form.
+	 * 允许读写的字段
 	 *
 	 * @var array
 	 */
@@ -59,9 +59,8 @@ class Options extends Model {
 	public function getValueAttribute() {
 		try {
 			$value = unserialize( $this->option_value );
-			// if we get false, but the original value is not false then something has gone wrong.
-			// return the option_value as is instead of unserializing
-			// added this to handle cases where unserialize doesn't throw an error that is catchable
+			// 如果我们得到了 false, 但是原生数据不是 false, 那肯定是什么地方出错了，原样返回option_value，而不是反序列化数据
+			// 添加这个来处理反序列化不抛出可获取的错误信息的情况
 			return $value === false && $this->option_value !== false ? $this->option_value : $value;
 		} catch ( Exception $ex ) {
 			return $this->option_value;

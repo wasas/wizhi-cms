@@ -11,6 +11,7 @@
     "illuminate/support": "^5.4",
     "illuminate/routing": "^5.4",
     "illuminate/container": "^5.4",
+    "illuminate/pagination": "^5.4",
     "illuminate/http": "^5.4",
     "illuminate/events": "^5.4",
     "illuminate/view": "^5.4",
@@ -30,7 +31,9 @@
     "psr-4": {
       "Themosis\\": "framework/src/Themosis/"
     },
-    "files": ["framework/src/Themosis/helpers.php"]
+    "files": [
+      "framework/src/Themosis/helpers.php"
+    ]
   },
   "license": "MIT",
   "authors": [
