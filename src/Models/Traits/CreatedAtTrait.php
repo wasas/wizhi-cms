@@ -3,9 +3,7 @@
 namespace Wizhi\Models\Traits;
 
 /**
- * CreatedAt trait.
- *
- * @author Junior Grossi <juniorgro@gmail.com>
+ * CreatedAt 特征
  */
 trait CreatedAtTrait
 {

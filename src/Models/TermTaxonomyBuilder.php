@@ -3,13 +3,13 @@
 namespace Wizhi\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\Builder;
 
 
 class TermTaxonomyBuilder extends Builder
 {
 	private $slug;
+
 	/**
 	 * Add posts to the relationship builder.
 	 *
@@ -19,6 +19,8 @@ class TermTaxonomyBuilder extends Builder
 	{
 		return $this->with('posts');
 	}
+
+
 	/**
 	 * Set taxonomy type to category.
 	 *
@@ -28,6 +30,8 @@ class TermTaxonomyBuilder extends Builder
 	{
 		return $this->where('taxonomy', 'category');
 	}
+
+
 	/**
 	 * Set taxonomy type to nav_menu.
 	 *
@@ -37,6 +41,8 @@ class TermTaxonomyBuilder extends Builder
 	{
 		return $this->where('taxonomy', 'nav_menu');
 	}
+
+
 	/**
 	 * Get a term taxonomy by specific slug.
 	 *
@@ -58,4 +64,5 @@ class TermTaxonomyBuilder extends Builder
 		}
 		return $this;
 	}
+
 }

@@ -3,14 +3,12 @@
 namespace Wizhi\Models;
 
 /**
- * Tag class.
- *
- * @author Mickael Burguet <www.rundef.com>
+ * 标签类
  */
 class Tag extends TermTaxonomy
 {
     /**
-     * Used to set the post's type.
+     * 设置自定义分类法名称
      */
     protected $taxonomy = 'post_tag';
 }

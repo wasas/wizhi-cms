@@ -3,21 +3,19 @@
 namespace Wizhi\Models;
 
 /**
- * Menu class.
- *
- * @author Yoram de Langen <yoramdelangen@gmail.com>
+ * 菜单类
  */
 class Menu extends TermTaxonomy
 {
     /**
-     * Set taxonomy type.
+     * 设置分类法类型
      *
      * @var string
      */
     protected $taxonomy = 'nav_menu';
 
     /**
-     * Add related relationships we need to use for a menu.
+     * 添加菜单需要的关联关系
      *
      * @var array
      */

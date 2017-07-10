@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * 设置选项
  *
- * @package WeDevs\ORM\WP
+ * @package Wizhi\Models
  */
 
 /**
@@ -48,11 +48,12 @@ class Options extends Model {
 	 */
 	protected $appends = [ 'value' ];
 
+
 	/**
-	 * Gets the value.
-	 * Tries to unserialize the object and returns the value if that doesn't work.
+	 * 获取值
+	 * 如果不工作、尝试反序列化对象并返回值
 	 *
-	 * @return value
+	 * @return bool|mixed
 	 */
 	public function getValueAttribute() {
 		try {
@@ -67,7 +68,7 @@ class Options extends Model {
 	}
 
 	/**
-	 * Gets option field by its name.
+	 * 根据名称获取选项值
 	 *
 	 * @param string $name
 	 *
@@ -82,7 +83,7 @@ class Options extends Model {
 	}
 
 	/**
-	 * Gets all the options.
+	 * 获取所有选项
 	 *
 	 * @return array
 	 */

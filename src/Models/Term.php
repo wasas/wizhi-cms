@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 /**
- * Class Term.
+ * 分类法项目类
  *
  * @author Junior Grossi <juniorgro@gmail.com>
  */
@@ -16,6 +16,8 @@ class Term extends Model {
 	public $timestamps = false;
 
 	/**
+	 * 分类法
+	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
 	 */
 	public function taxonomy() {
@@ -23,6 +25,8 @@ class Term extends Model {
 	}
 
 	/**
+	 * 分类项目元数据
+	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function meta() {

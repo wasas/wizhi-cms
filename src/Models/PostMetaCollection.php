@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Corcel\PostMetaCollection.
+ * PostMetaCollection.
  *
  * @author Junior Grossi <juniorgro@gmail.com>
  */

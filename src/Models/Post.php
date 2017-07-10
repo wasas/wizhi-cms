@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Post model.
+ * 文章模型
  *
  * @author Junior Grossi <juniorgro@gmail.com>
  */
@@ -68,6 +68,12 @@ class Post extends Model
         'keywords_str',
     ];
 
+
+	/**
+	 * Post constructor.
+	 *
+	 * @param array $attributes
+	 */
     public function __construct(array $attributes = [])
     {
         foreach ($this->fillable as $field) {
@@ -81,7 +87,7 @@ class Post extends Model
 
 
 	/**
-	 * Filter by post type
+	 * 根据文章类型过滤
 	 *
 	 * @param $query
 	 * @param string $type
@@ -92,8 +98,10 @@ class Post extends Model
 	{
 		return $query->where('post_type', '=', $type);
 	}
+
+
 	/**
-	 * Filter by post status
+	 * 根据文章状态过滤
 	 *
 	 * @param $query
 	 * @param string $status
@@ -104,8 +112,10 @@ class Post extends Model
 	{
 		return $query->where('post_status', '=', $status);
 	}
+
+
 	/**
-	 * Filter by post author
+	 * 根据作者过滤
 	 *
 	 * @param $query
 	 * @param null $author
@@ -121,7 +131,7 @@ class Post extends Model
 
 
     /**
-     * Meta data relationship.
+     * 元数据关系
      *
      * @return \Wizhi\Models\PostMetaCollection
      */

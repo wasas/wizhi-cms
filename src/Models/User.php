@@ -10,6 +10,6 @@ class User extends Model
 	protected $timestamp = false;
 	public function meta()
 	{
-		return $this->hasMany('WeDevs\ORM\WP\UserMeta', 'user_id');
+		return $this->hasMany('Wizhi\Models\UserMeta', 'user_id');
 	}
 }
