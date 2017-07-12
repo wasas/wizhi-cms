@@ -25,4 +25,10 @@ add_action( 'after_setup_theme', function () {
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
 
+	$fm = new Fieldmanager_Select( [
+		'name'    => '_related_page',
+		'options' => DataOption::posts( 'page' ),
+	] );
+	$fm->add_term_meta_box( __( 'Related Page', 'wizhi' ), $taxonomies );
+
 } );
