@@ -40,7 +40,7 @@ function add_type_options( $type ) {
 				'options' => wizhi_get_loop_template( 'wizhi/archive' ),
 			] ),
 			"main_tax"     => new Fieldmanager_Select( __( 'Main Taxonomy', 'wizhi' ), [
-				'options' => wizhi_get_taxonomy_list(),
+				'options' =>  DataOption::taxonomies(),
 			] ),
 			"column"       => new Fieldmanager_Select( __( 'Column', 'wizhi' ), [
 				'options' => $column,
