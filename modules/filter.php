@@ -48,7 +48,7 @@ function wizhi_auto_switch_theme( $theme ) {
 
 	$mobile_theme = get_option( 'wizhi_cms_settings' )[ 'mobile_theme' ];
 
-	if ( isset( $mobile_theme ) && wp_is_mobile() ) {
+	if ( isset( $mobile_theme ) && wp_is_mobile() && $mobile_theme != 0 ) {
 		$theme = $mobile_theme;
 	}
 

@@ -211,7 +211,10 @@ class DataOption {
 	public static function themes() {
 		$themes = wp_get_themes();
 
-		$options = [];
+		$options = [
+			0 => 'Responsive',
+		];
+
 		foreach ( $themes as $theme ) {
 			$options[ $theme->template ] = $theme->Name;
 		}
