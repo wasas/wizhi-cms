@@ -7,6 +7,15 @@
 
 add_action( 'after_setup_theme', function () {
 
+	$column = [
+		''   => __( '1 Column', 'wizhi' ),
+		'-2' => __( '2 Column', 'wizhi' ),
+		'-3' => __( '3 Column', 'wizhi' ),
+		'-4' => __( '4 Column', 'wizhi' ),
+		'-5' => __( '5 Column', 'wizhi' ),
+		'-6' => __( '6 Column', 'wizhi' ),
+	];
+
 	$taxonomies = apply_filters( 'wizhi_taxonomy_setting_supports', [ 'category' ] );
 
 	$fm = new Fieldmanager_Textfield( [
@@ -26,9 +35,27 @@ add_action( 'after_setup_theme', function () {
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
 
 	$fm = new Fieldmanager_Select( [
-		'name'    => '_related_page',
-		'options' => DataOption::posts( 'page' ),
+		'name'    => 'main_tax',
+		'options' => DataOption::taxonomies(),
 	] );
-	$fm->add_term_meta_box( __( 'Related Page', 'wizhi' ), $taxonomies );
+	$fm->add_term_meta_box( __( 'Main Taxonomy', 'wizhi' ), $taxonomies );
+
+	$fm = new Fieldmanager_Select( [
+		'name'    => 'column',
+		'options' => $column,
+	] );
+	$fm->add_term_meta_box( __( 'Column', 'wizhi' ), $taxonomies );
+
+	$fm = new Fieldmanager_Select( [
+		'name'    => 'column_small',
+		'options' => $column,
+	] );
+	$fm->add_term_meta_box( __( 'Small Screen Column', 'wizhi' ), $taxonomies );
+
+	$fm = new Fieldmanager_Textfield( [
+		'name'    => 'per_page',
+		'options' => $column,
+	] );
+	$fm->add_term_meta_box( __( 'Posts Per Page', 'wizhi' ), $taxonomies );
 
 } );
