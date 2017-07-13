@@ -25,7 +25,6 @@ add_filter( 'the_permalink', function () {
 } );
 
 
-
 /**
  * 添加语言类到 body 标签上
  *
@@ -38,3 +37,20 @@ add_filter( 'body_class', function ( $classes ) {
 
 	return $classes;
 } );
+
+
+/**
+ * 自动切换手机主题
+ */
+add_filter( 'template', 'wizhi_auto_switch_theme' );
+add_filter( 'stylesheet', 'wizhi_auto_switch_theme' );
+function wizhi_auto_switch_theme( $theme ) {
+
+	$mobile_theme = get_option( 'wizhi_cms_settings' )[ 'mobile_theme' ];
+
+	if ( isset( $mobile_theme ) && wp_is_mobile() ) {
+		$theme = $mobile_theme;
+	}
+
+	return $theme;
+}

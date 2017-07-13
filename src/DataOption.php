@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 输出数据数组
  */
@@ -199,6 +200,23 @@ class DataOption {
 		}
 
 		return $image_sizes;
+	}
+
+
+	/**
+	 * 获取已安装的所有主题
+	 *
+	 * @return array
+	 */
+	public static function themes() {
+		$themes = wp_get_themes();
+
+		$options = [];
+		foreach ( $themes as $theme ) {
+			$options[ $theme->template ] = $theme->Name;
+		}
+
+		return $options;
 	}
 
 }

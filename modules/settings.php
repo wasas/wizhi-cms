@@ -16,6 +16,7 @@ add_action( 'init', function () {
 
 		$fields = [
 			"enabled_post_types" => new Fieldmanager_Checkboxes( __( 'Enabled content types', 'wizhi' ), [ 'options' => $post_types ] ),
+			"mobile_theme"       => new Fieldmanager_Select( __( 'Mobile Theme', 'wizhi' ), [ 'options' => DataOption::themes() ] ),
 			"is_cleanup"         => new Fieldmanager_Checkbox( __( 'Clean up useless menus for normal user', 'wizhi' ) ),
 			"deny_modify"        => new Fieldmanager_Checkbox( __( 'Deny modify files in backend', 'wizhi' ) ),
 		];
