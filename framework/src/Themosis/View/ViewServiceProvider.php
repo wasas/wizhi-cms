@@ -63,7 +63,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         $container = $this->app;
 
-        $storage = $container['path.storage'].'views'.DS;
+        $storage = $storage = get_theme_file_path('cache');;
         $filesystem = $container['filesystem'];
 
         $bladeCompiler = new BladeCompiler($filesystem, $storage);

@@ -52,7 +52,7 @@ add_action( 'after_setup_theme', function () {
 	] );
 	$fm->add_term_meta_box( __( 'Small Screen Column', 'wizhi' ), $taxonomies );
 
-	$fm = new Fieldmanager_Textfield( [
+	$fm = new Fieldmanager_Select( [
 		'name'    => 'per_page',
 		'options' => $column,
 	] );
