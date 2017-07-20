@@ -58,4 +58,11 @@ add_action( 'after_setup_theme', function () {
 	] );
 	$fm->add_term_meta_box( __( 'Posts Per Page', 'wizhi' ), $taxonomies );
 
+
+	$fm = new Fieldmanager_Select( [
+		'name'    => '_related_page',
+		'options' => DataOption::posts( 'page' ),
+	] );
+	$fm->add_term_meta_box( __( 'Related Page', 'wizhi' ), $taxonomies );
+
 } );
