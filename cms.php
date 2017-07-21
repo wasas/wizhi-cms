@@ -78,13 +78,13 @@ include_all_php( WIZHI_CMS . 'modules/shortcodes' );
 /*----------------------------------------------------*/
 // WordPress database
 /*----------------------------------------------------*/
-$table_prefix = getenv('DB_PREFIX') ? getenv('DB_PREFIX') : 'wp_';
+$table_prefix = getenv( 'DB_PREFIX' ) ? getenv( 'DB_PREFIX' ) : 'wp_';
 
 /*----------------------------------------------------*/
 // Illuminate database
 /*----------------------------------------------------*/
 $capsule = new Illuminate\Database\Capsule\Manager();
-$capsule->addConnection([
+$capsule->addConnection( [
 	'driver'    => 'mysql',
 	'host'      => DB_HOST,
 	'database'  => DB_NAME,
@@ -92,10 +92,10 @@ $capsule->addConnection([
 	'password'  => DB_PASSWORD,
 	'charset'   => DB_CHARSET,
 	'collation' => DB_COLLATE,
-	'prefix'    => $table_prefix
-]);
+	'prefix'    => $table_prefix,
+] );
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
-$GLOBALS['themosis.capsule'] = $capsule;
+$GLOBALS[ 'themosis.capsule' ] = $capsule;
 
 require_once WIZHI_CMS . 'framework/themosis.php';
