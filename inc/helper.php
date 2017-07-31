@@ -4,6 +4,8 @@
  *
  */
 
+use Nette\Forms\Form;
+
 if ( ! function_exists( 'dd' ) ) {
 	/**
 	 * 输出传入的变量并结束程序
@@ -183,4 +185,40 @@ if ( ! function_exists( "order_no" ) ) {
 	function order_no() {
 		return date( 'Ymd' ) . str_pad( mt_rand( 1, 99999 ), 5, '0', STR_PAD_LEFT );
 	}
+}
+
+
+/**
+ * 格式化 Nette Form
+ *
+ * @package   helper
+ *
+ * @param  \Form  $form Nette 表单
+ * @param  string $type 表单显示类型
+ *
+ * @return string 订单号字符串
+ */
+function wizhi_form( Form $form, $type = 'horizontal' ) {
+	$renderer                                            = $form->getRenderer();
+	$renderer->wrappers[ 'controls' ][ 'container' ]     = null;
+	$renderer->wrappers[ 'pair' ][ 'container' ]         = 'div class=form-group';
+	$renderer->wrappers[ 'pair' ][ '.error' ]            = 'has-error';
+	$renderer->wrappers[ 'control' ][ 'container' ]      = $type == 'horizontal' ? 'div class=col-sm-9' : '';
+	$renderer->wrappers[ 'label' ][ 'container' ]        = $type == 'horizontal' ? 'div class="col-sm-3 control-label"' : '';
+	$renderer->wrappers[ 'control' ][ 'description' ]    = 'span class=help-block';
+	$renderer->wrappers[ 'control' ][ 'errorcontainer' ] = 'span class=help-block';
+	$form->getElementPrototype()->class( $type == 'horizontal' ? 'form-horizontal' : '' );
+	$form->onRender[] = function ( $form ) {
+		foreach ( $form->getControls() as $control ) {
+			$type = $control->getOption( 'type' );
+			if ( $type === 'button' ) {
+				$control->getControlPrototype()->addClass( empty( $usedPrimary ) ? 'btn btn-primary' : 'btn btn-default' );
+				$usedPrimary = true;
+			} elseif ( in_array( $type, [ 'text', 'textarea', 'select' ], true ) ) {
+				$control->getControlPrototype()->addClass( 'form-control' );
+			} elseif ( in_array( $type, [ 'checkbox', 'radio' ], true ) ) {
+				$control->getSeparatorPrototype()->setName( 'div' )->addClass( $type );
+			}
+		}
+	};
 }

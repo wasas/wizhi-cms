@@ -26,7 +26,8 @@
     "symfony/var-dumper": "^3.3",
     "league/color-extractor": "^0.3.2",
     "twig/twig": "^2.4",
-    "league/container": "^2.4"
+    "league/container": "^2.4",
+    "nette/forms": "^2.4"
   },
   "autoload": {
     "psr-4": {
