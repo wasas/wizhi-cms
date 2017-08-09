@@ -12,4 +12,5 @@ return array(
     '667aeda72477189d0494fecd327c3641' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
     'e2a3474226883943f89da2a3bdb21000' => $vendorDir . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
     '1da68de4f8b24be5f0c8ffb78dc0d818' => $baseDir . '/framework/src/Themosis/helpers.php',
+    '7a2fc715df8aa8bba6480acc043ee8d4' => $baseDir . '/src/Forms/Form.php',
 );

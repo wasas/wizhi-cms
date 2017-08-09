@@ -13,6 +13,7 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
         '1da68de4f8b24be5f0c8ffb78dc0d818' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
+        '7a2fc715df8aa8bba6480acc043ee8d4' => __DIR__ . '/../..' . '/src/Forms/Form.php',
     );
 
     public static $prefixLengthsPsr4 = array (

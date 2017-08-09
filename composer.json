@@ -34,7 +34,8 @@
       "Themosis\\": "framework/src/Themosis/"
     },
     "files": [
-      "framework/src/Themosis/helpers.php"
+      "framework/src/Themosis/helpers.php",
+      "src/Forms/Form.php"
     ]
   },
   "license": "MIT",
