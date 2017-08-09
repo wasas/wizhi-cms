@@ -15,16 +15,7 @@ class SliderInput extends \Nette\Forms\Controls\ChoiceControl {
 	/** validation rule */
 	const VALID = ':selectBoxValid';
 
-	/** @var array of option / optgroup */
-	private $options = [];
 	private $args = [];
-
-	/** @var mixed */
-	private $prompt = false;
-
-	/** @var array */
-	private $optionAttributes = [];
-
 
 	/**
 	 * DropdownInput constructor.

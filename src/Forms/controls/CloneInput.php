@@ -17,16 +17,6 @@ class CloneInput extends \Nette\Forms\Controls\ChoiceControl {
 	/** validation rule */
 	const VALID = ':selectBoxValid';
 
-	/** @var array of option / optgroup */
-	private $options = [];
-
-	/** @var mixed */
-	private $prompt = false;
-
-	/** @var array */
-	private $optionAttributes = [];
-
-
 	/**
 	 * DropdownInput constructor.
 	 *

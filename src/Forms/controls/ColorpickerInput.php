@@ -9,7 +9,7 @@ namespace Wizhi\Forms\Controls;
 
 
 /**
- * Multiline text input control.
+ * 颜色选择
  */
 class ColorpickerInput extends \Nette\Forms\Controls\TextBase {
 
@@ -26,7 +26,7 @@ class ColorpickerInput extends \Nette\Forms\Controls\TextBase {
 
 
 	/**
-	 * Generates control's HTML element.
+	 * 生成控件 HTML 内容
 	 *
 	 * @return string
 	 */

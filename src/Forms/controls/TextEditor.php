@@ -11,7 +11,7 @@ use Nette;
 
 
 /**
- * Multiline text input control.
+ * WordPress TinyMce 可视化编辑器
  */
 class TextEditor extends \Nette\Forms\Controls\TextBase {
 
@@ -30,7 +30,7 @@ class TextEditor extends \Nette\Forms\Controls\TextBase {
 
 
 	/**
-	 * Generates control's HTML element.
+	 * 生成控件 HTML 内容
 	 *
 	 * @return Nette\Utils\Html
 	 */
