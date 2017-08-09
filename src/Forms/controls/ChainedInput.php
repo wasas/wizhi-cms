@@ -7,11 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
+use Nette\Forms\Controls\BaseControl;
 
 /**
  * Multiline text input control.
  */
-class ChainedInput extends \Nette\Forms\Controls\BaseControl {
+class ChainedInput extends BaseControl {
 
 	private $settings = [];
 	private $fields = [];

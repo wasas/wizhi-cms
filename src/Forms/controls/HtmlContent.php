@@ -7,11 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
+use Nette\Forms\Controls\BaseControl;
 
 /**
  * Push button control with no default behavior.
  */
-class HtmlContent extends \Nette\Forms\Controls\BaseControl {
+class HtmlContent extends BaseControl {
 
 	/**
 	 * @param  string|object

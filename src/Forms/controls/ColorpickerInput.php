@@ -7,11 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
+use Nette\Forms\Controls\TextBase;
 
 /**
  * 颜色选择
  */
-class ColorpickerInput extends \Nette\Forms\Controls\TextBase {
+class ColorpickerInput extends TextBase {
 
 	private $settings = [];
 

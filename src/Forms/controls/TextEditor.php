@@ -7,13 +7,13 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette;
+use Nette\Forms\Controls\TextBase;
 
 
 /**
  * WordPress TinyMce 可视化编辑器
  */
-class TextEditor extends \Nette\Forms\Controls\TextBase {
+class TextEditor extends TextBase {
 
 	private $settings = [];
 
@@ -32,7 +32,7 @@ class TextEditor extends \Nette\Forms\Controls\TextBase {
 	/**
 	 * 生成控件 HTML 内容
 	 *
-	 * @return Nette\Utils\Html
+	 * @return string
 	 */
 	public function getControl() {
 

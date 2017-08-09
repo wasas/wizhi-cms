@@ -7,11 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
+use Nette\Forms\Controls\TextBase;
 
 /**
  * Multiline text input control.
  */
-class DatepickerInput extends \Nette\Forms\Controls\TextBase {
+class DatepickerInput extends TextBase {
 
 	private $settings = [];
 

@@ -8,11 +8,12 @@
 namespace Wizhi\Forms\Controls;
 
 use Nette\Forms\Form;
+use Nette\Forms\Controls\HiddenField;
 
 /**
  * CSRF 保护字段
  */
-class CsrfInput extends \Nette\Forms\Controls\HiddenField {
+class CsrfInput extends HiddenField {
 	const PROTECTION = 'Wizhi\Forms\Controls\CsrfInput::validateCsrf';
 
 
@@ -73,8 +74,9 @@ class CsrfInput extends \Nette\Forms\Controls\HiddenField {
 	/**
 	 * 验证 Csrf 令牌
 	 *
+	 * @param \Wizhi\Forms\Controls\CsrfInput $control
+	 *
 	 * @return bool
-	 * @internal
 	 */
 	public static function validateCsrf(CsrfInput $control) {
 		$name  = $control->getHtmlName();

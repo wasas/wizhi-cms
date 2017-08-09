@@ -6,6 +6,7 @@ use Nette;
 use Nette\Forms\Form;
 use Nette\Forms\Helpers;
 use Nette\Forms\Validator;
+use Nette\Forms\Controls\ChoiceControl;
 
 
 /**
@@ -14,7 +15,7 @@ use Nette\Forms\Validator;
  * todo: 添加验证规则，验证规则其实就是 text input 的验证规则
  * todo: 考虑在已选择项目上添加高亮的可能性
  */
-class DropdownSelectInput extends \Nette\Forms\Controls\ChoiceControl {
+class DropdownSelectInput extends ChoiceControl {
 
 	/** validation rule */
 	const VALID = ':selectBoxValid';

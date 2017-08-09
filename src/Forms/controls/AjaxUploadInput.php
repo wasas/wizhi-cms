@@ -10,6 +10,7 @@ use Nette;
 use Nette\Forms\Form;
 use Nette\Forms\Helpers;
 use Nette\Forms\Validator;
+use Nette\Forms\Controls\BaseControl;
 
 
 /**
@@ -19,7 +20,7 @@ use Nette\Forms\Validator;
  * todo: 考虑增加上传进度, 增加上传出错时的提示
  * todo: 和后端相册数据统一
  */
-class  AjaxUploadInput extends \Nette\Forms\Controls\BaseControl {
+class  AjaxUploadInput extends BaseControl {
 
 	/** validation rule */
 	const VALID = ':uploadControlValid';

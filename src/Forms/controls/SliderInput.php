@@ -3,6 +3,7 @@
 namespace Wizhi\Forms\Controls;
 
 use Nette\Forms\Form;
+use Nette\Forms\Controls\ChoiceControl;
 
 
 /**
@@ -10,7 +11,7 @@ use Nette\Forms\Form;
  *
  * todo: 优化实现方法
  */
-class SliderInput extends \Nette\Forms\Controls\ChoiceControl {
+class SliderInput extends ChoiceControl {
 
 	/** validation rule */
 	const VALID = ':selectBoxValid';

@@ -5,6 +5,7 @@ namespace Wizhi\Forms\Controls;
 use Nette\Forms\Form;
 use Nette\Forms\Helpers;
 use Nette\Forms\Validator;
+use Nette\Forms\Controls\ChoiceControl;
 
 
 /**
@@ -12,7 +13,7 @@ use Nette\Forms\Validator;
  *
  * todo: 优化实现方法
  */
-class CloneInput extends \Nette\Forms\Controls\ChoiceControl {
+class CloneInput extends ChoiceControl {
 
 	/** validation rule */
 	const VALID = ':selectBoxValid';
