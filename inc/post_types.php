@@ -87,28 +87,35 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 */
 	function wizhi_create_taxs( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
 
+		$tax_names = Inflector::pluralize( $tax_name );
+
 		//分类法的标签
 		$labels = [
-			'name'              => $tax_name,
-			'singular_name'     => $tax_name,
-			'search_items'      => __( 'Search ', 'wizhi' ) . $tax_name,
-			'all_items'         => __( 'All ', 'wizhi' ) . $tax_name,
-			'parent_item'       => __( 'Parent ', 'wizhi' ) . $tax_name,
-			'parent_item_colon' => __( 'Parent ', 'wizhi' ) . $tax_name,
-			'edit_item'         => __( 'Edit ', 'wizhi' ) . $tax_name,
-			'update_item'       => __( 'Upgrade ', 'wizhi' ) . $tax_name,
-			'add_new_item'      => __( 'Add New ', 'wizhi' ) . $tax_name,
-			'new_item_name'     => sprintf( __( 'New %s', 'wizhi' ), $tax_name ),
-			'menu_name'         => $tax_name,
+			'name'                       => $tax_name,
+			'singular_name'              => $tax_name,
+			'menu_name'                  => $tax_name,
+			'all_items'                  => __( 'All ', 'wizhi' ) . $tax_names,
+			'edit_item'                  => __( 'Edit ', 'wizhi' ) . $tax_name,
+			'view_item'                  => __( 'View ', 'wizhi' ) . $tax_name,
+			'update_item'                => __( 'Upgrade ', 'wizhi' ) . $tax_name,
+			'add_new_item'               => __( 'Add New ', 'wizhi' ) . $tax_name,
+			'new_item_name'              => sprintf( __( 'New %s', 'wizhi' ), $tax_name ),
+			'parent_item'                => __( 'Parent ', 'wizhi' ) . $tax_name,
+			'parent_item_colon'          => __( 'Parent ', 'wizhi' ) . $tax_name,
+			'search_items'               => __( 'Search ', 'wizhi' ) . $tax_names,
+			'popular_items'              => __( 'Popular ', 'wizhi' ) . $tax_names,
+			'separate_items_with_commas' => __( 'Separate %s with commas', 'wizhi', $tax_names ),
+			'add_or_remove_items'        => __( 'Add or remove %s', 'wizhi', $tax_names ),
+			'choose_from_most_used'      => __( 'Choose from the most used %s', 'wizhi', $tax_names ),
+			'not_found'                  => __( 'No %s found.', 'wizhi', $tax_names ),
 		];
 
 		//分类法参数
 		$args = [
-			'hierarchical'      => $hierarchical,
 			'labels'            => $labels,
 			'show_ui'           => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
+			'hierarchical'      => $hierarchical,
 			'rewrite'           => [ 'slug' => $tax_slug ],
 			'sort'              => true,
 		];
