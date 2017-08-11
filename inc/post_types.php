@@ -3,6 +3,8 @@
  * 快速添加文章类型和分类方法
  */
 
+use Doctrine\Common\Inflector\Inflector;
+
 if ( ! function_exists( "wizhi_create_types" ) ) {
 	/**
 	 * 快速添加文章类型
@@ -46,7 +48,8 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 			'show_in_menu'       => true,
 			'query_var'          => $is_publish,
 			'rewrite'            => [ 'slug' => $slug ],
-			'capability_type'    => 'post',
+			'capability_type'    => [ $slug, Inflector::pluralize( $slug ) ],
+			'map_meta_cap'       => true,
 			'has_archive'        => $is_publish,
 			'hierarchical'       => false,
 			'supports'           => $support,
