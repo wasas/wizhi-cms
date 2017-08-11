@@ -199,6 +199,10 @@ if ( ! function_exists( "order_no" ) ) {
  * @return string 订单号字符串
  */
 function wizhi_form( Form $form, $type = 'horizontal' ) {
+
+    // 设置自定义 Render 方法
+    $form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
+    
 	$renderer                                            = $form->getRenderer();
 	$renderer->wrappers[ 'controls' ][ 'container' ]     = null;
 	$renderer->wrappers[ 'pair' ][ 'container' ]         = 'div class=form-group';
