@@ -41,20 +41,25 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 
 		//注册文章类型需要的参数
 		$args = [
-			'labels'             => $labels,
-			'public'             => $is_publish,
-			'publicly_queryable' => $is_publish,
-			'show_ui'            => true,
-			'show_in_menu'       => true,
-			'query_var'          => $is_publish,
-			'rewrite'            => [ 'slug' => $slug ],
-			'capability_type'    => [ $slug, Inflector::pluralize( $slug ) ],
-			'map_meta_cap'       => true,
-			'has_archive'        => $is_publish,
-			'hierarchical'       => false,
-			'supports'           => $support,
-			'menu_position'      => 5,
-			'menu_icon'          => $icon,
+			'labels'              => $labels,
+			'description'         => '',
+			'public'              => $is_publish,
+			'exclude_from_search' => ! $is_publish,
+			'publicly_queryable'  => $is_publish,
+			'show_ui'             => true,
+			'show_in_nav_menus'   => true,
+			'show_in_menu'        => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'menu_icon'           => $icon,
+			'capability_type'     => [ $slug, Inflector::pluralize( $slug ) ],
+			'map_meta_cap'        => true,
+			'hierarchical'        => false,
+			'supports'            => $support,
+			'has_archive'         => $is_publish,
+			'rewrite'             => [ 'slug' => $slug ],
+			'query_var'           => $is_publish,
+
 		];
 
 		if ( strlen( $slug ) > 0 ) {
