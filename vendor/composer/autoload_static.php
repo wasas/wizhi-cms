@@ -24,6 +24,8 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'T' => 
         array (
             'Twig\\' => 5,
+            'Thunder\\Shortcode\\Tests\\' => 24,
+            'Thunder\\Shortcode\\' => 18,
             'Themosis\\' => 9,
             'TheFold\\WordPress\\' => 18,
         ),
@@ -69,12 +71,18 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'F' => 
+        array (
+            'Faker\\' => 6,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
         ),
         'C' => 
         array (
+            'Corcel\\Tests\\' => 13,
+            'Corcel\\' => 7,
             'Composer\\Installers\\' => 20,
             'Carbon\\' => 7,
         ),
@@ -88,6 +96,14 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Thunder\\Shortcode\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thunderer/shortcode/tests',
+        ),
+        'Thunder\\Shortcode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thunderer/shortcode/src',
         ),
         'Themosis\\' => 
         array (
@@ -205,9 +221,21 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Corcel\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jgrossi/corcel/tests',
+        ),
+        'Corcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jgrossi/corcel/src',
         ),
         'Composer\\Installers\\' => 
         array (
@@ -229,6 +257,13 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'H' => 
+        array (
+            'Hautelook' => 
+            array (
+                0 => __DIR__ . '/..' . '/hautelook/phpass/src',
             ),
         ),
     );
