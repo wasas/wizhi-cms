@@ -125,7 +125,7 @@ class FormRender implements Nette\Forms\IFormRenderer {
 	/**
 	 * Provides complete form rendering.
 	 *
-	 * @param  Nette\Forms\Form
+	 * @param  $form Nette\Forms\Form
 	 * @param  string 'begin', 'errors', 'ownerrors', 'body', 'end' or empty to render all
 	 *
 	 * @return string
@@ -412,6 +412,7 @@ class FormRender implements Nette\Forms\IFormRenderer {
 		}
 		$pair = $this->getWrapper( 'pair container' );
 		$pair->addHtml( $this->renderLabel( $control ) );
+		$pair->class( $control->getOption( 'class' ), true );
 		$pair->addHtml( $this->getWrapper( 'control container' )->setHtml( implode( ' ', $s ) ) );
 
 		return $pair->render( 0 );

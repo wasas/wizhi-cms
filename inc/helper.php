@@ -200,10 +200,12 @@ if ( ! function_exists( "order_no" ) ) {
  */
 function wizhi_form( Form $form, $type = 'horizontal' ) {
 
-    // 设置自定义 Render 方法
-    $form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
-    
+	// 设置自定义 Render 方法
+	$form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
+
 	$renderer                                            = $form->getRenderer();
+	$renderer->wrappers[ 'group' ][ 'container' ]        = 'fieldset class=row';
+	$renderer->wrappers[ 'group' ][ 'label' ]            = 'legend class=col-md-12';
 	$renderer->wrappers[ 'controls' ][ 'container' ]     = null;
 	$renderer->wrappers[ 'pair' ][ 'container' ]         = 'div class=form-group';
 	$renderer->wrappers[ 'pair' ][ '.error' ]            = 'has-error';
@@ -214,6 +216,9 @@ function wizhi_form( Form $form, $type = 'horizontal' ) {
 	$form->getElementPrototype()->class( $type == 'horizontal' ? 'form-horizontal' : '' );
 	$form->onRender[] = function ( $form ) {
 		foreach ( $form->getControls() as $control ) {
+			if ( ! $control->getOption( 'class' ) ) {
+				$control->setOption( 'class', 'col-md-12' );
+			}
 			$type = $control->getOption( 'type' );
 			if ( $type === 'button' ) {
 				$control->getControlPrototype()->addClass( empty( $usedPrimary ) ? 'btn btn-primary' : 'btn btn-default' );
@@ -221,7 +226,7 @@ function wizhi_form( Form $form, $type = 'horizontal' ) {
 			} elseif ( in_array( $type, [ 'text', 'textarea', 'select' ], true ) ) {
 				$control->getControlPrototype()->addClass( 'form-control' );
 			} elseif ( in_array( $type, [ 'checkbox', 'radio' ], true ) ) {
-				$control->getSeparatorPrototype()->setName( 'div' )->addClass( $type );
+				$control->getSeparatorPrototype()->setName( 'div' )->addClass( $type . ' ' . $type . '-inline' );
 			}
 		}
 	};
