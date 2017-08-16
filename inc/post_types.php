@@ -3,8 +3,6 @@
  * 快速添加文章类型和分类方法
  */
 
-use Doctrine\Common\Inflector\Inflector;
-
 if ( ! function_exists( "wizhi_create_types" ) ) {
 	/**
 	 * 快速添加文章类型
@@ -52,7 +50,7 @@ if ( ! function_exists( "wizhi_create_types" ) ) {
 			'show_in_admin_bar'   => true,
 			'menu_position'       => 5,
 			'menu_icon'           => $icon,
-			'capability_type'     => [ $slug, Inflector::pluralize( $slug ) ],
+			// 'capability_type'     => [ $slug, Inflector::pluralize( $slug ) ],
 			'map_meta_cap'        => true,
 			'hierarchical'        => false,
 			'supports'            => $support,
@@ -87,14 +85,12 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 	 */
 	function wizhi_create_taxs( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
 
-		$tax_names = Inflector::pluralize( $tax_name );
-
 		//分类法的标签
 		$labels = [
 			'name'                       => $tax_name,
 			'singular_name'              => $tax_name,
 			'menu_name'                  => $tax_name,
-			'all_items'                  => __( 'All ', 'wizhi' ) . $tax_names,
+			'all_items'                  => __( 'All ', 'wizhi' ) . $tax_name,
 			'edit_item'                  => __( 'Edit ', 'wizhi' ) . $tax_name,
 			'view_item'                  => __( 'View ', 'wizhi' ) . $tax_name,
 			'update_item'                => __( 'Upgrade ', 'wizhi' ) . $tax_name,
@@ -102,12 +98,12 @@ if ( ! function_exists( "wizhi_create_taxs" ) ) {
 			'new_item_name'              => sprintf( __( 'New %s', 'wizhi' ), $tax_name ),
 			'parent_item'                => __( 'Parent ', 'wizhi' ) . $tax_name,
 			'parent_item_colon'          => __( 'Parent ', 'wizhi' ) . $tax_name,
-			'search_items'               => __( 'Search ', 'wizhi' ) . $tax_names,
-			'popular_items'              => __( 'Popular ', 'wizhi' ) . $tax_names,
-			'separate_items_with_commas' => __( 'Separate %s with commas', 'wizhi', $tax_names ),
-			'add_or_remove_items'        => __( 'Add or remove %s', 'wizhi', $tax_names ),
-			'choose_from_most_used'      => __( 'Choose from the most used %s', 'wizhi', $tax_names ),
-			'not_found'                  => __( 'No %s found.', 'wizhi', $tax_names ),
+			'search_items'               => __( 'Search ', 'wizhi' ) . $tax_name,
+			'popular_items'              => __( 'Popular ', 'wizhi' ) . $tax_name,
+			'separate_items_with_commas' => sprintf( __( 'Separate %s with commas', 'wizhi' ), $tax_name ),
+			'add_or_remove_items'        => sprintf( __( 'Add or remove %s', 'wizhi' ), $tax_name ),
+			'choose_from_most_used'      => sprintf( __( 'Choose from the most used %s', 'wizhi' ), $tax_name ),
+			'not_found'                  => sprintf( __( 'No %s found.', 'wizhi' ), $tax_name ),
 		];
 
 		//分类法参数

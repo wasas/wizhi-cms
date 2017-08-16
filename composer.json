@@ -23,7 +23,6 @@
     "thefold/wordpress-dispatcher": "^1.0",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "jjgrainger/posttypes": "^1.1",
-    "doctrine/inflector": "^1.1",
     "symfony/var-dumper": "^3.3",
     "league/color-extractor": "^0.3.2",
     "twig/twig": "^2.4",

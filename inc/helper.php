@@ -193,7 +193,7 @@ if ( ! function_exists( "order_no" ) ) {
  *
  * @package   helper
  *
- * @param  \Form  $form Nette 表单
+ * @param  Form   $form Nette 表单
  * @param  string $type 表单显示类型
  *
  * @return string 订单号字符串
@@ -230,4 +230,42 @@ function wizhi_form( Form $form, $type = 'horizontal' ) {
 			}
 		}
 	};
+}
+
+
+/**
+ * 为 WordPress 仪表盘格式化表单
+ *
+ * @param \Form  $form
+ * @param string $type
+ */
+function wizhi_admin_form( Form $form, $type = 'horizontal' ) {
+
+	$screen = get_current_screen();
+
+	// 设置自定义 Render 方法
+	$form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
+
+	$renderer                                     = $form->getRenderer();
+	$renderer->wrappers[ 'group' ][ 'container' ] = null;
+	$renderer->wrappers[ 'group' ][ 'label' ]     = 'h2';
+
+	switch ( $type ) {
+		case 'term_meta':
+			if ( $screen->base == 'term' ) {
+				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
+			} else {
+				$renderer->wrappers[ 'controls' ][ 'container' ] = '';
+				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class="form-field wizhi-form-filed"';
+			}
+			break;
+		default:
+			$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+			$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
+	}
+
+	$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
+	$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
+
 }
