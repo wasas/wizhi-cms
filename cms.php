@@ -79,6 +79,7 @@ include_all_php( WIZHI_CMS . 'modules/shortcodes' );
 // WordPress database
 /*----------------------------------------------------*/
 $table_prefix = getenv( 'DB_PREFIX' ) ? getenv( 'DB_PREFIX' ) : 'wp_';
+$collate      = defined( 'DB_COLLATE' ) && DB_COLLATE ? DB_COLLATE : 'utf8_general_ci';
 
 /*----------------------------------------------------*/
 // Illuminate database
@@ -91,7 +92,7 @@ $capsule->addConnection( [
 	'username'  => DB_USER,
 	'password'  => DB_PASSWORD,
 	'charset'   => DB_CHARSET,
-	'collation' => DB_COLLATE,
+	'collation' => $collate,
 	'prefix'    => $table_prefix,
 ] );
 $capsule->setAsGlobal();
