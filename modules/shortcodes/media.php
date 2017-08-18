@@ -52,14 +52,14 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 		// 根据分类别名获取分类ID
 		$args = [
-			'post_type'      => $type,
-			'orderby'        => 'post_date',
-			'order'          => 'DESC',
-			'posts_per_page' => $num,
-			'paged'          => $paged,
-			'tax_query'      => $tax_query,
+			'post_type'           => $type,
+			'orderby'             => 'post_date',
+			'order'               => 'DESC',
+			'posts_per_page'      => $num,
+			'paged'               => $paged,
+			'tax_query'           => $tax_query,
 			'ignore_sticky_posts' => 1,
-			'no_found_rows'  => $no_found_rows,
+			'no_found_rows'       => $no_found_rows,
 		];
 
 		$cat = get_term_by( 'slug', $tag, $tax );
@@ -74,7 +74,7 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 		if ( $heading == false || empty( $tax ) ) {
 
-			echo '<div class="sep medias media-' . $type . $tag . '">';
+			echo '<div class="sep medias media-' . trim( $type ) . '-' . trim( $tag ) . '">';
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
 				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
@@ -82,21 +82,23 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 		} else {
 
-			echo '<div class="sep ui-box ' . $type . $tag . '">';
-			echo '<div class="ui-box-head">';
-			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
-			echo '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
+			echo '<div class="panel panel-default ' . trim( $type ) . '-' . trim( $tag ) . '">';
+			echo '<div class="panel-heading pure-u-1">';
+			echo '<h3 class="panel-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
+			echo '<a class="panel-more" href="' . $cat_link . '" target="_blank">更多></a>';
 			echo '</div>';
-			echo '<div class="ui-box-content">';
+			echo '<div class="panel-body">';
+			echo '<div class="panel-content">';
 
 			echo '<div class="medias media-' . $tag . '">';
 
-				while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-					echo wizhi_load_template_part( 'content', $tmp );
-				endwhile;
+			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
+				echo wizhi_load_template_part( 'content', $tmp );
+			endwhile;
 
 			echo '</div>';
 
+			echo '</div>';
 			echo '</div>';
 			echo '</div>';
 

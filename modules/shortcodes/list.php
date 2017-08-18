@@ -47,14 +47,14 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 
 		// 构建文章查询数组
 		$args = [
-			'post_type'      => $type,
-			'orderby'        => 'post_date',
-			'order'          => 'DESC',
-			'posts_per_page' => $num,
-			'paged'          => $paged,
-			'tax_query'      => $tax_query,
+			'post_type'           => $type,
+			'orderby'             => 'post_date',
+			'order'               => 'DESC',
+			'posts_per_page'      => $num,
+			'paged'               => $paged,
+			'tax_query'           => $tax_query,
 			'ignore_sticky_posts' => 1,
-			'no_found_rows'  => $no_found_rows,
+			'no_found_rows'       => $no_found_rows,
 		];
 
 		// get term archive name and link
@@ -69,7 +69,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 		$wizhi_query = new WP_Query( $args );
 
 		if ( $heading == false || empty( $tax ) ) {
-			echo '<div class="sep ui-list-' . $type . $tag . '">';
+			echo '<div class="sep ui-list-' . trim( $type ) . '-' . trim( $tag ) . '">';
 			echo '<ul class="ui-list">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
@@ -79,18 +79,19 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '</ul>';
 			echo '</div>';
 		} else {
-			echo '<div class="ui-box ' . $type . $tag . '">';
-			echo '<div class="ui-box-head">';
-			echo '<h3 class="ui-box-head-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
-			echo '<a class="ui-box-head-more" href="' . $cat_link . '" target="_blank">更多></a>';
+			echo '<div class="panel panel-default ' . trim( $type ) . '-' . trim( $tag ) . '">';
+			echo '<div class="panel-heading">';
+			echo '<h3 class="panel-title"><a href="' . $cat_link . '">' . $cat_name . '</a></h3>';
+			echo '<a class="panel-more" href="' . $cat_link . '" target="_blank">更多></a>';
 			echo '</div>';
-			echo '<div class="ui-box-content"><ul class="ui-list ui-list-' . $tag . '">';
+			echo '<div class="panel-body">';
+			echo '<div class="panel-content"><ul class="ui-list ui-list-' . $tag . '">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
 				echo wizhi_load_template_part( 'content', $tmp );
 			endwhile;
 
-			echo '</ul></div></div>';
+			echo '</ul></div></div></div>';
 		}
 
 		if ( $pager ) {
