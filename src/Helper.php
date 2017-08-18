@@ -7,6 +7,8 @@ use Wizhi\Helper\Translator;
 
 class Helper {
 
+	use Nette\StaticClass;
+
 	/**
 	 * 定义需要翻译的字符串
 	 *
@@ -57,7 +59,7 @@ class Helper {
 	 *
 	 * @return bool
 	 */
-	function en() {
+	public function static en() {
 
 		$lang = get_bloginfo( 'language' );
 

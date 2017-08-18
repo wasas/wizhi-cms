@@ -5,6 +5,8 @@
  */
 class DataOption {
 
+    use Nette\StaticClass;
+
 
 	/**
 	 * 获取注册的文章类型数组

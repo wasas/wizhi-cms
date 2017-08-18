@@ -9,6 +9,8 @@ use League\ColorExtractor\Palette;
  */
 class ImageColor {
 
+	use Nette\StaticClass;
+
 	/**
 	 * 获取图片的主要颜色
 	 *

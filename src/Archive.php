@@ -5,6 +5,7 @@
  */
 class Archive {
 
+	use Nette\StaticClass;
 
 	/**
 	 * 获取文章类型存档设置
