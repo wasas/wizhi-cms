@@ -43,18 +43,6 @@ add_action( 'plugins_loaded', function () {
 	}
 } );
 
-/**
- * 自动加载 PHP 文件
- *
- * @param  string $folder 需要被包含的文件夹路径, 不能自动发现子目录, 每个子目录需要单独定义
- */
-function include_all_php( $folder ) {
-	foreach ( glob( "{$folder}/*.php" ) as $filename ) {
-		require_once $filename;
-	}
-}
-
-
 global $cms_settings;
 $cms_settings = get_option( 'wizhi_cms_settings' );
 
@@ -74,15 +62,29 @@ foreach ( $classes as $prefix => $path ) {
 
 $loader->register();
 
-
-// 自动加载目录中的类
-
-
 // 加载逻辑设置代码
-// todo: 改善自动加载性能
-include_all_php( WIZHI_CMS . 'modules/' );
-include_all_php( WIZHI_CMS . 'modules/metabox' );
-include_all_php( WIZHI_CMS . 'modules/shortcodes' );
+include( WIZHI_CMS . 'modules/cleanup.php' );
+include( WIZHI_CMS . 'modules/config.php' );
+include( WIZHI_CMS . 'modules/content_types.php' );
+include( WIZHI_CMS . 'modules/deprecated.php' );
+include( WIZHI_CMS . 'modules/filter.php' );
+include( WIZHI_CMS . 'modules/helper.php' );
+include( WIZHI_CMS . 'modules/pinyin.php' );
+include( WIZHI_CMS . 'modules/related.php' );
+include( WIZHI_CMS . 'modules/settings.php' );
+include( WIZHI_CMS . 'modules/shortcodes-ui.php' );
+include( WIZHI_CMS . 'modules/walker.php' );
+
+include( WIZHI_CMS . 'modules/metabox/posts.php' );
+include( WIZHI_CMS . 'modules/metabox/slider.php' );
+include( WIZHI_CMS . 'modules/metabox/term.php' );
+
+include( WIZHI_CMS . 'modules/shortcodes/element.php' );
+include( WIZHI_CMS . 'modules/shortcodes/list.php' );
+include( WIZHI_CMS . 'modules/shortcodes/loop.php' );
+include( WIZHI_CMS . 'modules/shortcodes/media.php' );
+include( WIZHI_CMS . 'modules/shortcodes/page.php' );
+include( WIZHI_CMS . 'modules/shortcodes/slider.php' );
 
 /*----------------------------------------------------*/
 // WordPress database

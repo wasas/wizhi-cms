@@ -10,7 +10,12 @@
  * @since wizhi 1.0
  */
 
-if ( ! function_exists( 'wizhi_pagination' ) ):
+namespace Wizhi\Helper;
+
+class Pagination {
+
+	use \Nette\StaticClass;
+
 	/**
 	 * Pure.css 分页导航
 	 *
@@ -19,15 +24,15 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 	 * @param int    $range 每次显示的页数
 	 *
 	 * @package template
-	 * @access public
+	 * @access  public
 	 *
-	 * @usage wizhi_pagination();
+	 * @usage   wizhi_pagination();
 	 *
 	 */
-	function wizhi_pagination( $query = '', $pages = '', $range = 5 ) {
-        if(wp_is_mobile()){
-            $range = 0;
-        }
+	public static function pure( $query = '', $pages = '', $range = 5 ) {
+		if ( wp_is_mobile() ) {
+			$range = 0;
+		}
 
 		$showitems = ( $range * 2 ) + 1;
 
@@ -51,9 +56,9 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 		}
 
 		if ( 1 != $pages ) {
-			echo '<ul class="ui-paginator"><li><span class="pure-button"> ' . __('Page', 'wizhi') . $paged . ' / ' . $pages . '</span></li>';
+			echo '<ul class="ui-paginator"><li><span class="pure-button"> ' . __( 'Page', 'wizhi' ) . $paged . ' / ' . $pages . '</span></li>';
 			if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
-				echo '<li><a class="pure-button prev" href="' . get_pagenum_link( 1 ) . '">' . __('Home', 'wizhi') . '</a></li>';
+				echo '<li><a class="pure-button prev" href="' . get_pagenum_link( 1 ) . '">' . __( 'Home', 'wizhi' ) . '</a></li>';
 			}
 			if ( $paged > 1 && $showitems < $pages ) {
 				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged - 1 ) . '"> < </a></li>';
@@ -73,15 +78,13 @@ if ( ! function_exists( 'wizhi_pagination' ) ):
 				echo '<li><a class="pure-button next" href="' . get_pagenum_link( $paged + 1 ) . '"> > </a></li>';
 			}
 			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
-				echo '<li><a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __('Last', 'wizhi') . '</a></li>';
+				echo '<li><a class="pure-button" href="' . get_pagenum_link( $pages ) . '">' . __( 'Last', 'wizhi' ) . '</a></li>';
 			}
 			echo '</ul>';
 		}
 	}
-endif;
 
 
-if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
 	/**
 	 * Bootstrap 分页导航
 	 *
@@ -91,10 +94,10 @@ if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
 	 *
 	 * @package template
 	 *
-	 * @usage wizhi_bootstrap_pagination();
+	 * @usage   wizhi_bootstrap_pagination();
 	 *
 	 */
-	function wizhi_bootstrap_pagination( $query = '', $pages = '', $range = 5 ) {
+	public static function bootstrap( $query = '', $pages = '', $range = 5 ) {
 		$showitems = ( $range * 2 ) + 1;
 
 		global $paged;
@@ -144,4 +147,5 @@ if ( ! function_exists( 'wizhi_bootstrap_pagination' ) ):
 			echo '</ul>';
 		}
 	}
-endif;
+
+}
