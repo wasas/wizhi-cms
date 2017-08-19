@@ -17,6 +17,7 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8' );
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
 use Nette\Loaders\RobotLoader;
+use Composer\Autoload\ClassLoader;
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 
@@ -57,6 +58,22 @@ function include_all_php( $folder ) {
 
 global $cms_settings;
 $cms_settings = get_option( 'wizhi_cms_settings' );
+
+/*
+ * 自动加载
+ */
+$loader  = new ClassLoader();
+$classes = [
+	'Wizhi\\Helper\\'        => WIZHI_CMS . 'src/helpers/',
+	'Wizhi\\Forms\\Controls\\' => WIZHI_CMS . 'src/forms/controls',
+];
+
+foreach ( $classes as $prefix => $path ) {
+	$loader->addPsr4( $prefix, $path );
+}
+
+$loader->register();
+
 
 // 自动加载目录中的类
 $loader = new RobotLoader;
