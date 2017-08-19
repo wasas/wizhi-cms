@@ -44,20 +44,14 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Psr\\Container\\' => 14,
             'PostTypes\\' => 10,
         ),
         'O' => 
         array (
             'Overtrue\\Pinyin\\' => 16,
         ),
-        'L' => 
-        array (
-            'League\\Container\\' => 17,
-        ),
         'I' => 
         array (
-            'Interop\\Container\\' => 18,
             'Illuminate\\View\\' => 16,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Session\\' => 19,
@@ -153,10 +147,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
         'PostTypes\\' => 
         array (
             0 => __DIR__ . '/..' . '/jjgrainger/posttypes/src',
@@ -164,14 +154,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Overtrue\\Pinyin\\' => 
         array (
             0 => __DIR__ . '/..' . '/overtrue/pinyin/src',
-        ),
-        'League\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/container/src',
-        ),
-        'Interop\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
         'Illuminate\\View\\' => 
         array (
