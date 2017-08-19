@@ -4,6 +4,8 @@
  * Wizhi CMS 插件使用的简码
  */
 
+use Wizhi\helper\Template;
+
 add_shortcode( 'slider', 'wizhi_shortcode_slider' );
 
 if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
@@ -84,7 +86,7 @@ if ( ! function_exists( 'wizhi_shortcode_slider' ) ) {
 		echo '<ul class="bxslider" id="bxslider-' . $id . '">';
 
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();
-			echo wizhi_load_template_part( 'content', $tmp );
+			echo Template::load_part( 'content', $tmp );
 		endwhile;
 
 		echo '</ul></div>';

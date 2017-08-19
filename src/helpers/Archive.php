@@ -1,11 +1,13 @@
 <?php
 
+namespace Wizhi\Helper;
+
 /**
  * 翻译固定字符串
  */
 class Archive {
 
-	use Nette\StaticClass;
+	use \Nette\StaticClass;
 
 	/**
 	 * 获取文章类型存档设置

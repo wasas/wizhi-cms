@@ -1,5 +1,7 @@
 <?php
 
+namespace Wizhi\Helper;
+
 use Symfony\Component\VarDumper\Dumper\HtmlDumper as SymfonyHtmlDumper;
 
 /**

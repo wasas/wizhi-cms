@@ -6,6 +6,10 @@
 
 use Nette\Utils\Arrays;
 use Nette\Utils\Strings;
+use Wizhi\Helper\DataOption;
+use Wizhi\Helper\PostType;
+use Wizhi\Helper\Taxonomy;
+use Wizhi\Helper\Template;
 
 add_action( 'init', 'add_type_options' );
 add_action( 'init', 'add_default_content_type' );
@@ -37,7 +41,7 @@ function add_type_options( $type ) {
 			"title"        => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
 			"description"  => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
 			"template"     => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [
-				'options' => wizhi_get_loop_template( 'wizhi/archive' ),
+				'options' => Template::get_loop( 'wizhi/archive' ),
 			] ),
 			"main_tax"     => new Fieldmanager_Select( __( 'Main Taxonomy', 'wizhi' ), [
 				'options' =>  DataOption::taxonomies(),
@@ -77,13 +81,13 @@ function add_default_content_type() {
 		// 添加默认的文章类型和分类方法
 		foreach ( $enabled_post_types as $slug ) {
 
-			wizhi_create_types( $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ), [
+			PostType::create( $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ), [
 				'title',
 				'editor',
 				'thumbnail',
 			], true, Arrays::get( $icons, $slug, 'dashicons-admin-post' ) );
 
-			wizhi_create_taxs( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( ' Category', 'wizhi' ), true );
+			Taxonomy::create( $slug . 'cat', $slug, Arrays::get( $types, $slug, Strings::capitalize( $slug ) ) . __( ' Category', 'wizhi' ), true );
 
 		}
 

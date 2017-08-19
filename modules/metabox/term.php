@@ -1,10 +1,12 @@
 <?php
+
+use Wizhi\Helper\DataOption;
+use Wizhi\Helper\Template;
+
 /**
  * 默认分类项目的数据盒子
  *
  */
-
-
 add_action( 'after_setup_theme', function () {
 
 	$column = [
@@ -30,7 +32,7 @@ add_action( 'after_setup_theme', function () {
 
 	$fm = new Fieldmanager_Select( [
 		'name'    => '_term_template',
-		'options' => wizhi_get_loop_template( 'wizhi/archive' ),
+		'options' => Template::get_loop( 'wizhi/archive' ),
 	] );
 	$fm->add_term_meta_box( __( 'Archive template', 'wizhi' ), $taxonomies );
 

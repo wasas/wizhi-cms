@@ -4,6 +4,8 @@
  * Wizhi CMS 插件使用的简码
  */
 
+use Wizhi\helper\Template;
+
 add_shortcode( 'media', 'wizhi_shortcode_media' );
 if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 	/**
@@ -76,7 +78,7 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 
 			echo '<div class="sep medias media-' . trim( $type ) . '-' . trim( $tag ) . '">';
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-				echo wizhi_load_template_part( 'content', $tmp );
+				echo Template::load_part( 'content', $tmp );
 			endwhile;
 			echo '</div>';
 
@@ -93,7 +95,7 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 			echo '<div class="medias media-' . $tag . '">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-				echo wizhi_load_template_part( 'content', $tmp );
+				echo Template::load_part( 'content', $tmp );
 			endwhile;
 
 			echo '</div>';

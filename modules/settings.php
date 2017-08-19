@@ -1,5 +1,7 @@
 <?php
 
+use Wizhi\Helper\DataOption;
+
 /**
  * 插件功能设置选项
  * 添加插件设置页面

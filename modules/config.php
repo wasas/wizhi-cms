@@ -1,6 +1,7 @@
 <?php
 
 use Nette\Neon\Neon;
+use Wizhi\Helper\GitHubUpdater;
 
 /**
  * 内置的文章类型选项
@@ -53,4 +54,4 @@ $config = "
 	basename: wizhi-cms/cms.php'
 ";
 
-new WP_GitHub_Updater( Neon::decode( $config ) );
+new GitHubUpdater( Neon::decode( $config ) );

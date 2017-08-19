@@ -1,12 +1,13 @@
 <?php
 
+namespace Wizhi\Helper;
+
 /**
  * 输出数据数组
  */
 class DataOption {
 
-    use Nette\StaticClass;
-
+	use \Nette\StaticClass;
 
 	/**
 	 * 获取注册的文章类型数组
@@ -128,7 +129,7 @@ class DataOption {
 			'post_type'      => $type,
 			'posts_per_page' => '-1',
 		];
-		$loop = new WP_Query( $args );
+		$loop = new \WP_Query( $args );
 
 		$output = [
 			0 => sprintf( '— %s —', __( 'Select Content', 'wizhi' ) ),

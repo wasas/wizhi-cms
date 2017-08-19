@@ -1,11 +1,14 @@
 <?php
+
+namespace Wizhi\Helper;
+
 /**
  * 从 Github 更新插件
  */
 
-if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
+if ( ! class_exists( 'GitHub_Updater' ) ) {
 
-	class WP_GitHub_Updater {
+	class GitHubUpdater {
 
 		private $api_url = 'https://api.github.com';
 
@@ -36,7 +39,7 @@ if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 			$this->main_file = $dir[ 1 ];
 
 			// Not current output anywhere, but might be useful for debugging
-			$this->errors = [ ];
+			$this->errors = [];
 
 			// Check for GH plugin updates when WP checks for plugin updates
 			add_filter( 'pre_set_site_transient_update_plugins', [ &$this, 'check_for_update' ] );
@@ -118,7 +121,7 @@ if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 		 *
 		 * @return bool
 		 */
-		private function build_api_url( $endpoint, $params = [ ] ) {
+		private function build_api_url( $endpoint, $params = [] ) {
 
 			// If you've set an access_token, append it to the query
 			if ( $this->token ) {
@@ -277,7 +280,7 @@ if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
 
 			if ( strpos( $source, $this->owner . '-' . $this->repo . '-' ) !== false ) {
 				$plugins_basenames = array_keys( get_plugins() );
-				$plugins_names     = [ ];
+				$plugins_names     = [];
 
 				foreach ( $plugins_basenames as $basename ) {
 					$path      = explode( '/', $basename );

@@ -1,12 +1,13 @@
 <?php
-add_action( 'init', 'wizhi_shortcode_ui' );
+
+use Wizhi\Helper\DataOption;
 
 /**
  * 显示插件 UI, 基于 Shortcacke
  *
  * @package backend
  */
-function wizhi_shortcode_ui() {
+add_action( 'init', function () {
 
 	// 检测 Shortcake 插件功能是否存在
 	if ( ! function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
@@ -27,7 +28,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( 'Button color', 'wizhi' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' =>  DataOption::colors(),
+				'options' => DataOption::colors(),
 			],
 			[
 				'label'   => __( 'Button Size', 'wizhi' ),
@@ -116,7 +117,7 @@ function wizhi_shortcode_ui() {
 				'label'   => __( 'Alert type', 'wizhi' ),
 				'attr'    => 'type',
 				'type'    => 'select',
-				'options' =>  DataOption::colors(),
+				'options' => DataOption::colors(),
 			],
 			[
 				'label' => __( 'Alert content', 'wizhi' ),
@@ -402,4 +403,4 @@ function wizhi_shortcode_ui() {
 		],
 	] );
 
-}
+} );

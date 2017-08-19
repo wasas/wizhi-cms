@@ -16,8 +16,8 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
-use Nette\Loaders\RobotLoader;
 use Composer\Autoload\ClassLoader;
+use Nette\Loaders\RobotLoader;
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 
@@ -35,8 +35,8 @@ if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
  * 加载翻译文件
  */
 add_action( 'plugins_loaded', function () {
-	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/lang/' );
-	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 	// 检测是否安装了 fieldmanager 插件，如果未安装，包含插件内置的
 	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
@@ -64,8 +64,9 @@ $cms_settings = get_option( 'wizhi_cms_settings' );
  */
 $loader  = new ClassLoader();
 $classes = [
-	'Wizhi\\Helper\\'        => WIZHI_CMS . 'src/helpers/',
-	'Wizhi\\Forms\\Controls\\' => WIZHI_CMS . 'src/forms/controls',
+	'Wizhi\\Helper\\'           => WIZHI_CMS . 'src/helpers/',
+	'Wizhi\\Forms\\Controls\\'  => WIZHI_CMS . 'src/forms/controls',
+	'Wizhi\\Forms\\Rendering\\' => WIZHI_CMS . 'src/forms/renders',
 ];
 
 foreach ( $classes as $prefix => $path ) {

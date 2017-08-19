@@ -4,6 +4,8 @@
  * Wizhi CMS 插件使用的简码
  */
 
+use Wizhi\helper\Template;
+
 add_shortcode( 'loop', 'wizhi_shortcode_loop' );
 if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 
@@ -66,7 +68,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 		$wizhi_query = new WP_Query( $args );
 
 		while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-			echo wizhi_load_template_part( 'content', $tmp );
+			echo Template::load_part( 'content', $tmp );
 		endwhile;
 
 		if ( $pager ) {

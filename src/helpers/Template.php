@@ -1,4 +1,7 @@
 <?php
+
+namespace Wizhi\Helper;
+
 /**
  * 模板加载和获取模板类型的函数
  */
@@ -6,7 +9,11 @@
 use Nette\Utils\Arrays;
 use Nette\Utils\Finder;
 
-if ( ! function_exists( 'wizhi_get_template_part' ) ) {
+
+class Template {
+
+	use \Nette\StaticClass;
+
 	/**
 	 * 自定义模板加载器, 优先加载主题中的模板, 如果主题中的模板不存在, 就加载插件中的
 	 *
@@ -15,7 +22,7 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 	 *
 	 * @package template
 	 */
-	function wizhi_get_template_part( $slug, $name = '' ) {
+	public static function get_part( $slug, $name = '' ) {
 		$template = '';
 
 		// 查找主题中定义的插件模板
@@ -40,10 +47,8 @@ if ( ! function_exists( 'wizhi_get_template_part' ) ) {
 			load_template( $template, false );
 		}
 	}
-}
 
 
-if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	/**
 	 * 获取存档页面模板
 	 *
@@ -51,7 +56,7 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 	 *
 	 * @return array
 	 */
-	function wizhi_get_loop_template( $dir = "wizhi" ) {
+	public static function get_loop( $dir = "wizhi" ) {
 		$template_in_plugin = WIZHI_CMS . "templates/" . $dir;
 		$template_in_theme  = get_template_directory() . "/" . $dir;
 
@@ -125,10 +130,8 @@ if ( ! function_exists( 'wizhi_get_loop_template' ) ) {
 
 		return $templates;
 	}
-}
 
 
-if ( ! function_exists( 'wizhi_load_template_part' ) ) {
 	/**
 	 * 获取模板为变量, 而不是直接显示
 	 *
@@ -137,12 +140,15 @@ if ( ! function_exists( 'wizhi_load_template_part' ) ) {
 	 *
 	 * @return string
 	 */
-	function wizhi_load_template_part( $slug, $name = '' ) {
+	public static function load_part( $slug, $name = '' ) {
+
 		ob_start();
-		wizhi_get_template_part( $slug, $name );
+		$part = new Template;
+		$part->get_part( $slug, $name );
 		$html = ob_get_contents();
 		ob_end_clean();
 
 		return $html;
 	}
+
 }

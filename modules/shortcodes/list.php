@@ -1,4 +1,11 @@
 <?php
+/**
+ * Wizhi Shortcode
+ * Wizhi CMS 插件使用的简码
+ */
+
+use Wizhi\helper\Template;
+
 add_shortcode( 'list', 'wizhi_shortcode_list' );
 if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 	/**
@@ -73,7 +80,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '<ul class="ui-list">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-				echo wizhi_load_template_part( 'content', $tmp );
+				echo Template::load_part( 'content', $tmp );
 			endwhile;
 
 			echo '</ul>';
@@ -88,7 +95,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 			echo '<div class="panel-content"><ul class="ui-list ui-list-' . $tag . '">';
 
 			while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
-				echo wizhi_load_template_part( 'content', $tmp );
+				echo Template::load_part( 'content', $tmp );
 			endwhile;
 
 			echo '</ul></div></div></div>';

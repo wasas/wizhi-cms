@@ -1,5 +1,7 @@
 <?php
 
+namespace Wizhi\Helper;
+
 use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
@@ -9,7 +11,7 @@ use League\ColorExtractor\Palette;
  */
 class ImageColor {
 
-	use Nette\StaticClass;
+	use \Nette\StaticClass;
 
 	/**
 	 * 获取图片的主要颜色
