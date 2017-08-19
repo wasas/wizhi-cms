@@ -13,7 +13,7 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
         '1da68de4f8b24be5f0c8ffb78dc0d818' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
-        '7a2fc715df8aa8bba6480acc043ee8d4' => __DIR__ . '/../..' . '/src/Forms/Form.php',
+        '8572c8dcc8f5bb46ffc31b0534993385' => __DIR__ . '/../..' . '/src/forms/Form.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -315,7 +315,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Nette\\Iterators\\Filter' => __DIR__ . '/..' . '/nette/utils/src/Iterators/Filter.php',
         'Nette\\Iterators\\Mapper' => __DIR__ . '/..' . '/nette/utils/src/Iterators/Mapper.php',
         'Nette\\Iterators\\RecursiveFilter' => __DIR__ . '/..' . '/nette/utils/src/Iterators/RecursiveFilter.php',
-        'Nette\\Loaders\\RobotLoader' => __DIR__ . '/..' . '/nette/robot-loader/src/RobotLoader/RobotLoader.php',
         'Nette\\Localization\\ITranslator' => __DIR__ . '/..' . '/nette/utils/src/Utils/ITranslator.php',
         'Nette\\MemberAccessException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Neon\\Decoder' => __DIR__ . '/..' . '/nette/neon/src/Neon/Decoder.php',

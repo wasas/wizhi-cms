@@ -70,7 +70,6 @@ return array(
     'Nette\\Iterators\\Filter' => $vendorDir . '/nette/utils/src/Iterators/Filter.php',
     'Nette\\Iterators\\Mapper' => $vendorDir . '/nette/utils/src/Iterators/Mapper.php',
     'Nette\\Iterators\\RecursiveFilter' => $vendorDir . '/nette/utils/src/Iterators/RecursiveFilter.php',
-    'Nette\\Loaders\\RobotLoader' => $vendorDir . '/nette/robot-loader/src/RobotLoader/RobotLoader.php',
     'Nette\\Localization\\ITranslator' => $vendorDir . '/nette/utils/src/Utils/ITranslator.php',
     'Nette\\MemberAccessException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\Neon\\Decoder' => $vendorDir . '/nette/neon/src/Neon/Decoder.php',

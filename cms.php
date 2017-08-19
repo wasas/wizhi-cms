@@ -17,7 +17,6 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8' );
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
 use Composer\Autoload\ClassLoader;
-use Nette\Loaders\RobotLoader;
 
 if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
 
@@ -40,7 +39,7 @@ add_action( 'plugins_loaded', function () {
 
 	// 检测是否安装了 fieldmanager 插件，如果未安装，包含插件内置的
 	if ( ! function_exists( 'fieldmanager_load_class' ) ) {
-		require_once WIZHI_CMS . 'inc/fieldmanager/fieldmanager.php';
+		require_once WIZHI_CMS . 'modules/fieldmanager/fieldmanager.php';
 	}
 } );
 
@@ -77,15 +76,7 @@ $loader->register();
 
 
 // 自动加载目录中的类
-$loader = new RobotLoader;
-$loader->addDirectory( WIZHI_CMS . 'src' );
 
-// And set caching to the 'temp' directory
-$loader->setTempDirectory( WP_CONTENT_DIR . '/cache' );
-$loader->register();
-
-// 加载功能函数
-include_all_php( WIZHI_CMS . 'inc/' );
 
 // 加载逻辑设置代码
 // todo: 改善自动加载性能
