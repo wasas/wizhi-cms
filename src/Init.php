@@ -8,15 +8,15 @@
 
 class Init {
 	public function __construct() {
-		add_shortcode( 'slider', [ new  Wizhi\Shortcode\PostSlider, 'render' ] );
-		add_shortcode( 'loop', [ new  Wizhi\Shortcode\PostLoop, 'render' ] );
-		add_shortcode( 'list', [ new  Wizhi\Shortcode\PostList, 'render' ] );
-		add_shortcode( 'media', [ new  Wizhi\Shortcode\PostGrid, 'render' ] );
-		add_shortcode( 'content', [ new  Wizhi\Shortcode\PageContent, 'render' ] );
-		add_shortcode( 'divider', [ new  Wizhi\Shortcode\Element, 'divider' ] );
-		add_shortcode( 'heading', [ new  Wizhi\Shortcode\Element, 'heading' ] );
-		add_shortcode( 'alert', [ new  Wizhi\Shortcode\Element, 'alert' ] );
-		add_shortcode( 'button', [ new  Wizhi\Shortcode\Element, 'button' ] );
+		add_shortcode( 'slider', [ 'Wizhi\Shortcode\PostSlider', 'render' ] );
+		add_shortcode( 'loop', [ 'Wizhi\Shortcode\PostLoop', 'render' ] );
+		add_shortcode( 'list', [ 'Wizhi\Shortcode\PostList', 'render' ] );
+		add_shortcode( 'media', [ 'Wizhi\Shortcode\PostGrid', 'render' ] );
+		add_shortcode( 'content', [ 'Wizhi\Shortcode\PageContent', 'render' ] );
+		add_shortcode( 'divider', [ 'Wizhi\Shortcode\Element', 'divider' ] );
+		add_shortcode( 'heading', [ 'Wizhi\Shortcode\Element', 'heading' ] );
+		add_shortcode( 'alert', [ 'Wizhi\Shortcode\Element', 'alert' ] );
+		add_shortcode( 'button', [ 'Wizhi\Shortcode\Element', 'button' ] );
 	}
 }
 
