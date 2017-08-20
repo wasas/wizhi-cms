@@ -4,10 +4,11 @@
  * Wizhi CMS 插件使用的简码
  */
 
+namespace Wizhi\Shortcode;
+
 use Wizhi\helper\Template;
 
-add_shortcode( 'loop', 'wizhi_shortcode_loop' );
-if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
+class PostLoop {
 
 	/**
 	 * 根据自定义分类显示文章, Loop 就应该是单纯接简单的文章循环, 更复杂的模块使用 List 或 Media 实现
@@ -18,7 +19,7 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 	 *
 	 * @usage [loop type="post" tax="category" tag="default" num="6" pager="0" tmp="list"]
 	 */
-	function wizhi_shortcode_loop( $atts ) {
+	public static function render( $atts ) {
 
 		$default = [
 			'type'  => 'post',
@@ -54,18 +55,18 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 
 		// 构建文章查询数组
 		$args = [
-			'post_type'      => $type,
-			'orderby'        => 'post_date',
-			'order'          => 'DESC',
-			'posts_per_page' => $num,
-			'paged'          => $paged,
-			'tax_query'      => $tax_query,
+			'post_type'           => $type,
+			'orderby'             => 'post_date',
+			'order'               => 'DESC',
+			'posts_per_page'      => $num,
+			'paged'               => $paged,
+			'tax_query'           => $tax_query,
 			'ignore_sticky_posts' => 1,
-			'no_found_rows'  => $no_found_rows,
+			'no_found_rows'       => $no_found_rows,
 		];
 
 		// 输出
-		$wizhi_query = new WP_Query( $args );
+		$wizhi_query = new \WP_Query( $args );
 
 		while ( $wizhi_query->have_posts() ) : $wizhi_query->the_post();
 			echo Template::load_part( 'content', $tmp );
@@ -79,5 +80,5 @@ if ( ! function_exists( 'wizhi_shortcode_loop' ) ) {
 		wp_reset_query();
 
 	}
-}
 
+}

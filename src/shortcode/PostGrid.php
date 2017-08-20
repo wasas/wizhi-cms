@@ -4,10 +4,12 @@
  * Wizhi CMS 插件使用的简码
  */
 
+namespace Wizhi\Shortcode;
+
 use Wizhi\helper\Template;
 
-add_shortcode( 'media', 'wizhi_shortcode_media' );
-if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
+class PostGrid {
+
 	/**
 	 * 图文混排样式简码
 	 *
@@ -17,7 +19,7 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 	 *
 	 * @usage [media type="post" tax="category" tag="default" num="6" heading="false", pager="0" tmp="list"]
 	 */
-	function wizhi_shortcode_media( $atts ) {
+	public static function wizhi_shortcode_media( $atts ) {
 
 		$default = [
 			'type'    => 'post',
@@ -114,4 +116,5 @@ if ( ! function_exists( 'wizhi_shortcode_media' ) ) {
 		wp_reset_query();
 
 	}
+
 }

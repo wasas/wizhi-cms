@@ -4,10 +4,12 @@
  * Wizhi CMS 插件使用的简码
  */
 
+namespace Wizhi\Shortcode;
+
 use Wizhi\helper\Template;
 
-add_shortcode( 'list', 'wizhi_shortcode_list' );
-if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
+class PostList {
+
 	/**
 	 * 显示文章标题列表
 	 *
@@ -17,7 +19,7 @@ if ( ! function_exists( 'wizhi_shortcode_list' ) ) {
 	 *
 	 * @usage [list type="post" tax="category" tag="default" num="6" cut="26" heading="false" pager="0" tmp="list"]
 	 */
-	function wizhi_shortcode_list( $atts ) {
+	public static function render( $atts ) {
 
 		$default = [
 			'type'    => 'post',

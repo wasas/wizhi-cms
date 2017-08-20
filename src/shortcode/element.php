@@ -4,12 +4,10 @@
  * Wizhi CMS 插件使用的简码
  */
 
-add_shortcode( 'divider', 'wizhi_shortcode_divider' );
-add_shortcode( 'heading', 'wizhi_shortcode_heading' );
-add_shortcode( 'alert', 'wizhi_shortcode_alert' );
-add_shortcode( 'button', 'wizhi_shortcode_button' );
+namespace Wizhi\Shortcode;
 
-if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
+class Element {
+
 	/**
 	 * 显示几种不同类型的分割线
 	 *
@@ -21,7 +19,7 @@ if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 	 *
 	 * @return string 经简码格式化后的 HTML 字符串
 	 */
-	function wizhi_shortcode_divider( $atts ) {
+	public static function divider( $atts ) {
 		$default = [
 			'type' => 'solid',
 		];
@@ -40,9 +38,8 @@ if ( ! function_exists( 'wizhi_shortcode_divider' ) ) {
 		return $retour;
 
 	}
-}
 
-if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
+
 	/**
 	 * 显示几种不同类型的分割线
 	 *
@@ -54,7 +51,7 @@ if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 	 *
 	 * @return string 经简码格式化后的 HTML 字符串
 	 */
-	function wizhi_shortcode_heading( $atts ) {
+	public static function heading( $atts ) {
 		$default = [
 			'type'    => 'background',
 			'content' => '这是二级标题',
@@ -74,9 +71,8 @@ if ( ! function_exists( 'wizhi_shortcode_heading' ) ) {
 		return $retour;
 
 	}
-}
 
-if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
+
 	/**
 	 * 显示几种不同类型的分割线
 	 *
@@ -88,7 +84,7 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 	 *
 	 * @return string 经简码格式化后的 HTML 字符串
 	 */
-	function wizhi_shortcode_alert( $atts ) {
+	public static function alert( $atts ) {
 		$default = [
 			'type'    => 'info',
 			'content' => '这是提示信息。',
@@ -108,9 +104,8 @@ if ( ! function_exists( 'wizhi_shortcode_alert' ) ) {
 		return $retour;
 
 	}
-}
 
-if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
+
 	/**
 	 * 显示链接按钮
 	 *
@@ -122,7 +117,7 @@ if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 	 *
 	 * @return string 经简码格式化后的 HTML 字符串
 	 */
-	function wizhi_shortcode_button( $atts ) {
+	public static function button( $atts ) {
 		$default = [
 			'type' => 'success',
 			'size' => '',
@@ -148,4 +143,5 @@ if ( ! function_exists( 'wizhi_shortcode_button' ) ) {
 		return $retour;
 
 	}
+
 }

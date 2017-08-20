@@ -4,9 +4,9 @@
  * Wizhi CMS 插件使用的简码
  */
 
-add_shortcode( 'content', 'wizhi_shortcode_content' );
+namespace Wizhi\Shortcode;
 
-if ( ! function_exists( 'wizhi_shortcode_content' ) ) {
+class PageContent {
 	/**
 	 * 输出标题文章列表时实现，默认带标题
 	 *
@@ -16,7 +16,7 @@ if ( ! function_exists( 'wizhi_shortcode_content' ) ) {
 	 *
 	 * @usage [content id="1" count="200" thumbs="thumbnail" more="true"]
 	 */
-	function wizhi_shortcode_content( $atts ) {
+	public static function render( $atts ) {
 		$default = [
 			'id'     => 1,
 			'cont'   => 200,

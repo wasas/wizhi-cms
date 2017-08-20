@@ -52,6 +52,7 @@ $cms_settings = get_option( 'wizhi_cms_settings' );
 $loader  = new ClassLoader();
 $classes = [
 	'Wizhi\\Helper\\'           => WIZHI_CMS . 'src/helpers/',
+	'Wizhi\\Shortcode\\'        => WIZHI_CMS . 'src/shortcode/',
 	'Wizhi\\Forms\\Controls\\'  => WIZHI_CMS . 'src/forms/controls',
 	'Wizhi\\Forms\\Rendering\\' => WIZHI_CMS . 'src/forms/renders',
 ];
@@ -79,13 +80,6 @@ include( WIZHI_CMS . 'modules/metabox/posts.php' );
 include( WIZHI_CMS . 'modules/metabox/slider.php' );
 include( WIZHI_CMS . 'modules/metabox/term.php' );
 
-include( WIZHI_CMS . 'modules/shortcodes/element.php' );
-include( WIZHI_CMS . 'modules/shortcodes/list.php' );
-include( WIZHI_CMS . 'modules/shortcodes/loop.php' );
-include( WIZHI_CMS . 'modules/shortcodes/media.php' );
-include( WIZHI_CMS . 'modules/shortcodes/page.php' );
-include( WIZHI_CMS . 'modules/shortcodes/slider.php' );
-
 /*----------------------------------------------------*/
 // WordPress database
 /*----------------------------------------------------*/
@@ -111,3 +105,4 @@ $capsule->bootEloquent();
 $GLOBALS[ 'themosis.capsule' ] = $capsule;
 
 require_once WIZHI_CMS . 'framework/themosis.php';
+require_once WIZHI_CMS . 'src/Init.php';
