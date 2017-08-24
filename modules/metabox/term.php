@@ -30,6 +30,11 @@ add_action( 'after_setup_theme', function () {
 	] );
 	$fm->add_term_meta_box( __( 'Cover image', 'wizhi' ), $taxonomies );
 
+	$fm = new Fieldmanager_RichTextArea( [
+		'name' => '_banner_text',
+	] );
+	$fm->add_term_meta_box( __( 'Banner Text', 'wizhi' ), $taxonomies );
+
 	$fm = new Fieldmanager_Select( [
 		'name'    => '_term_template',
 		'options' => Template::get_loop( 'wizhi/archive' ),

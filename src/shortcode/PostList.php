@@ -75,7 +75,7 @@ class PostList {
 		}
 
 		// 输出
-		$wizhi_query = new WP_Query( $args );
+		$wizhi_query = new \WP_Query( $args );
 
 		if ( $heading == false || empty( $tax ) ) {
 			echo '<div class="sep ui-list-' . trim( $type ) . '-' . trim( $tag ) . '">';

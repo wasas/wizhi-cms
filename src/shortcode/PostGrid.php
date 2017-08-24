@@ -74,7 +74,7 @@ class PostGrid {
 		}
 
 		// 输出
-		$wizhi_query = new WP_Query( $args );
+		$wizhi_query = new \WP_Query( $args );
 
 		if ( $heading == false || empty( $tax ) ) {
 

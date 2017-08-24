@@ -37,7 +37,8 @@ function add_type_options( $type ) {
 		];
 
 		$fields = [
-			"banner"       => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+			"banner_image"       => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+			"banner_text"       => new Fieldmanager_RichTextArea( __( 'Cover image', 'wizhi' ) ),
 			"title"        => new Fieldmanager_TextField( __( 'Archive Title', 'wizhi' ) ),
 			"description"  => new Fieldmanager_RichTextArea( __( 'Archive Description', 'wizhi' ) ),
 			"template"     => new Fieldmanager_Select( __( 'Archive Template', 'wizhi' ), [

@@ -10,6 +10,7 @@ add_action( 'after_setup_theme', function () {
 
 	$fields = [
 		"_banner_image" => new Fieldmanager_Media( __( 'Cover image', 'wizhi' ) ),
+		"_banner_text"  => new Fieldmanager_RichTextArea( __( 'Cover Text', 'wizhi' ) ),
 	];
 
 	$fm = new Fieldmanager_Group( [
