@@ -1,0 +1,55 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/plugins/*.js",
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "admin.js": {
+      "files": [
+        "scripts/admin/*.js",
+        "scripts/admin.js"
+      ]
+    },
+    "iris.js": {
+      "files": [
+        "scripts/forms/iris.js"
+      ]
+    },
+    "upload.js": {
+      "files": [
+        "scripts/forms/dmuploader.js"
+      ]
+    },
+    "slider.js": {
+      "files": [
+        "scripts/forms/ion.rangeSlider.js"
+      ]
+    },
+    "chosen.js": {
+      "files": [
+        "scripts/forms/chosen.jquery.js"
+      ]
+    },
+    "chained.js": {
+      "files": [
+        "scripts/forms/jquery.chained.js"
+      ]
+    },
+    "admin.css": {
+      "files": [
+        "styles/admin.less"
+      ]
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  }
+}

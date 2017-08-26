@@ -80,6 +80,16 @@ include( WIZHI_CMS . 'modules/metabox/posts.php' );
 include( WIZHI_CMS . 'modules/metabox/slider.php' );
 include( WIZHI_CMS . 'modules/metabox/term.php' );
 
+
+/**
+ * 加载后台样式
+ */
+add_action( 'admin_enqueue_scripts', function () {
+	wp_enqueue_style( 'wizhi-form-style', WIZHI_URL . '/front/dist/styles/admin.css' );
+	wp_enqueue_script( 'wizhi-form-scripts', WIZHI_URL . '/front/dist/scripts/admin.js', [ 'jquery' ], WIZHI_CMS_VERSION, true );
+}
+);
+
 /*----------------------------------------------------*/
 // WordPress database
 /*----------------------------------------------------*/
