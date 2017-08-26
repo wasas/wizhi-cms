@@ -4,7 +4,7 @@
  *
  */
 
-namespace Wizhi\Metaboxs;
+namespace Wizhi\Metabox;
 
 class Post {
 

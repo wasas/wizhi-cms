@@ -13,6 +13,8 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
         '1da68de4f8b24be5f0c8ffb78dc0d818' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
+        '180e914a215fe96f45c1d9f5bcbed2c4' => __DIR__ . '/../..' . '/src/helpers.php',
+        'aa4c4b9a3b5afd30785bf1a0a28a8d62' => __DIR__ . '/../..' . '/src/config.php',
         '8572c8dcc8f5bb46ffc31b0534993385' => __DIR__ . '/../..' . '/src/forms/Form.php',
     );
 

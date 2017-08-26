@@ -7,8 +7,6 @@ namespace Wizhi\Helper;
  */
 class Language {
 
-	use \Nette\StaticClass;
-
 	/**
 	 * 定义需要翻译的字符串
 	 *
@@ -36,6 +34,22 @@ class Language {
 		}
 
 		return false;
+	}
+
+
+	/**
+	 * 自动添加当前语言到 Body CSS Class
+	 *
+	 * @param $classes
+	 *
+	 * @return array
+	 */
+	function body_class( $classes ) {
+
+		$lang      = get_bloginfo( 'language' );
+		$classes[] = 'lang-' . $lang;
+
+		return $classes;
 	}
 
 }

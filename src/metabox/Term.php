@@ -1,6 +1,6 @@
 <?php
 
-namespace Wizhi\Metaboxs;
+namespace Wizhi\Metabox;
 
 use Wizhi\Helper\DataOption;
 use Wizhi\Helper\Template;

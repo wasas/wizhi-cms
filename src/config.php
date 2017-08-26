@@ -1,7 +1,31 @@
 <?php
 
 use Nette\Neon\Neon;
-use Wizhi\Helper\GitHubUpdater;
+
+/*----------------------------------------------------*/
+// 配置 Corcel 数据库连接
+/*----------------------------------------------------*/
+$table_prefix = getenv( 'DB_PREFIX' ) ? getenv( 'DB_PREFIX' ) : 'wp_';
+$collate      = defined( 'DB_COLLATE' ) && DB_COLLATE ? DB_COLLATE : 'utf8_general_ci';
+
+/*----------------------------------------------------*/
+// Illuminate database
+/*----------------------------------------------------*/
+$capsule = new Illuminate\Database\Capsule\Manager();
+$capsule->addConnection( [
+	'driver'    => 'mysql',
+	'host'      => DB_HOST,
+	'database'  => DB_NAME,
+	'username'  => DB_USER,
+	'password'  => DB_PASSWORD,
+	'charset'   => DB_CHARSET,
+	'collation' => $collate,
+	'prefix'    => $table_prefix,
+] );
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+$GLOBALS[ 'themosis.capsule' ] = $capsule;
+
 
 /**
  * 内置的文章类型选项
@@ -47,11 +71,3 @@ function wizhi_post_types_icon() {
 	return Neon::decode( $post_types_icons );
 }
 
-
-$config = "
-	owner: iwillhappy1314
-	repo: wizhi-cms
-	basename: wizhi-cms/cms.php'
-";
-
-new GitHubUpdater( Neon::decode( $config ) );
