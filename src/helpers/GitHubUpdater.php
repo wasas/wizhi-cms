@@ -2,8 +2,6 @@
 
 namespace Wizhi\Helper;
 
-use Version\Compare;
-
 /**
  * 从 Github 更新插件
  */
@@ -73,10 +71,11 @@ class GitHubUpdater {
 			return $transient;
 		}
 
-		$compare = new Compare();
+		$v_remote = $repo_meta[ 'Version' ];
+		$v_local  = $transient->checked[ $this->basename ];
 
 		// Compare the current plugin version to the repo's version. See the PHP documentation on version_compare() for acceptable version strings
-		if ( $compare->compare( $repo_meta[ 'Version' ], '~' . $transient->checked[ $this->basename ] ) ) {
+		if ( $this->version_compare( $v_remote, $v_local, 'minor' ) ) {
 			$transient->response[ $this->basename ] = $this->set_update_object( $repo_meta );
 		}
 
@@ -84,6 +83,76 @@ class GitHubUpdater {
 
 	}
 
+
+	/**
+	 * 比较语义化版本号
+	 *
+	 * @param        $ver1
+	 * @param        $ver2
+	 * @param string $position
+	 *
+	 * @return int
+	 */
+	public function version_compare( $ver1, $ver2, $position = 'major' ) {
+
+		$v1 = explode( '.', $ver1 );
+		$v2 = explode( '.', $ver2 );
+
+		// 比较完整版本，使用 PHP 的方法
+		if ( $position === 'major' ) {
+			return version_compare( $ver1, $ver2 );
+		}
+
+		/**
+		 * 比较次版本号，只比较相同主版本的次版本和修订版本
+		 * 避免了升级时出现不兼容的情况。
+		 */
+		if ( $position === 'minor' ) {
+			if ( $v1[ 0 ] === $v2[ 0 ] ) {
+				if ( $v1[ 1 ] > $v2[ 1 ] ) {
+					return 1;
+				}
+				if ( $v1[ 1 ] < $v2[ 1 ] ) {
+					return - 1;
+				}
+				if ( $v1[ 1 ] = $v2[ 1 ] ) {
+					if ( $v1[ 2 ] > $v2[ 2 ] ) {
+						return 1;
+					}
+					if ( $v1[ 2 ] < $v2[ 2 ] ) {
+						return - 1;
+					}
+					if ( $v1[ 2 ] === $v2[ 2 ] ) {
+						return 0;
+					}
+				}
+			} else {
+				return - 1;
+			}
+		}
+
+		/**
+		 * 只比较同一次版本下的修复版本
+		 */
+		if ( $position === 'patch' ) {
+			if ( $v1[ 1 ] === $v2[ 1 ] ) {
+				if ( $v1[ 2 ] > $v2[ 2 ] ) {
+					return 1;
+				}
+				if ( $v1[ 2 ] < $v2[ 2 ] ) {
+					return - 1;
+				}
+				if ( $v1[ 2 ] === $v2[ 2 ] ) {
+					return 0;
+				}
+			} else {
+				return - 1;
+			}
+		}
+
+		return - 1;
+
+	}
 
 	/**
 	 * 准备升级
@@ -255,7 +324,7 @@ class GitHubUpdater {
 	 */
 	private function set_update_object( $meta, $include_zip_url = true ) {
 
-		$obj              = new stdClass();
+		$obj              = new \stdClass();
 		$obj->url         = $meta[ 'PluginURI' ];
 		$obj->slug        = $this->repo;
 		$obj->new_version = $meta[ 'Version' ];

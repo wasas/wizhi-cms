@@ -79,7 +79,7 @@ new Bootstrap;
 $config = "
 		owner: iwillhappy1314
 		repo: wizhi-cms
-		basename: wizhi-cms/cms.php'
+		basename: wizhi-cms/cms.php
 	";
 
-new GitHubUpdater( Neon::decode( $config ) );
+$up = new GitHubUpdater( Neon::decode( $config ) );
