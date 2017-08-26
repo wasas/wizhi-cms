@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Version' => array($vendorDir . '/version/version/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Hautelook' => array($vendorDir . '/hautelook/phpass/src'),
 );

@@ -25,7 +25,8 @@
     "symfony/var-dumper": "^3.3",
     "league/color-extractor": "^0.3.2",
     "twig/twig": "^2.4",
-    "jgrossi/corcel": "^2.4"
+    "jgrossi/corcel": "^2.4",
+    "version/version": "^2.2"
   },
   "autoload": {
     "psr-4": {

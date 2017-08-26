@@ -2,6 +2,8 @@
 
 namespace Wizhi\Helper;
 
+use Version\Compare;
+
 /**
  * 从 Github 更新插件
  */
@@ -66,12 +68,15 @@ class GitHubUpdater {
 
 		// Get the latest plugin meta from the GH repo
 		$repo_meta = $this->get_repo_meta();
+
 		if ( ! $repo_meta ) {
 			return $transient;
 		}
 
+		$compare = new Compare();
+
 		// Compare the current plugin version to the repo's version. See the PHP documentation on version_compare() for acceptable version strings
-		if ( version_compare( $repo_meta[ 'Version' ], $transient->checked[ $this->basename ], '>' ) ) {
+		if ( $compare->compare( $repo_meta[ 'Version' ], '~' . $transient->checked[ $this->basename ] ) ) {
 			$transient->response[ $this->basename ] = $this->set_update_object( $repo_meta );
 		}
 

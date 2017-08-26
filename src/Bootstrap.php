@@ -67,19 +67,19 @@ class Bootstrap {
 			define( 'DISALLOW_FILE_MODS', true );
 		}
 
-
-		/**
-		 * 从 Github 升级
-		 */
-		$config = "
-			owner: iwillhappy1314
-			repo: wizhi-cms
-			basename: wizhi-cms/cms.php'
-		";
-
-		new GitHubUpdater( Neon::decode( $config ) );
-
 	}
 }
 
 new Bootstrap;
+
+
+/**
+ * 从 Github 升级
+ */
+$config = "
+		owner: iwillhappy1314
+		repo: wizhi-cms
+		basename: wizhi-cms/cms.php'
+	";
+
+new GitHubUpdater( Neon::decode( $config ) );

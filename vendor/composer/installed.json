@@ -2469,5 +2469,53 @@
         ],
         "description": "Use WordPress backend with Laravel or any PHP framework",
         "homepage": "http://github.com/corcel/corcel"
+    },
+    {
+        "name": "version/version",
+        "version": "2.2",
+        "version_normalized": "2.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-mod/version.git",
+            "reference": "2fc90b9ce281b10efa68ebc90a6b339515aba35f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-mod/version/zipball/2fc90b9ce281b10efa68ebc90a6b339515aba35f",
+            "reference": "2fc90b9ce281b10efa68ebc90a6b339515aba35f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "~1.7",
+            "phpunit/phpunit": "~4.3"
+        },
+        "time": "2015-06-07T19:06:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Version": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Hassan Amouhzi",
+                "email": "hassan@amouhzi.com",
+                "homepage": "http://anezi.net"
+            }
+        ],
+        "description": "A library for creating, editing, and comparing semantic versioning numbers.",
+        "homepage": "http://github.com/php-mod/version",
+        "keywords": [
+            "semantic",
+            "version"
+        ]
     }
 ]
