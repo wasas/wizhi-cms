@@ -19,7 +19,7 @@ class PostGrid {
 	 *
 	 * @usage [media type="post" tax="category" tag="default" num="6" heading="false", pager="0" tmp="list"]
 	 */
-	public static function wizhi_shortcode_media( $atts ) {
+	public static function render( $atts ) {
 
 		$default = [
 			'type'    => 'post',
