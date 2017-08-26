@@ -8,6 +8,8 @@
 
 class Init {
 	public function __construct() {
+
+		// 初始化简码
 		add_shortcode( 'slider', [ 'Wizhi\Shortcode\PostSlider', 'render' ] );
 		add_shortcode( 'loop', [ 'Wizhi\Shortcode\PostLoop', 'render' ] );
 		add_shortcode( 'list', [ 'Wizhi\Shortcode\PostList', 'render' ] );
@@ -17,6 +19,12 @@ class Init {
 		add_shortcode( 'heading', [ 'Wizhi\Shortcode\Element', 'heading' ] );
 		add_shortcode( 'alert', [ 'Wizhi\Shortcode\Element', 'alert' ] );
 		add_shortcode( 'button', [ 'Wizhi\Shortcode\Element', 'button' ] );
+		add_action( 'init', [ 'Wizhi\Metaboxs\UI', 'init' ] );
+
+		// 初始化 Metabox
+		add_action( 'after_setup_theme', [ 'Wizhi\Metaboxs\Post', 'init' ] );
+		add_action( 'after_setup_theme', [ 'Wizhi\Metaboxs\Slider', 'init' ] );
+		add_action( 'after_setup_theme', [ 'Wizhi\Metaboxs\Term', 'init' ] );
 	}
 }
 

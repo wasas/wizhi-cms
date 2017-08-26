@@ -52,6 +52,7 @@ $cms_settings = get_option( 'wizhi_cms_settings' );
 $loader  = new ClassLoader();
 $classes = [
 	'Wizhi\\Helper\\'           => WIZHI_CMS . 'src/helpers/',
+	'Wizhi\\Metaboxs\\'         => WIZHI_CMS . 'src/metaboxs/',
 	'Wizhi\\Shortcode\\'        => WIZHI_CMS . 'src/shortcode/',
 	'Wizhi\\Forms\\Controls\\'  => WIZHI_CMS . 'src/forms/controls',
 	'Wizhi\\Forms\\Rendering\\' => WIZHI_CMS . 'src/forms/renders',
@@ -75,10 +76,6 @@ include( WIZHI_CMS . 'modules/related.php' );
 include( WIZHI_CMS . 'modules/settings.php' );
 include( WIZHI_CMS . 'modules/shortcodes-ui.php' );
 include( WIZHI_CMS . 'modules/walker.php' );
-
-include( WIZHI_CMS . 'modules/metabox/posts.php' );
-include( WIZHI_CMS . 'modules/metabox/slider.php' );
-include( WIZHI_CMS . 'modules/metabox/term.php' );
 
 
 /**
