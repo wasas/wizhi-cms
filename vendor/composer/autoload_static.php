@@ -29,7 +29,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
             'Thunder\\Shortcode\\Tests\\' => 24,
             'Thunder\\Shortcode\\' => 18,
             'Themosis\\' => 9,
-            'TheFold\\WordPress\\' => 18,
         ),
         'S' => 
         array (
@@ -104,10 +103,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Themosis\\' => 
         array (
             0 => __DIR__ . '/../..' . '/framework/src/Themosis',
-        ),
-        'TheFold\\WordPress\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/thefold/wordpress-dispatcher',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

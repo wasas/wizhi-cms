@@ -11,7 +11,6 @@ return array(
     'Thunder\\Shortcode\\Tests\\' => array($vendorDir . '/thunderer/shortcode/tests'),
     'Thunder\\Shortcode\\' => array($vendorDir . '/thunderer/shortcode/src'),
     'Themosis\\' => array($baseDir . '/framework/src/Themosis'),
-    'TheFold\\WordPress\\' => array($vendorDir . '/thefold/wordpress-dispatcher'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),

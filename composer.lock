@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e88ee002873dbdc612cf09a1e5148d5a",
+    "content-hash": "dda1630134d2905147a7f6fe14966c81",
     "packages": [
         {
             "name": "composer/installers",
@@ -2241,42 +2241,6 @@
                 "dump"
             ],
             "time": "2017-07-28T06:06:09+00:00"
-        },
-        {
-            "name": "thefold/wordpress-dispatcher",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/timbofield/wordpress-dispatcher.git",
-                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/timbofield/wordpress-dispatcher/zipball/a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-                "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TheFold\\WordPress\\": "/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Field",
-                    "email": "tim@thefold.co.nz"
-                }
-            ],
-            "description": "Create URL endpoints within WordPress",
-            "time": "2015-04-29T10:54:48+00:00"
         },
         {
             "name": "thunderer/shortcode",

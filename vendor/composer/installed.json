@@ -798,44 +798,6 @@
         ]
     },
     {
-        "name": "thefold/wordpress-dispatcher",
-        "version": "1.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/timbofield/wordpress-dispatcher.git",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/timbofield/wordpress-dispatcher/zipball/a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-            "reference": "a6a6b1b8961cbcaa850a54a5dcd569230900fbda",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4"
-        },
-        "time": "2015-04-29T10:54:48+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "TheFold\\WordPress\\": "/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Tim Field",
-                "email": "tim@thefold.co.nz"
-            }
-        ],
-        "description": "Create URL endpoints within WordPress"
-    },
-    {
         "name": "twig/twig",
         "version": "v2.4.3",
         "version_normalized": "2.4.3.0",

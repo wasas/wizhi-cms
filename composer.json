@@ -19,7 +19,6 @@
     "illuminate/database": "^5.3",
     "filp/whoops": "^2.1",
     "overtrue/pinyin": "^3.0",
-    "thefold/wordpress-dispatcher": "^1.0",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "jjgrainger/posttypes": "^1.1",
     "symfony/var-dumper": "^3.3",
