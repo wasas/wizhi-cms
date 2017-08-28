@@ -1,5 +1,5 @@
 {
-  "name": "wizhi/cms",
+  "name": "wenprise/cms",
   "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
