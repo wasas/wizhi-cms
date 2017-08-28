@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
+class ComposerStaticInit59e1e705cde3a80f15895f6737de001e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -12,10 +12,11 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
-        '1da68de4f8b24be5f0c8ffb78dc0d818' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
-        '180e914a215fe96f45c1d9f5bcbed2c4' => __DIR__ . '/../..' . '/src/helpers.php',
-        'aa4c4b9a3b5afd30785bf1a0a28a8d62' => __DIR__ . '/../..' . '/src/config.php',
-        '8572c8dcc8f5bb46ffc31b0534993385' => __DIR__ . '/../..' . '/src/forms/Form.php',
+        '38689f45c8f796732b94d32632def029' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
+        '7444a0c7b6021a9ca1505c735d7b2726' => __DIR__ . '/../..' . '/src/helpers.php',
+        'fd855a100ea7fa775479be591a7ea164' => __DIR__ . '/../..' . '/src/config.php',
+        '8ff6738d5d35c689571ef62a8e85c23c' => __DIR__ . '/../..' . '/src/forms/Form.php',
+        'b8f4c882484229477e822548f426bff1' => __DIR__ . '/../..' . '/cms.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -66,7 +67,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
             'Illuminate\\Session\\' => 19,
             'Illuminate\\Routing\\' => 19,
             'Illuminate\\Pipeline\\' => 20,
-            'Illuminate\\Pagination\\' => 22,
             'Illuminate\\Http\\' => 16,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
@@ -211,10 +211,6 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
         'Illuminate\\Pipeline\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/pipeline',
-        ),
-        'Illuminate\\Pagination\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/illuminate/pagination',
         ),
         'Illuminate\\Http\\' => 
         array (
@@ -394,11 +390,11 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit59e1e705cde3a80f15895f6737de001e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit59e1e705cde3a80f15895f6737de001e::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit59e1e705cde3a80f15895f6737de001e::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit59e1e705cde3a80f15895f6737de001e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit59e1e705cde3a80f15895f6737de001e::$classMap;
 
         }, null, ClassLoader::class);
     }

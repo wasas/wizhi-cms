@@ -11,8 +11,9 @@ return array(
     '72579e7bd17821bb1321b87411366eae' => $vendorDir . '/illuminate/support/helpers.php',
     '667aeda72477189d0494fecd327c3641' => $vendorDir . '/symfony/var-dumper/Resources/functions/dump.php',
     'e2a3474226883943f89da2a3bdb21000' => $vendorDir . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
-    '1da68de4f8b24be5f0c8ffb78dc0d818' => $baseDir . '/framework/src/Themosis/helpers.php',
-    '180e914a215fe96f45c1d9f5bcbed2c4' => $baseDir . '/src/helpers.php',
-    'aa4c4b9a3b5afd30785bf1a0a28a8d62' => $baseDir . '/src/config.php',
-    '8572c8dcc8f5bb46ffc31b0534993385' => $baseDir . '/src/forms/Form.php',
+    '38689f45c8f796732b94d32632def029' => $baseDir . '/framework/src/Themosis/helpers.php',
+    '7444a0c7b6021a9ca1505c735d7b2726' => $baseDir . '/src/helpers.php',
+    'fd855a100ea7fa775479be591a7ea164' => $baseDir . '/src/config.php',
+    '8ff6738d5d35c689571ef62a8e85c23c' => $baseDir . '/src/forms/Form.php',
+    'b8f4c882484229477e822548f426bff1' => $baseDir . '/cms.php',
 );
