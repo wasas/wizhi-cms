@@ -1,5 +1,5 @@
 {
-  "name": "wpcio/cms",
+  "name": "wizhi/cms",
   "description": "The most used function in WordPress",
   "type": "wordpress-plugin",
   "require": {
@@ -42,7 +42,8 @@
       "framework/src/Themosis/helpers.php",
       "src/helpers.php",
       "src/config.php",
-      "src/forms/Form.php"
+      "src/forms/Form.php",
+      "cms.php"
     ]
   },
   "license": "MIT",
