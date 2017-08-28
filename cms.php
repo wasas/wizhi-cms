@@ -57,26 +57,5 @@ add_action( 'plugins_loaded', function () {
 global $wizhi_option;
 $wizhi_option = get_option( 'wizhi_cms_settings' );
 
-/*
- * 自动加载
- */
-$loader  = new ClassLoader();
-$classes = [
-	'Wizhi\\Helper\\'           => WIZHI_CMS . 'src/helpers/',
-	'Wizhi\\Option\\'           => WIZHI_CMS . 'src/option/',
-	'Wizhi\\Walker\\'           => WIZHI_CMS . 'src/walker/',
-	'Wizhi\\Metabox\\'          => WIZHI_CMS . 'src/metabox/',
-	'Wizhi\\Action\\'           => WIZHI_CMS . 'src/action/',
-	'Wizhi\\Shortcode\\'        => WIZHI_CMS . 'src/shortcode/',
-	'Wizhi\\Forms\\Controls\\'  => WIZHI_CMS . 'src/forms/controls',
-	'Wizhi\\Forms\\Rendering\\' => WIZHI_CMS . 'src/forms/renders',
-];
-
-foreach ( $classes as $prefix => $path ) {
-	$loader->addPsr4( $prefix, $path );
-}
-
-$loader->register();
-
 require_once WIZHI_CMS . 'framework/themosis.php';
 require_once WIZHI_CMS . 'src/Bootstrap.php';

@@ -28,7 +28,15 @@
   },
   "autoload": {
     "psr-4": {
-      "Themosis\\": "framework/src/Themosis/"
+      "Themosis\\": "framework/src/Themosis/",
+      "Wizhi\\Helper\\": "src/helpers/",
+      "Wizhi\\Option\\": "src/option/",
+      "Wizhi\\Walker\\": "src/walker/",
+      "Wizhi\\Metabox\\": "src/metabox/",
+      "Wizhi\\Action\\": "src/action/",
+      "Wizhi\\Shortcode\\": "src/shortcode/",
+      "Wizhi\\Forms\\Controls\\": "src/forms/controls",
+      "Wizhi\\Forms\\Rendering\\": "src/forms/renders"
     },
     "files": [
       "framework/src/Themosis/helpers.php",

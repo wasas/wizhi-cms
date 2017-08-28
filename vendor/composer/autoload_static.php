@@ -21,6 +21,14 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
+            'Wizhi\\Walker\\' => 13,
+            'Wizhi\\Shortcode\\' => 16,
+            'Wizhi\\Option\\' => 13,
+            'Wizhi\\Metabox\\' => 14,
+            'Wizhi\\Helper\\' => 13,
+            'Wizhi\\Forms\\Rendering\\' => 22,
+            'Wizhi\\Forms\\Controls\\' => 21,
+            'Wizhi\\Action\\' => 13,
             'Whoops\\' => 7,
         ),
         'T' => 
@@ -84,6 +92,38 @@ class ComposerStaticInit8958a4b5c1bc1ab8e3611dff72b4b479
     );
 
     public static $prefixDirsPsr4 = array (
+        'Wizhi\\Walker\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/walker',
+        ),
+        'Wizhi\\Shortcode\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/shortcode',
+        ),
+        'Wizhi\\Option\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/option',
+        ),
+        'Wizhi\\Metabox\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/metabox',
+        ),
+        'Wizhi\\Helper\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/helpers',
+        ),
+        'Wizhi\\Forms\\Rendering\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/forms/renders',
+        ),
+        'Wizhi\\Forms\\Controls\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/forms/controls',
+        ),
+        'Wizhi\\Action\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/action',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
