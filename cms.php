@@ -16,33 +16,7 @@ defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8.0' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
 
-use Composer\Autoload\ClassLoader;
-
-if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
-
-	// 显示警告信息
-	if ( is_admin() ) {
-		add_action( 'admin_notices', function () {
-			printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6' );
-		} );
-	}
-
-	return;
-}
-
-
-/**
- * 加载后台样式
- */
-add_action( 'admin_enqueue_scripts', function () {
-	wp_enqueue_style( 'wizhi-form-style', WIZHI_URL . '/front/dist/styles/admin.css' );
-	wp_enqueue_script( 'wizhi-form-scripts', WIZHI_URL . '/front/dist/scripts/admin.js', [ 'jquery' ], WIZHI_CMS_VERSION, true );
-} );
-
-
-/**
- * 加载翻译文件
- */
+// 插件加载时，加载翻译文件和 field manager 类
 add_action( 'plugins_loaded', function () {
 	load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 	load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/languages/' );

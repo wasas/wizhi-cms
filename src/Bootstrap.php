@@ -16,9 +16,25 @@ class Bootstrap {
 
 		global $wizhi_option;
 
+		// 显示版本警告信息
+		if ( version_compare( phpversion(), '5.6.0', '<' ) ) {
+
+			// 显示警告信息
+			if ( is_admin() ) {
+				add_action( 'admin_notices', function () {
+					printf( '<div class="error"><p>' . __( 'Your PHP version（%1$s）can`t match plugin require, please update to PHP %2$s or later.', 'wizhi' ) . '</p></div>', phpversion(), '5.6' );
+				} );
+			}
+
+			return;
+		}
+
 		// 添加默认的文章类型、分类方法和存档设置
 		add_action( 'init', [ 'Wizhi\Option\Content', 'type_options' ] );
 		add_action( 'init', [ 'Wizhi\Option\Content', 'default_content_type' ] );
+
+		// 加载前端资源
+		add_action( 'admin_enqueue_scripts', [ 'Wizhi\Helper\Assets', 'load' ] );
 
 		// 选项设置
 		add_action( 'init', [ 'Wizhi\Option\Settings', 'init' ] );
@@ -67,6 +83,17 @@ class Bootstrap {
 			define( 'DISALLOW_FILE_MODS', true );
 		}
 
+		// 插件加载时，加载翻译文件和 field manager 类
+		add_action( 'plugins_loaded', function () {
+			load_plugin_textdomain( 'wizhi', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+			load_plugin_textdomain( 'fieldmanager', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+
+			// 检测是否安装了 fieldmanager 插件，如果未安装，包含插件内置的
+			if ( ! function_exists( 'fieldmanager_load_class' ) ) {
+				require_once WIZHI_CMS . '/fieldmanager/fieldmanager.php';
+			}
+		} );
+
 	}
 }
 
@@ -82,4 +109,4 @@ $config = "
 		basename: wizhi-cms/cms.php
 	";
 
-$up = new GitHubUpdater( Neon::decode( $config ) );
+new GitHubUpdater( Neon::decode( $config ) );
