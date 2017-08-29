@@ -39,6 +39,18 @@ if ( ! function_exists( 'dda' ) ) {
 	}
 }
 
+if ( ! function_exists( 'assets' ) ) {
+	/**
+	 * 输出传入的变量并结束程序
+	 *
+	 * @param  mixed
+	 *
+	 * @return void
+	 */
+	function assets( $name ) {
+		return get_theme_file_uri('front/dist/' . $name );
+	}
+}
 
 /**
  * 根据分类法获取文章类型
