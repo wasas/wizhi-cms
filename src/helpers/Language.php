@@ -44,7 +44,7 @@ class Language {
 	 *
 	 * @return array
 	 */
-	function body_class( $classes ) {
+	public static function body_class( $classes ) {
 
 		$lang      = get_bloginfo( 'language' );
 		$classes[] = 'lang-' . $lang;

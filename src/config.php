@@ -6,7 +6,7 @@ use Nette\Neon\Neon;
 // 配置 Corcel 数据库连接
 /*----------------------------------------------------*/
 $table_prefix = getenv( 'DB_PREFIX' ) ? getenv( 'DB_PREFIX' ) : 'wp_';
-$collate      = defined( 'DB_COLLATE' ) && DB_COLLATE ? DB_COLLATE : 'utf8_general_ci';
+$collate      = ( defined( 'DB_COLLATE' ) && DB_COLLATE ) ? DB_COLLATE : 'utf8_general_ci';
 
 /*----------------------------------------------------*/
 // Illuminate database

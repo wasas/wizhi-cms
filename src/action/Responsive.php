@@ -18,7 +18,7 @@ class Responsive {
 	 *
 	 * @return mixed
 	 */
-	function switch_theme( $theme ) {
+	public static function switch_theme( $theme ) {
 
 		$mobile_theme = get_option( 'wizhi_cms_settings' )[ 'mobile_theme' ];
 
