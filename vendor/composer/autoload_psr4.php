@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Wizhi\\Walker\\' => array($baseDir . '/src/walker'),
     'Wizhi\\Shortcode\\' => array($baseDir . '/src/shortcode'),
+    'Wizhi\\Payment\\' => array($baseDir . '/src/payment'),
     'Wizhi\\Option\\' => array($baseDir . '/src/option'),
     'Wizhi\\Metabox\\' => array($baseDir . '/src/metabox'),
     'Wizhi\\Helper\\' => array($baseDir . '/src/helpers'),

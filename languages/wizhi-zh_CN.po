@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-09-06 11:06+0800\n"
-"PO-Revision-Date: 2017-09-06 11:07+0800\n"
+"POT-Creation-Date: 2017-09-06 11:24+0800\n"
+"PO-Revision-Date: 2017-09-06 11:25+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -572,7 +572,7 @@ msgstr "存档描述"
 msgid "Archive Template"
 msgstr "存档模板"
 
-#: src/option/Content.php:92
+#: src/option/Content.php:94
 msgid " Category"
 msgstr "分类"
 
@@ -639,6 +639,40 @@ msgstr "备案号"
 #: src/option/Settings.php:54
 msgid "Code before </body>"
 msgstr "</body> 前代码"
+
+#: src/option/Settings.php:58
+msgid "Payment"
+msgstr "支付接口"
+
+#: src/option/Settings.php:62
+msgid "Alipay Partner"
+msgstr ""
+
+#: src/option/Settings.php:63
+msgid "Alipay Key"
+msgstr ""
+
+#: src/option/Settings.php:64
+msgid "Alipay Email"
+msgstr ""
+
+#: src/option/Settings.php:65
+#, fuzzy
+msgid "Wechat APP ID"
+msgstr "微信 App ID"
+
+#: src/option/Settings.php:66
+msgid "Wechat API Key"
+msgstr ""
+
+#: src/option/Settings.php:67
+#, fuzzy
+msgid "Wechat Mch ID"
+msgstr "微信商户 ID"
+
+#: src/option/Settings.php:68
+msgid "Wechat Payment Key"
+msgstr ""
 
 #: src/shortcode/UI.php:28
 msgid "Button"

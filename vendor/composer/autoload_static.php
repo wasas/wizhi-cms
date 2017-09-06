@@ -24,6 +24,7 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
         array (
             'Wizhi\\Walker\\' => 13,
             'Wizhi\\Shortcode\\' => 16,
+            'Wizhi\\Payment\\' => 14,
             'Wizhi\\Option\\' => 13,
             'Wizhi\\Metabox\\' => 14,
             'Wizhi\\Helper\\' => 13,
@@ -99,6 +100,10 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
         'Wizhi\\Shortcode\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/shortcode',
+        ),
+        'Wizhi\\Payment\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/payment',
         ),
         'Wizhi\\Option\\' => 
         array (

@@ -54,6 +54,20 @@ class Settings {
 						'code_before_body' => new \Fieldmanager_TextArea( __( 'Code before </body>', 'wizhi' ) ),
 					],
 				] ),
+				'payment'  => new \Fieldmanager_Group( [
+					'label'          => __( 'Payment', 'wizhi' ),
+					'serialize_data' => false,
+					'add_to_prefix'  => false,
+					'children'       => [
+						'alipay_partner'    => new \Fieldmanager_TextField( __( 'Alipay Partner', 'wizhi' ) ),
+						'alipay_key' => new \Fieldmanager_TextField( __( 'Alipay Key', 'wizhi' ) ),
+						'alipay_email' => new \Fieldmanager_TextField( __( 'Alipay Email', 'wizhi' ) ),
+						'wechat_app_id' => new \Fieldmanager_TextField( __( 'Wechat APP ID', 'wizhi' ) ),
+						'wechat_api_key' => new \Fieldmanager_TextField( __( 'Wechat API Key', 'wizhi' ) ),
+						'wechat_mch_id' => new \Fieldmanager_TextField( __( 'Wechat Mch ID', 'wizhi' ) ),
+						'wechat_payment_key' => new \Fieldmanager_TextField( __( 'Wechat Payment Key', 'wizhi' ) ),
+					],
+				] ),
 			];
 
 			$fm = new \Fieldmanager_Group( [

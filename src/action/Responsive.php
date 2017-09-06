@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: amoslee
- * Date: 2017/8/26
- * Time: 22:39
- */
-
 namespace Wizhi\Action;
 
 
@@ -20,7 +13,9 @@ class Responsive {
 	 */
 	public static function switch_theme( $theme ) {
 
-		$mobile_theme = get_option( 'wizhi_cms_settings' )[ 'mobile_theme' ];
+		global $wizhi_option;
+
+		$mobile_theme = $wizhi_option['general'][ 'mobile_theme' ];
 
 		if ( isset( $mobile_theme ) && wp_is_mobile() && $mobile_theme != 0 ) {
 			$theme = $mobile_theme;

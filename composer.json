@@ -31,6 +31,7 @@
       "Wizhi\\Walker\\": "src/walker/",
       "Wizhi\\Metabox\\": "src/metabox/",
       "Wizhi\\Action\\": "src/action/",
+      "Wizhi\\Payment\\": "src/payment/",
       "Wizhi\\Shortcode\\": "src/shortcode/",
       "Wizhi\\Forms\\Controls\\": "src/forms/controls",
       "Wizhi\\Forms\\Rendering\\": "src/forms/renders"

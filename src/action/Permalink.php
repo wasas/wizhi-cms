@@ -1,14 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: amoslee
- * Date: 2017/8/26
- * Time: 22:42
- */
 
 namespace Wizhi\Action;
 
-
+/**
+ * 为 WordPress 添加自定义链接功能
+ */
 class Permalink {
 
 	function custom() {
