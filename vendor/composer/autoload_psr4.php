@@ -10,6 +10,8 @@ return array(
     'Wizhi\\Shortcode\\' => array($baseDir . '/src/shortcode'),
     'Wizhi\\Payment\\' => array($baseDir . '/src/payment'),
     'Wizhi\\Option\\' => array($baseDir . '/src/option'),
+    'Wizhi\\OpenAuth\\' => array($baseDir . '/src/openauth'),
+    'Wizhi\\Modes\\' => array($baseDir . '/src/models'),
     'Wizhi\\Metabox\\' => array($baseDir . '/src/metabox'),
     'Wizhi\\Helper\\' => array($baseDir . '/src/helpers'),
     'Wizhi\\Forms\\Rendering\\' => array($baseDir . '/src/forms/renders'),

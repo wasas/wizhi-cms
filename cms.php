@@ -15,6 +15,7 @@ define( 'WIZHI_URL', plugins_url( '', __FILE__ ) );
 defined( 'WIZHI_CMS_VERSION' ) or define( 'WIZHI_CMS_VERSION', '1.8.0' );
 
 require_once( WIZHI_CMS . 'vendor/autoload.php' );
+require_once( WIZHI_CMS . 'src/database.php' );
 
 // 插件加载时，加载翻译文件和 field manager 类
 add_action( 'plugins_loaded', function () {
@@ -27,9 +28,7 @@ add_action( 'plugins_loaded', function () {
 	}
 } );
 
-// 设置插件设置到全局变量
-global $wizhi_option;
-$wizhi_option = get_option( 'wizhi_cms_settings' );
+register_activation_hook( __FILE__, 'wizhi_install_database' );
 
 require_once WIZHI_CMS . 'framework/themosis.php';
 require_once WIZHI_CMS . 'src/Bootstrap.php';

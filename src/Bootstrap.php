@@ -10,6 +10,8 @@ namespace Wizhi\Bootstrap;
 
 use Nette\Neon\Neon;
 use Wizhi\Helper\GitHubUpdater;
+use Wizhi\Helper\Condition;
+use Wizhi\OpenAuth\WeChatAuth;
 
 class Bootstrap {
 	public function __construct() {
@@ -93,6 +95,21 @@ class Bootstrap {
 				require_once WIZHI_CMS . '/fieldmanager/fieldmanager.php';
 			}
 		} );
+
+
+		/**
+		 * 添加插件设置到全局变量
+		 */
+		global $wizhi_option;
+		$wizhi_option = get_option( 'wizhi_cms_settings' );
+
+
+		/**
+		 * 如果在微信中打开，登录微信
+		 */
+		if ( Condition::is_wechat() && $wizhi_option['payment']['wechat_auto_login'] ) {
+			new WeChatAuth();
+		}
 
 	}
 }

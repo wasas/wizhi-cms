@@ -26,6 +26,8 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
             'Wizhi\\Shortcode\\' => 16,
             'Wizhi\\Payment\\' => 14,
             'Wizhi\\Option\\' => 13,
+            'Wizhi\\OpenAuth\\' => 15,
+            'Wizhi\\Modes\\' => 12,
             'Wizhi\\Metabox\\' => 14,
             'Wizhi\\Helper\\' => 13,
             'Wizhi\\Forms\\Rendering\\' => 22,
@@ -108,6 +110,14 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
         'Wizhi\\Option\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/option',
+        ),
+        'Wizhi\\OpenAuth\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/openauth',
+        ),
+        'Wizhi\\Modes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/models',
         ),
         'Wizhi\\Metabox\\' => 
         array (
