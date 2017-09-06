@@ -1,4 +1,4 @@
-#frm-picture{
+#frm-picture {
 
 }
 
@@ -118,7 +118,6 @@
     }
 }
 
-
 .fm-label {
     display: inline-block;
     width: 15%;
@@ -211,4 +210,58 @@ ul.add-menu-item-tabs li, ul.category-tabs li, ul.wp-tab-bar li {
     border-bottom: 0;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+/************************************
+ * 设置选项样式
+ ************************************/
+.appearance_page_wizhi_cms_settings {
+    .fm-tabbed-vertical {
+        margin: 0;
+        background: #24292e;
+        .wp-tabs-panel {
+            margin-left: 0;
+            padding: 0;
+        }
+        .fm-tab-bar{
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            box-shadow: none;
+            li{
+                a{
+                    background-image: none;
+                    background-color: #24292e;
+                    color: #fff;
+                    border-right: 0;
+                    text-shadow: none;
+                    border-bottom: 0;
+                    padding: 10px 15px;
+                    &:hover{
+                        background-color: #eee;
+                        color: #24292e;
+                    }
+                }
+                &.wp-tab-active{
+                    a{
+                        background-color: #fff;
+                        color: #24292e;
+                    }
+                }
+            }
+        }
+    }
+    .fm-label-inline.fm-label-after{
+        padding-top: 0;
+        margin-top: -2px;
+    }
+    .fm-checkbox-group{
+        display: inline-block;
+        padding-top: 4px;
+    }
+    .fm-wrapper .wp-tabs-panel > .fm-wrapper > .fm-item{
+        margin-bottom: 0;
+    }
+    .fm-tabbed-vertical > .wp-tabs-panel > div > .fm-group > .fm-group-inner{
+        min-height: 700px;
+    }
 }

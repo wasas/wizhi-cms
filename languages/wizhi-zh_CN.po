@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-06-25 09:23+0800\n"
-"PO-Revision-Date: 2017-06-25 09:23+0800\n"
+"POT-Creation-Date: 2017-09-06 11:06+0800\n"
+"PO-Revision-Date: 2017-09-06 11:07+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -20,8 +20,269 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 "X-Poedit-SearchPathExcluded-3: front\n"
 "X-Poedit-SearchPathExcluded-4: admin\n"
+"X-Poedit-SearchPathExcluded-5: ../../../../../../Amoslee/Sites/wizhi/wp-"
+"content/plugins/wizhi-cms/vendor\n"
+"X-Poedit-SearchPathExcluded-6: *.js\n"
+"X-Poedit-SearchPathExcluded-7: *.rst\n"
 
-#: cms.php:27
+#: fieldmanager/php/class-fieldmanager-checkbox.php:69
+msgid "Saved a checkbox with a value that was not one of the options"
+msgstr "保存的值不是选项之一。"
+
+#: fieldmanager/php/class-fieldmanager-field.php:337
+#: fieldmanager/php/class-fieldmanager-group.php:158
+msgid ""
+"A post can only have one parent, therefore you cannot store to post_parent "
+"in repeatable fields."
+msgstr "一篇文章只能有一个父级文章，所以不能存储 post_parent 为可重复字段。"
+
+#: fieldmanager/php/class-fieldmanager-field.php:372
+#: fieldmanager/php/datasource/class-fieldmanager-datasource.php:64
+#, php-format
+msgid ""
+"You attempted to set a property \"%1$s\" that is nonexistant or invalid for "
+"an instance of \"%2$s\" named \"%3$s\"."
+msgstr "您试图设置\"%1$s\"属性，该属性不存在或实例\"%2$s\"的名称\"%3$s\"无效。"
+
+#: fieldmanager/php/class-fieldmanager-field.php:733
+#, php-format
+msgid "$values should be an array because $limit is %d"
+msgstr "$values 应该是一个数组，因为 $limit 是 %d"
+
+#: fieldmanager/php/class-fieldmanager-field.php:748
+#, php-format
+msgid "submitted %1$d values against a limit of %2$d"
+msgstr "提交的 %1$d 超过了 %2$d 的限制"
+
+#: fieldmanager/php/class-fieldmanager-field.php:866
+msgid "presave() in the base class should not get arrays, but did."
+msgstr "基类中的 presave() 不应该得到数组，但却得到了。"
+
+#: fieldmanager/php/class-fieldmanager-field.php:871
+#: fieldmanager/php/class-fieldmanager-options.php:216
+#, php-format
+msgid "Input \"%1$s\" is not valid for field \"%2$s\" "
+msgstr "输入\"%1$s\"不是有效的字段\"%2$s\""
+
+#: fieldmanager/php/class-fieldmanager-field.php:929
+msgid "Add group"
+msgstr "添加群组"
+
+#: fieldmanager/php/class-fieldmanager-field.php:929
+msgid "Add field"
+msgstr "添加字段"
+
+#: fieldmanager/php/class-fieldmanager-field.php:1138
+msgid ""
+"You may be able to use your browser's back button to resolve this error."
+msgstr "使用浏览器的后退按钮可能会解决此错误。"
+
+#: fieldmanager/php/class-fieldmanager-group.php:313
+#, php-format
+msgid "Found \"%1$s\" in data but not in children"
+msgstr "数据中的\"%1$s\"不是选项之一"
+
+#: fieldmanager/php/class-fieldmanager-media.php:70
+msgid "Attach a File"
+msgstr "附加文件"
+
+#: fieldmanager/php/class-fieldmanager-media.php:71
+msgid "Select Attachment"
+msgstr "选择附件"
+
+#: fieldmanager/php/class-fieldmanager-media.php:72
+msgid "Choose an Attachment"
+msgstr "选择附件"
+
+#: fieldmanager/php/context/class-fieldmanager-context-page.php:44
+#: fieldmanager/php/context/class-fieldmanager-context.php:43
+msgid "Nonce validation failed"
+msgstr "安全校验失败"
+
+#: fieldmanager/php/context/class-fieldmanager-context-post.php:200
+#: fieldmanager/php/context/class-fieldmanager-context-quickedit.php:196
+msgid "User cannot edit this post"
+msgstr "你没有权限编辑此文章"
+
+#: fieldmanager/php/context/class-fieldmanager-context-submenu.php:77
+msgid "Options updated"
+msgstr "选项已更新。"
+
+#: fieldmanager/php/context/class-fieldmanager-context-submenu.php:137
+msgid "Current user cannot edit this page"
+msgstr "你没有权限编辑此页面"
+
+#: fieldmanager/php/context/class-fieldmanager-context-term.php:220
+#, php-format
+msgid "The field name \"%s\" is reserved for WordPress on the term form."
+msgstr "字段名称\"%s\" 是 WordPress 的保留项"
+
+#: fieldmanager/php/context/class-fieldmanager-context-term.php:271
+msgid "User cannot edit this term"
+msgstr "你没有权限编辑此分类"
+
+#: fieldmanager/php/context/class-fieldmanager-context-user.php:75
+msgid "Current user cannot edit this user"
+msgstr "你没有权限编辑此用户"
+
+#: fieldmanager/php/datasource/class-fieldmanager-datasource-post.php:220
+#, php-format
+msgid ""
+"Tried to alter %s %d through field \"%s\", which user is not permitted to "
+"edit."
+msgstr ""
+"Tried to alter %s %d through field \"%s\", which user is not permitted to "
+"edit."
+
+#: fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:78
+#, php-format
+msgid "Store property %s is invalid. Must be one of %s."
+msgstr "存储属性 %s 无效。必须是 %s 之一。"
+
+#: fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:85
+msgid ""
+"You cannot use reciprocal relationships with FM_Datasource_User if "
+"store_property is not set to ID."
+msgstr "如果 store_property 不设为 ID, FM_Datasource_User 就不能使用相互关系。"
+
+#: fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:91
+#, php-format
+msgid "Display property %s is invalid. Must be one of %s."
+msgstr "显示属性 %s 无效。必须是 %s 之一。"
+
+#: fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:206
+#, php-format
+msgid "Tried to refer to user \"%s\" which current user cannot edit."
+msgstr "试图引用的用户\"%s\"不能编辑。"
+
+#: fieldmanager/php/util/class-fieldmanager-util-term-meta.php:65
+msgid "Fieldmanager Term Metadata"
+msgstr "分类项目字段"
+
+#: fieldmanager/php/util/class-fieldmanager-util-validation.php:138
+#: fieldmanager/php/util/class-fieldmanager-util-validation.php:152
+#, php-format
+msgid "The validation rule \"%s\" does not exist."
+msgstr "验证规则\"%s\"不存在。"
+
+#: framework/src/Themosis/Asset/AssetFactory.php:97
+msgid "Can't load your asset"
+msgstr "无法加载您的资源"
+
+#: framework/src/Themosis/Asset/AssetFactory.php:97
+msgid "If your asset has no file extension, please provide the type parameter."
+msgstr "如果你的资源有没有扩展名，请提供类型参数。"
+
+#: framework/src/Themosis/Html/FormBuilder.php:231
+msgid "Please enter your email..."
+msgstr "请输入您的电子邮件"
+
+#: framework/src/Themosis/PostType/PostTypeBuilder.php:168
+msgid "Publish"
+msgstr "发布"
+
+#: framework/src/Themosis/PostType/PostTypeBuilder.php:265
+msgid "Apply Changes"
+msgstr "保存修改"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:18
+msgid "Save"
+msgstr "保存"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:63
+msgid "Preview Changes"
+msgstr "预览"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:80
+msgid "Preview"
+msgstr "预览"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:124
+msgid "Draft"
+msgstr "草稿"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:125
+msgid "Save Draft"
+msgstr "保存草稿"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:171
+msgid "Delete Permanently"
+msgstr "永久删除"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:175
+msgid "Move to Trash"
+msgstr "移动到回收站"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:200
+msgid "Schedule"
+msgstr "计划"
+
+#: framework/src/Themosis/PostType/Views/_themosisCorePublishBox.blade.php:219
+msgid "Submit for Review"
+msgstr "提交审核"
+
+#: framework/src/Themosis/PostType/Views/minor.php:13
+msgid "Private"
+msgstr "隐私"
+
+#: framework/src/Themosis/PostType/Views/minor.php:16
+msgid "Password protected"
+msgstr "密码保护"
+
+#: framework/src/Themosis/PostType/Views/minor.php:19
+msgid "Public, Sticky"
+msgstr "公开、置顶"
+
+#: framework/src/Themosis/PostType/Views/minor.php:22
+msgid "Public"
+msgstr "公开"
+
+#: framework/src/Themosis/PostType/Views/minor.php:54
+#: vendor/jjgrainger/posttypes/src/PostType.php:715
+msgid "M j, Y @ G:i"
+msgstr "Y年m月d日 G:i"
+
+#: framework/src/Themosis/PostType/Views/minor.php:57
+#, php-format
+msgid "Scheduled for: <b>%1$s</b>"
+msgstr "将于: <strong>%1$s</strong>发表。"
+
+#: framework/src/Themosis/PostType/Views/minor.php:59
+#, php-format
+msgid "Published on: <b>%1$s</b>"
+msgstr "将于：%1$s 发布"
+
+#: framework/src/Themosis/PostType/Views/minor.php:61
+#: framework/src/Themosis/PostType/Views/minor.php:69
+msgid "Publish <b>immediately</b>"
+msgstr "<b>立即</b> 发布"
+
+#: framework/src/Themosis/PostType/Views/minor.php:63
+#, php-format
+msgid "Schedule for: <b>%1$s</b>"
+msgstr "将于: <strong>%1$s</strong>发表。"
+
+#: framework/src/Themosis/PostType/Views/minor.php:65
+#, php-format
+msgid "Publish on: <b>%1$s</b>"
+msgstr "发布于: <b>%1$s</b>"
+
+#: framework/src/Themosis/PostType/Views/minor.php:79
+#, php-format
+msgid "Your site is configured to keep only the last %s revisions."
+msgstr "您的站点配置为只保留最后 %s 个修订版。"
+
+#: framework/src/Themosis/PostType/Views/minor.php:81
+#: framework/src/Themosis/PostType/Views/minor.php:84
+#, php-format
+msgid "Revisions: %s"
+msgstr "版本： %s"
+
+#: framework/themosis.php:259
+msgid "Mini"
+msgstr "迷你"
+
+#: src/Bootstrap.php:25
 #, php-format
 msgid ""
 "Your PHP version（%1$s）can`t match plugin require, please update to PHP "
@@ -30,9 +291,581 @@ msgstr ""
 "您当前的PHP版本（%1$s）不符合插件要求, 请升级到 PHP %2$s 或更新的版本， 否则"
 "插件没有任何作用。"
 
-#: inc/deprecated.php:62 inc/deprecated.php:64 inc/deprecated.php:66
-#: inc/deprecated.php:68 inc/deprecated.php:70 inc/deprecated.php:72
-#: inc/deprecated.php:95 inc/deprecated.php:104 inc/deprecated.php:106
+#: src/config.php:37
+msgid "Product"
+msgstr "产品"
+
+#: src/config.php:38
+msgid "Event"
+msgstr "事件"
+
+#: src/config.php:39
+msgid "Review"
+msgstr "评价"
+
+#: src/config.php:40
+msgid "Portfolio"
+msgstr "案例"
+
+#: src/config.php:41
+msgid "Cooperation"
+msgstr "合作"
+
+#: src/config.php:42
+msgid "Team"
+msgstr "团队"
+
+#: src/config.php:43 src/shortcode/UI.php:305
+msgid "Slider"
+msgstr "幻灯"
+
+#: src/config.php:44
+msgid "Faq"
+msgstr "问题"
+
+#: src/config.php:45
+msgid "Download"
+msgstr "下载"
+
+#: src/helpers/DataOption.php:27
+msgid "Select Content Type"
+msgstr "选择内容类型"
+
+#: src/helpers/DataOption.php:28
+msgid "Post"
+msgstr "文章"
+
+#: src/helpers/DataOption.php:29 src/helpers/Pagination.php:59
+msgid "Page"
+msgstr "页面"
+
+#: src/helpers/DataOption.php:48
+msgid "Select Taxonomy"
+msgstr "选择分类方法"
+
+#: src/helpers/DataOption.php:49
+msgid "Category"
+msgstr "分类"
+
+#: src/helpers/DataOption.php:50
+msgid "Tags"
+msgstr "标签"
+
+#: src/helpers/DataOption.php:87
+msgid "Select Category"
+msgstr "选择分类目录"
+
+#: src/helpers/DataOption.php:135
+msgid "Select Content"
+msgstr "选择内容"
+
+#: src/helpers/DataOption.php:155
+msgid "Author"
+msgstr "作者"
+
+#: src/helpers/DataOption.php:156
+msgid "Date"
+msgstr "日期"
+
+#: src/helpers/DataOption.php:157
+msgid "Title"
+msgstr "标签"
+
+#: src/helpers/DataOption.php:158
+msgid "Random"
+msgstr "随机"
+
+#: src/helpers/DataOption.php:169
+msgid "Default"
+msgstr "默认"
+
+#: src/helpers/DataOption.php:170
+msgid "Success（Green）"
+msgstr "成功（绿色）"
+
+#: src/helpers/DataOption.php:171
+msgid "Info（Blue）"
+msgstr "信息（蓝色）"
+
+#: src/helpers/DataOption.php:172
+msgid "Warning（Orange）"
+msgstr "警告（橙色）"
+
+#: src/helpers/DataOption.php:173
+msgid "Danger（Red）"
+msgstr "危险（红色）"
+
+#: src/helpers/DataOption.php:184
+msgid "ASC"
+msgstr "升序"
+
+#: src/helpers/DataOption.php:185
+msgid "DESC"
+msgstr "降序"
+
+#: src/helpers/Pagination.php:61
+msgid "Home"
+msgstr "首页 "
+
+#: src/helpers/Pagination.php:81
+msgid "Last"
+msgstr "末页"
+
+#: src/helpers/PostType.php:33 src/helpers/PostType.php:34
+#: src/helpers/Taxonomy.php:37
+msgid "Add New "
+msgstr "添加"
+
+#: src/helpers/PostType.php:35 src/helpers/Taxonomy.php:34
+msgid "Edit "
+msgstr "编辑"
+
+#: src/helpers/PostType.php:36
+msgid "New "
+msgstr "添加"
+
+#: src/helpers/PostType.php:37 src/helpers/Taxonomy.php:33
+msgid "All "
+msgstr "所有"
+
+#: src/helpers/PostType.php:38 src/helpers/Taxonomy.php:35
+msgid "View "
+msgstr "查看"
+
+#: src/helpers/PostType.php:39 src/helpers/Taxonomy.php:41
+msgid "Search "
+msgstr "搜索"
+
+#: src/helpers/PostType.php:40
+#, php-format
+msgid "Could not find %s"
+msgstr "找不到%s"
+
+#: src/helpers/PostType.php:41
+#, php-format
+msgid "Could not find %s in trash"
+msgstr "回收站中没有%s"
+
+#: src/helpers/Taxonomy.php:36
+msgid "Upgrade "
+msgstr "更新"
+
+#: src/helpers/Taxonomy.php:38 vendor/jjgrainger/posttypes/src/PostType.php:214
+#, php-format
+msgid "New %s"
+msgstr "新 %s"
+
+#: src/helpers/Taxonomy.php:39 src/helpers/Taxonomy.php:40
+msgid "Parent "
+msgstr "父级"
+
+#: src/helpers/Taxonomy.php:42
+msgid "Popular "
+msgstr "热门"
+
+#: src/helpers/Taxonomy.php:43
+#, php-format
+msgid "Separate %s with commas"
+msgstr "使用 %s 分隔"
+
+#: src/helpers/Taxonomy.php:44 vendor/jjgrainger/posttypes/src/Taxonomy.php:134
+#, php-format
+msgid "Add or remove %s"
+msgstr "添加或删除%s"
+
+#: src/helpers/Taxonomy.php:45
+#, php-format
+msgid "Choose from the most used %s"
+msgstr "从最常用的 %s 选择"
+
+#: src/helpers/Taxonomy.php:46
+#, php-format
+msgid "No %s found."
+msgstr "没找到%s"
+
+#: src/metabox/Post.php:16 src/metabox/Term.php:34 src/option/Content.php:41
+#: src/option/Content.php:42
+msgid "Cover image"
+msgstr "封面图像"
+
+#: src/metabox/Post.php:17
+msgid "Cover Text"
+msgstr "封面图像"
+
+#: src/metabox/Post.php:27
+msgid "Post Fields"
+msgstr "文章字段"
+
+#: src/metabox/Slider.php:11 src/metabox/Slider.php:12
+msgid "Custom link"
+msgstr "自定义链接"
+
+#: src/metabox/Term.php:16 src/option/Content.php:32
+msgid "1 Column"
+msgstr "1 列"
+
+#: src/metabox/Term.php:17 src/option/Content.php:33
+msgid "2 Column"
+msgstr "2 列"
+
+#: src/metabox/Term.php:18 src/option/Content.php:34
+msgid "3 Column"
+msgstr "3 列"
+
+#: src/metabox/Term.php:19 src/option/Content.php:35
+msgid "4 Column"
+msgstr "4 列"
+
+#: src/metabox/Term.php:20 src/option/Content.php:36
+msgid "5 Column"
+msgstr "5 列"
+
+#: src/metabox/Term.php:21 src/option/Content.php:37
+msgid "6 Column"
+msgstr "6 列"
+
+#: src/metabox/Term.php:29
+msgid "Post per page"
+msgstr "每页的文章数"
+
+#: src/metabox/Term.php:39
+msgid "Banner Text"
+msgstr "封面图像"
+
+#: src/metabox/Term.php:45
+msgid "Archive template"
+msgstr "存档模板"
+
+#: src/metabox/Term.php:51 src/option/Content.php:48
+msgid "Main Taxonomy"
+msgstr "主分类方法"
+
+#: src/metabox/Term.php:57 src/option/Content.php:51
+msgid "Column"
+msgstr "列"
+
+#: src/metabox/Term.php:63 src/option/Content.php:54
+msgid "Small Screen Column"
+msgstr "小屏幕分栏数量"
+
+#: src/metabox/Term.php:69 src/option/Content.php:57
+msgid "Posts Per Page"
+msgstr "每页的文章数"
+
+#: src/metabox/Term.php:76
+msgid "Related Page"
+msgstr "关联的页面"
+
+#: src/option/Content.php:26
+msgid "Archive Settings"
+msgstr "存档设置"
+
+#: src/option/Content.php:43
+msgid "Archive Title"
+msgstr "存档标题"
+
+#: src/option/Content.php:44
+msgid "Archive Description"
+msgstr "存档描述"
+
+#: src/option/Content.php:45
+msgid "Archive Template"
+msgstr "存档模板"
+
+#: src/option/Content.php:92
+msgid " Category"
+msgstr "分类"
+
+#: src/option/Settings.php:16
+msgid "Option"
+msgstr "选项"
+
+#: src/option/Settings.php:27
+msgid "General"
+msgstr "通用设置"
+
+#: src/option/Settings.php:29
+msgid "Enabled content types"
+msgstr "启用的内容类型"
+
+#: src/option/Settings.php:30
+msgid "Mobile Theme"
+msgstr "移动端主题"
+
+#: src/option/Settings.php:31
+msgid "Clean up useless menus for normal user"
+msgstr "清理后台菜单"
+
+#: src/option/Settings.php:32
+msgid "Deny modify files in backend"
+msgstr "禁止在后台修改文件"
+
+#: src/option/Settings.php:36
+msgid "Header"
+msgstr "网站头部"
+
+#: src/option/Settings.php:40
+msgid "Logo image"
+msgstr "Logo 图像"
+
+#: src/option/Settings.php:41
+msgid "Logo area height"
+msgstr "Logo 区域高度"
+
+#: src/option/Settings.php:42
+msgid "Logo image height"
+msgstr "Logo 图像高度"
+
+#: src/option/Settings.php:43
+msgid "Code before </head>"
+msgstr "</head> 前代码"
+
+#: src/option/Settings.php:47
+msgid "Footer"
+msgstr "网站页脚"
+
+#: src/option/Settings.php:51
+msgid "Footer Logo"
+msgstr "页脚 Logo 图像"
+
+#: src/option/Settings.php:52
+msgid "Copyright text"
+msgstr "版权内容"
+
+#: src/option/Settings.php:53
+msgid "Beian Number"
+msgstr "备案号"
+
+#: src/option/Settings.php:54
+msgid "Code before </body>"
+msgstr "</body> 前代码"
+
+#: src/shortcode/UI.php:28
+msgid "Button"
+msgstr "按钮"
+
+#: src/shortcode/UI.php:32
+msgid "Button color"
+msgstr "按钮颜色"
+
+#: src/shortcode/UI.php:38
+msgid "Button Size"
+msgstr "按钮尺寸"
+
+#: src/shortcode/UI.php:42
+msgid "xSmall"
+msgstr "超小"
+
+#: src/shortcode/UI.php:43
+msgid "Small"
+msgstr "小"
+
+#: src/shortcode/UI.php:44
+msgid "Normal"
+msgstr "正常"
+
+#: src/shortcode/UI.php:45
+msgid "Large"
+msgstr "大"
+
+#: src/shortcode/UI.php:46
+msgid "xLarge"
+msgstr "超大"
+
+#: src/shortcode/UI.php:50 src/shortcode/UI.php:54
+msgid "Button text"
+msgstr "按钮文本"
+
+#: src/shortcode/UI.php:58
+msgid "Button Link"
+msgstr "按钮链接"
+
+#: src/shortcode/UI.php:71
+msgid "Divider line"
+msgstr "分隔线"
+
+#: src/shortcode/UI.php:75
+msgid "Divider type"
+msgstr "分隔线类型"
+
+#: src/shortcode/UI.php:79
+msgid "Solid"
+msgstr "实线"
+
+#: src/shortcode/UI.php:80
+msgid "Shadow"
+msgstr "投影"
+
+#: src/shortcode/UI.php:89
+msgid "Heading"
+msgstr "标题"
+
+#: src/shortcode/UI.php:93
+msgid "Heading type"
+msgstr "标题类型"
+
+#: src/shortcode/UI.php:97
+msgid "With background"
+msgstr "带背景"
+
+#: src/shortcode/UI.php:98
+msgid "With border"
+msgstr "带边框"
+
+#: src/shortcode/UI.php:102
+msgid "Heading text"
+msgstr "标题文字"
+
+#: src/shortcode/UI.php:106
+msgid "Please enter heading text"
+msgstr "请输入标题文本"
+
+#: src/shortcode/UI.php:117
+msgid "Alert"
+msgstr "提示框"
+
+#: src/shortcode/UI.php:121
+msgid "Alert type"
+msgstr "提示框类型"
+
+#: src/shortcode/UI.php:127
+msgid "Alert content"
+msgstr "提示框内容"
+
+#: src/shortcode/UI.php:131
+msgid "Please enter alert content"
+msgstr "请输入提示内容"
+
+#: src/shortcode/UI.php:140
+msgid "Page content"
+msgstr "页面内容"
+
+#: src/shortcode/UI.php:144
+msgid "Page ID"
+msgstr "页面ID"
+
+#: src/shortcode/UI.php:150
+msgid "Show text count"
+msgstr "显示文本字数"
+
+#: src/shortcode/UI.php:156
+msgid "Show more link"
+msgstr "显示更多链接"
+
+#: src/shortcode/UI.php:167
+msgid "Post title list"
+msgstr "文章标题列表"
+
+#: src/shortcode/UI.php:171 src/shortcode/UI.php:230 src/shortcode/UI.php:309
+msgid "Post type"
+msgstr "文章类型"
+
+#: src/shortcode/UI.php:178 src/shortcode/UI.php:237 src/shortcode/UI.php:316
+msgid "Taxonomy"
+msgstr "分类法"
+
+#: src/shortcode/UI.php:185 src/shortcode/UI.php:244 src/shortcode/UI.php:323
+msgid "Term"
+msgstr "分类项目"
+
+#: src/shortcode/UI.php:191
+msgid "Offset post count"
+msgstr "跳过文章数量"
+
+#: src/shortcode/UI.php:197 src/shortcode/UI.php:267 src/shortcode/UI.php:336
+msgid "Show post count"
+msgstr "显示的文章数量"
+
+#: src/shortcode/UI.php:203 src/shortcode/UI.php:273 src/shortcode/UI.php:342
+msgid "Show title text count"
+msgstr "显示标题文字数"
+
+#: src/shortcode/UI.php:209 src/shortcode/UI.php:285
+msgid "Show term title as module heading"
+msgstr "显示分类项目名称作为模块标题"
+
+#: src/shortcode/UI.php:215
+msgid "Show post datetime"
+msgstr "显示文章发布日期"
+
+#: src/shortcode/UI.php:226
+msgid "Media list"
+msgstr "图文媒体列表"
+
+#: src/shortcode/UI.php:250 src/shortcode/UI.php:329
+msgid "Thumbnail size"
+msgstr "缩略图大小"
+
+#: src/shortcode/UI.php:257
+msgid "Thumbnail position"
+msgstr "缩略图位置"
+
+#: src/shortcode/UI.php:261
+msgid "Left"
+msgstr "靠左"
+
+#: src/shortcode/UI.php:262
+msgid "Top"
+msgstr "靠上"
+
+#: src/shortcode/UI.php:263
+msgid "Right"
+msgstr "靠右"
+
+#: src/shortcode/UI.php:279 src/shortcode/UI.php:348
+msgid "Show Content text count"
+msgstr "显示文章内容字数"
+
+#: src/shortcode/UI.php:291
+msgid "Addon CSS class name"
+msgstr "附加的CSS类名"
+
+#: src/shortcode/UI.php:354
+msgid "Slider mode"
+msgstr "幻灯模式"
+
+#: src/shortcode/UI.php:360
+msgid "Slider speed"
+msgstr "切换速度"
+
+#: src/shortcode/UI.php:366
+msgid "Auto play"
+msgstr "自动播放"
+
+#: src/shortcode/UI.php:372
+msgid "Pause on mouse hover"
+msgstr "鼠标经过时暂停"
+
+#: src/shortcode/UI.php:378
+msgid "Minimum slider count"
+msgstr "最少显示的幻灯片数量"
+
+#: src/shortcode/UI.php:384
+msgid "Maximum slider count"
+msgstr "最多显示的幻灯片数量"
+
+#: src/shortcode/UI.php:390
+msgid "Slider width"
+msgstr "幻灯宽度"
+
+#: src/shortcode/UI.php:396
+msgid "Slider margin"
+msgstr "幻灯高度"
+
+#: src/shortcode/UI.php:402
+msgid "Animation"
+msgstr "动画"
+
+#: src/walker/Category.php:36
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "查看 %s 下的所有文章"
+
+#: templates/wizhi/content.php:29
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
+
 #: vendor/jjgrainger/posttypes/src/PostType.php:207
 #: vendor/jjgrainger/posttypes/src/PostType.php:208
 #: vendor/jjgrainger/posttypes/src/PostType.php:209
@@ -44,652 +877,6 @@ msgstr ""
 #, php-format
 msgid "%s"
 msgstr "%s"
-
-#: inc/deprecated.php:109
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
-
-#: inc/deprecated.php:111
-msgid "Archives"
-msgstr "归档"
-
-#: inc/fieldmanager/php/class-fieldmanager-checkbox.php:69
-msgid "Saved a checkbox with a value that was not one of the options"
-msgstr "保存的值不是选项之一。"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:337
-#: inc/fieldmanager/php/class-fieldmanager-group.php:158
-msgid ""
-"A post can only have one parent, therefore you cannot store to post_parent "
-"in repeatable fields."
-msgstr "一篇文章只能有一个父级文章，所以不能存储 post_parent 为可重复字段。"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:372
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource.php:64
-#, php-format
-msgid ""
-"You attempted to set a property \"%1$s\" that is nonexistant or invalid for "
-"an instance of \"%2$s\" named \"%3$s\"."
-msgstr ""
-"您试图设置\"%1$s\"属性，该属性不存在或实例\"%2$s\"的名称\"%3$s\"无效。"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:733
-#, php-format
-msgid "$values should be an array because $limit is %d"
-msgstr "$values 应该是一个数组，因为 $limit 是 %d"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:748
-#, php-format
-msgid "submitted %1$d values against a limit of %2$d"
-msgstr "提交的 %1$d 超过了 %2$d 的限制"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:866
-msgid "presave() in the base class should not get arrays, but did."
-msgstr "基类中的 presave() 不应该得到数组，但却得到了。"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:871
-#: inc/fieldmanager/php/class-fieldmanager-options.php:216
-#, php-format
-msgid "Input \"%1$s\" is not valid for field \"%2$s\" "
-msgstr "输入\"%1$s\"不是有效的字段\"%2$s\""
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:929
-msgid "Add group"
-msgstr "添加群组"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:929
-msgid "Add field"
-msgstr "添加字段"
-
-#: inc/fieldmanager/php/class-fieldmanager-field.php:1138
-msgid ""
-"You may be able to use your browser's back button to resolve this error."
-msgstr "使用浏览器的后退按钮可能会解决此错误。"
-
-#: inc/fieldmanager/php/class-fieldmanager-group.php:313
-#, php-format
-msgid "Found \"%1$s\" in data but not in children"
-msgstr "数据中的\"%1$s\"不是选项之一"
-
-#: inc/fieldmanager/php/class-fieldmanager-media.php:70
-msgid "Attach a File"
-msgstr "附加文件"
-
-#: inc/fieldmanager/php/class-fieldmanager-media.php:71
-msgid "Select Attachment"
-msgstr "选择附件"
-
-#: inc/fieldmanager/php/class-fieldmanager-media.php:72
-msgid "Choose an Attachment"
-msgstr "选择附件"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-page.php:44
-#: inc/fieldmanager/php/context/class-fieldmanager-context.php:43
-msgid "Nonce validation failed"
-msgstr "安全校验失败"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-post.php:200
-#: inc/fieldmanager/php/context/class-fieldmanager-context-quickedit.php:196
-msgid "User cannot edit this post"
-msgstr "你没有权限编辑此文章"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-submenu.php:77
-msgid "Options updated"
-msgstr "选项已更新。"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-submenu.php:137
-msgid "Current user cannot edit this page"
-msgstr "你没有权限编辑此页面"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-term.php:220
-#, php-format
-msgid "The field name \"%s\" is reserved for WordPress on the term form."
-msgstr "字段名称\"%s\" 是 WordPress 的保留项"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-term.php:271
-msgid "User cannot edit this term"
-msgstr "你没有权限编辑此分类"
-
-#: inc/fieldmanager/php/context/class-fieldmanager-context-user.php:75
-msgid "Current user cannot edit this user"
-msgstr "你没有权限编辑此用户"
-
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-post.php:220
-#, php-format
-msgid ""
-"Tried to alter %s %d through field \"%s\", which user is not permitted to "
-"edit."
-msgstr ""
-"Tried to alter %s %d through field \"%s\", which user is not permitted to "
-"edit."
-
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:78
-#, php-format
-msgid "Store property %s is invalid. Must be one of %s."
-msgstr "存储属性 %s 无效。必须是 %s 之一。"
-
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:85
-msgid ""
-"You cannot use reciprocal relationships with FM_Datasource_User if "
-"store_property is not set to ID."
-msgstr ""
-"如果 store_property 不设为 ID, FM_Datasource_User 就不能使用相互关系。"
-
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:91
-#, php-format
-msgid "Display property %s is invalid. Must be one of %s."
-msgstr "显示属性 %s 无效。必须是 %s 之一。"
-
-#: inc/fieldmanager/php/datasource/class-fieldmanager-datasource-user.php:206
-#, php-format
-msgid "Tried to refer to user \"%s\" which current user cannot edit."
-msgstr "试图引用的用户\"%s\"不能编辑。"
-
-#: inc/fieldmanager/php/util/class-fieldmanager-util-term-meta.php:65
-msgid "Fieldmanager Term Metadata"
-msgstr "分类项目字段"
-
-#: inc/fieldmanager/php/util/class-fieldmanager-util-validation.php:138
-#: inc/fieldmanager/php/util/class-fieldmanager-util-validation.php:152
-#, php-format
-msgid "The validation rule \"%s\" does not exist."
-msgstr "验证规则\"%s\"不存在。"
-
-#: inc/helper.php:194
-msgid "Author"
-msgstr "作者"
-
-#: inc/helper.php:195
-msgid "Date"
-msgstr "日期"
-
-#: inc/helper.php:196
-msgid "Title"
-msgstr "标签"
-
-#: inc/helper.php:197
-msgid "Random"
-msgstr "随机"
-
-#: inc/helper.php:208
-msgid "Default"
-msgstr "默认"
-
-#: inc/helper.php:209
-msgid "Success（Green）"
-msgstr "成功（绿色）"
-
-#: inc/helper.php:210
-msgid "Info（Blue）"
-msgstr "信息（蓝色）"
-
-#: inc/helper.php:211
-msgid "Warning（Orange）"
-msgstr "警告（橙色）"
-
-#: inc/helper.php:212
-msgid "Danger（Red）"
-msgstr "危险（红色）"
-
-#: inc/helper.php:223
-msgid "ASC"
-msgstr "升序"
-
-#: inc/helper.php:224
-msgid "DESC"
-msgstr "降序"
-
-#: inc/helper.php:247
-msgid "Select content type"
-msgstr "选择内容类型"
-
-#: inc/helper.php:248
-msgid "Post"
-msgstr "文章"
-
-#: inc/helper.php:249 modules/pagination.php:54
-msgid "Page"
-msgstr "页面"
-
-#: inc/helper.php:278
-msgid "Select content"
-msgstr "选择内容"
-
-#: inc/helper.php:306
-msgid "Select taxonomy"
-msgstr "选择分类方法"
-
-#: inc/helper.php:307
-msgid "Category"
-msgstr "分类"
-
-#: inc/helper.php:308
-msgid "Tags"
-msgstr "标签"
-
-#: inc/helper.php:372
-msgid "Select Category"
-msgstr "选择分类目录"
-
-#: inc/post_types.php:28 inc/post_types.php:29 inc/post_types.php:92
-msgid "Add New "
-msgstr "添加"
-
-#: inc/post_types.php:30 inc/post_types.php:90
-msgid "Edit "
-msgstr "编辑"
-
-#: inc/post_types.php:31
-msgid "New "
-msgstr "添加"
-
-#: inc/post_types.php:32 inc/post_types.php:87
-msgid "All "
-msgstr "所有"
-
-#: inc/post_types.php:33
-msgid "View "
-msgstr "查看"
-
-#: inc/post_types.php:34 inc/post_types.php:86
-msgid "Search "
-msgstr "搜索"
-
-#: inc/post_types.php:35
-#, php-format
-msgid "Could not find %s"
-msgstr "找不到%s"
-
-#: inc/post_types.php:36
-#, php-format
-msgid "Could not find %s in trash"
-msgstr "回收站中没有%s"
-
-#: inc/post_types.php:88 inc/post_types.php:89
-msgid "Parent "
-msgstr "父级"
-
-#: inc/post_types.php:91
-msgid "Upgrade "
-msgstr "更新"
-
-#: inc/post_types.php:93 vendor/jjgrainger/posttypes/src/PostType.php:214
-#, php-format
-msgid "New %s"
-msgstr "新 %s"
-
-#: modules/config.php:12
-msgid "Product"
-msgstr "产品"
-
-#: modules/config.php:13
-msgid "Event"
-msgstr "事件"
-
-#: modules/config.php:14
-msgid "Review"
-msgstr "评价"
-
-#: modules/config.php:15
-msgid "Portfolio"
-msgstr "案例"
-
-#: modules/config.php:16
-msgid "Cooperation"
-msgstr "合作"
-
-#: modules/config.php:17
-msgid "Team"
-msgstr "团队"
-
-#: modules/config.php:18 modules/shortcodes-ui.php:300
-msgid "Slider"
-msgstr "幻灯"
-
-#: modules/config.php:19
-msgid "Faq"
-msgstr "问题"
-
-#: modules/config.php:20
-msgid "Download"
-msgstr "下载"
-
-#: modules/content_types.php:21
-msgid "Archive Settings"
-msgstr "存档设置"
-
-#: modules/content_types.php:27
-msgid "1 Column"
-msgstr "1 列"
-
-#: modules/content_types.php:28
-msgid "2 Column"
-msgstr "2 列"
-
-#: modules/content_types.php:29
-msgid "3 Column"
-msgstr "3 列"
-
-#: modules/content_types.php:30
-msgid "4 Column"
-msgstr "4 列"
-
-#: modules/content_types.php:31
-msgid "5 Column"
-msgstr "5 列"
-
-#: modules/content_types.php:32
-msgid "6 Column"
-msgstr "6 列"
-
-#: modules/content_types.php:36 modules/metabox/posts.php:12
-#: modules/metabox/term.php:20
-msgid "Cover image"
-msgstr "封面图像"
-
-#: modules/content_types.php:37
-msgid "Archive Title"
-msgstr "存档标题"
-
-#: modules/content_types.php:38
-msgid "Archive Description"
-msgstr "存档描述"
-
-#: modules/content_types.php:39
-msgid "Archive Template"
-msgstr "存档模板"
-
-#: modules/content_types.php:42
-msgid "Main Taxonomy"
-msgstr "主分类方法"
-
-#: modules/content_types.php:45
-msgid "Column"
-msgstr "列"
-
-#: modules/content_types.php:48
-msgid "Small Screen Column"
-msgstr "小屏幕分栏数量"
-
-#: modules/content_types.php:51
-msgid "Posts Per Page"
-msgstr "每页的文章数"
-
-#: modules/content_types.php:86
-msgid " Category"
-msgstr "分类"
-
-#: modules/metabox/posts.php:22
-msgid "Post Fields"
-msgstr "文章字段"
-
-#: modules/metabox/slider.php:8 modules/metabox/slider.php:9
-msgid "Custom link"
-msgstr "自定义链接"
-
-#: modules/metabox/term.php:15
-msgid "Post per page"
-msgstr "每页的文章数"
-
-#: modules/metabox/term.php:26
-msgid "Archive template"
-msgstr "存档模板"
-
-#: modules/pagination.php:56
-msgid "Home"
-msgstr "首页 "
-
-#: modules/pagination.php:76
-msgid "Last"
-msgstr "末页"
-
-#: modules/settings.php:10
-msgid "Modules"
-msgstr "模块"
-
-#: modules/settings.php:18
-msgid "Enabled content types"
-msgstr "启用的内容类型"
-
-#: modules/settings.php:19
-msgid "Clean up useless menus for normal user"
-msgstr "清理后台菜单"
-
-#: modules/settings.php:20
-msgid "Deny modify files in backend"
-msgstr "禁止在后台修改文件"
-
-#: modules/shortcodes-ui.php:23
-msgid "Button"
-msgstr "按钮"
-
-#: modules/shortcodes-ui.php:27
-msgid "Button color"
-msgstr "按钮颜色"
-
-#: modules/shortcodes-ui.php:33
-msgid "Button Size"
-msgstr "按钮尺寸"
-
-#: modules/shortcodes-ui.php:37
-msgid "xSmall"
-msgstr "超小"
-
-#: modules/shortcodes-ui.php:38
-msgid "Small"
-msgstr "小"
-
-#: modules/shortcodes-ui.php:39
-msgid "Normal"
-msgstr "正常"
-
-#: modules/shortcodes-ui.php:40
-msgid "Large"
-msgstr "大"
-
-#: modules/shortcodes-ui.php:41
-msgid "xLarge"
-msgstr "超大"
-
-#: modules/shortcodes-ui.php:45 modules/shortcodes-ui.php:49
-msgid "Button text"
-msgstr "按钮文本"
-
-#: modules/shortcodes-ui.php:53
-msgid "Button Link"
-msgstr "按钮链接"
-
-#: modules/shortcodes-ui.php:66
-msgid "Divider line"
-msgstr "分隔线"
-
-#: modules/shortcodes-ui.php:70
-msgid "Divider type"
-msgstr "分隔线类型"
-
-#: modules/shortcodes-ui.php:74
-msgid "Solid"
-msgstr "实线"
-
-#: modules/shortcodes-ui.php:75
-msgid "Shadow"
-msgstr "投影"
-
-#: modules/shortcodes-ui.php:84
-msgid "Heading"
-msgstr "标题"
-
-#: modules/shortcodes-ui.php:88
-msgid "Heading type"
-msgstr "标题类型"
-
-#: modules/shortcodes-ui.php:92
-msgid "With background"
-msgstr "带背景"
-
-#: modules/shortcodes-ui.php:93
-msgid "With border"
-msgstr "带边框"
-
-#: modules/shortcodes-ui.php:97
-msgid "Heading text"
-msgstr "标题文字"
-
-#: modules/shortcodes-ui.php:101
-msgid "Please enter heading text"
-msgstr "请输入标题文本"
-
-#: modules/shortcodes-ui.php:112
-msgid "Alert"
-msgstr "提示框"
-
-#: modules/shortcodes-ui.php:116
-msgid "Alert type"
-msgstr "提示框类型"
-
-#: modules/shortcodes-ui.php:122
-msgid "Alert content"
-msgstr "提示框内容"
-
-#: modules/shortcodes-ui.php:126
-msgid "Please enter alert content"
-msgstr "请输入提示内容"
-
-#: modules/shortcodes-ui.php:135
-msgid "Page content"
-msgstr "页面内容"
-
-#: modules/shortcodes-ui.php:139
-msgid "Page ID"
-msgstr "页面ID"
-
-#: modules/shortcodes-ui.php:145
-msgid "Show text count"
-msgstr "显示文本字数"
-
-#: modules/shortcodes-ui.php:151
-msgid "Show more link"
-msgstr "显示更多链接"
-
-#: modules/shortcodes-ui.php:162
-msgid "Post title list"
-msgstr "文章标题列表"
-
-#: modules/shortcodes-ui.php:166 modules/shortcodes-ui.php:225
-#: modules/shortcodes-ui.php:304
-msgid "Post type"
-msgstr "文章类型"
-
-#: modules/shortcodes-ui.php:173 modules/shortcodes-ui.php:232
-#: modules/shortcodes-ui.php:311
-msgid "Taxonomy"
-msgstr "分类法"
-
-#: modules/shortcodes-ui.php:180 modules/shortcodes-ui.php:239
-#: modules/shortcodes-ui.php:318
-msgid "Term"
-msgstr "分类项目"
-
-#: modules/shortcodes-ui.php:186
-msgid "Offset post count"
-msgstr "跳过文章数量"
-
-#: modules/shortcodes-ui.php:192 modules/shortcodes-ui.php:262
-#: modules/shortcodes-ui.php:331
-msgid "Show post count"
-msgstr "显示的文章数量"
-
-#: modules/shortcodes-ui.php:198 modules/shortcodes-ui.php:268
-#: modules/shortcodes-ui.php:337
-msgid "Show title text count"
-msgstr "显示标题文字数"
-
-#: modules/shortcodes-ui.php:204 modules/shortcodes-ui.php:280
-msgid "Show term title as module heading"
-msgstr "显示分类项目名称作为模块标题"
-
-#: modules/shortcodes-ui.php:210
-msgid "Show post datetime"
-msgstr "显示文章发布日期"
-
-#: modules/shortcodes-ui.php:221
-msgid "Media list"
-msgstr "图文媒体列表"
-
-#: modules/shortcodes-ui.php:245 modules/shortcodes-ui.php:324
-msgid "Thumbnail size"
-msgstr "缩略图大小"
-
-#: modules/shortcodes-ui.php:252
-msgid "Thumbnail position"
-msgstr "缩略图位置"
-
-#: modules/shortcodes-ui.php:256
-msgid "Left"
-msgstr "靠左"
-
-#: modules/shortcodes-ui.php:257
-msgid "Top"
-msgstr "靠上"
-
-#: modules/shortcodes-ui.php:258
-msgid "Right"
-msgstr "靠右"
-
-#: modules/shortcodes-ui.php:274 modules/shortcodes-ui.php:343
-msgid "Show Content text count"
-msgstr "显示文章内容字数"
-
-#: modules/shortcodes-ui.php:286
-msgid "Addon CSS class name"
-msgstr "附加的CSS类名"
-
-#: modules/shortcodes-ui.php:349
-msgid "Slider mode"
-msgstr "幻灯模式"
-
-#: modules/shortcodes-ui.php:355
-msgid "Slider speed"
-msgstr "切换速度"
-
-#: modules/shortcodes-ui.php:361
-msgid "Auto play"
-msgstr "自动播放"
-
-#: modules/shortcodes-ui.php:367
-msgid "Pause on mouse hover"
-msgstr "鼠标经过时暂停"
-
-#: modules/shortcodes-ui.php:373
-msgid "Minimum slider count"
-msgstr "最少显示的幻灯片数量"
-
-#: modules/shortcodes-ui.php:379
-msgid "Maximum slider count"
-msgstr "最多显示的幻灯片数量"
-
-#: modules/shortcodes-ui.php:385
-msgid "Slider width"
-msgstr "幻灯宽度"
-
-#: modules/shortcodes-ui.php:391
-msgid "Slider margin"
-msgstr "幻灯高度"
-
-#: modules/shortcodes-ui.php:397
-msgid "Animation"
-msgstr "动画"
-
-#: modules/walker.php:300
-#, php-format
-msgid "View all posts filed under %s"
-msgstr "查看 %s 下的所有文章"
-
-#: templates/wizhi/content.php:29
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "继续阅读%s <span class=\"meta-nav\">&rarr;</span>"
 
 #: vendor/jjgrainger/posttypes/src/PostType.php:211
 msgid "Add New"
@@ -781,10 +968,6 @@ msgstr "%s已提交。"
 msgid "%2$s scheduled for: <strong>%1$s</strong>."
 msgstr "%2$s 将于: <strong>%1$s</strong>发表。"
 
-#: vendor/jjgrainger/posttypes/src/PostType.php:715
-msgid "M j, Y @ G:i"
-msgstr "Y年m月d日 G:i"
-
 #: vendor/jjgrainger/posttypes/src/PostType.php:718
 #, php-format
 msgid "%s draft updated."
@@ -820,15 +1003,19 @@ msgstr "热门%s"
 msgid "Seperate %s with commas"
 msgstr "用逗号分隔%s"
 
-#: vendor/jjgrainger/posttypes/src/Taxonomy.php:134
-#, php-format
-msgid "Add or remove %s"
-msgstr "添加或删除%s"
-
 #: vendor/jjgrainger/posttypes/src/Taxonomy.php:135
 #, php-format
 msgid "Choose from most used %s"
 msgstr "从最常用的%s中选择"
+
+#~ msgid "%1$s"
+#~ msgstr "%1$s"
+
+#~ msgid "Archives"
+#~ msgstr "归档"
+
+#~ msgid "Modules"
+#~ msgstr "模块"
 
 #~ msgid "New"
 #~ msgstr "新"
@@ -943,9 +1130,6 @@ msgstr "从最常用的%s中选择"
 #~ msgid "Clone area"
 #~ msgstr "复制选区"
 
-#~ msgid "Delete area"
-#~ msgstr "删除选区"
-
 #~ msgid "Row"
 #~ msgstr "行"
 
@@ -1059,8 +1243,8 @@ msgstr "从最常用的%s中选择"
 #~ "use this to break out of the constraint and turn your row into a full "
 #~ "width row"
 #~ msgstr ""
-#~ "行内容通常被网站整体宽度限制，我们可以使用这个功能打破这个限制，显示全宽"
-#~ "内容。"
+#~ "行内容通常被网站整体宽度限制，我们可以使用这个功能打破这个限制，显示全宽内"
+#~ "容。"
 
 #~ msgid "Edit column"
 #~ msgstr "编辑列"
@@ -1089,9 +1273,6 @@ msgstr "从最常用的%s中选择"
 #~ msgid "Enable Shortcode UI"
 #~ msgstr "启用简码 UI"
 
-#~ msgid "Save"
-#~ msgstr "保存"
-
 #~ msgid "Oah, Some errors occured"
 #~ msgstr "嗷，发生了一些错误！"
 
@@ -1115,10 +1296,6 @@ msgstr "从最常用的%s中选择"
 #, fuzzy
 #~ msgid "default:"
 #~ msgstr "默认"
-
-#, fuzzy
-#~ msgid "number"
-#~ msgstr "數字欄位"
 
 #, fuzzy
 #~ msgid "&lt;"
