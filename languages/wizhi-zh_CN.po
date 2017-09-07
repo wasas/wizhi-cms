@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wizhi Banner images\n"
-"POT-Creation-Date: 2017-09-06 11:24+0800\n"
-"PO-Revision-Date: 2017-09-06 11:25+0800\n"
+"POT-Creation-Date: 2017-09-06 14:45+0800\n"
+"PO-Revision-Date: 2017-09-06 14:45+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language: zh\n"
@@ -282,7 +282,7 @@ msgstr "版本： %s"
 msgid "Mini"
 msgstr "迷你"
 
-#: src/Bootstrap.php:25
+#: src/Bootstrap.php:27
 #, php-format
 msgid ""
 "Your PHP version（%1$s）can`t match plugin require, please update to PHP "
@@ -646,33 +646,35 @@ msgstr "支付接口"
 
 #: src/option/Settings.php:62
 msgid "Alipay Partner"
-msgstr ""
+msgstr "支付宝合作者 ID"
 
 #: src/option/Settings.php:63
 msgid "Alipay Key"
-msgstr ""
+msgstr "支付宝密钥"
 
 #: src/option/Settings.php:64
 msgid "Alipay Email"
-msgstr ""
+msgstr "支付宝 Email"
 
 #: src/option/Settings.php:65
-#, fuzzy
 msgid "Wechat APP ID"
 msgstr "微信 App ID"
 
 #: src/option/Settings.php:66
 msgid "Wechat API Key"
-msgstr ""
+msgstr "微信应用密钥"
 
 #: src/option/Settings.php:67
-#, fuzzy
 msgid "Wechat Mch ID"
 msgstr "微信商户 ID"
 
 #: src/option/Settings.php:68
 msgid "Wechat Payment Key"
-msgstr ""
+msgstr "微信支付密钥"
+
+#: src/option/Settings.php:69
+msgid "If open in wechat, auto login"
+msgstr "如果在微信中打开，自动用微信登录。"
 
 #: src/shortcode/UI.php:28
 msgid "Button"

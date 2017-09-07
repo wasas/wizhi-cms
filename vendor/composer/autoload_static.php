@@ -4,14 +4,19 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
+class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'b5e3c5504d057fdf7eaf3fb2c5644d09' => __DIR__ . '/..' . '/freshflesh/wp-render-template-part/src/wp-render-template-part.php',
         'e2a3474226883943f89da2a3bdb21000' => __DIR__ . '/..' . '/lightboxdigital/wp-dynamic-image-resizer/wp-dynamic-image-resizer.php',
+        '9e090711773bfc38738f5dbaee5a7f14' => __DIR__ . '/..' . '/overtrue/wechat/src/Payment/helpers.php',
         '38689f45c8f796732b94d32632def029' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
         '7444a0c7b6021a9ca1505c735d7b2726' => __DIR__ . '/../..' . '/src/helpers.php',
         'fd855a100ea7fa775479be591a7ea164' => __DIR__ . '/../..' . '/src/config.php',
@@ -53,15 +58,28 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Debug\\' => 24,
+            'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
             'PostTypes\\' => 10,
+            'Plasticbrain\\FlashMessages\\' => 27,
         ),
         'O' => 
         array (
+            'Overtrue\\Socialite\\' => 19,
             'Overtrue\\Pinyin\\' => 16,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
+        'K' => 
+        array (
+            'Knp\\Menu\\' => 9,
         ),
         'I' => 
         array (
@@ -77,13 +95,25 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
+            'Gregwar\\Captcha\\' => 16,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
         ),
+        'E' => 
+        array (
+            'EasyWeChat\\' => 11,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Cache\\' => 22,
         ),
         'C' => 
         array (
@@ -195,17 +225,45 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
         ),
+        'Symfony\\Bridge\\PsrHttpMessage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'PostTypes\\' => 
         array (
             0 => __DIR__ . '/..' . '/jjgrainger/posttypes/src',
         ),
+        'Plasticbrain\\FlashMessages\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/plasticbrain/php-flash-messages/src',
+        ),
+        'Overtrue\\Socialite\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/socialite/src',
+        ),
         'Overtrue\\Pinyin\\' => 
         array (
             0 => __DIR__ . '/..' . '/overtrue/pinyin/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Knp\\Menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu/src/Knp/Menu',
         ),
         'Illuminate\\View\\' => 
         array (
@@ -251,13 +309,37 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Gregwar\\Captcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gregwar/captcha',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'EasyWeChat\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/wechat/src',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
         'Corcel\\Tests\\' => 
         array (
@@ -289,11 +371,32 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'S' => 
+        array (
+            'SimpleSoftwareIO\\QrCode\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
+            ),
+        ),
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
         'H' => 
         array (
             'Hautelook' => 
             array (
                 0 => __DIR__ . '/..' . '/hautelook/phpass/src',
+            ),
+        ),
+        'B' => 
+        array (
+            'BaconQrCode' => 
+            array (
+                0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
             ),
         ),
     );
@@ -405,11 +508,11 @@ class ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8b06495625d6cc83b553d22ceb1feb6f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$classMap;
 
         }, null, ClassLoader::class);
     }

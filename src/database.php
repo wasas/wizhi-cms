@@ -35,6 +35,7 @@ function wizhi_install_database() {
 		"CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}security_oauths` (
 			`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 			`user_id` bigint(20) NOT NULL,
+			`mobile` varchar(20) NOT NULL,
 			`open_id` varchar(200) DEFAULT NULL,
 			`union_id` varchar(200) DEFAULT NULL,
 			`access_token` varchar(200) DEFAULT NULL,

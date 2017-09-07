@@ -7,6 +7,7 @@
     "nette/finder": "^2.4",
     "nette/neon": "^2.4",
     "nette/forms": "^2.4",
+    "nesbot/carbon": "^1.22",
     "illuminate/routing": "^5.4",
     "illuminate/container": "^5.4",
     "illuminate/http": "^5.4",
@@ -14,14 +15,21 @@
     "illuminate/view": "^5.4",
     "illuminate/filesystem": "^5.4",
     "illuminate/database": "^5.3",
+    "simplesoftwareio/simple-qrcode": "^1.5",
     "filp/whoops": "^2.1",
     "overtrue/pinyin": "^3.0",
-    "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
-    "jjgrainger/posttypes": "^1.1",
+    "overtrue/wechat": "^3.3",
+    "overtrue/socialite": "^1.3",
+    "knplabs/knp-menu": "^2.2",
+    "gregwar/captcha": "^1.1",
+    "jgrossi/corcel": "^2.4",
+    "plasticbrain/php-flash-messages": "^1.0",
     "symfony/var-dumper": "^3.3",
     "league/color-extractor": "^0.3.2",
     "twig/twig": "^2.4",
-    "jgrossi/corcel": "^2.4"
+    "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
+    "freshflesh/wp-render-template-part": "^1.1",
+    "jjgrainger/posttypes": "^1.1"
   },
   "autoload": {
     "psr-4": {
@@ -54,5 +62,11 @@
     }
   ],
   "minimum-stability": "stable",
-  "preferred-install": "dist"
+  "preferred-install": "dist",
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
 }

@@ -24,6 +24,7 @@ $capsule->addConnection( [
 ] );
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
 $GLOBALS[ 'themosis.capsule' ] = $capsule;
 
 

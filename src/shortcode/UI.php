@@ -251,7 +251,7 @@ class UI {
 					'attr'    => 'thumbs',
 					'type'    => 'select',
 					'value'   => 'thumbnail',
-					'options' => DataOption::size(),
+					'options' => DataOption::sizes(),
 				],
 				[
 					'label'   => __( 'Thumbnail position', 'wizhi' ),

@@ -74,7 +74,6 @@ class Settings {
 			$fm = new \Fieldmanager_Group( [
 				'name'           => 'wizhi_cms_settings',
 				'tabbed'         => 'vertical',
-				//'tabbed'         => 'horizontal',
 				'serialize_data' => false,
 				'add_to_prefix'  => false,
 				'children'       => apply_filters( 'wizhi_option_fields', $fields ),

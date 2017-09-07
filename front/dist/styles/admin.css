@@ -223,5 +223,16 @@ ul.wp-tab-bar li {
 .appearance_page_wizhi_cms_settings .fm-tabbed-vertical > .wp-tabs-panel > div > .fm-group > .fm-group-inner {
   min-height: 700px;
 }
+.appearance_page_wizhi_cms_settings .media-wrapper {
+  margin: 5px 0 15px 0;
+  padding-left: 0;
+  border-left: 0;
+}
+.appearance_page_wizhi_cms_settings .media-wrapper a.fm-delete {
+  position: absolute;
+}
+.appearance_page_wizhi_cms_settings .fm-label-after {
+  width: 90%;
+}
 
 /*# sourceMappingURL=admin.css.map */

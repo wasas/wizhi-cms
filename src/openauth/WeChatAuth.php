@@ -9,7 +9,7 @@ namespace Wizhi\OpenAuth;
 
 use EasyWeChat\Foundation\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Theme\Models\Oauth;
+use Wizhi\Models\Oauth;
 
 /**
  * 获取微信公众号 open_id, 保存到 cookies 中
