@@ -89,3 +89,10 @@ Container::extensionMethod( 'addHtml', function ( $form, $name, $caption = null 
 Container::extensionMethod( 'AddSms', function ( $form, $name, $caption = null ) {
 	return $form[ $name ] = new \Wizhi\Forms\Controls\GetSmsInput( $caption );
 } );
+
+/**
+ * 获取 Captcha 验证码
+ */
+Container::extensionMethod( 'AddCaptcha', function ( $form, $name, $caption = null ) {
+	return $form[ $name ] = new \Wizhi\Forms\Controls\GetCaptchaInput( $caption );
+} );
