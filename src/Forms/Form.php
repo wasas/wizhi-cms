@@ -81,3 +81,11 @@ Container::extensionMethod( 'addChainedSelect', function ( $form, $name, $label 
 Container::extensionMethod( 'addHtml', function ( $form, $name, $caption = null ) {
 	return $form[ $name ] = new \Wizhi\Forms\Controls\HtmlContent( $caption );
 } );
+
+
+/**
+ * 获取 SMS 验证码
+ */
+Container::extensionMethod( 'AddSms', function ( $form, $name, $caption = null ) {
+	return $form[ $name ] = new \Wizhi\Forms\Controls\GetSmsInput( $caption );
+} );
