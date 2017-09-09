@@ -6,6 +6,12 @@
       ],
       "main": true
     },
+    "form.css": {
+      "files": [
+        "styles/form.less"
+      ],
+      "main": true
+    },
     "main.js": {
       "files": [
         "scripts/plugins/*.js",
