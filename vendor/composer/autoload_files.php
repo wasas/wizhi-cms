@@ -19,6 +19,4 @@ return array(
     '38689f45c8f796732b94d32632def029' => $baseDir . '/framework/src/Themosis/helpers.php',
     '7444a0c7b6021a9ca1505c735d7b2726' => $baseDir . '/src/helpers.php',
     'fd855a100ea7fa775479be591a7ea164' => $baseDir . '/src/config.php',
-    '8ff6738d5d35c689571ef62a8e85c23c' => $baseDir . '/src/forms/Form.php',
-    'b8f4c882484229477e822548f426bff1' => $baseDir . '/cms.php',
 );

@@ -43,14 +43,12 @@
       "Wizhi\\Payment\\": "src/payment/",
       "Wizhi\\OpenAuth\\": "src/openauth/",
       "Wizhi\\Shortcode\\": "src/shortcode/",
-      "Wizhi\\Forms\\Controls\\": "src/forms/controls",
-      "Wizhi\\Forms\\Rendering\\": "src/forms/renders"
+      "Wizhi\\Forms\\": "src/forms/"
     },
     "files": [
       "framework/src/Themosis/helpers.php",
       "src/helpers.php",
-      "src/config.php",
-      "cms.php"
+      "src/config.php"
     ]
   },
   "license": "MIT",

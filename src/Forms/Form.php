@@ -147,26 +147,29 @@ class Form extends \Nette\Forms\Form implements \Nette\Utils\IHtmlString {
 
 	/**
 	 * 获取 SMS 验证码
-	 * @param      $name
-	 * @param null $caption
 	 *
-	 * @return \Wizhi\Forms\Controls\HtmlContent
+	 * @param       $name
+	 * @param null  $label
+	 * @param array $settings
+	 *
+	 * @return \Wizhi\Forms\Controls\SmsInput
 	 */
-	public function AddSms( $name, $caption = null ) {
-		return $this[ $name ] = ( new Controls\HtmlContent( $caption ) );
+	public function AddSms( $name, $label = null, $settings = [] ) {
+		return $this[ $name ] = ( new Controls\SmsInput( $label, $settings ) );
 	}
 
 
 	/**
 	 * 添加 Captcha 验证码
 	 *
-	 * @param      $name
-	 * @param null $caption
+	 * @param       $name
+	 * @param null  $label
+	 * @param array $settings
 	 *
-	 * @return \Wizhi\Forms\Controls\HtmlContent
+	 * @return \Wizhi\Forms\Controls\CaptchaInput
 	 */
-	public function AddCaptcha( $name, $caption = null ) {
-		return $this[ $name ] = ( new Controls\HtmlContent( $caption ) );
+	public function AddCaptcha( $name, $label = null, $settings = [] ) {
+		return $this[ $name ] = ( new Controls\CaptchaInput( $label, $settings ) );
 	}
 
 

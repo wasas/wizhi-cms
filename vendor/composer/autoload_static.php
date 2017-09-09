@@ -20,8 +20,6 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         '38689f45c8f796732b94d32632def029' => __DIR__ . '/../..' . '/framework/src/Themosis/helpers.php',
         '7444a0c7b6021a9ca1505c735d7b2726' => __DIR__ . '/../..' . '/src/helpers.php',
         'fd855a100ea7fa775479be591a7ea164' => __DIR__ . '/../..' . '/src/config.php',
-        '8ff6738d5d35c689571ef62a8e85c23c' => __DIR__ . '/../..' . '/src/forms/Form.php',
-        'b8f4c882484229477e822548f426bff1' => __DIR__ . '/../..' . '/cms.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -35,8 +33,7 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
             'Wizhi\\Modes\\' => 12,
             'Wizhi\\Metabox\\' => 14,
             'Wizhi\\Helper\\' => 13,
-            'Wizhi\\Forms\\Rendering\\' => 22,
-            'Wizhi\\Forms\\Controls\\' => 21,
+            'Wizhi\\Forms\\' => 12,
             'Wizhi\\Action\\' => 13,
             'Whoops\\' => 7,
         ),
@@ -157,13 +154,9 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         array (
             0 => __DIR__ . '/../..' . '/src/helpers',
         ),
-        'Wizhi\\Forms\\Rendering\\' => 
+        'Wizhi\\Forms\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/forms/renders',
-        ),
-        'Wizhi\\Forms\\Controls\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/forms/controls',
+            0 => __DIR__ . '/../..' . '/src/forms',
         ),
         'Wizhi\\Action\\' => 
         array (

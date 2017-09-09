@@ -1,6 +1,6 @@
 <?php
 namespace Wizhi\Action;
-
+use Nette\Utils\Arrays;
 
 class Responsive {
 
@@ -15,7 +15,7 @@ class Responsive {
 
 		global $wizhi_option;
 
-		$mobile_theme = $wizhi_option['general'][ 'mobile_theme' ];
+		$mobile_theme = Arrays::get( $wizhi_option, ['general', 'mobile_theme'], 'dashicons-admin-post' );
 
 		if ( isset( $mobile_theme ) && wp_is_mobile() && $mobile_theme != 0 ) {
 			$theme = $mobile_theme;
