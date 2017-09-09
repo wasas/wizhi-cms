@@ -50,7 +50,6 @@
       "framework/src/Themosis/helpers.php",
       "src/helpers.php",
       "src/config.php",
-      "src/forms/Form.php",
       "cms.php"
     ]
   },

@@ -4,7 +4,7 @@
  *
  */
 
-use Nette\Forms\Form;
+use Wizhi\Forms\Form;
 use Wizhi\Helper\Dumper;
 
 if ( ! function_exists( 'dd' ) ) {
@@ -48,7 +48,7 @@ if ( ! function_exists( 'assets' ) ) {
 	 * @return void
 	 */
 	function assets( $name ) {
-		return get_theme_file_uri('front/dist/' . $name );
+		return get_theme_file_uri( 'front/dist/' . $name );
 	}
 }
 
@@ -249,7 +249,7 @@ function wizhi_form( Form $form, $type = 'horizontal' ) {
 /**
  * 为 WordPress 仪表盘格式化表单
  *
- * @param \Form  $form
+ * @param Form   $form
  * @param string $type
  */
 function wizhi_admin_form( Form $form, $type = 'horizontal' ) {

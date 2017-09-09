@@ -1,5 +1,11 @@
 {
   "dependencies": {
+     "admin.css": {
+      "files": [
+        "styles/admin.less"
+      ],
+      "main": true
+    },
     "main.js": {
       "files": [
         "scripts/plugins/*.js",
@@ -36,11 +42,6 @@
     "chained.js": {
       "files": [
         "scripts/forms/jquery.chained.js"
-      ]
-    },
-    "admin.css": {
-      "files": [
-        "styles/admin.less"
       ]
     },
     "customizer.js": {
