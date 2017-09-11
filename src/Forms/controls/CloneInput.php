@@ -2,10 +2,10 @@
 
 namespace Wizhi\Forms\Controls;
 
+use Nette\Forms\Controls\BaseControl;
 use Nette\Forms\Form;
-use Nette\Forms\Helpers;
 use Nette\Forms\Validator;
-use Themosis\Route\BaseController;
+use Nette\Utils\Html;
 
 
 /**
@@ -13,7 +13,7 @@ use Themosis\Route\BaseController;
  *
  * todo: 优化实现方法
  */
-class CloneInput extends BaseController {
+class CloneInput extends BaseControl {
 
 	/** validation rule */
 	const VALID = ':selectBoxValid';
@@ -90,34 +90,33 @@ class CloneInput extends BaseController {
 	 */
 	public function getControl() {
 
-		$name        = $this->getHtmlName();
-		$id          = $this->getHtmlId();
-		$placeholder = $this->control->getAttribute( 'placeholder' );
-		$required    = $this->isRequired ? 'required' : '';
-		$rules       = json_encode( Helpers::exportRules( $this->rules ) ? : null );
+		$el = parent::getControl();
+
+		$name = $this->getHtmlName();
+		$id   = $this->getHtmlId();
 
 		// 模拟下拉选择默认值
 		$default_value = $this->value ? $this->value : [];
 
-		$html = '<div id="' . $id . '" class="frm-group-input">';
+		$input_group   = Html::el( 'div class=input-group' );
+		$action_button = Html::el( 'span class=input-group-btn' )
+		                     ->addHtml( Html::el( 'a class="btn btn-default remove_button"' )->setText( 'Remove' ) );
+
+		$clone_group = Html::el( 'div class=frm-group-input id="' . $id . '"' );
+		$add_button  = Html::el( 'button class="btn btn-default btn-sm add_more_button"' )->setText( 'Add More Fields' );
 
 		// 设置默认值
 		if ( count( $default_value ) > 0 ) {
 			foreach ( $default_value as $k => $v ) {
-				if ( $k == 0 ) {
-					$html .= '<input ' . $required . ' name="' . $name . '" value="' . $v . '" data-nette-rules=\'' . $rules . '\' class="form-control" placeholder="' . $placeholder . '">';
-				} else {
-					$html .= '<div class="input-group"><input name="' . $name . '" value="' . $v . '" class="form-control"><span class="input-group-btn"><a class="btn btn-default remove_button">Remove</a></span></div>';
+				if ( $k != 0 ) {
+					$el .= $input_group->setHtml( $el . $action_button );
 				}
 			}
-		} else {
-			$html .= '<input ' . $required . ' name="' . $name . '" value="" class="form-control" data-nette-rules=\'' . $rules . '\' placeholder="' . $placeholder . '">';
 		}
 
-		$html .= '</div>';
-		$html .= '<button class="btn btn-default btn-sm add_more_button">Add More Fields</button>';
+		$html = $clone_group->setHtml( $el );
 
-		$html .= '<script>
+		$scripts = '<script>
         jQuery(document).ready(function($) {
             var max_fields      = 10;
             var wrapper         = $("#' . $id . '");
@@ -144,7 +143,7 @@ class CloneInput extends BaseController {
         });
     </script>';
 
-		return $html;
+		return $html . $add_button . $scripts;
 
 	}
 

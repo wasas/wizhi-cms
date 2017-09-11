@@ -10,7 +10,7 @@ namespace Wizhi\Forms\Controls;
 use Nette\Forms\Controls\BaseControl;
 
 /**
- * Multiline text input control.
+ * Chained text input control.
  */
 class ChainedInput extends BaseControl {
 

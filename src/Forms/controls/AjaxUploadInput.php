@@ -7,10 +7,10 @@
 namespace Wizhi\Forms\Controls;
 
 use Nette;
-use Nette\Forms\Form;
-use Nette\Forms\Helpers;
-use Nette\Forms\Validator;
 use Nette\Forms\Controls\BaseControl;
+use Nette\Forms\Form;
+use Nette\Forms\Validator;
+use Nette\Utils\Html;
 
 
 /**
@@ -33,6 +33,7 @@ class  AjaxUploadInput extends BaseControl {
 		parent::__construct( $label );
 		$this->control->multiple = (bool) $multiple;
 		$this->setOption( 'type', 'text' );
+		$this->control->type = 'hidden';
 		$this->addCondition( Form::BLANK )
 		     ->addRule( [ $this, 'isOk' ], Validator::$messages[ self::VALID ] );
 	}
@@ -64,13 +65,14 @@ class  AjaxUploadInput extends BaseControl {
 	 */
 	public function getControl() {
 
+		$el = parent::getControl();
+
 		wp_enqueue_script( 'frm-upload' );
 
 		$name        = $this->getHtmlName();
 		$id          = $this->getHtmlId();
 		$placeholder = $this->control->getAttribute( 'placeholder' );
-		$data_url = $this->control->getAttribute( 'data-url' );
-		$rules       = json_encode( Helpers::exportRules( $this->rules ) ? : null );
+		$data_url    = $this->control->getAttribute( 'data-url' );
 		$value       = $this->value;
 		$default     = '';
 		$preview     = '';
@@ -81,14 +83,12 @@ class  AjaxUploadInput extends BaseControl {
 			$hide = '';
 			if ( is_array( $value ) ) {
 				foreach ( $value as $v ) {
-					$thumb   = wp_get_attachment_thumb_url( $v );
-					$default .= '<input type="hidden" name="' . $name . '" value="' . $v . '">';
-					$preview .= '<div class="col-xs-6 col-md-3"><button data-value="' . $v . '" type="button" class="close"><span>×</span></button><a href="#" class="thumbnail"><img src="' . $thumb . '" alt="..."></a></div>';
+					$default .= $el->setAttribute( 'value', $v );
+					$preview .= $this->getPreview( $v );
 				}
 			} else {
-				$thumb   = wp_get_attachment_thumb_url( $value );
-				$default .= '<input type="hidden" name="' . $name . '" value="' . $value . '">';
-				$preview .= '<div class="col-xs-6 col-md-3"><button data-value="' . $value . '" type="button" class="close"><span>×</span></button><a href="#" class="thumbnail"><img src="' . $thumb . '" alt="..."></a></div>';
+				$default .= $el->setAttribute( 'value', $value );
+				$preview .= $this->getPreview( $value );
 			}
 		}
 
@@ -98,7 +98,7 @@ class  AjaxUploadInput extends BaseControl {
             <div class="browser">
               <label>
                 <span>' . $placeholder . '</span>
-                <input class="upload_shadow" type="file" data-url="'. $data_url .'" name="input_shadow" ' . ( $this->control->multiple ? 'multiple="multiple"' : '' ) . ' title="' . $placeholder . '">
+                <input class="upload_shadow" type="file" data-url="' . $data_url . '" name="input_shadow" ' . ( $this->control->multiple ? 'multiple="multiple"' : '' ) . ' title="' . $placeholder . '">
               </label>
               <div class="frm-thumbs">' . $default . '</div>
               <div class="frm-preview clearfix ' . $hide . '">' . $preview . '</div>
@@ -106,6 +106,28 @@ class  AjaxUploadInput extends BaseControl {
         </div>';
 
 		return $html;
+	}
+
+
+	/**
+	 * 显示预览图片
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+	public function getPreview( $value ) {
+
+		$thumb = wp_get_attachment_thumb_url( $value );
+
+		$preview = Html::el( 'div class="col-xs-6 col-md-3"' );
+		$button  = Html::el( 'button type=button class=close data-value="' . $value . '"' )->addHtml( Html::el( 'span' )->setText( 'x' ) );
+		$image   = Html::el( 'img' )->src( $thumb );
+
+		$preview->addHtml( $button . $image );
+
+		return $preview;
+
 	}
 
 
@@ -118,6 +140,13 @@ class  AjaxUploadInput extends BaseControl {
 		$this->setValue( $this->getHttpData( Form::DATA_LINE ) );
 	}
 
+	/**
+	 * @return static
+	 * @internal
+	 */
+	public function setValue( $value ) {
+		return $this->value;
+	}
 
 	/**
 	 * Returns HTML name of control.
@@ -126,28 +155,6 @@ class  AjaxUploadInput extends BaseControl {
 	 */
 	public function getHtmlName() {
 		return parent::getHtmlName() . ( $this->control->multiple ? '[]' : '' );
-	}
-
-
-	/**
-	 * 设置表单值
-	 *
-	 * @return static
-	 * @internal
-	 */
-	public function setValue( $value ) {
-		$this->value = $value;
-
-		return $this;
-	}
-
-	/**
-	 * 返回表单值
-	 *
-	 * @return mixed
-	 */
-	public function getValue() {
-		return $this->value;
 	}
 
 
