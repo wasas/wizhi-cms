@@ -15,6 +15,7 @@
     "main.js": {
       "files": [
         "scripts/plugins/*.js",
+        "scripts/forms/*.js",
         "scripts/main.js"
       ],
       "main": true
@@ -22,6 +23,7 @@
     "admin.js": {
       "files": [
         "scripts/admin/*.js",
+        "scripts/forms/*.js",
         "scripts/admin.js"
       ]
     },

@@ -1,0 +1,363 @@
+/**
+ * Beautify Radio and Checkbox with pure CSS. http://forsigner.com/magic-check
+ */
+@keyframes hover-color {
+  from {
+    border-color: #c0c0c0;
+  }
+  to {
+    border-color: #3e97eb;
+  }
+}
+.magic-radio,
+.magic-checkbox {
+  position: absolute;
+  display: none;
+}
+.magic-radio[disabled],
+.magic-checkbox[disabled] {
+  cursor: not-allowed;
+}
+.magic-radio + label,
+.magic-checkbox + label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.magic-radio + label:hover:before,
+.magic-checkbox + label:hover:before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+.magic-radio + label:before,
+.magic-checkbox + label:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 1px solid #c0c0c0;
+}
+.magic-radio + label:after,
+.magic-checkbox + label:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+.magic-radio[disabled] + label,
+.magic-checkbox[disabled] + label {
+  cursor: not-allowed;
+  color: #e4e4e4;
+}
+.magic-radio[disabled] + label:hover,
+.magic-checkbox[disabled] + label:hover,
+.magic-radio[disabled] + label:before,
+.magic-checkbox[disabled] + label:before,
+.magic-radio[disabled] + label:after,
+.magic-checkbox[disabled] + label:after {
+  cursor: not-allowed;
+}
+.magic-radio[disabled] + label:hover:before,
+.magic-checkbox[disabled] + label:hover:before {
+  border: 1px solid #e4e4e4;
+  animation-name: none;
+}
+.magic-radio[disabled] + label:before,
+.magic-checkbox[disabled] + label:before {
+  border-color: #e4e4e4;
+}
+.magic-radio:checked + label:before,
+.magic-checkbox:checked + label:before {
+  animation-name: none;
+}
+.magic-radio:checked + label:after,
+.magic-checkbox:checked + label:after {
+  display: block;
+}
+.magic-checkbox + label:before {
+  border-radius: 3px;
+}
+.magic-checkbox + label:after {
+  top: 2px;
+  left: 7px;
+  box-sizing: border-box;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-top: 0;
+  border-left: 0;
+}
+.magic-checkbox:checked + label:before {
+  border: #3e97eb;
+  background: #3e97eb;
+}
+.magic-checkbox:checked[disabled] + label:before {
+  border: #c9e2f9;
+  background: #c9e2f9;
+}
+.magic-radio + label:before {
+  border-radius: 50%;
+}
+.magic-radio + label:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3e97eb;
+}
+.magic-radio:checked + label:before {
+  border: 1px solid #3e97eb;
+}
+.magic-radio:checked[disabled] + label:before {
+  border: 1px solid #c9e2f9;
+}
+.magic-radio:checked[disabled] + label:after {
+  background: #c9e2f9;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+.uploader {
+  border: 2px dotted #a5a5c7;
+  width: 100%;
+  color: #92aab0;
+  text-align: center;
+  vertical-align: middle;
+  padding: 30px 0;
+  margin-bottom: 10px;
+  font-size: 200%;
+  cursor: default;
+  user-select: none;
+}
+.uploader div.or {
+  font-size: 50%;
+  font-weight: bold;
+  color: #c0c0c0;
+  padding: 10px;
+}
+.uploader div.browser label {
+  background-color: #5a7bc2;
+  color: white;
+  padding: 6px 0;
+  font-size: 40%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 300px;
+  margin: 20px auto 0 auto;
+  box-shadow: 2px 2px 2px #888;
+}
+.uploader div.browser span {
+  cursor: pointer;
+}
+.uploader div.browser input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: solid transparent;
+  border-width: 0 0 100px 200px;
+  opacity: .0;
+  filter: alpha(opacity=0);
+  -o-transform: translate(250px, -50px) scale(1);
+  -moz-transform: translate(-300px, 0) scale(4);
+  direction: ltr;
+  cursor: pointer;
+}
+.uploader div.browser label:hover {
+  background-color: #427fed;
+}
+.uploader .frm-preview {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+}
+.uploader .frm-preview .thumbnail {
+  margin-bottom: 0;
+}
+.uploader .frm-preview .close {
+  margin-right: 5px;
+}
+.fm-label {
+  display: inline-block;
+  width: 15%;
+  padding-right: 15px;
+  vertical-align: top;
+  padding-top: 4px;
+}
+.fm-element {
+  display: inline-block;
+  width: 60%;
+}
+.fm-element {
+  padding: 6px 8px;
+}
+.fm-item.fm-element {
+  padding: 0;
+  width: 100%;
+}
+.fm-radio > .fm-label {
+  padding-top: 0;
+  margin-top: -2px;
+}
+.fm-option {
+  display: inline-block;
+  margin-right: 10px;
+}
+.fm-option .fm-option-label {
+  vertical-align: top;
+}
+.media-wrapper {
+  padding-left: 15%;
+  border: 0;
+  color: #fff;
+}
+.fm-datepicker-popup {
+  width: 80% !important;
+}
+.fm-item .fm-photo-wrapper {
+  width: 100%;
+}
+.fm-group-label-wrapper .fm-label {
+  width: 70%;
+  text-align: left;
+}
+.fm-wrapper .wp-tabs-panel > .fm-wrapper .fm-group-inner {
+  background: #fdfdfd;
+}
+.fm-tab-bar .wp-tab-active {
+  background: #fdfdfd;
+}
+.fm-tab-bar .fm-tab {
+  padding: 8px 15px 8px;
+}
+ul.add-menu-item-tabs li,
+ul.category-tabs li,
+ul.wp-tab-bar li {
+  padding: 5px 8px 8px;
+}
+.fm-group-inner {
+  padding: 15px !important;
+}
+.fm-tab-bar {
+  margin-top: 16px !important;
+  margin-bottom: 6px !important;
+}
+.fm-show-group .fm-item,
+.fm-group-inner .fm-item {
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.fm-show-group .fm-wrapper:last-child .fm-item,
+.fm-group-inner .fm-wrapper:last-child .fm-item {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/************************************
+ * 设置选项样式
+ ************************************/
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical {
+  margin: 0;
+  background: #24292e;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical .wp-tabs-panel {
+  margin-left: 0;
+  padding: 0;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical .fm-tab-bar {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: none;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical .fm-tab-bar li a {
+  background-image: none;
+  background-color: #24292e;
+  color: #fff;
+  border-right: 0;
+  text-shadow: none;
+  border-bottom: 0;
+  padding: 10px 15px;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical .fm-tab-bar li a:hover {
+  background-color: #eee;
+  color: #24292e;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical .fm-tab-bar li.wp-tab-active a {
+  background-color: #fff;
+  color: #24292e;
+}
+.appearance_page_wizhi_cms_settings .fm-label-inline.fm-label-after {
+  padding-top: 0;
+  margin-top: -2px;
+}
+.appearance_page_wizhi_cms_settings .fm-checkbox-group {
+  display: inline-block;
+  padding-top: 4px;
+}
+.appearance_page_wizhi_cms_settings .fm-wrapper .wp-tabs-panel > .fm-wrapper > .fm-item {
+  margin-bottom: 0;
+}
+.appearance_page_wizhi_cms_settings .fm-tabbed-vertical > .wp-tabs-panel > div > .fm-group > .fm-group-inner {
+  min-height: 700px;
+}
+.appearance_page_wizhi_cms_settings .media-wrapper {
+  margin: 5px 0 15px 0;
+  padding-left: 0;
+  border-left: 0;
+}
+.appearance_page_wizhi_cms_settings .media-wrapper a.fm-delete {
+  position: absolute;
+}
+.appearance_page_wizhi_cms_settings .fm-label-after {
+  width: 90%;
+}
+
+/*# sourceMappingURL=form.css.map */

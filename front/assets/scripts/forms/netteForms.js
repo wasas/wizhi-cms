@@ -780,8 +780,77 @@
     return Nette;
 }));
 
+
 // 输入时显示错误信息
 jQuery(document).ready(function ($) {
+
+    /**
+     * Ajax 验证表单
+     * @param field
+     * @param async
+     * @returns {boolean}
+     */
+    function validateField(field, async) {
+
+        async = async === undefined ? true : async;
+        var $field = $(field);
+
+        // 用来满足 Nette 表单
+        var $parentForm = $field.closest("form");
+        field.form = $parentForm.eq(0);
+
+        var hasError = false;
+        var currentFieldName = $field.attr("name");
+        var validateUrl = $field.data("ajax-url");
+        var postData = $parentForm.serialize() + "&" + $.param( {
+            'nette-ajax-field-name' : currentFieldName
+        } );
+
+        $.ajax({
+            url: validateUrl,
+            async: async,
+            dataType: 'json',
+            type: 'post',
+            data: postData ,
+            success: function(payload) {
+                if (payload['field-errors'].length > 0) {
+                    hasError = true;
+                    for (var i = 0; i< payload['field-errors'].length; i++) {
+                        Nette.addError(field, payload['field-errors'][i])
+                    }
+                }
+            }
+        });
+
+        if (!async) {
+            // 如果是异步请求，只需要返回结果
+            return !hasError;
+        }
+    }
+
+    /**
+     * 提交验证 Ajax 字段时需要的操作
+     */
+    function decorateValidateForm() {
+        var originValidateForm = Nette.validateForm;
+        Nette.validateForm = function(sender) {
+            var noAjaxIsValid = originValidateForm(sender);
+            var ajaxIsValid = true;
+            $(sender).find(".nette-ajax-validate-field").each(function(i,e){
+                // Ajax 异步验证
+                if(!validateField(e, false)) {
+                    ajaxIsValid = false;
+                }
+            });
+            return ajaxIsValid && noAjaxIsValid;
+        };
+    }
+
+    decorateValidateForm();
+
+    $("form").on("blur", ".nette-ajax-validate-field", function(e){
+        validateField(this);
+    });
 
     // 显示错误信息
     function showErrors(errors, focus) {
@@ -814,12 +883,15 @@ jQuery(document).ready(function ($) {
     };
 
     var input = $(':input');
+
     input.keypress(function () {
         removeErrors(this);
     });
+
     input.blur(function () {
         Nette.formErrors = [];
         Nette.validateControl(this);
         showErrors(Nette.formErrors);
     });
+
 });

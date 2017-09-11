@@ -5,7 +5,7 @@
  * Copyright (c) 2004 David Grudl (https://davidgrudl.com)
  */
 
-namespace Wizhi\Forms\Rendering;
+namespace Wizhi\Forms\Renders;
 
 use Nette;
 use Nette\Utils\Html;

@@ -5,6 +5,7 @@
  */
 
 use Wizhi\Forms\Form;
+use Wizhi\Forms\Renders\FormRender;
 use Wizhi\Helper\Dumper;
 
 if ( ! function_exists( 'dd' ) ) {
@@ -214,7 +215,7 @@ if ( ! function_exists( "order_no" ) ) {
 function wizhi_form( Form $form, $type = 'horizontal' ) {
 
 	// 设置自定义 Render 方法
-	$form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
+	$form->setRenderer( new FormRender );
 
 	$renderer                                            = $form->getRenderer();
 	$renderer->wrappers[ 'group' ][ 'container' ]        = 'fieldset class=row';
@@ -257,7 +258,7 @@ function wizhi_admin_form( Form $form, $type = 'horizontal' ) {
 	$screen = get_current_screen();
 
 	// 设置自定义 Render 方法
-	$form->setRenderer( new Wizhi\Forms\Rendering\FormRender );
+	$form->setRenderer( new FormRender );
 
 	$renderer                                     = $form->getRenderer();
 	$renderer->wrappers[ 'group' ][ 'container' ] = null;
