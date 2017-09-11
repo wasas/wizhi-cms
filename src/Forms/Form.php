@@ -97,10 +97,10 @@ class Form extends \Nette\Forms\Form implements \Nette\Utils\IHtmlString {
 	 * @param      $label    string  表单标签
 	 * @param      $settings array   表单设置
 	 *
-	 * @return \Wizhi\Forms\Controls\DatepickerInput
+	 * @return \Wizhi\Forms\Controls\DatePickerInput
 	 */
-	public function addDatepicker( $name, $label = null, $settings ) {
-		return $this[ $name ] = ( new Controls\DatepickerInput( $label, $settings ) );
+	public function addDatePicker( $name, $label = null, $settings ) {
+		return $this[ $name ] = ( new Controls\DatePickerInput( $label, $settings ) );
 	}
 
 
@@ -113,7 +113,7 @@ class Form extends \Nette\Forms\Form implements \Nette\Utils\IHtmlString {
 	 *
 	 * @return \Wizhi\Forms\Controls\ColorpickerInput
 	 */
-	public function addColorpicker( $name, $label = null, $settings ) {
+	public function addColorPicker( $name, $label = null, $settings ) {
 		return $this[ $name ] = ( new Controls\ColorpickerInput( $label, $settings ) );
 	}
 

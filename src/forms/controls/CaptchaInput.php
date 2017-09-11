@@ -7,12 +7,13 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette\Forms\Controls\TextBase;
+use Nette\Forms\Controls\TextInput;
+use Nette\Utils\Html;
 
 /**
  * 颜色选择
  */
-class CaptchaInput extends TextBase {
+class CaptchaInput extends TextInput {
 
 	private $settings = [];
 
@@ -33,35 +34,34 @@ class CaptchaInput extends TextBase {
 	 */
 	public function getControl() {
 
+		$el = parent::getControl();
+
 		$id        = $this->getHtmlId();
 		$action_id = $id . '-action';
-
-		$name          = $this->getHtmlName();
-		$settings      = $this->settings;
-		$data_url      = $this->control->getAttribute( 'data-url' );
-		$default_value = $this->value ? $this->value : '';
+		$settings  = $this->settings;
+		$data_url  = $this->control->getAttribute( 'data-url' );
 
 		$settings_default = [
-			'textarea_name' => $name,
 			'teeny'         => true,
 			'media_buttons' => false,
 		];
 
 		$settings = wp_parse_args( $settings_default, $settings );
 
-		$html = "<script>
+		$script = "<script>
             // 刷新验证码
 		    function refresh_code(obj) {
 		        obj.src = obj.src + '?code=' + Math.random();
 		    }</script>";
 
-		$html .= '<div class="input-group">
-                    <input id="' . $id . '" class="form-control" name="' . $name . '" value="' . $default_value . '">
-                    <span class="input-group-btn">
-						<img alt="captcha" onclick="refresh_code(this)" id="' . $action_id . '" data-toggle="tooltip" title="点击刷新验证码" src="' . $data_url . '" />
-					</span>
-                  </div>';
+		$input_group   = Html::el( 'div class=input-group' );
+		$action_button = Html::el( 'span class=input-group-btn' )
+		                     ->addHtml( Html::el( 'img alt="captcha" onclick="refresh_code(this)" id="' . $action_id . '" data-toggle="tooltip" title="点击刷新验证码"' )
+		                                    ->src( $data_url ) );
 
-		return $html;
+		$input_group->addHtml( $el->setAttribute( 'class', 'form-control' ) );
+		$input_group->addHtml( $action_button );
+
+		return $script . $input_group;
 	}
 }

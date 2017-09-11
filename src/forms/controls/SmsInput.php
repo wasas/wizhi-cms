@@ -7,12 +7,13 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette\Forms\Controls\TextBase;
+use Nette\Forms\Controls\TextInput;
+use Nette\Utils\Html;
 
 /**
  * 颜色选择
  */
-class SmsInput extends TextBase {
+class SmsInput extends TextInput {
 
 	private $settings = [];
 
@@ -33,30 +34,19 @@ class SmsInput extends TextBase {
 	 */
 	public function getControl() {
 
-		$id       = $this->getHtmlId();
-		$action_id = $id . '-action';
+		$el = parent::getControl();
 
-		$name     = $this->getHtmlName();
-		$settings = $this->settings;
-		$data_url = $this->control->getAttribute( 'data-url' );
-		$default_value = $this->value ? $this->value : '';
+		$action_id = $this->getHtmlId() . '-action';
+		$data_url  = $this->control->getAttribute( 'data-url' );
 
-		$settings_default = [
-			'textarea_name' => $name,
-			'teeny'         => true,
-			'media_buttons' => false,
-		];
+		$input_group   = Html::el( 'div class=input-group' );
+		$action_button = Html::el( 'span class=input-group-btn' )
+		                     ->addHtml( Html::el( 'input type=button class="btn btn-primary" id="' . $action_id . '" value="获取验证码"' ) );
 
-		$settings = wp_parse_args( $settings_default, $settings );
+		$input_group->addHtml( $el );
+		$input_group->addHtml( $action_button );
 
-		$html = '<div class="input-group">
-                    <input data-url="' . $data_url . '" id="' . $id . '" class="form-control" name="' . $name . '" value="' . $default_value . '">
-                    <span class="input-group-btn">
-						<input class="btn btn-primary" type="button" name="get_validate_code" id="'. $action_id .'" value="获取验证码" />
-					</span>
-                </div>';
-
-		$html .= "<script>
+		$script = "<script>
             jQuery(document).ready(function ($) {
                 //timer处理函数
 			    var InterValObj; //timer变量，控制时间
@@ -112,6 +102,6 @@ class SmsInput extends TextBase {
             });
         </script>";
 
-		return $html;
+		return $input_group . $script;
 	}
 }

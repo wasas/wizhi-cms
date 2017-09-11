@@ -6,7 +6,7 @@ use Nette;
 use Nette\Forms\Form;
 use Nette\Forms\Helpers;
 use Nette\Forms\Validator;
-use Nette\Forms\Controls\ChoiceControl;
+use Nette\Forms\Controls\BaseControl;
 
 
 /**
@@ -14,7 +14,7 @@ use Nette\Forms\Controls\ChoiceControl;
  *
  * todo: 实现方法需要优化，以便更灵活的实现多种输入控件
  */
-class GroupInput extends ChoiceControl {
+class GroupInput extends BaseControl {
 
 	/** validation rule */
 	const VALID = ':selectBoxValid';
@@ -146,15 +146,6 @@ class GroupInput extends ChoiceControl {
 		return parent::getHtmlName() . '[]';
 	}
 
-
-	/**
-	 * Returns selected key.
-	 *
-	 * @return string|int
-	 */
-	public function getValue() {
-		return $this->value;
-	}
 
 	/**
 	 * 设置下拉选项群组

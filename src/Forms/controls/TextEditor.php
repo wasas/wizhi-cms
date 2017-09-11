@@ -7,13 +7,14 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette\Forms\Controls\TextBase;
+use Nette\Forms\Controls\TextArea;
+use Nette\Forms\Controls\TextInput;
 
 
 /**
  * WordPress TinyMce 可视化编辑器
  */
-class TextEditor extends TextBase {
+class TextEditor extends TextArea {
 
 	private $settings = [];
 
@@ -24,8 +25,6 @@ class TextEditor extends TextBase {
 	public function __construct( $label = null, $settings = [] ) {
 		parent::__construct( $label );
 		$this->settings = $settings;
-		$this->control->setName( 'textarea' );
-		$this->setOption( 'type', 'textarea' );
 	}
 
 

@@ -7,12 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette\Forms\Controls\TextBase;
+use Nette\Forms\Controls\TextInput;
 
 /**
  * 颜色选择
  */
-class ColorpickerInput extends TextBase {
+class ColorPickerInput extends TextInput {
 
 	private $settings = [];
 
@@ -33,11 +33,11 @@ class ColorpickerInput extends TextBase {
 	 */
 	public function getControl() {
 
+		$el = parent::getControl();
+
 		$id       = $this->getHtmlId();
 		$name     = $this->getHtmlName();
 		$settings = $this->settings;
-
-		$default_value = $this->value ? $this->value : '';
 
 		$settings_default = [
 			'textarea_name' => $name,
@@ -49,9 +49,7 @@ class ColorpickerInput extends TextBase {
 
 		wp_enqueue_script( 'frm-iris' );
 
-		$html = '<input id="' . $id . '" class="form-control" name="' . $name . '" value="' . $default_value . '">';
-
-		$html .= "<script>
+		$script = "<script>
 			jQuery(document).ready(function($) {
 				var picker = $('#" . $id . "');
 				picker.iris({
@@ -72,6 +70,6 @@ class ColorpickerInput extends TextBase {
 			});
 		</script>";
 
-		return $html;
+		return $el . $script;
 	}
 }

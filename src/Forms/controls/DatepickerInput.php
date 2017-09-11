@@ -7,12 +7,12 @@
 
 namespace Wizhi\Forms\Controls;
 
-use Nette\Forms\Controls\TextBase;
+use Nette\Forms\Controls\TextInput;
 
 /**
  * Multiline text input control.
  */
-class DatepickerInput extends TextBase {
+class DatePickerInput extends TextInput {
 
 	private $settings = [];
 
@@ -33,11 +33,10 @@ class DatepickerInput extends TextBase {
 	 */
 	public function getControl() {
 
-		$id       = $this->getHtmlId();
-		$name     = $this->getHtmlName();
-		$settings = $this->settings;
+		$el = parent::getControl();
 
-		$default_value = $this->value ? $this->value : '';
+		$id       = $this->getHtmlId();
+		$settings = $this->settings;
 
 		$settings_default = [
 			'dateFormat' => 'yy-mm-dd',
@@ -47,16 +46,14 @@ class DatepickerInput extends TextBase {
 
 		$settings = wp_parse_args( $settings_default, $settings );
 
-		$html = '<input id="' . $id . '" class="form-control" name="' . $name . '" value="' . $default_value . '">';
-
-		$html .= ' <script>
+		$script = ' <script>
 		        jQuery(document).ready(function($){
-		        	$( "#'. $id .'" ).datepicker({
+		        	$( "#' . $id . '" ).datepicker({
 		        		"dateFormat" : "yy-mm-dd"
 		        	});
 		        });
 		    </script>';
 
-		return $html;
+		return $el . $script;
 	}
 }
