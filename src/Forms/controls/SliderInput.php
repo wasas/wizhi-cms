@@ -16,7 +16,7 @@ class SliderInput extends TextBase {
 	private $args = [];
 
 	/**
-	 * DropdownInput constructor.
+	 * Slider Input constructor.
 	 *
 	 * @param string|null $label
 	 * @param array       $args
@@ -24,8 +24,7 @@ class SliderInput extends TextBase {
 	public function __construct( $label = null, array $args ) {
 		parent::__construct( $label );
 		$this->control->type = 'hidden';
-		$this->setOption( 'type', 'hidden' );
-		$this->args = $args;
+		$this->args          = $args;
 		$this->addCondition( Form::BLANK );
 	}
 
