@@ -27,13 +27,15 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         array (
             'Wizhi\\Walker\\' => 13,
             'Wizhi\\Shortcode\\' => 16,
+            'Wizhi\\Services\\' => 15,
             'Wizhi\\Payment\\' => 14,
             'Wizhi\\Option\\' => 13,
             'Wizhi\\OpenAuth\\' => 15,
-            'Wizhi\\Modes\\' => 12,
+            'Wizhi\\Models\\' => 13,
             'Wizhi\\Metabox\\' => 14,
             'Wizhi\\Helper\\' => 13,
             'Wizhi\\Forms\\' => 12,
+            'Wizhi\\Controllers\\' => 18,
             'Wizhi\\Action\\' => 13,
             'Whoops\\' => 7,
         ),
@@ -130,6 +132,10 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         array (
             0 => __DIR__ . '/../..' . '/src/shortcode',
         ),
+        'Wizhi\\Services\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/providers',
+        ),
         'Wizhi\\Payment\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/payment',
@@ -142,7 +148,7 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         array (
             0 => __DIR__ . '/../..' . '/src/openauth',
         ),
-        'Wizhi\\Modes\\' => 
+        'Wizhi\\Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/models',
         ),
@@ -157,6 +163,10 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         'Wizhi\\Forms\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/forms',
+        ),
+        'Wizhi\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/controller',
         ),
         'Wizhi\\Action\\' => 
         array (

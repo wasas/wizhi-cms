@@ -25,7 +25,7 @@ function wizhi_install_database() {
 		// 手机验证码
 		"CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}security_phone_codes` (
 			`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-			`phone` text NOT NULL,
+			`mobile` text NOT NULL,
 			`code` text NOT NULL DEFAULT '',
 			PRIMARY KEY (`id`)
 		) $collate;",

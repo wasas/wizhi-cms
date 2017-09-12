@@ -504,5 +504,13 @@ ul.wp-tab-bar li {
 .appearance_page_wizhi_cms_settings .fm-label-after {
   width: 90%;
 }
+.input-group.has-error {
+  position: relative;
+  margin-bottom: 20px;
+}
+.input-group .help-block {
+  position: absolute;
+  bottom: -40px;
+}
 
 /*# sourceMappingURL=admin.css.map */

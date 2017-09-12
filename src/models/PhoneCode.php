@@ -30,7 +30,7 @@ class PhoneCode extends Model {
 	 * @var array
 	 */
 	protected $fillable = [
-		'phone',
+		'mobile',
 		'code',
 	];
 }

@@ -34,7 +34,9 @@
   "autoload": {
     "psr-4": {
       "Themosis\\": "framework/src/Themosis/",
-      "Wizhi\\Modes\\": "src/models/",
+      "Wizhi\\Models\\": "src/models/",
+      "Wizhi\\Controllers\\": "src/controller/",
+      "Wizhi\\Services\\": "src/providers/",
       "Wizhi\\Helper\\": "src/helpers/",
       "Wizhi\\Option\\": "src/option/",
       "Wizhi\\Walker\\": "src/walker/",

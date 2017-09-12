@@ -93,7 +93,7 @@ class Bootstrap {
 
 			// 检测是否安装了 fieldmanager 插件，如果未安装，包含插件内置的
 			if ( ! function_exists( 'fieldmanager_load_class' ) ) {
-				require_once WIZHI_CMS . '/fieldmanager/fieldmanager.php';
+				require_once WIZHI_CMS_PATH . '/fieldmanager/fieldmanager.php';
 			}
 		} );
 

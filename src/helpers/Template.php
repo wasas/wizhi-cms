@@ -12,8 +12,6 @@ use Nette\Utils\Finder;
 
 class Template {
 
-	use \Nette\StaticClass;
-
 	/**
 	 * 自定义模板加载器, 优先加载主题中的模板, 如果主题中的模板不存在, 就加载插件中的
 	 *
@@ -31,8 +29,8 @@ class Template {
 		}
 
 		// 加载插件中定义的模板
-		if ( ! $template && $name && file_exists( WIZHI_CMS . "templates/{$slug}-{$name}.php" ) ) {
-			$template = WIZHI_CMS . "templates/{$slug}-{$name}.php";
+		if ( ! $template && $name && file_exists( WIZHI_CMS_PATH . "templates/{$slug}-{$name}.php" ) ) {
+			$template = WIZHI_CMS_PATH . "templates/{$slug}-{$name}.php";
 		}
 
 		// 加载主题中的默认模板
@@ -57,7 +55,7 @@ class Template {
 	 * @return array
 	 */
 	public static function get_loop( $dir = "wizhi" ) {
-		$template_in_plugin = WIZHI_CMS . "templates/" . $dir;
+		$template_in_plugin = WIZHI_CMS_PATH . "templates/" . $dir;
 		$template_in_theme  = get_template_directory() . "/" . $dir;
 
 		$templates_in_plugin = [];
