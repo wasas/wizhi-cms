@@ -118,6 +118,58 @@ class Bootstrap {
 new Bootstrap;
 
 
+/*
+ * 插件变量
+ */
+$vars = [
+	'slug'      => 'wizhi',
+	'name'      => 'wizhi',
+	'namespace' => 'wizhi',
+];
+
+
+/*
+ * 设置插件路径
+ */
+$paths[ 'plugin.' . $vars[ 'namespace' ] ]                = WIZHI_CMS_PATH;
+$paths[ 'plugin.' . $vars[ 'namespace' ] . '.resources' ] = WIZHI_CMS_PATH . 'src/';
+$paths[ 'plugin.' . $vars[ 'namespace' ] . '.storage' ]   = WP_CONTENT_DIR . 'resources/cache';
+
+
+themosis_set_paths( $paths );
+
+/*
+ * 设置插件配置文件
+ */
+container( 'config.finder' )->addPaths( [ WIZHI_CMS_PATH . 'src/config/', ] );
+
+
+/*
+ * 注册插件视图
+ */
+container( 'view.finder' )->addLocation( WIZHI_CMS_PATH . 'templates/views' );
+
+
+/*
+ * 更新 Twig 加载器注册路径
+ */
+container( 'twig.loader' )->setPaths( WIZHI_CMS_PATH . 'templates/views' );
+
+
+/*
+ * 服务提供者
+ */
+$providers = container( 'config.factory' )->get( 'providers' );
+
+
+/*
+ * 注册服务提供者
+ */
+foreach ( $providers as $provider ) {
+	container()->register( $provider );
+}
+
+
 /**
  * 从 Github 升级
  */
