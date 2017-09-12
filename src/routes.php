@@ -13,6 +13,9 @@ Route::match( [ 'post' ], 'helper/validate/sms/', 'Helper@validate_sms' );
 Route::match( [ 'post' ], 'helper/validate/username/', 'Helper@validate_username' );
 Route::match( [ 'post' ], 'helper/validate/email/', 'Helper@validate_email' );
 
+Route::match( [ 'post' ], 'oauth/access/{provider}', 'OpenAuthController@access' );
+Route::match( [ 'post' ], 'oauth/request/{provider}', 'OpenAuthController@request' );
+
 
 Route::match( [ 'get', 'post' ], 'affiliate-login-page', 'Account@login' );
 Route::match( [ 'get', 'post' ], 'affiliate-activation/{user_id?}/{activation_code?}', 'Account@activation' );
