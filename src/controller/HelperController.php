@@ -8,7 +8,7 @@ use Themosis\Route\BaseController;
 use Wizhi\Helper\Api;
 use Wizhi\Models\PhoneCode;
 
-class Helper extends BaseController {
+class HelperController extends BaseController {
 
 	// Ajax 上传文件
 	public function upload() {
