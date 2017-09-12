@@ -35,8 +35,7 @@ require_once WIZHI_CMS_PATH . 'src/Bootstrap.php';
 
 
 /*
- * Plugin variables.
- * Configure your plugin.
+ * 插件变量
  */
 $vars = [
 	'slug'      => 'wizhi',
