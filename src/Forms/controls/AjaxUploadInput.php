@@ -96,7 +96,7 @@ class  AjaxUploadInput extends BaseControl {
             <div class="text">Drag &amp; Drop Images Here</div>
             <div class="or">-or-</div>
             <div class="browser">
-              <label>
+              <label class="btn btn-default">
                 <span>' . $placeholder . '</span>
                 <input class="upload_shadow" type="file" data-url="' . $data_url . '" name="input_shadow" ' . ( $this->control->multiple ? 'multiple="multiple"' : '' ) . ' title="' . $placeholder . '">
               </label>
@@ -140,12 +140,24 @@ class  AjaxUploadInput extends BaseControl {
 		$this->setValue( $this->getHttpData( Form::DATA_LINE ) );
 	}
 
+
+	/**
+	 * 返回表单值
+	 *
+	 * @return mixed
+	 */
+	public function getValue() {
+		return $this->value;
+	}
+
+
 	/**
 	 * @return static
 	 * @internal
 	 */
 	public function setValue( $value ) {
-		return $this->value;
+		$this->value = $value;
+		return $this;
 	}
 
 	/**

@@ -76,10 +76,13 @@ class Content {
 
 		global $wizhi_option;
 
-		$types              = wizhi_post_types();
-		$icons              = wizhi_post_types_icon();
-		$enabled_post_types = Arrays::get( $wizhi_option, ['general', 'enabled_post_types'] );
+		$types = wizhi_post_types();
+		$icons = wizhi_post_types_icon();
 
+		if ( $wizhi_option ) {
+			$enabled_post_types = Arrays::get( $wizhi_option, [ 'general', 'enabled_post_types' ] );
+		}
+		
 		if ( count( $enabled_post_types ) > 0 ) {
 
 			// 添加默认的文章类型和分类方法
