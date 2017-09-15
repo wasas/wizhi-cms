@@ -21,23 +21,6 @@ class Language {
 	}
 
 	/**
-	 * 判断是否为英文
-	 *
-	 * @return bool
-	 */
-	public static function is_en() {
-
-		$lang = get_bloginfo( 'language' );
-
-		if ( $lang == 'en-US' ) {
-			return true;
-		}
-
-		return false;
-	}
-
-
-	/**
 	 * 自动添加当前语言到 Body CSS Class
 	 *
 	 * @param $classes

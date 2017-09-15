@@ -14,23 +14,27 @@ use Wizhi\Helper\Dumper;
 /**
  * 记录调试信息到主题中的日志文件
  */
-function debug( $name, $data ) {
-	$log = new Logger( 'theme' );
-	$log->pushHandler( new StreamHandler( get_theme_file_path( 'logs/' . $name . '.log' ), Logger::WARNING ) );
+if ( ! function_exists( 'debug' ) ) {
+	function debug( $name, $data ) {
+		$log = new Logger( 'theme' );
+		$log->pushHandler( new StreamHandler( get_theme_file_path( 'logs/' . $name . '.log' ), Logger::WARNING ) );
 
-	$log->warning( $name, [ $data ] );
+		$log->warning( $name, [ $data ] );
+	}
 }
 
 
 /**
  * 判断是否在微信中打开
  */
-function is_wechat() {
-	if ( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MicroMessenger' ) !== false ) {
-		return true;
-	}
+if ( ! function_exists( 'is_wechat' ) ) {
+	function is_wechat() {
+		if ( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MicroMessenger' ) !== false ) {
+			return true;
+		}
 
-	return false;
+		return false;
+	}
 }
 
 
@@ -39,35 +43,55 @@ function is_wechat() {
  *
  * @return bool
  */
-function is_ajax() {
-	if ( ! empty( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && strtolower( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) == 'xmlhttprequest' ) {
-		return true;
-	}
+if ( ! function_exists( 'is_ajax' ) ) {
+	function is_ajax() {
+		if ( ! empty( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && strtolower( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) == 'xmlhttprequest' ) {
+			return true;
+		}
 
-	return false;
+		return false;
+	}
 }
 
+/**
+ * 判断当前语言是否为英文
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'is_en' ) ) {
+	function is_en() {
 
+		$lang = get_bloginfo( 'language' );
+
+		if ( $lang == 'en-US' ) {
+			return true;
+		}
+
+		return false;
+	}
+}
 
 /**
  * 获取用户的真实 IP
  *
  * @return mixed
  */
-function get_ip() {
-	$client  = @$_SERVER[ 'HTTP_CLIENT_IP' ];
-	$forward = @$_SERVER[ 'HTTP_X_FORWARDED_FOR' ];
-	$remote  = $_SERVER[ 'REMOTE_ADDR' ];
+if ( ! function_exists( 'get_ip' ) ) {
+	function get_ip() {
+		$client  = @$_SERVER[ 'HTTP_CLIENT_IP' ];
+		$forward = @$_SERVER[ 'HTTP_X_FORWARDED_FOR' ];
+		$remote  = $_SERVER[ 'REMOTE_ADDR' ];
 
-	if ( filter_var( $client, FILTER_VALIDATE_IP ) ) {
-		$ip = $client;
-	} elseif ( filter_var( $forward, FILTER_VALIDATE_IP ) ) {
-		$ip = $forward;
-	} else {
-		$ip = $remote;
+		if ( filter_var( $client, FILTER_VALIDATE_IP ) ) {
+			$ip = $client;
+		} elseif ( filter_var( $forward, FILTER_VALIDATE_IP ) ) {
+			$ip = $forward;
+		} else {
+			$ip = $remote;
+		}
+
+		return $ip;
 	}
-
-	return $ip;
 }
 
 
@@ -275,38 +299,40 @@ if ( ! function_exists( "order_no" ) ) {
  *
  * @return string 订单号字符串
  */
-function wizhi_form( Form $form, $type = 'horizontal' ) {
+if ( function_exists( 'wizhi_form' ) ) {
+	function wizhi_form( Form $form, $type = 'horizontal' ) {
 
-	// 设置自定义 Render 方法
-	$form->setRenderer( new FormRender );
+		// 设置自定义 Render 方法
+		$form->setRenderer( new FormRender );
 
-	$renderer                                            = $form->getRenderer();
-	$renderer->wrappers[ 'group' ][ 'container' ]        = 'fieldset class=row';
-	$renderer->wrappers[ 'group' ][ 'label' ]            = 'legend class=col-md-12';
-	$renderer->wrappers[ 'controls' ][ 'container' ]     = null;
-	$renderer->wrappers[ 'pair' ][ 'container' ]         = 'div class=form-group';
-	$renderer->wrappers[ 'pair' ][ '.error' ]            = 'has-error';
-	$renderer->wrappers[ 'control' ][ 'container' ]      = $type == 'horizontal' ? 'div class=col-sm-9' : '';
-	$renderer->wrappers[ 'label' ][ 'container' ]        = $type == 'horizontal' ? 'div class="col-sm-3 control-label"' : '';
-	$renderer->wrappers[ 'control' ][ 'description' ]    = 'span class=help-block';
-	$renderer->wrappers[ 'control' ][ 'errorcontainer' ] = 'span class=help-block';
-	$form->getElementPrototype()->class( $type == 'horizontal' ? 'form-horizontal' : '' );
-	$form->onRender[] = function ( $form ) {
-		foreach ( $form->getControls() as $control ) {
-			if ( ! $control->getOption( 'class' ) ) {
-				$control->setOption( 'class', 'col-md-12' );
+		$renderer                                            = $form->getRenderer();
+		$renderer->wrappers[ 'group' ][ 'container' ]        = 'fieldset class=row';
+		$renderer->wrappers[ 'group' ][ 'label' ]            = 'legend class=col-md-12';
+		$renderer->wrappers[ 'controls' ][ 'container' ]     = null;
+		$renderer->wrappers[ 'pair' ][ 'container' ]         = 'div class=form-group';
+		$renderer->wrappers[ 'pair' ][ '.error' ]            = 'has-error';
+		$renderer->wrappers[ 'control' ][ 'container' ]      = $type == 'horizontal' ? 'div class=col-sm-9' : '';
+		$renderer->wrappers[ 'label' ][ 'container' ]        = $type == 'horizontal' ? 'div class="col-sm-3 control-label"' : '';
+		$renderer->wrappers[ 'control' ][ 'description' ]    = 'span class=help-block';
+		$renderer->wrappers[ 'control' ][ 'errorcontainer' ] = 'span class=help-block';
+		$form->getElementPrototype()->class( $type == 'horizontal' ? 'form-horizontal' : '' );
+		$form->onRender[] = function ( $form ) {
+			foreach ( $form->getControls() as $control ) {
+				if ( ! $control->getOption( 'class' ) ) {
+					$control->setOption( 'class', 'col-md-12' );
+				}
+				$type = $control->getOption( 'type' );
+				if ( $type === 'button' ) {
+					$control->getControlPrototype()->addClass( empty( $usedPrimary ) ? 'btn btn-primary' : 'btn btn-default' );
+					$usedPrimary = true;
+				} elseif ( in_array( $type, [ 'text', 'textarea', 'select' ], true ) ) {
+					$control->getControlPrototype()->addClass( 'form-control' );
+				} elseif ( in_array( $type, [ 'checkbox', 'radio' ], true ) ) {
+					$control->getSeparatorPrototype()->setName( 'div' )->addClass( $type . ' ' . $type . '-inline' );
+				}
 			}
-			$type = $control->getOption( 'type' );
-			if ( $type === 'button' ) {
-				$control->getControlPrototype()->addClass( empty( $usedPrimary ) ? 'btn btn-primary' : 'btn btn-default' );
-				$usedPrimary = true;
-			} elseif ( in_array( $type, [ 'text', 'textarea', 'select' ], true ) ) {
-				$control->getControlPrototype()->addClass( 'form-control' );
-			} elseif ( in_array( $type, [ 'checkbox', 'radio' ], true ) ) {
-				$control->getSeparatorPrototype()->setName( 'div' )->addClass( $type . ' ' . $type . '-inline' );
-			}
-		}
-	};
+		};
+	}
 }
 
 
@@ -316,33 +342,35 @@ function wizhi_form( Form $form, $type = 'horizontal' ) {
  * @param Form   $form
  * @param string $type
  */
-function wizhi_admin_form( Form $form, $type = 'horizontal' ) {
+if ( function_exists( 'wizhi_admin_form' ) ) {
+	function wizhi_admin_form( Form $form, $type = 'horizontal' ) {
 
-	$screen = get_current_screen();
+		$screen = get_current_screen();
 
-	// 设置自定义 Render 方法
-	$form->setRenderer( new FormRender );
+		// 设置自定义 Render 方法
+		$form->setRenderer( new FormRender );
 
-	$renderer                                     = $form->getRenderer();
-	$renderer->wrappers[ 'group' ][ 'container' ] = null;
-	$renderer->wrappers[ 'group' ][ 'label' ]     = 'h2';
+		$renderer                                     = $form->getRenderer();
+		$renderer->wrappers[ 'group' ][ 'container' ] = null;
+		$renderer->wrappers[ 'group' ][ 'label' ]     = 'h2';
 
-	switch ( $type ) {
-		case 'term_meta':
-			if ( $screen->base == 'term' ) {
+		switch ( $type ) {
+			case 'term_meta':
+				if ( $screen->base == 'term' ) {
+					$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
+				} else {
+					$renderer->wrappers[ 'controls' ][ 'container' ] = '';
+					$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class="form-field wizhi-form-filed"';
+				}
+				break;
+			default:
 				$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
 				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
-			} else {
-				$renderer->wrappers[ 'controls' ][ 'container' ] = '';
-				$renderer->wrappers[ 'pair' ][ 'container' ]     = 'div class="form-field wizhi-form-filed"';
-			}
-			break;
-		default:
-			$renderer->wrappers[ 'controls' ][ 'container' ] = 'table class=form-table';
-			$renderer->wrappers[ 'pair' ][ 'container' ]     = 'tr class=wizhi-form-filed';
+		}
+
+		$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
+		$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
+
 	}
-
-	$renderer->wrappers[ 'label' ][ 'container' ]   = 'th class=row';
-	$renderer->wrappers[ 'control' ][ 'container' ] = 'td';
-
 }

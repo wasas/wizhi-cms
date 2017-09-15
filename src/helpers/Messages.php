@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * 提交表单后的消息通知
  * User: amoslee
  * Date: 2017/9/6
  * Time: 11:53

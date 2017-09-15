@@ -9,7 +9,6 @@
 namespace Wizhi\Bootstrap;
 
 use Nette\Neon\Neon;
-use Wizhi\Helper\Condition;
 use Wizhi\Helper\GitHubUpdater;
 use Wizhi\OpenAuth\WeChatAuth;
 
@@ -108,7 +107,7 @@ class Bootstrap {
 		/**
 		 * 如果在微信中打开，登录微信
 		 */
-		if ( Condition::is_wechat() && $wizhi_option[ 'payment' ][ 'wechat_auto_login' ] ) {
+		if ( is_wechat() && $wizhi_option[ 'payment' ][ 'wechat_auto_login' ] ) {
 			new WeChatAuth();
 		}
 
