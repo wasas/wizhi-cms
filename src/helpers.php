@@ -299,7 +299,7 @@ if ( ! function_exists( "order_no" ) ) {
  *
  * @return string 订单号字符串
  */
-if ( function_exists( 'wizhi_form' ) ) {
+if ( ! function_exists( 'wizhi_form' ) ) {
 	function wizhi_form( Form $form, $type = 'horizontal' ) {
 
 		// 设置自定义 Render 方法
@@ -342,7 +342,7 @@ if ( function_exists( 'wizhi_form' ) ) {
  * @param Form   $form
  * @param string $type
  */
-if ( function_exists( 'wizhi_admin_form' ) ) {
+if ( ! function_exists( 'wizhi_admin_form' ) ) {
 	function wizhi_admin_form( Form $form, $type = 'horizontal' ) {
 
 		$screen = get_current_screen();
