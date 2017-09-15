@@ -18,4 +18,18 @@ class Condition {
 		return false;
 	}
 
+
+	/**
+	 * 判断是否为 Ajax 请求
+	 *
+	 * @return bool
+	 */
+	public static function is_ajax() {
+		if ( ! empty( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && strtolower( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) == 'xmlhttprequest' ) {
+			return true;
+		}
+
+		return false;
+	}
+
 }

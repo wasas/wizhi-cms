@@ -21,6 +21,33 @@ function debug( $name, $data ) {
 	$log->warning( $name, [ $data ] );
 }
 
+
+/**
+ * 判断是否在微信中打开
+ */
+function is_wechat() {
+	if ( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MicroMessenger' ) !== false ) {
+		return true;
+	}
+
+	return false;
+}
+
+
+/**
+ * 判断是否为 Ajax 请求
+ *
+ * @return bool
+ */
+function is_ajax() {
+	if ( ! empty( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && strtolower( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) == 'xmlhttprequest' ) {
+		return true;
+	}
+
+	return false;
+}
+
+
 if ( ! function_exists( 'dd' ) ) {
 	/**
 	 * 输出传入的变量并结束程序
