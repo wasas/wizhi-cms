@@ -262,8 +262,8 @@ if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
  *
  * @return string 反格式化后的字符串
  */
-if ( ! function_exists( "wizhi_unslug" ) ) {
-	function wizhi_unslug( $slug = null ) {
+if ( ! function_exists( "unslug" ) ) {
+	function unslug( $slug = null ) {
 
 		if ( ! $slug ) {
 			$post_data = get_post( get_the_id(), ARRAY_A );
