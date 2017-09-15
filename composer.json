@@ -29,7 +29,8 @@
     "twig/twig": "^2.4",
     "lightboxdigital/wp-dynamic-image-resizer": "^1.0",
     "freshflesh/wp-render-template-part": "^1.1",
-    "jjgrainger/posttypes": "^1.1"
+    "jjgrainger/posttypes": "^1.1",
+    "monolog/monolog": "^1.23"
   },
   "autoload": {
     "psr-4": {

@@ -4,9 +4,22 @@
  *
  */
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Wizhi\Forms\Form;
 use Wizhi\Forms\Renders\FormRender;
 use Wizhi\Helper\Dumper;
+
+
+/**
+ * 记录调试信息到主题中的日志文件
+ */
+function debug( $name, $data ) {
+	$log = new Logger( 'theme' );
+	$log->pushHandler( new StreamHandler( get_theme_file_path( 'logs/' . $name . '.log' ), Logger::WARNING ) );
+
+	$log->warning( $name, [ $data ] );
+}
 
 if ( ! function_exists( 'dd' ) ) {
 	/**
