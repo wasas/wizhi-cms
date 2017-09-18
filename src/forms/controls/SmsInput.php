@@ -80,16 +80,16 @@ class SmsInput extends TextInput {
                             $(this).addClass('loading');
                         },
                         success   : function (data) {
-                            // 验证码发送成功后，启动计时器
-		                    curCount = count;
-		
-		                    // 设置button效果，开始计时
-		                    action_id.prop('disabled', true);
-		                    action_id.val(curCount + '后重新获取');
-		                    
-                            InterValObj = window.setInterval(set_count_dwon, 1000); //启动计时器，1秒执行一次
-                            alert(data.message);
+		                    alert(data.message);
                             if (data.sucees === 1) {
+                                // 验证码发送成功后，启动计时器
+			                    curCount = count;
+			
+			                    // 设置button效果，开始计时
+			                    action_id.prop('disabled', true);
+			                    action_id.val(curCount + '后重新获取');
+			                    
+	                            InterValObj = window.setInterval(set_count_dwon, 1000); //启动计时器，1秒执行一次
                                 $(this).removeClass('loading');
                             }
                         },
