@@ -44,6 +44,7 @@ function wizhi_install_database() {
 			`avatar` varchar(200) DEFAULT NULL,
 			`city` varchar(20) DEFAULT NULL,
 			`sex` varchar(20) DEFAULT NULL,
+			`platform` varchar(20) DEFAULT NULL,
 			`created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			`updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			`deleted_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,

@@ -1,16 +1,11 @@
 <?php
 
-/**
- * This file is part of the Nette Framework (https://nette.org)
- * Copyright (c) 2004 David Grudl (https://davidgrudl.com)
- */
-
 namespace Wizhi\Forms\Controls;
 
 use Nette\Forms\Controls\BaseControl;
 
 /**
- * Chained text input control.
+ * 链式选择输入
  */
 class ChainedInput extends BaseControl {
 

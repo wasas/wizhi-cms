@@ -5,7 +5,8 @@ namespace Wizhi\Models;
 use Corcel\Model;
 
 /**
- * 手机验证码记录
+ * 手机验证码记录，验证用户手机号码和验证码是否匹配
+ * 验证成功后删除
  *
  * Class PhoneCode
  */

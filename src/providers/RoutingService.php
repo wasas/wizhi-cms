@@ -14,7 +14,7 @@ class RoutingService extends ServiceProvider {
 		Route::group( [
 			'namespace' => 'Wizhi\Controllers',
 		], function () {
-			require WIZHI_CMS_PATH . 'src/routes.php';
+			require WIZHI_CMS_PATH . 'src/router.php';
 		} );
 	}
 

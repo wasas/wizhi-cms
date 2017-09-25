@@ -295,25 +295,73 @@
 })(jQuery);
 
 
-jQuery(document).ready(function($){
-    $('.fn-dnd-zone').dmUploader({
-        url            : $('.fn-dnd-zone .upload_shadow').data('url'),
-        type           : 'POST',
-        dataType       : 'json',
-        allowedTypes   : 'image/*',
-        onUploadSuccess: function (id, data) {
-            $(this).find('.frm-thumbs').append('<input type="hidden" name="' + $(this).data('name') + '" value="' + data.id + '">');
+jQuery(document).ready(function($) {
 
-            $(this).find('.frm-preview').show()
-                   .append('<div class="col-xs-6 col-md-3"><button data-value="' + data.id + '" type="button" class="close"><span>×</span></button><a href="#" class="thumbnail"><img src="' + data.thumb + '" alt="..."></a></div>');
-        }
-    });
+  /**
+   * 初始化文件上传组件
+   */
+  $('.fn-dnd-zone').dmUploader({
+    url            : $('.fn-dnd-zone .upload_shadow').data('url'),
+    type           : 'POST',
+    dataType       : 'json',
+    allowedTypes   : 'image/*',
+    onUploadSuccess: function(id, data) {
 
-    // 删除已添加的缩略图，需要保存后才能生效
-    $('.fn-dnd-zone button.close').on('click', function () {
-        var value = $(this).data('value');
+      var multiple = $(this).find('input[name=input_shadow]').attr('multiple');
 
-        $(this).parent().remove();
-        $('.frm-thumbs input[value=' + value + ']').remove();
-    });
+      if (typeof multiple === typeof undefined || multiple === false) {
+        $(this).find('.text').hide();
+        $(this).find('.or').hide();
+        $(this).find('label').hide();
+      }
+      $(this).
+          find('.frm-thumbs').
+          append('<input type="hidden" name="' + $(this).data('name') +
+              '" value="' + data.id + '">');
+
+      $(this).
+          find('.frm-preview').
+          show().
+          append('<div class="col-xs-6 col-md-3"><button data-value="' +
+              data.id +
+              '" type="button" class="close"><span>×</span></button><a href="#" class="thumbnail"><img src="' +
+              data.thumb + '" alt="..."></a></div>');
+    },
+  });
+
+  /**
+   * 删除缩略图
+   */
+  $('.fn-dnd-zone button.close').live('click', function() {
+    var value = $(this).data('value'),
+        multiple = $(this).closest('.fn-dnd-zone').find('input[name=input_shadow]').attr('multiple');
+
+    $(this).parent().hide();
+    $('.frm-thumbs input[value=' + value + ']').remove();
+
+    $(this).closest('.fn-dnd-zone').show();
+
+    if (typeof multiple === typeof undefined || multiple === false) {
+      $(this).closest('.fn-dnd-zone').find('.text').show();
+      $(this).closest('.fn-dnd-zone').find('.or').show();
+      $(this).closest('.fn-dnd-zone').find('label').show();
+    }
+
+  });
+
+  /**
+   * 单文件上传时，如果已有文件，移除上传组件
+   */
+  $('input[name=input_shadow]').each(function() {
+    var multiple = $(this).attr('multiple'),
+        thumbs = $(this).closest('.fn-dnd-zone').find('.frm-thumbs').children().length;
+
+    if ((typeof multiple === typeof undefined || multiple === false) && thumbs > 0) {
+      $(this).closest('.fn-dnd-zone').find('.text').hide();
+      $(this).closest('.fn-dnd-zone').find('.or').hide();
+      $(this).parent().hide();
+    }
+
+  });
+
 });

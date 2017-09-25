@@ -6,9 +6,9 @@ use Corcel\Model;
 use Corcel\Model\User;
 
 /**
- * 社交
+ * 社交，保存和绑定社交数据
  *
- * Class Order
+ * Class OpenAuth
  */
 class OpenAuth extends Model {
 
@@ -32,6 +32,7 @@ class OpenAuth extends Model {
 	 */
 	protected $fillable = [
 		'user_id',
+		'mobile',
 		'open_id',
 		'union_id',
 		'access_token',
@@ -40,6 +41,7 @@ class OpenAuth extends Model {
 		'avatar',
 		'city',
 		'sex',
+		'platform',
 	];
 
 	/**

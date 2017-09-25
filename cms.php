@@ -32,3 +32,37 @@ register_activation_hook( __FILE__, 'wizhi_install_database' );
 
 require_once WIZHI_CMS_PATH . 'framework/themosis.php';
 require_once WIZHI_CMS_PATH . 'src/Bootstrap.php';
+
+
+/*
+ * 在插件中初始化框架
+ *
+ */
+
+/*
+ * 设置插件路径
+ */
+// $paths[ 'plugin.wizhi' ]           = WIZHI_CMS_PATH;
+// $paths[ 'plugin.wizhi.resources' ] = WIZHI_CMS_PATH . 'templates/';
+// $paths[ 'plugin.wizhi.storage' ]   = WIZHI_CMS_PATH . 'templates/cache';
+//
+// themosis_set_paths( $paths );
+
+/*
+ * 设置插件配置文件
+ */
+// container( 'config.finder' )->addPaths( [ WIZHI_CMS_PATH . 'src/config/', ] );
+
+/*
+ * 注册插件视图
+ */
+// container( 'view.finder' )->addLocation( WIZHI_CMS_PATH . 'templates/views' );
+
+/*
+ * 服务提供者
+ */
+// $providers = container( 'config.factory' )->get( 'providers' );
+//
+// foreach ( $providers as $provider ) {
+// 	container()->register( $provider );
+// }
