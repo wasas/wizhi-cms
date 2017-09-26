@@ -13,7 +13,7 @@ namespace Wizhi\Walker;
  *
  * @package template
  */
-class Navigation extends Walker_Nav_Menu {
+class Navigation extends \Walker_Nav_Menu {
 
 	/**
 	 * @see   Walker::start_lvl()

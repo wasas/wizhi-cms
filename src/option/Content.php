@@ -80,7 +80,7 @@ class Content {
 		$icons = wizhi_post_types_icon();
 
 		if ( $wizhi_option ) {
-			$enabled_post_types = Arrays::get( $wizhi_option, [ 'general', 'enabled_post_types' ] );
+			$enabled_post_types = Arrays::get( $wizhi_option, [ 'general', 'enabled_post_types' ], [] );
 		}
 		
 		if ( count( $enabled_post_types ) > 0 ) {
