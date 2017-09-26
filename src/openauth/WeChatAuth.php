@@ -9,7 +9,7 @@ namespace Wizhi\OpenAuth;
 
 use EasyWeChat\Foundation\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Wizhi\Models\Oauth;
+use Wizhi\Models\OpenAuth;
 
 /**
  * 获取微信公众号 open_id, 保存到 cookies 中
@@ -74,7 +74,7 @@ class WeChatAuth {
 				$refresh_token = $token[ 'refresh_token' ];
 
 				// 根据 Open Id 获取用户
-				$auth = Oauth::firstOrNew( [ 'open_id' => $open_id ] );
+				$auth = OpenAuth::firstOrNew( [ 'open_id' => $open_id ] );
 
 				// 确保能获取用户，否则将会一直尝试注册，且注册不成功
 				$oauth_user = get_user_by( 'login', $username );

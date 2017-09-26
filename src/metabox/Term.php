@@ -10,6 +10,10 @@ use Wizhi\Helper\Template;
  *
  */
 class Term {
+
+	/**
+	 * 默认分类法自定义字段
+	 */
 	public static function init() {
 
 		$column = [

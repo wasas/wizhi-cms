@@ -8,6 +8,9 @@ namespace Wizhi\Metabox;
 
 class Post {
 
+	/**
+	 * 默认文章自定义字段
+	 */
 	public static function init() {
 
 		$types = [ 'page' ];

@@ -8,6 +8,7 @@
  * @return  void
  */
 function wizhi_install_database() {
+
 	global $wpdb;
 	$collate = '';
 

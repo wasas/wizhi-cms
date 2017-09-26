@@ -9,7 +9,7 @@
 namespace Wizhi\Walker;
 
 
-class Category extends Walker_Category {
+class Category extends \Walker_Category {
 
 	function start_lvl( &$output, $depth = 0, $args = [] ) {
 		if ( 'list' != $args[ 'style' ] ) {

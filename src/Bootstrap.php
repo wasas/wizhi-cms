@@ -13,6 +13,7 @@ use Wizhi\Helper\GitHubUpdater;
 use Wizhi\OpenAuth\WeChatAuth;
 
 class Bootstrap {
+
 	public function __construct() {
 
 		global $wizhi_option;
@@ -112,6 +113,7 @@ class Bootstrap {
 		}
 
 	}
+
 }
 
 new Bootstrap;

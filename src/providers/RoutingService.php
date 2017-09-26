@@ -6,6 +6,7 @@ use Themosis\Facades\Route;
 use Themosis\Foundation\ServiceProvider;
 
 class RoutingService extends ServiceProvider {
+	
 	/**
 	 * 注册插件路由
 	 * 定义自定义命名空间

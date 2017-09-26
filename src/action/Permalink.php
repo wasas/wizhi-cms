@@ -7,6 +7,12 @@ namespace Wizhi\Action;
  */
 class Permalink {
 
+
+	/**
+	 * 当文章设置了自定义链接时，替换默认链接为自定义链接
+	 *
+	 * @return mixed
+	 */
 	function custom() {
 		global $post;
 

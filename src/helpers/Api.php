@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: amoslee
- * Date: 2017/9/12
- * Time: 15:50
- */
 
 namespace Wizhi\Helper;
 

@@ -10,7 +10,7 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper as SymfonyHtmlDumper;
 class HtmlDumper extends SymfonyHtmlDumper
 {
 	/**
-	 * Colour definitions for output.
+	 * 定义输出的颜色
 	 *
 	 * @var array
 	 */

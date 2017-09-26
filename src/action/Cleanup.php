@@ -4,6 +4,9 @@ namespace Wizhi\Action;
 
 class Cleanup {
 
+	/**
+	 * 移除不必要的仪表盘菜单
+	 */
 	function remove_menu() {
 		global $submenu;
 
@@ -17,7 +20,9 @@ class Cleanup {
 		unset( $submenu[ 'themes.php' ][ 20 ] ); // 背景
 	}
 
-	// 移除工具条菜单
+	/**
+	 * 移除多余的工具条菜单
+	 */
 	function remove_admin_bar() {
 		global $wp_admin_bar;
 		$wp_admin_bar->remove_menu( 'wp-logo' );
