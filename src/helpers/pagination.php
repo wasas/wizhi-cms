@@ -73,7 +73,7 @@ class Pagination {
 				echo '<li><a class="nextpostslink" aria-label="Next" href="' . get_pagenum_link( $paged + 1 ) . '"><span aria-hidden="true">></span></a></li>';
 			}
 			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
-				echo '<li><a class="nextpostslink" aria-label="Next" href="' . get_pagenum_link( $pages ) . '"><span aria-hidden="true">»</span></a></li>';
+				echo '<li><a class="lastpostslink" aria-label="Next" href="' . get_pagenum_link( $pages ) . '"><span aria-hidden="true">»</span></a></li>';
 			}
 			echo '</ul>';
 		}
