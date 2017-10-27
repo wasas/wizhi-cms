@@ -2,10 +2,11 @@
 
 namespace Corcel\Model;
 
+use Corcel\Concerns\AdvancedCustomFields;
+use Corcel\Concerns\Aliases;
+use Corcel\Concerns\MetaFields;
+use Corcel\Concerns\OrderScopes;
 use Corcel\Model;
-use Corcel\Traits\AliasesTrait;
-use Corcel\Traits\HasMetaFields;
-use Corcel\Traits\OrderedTrait;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 
@@ -22,9 +23,10 @@ class User extends Model implements Authenticatable, CanResetPassword
     const CREATED_AT = 'user_registered';
     const UPDATED_AT = null;
 
-    use AliasesTrait;
-    use HasMetaFields;
-    use OrderedTrait;
+    use AdvancedCustomFields;
+    use Aliases;
+    use MetaFields;
+    use OrderScopes;
 
     /**
      * @var string
@@ -78,6 +80,7 @@ class User extends Model implements Authenticatable, CanResetPassword
         'nickname',
         'first_name',
         'last_name',
+        'avatar',
         'created_at',
     ];
 
@@ -183,5 +186,26 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function sendPasswordResetNotification($token)
     {
+    }
+
+    /**
+     * Get the avatar url from Gravatar
+     *
+     * @return string
+     */
+    public function getAvatarAttribute()
+    {
+        $hash = !empty($this->email) ? md5(strtolower(trim($this->email))) : '';
+
+        return sprintf('//secure.gravatar.com/avatar/%s?d=mm', $hash);
+    }
+
+    /**
+     * @param mixed $value
+     * @return void
+     */
+    public function setUpdatedAt($value)
+    {
+        //
     }
 }
