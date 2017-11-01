@@ -3,7 +3,7 @@
 Plugin Name:        Wizhi CMS
 Plugin URI:         http://www.wpzhiku.com/wordpress-cms-plugin-wizhi-cms/
 Description:        添加一些实用的功能，增加了一些效果类似dedecms(织梦)模板标签的一些简码。
-Version:            1.8.0
+Version:            1.8.1
 Author:             Amos Lee
 Author URI:         http://www.wpzhiku.com/
 License:            MIT License

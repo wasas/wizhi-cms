@@ -7,6 +7,7 @@
 namespace Wizhi\Shortcode;
 
 use Wizhi\helper\Template;
+use Wizhi\Helper\Pagination;
 
 class PostList {
 
@@ -104,7 +105,7 @@ class PostList {
 		}
 
 		if ( $pager ) {
-			wizhi_pagination( $wizhi_query );
+			Pagination::bootstrap( $wizhi_query );
 		}
 
 		wp_reset_postdata();

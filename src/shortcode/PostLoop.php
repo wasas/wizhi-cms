@@ -6,7 +6,8 @@
 
 namespace Wizhi\Shortcode;
 
-use Wizhi\helper\Template;
+use Wizhi\Helper\Template;
+use Wizhi\Helper\Pagination;
 
 class PostLoop {
 
@@ -73,7 +74,7 @@ class PostLoop {
 		endwhile;
 
 		if ( $pager ) {
-			wizhi_pagination( $wizhi_query );
+			Pagination::bootstrap( $wizhi_query );
 		}
 
 		wp_reset_postdata();

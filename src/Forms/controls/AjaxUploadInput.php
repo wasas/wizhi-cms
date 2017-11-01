@@ -14,7 +14,8 @@ use Nette\Utils\Html;
 
 
 /**
- * 拖拽 Ajax 上传，上传后返回 WordPress 媒体库 id 到隐藏的 input 中，然后随表单一起提交，保存媒体库 id 到 WordPress 文章自定义字段中
+ * 拖拽 Ajax 上传，上传后返回 WordPress 媒体库 id 到隐藏的 input 中，然后随表单一起提交，
+ * 保存媒体库 id 到 WordPress 文章自定义字段中
  *
  * todo: 添加验证规则，验证规则其实就是 text input 的验证规则，选中的值要在选择项的数组中
  * todo: 考虑增加上传进度, 增加上传出错时的提示
