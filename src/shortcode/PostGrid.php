@@ -26,7 +26,7 @@ class PostGrid {
 			'type'    => 'post',
 			'tax'     => 'category',
 			'tag'     => 'default',
-			'num'     => '4',
+			'num'     => 4,
 			'heading' => true,
 			'pager'   => false,
 			'tmp'     => 'media',
