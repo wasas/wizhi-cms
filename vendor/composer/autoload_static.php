@@ -24,18 +24,7 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'Wizhi\\Walker\\' => 13,
-            'Wizhi\\Shortcode\\' => 16,
-            'Wizhi\\Services\\' => 15,
-            'Wizhi\\Payment\\' => 14,
-            'Wizhi\\Option\\' => 13,
-            'Wizhi\\OpenAuth\\' => 15,
-            'Wizhi\\Models\\' => 13,
-            'Wizhi\\Metabox\\' => 14,
-            'Wizhi\\Helper\\' => 13,
-            'Wizhi\\Forms\\' => 12,
-            'Wizhi\\Controllers\\' => 18,
-            'Wizhi\\Action\\' => 13,
+            'Wizhi\\' => 6,
             'Whoops\\' => 7,
         ),
         'T' => 
@@ -124,53 +113,9 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
     );
 
     public static $prefixDirsPsr4 = array (
-        'Wizhi\\Walker\\' => 
+        'Wizhi\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/walker',
-        ),
-        'Wizhi\\Shortcode\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/shortcode',
-        ),
-        'Wizhi\\Services\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/providers',
-        ),
-        'Wizhi\\Payment\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/payment',
-        ),
-        'Wizhi\\Option\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/option',
-        ),
-        'Wizhi\\OpenAuth\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/openauth',
-        ),
-        'Wizhi\\Models\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/models',
-        ),
-        'Wizhi\\Metabox\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/metabox',
-        ),
-        'Wizhi\\Helper\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/helpers',
-        ),
-        'Wizhi\\Forms\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/forms',
-        ),
-        'Wizhi\\Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/controller',
-        ),
-        'Wizhi\\Action\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/action',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Whoops\\' => 
         array (

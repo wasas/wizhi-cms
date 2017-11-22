@@ -35,18 +35,7 @@
   "autoload": {
     "psr-4": {
       "Themosis\\": "framework/src/Themosis/",
-      "Wizhi\\Models\\": "src/models/",
-      "Wizhi\\Controllers\\": "src/controller/",
-      "Wizhi\\Services\\": "src/providers/",
-      "Wizhi\\Helper\\": "src/helpers/",
-      "Wizhi\\Option\\": "src/option/",
-      "Wizhi\\Walker\\": "src/walker/",
-      "Wizhi\\Metabox\\": "src/metabox/",
-      "Wizhi\\Action\\": "src/action/",
-      "Wizhi\\Payment\\": "src/payment/",
-      "Wizhi\\OpenAuth\\": "src/openauth/",
-      "Wizhi\\Shortcode\\": "src/shortcode/",
-      "Wizhi\\Forms\\": "src/forms/"
+      "Wizhi\\": "src/"
     },
     "files": [
       "framework/src/Themosis/helpers.php",

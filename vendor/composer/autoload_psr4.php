@@ -6,18 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Wizhi\\Walker\\' => array($baseDir . '/src/walker'),
-    'Wizhi\\Shortcode\\' => array($baseDir . '/src/shortcode'),
-    'Wizhi\\Services\\' => array($baseDir . '/src/providers'),
-    'Wizhi\\Payment\\' => array($baseDir . '/src/payment'),
-    'Wizhi\\Option\\' => array($baseDir . '/src/option'),
-    'Wizhi\\OpenAuth\\' => array($baseDir . '/src/openauth'),
-    'Wizhi\\Models\\' => array($baseDir . '/src/models'),
-    'Wizhi\\Metabox\\' => array($baseDir . '/src/metabox'),
-    'Wizhi\\Helper\\' => array($baseDir . '/src/helpers'),
-    'Wizhi\\Forms\\' => array($baseDir . '/src/forms'),
-    'Wizhi\\Controllers\\' => array($baseDir . '/src/controller'),
-    'Wizhi\\Action\\' => array($baseDir . '/src/action'),
+    'Wizhi\\' => array($baseDir . '/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Thunder\\Shortcode\\Tests\\' => array($vendorDir . '/thunderer/shortcode/tests'),
