@@ -6,7 +6,7 @@ namespace Wizhi\Helper;
  * 翻译固定字符串
  */
 class Archive {
-	
+
 	/**
 	 * 获取文章类型存档设置
 	 *
@@ -14,10 +14,16 @@ class Archive {
 	 *
 	 * @return mixed
 	 */
-	public static function option( $type, $name ) {
+	public static function option( $type, $name = null ) {
+
 		$option = get_option( $type . "_archive_settings" );
 
-		return $option[ $name ];
+		if ( $name ) {
+			return $option[ $name ];
+		} else {
+			return $option;
+		}
+
 	}
 
 
