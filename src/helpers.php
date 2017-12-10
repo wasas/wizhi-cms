@@ -12,6 +12,33 @@ use Wizhi\Helper\Dumper;
 
 
 /**
+ * 基于 Latte 的字符串模版
+ *
+ * @param $template string 模版字符串
+ * @param $params   array 模版数据
+ * @param $string   boolean 是否渲染为字符串而不是直接输出
+ */
+if ( ! function_exists( 'render' ) ) {
+	function render( $template, $params, $string = false ) {
+		$latte = new Latte\Engine;
+		$latte->setTempDirectory( WP_CONTENT_DIR . '/cache' );
+
+		$latte->setLoader( new Latte\Loaders\StringLoader( [
+			'template' => $template,
+		] ) );
+
+		if ( $string ) {
+			return $latte->renderToString( 'template', $params );
+		} else {
+			$latte->render( 'template', $params );
+		}
+
+		return true;
+	}
+}
+
+
+/**
  * 记录调试信息到主题中的日志文件
  */
 if ( ! function_exists( 'debug' ) ) {
