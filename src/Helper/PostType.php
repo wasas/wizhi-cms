@@ -42,6 +42,8 @@ class PostType {
 			'menu_name'          => $name,
 		];
 
+		$labels = apply_filters( 'wizhi_type_labels' . $slug, $labels );
+
 		//注册文章类型需要的参数
 		$args = [
 			'labels'              => $labels,
@@ -64,6 +66,9 @@ class PostType {
 			'query_var'           => $is_publish,
 
 		];
+
+
+		$args   = apply_filters( 'wizhi_type_args' . $slug, $args );
 
 		if ( strlen( $slug ) > 0 ) {
 			register_post_type( $slug, $args );

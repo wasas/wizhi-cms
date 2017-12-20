@@ -36,7 +36,6 @@ class Element {
 		$retour .= '<div class="' . $class . '"></div>';
 
 		return $retour;
-
 	}
 
 
@@ -69,7 +68,6 @@ class Element {
 		$retour .= '<h2 class="' . $class . '">' . $content . '</h2>';
 
 		return $retour;
-
 	}
 
 
@@ -102,7 +100,6 @@ class Element {
 		$retour .= '<div class="' . $class . '">' . $content . '</div>';
 
 		return $retour;
-
 	}
 
 
@@ -141,7 +138,6 @@ class Element {
 		$retour .= '<a class="' . $class . '" href="' . $url . '">' . $text . '</a>';
 
 		return $retour;
-
 	}
 
 }

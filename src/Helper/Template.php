@@ -74,7 +74,7 @@ class Template {
 				$name            = Arrays::get( $file_name_array, 1, 'None' );
 
 				$headers = [
-					'Name' => 'Loop Template Name',
+					'Name' => __( 'Loop Template Name', 'wizhi' ),
 				];
 
 				$file_info = get_file_data( $key, $headers );
@@ -105,7 +105,7 @@ class Template {
 				$name            = Arrays::get( $file_name_array, 1, 'None' );
 
 				$headers = [
-					'Name' => 'Loop Template Name',
+					'Name' => __( 'Loop Template Name', 'wizhi' ),
 				];
 
 				$file_info = get_file_data( $key, $headers );

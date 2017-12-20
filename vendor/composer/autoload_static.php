@@ -4,10 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
+class ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
@@ -36,6 +38,7 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php70\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
@@ -88,7 +91,7 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-            'Gregwar\\Captcha\\' => 16,
+            'Gregwar\\' => 8,
         ),
         'F' => 
         array (
@@ -136,6 +139,10 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         'Themosis\\' => 
         array (
             0 => __DIR__ . '/../..' . '/framework/src/Themosis',
+        ),
+        'Symfony\\Polyfill\\Php70\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -273,9 +280,9 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Gregwar\\Captcha\\' => 
+        'Gregwar\\' => 
         array (
-            0 => __DIR__ . '/..' . '/gregwar/captcha',
+            0 => __DIR__ . '/..' . '/gregwar/captcha/src/Gregwar',
         ),
         'Faker\\' => 
         array (
@@ -354,6 +361,10 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
     );
 
     public static $classMap = array (
+        'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
+        'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
+        'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'Latte\\CompileException' => __DIR__ . '/..' . '/latte/latte/src/Latte/exceptions.php',
         'Latte\\Compiler' => __DIR__ . '/..' . '/latte/latte/src/Latte/Compiler/Compiler.php',
         'Latte\\Engine' => __DIR__ . '/..' . '/latte/latte/src/Latte/Engine.php',
@@ -487,16 +498,19 @@ class ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378
         'Nette\\Utils\\Strings' => __DIR__ . '/..' . '/nette/utils/src/Utils/Strings.php',
         'Nette\\Utils\\UnknownImageFileException' => __DIR__ . '/..' . '/nette/utils/src/Utils/exceptions.php',
         'Nette\\Utils\\Validators' => __DIR__ . '/..' . '/nette/utils/src/Utils/Validators.php',
+        'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
+        'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite9a5bbb8e27828cbf574864d89bdc378::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit30855b5ae221cfaad2aa8f83e1a664b5::$classMap;
 
         }, null, ClassLoader::class);
     }

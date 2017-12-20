@@ -14,16 +14,17 @@ class Taxonomy {
 	 *
 	 * @since   wizhi 1.0
 	 *
-	 * @param string  $tax_slug     分类法名称
-	 * @param string  $post_type    关联到的文章类型的名称
-	 * @param string  $tax_name     分类法菜单名称
-	 * @param boolean $hierarchical 是否允许有父级分类
+	 * @param string       $tax_slug     分类法名称
+	 * @param string|array $post_type    关联到的文章类型的名称
+	 * @param string       $tax_name     分类法菜单名称
+	 * @param boolean      $hierarchical 是否允许有父级分类
 	 *
 	 * @package backend
 	 *
 	 * @usage   Wizhi\Helper\Taxonomy::create('prodcat', 'prod', '产品分类', true);
 	 */
 	public static function create( $tax_slug, $post_type, $tax_name, $hierarchical = true ) {
+
 
 		//分类法的标签
 		$labels = [
@@ -46,6 +47,8 @@ class Taxonomy {
 			'not_found'                  => sprintf( __( 'No %s found.', 'wizhi' ), $tax_name ),
 		];
 
+		$labels = apply_filters( 'wizhi_tax_labels' . $tax_slug, $labels );
+
 		//分类法参数
 		$args = [
 			'labels'            => $labels,
@@ -56,8 +59,12 @@ class Taxonomy {
 			'sort'              => true,
 		];
 
+
+		$args      = apply_filters( 'wizhi_tax_args' . $tax_slug, $args );
+		$post_type = apply_filters( 'wizhi_tax_types' . $tax_slug, $post_type );
+
 		if ( strlen( $tax_slug ) > 0 ) {
-			register_taxonomy( $tax_slug, [ $post_type ], $args );
+			register_taxonomy( $tax_slug, $post_type, $args );
 		}
 
 	}
