@@ -31,6 +31,8 @@ class HelperController extends BaseController {
 
 		wp_send_json( $file_data );
 
+		return true;
+
 	}
 
 

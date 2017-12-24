@@ -79,6 +79,8 @@ class Content {
 		$types = wizhi_post_types();
 		$icons = wizhi_post_types_icon();
 
+		$enabled_post_types = [];
+
 		if ( $wizhi_option ) {
 			$enabled_post_types = Arrays::get( $wizhi_option, [ 'general', 'enabled_post_types' ], [] );
 		}

@@ -56,7 +56,7 @@ if ( ! function_exists( 'debug' ) ) {
  */
 if ( ! function_exists( 'is_wechat' ) ) {
 	function is_wechat() {
-		if ( strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MicroMessenger' ) !== false ) {
+		if ( ! empty( $_SERVER[ 'HTTP_USER_AGENT' ] ) && strpos( $_SERVER[ 'HTTP_USER_AGENT' ], 'MicroMessenger' ) !== false ) {
 			return true;
 		}
 
@@ -160,9 +160,11 @@ if ( ! function_exists( 'assets' ) ) {
 	 *
 	 * @param  mixed
 	 *
-	 * @return void
+	 * @return string
 	 */
 	function assets( $name ) {
+		$name = ltrim( $name, '/' );
+
 		return get_theme_file_uri( 'front/dist/' . $name );
 	}
 }
