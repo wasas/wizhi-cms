@@ -217,5 +217,5 @@ class Navigation extends \Walker_Nav_Menu {
 			echo $fb_output;
 		}
 	}
-	
+
 }

@@ -22,9 +22,10 @@ class Category extends \Walker_Category {
 
 	function start_el( &$output, $category, $depth = 0, $args = [], $id = 0 ) {
 		extract( $args );
-		$cat_name = esc_attr( $category->name );
-		$cat_name = apply_filters( 'list_cats', $cat_name, $category );
-		$aclass   = '';
+		$cat_name           = esc_attr( $category->name );
+		$cat_name           = apply_filters( 'list_cats', $cat_name, $category );
+		$aclass             = '';
+		$use_desc_for_title = 0;
 
 		$termchildren = get_term_children( $category->term_id, $category->taxonomy );
 		if ( count( $termchildren ) > 0 ) {

@@ -71,4 +71,3 @@ function wizhi_post_types_icon() {
 
 	return Neon::decode( $post_types_icons );
 }
-
