@@ -61,8 +61,8 @@ class Bootstrap {
 
 		// 替换 Slug 为拼音
 		add_filter( 'name_save_pre', [ 'Wizhi\Action\Slug', 'post' ], 0 );
-		add_filter( 'name_save_pre', [ 'Wizhi\Action\Slug', 'term' ], 0 );
-		add_filter( 'name_save_pre', [ 'Wizhi\Action\Slug', 'file' ], 0 );
+		add_filter( 'pre_category_nicename', [ 'Wizhi\Action\Slug', 'term' ], 0 );
+		add_filter( 'sanitize_file_name', [ 'Wizhi\Action\Slug', 'file' ], 0 );
 
 		// 根据设置自动切换移动短主题
 		add_filter( 'template', [ 'Wizhi\Action\Responsive', 'switch_theme' ] );
