@@ -21,7 +21,7 @@ use Wizhi\Helper\Dumper;
 if ( ! function_exists( 'render' ) ) {
 	function render( $template, $params, $string = false ) {
 		$latte = new Latte\Engine;
-		$latte->setTempDirectory( WP_CONTENT_DIR . '/cache' );
+		$latte->setTempDirectory( WP_CONTENT_DIR . '/cache/' );
 
 		$latte->setLoader( new Latte\Loaders\StringLoader( [
 			'template' => $template,
@@ -299,7 +299,7 @@ if ( ! function_exists( "unslug" ) ) {
 			$slug      = $post_data[ 'post_name' ];
 		}
 
-		return ucwords( str_replace( "-", " ", $slug ) );
+		return str_replace( "-", " ", $slug );
 	}
 }
 

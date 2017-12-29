@@ -48,7 +48,7 @@ class Settings {
 					'serialize_data' => false,
 					'add_to_prefix'  => false,
 					'children'       => [
-						'logo_image'      => new \Fieldmanager_Media( __( 'Footer Logo', 'wizhi' ) ),
+						'logo_image'       => new \Fieldmanager_Media( __( 'Footer Logo', 'wizhi' ) ),
 						'copyright_text'   => new \Fieldmanager_TextField( __( 'Copyright text', 'wizhi' ) ),
 						'beian_no'         => new \Fieldmanager_TextField( __( 'Beian Number', 'wizhi' ) ),
 						'code_before_body' => new \Fieldmanager_TextArea( __( 'Code before </body>', 'wizhi' ) ),
