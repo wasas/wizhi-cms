@@ -191,8 +191,6 @@ if ( ! class_exists( 'Themosis' ) ) {
 			 */
 			$providers = apply_filters( 'themosis_service_providers', [
 				Themosis\Finder\FinderServiceProvider::class,
-				Themosis\Hook\HookServiceProvider::class,
-				Themosis\Load\LoaderServiceProvider::class,
 				Themosis\Route\RouteServiceProvider::class,
 				Themosis\View\ViewServiceProvider::class,
 			] );
