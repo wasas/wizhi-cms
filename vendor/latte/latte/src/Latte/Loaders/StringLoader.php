@@ -71,6 +71,7 @@ class StringLoader implements Latte\ILoader
 	 */
 	public function getUniqueId($name)
 	{
+		dd($this->getContent($name));
 		return $this->getContent($name);
 	}
 }
